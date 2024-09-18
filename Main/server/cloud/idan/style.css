@@ -1,0 +1,11 @@
+QPushButton{
+    font-size: 20px;
+    color: #ffffff;
+    padding: 1px 3px;
+    border-radius: 20px;
+    border-style: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #ff6537;
+    opacity: 0.8;
+}
