@@ -1,5 +1,6 @@
 QWidget{
     background-color: #222020;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 QPushButton{
@@ -8,7 +9,6 @@ QPushButton{
     padding: 1px 3px;
     border-radius: 20px;
     border-style: none;
-    text-transform: uppercase;
     letter-spacing: 2px;
     background-color: #ff6537;
     opacity: 0.8;
@@ -22,6 +22,21 @@ QTextEdit, QLineEdit {
     background-color: #6e1a00;
     outline: none;
     border-bottom: 0.1rem solid #af64f5;
+}
+
+QMenu {
+    background-color: #252525;
+    border: 1px solid #666;
+    selection-background-color: #252525;
+    selection-color: #fff;
+}
+QMenu::item {
+    color: #ddd;
+    background-color: #252525;
+}
+QMenu::item:selected {
+    background-color: #555;
+    color: #fff;
 }
 
 

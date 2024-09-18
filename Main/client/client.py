@@ -12,8 +12,9 @@ import struct
 import os
 
 from PyQt6 import QtWidgets, uic
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea
-from PyQt6.QtGui import QIcon
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
+from PyQt6.QtGui import QIcon, QContextMenuEvent, QResizeEvent
+from PyQt6.QtCore import QSize
 
 
 # Announce global vars
@@ -40,12 +41,59 @@ error_messages = {
     12: "File upload error|File didnt upload correctly, please try again"
 }
 
+
 # Begin gui related functions
+
+class FileButton(QPushButton):
+    def __init__(self, text, parent=None):
+        super().__init__(text, parent)
+        self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        self.setStyleSheet("""
+            QPushButton {
+                border-radius: 30px;  # Half of the width/height to make it round
+                font-size: 12px;
+                text-align: center;
+                padding: 5px;
+                word-wrap: break-word;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        """)
+
+    def contextMenuEvent(self, event: QContextMenuEvent):
+        menu = QMenu(self)
+        action = menu.addAction("Download")
+        action.triggered.connect(self.download)
+        
+        action = menu.addAction("Rename")
+        action.triggered.connect(self.rename)
+        
+        action = menu.addAction("Delete")
+        action.triggered.connect(self.delete)
+        
+        action = menu.addAction("Share")
+        action.triggered.connect(self.share)
+        
+        menu.exec(event.globalPos())
+
+    def download(self):
+        print(self.text())
+    
+    def rename(self):
+        print(self.text())
+    
+    def delete(self):
+        print(self.text())
+    
+    def share(self):
+        print(self.text())
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.main_page()
         self.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
+        self.layout = QVBoxLayout()
         
     
     def main_page(self):
@@ -94,9 +142,9 @@ class MainWindow(QtWidgets.QMainWindow):
         
         uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
         
-        
         self.set_cwd()
         self.draw_cwd(files, directories)
+        
         
         self.user_button.setText(user["username"])
         self.main_text.setText(f"Welcome {user["username"]}")
@@ -104,41 +152,55 @@ class MainWindow(QtWidgets.QMainWindow):
         self.user_button.clicked.connect(lambda: self.manage_account())
         self.logout_button.clicked.connect(logout)
         self.upload_button.clicked.connect(lambda: self.file_dialog())
-        
-    
+
+
     def draw_cwd(self, files, directories):
-        self.scroll_area = self.findChild(QScrollArea, 'scrollFiles')
+        central_widget = self.centralWidget()
 
-        # Create a widget to hold the buttons
-        self.files_widget = QWidget()
-        self.layout = QVBoxLayout(self.files_widget)
+        outer_layout = QVBoxLayout()
+        outer_layout.addStretch(1)
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
 
-        # Set the widget as the scroll area's widget
-        self.scroll_area.setWidget(self.files_widget)
-        self.scroll_area.setWidgetResizable(True)
-
+        scroll_container_widget = QWidget()
+        scroll_layout = QGridLayout()
+        scroll_layout.setSpacing(5)
         
-    
-        for index, file_name in enumerate(files):
-            button = QPushButton(file_name)
+
+        for i, file_name in enumerate(files):
+
+            button = FileButton(file_name)
             button.setStyleSheet("background-color:darkgrey;font-size:12px;")
             button.clicked.connect(lambda checked, f=file_name: self.file_button_clicked(f))
-            self.layout.addWidget(button)
+            scroll_layout.addWidget(button)
 
         for index, directory in enumerate(directories):
-            button = QPushButton(directory)
+            button = FileButton(directory)
             button.setStyleSheet("background-color:brown;font-size:12px;")
             button.clicked.connect(lambda checked, d=directory: move_dir(d))
-            self.layout.addWidget(button)
+            scroll_layout.addWidget(button)
 
-        button = QPushButton("Back")
+        button = FileButton("Back")
         button.setStyleSheet("background-color:green;font-size:12px;")
         button.clicked.connect(lambda: move_dir("/.."))
-        self.layout.addWidget(button)
-        
-    
-    
-    
+        scroll_layout.addWidget(button)
+
+        scroll_container_widget.setLayout(scroll_layout)
+
+        scroll.setWidget(scroll_container_widget)
+        scroll.setFixedSize(QSize(900, 340))
+        spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        outer_layout.addItem(spacer)
+
+        center_layout = QHBoxLayout()
+        center_layout.addStretch(1)  # Add stretchable space on the left
+        center_layout.addWidget(scroll)  # Add the scroll area
+        center_layout.addStretch(1)  # Add stretchable space on the right
+
+        # Add the centered scroll area layout to the outer layout
+        outer_layout.addLayout(center_layout)
+        outer_layout.addStretch(1)
+        central_widget.setLayout(outer_layout)
     
     
     def file_button_clicked(self, file_name):
@@ -146,13 +208,15 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f"File clicked: {file_name}")
     
     
-    def manage_account(self):
+    def manage_account(self, redirect = False):
         uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui", self)
         
         self.forgot_password_button.clicked.connect(lambda: self.recovery(user["email"]))
         self.delete_account_button.clicked.connect(lambda: delete_user(user["email"]))
         
         self.back_button.clicked.connect(self.user_page)
+        if (redirect):
+            self.user_page()
     
     def recovery(self, email):
         reset_password(email)
@@ -177,18 +241,25 @@ class MainWindow(QtWidgets.QMainWindow):
     
     
     def file_dialog(self):
-        # Open the file dialog
         file_name, _ = QFileDialog.getOpenFileName(self, "Open File", "", "All Files (*);;Text Files (*.txt)")
-        
-        # If a file is selected, display its path in the label
+
         if file_name:
-            #self.set_message(f'Selected File: {file_name}')
             send_file_data(file_name, file_name.split("/")[-1])
     
     def set_error_message(self, msg):
-        if (hasattr(self, "error_message")):
-            self.error_message.setStyleSheet("color: red; font-size: 15px;")
-            self.error_message.setText(msg)
+        try:
+            if (hasattr(self, "error_message")):
+                self.error_message.setStyleSheet("color: red; font-size: 15px;")
+                self.error_message.setText(msg)
+        except Exception:
+            pass
+        
+        try:
+            if (hasattr(self, "message")):
+                self.message.setStyleSheet("color: red; font-size: 15px;")
+                self.message.setText(msg)
+        except Exception:
+            pass
     
     def set_message(self, msg):
         if (hasattr(self, "message")):
@@ -198,7 +269,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def set_cwd(self):
         if (hasattr(self, "cwd")):
             self.cwd.setStyleSheet("color: yellow; font-size: 17px;")
-            self.cwd.setText(f"{cwd}")
+            self.cwd.setText(f"CWD: {cwd}")
 
 
 
@@ -482,6 +553,7 @@ def protocol_parse_reply(reply):
         
         elif code == 'FILR':
             to_show = f'File {fields[1]} was uploaded'
+            
             window.user_page()
             window.set_message(to_show)
         
@@ -489,9 +561,7 @@ def protocol_parse_reply(reply):
             to_show = f'Directory {fields[1]} was moved into'
             cwd = fields[1]
             window.user_page()
-            window.set_message(to_show)
-            
-        
+    
     except Exception as e:   # Error
         print('Server replay bad format ' + str(e))
         print(traceback.format_exc())

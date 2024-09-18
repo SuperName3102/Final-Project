@@ -326,7 +326,7 @@ def protocol_build_reply(request, tid, sock):
             new_cwd = (clients[tid].cwd + "\\" + dir)
         if (os.path.isdir(new_cwd)):
             main_path = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud\\{clients[tid].user}"
-            if not (cr.is_subpath(main_path, new_cwd)):
+            if (not (cr.is_subpath(main_path, new_cwd))):
                 reply = f"ERRR{sep}014{sep}Invalid directory"
             else:
                 clients[tid].cwd = new_cwd
