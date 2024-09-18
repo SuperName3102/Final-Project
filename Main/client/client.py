@@ -7,13 +7,12 @@ import socket
 import sys
 import traceback
 from tkinter.messagebox import askyesno
-from tkinter import messagebox
 import rsa
 import struct
 import os
 
 from PyQt6 import QtWidgets, uic
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea
 from PyQt6.QtGui import QIcon
 
 
@@ -24,6 +23,7 @@ user = {}
 encryption = False
 chunk_size = 65536
 errors = 12
+cwd = ""
 
 error_messages = {
     1: "General error|uknown",
@@ -91,9 +91,13 @@ class MainWindow(QtWidgets.QMainWindow):
     def user_page(self):
         files = get_cwd_files()
         directories = get_cwd_directories()
+        
         uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
+        
+        
+        self.set_cwd()
         self.draw_cwd(files, directories)
-
+        
         self.user_button.setText(user["username"])
         self.main_text.setText(f"Welcome {user["username"]}")
         
@@ -103,48 +107,35 @@ class MainWindow(QtWidgets.QMainWindow):
         
     
     def draw_cwd(self, files, directories):
-        x, y = 100, 150  # Initial position for the first button
-        button_width, button_height = 100, 50
-        spacing = 10  # Space between buttons
+        self.scroll_area = self.findChild(QScrollArea, 'scrollFiles')
 
+        # Create a widget to hold the buttons
+        self.files_widget = QWidget()
+        self.layout = QVBoxLayout(self.files_widget)
+
+        # Set the widget as the scroll area's widget
+        self.scroll_area.setWidget(self.files_widget)
+        self.scroll_area.setWidgetResizable(True)
+
+        
+    
         for index, file_name in enumerate(files):
-            # Create a QPushButton for each file
-            button = QPushButton(file_name, self.centralwidget)
-
-            # Set the position and size of the button
-            button.setGeometry(x, y, button_width, button_height)
+            button = QPushButton(file_name)
             button.setStyleSheet("background-color:darkgrey;font-size:12px;")
-
-            # Connect the button to a function that handles button clicks
             button.clicked.connect(lambda checked, f=file_name: self.file_button_clicked(f))
+            self.layout.addWidget(button)
 
-            # Update x, y positions for the next button
-            x += button_width + spacing  # Move to the right
-            if x + button_width > self.width() - 100:  # Move to the next row if it exceeds window width
-                x = 100
-                y += button_height + spacing
-        
         for index, directory in enumerate(directories):
-            # Create a QPushButton for each file
-            button = QPushButton(directory, self.centralwidget)
-
-            # Set the position and size of the button
-            button.setGeometry(x, y, button_width, button_height)
+            button = QPushButton(directory)
             button.setStyleSheet("background-color:brown;font-size:12px;")
-
-            # Connect the button to a function that handles button clicks
             button.clicked.connect(lambda checked, d=directory: move_dir(d))
+            self.layout.addWidget(button)
 
-            # Update x, y positions for the next button
-            x += button_width + spacing  # Move to the right
-            if x + button_width > self.width() - 100:  # Move to the next row if it exceeds window width
-                x = 100
-                y += button_height + spacing
-        
-        button = QPushButton("/..", self.centralwidget)
-        button.setGeometry(x, y, button_width, button_height)
-        button.setStyleSheet("background-color:brown;font-size:12px;")
+        button = QPushButton("Back")
+        button.setStyleSheet("background-color:green;font-size:12px;")
         button.clicked.connect(lambda: move_dir("/.."))
+        self.layout.addWidget(button)
+        
     
     
     
@@ -203,6 +194,11 @@ class MainWindow(QtWidgets.QMainWindow):
         if (hasattr(self, "message")):
             self.message.setStyleSheet("color: lightgreen; font-size: 15px;")
             self.message.setText(msg)
+    
+    def set_cwd(self):
+        if (hasattr(self, "cwd")):
+            self.cwd.setStyleSheet("color: yellow; font-size: 17px;")
+            self.cwd.setText(f"{cwd}")
 
 
 
@@ -408,6 +404,7 @@ def protocol_parse_reply(reply):
     Checking error codes and respective answers to user
     Performing action according to response from server
     """
+    global cwd
     try:
         to_show = 'Invalid reply from server'
         reply = reply.decode()   # Parse the reply and aplit it according to the protocol seperator
@@ -439,7 +436,9 @@ def protocol_parse_reply(reply):
             user["username"] = username
             user["password"] = password
             
+            cwd = username
             window.user_page()
+            
         
         elif code == 'SIGS':   # Signup was performed
             email = fields[1]
@@ -488,8 +487,10 @@ def protocol_parse_reply(reply):
         
         elif code == 'MOVR':
             to_show = f'Directory {fields[1]} was moved into'
+            cwd = fields[1]
             window.user_page()
             window.set_message(to_show)
+            
         
     except Exception as e:   # Error
         print('Server replay bad format ' + str(e))

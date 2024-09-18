@@ -32,7 +32,7 @@ class Client:
         self.email = email
         self.shared_secret = shared_secret
         self.encryption = encryption
-        self.cwd = f"{os.path.dirname(os.path.abspath(__file__))}/cloud/{self.user}"
+        self.cwd = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud\\{self.user}"
         
             
 
@@ -155,7 +155,7 @@ def protocol_build_reply(request, tid, sock):
                 email = user_dict["email"]
                 clients[tid].user = username
                 clients[tid].email = email
-                clients[tid].cwd = f"{os.path.dirname(os.path.abspath(__file__))}/cloud/{username}"
+                clients[tid].cwd = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud\\{username}"
                 reply = f"LOGS{sep}{email}{sep}{username}{sep}{password}"
         else:
             reply = f"ERRR{sep}004{sep}Invalid credentials"
@@ -320,14 +320,17 @@ def protocol_build_reply(request, tid, sock):
     
     elif (code == "MOVD"):
         dir = fields[1]
-        new_cwd = (clients[tid].cwd + "/" + dir)
+        if (dir == "/.."):
+            new_cwd = ("\\".join(clients[tid].cwd.split("\\")[:-1]))
+        else:
+            new_cwd = (clients[tid].cwd + "\\" + dir)
         if (os.path.isdir(new_cwd)):
-            main_path = f"{os.path.dirname(os.path.abspath(__file__))}/cloud/{clients[tid].user}"
+            main_path = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud\\{clients[tid].user}"
             if not (cr.is_subpath(main_path, new_cwd)):
                 reply = f"ERRR{sep}014{sep}Invalid directory"
             else:
                 clients[tid].cwd = new_cwd
-                reply = f"MOVR{sep}{dir}{sep}moved succesfully"
+                reply = f"MOVR{sep}{new_cwd.split("cloud")[1][1:]}{sep}moved succesfully"
         else:
             reply = f"ERRR{sep}014{sep}Invalid directory"
     

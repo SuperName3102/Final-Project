@@ -236,3 +236,10 @@ def is_subpath(parent_path, sub_path):
 
 if __name__ == "__main__":
     main()
+
+# add manual user
+# main()
+# salt = bcrypt.gensalt()
+# password = hash_password("a", salt)
+# delete_user("a")
+# db.add_user(vars(User("a", "a", password, salt, verified=True)))
