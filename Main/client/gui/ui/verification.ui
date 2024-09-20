@@ -20,16 +20,16 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>80</x>
       <y>40</y>
-      <width>441</width>
+      <width>841</width>
       <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Trebuchet MS</family>
-      <pointsize>26</pointsize>
+      <pointsize>36</pointsize>
       <bold>true</bold>
      </font>
     </property>
@@ -76,37 +76,40 @@
    <widget class="QLineEdit" name="code">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>350</x>
       <y>240</y>
-      <width>281</width>
-      <height>41</height>
+      <width>301</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Verification code</string>
     </property>
    </widget>
    <widget class="QLabel" name="code_label">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>200</y>
-      <width>141</width>
+      <x>360</x>
+      <y>210</y>
+      <width>211</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Verification Code&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Verification Code:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="back_button">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>40</y>
+      <x>870</x>
+      <y>30</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -127,10 +130,10 @@
    <widget class="QPushButton" name="verify_button">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>310</x>
       <y>380</y>
-      <width>161</width>
-      <height>41</height>
+      <width>171</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -154,8 +157,8 @@
      <rect>
       <x>510</x>
       <y>380</y>
-      <width>161</width>
-      <height>41</height>
+      <width>171</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -172,22 +175,6 @@
     </property>
    </widget>
    <widget class="QLabel" name="message">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>110</y>
-      <width>1001</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="error_message">
     <property name="geometry">
      <rect>
       <x>0</x>

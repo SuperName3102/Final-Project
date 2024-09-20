@@ -7,11 +7,17 @@ QPushButton{
     font-size: 18px;
     color: #ffffff;
     padding: 1px 3px;
-    border-radius: 20px;
-    border-style: none;
-    letter-spacing: 2px;
+    border-radius: 15px;
+    border:1px solid rgb(208, 173, 173);
     background-color: #ff6537;
     opacity: 0.8;
+}
+
+QPushButton:hover {
+    background-color: #ff4d00; 
+}
+QPushButton:pressed {
+    background-color: #891900;
 }
 
 
@@ -21,7 +27,15 @@ QTextEdit, QLineEdit {
     border-radius: 7px;
     background-color: #6e1a00;
     outline: none;
-    border-bottom: 0.1rem solid #af64f5;
+    border-bottom: 1px solid #ff6537;
+    padding:0 8px 0 8px;
+}
+QTextEdit:hover, QLineEdit:hover{
+    border:1px solid #ff6537;
+}
+
+QTextEdit:focus, QLineEdit:focus{
+    border:2px solid #ff6537;
 }
 
 QMenu {

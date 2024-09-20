@@ -10,23 +10,35 @@
     <height>550</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>IdanCloud</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>5</horstretch>
+     <verstretch>5</verstretch>
+    </sizepolicy>
+   </property>
    <widget class="QLabel" name="main_text">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>20</y>
-      <width>441</width>
-      <height>51</height>
+      <x>210</x>
+      <y>40</y>
+      <width>581</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Trebuchet MS</family>
-      <pointsize>26</pointsize>
+      <pointsize>36</pointsize>
       <bold>true</bold>
      </font>
     </property>
@@ -50,7 +62,7 @@
 }</string>
     </property>
     <property name="text">
-     <string>Welcome Back!</string>
+     <string>Sign In</string>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -62,9 +74,9 @@
    <widget class="QPushButton" name="login_button">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>390</x>
       <y>410</y>
-      <width>121</width>
+      <width>221</width>
       <height>41</height>
      </rect>
     </property>
@@ -72,7 +84,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Login</string>
+     <string>Sign In</string>
     </property>
     <property name="iconSize">
      <size>
@@ -93,33 +105,33 @@
    <widget class="QLabel" name="passwor_label">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>241</y>
-      <width>81</width>
+      <x>360</x>
+      <y>231</y>
+      <width>181</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Password:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="user_label">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>120</y>
-      <width>161</width>
+      <x>360</x>
+      <y>130</y>
+      <width>221</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Username/Email&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Username/Email:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="back_button">
@@ -147,23 +159,30 @@
    <widget class="QLineEdit" name="password">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>271</y>
-      <width>281</width>
-      <height>41</height>
+      <x>350</x>
+      <y>261</y>
+      <width>301</width>
+      <height>51</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>
+</string>
+    </property>
     <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Password</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="password_toggle">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>280</y>
-      <width>31</width>
-      <height>21</height>
+      <x>660</x>
+      <y>270</y>
+      <width>21</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -173,22 +192,9 @@
    <widget class="QLineEdit" name="user">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>150</y>
-      <width>281</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="error_message">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>340</y>
-      <width>981</width>
+      <x>350</x>
+      <y>160</y>
+      <width>301</width>
       <height>51</height>
      </rect>
     </property>
@@ -196,7 +202,73 @@
      <string/>
     </property>
     <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Email/Username</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="message">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>981</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="forgot_password_button">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>320</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Forgot password?</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="signup_button">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>460</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Create Account</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

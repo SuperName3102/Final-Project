@@ -10,6 +10,7 @@ import bcrypt
 from datetime import datetime, timedelta
 import secrets
 from pathlib import Path
+import time
 
 
 pepper_file = f"{os.path.dirname(os.path.abspath(__file__))}\\pepper.txt"
@@ -221,7 +222,14 @@ def get_user_data(cred):
     return db.get_user(cred)
 
 def get_files(path):
-    return [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+    files = []
+    for f in os.listdir(path):
+        if os.path.isfile(os.path.join(path, f)):
+            file_mod_time = os.path.getmtime(os.path.join(path, f))
+            mod_time_datetime = datetime.fromtimestamp(file_mod_time)
+            last_edit = mod_time_datetime.strftime('%d/%m/%Y %H:%M')
+            files.append(f"{f}~{last_edit}~{os.path.getsize(os.path.join(path, f))}")
+    return files
 
 def get_directories(path):
     return [ f.name for f in os.scandir(path) if f.is_dir() ]

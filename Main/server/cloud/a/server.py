@@ -12,8 +12,6 @@ import threading
 import os
 import rsa
 import struct
-import shutil
-from filelock import FileLock
 
 # Announce global vars
 all_to_die = False  
@@ -21,10 +19,6 @@ len_field = 4
 sep = "|" 
 clients = {}
 chunk_size = 65536
-cloud_path = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud"
-user_icons_path = f"{os.path.dirname(os.path.abspath(__file__))}\\user icons"
-log = False
-
 
 # User handling classes
 
@@ -38,46 +32,30 @@ class Client:
         self.email = email
         self.shared_secret = shared_secret
         self.encryption = encryption
-        self.cwd = f"{cloud_path}\\{self.user}"
+        self.cwd = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud\\{self.user}"
+        
+            
 
-
-
-def save_file(save_path, size, sock, tid):
+# Files functions
+def save_file(file_name, size, sock, tid):
+    save_loc = clients[tid].cwd + "/" + file_name
     data = b''
-    lock_path = f"{save_path}.lock"
-    lock = FileLock(lock_path)
-    with lock:
-        with open(save_path, 'wb') as f:
-            while True:
-                data = recv_data(sock, tid)
-                if not data:
-                    raise Exception
-                if (data[:4] == b"FILD"):
-                    f.write(data[4:])
-                elif (data[:4] == b"FILE"):
-                    f.write(data[4:])
-                    break
-                else:
-                    raise Exception
-                data = b''
-                f.flush()
-
-def send_file_data(file_path, sock, tid):
-    size = os.path.getsize(file_path)
-    left = size % chunk_size
+    if not os.path.exists(clients[tid].cwd):
+        os.makedirs(clients[tid].cwd)
     
-    lock_path = f"{file_path}.lock"
-    lock = FileLock(lock_path)
-    with lock:
-        with open(file_path, 'rb+') as f:
-            for i in range(size//chunk_size):
-                data = f.read(chunk_size)
-                send_data(sock, tid, b"RILD" + data)
-            data = f.read(left)
-            if (data != b""):
-                send_data(sock, tid, b'RILE' + data)
-            f.flush()
-
+    f = open(save_loc, 'wb')
+    while True:
+        data = recv_data(sock, tid)
+        if not data:
+            raise Exception
+        if (data[:4] == b"FILD"):
+            f.write(data[4:])
+        elif (data[:4] == b"FILE"):
+            f.write(data[4:])
+            break
+        data = b''
+    print(f"{save_loc} File saved, size: {os.path.getsize(save_loc)}")
+    f.close()
 
 # Key exchange 
 def create_keys():
@@ -162,6 +140,7 @@ def protocol_build_reply(request, tid, sock):
     elif (code == "LOGN"):   # Client requests login
         cred = fields[1]
         password = fields[2]
+        print(fields[1:])
         if (v.is_empty(fields[1:])):
             return  f"ERRR{sep}101{sep}Cannot have an empty field"
         elif (v.check_illegal_chars(fields[1:])):
@@ -176,10 +155,10 @@ def protocol_build_reply(request, tid, sock):
                 email = user_dict["email"]
                 clients[tid].user = username
                 clients[tid].email = email
-                clients[tid].cwd = f"{cloud_path}\\{username}"
+                clients[tid].cwd = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud\\{username}"
                 reply = f"LOGS{sep}{email}{sep}{username}{sep}{password}"
         else:
-            reply = f"ERRR{sep}004{sep}Please check your password and email/username and try again."
+            reply = f"ERRR{sep}004{sep}Invalid credentials"
     
     elif (code == "SIGU"):   # Client requests signup
         email = fields[1]
@@ -193,7 +172,7 @@ def protocol_build_reply(request, tid, sock):
             return  f"ERRR{sep}102{sep}Invalid chars used"
         elif (not v.is_valid_email(email)):
             return  f"ERRR{sep}103{sep}Invalid email address"
-        elif (not v.is_valid_username(username) or username == "guest"):
+        elif (not v.is_valid_username(username)):
             return  f"ERRR{sep}104{sep}Invalid username\nUsername has to be at least 4 long and contain only chars and numbers"
         elif (not v.is_valid_password(password)):
             return  f"ERRR{sep}105{sep}Password does not meet requirements\nhas to be at least 8 long and contain at least 1 upper case and number"
@@ -233,7 +212,7 @@ def protocol_build_reply(request, tid, sock):
         email = fields[1]
         code = fields[2]
         new_password = fields[3]
-        confirm_new_password = fields[4]
+        confirm_new_password = fields[3]
         
         if (v.is_empty(fields[1:])):
             return  f"ERRR{sep}101{sep}Cannot have an empty field"
@@ -321,10 +300,7 @@ def protocol_build_reply(request, tid, sock):
         file_name = fields[2]
         size = fields[3]
         try:
-            save_loc = clients[tid].cwd + "/" + file_name
-            if not os.path.exists(clients[tid].cwd):
-                os.makedirs(clients[tid].cwd)
-            save_file(save_loc, size, sock, tid)
+            save_file(file_name, size, sock, tid)
             reply = f"FILR{sep}{file_name}{sep}was saved succefully"
         except Exception:
             print(traceback.format_exc())
@@ -349,7 +325,7 @@ def protocol_build_reply(request, tid, sock):
         else:
             new_cwd = (clients[tid].cwd + "\\" + dir)
         if (os.path.isdir(new_cwd)):
-            main_path = f"{cloud_path}\\{clients[tid].user}"
+            main_path = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud\\{clients[tid].user}"
             if (not (cr.is_subpath(main_path, new_cwd))):
                 reply = f"ERRR{sep}014{sep}Invalid directory"
             else:
@@ -358,70 +334,6 @@ def protocol_build_reply(request, tid, sock):
         else:
             reply = f"ERRR{sep}014{sep}Invalid directory"
     
-    elif (code == "DOWN"):
-        file_name = fields[1]
-        file_path = os.path.join(clients[tid].cwd, file_name)
-        if(not os.path.isfile(file_path)):
-            reply = f"ERRR{sep}015{sep}File not found"
-        else:
-            try:
-                send_file_data(file_path, sock, tid)
-                reply = f"DOWR{sep}{file_name}{sep}was downloaded"
-            except Exception:
-                reply = f"ERRR{sep}016{sep}File didnt download correctly"
-
-    elif (code == "NEWF"):
-        folder_name = fields[1]
-        folder_path = clients[tid].cwd + "\\" + folder_name
-        if (not os.path.isdir(folder_path)):
-            os.makedirs(folder_path, exist_ok=True)
-            reply = f"NEFR{sep}{folder_name}{sep}was created"
-        else:
-            reply = f"ERRR{sep}017{sep}A folder with name {folder_name} already exists"
-    
-    elif (code == "RENA"):
-        name = fields[1]
-        new_name = fields[2]
-        
-        path = clients[tid].cwd + "\\" + name
-        new_path = clients[tid].cwd + "\\" + new_name 
-        if (not os.path.isfile(path) and not os.path.isdir(path)):
-            reply = f"ERRR{sep}015{sep}File or directory not found"
-        elif (os.path.exists(new_path)):
-            reply = f"ERRR{sep}018{sep}{new_name} already exists"
-        else:
-            os.rename(path, new_path)
-            reply = f"RENR{sep}{name}{sep}{new_name}{sep}File renamed succefully"
-    
-    elif (code == "GICO"):
-        if (os.path.isfile(os.path.join(user_icons_path, clients[tid].user + ".ico"))):
-            send_file_data(os.path.join(user_icons_path, clients[tid].user + ".ico"), sock, tid)
-        else:
-            send_file_data(os.path.join(user_icons_path, "guest.ico"), sock, tid)
-        reply = f"GICR{sep}Sent use profile picture"
-    
-    elif (code == "ICOS"):
-        file_name = fields[2]
-        size = fields[3]
-        try:
-            save_path = os.path.join(user_icons_path, clients[tid].user + ".ico")
-            save_file(save_path, size, sock, tid)
-            reply = f"ICOR{sep}Profile icon was uploaded succefully"
-        except Exception:
-            print(traceback.format_exc())
-            reply = f"ERRR{sep}012{sep}File didnt upload correctly"
-    
-    elif code == 'DELF':
-        name = fields[1]
-        path = clients[tid].cwd + "\\" + name
-        if not os.path.exists(path):
-            reply = f"ERRR{sep}015{sep}File or directory not found"
-        elif os.path.isfile(path):
-            os.remove(path)
-            reply = f"DLFR{sep}{name}{sep}was deleted!"
-        elif os.path.isdir(path):
-            shutil.rmtree(path)
-            reply = f"DFFR{sep}{name}{sep}was deleted!"
     else:
         reply = f"ERRR{sep}002{sep}Code not supported"
         fields = ''
@@ -449,18 +361,17 @@ def logtcp(dir, tid, byte_data):
     """
     Loggs the recieved data to console
     """
-    if log:
-        try:
-            if (str(byte_data[0]) == "0"):
-                print("")
-        except AttributeError:
-            return
-        except Exception:
-            return
-        if dir == 'sent':
-            print(f'{tid} S LOG:Sent     >>> {byte_data}')
-        else:
-            print(f'{tid} S LOG:Recieved <<< {byte_data}')
+    try:
+        if (str(byte_data[0]) == "0"):
+            print("")
+    except AttributeError:
+        return
+    except Exception:
+        return
+    if dir == 'sent':
+        print(f'{tid} S LOG:Sent     >>> {byte_data}')
+    else:
+        print(f'{tid} S LOG:Recieved <<< {byte_data}')
 
 def send_data(sock, tid, bdata):
     """

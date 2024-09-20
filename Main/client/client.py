@@ -12,9 +12,9 @@ import struct
 import os
 
 from PyQt6 import QtWidgets, uic
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
-from PyQt6.QtGui import QIcon, QContextMenuEvent, QResizeEvent
-from PyQt6.QtCore import QSize
+from PyQt6.QtWidgets import QWidget, QMessageBox, QApplication, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
+from PyQt6.QtGui import QIcon, QContextMenuEvent
+from PyQt6.QtCore import QSize, Qt
 
 
 # Announce global vars
@@ -23,23 +23,9 @@ sep = "|"
 user = {}
 encryption = False
 chunk_size = 65536
-errors = 12
 cwd = ""
-
-error_messages = {
-    1: "General error|uknown",
-    2: "something|something",
-    3: "somthing|somrthing",
-    4: "Invalid Login|Login details not matching any user, please try again",
-    5: "Username already registered|Username already registered, please try a different one",
-    6: "Email address already registered|Email address already registered, please try a different one",
-    7: "Email address not registered|Email address not registered",
-    8: "Invalid Code|Code is not matching",
-    9: "Code time has expired|Code time has exipred, please send again",
-    10: "Account is not verified|Account is not verified, please verify",
-    11: "Account is already verified|Account is already verified",
-    12: "File upload error|File didnt upload correctly, please try again"
-}
+user_icon = f"{os.path.dirname(os.path.abspath(__file__))}/assets/user.ico"
+log = False
 
 
 # Begin gui related functions
@@ -50,13 +36,10 @@ class FileButton(QPushButton):
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.setStyleSheet("""
             QPushButton {
-                border-radius: 30px;  # Half of the width/height to make it round
-                font-size: 12px;
+                border-radius: 3px;  # Half of the width/height to make it round
+                font-size: 13px;
                 text-align: center;
                 padding: 5px;
-                word-wrap: break-word;
-                text-overflow: ellipsis;
-                overflow: hidden;
             }
         """)
 
@@ -65,173 +48,243 @@ class FileButton(QPushButton):
         action = menu.addAction("Download")
         action.triggered.connect(self.download)
         
+        action = menu.addAction("Delete")
+        action.triggered.connect(self.delete)
+        
         action = menu.addAction("Rename")
         action.triggered.connect(self.rename)
         
-        action = menu.addAction("Delete")
-        action.triggered.connect(self.delete)
         
         action = menu.addAction("Share")
         action.triggered.connect(self.share)
         
+        action = menu.addAction("New Folder")
+        action.triggered.connect(self.new_folder)
+        
         menu.exec(event.globalPos())
 
     def download(self):
-        print(self.text())
+        file_name = self.text().split(" | ")[0]
+        file_path, _ = QFileDialog.getSaveFileName(self, "Save File", file_name, "Text Files (*.txt);;All Files (*)")
+        if file_path:
+            send_data(b"DOWN|" + file_name.encode())
+            save_file(file_path)
     
     def rename(self):
-        print(self.text())
+        name = self.text().split(" | ")[0]
+        new_name = new_name_dialog("Rename", "Enter new file name:", name)
+        if new_name is not None:
+            send_data(b"RENA|" + name.encode() + b"|" + new_name.encode())
+            handle_reply()
     
     def delete(self):
-        print(self.text())
+        name = self.text().split(" | ")[0]
+        if show_confirmation_dialog("Are you sure you want to delete " + name):
+            send_data(b"DELF|" + name.encode() + b"|")
+            handle_reply()
     
     def share(self):
         print(self.text())
+    
+    def new_folder(self):
+        new_folder = new_name_dialog("New Folder", "Enter new folder name:")
+        if new_folder is not None:
+            send_data(b"NEWF|" + new_folder.encode())
+            handle_reply()
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.main_page()
-        self.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
+        if (os.path.isfile(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico")):
+            self.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
         self.layout = QVBoxLayout()
-        
+        self.setFixedSize(1000, 550)
     
     def main_page(self):
-        uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/main.ui", self)
+        try:
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/main.ui", self)
+            
+            self.signup_button.clicked.connect(self.signup_page)
+            self.login_button.clicked.connect(self.login_page)
+            self.exit_button.clicked.connect(exit_program)
+        except:
+            print(traceback.format_exc())
         
-        # Connect the button to a method
-        self.signup_button.clicked.connect(self.signup_action)
-        self.login_button.clicked.connect(self.login_page)
-        
-    def signup_action(self):
-        uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/signup.ui", self)
-        self.password.setEchoMode(QLineEdit.EchoMode.Password)
-        self.confirm_password.setEchoMode(QLineEdit.EchoMode.Password)
-        self.signup_button.clicked.connect(lambda: signup(self.email.text(), self.username.text(), self.password.text(), self.confirm_password.text()))
-        self.back_button.clicked.connect(self.main_page)
-        self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
-        self.confirm_password_toggle.clicked.connect(lambda: self.toggle_password(self.confirm_password))
+    def signup_page(self):
+        try:
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/signup.ui", self)
+            self.password.setEchoMode(QLineEdit.EchoMode.Password)
+            self.confirm_password.setEchoMode(QLineEdit.EchoMode.Password)
+            self.signup_button.clicked.connect(lambda: signup(self.email.text(), self.username.text(), self.password.text(), self.confirm_password.text()))
+            self.signup_button.setShortcut("Return")
+            self.back_button.clicked.connect(self.main_page)
+            self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
+            self.confirm_password_toggle.clicked.connect(lambda: self.toggle_password(self.confirm_password))
+            self.login_button.clicked.connect(self.login_page)
+            self.login_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
+        except:
+            print(traceback.format_exc())
         
 
     def login_page(self):
-        uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/login.ui", self)
-        
-        self.password.setEchoMode(QLineEdit.EchoMode.Password)
-        self.login_button.clicked.connect(lambda: login(self.user.text(), self.password.text()))
-        self.back_button.clicked.connect(self.main_page)
-        self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
-        
-        
+        try:
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/login.ui", self)
+            self.password.setEchoMode(QLineEdit.EchoMode.Password)
+            self.login_button.clicked.connect(lambda: login(self.user.text(), self.password.text()))
+            self.login_button.setShortcut("Return")
+            self.back_button.clicked.connect(self.main_page)
+            self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
+            self.forgot_password_button.clicked.connect(self.forgot_password)
+            self.forgot_password_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
+            
+            self.signup_button.clicked.connect(self.signup_page)
+            self.signup_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
+        except:
+            print(traceback.format_exc())
+    
+    def forgot_password(self):
+        try:
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/forgot_password.ui", self)
+            self.send_code_button.clicked.connect(lambda: reset_password(self.email.text()))
+            self.send_code_button.setShortcut("Return")
+            self.back_button.clicked.connect(self.login_page)
+        except:
+            print(traceback.format_exc())
 
     def verification_page(self, email):
-        uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/verification.ui", self)
-        self.verify_button.clicked.connect(lambda: verify(email, self.code.text()))
-        self.send_again_button.clicked.connect(lambda: send_verification(email))
-        self.back_button.clicked.connect(self.main_page)
+        try:
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/verification.ui", self)
+            self.verify_button.clicked.connect(lambda: verify(email, self.code.text()))
+            self.verify_button.setShortcut("Return")
+            self.send_again_button.clicked.connect(lambda: send_verification(email))
+            self.back_button.clicked.connect(self.main_page)
+        except:
+            print(traceback.format_exc())
         
     
     def send_verification_page(self):
-        uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/send_verification.ui", self)
-        self.send_code_button.clicked.connect(lambda: send_verification(self.email.text()))
-        self.back_button.clicked.connect(self.main_page)
+        try:
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/send_verification.ui", self)
+            self.send_code_button.clicked.connect(lambda: send_verification(self.email.text()))
+            self.send_code_button.setShortcut("Return")
+            self.back_button.clicked.connect(self.main_page)
+        except:
+            print(traceback.format_exc())
     
     
     def user_page(self):
-        files = get_cwd_files()
-        directories = get_cwd_directories()
-        
-        uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
-        
-        self.set_cwd()
-        self.draw_cwd(files, directories)
-        
-        
-        self.user_button.setText(user["username"])
-        self.main_text.setText(f"Welcome {user["username"]}")
-        
-        self.user_button.clicked.connect(lambda: self.manage_account())
-        self.logout_button.clicked.connect(logout)
-        self.upload_button.clicked.connect(lambda: self.file_dialog())
+        try:
+            files = get_cwd_files()
+            directories = get_cwd_directories()
+            
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
+            
+            self.set_cwd()
+            self.draw_cwd(files, directories)
+
+            self.main_text.setText(f"Welcome {user["username"]}")
+            
+            self.user_button.clicked.connect(lambda: self.manage_account())
+            self.logout_button.clicked.connect(logout)
+            self.upload_button.clicked.connect(lambda: self.file_dialog())
+            self.user_button.setFixedSize(50, 50)
+            self.user_button.setIconSize(QSize(40, 40))
+            self.user_button.setStyleSheet("padding:0px;border-radius:5px;")
+            try:
+                self.user_button.setIcon((QIcon(user_icon)))
+            except:
+                pass
+        except:
+            print(traceback.format_exc())
 
 
     def draw_cwd(self, files, directories):
-        central_widget = self.centralWidget()
+        try:
+            central_widget = self.centralWidget()
 
-        outer_layout = QVBoxLayout()
-        outer_layout.addStretch(1)
-        scroll = QScrollArea()
-        scroll.setWidgetResizable(True)
+            outer_layout = QVBoxLayout()
+            outer_layout.addStretch(1)
+            scroll = QScrollArea()
+            scroll.setWidgetResizable(True)
 
-        scroll_container_widget = QWidget()
-        scroll_layout = QGridLayout()
-        scroll_layout.setSpacing(5)
-        
+            scroll_container_widget = QWidget()
+            scroll_layout = QGridLayout()
+            scroll_layout.setSpacing(5)
+            
 
-        for i, file_name in enumerate(files):
+            for i, file in enumerate(files):
+                file_name = file.split("~")[0]
+                size = format_file_size(int(file.split("~")[-1]))
+                file = " | ".join(file.split("~")[:-1])
+                button = FileButton(f"{file} | {size}")
+                button.setStyleSheet("background-color:dimgrey;border:1px solid darkgrey;font-size:14px;border-radius: 3px;")
+                button.clicked.connect(lambda checked, b=button: b.download())
+                scroll_layout.addWidget(button)
 
-            button = FileButton(file_name)
-            button.setStyleSheet("background-color:darkgrey;font-size:12px;")
-            button.clicked.connect(lambda checked, f=file_name: self.file_button_clicked(f))
-            scroll_layout.addWidget(button)
+            for index, directory in enumerate(directories):
+                button = FileButton(directory)
+                button.setStyleSheet("background-color:peru;font-size:14px;border-radius: 3px;border:1px solid peachpuff;")
+                button.clicked.connect(lambda checked, d=directory: move_dir(d))
+                scroll_layout.addWidget(button)
 
-        for index, directory in enumerate(directories):
-            button = FileButton(directory)
-            button.setStyleSheet("background-color:brown;font-size:12px;")
-            button.clicked.connect(lambda checked, d=directory: move_dir(d))
-            scroll_layout.addWidget(button)
+            if(directories == [] and files == []):
+                button = FileButton("No files or folders in this directory")
+                button.setStyleSheet("background-color:dimgrey;font-size:14px;border-radius: 3px;border:1px solid darkgrey;")
+                scroll_layout.addWidget(button)
 
-        button = FileButton("Back")
-        button.setStyleSheet("background-color:green;font-size:12px;")
-        button.clicked.connect(lambda: move_dir("/.."))
-        scroll_layout.addWidget(button)
+            if(cwd != user["username"]):
+                button = FileButton("Back")
+                button.setStyleSheet("background-color:green;font-size:14px;border-radius: 3px;border:1px solid lightgreen;")
+                button.clicked.connect(lambda: move_dir("/.."))
+                scroll_layout.addWidget(button)
+            
+            scroll_container_widget.setLayout(scroll_layout)
 
-        scroll_container_widget.setLayout(scroll_layout)
+            scroll.setWidget(scroll_container_widget)
+            scroll.setFixedSize(QSize(900, 340))
+            spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+            outer_layout.addItem(spacer)
 
-        scroll.setWidget(scroll_container_widget)
-        scroll.setFixedSize(QSize(900, 340))
-        spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-        outer_layout.addItem(spacer)
+            center_layout = QHBoxLayout()
+            center_layout.addStretch(1)  # Add stretchable space on the left
+            center_layout.addWidget(scroll)  # Add the scroll area
+            center_layout.addStretch(1)  # Add stretchable space on the right
 
-        center_layout = QHBoxLayout()
-        center_layout.addStretch(1)  # Add stretchable space on the left
-        center_layout.addWidget(scroll)  # Add the scroll area
-        center_layout.addStretch(1)  # Add stretchable space on the right
-
-        # Add the centered scroll area layout to the outer layout
-        outer_layout.addLayout(center_layout)
-        outer_layout.addStretch(1)
-        central_widget.setLayout(outer_layout)
+            # Add the centered scroll area layout to the outer layout
+            outer_layout.addLayout(center_layout)
+            outer_layout.addStretch(1)
+            central_widget.setLayout(outer_layout)
+        except:
+            print(traceback.format_exc())
     
     
-    def file_button_clicked(self, file_name):
-        """Handle file button clicks."""
-        print(f"File clicked: {file_name}")
-    
-    
-    def manage_account(self, redirect = False):
-        uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui", self)
-        
-        self.forgot_password_button.clicked.connect(lambda: self.recovery(user["email"]))
-        self.delete_account_button.clicked.connect(lambda: delete_user(user["email"]))
-        
-        self.back_button.clicked.connect(self.user_page)
-        if (redirect):
-            self.user_page()
+    def manage_account(self):
+        try:
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui", self)
+            
+            self.forgot_password_button.clicked.connect(lambda: reset_password(user["email"]))
+            self.delete_account_button.clicked.connect(lambda: delete_user(user["email"]))
+            self.upload_icon_button.clicked.connect(lambda: upload_icon())
+            self.back_button.clicked.connect(self.user_page)
+        except:
+            print(traceback.format_exc())
     
     def recovery(self, email):
-        reset_password(email)
-        
-        uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/recovery.ui", self)
-        self.password.setEchoMode(QLineEdit.EchoMode.Password)
-        self.confirm_password.setEchoMode(QLineEdit.EchoMode.Password)
-        
-        self.back_button.clicked.connect(self.manage_account)
-        self.reset_button.clicked.connect(lambda: password_recovery(email, self.code.text(), self.password.text(), self.confirm_password.text()))
-        
-        self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
-        self.confirm_password_toggle.clicked.connect(lambda: self.toggle_password(self.confirm_password))
-        self.send_again_button.clicked.connect(lambda: reset_password(email))
-        
+        try:
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/recovery.ui", self)
+            self.password.setEchoMode(QLineEdit.EchoMode.Password)
+            self.confirm_password.setEchoMode(QLineEdit.EchoMode.Password)
+            
+            self.back_button.clicked.connect(self.manage_account)
+            self.reset_button.clicked.connect(lambda: password_recovery(email, self.code.text(), self.password.text(), self.confirm_password.text()))
+            self.reset_button.setShortcut("Return")
+            
+            self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
+            self.confirm_password_toggle.clicked.connect(lambda: self.toggle_password(self.confirm_password))
+            self.send_again_button.clicked.connect(lambda: reset_password(email))
+        except:
+            print(traceback.format_exc())
     
     def toggle_password(self, text):
         if text.echoMode()==QLineEdit.EchoMode.Normal:
@@ -241,19 +294,19 @@ class MainWindow(QtWidgets.QMainWindow):
     
     
     def file_dialog(self):
-        file_name, _ = QFileDialog.getOpenFileName(self, "Open File", "", "All Files (*);;Text Files (*.txt)")
+        try:
+            file_path, _ = QFileDialog.getOpenFileName(self, "Open File", "", "All Files (*);;Text Files (*.txt)")
 
-        if file_name:
-            send_file_data(file_name, file_name.split("/")[-1])
+            if file_path:
+                file_name = file_path.split("/")[-1]
+                size = os.path.getsize(file_path)
+                start_string = b'FILS|' + file_path.encode() + b'|' + file_name.encode() + b'|' + str(size).encode()
+                send_data(start_string)
+                send_file(file_path)
+        except:
+            print(traceback.format_exc())
     
     def set_error_message(self, msg):
-        try:
-            if (hasattr(self, "error_message")):
-                self.error_message.setStyleSheet("color: red; font-size: 15px;")
-                self.error_message.setText(msg)
-        except Exception:
-            pass
-        
         try:
             if (hasattr(self, "message")):
                 self.message.setStyleSheet("color: red; font-size: 15px;")
@@ -271,34 +324,128 @@ class MainWindow(QtWidgets.QMainWindow):
             self.cwd.setStyleSheet("color: yellow; font-size: 17px;")
             self.cwd.setText(f"CWD: {cwd}")
 
+def get_new_folder_name(text=""):
+    # Create a QApplication instance
+    app = QApplication.instance() 
+    app.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
 
+    dialog = QInputDialog()
+    folder_name, ok = dialog.getText(None, "New Folder", "Enter new folder name:")
+
+    # Check if the user clicked OK and returned valid text
+    if ok and folder_name:
+        return folder_name
+    return None
+
+def new_name_dialog(title, label, text=""):
+    # Create a QApplication instance
+    app = QApplication.instance() 
+    app.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
+
+    dialog = QInputDialog()
+    folder_name, ok = dialog.getText(None, title, label, text=text)
+
+    # Check if the user clicked OK and returned valid text
+    if ok and folder_name:
+        return folder_name
+    return None
+
+def show_confirmation_dialog(message):
+    # Create a QMessageBox
+    msg_box = QMessageBox()
+    msg_box.setIcon(QMessageBox.Icon.Question)
+    msg_box.setWindowTitle("Confirmation")
+    msg_box.setText(message)
+
+    msg_box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+    msg_box.setDefaultButton(QMessageBox.StandardButton.Yes)
+    result = msg_box.exec()
+
+    if result == QMessageBox.StandardButton.Yes:
+        return True
+    else:
+        return False
+
+
+def format_file_size(size):
+    if size < 10_000:  # Less than 10,000 bytes
+        return f"{size:,} B"
+    elif size < 10_000_000:  # Between 10,001 and 10,000,000 bytes (in KB)
+        return f"{size / 1_000:,.2f} KB"
+    elif size < 10_000_000_001:  # Between 10,000,001 and 10,000,000,000 bytes (in MB)
+        return f"{size / 1_000_000:,.2f} MB"
+    elif size < 10_000_000_000_001:  # Between 10,000,000,001 and 10,000,000,000,000 bytes (in GB)
+        return f"{size / 1_000_000_000:,.2f} GB"
+    else:  # Above 10,000,000,000,001 bytes (in TB)
+        return f"{size / 1_000_000_000_000:,.2f} TB"
 
 
 # Files functions
-def send_file_data(copy_loc, save_loc):
-
-    if(not os.path.isfile(copy_loc)):
+def send_file(file_path):
+    if(not os.path.isfile(file_path)):
         window.set_error_message(f"File path was not found")
         return
-
-    size = os.path.getsize(copy_loc)
+    size = os.path.getsize(file_path)
     left = size % chunk_size
-    start_string = b'FILS|' + copy_loc.encode() + b'|' + save_loc.encode() + b'|' + str(size).encode()
-    send_data(start_string)
-    f = open(copy_loc, 'rb')
-    for i in range(size//chunk_size):
-        data = f.read(chunk_size)
-        send_data(b"FILD" + data)
-    data = f.read(left)
-    if (data != b""):
-        send_data(b'FILE' + data)
-    f.close()
-    handle_reply()
+    try:
+        with open(file_path, 'rb') as f:
+            for i in range(size//chunk_size):
+                data = f.read(chunk_size)
+                send_data(b"FILD" + data)
+            data = f.read(left)
+            if (data != b""):
+                send_data(b'FILE' + data)
+    except:
+        print(traceback.format_exc())
+    finally:
+        handle_reply()
 
+
+def save_file(save_loc):
+    try:
+        if not os.path.exists(os.path.dirname(save_loc)):
+            os.makedirs(os.path.dirname(save_loc))
+        data = b''
+        with open(save_loc, 'wb') as f:
+            while True:
+                data = recv_data()
+                if not data:
+                    raise Exception
+                if (data[:4] == b"RILD"):
+                    f.write(data[4:])
+                elif (data[:4] == b"RILE"):
+                    f.write(data[4:])
+                    break
+                else:
+                    print(protocol_parse_reply(data))
+                    return
+                data = b''
+    except:
+        print(traceback.format_exc())
+    finally:
+        handle_reply()
 
 def move_dir(new_dir):
     send_data(f"MOVD{sep}{new_dir}".encode())
     handle_reply()
+
+
+def get_user_icon():
+    send_data(b"GICO")
+    save_file(user_icon)
+
+def upload_icon():
+    try:
+        file_path, _ = QFileDialog.getOpenFileName(window, "Open File", "", "Icon Files (*.ico);")
+
+        if file_path:
+            file_name = file_path.split("/")[-1]
+            size = os.path.getsize(file_path)
+            start_string = b'ICOS|' + file_path.encode() + b'|' + file_name.encode() + b'|' + str(size).encode()
+            send_data(start_string)
+            send_file(file_path)
+    except:
+        print(traceback.format_exc())
 
 
 
@@ -309,11 +456,15 @@ def build_req_string(code, values = []):
     Builds a request string
     Gets string code and list of string values
     """
-    send_string = code
-    for value in values:
-        send_string += sep
-        send_string += value
-    return send_string.encode()
+    try:
+        send_string = code
+        for value in values:
+            send_string += sep
+            send_string += value
+        return send_string.encode()
+    except:
+        print(traceback.format_exc())
+        return b""
 
 def login(cred, password):
     """
@@ -385,11 +536,33 @@ def delete_user(email):
     """
     Send delete user request to server
     """
-    if(askyesno("Double Check", "Are you sure you want to delete your user?")):
+    if(confirm_account_deletion(email)):
         items = [email]
         send_string = build_req_string("DELU", items)
         send_data(send_string)
         handle_reply()
+
+def confirm_account_deletion(email):
+    # Create a QApplication instance if needed
+    app = QApplication.instance()
+    if app is None:
+        app = QApplication([])
+
+    app.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
+    while True:
+        # Create input dialog asking for email confirmation
+        entered_email, ok = QInputDialog.getText(None, "Account delete confirmation", "Enter your email to confirm:")
+        if not ok:
+            return False
+        if entered_email == email:
+            return True
+        else:
+            error_msg = QMessageBox()
+            error_msg.setIcon(QMessageBox.Icon.Warning)
+            error_msg.setWindowTitle("Error")
+            error_msg.setText("The email you entered does not match account email.")
+            error_msg.setStandardButtons(QMessageBox.StandardButton.Ok)
+            error_msg.exec()
 
 def exit_program():
     """
@@ -423,6 +596,7 @@ def get_cwd_directories():
     except Exception:
         print(traceback.format_exc())
         return []
+
 
 
 # Key exchange
@@ -483,13 +657,9 @@ def protocol_parse_reply(reply):
         code = fields[0]
         if code == 'ERRR':   # If server returned error show to user the error
             err_code = int(fields[1])
-            if (err_code not in error_messages):
-                window.set_error_message(fields[2])
-            else:
-                error = error_messages[err_code].split("|")
-                window.set_error_message(error[0] + " " + error[1])
-                if(err_code == 10):
-                    window.send_verification_page()
+            window.set_error_message(fields[2])
+            if(err_code == 10):
+                window.send_verification_page()
             
             to_show = 'Server return an error: ' + fields[1] + ' ' + fields[2]
         
@@ -506,9 +676,10 @@ def protocol_parse_reply(reply):
             user["email"] = email
             user["username"] = username
             user["password"] = password
-            
+            get_user_icon()
             cwd = username
             window.user_page()
+            window.set_message("Login was succesfull!")
             
         
         elif code == 'SIGS':   # Signup was performed
@@ -522,7 +693,9 @@ def protocol_parse_reply(reply):
             
         
         elif code == 'FOPR':   # Recovery mail sent
-            to_show = f'Recovery email sent to: {fields[1]}'
+            to_show = f'Password reset code was sent to {fields[1]}'
+            window.recovery(fields[1])
+            window.set_message(to_show)
         
         elif code == 'PASS':   # Password was reset
             new_pwd = fields[2]
@@ -533,11 +706,13 @@ def protocol_parse_reply(reply):
         elif code == 'LUGR':   # Logout was performed
             to_show = f'Logout succesfull'
             window.main_page()
+            window.set_message(to_show)
         
         elif code == 'VERS':   # Account verification mail sent
             email = fields[1]
             to_show = f'Verification sent to email {email}'
             window.verification_page(email)
+            window.set_message(f'Verification email was sent to {email}')
         
         elif code == 'VERR':   # Verification succeeded
             username = fields[1]
@@ -550,6 +725,7 @@ def protocol_parse_reply(reply):
             username = fields[1]
             to_show = f'User {username} was deleted'
             window.main_page()
+            window.set_message(to_show)
         
         elif code == 'FILR':
             to_show = f'File {fields[1]} was uploaded'
@@ -561,6 +737,40 @@ def protocol_parse_reply(reply):
             to_show = f'Directory {fields[1]} was moved into'
             cwd = fields[1]
             window.user_page()
+        
+        elif code == 'DOWR':
+            to_show = f'File {fields[1]} was downloaded'
+            window.set_message(to_show)
+        
+        elif code == 'NEFR':
+            to_show = f'Folder {fields[1]} was created'
+            window.user_page()
+            window.set_message(to_show)
+        
+        elif code == 'RENR':
+            to_show = f'File/Folder {fields[1]} was renamed to {fields[2]}'
+            window.user_page()
+            window.set_message(to_show)
+        
+        elif code == 'GICR':
+            to_show = "Profile picture was recieved"
+        
+        elif code == 'ICOR':
+            to_show = "Profile icon was uploaded succefully!"
+            get_user_icon()
+            window.set_message(to_show)
+        
+        elif code == 'DLFR':
+            file_name = fields[1]
+            to_show = f"File {file_name} was deleted!"
+            window.user_page()
+            window.set_message(to_show)
+        
+        elif code == 'DFFR':
+            folder_name = fields[1]
+            to_show = f"Folder {folder_name} was deleted!"
+            window.user_page()
+            window.set_message(to_show)
     
     except Exception as e:   # Error
         print('Server replay bad format ' + str(e))
@@ -602,16 +812,16 @@ def logtcp(dir, byte_data):
     """
     Loggs the recieved data to console
     """
-    try:
-        if (str(byte_data[0]) == "0"):
-            print("")
-    except AttributeError:
-        return
-    if dir == 'sent':   # Sen/recieved labels
-        print(f'C LOG:Sent     >>>{byte_data}')
-    else:
-        print(f'C LOG:Recieved <<<{byte_data}')
-        
+    if log:
+        try:
+            if (str(byte_data[0]) == "0"):
+                print("")
+        except AttributeError:
+            return
+        if dir == 'sent':   # Sen/recieved labels
+            print(f'C LOG:Sent     >>>{byte_data}')
+        else:
+            print(f'C LOG:Recieved <<<{byte_data}')
 
 
 def send_data(bdata):
@@ -663,6 +873,7 @@ def recv_data():
         if(encryption): # If encryption is enabled decrypt and log encrypted
             logtcp('recv', b_len + msg)   # Log encrypted data
             msg = encrypting.decrypt(msg, shared_secret)
+            logtcp('recv', bytes(msg_len) + msg)
         
         return msg
     

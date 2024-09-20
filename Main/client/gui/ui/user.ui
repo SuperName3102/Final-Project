@@ -30,16 +30,16 @@
    <widget class="QLabel" name="main_text">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>230</x>
       <y>20</y>
-      <width>421</width>
+      <width>541</width>
       <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Trebuchet MS</family>
-      <pointsize>26</pointsize>
+      <pointsize>36</pointsize>
       <bold>true</bold>
      </font>
     </property>
@@ -75,8 +75,8 @@
    <widget class="QPushButton" name="logout_button">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>40</y>
+      <x>870</x>
+      <y>30</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -97,9 +97,9 @@
    <widget class="QPushButton" name="upload_button">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>390</x>
       <y>481</y>
-      <width>141</width>
+      <width>221</width>
       <height>41</height>
      </rect>
     </property>
@@ -123,9 +123,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>440</y>
+      <y>450</y>
       <width>1001</width>
-      <height>31</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
