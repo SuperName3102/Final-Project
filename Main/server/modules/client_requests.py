@@ -1,6 +1,8 @@
 # 2024 © Idan Hazay
 # Import libraries
+
 from . import database_handling as db
+
 import random
 from email.message import EmailMessage
 import ssl
@@ -10,7 +12,6 @@ import bcrypt
 from datetime import datetime, timedelta
 import secrets
 from pathlib import Path
-import time
 
 
 pepper_file = f"{os.path.dirname(os.path.abspath(__file__))}\\pepper.txt"

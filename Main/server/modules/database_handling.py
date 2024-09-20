@@ -1,4 +1,5 @@
 # 2024 © Idan Hazay
+
 # Import libraries
 import os
 import sqlite3

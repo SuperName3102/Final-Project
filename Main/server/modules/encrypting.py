@@ -1,5 +1,6 @@
 # 2024 © Idan Hazay
 # Import libraries
+
 import hashlib
 from Crypto import Random
 from Crypto.Cipher import AES

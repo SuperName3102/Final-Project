@@ -2,11 +2,12 @@
 # Import libraries
 
 from modules import encrypting
+from modules.dialogs import *
+from modules.helper import *
 
 import socket
 import sys
 import traceback
-from tkinter.messagebox import askyesno
 import rsa
 import struct
 import os
@@ -14,12 +15,11 @@ import os
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QMessageBox, QApplication, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
 from PyQt6.QtGui import QIcon, QContextMenuEvent
-from PyQt6.QtCore import QSize, Qt
+from PyQt6.QtCore import QSize
 
 
 # Announce global vars
 len_field = 4    
-sep = "|"
 user = {}
 encryption = False
 chunk_size = 65536
@@ -53,8 +53,7 @@ class FileButton(QPushButton):
         
         action = menu.addAction("Rename")
         action.triggered.connect(self.rename)
-        
-        
+                
         action = menu.addAction("Share")
         action.triggered.connect(self.share)
         
@@ -324,60 +323,6 @@ class MainWindow(QtWidgets.QMainWindow):
             self.cwd.setStyleSheet("color: yellow; font-size: 17px;")
             self.cwd.setText(f"CWD: {cwd}")
 
-def get_new_folder_name(text=""):
-    # Create a QApplication instance
-    app = QApplication.instance() 
-    app.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
-
-    dialog = QInputDialog()
-    folder_name, ok = dialog.getText(None, "New Folder", "Enter new folder name:")
-
-    # Check if the user clicked OK and returned valid text
-    if ok and folder_name:
-        return folder_name
-    return None
-
-def new_name_dialog(title, label, text=""):
-    # Create a QApplication instance
-    app = QApplication.instance() 
-    app.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
-
-    dialog = QInputDialog()
-    folder_name, ok = dialog.getText(None, title, label, text=text)
-
-    # Check if the user clicked OK and returned valid text
-    if ok and folder_name:
-        return folder_name
-    return None
-
-def show_confirmation_dialog(message):
-    # Create a QMessageBox
-    msg_box = QMessageBox()
-    msg_box.setIcon(QMessageBox.Icon.Question)
-    msg_box.setWindowTitle("Confirmation")
-    msg_box.setText(message)
-
-    msg_box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-    msg_box.setDefaultButton(QMessageBox.StandardButton.Yes)
-    result = msg_box.exec()
-
-    if result == QMessageBox.StandardButton.Yes:
-        return True
-    else:
-        return False
-
-
-def format_file_size(size):
-    if size < 10_000:  # Less than 10,000 bytes
-        return f"{size:,} B"
-    elif size < 10_000_000:  # Between 10,001 and 10,000,000 bytes (in KB)
-        return f"{size / 1_000:,.2f} KB"
-    elif size < 10_000_000_001:  # Between 10,000,001 and 10,000,000,000 bytes (in MB)
-        return f"{size / 1_000_000:,.2f} MB"
-    elif size < 10_000_000_000_001:  # Between 10,000,000,001 and 10,000,000,000,000 bytes (in GB)
-        return f"{size / 1_000_000_000:,.2f} GB"
-    else:  # Above 10,000,000,000,001 bytes (in TB)
-        return f"{size / 1_000_000_000_000:,.2f} TB"
 
 
 # Files functions
@@ -417,7 +362,7 @@ def save_file(save_loc):
                     f.write(data[4:])
                     break
                 else:
-                    print(protocol_parse_reply(data))
+                    protocol_parse_reply(data)
                     return
                 data = b''
     except:
@@ -426,7 +371,7 @@ def save_file(save_loc):
         handle_reply()
 
 def move_dir(new_dir):
-    send_data(f"MOVD{sep}{new_dir}".encode())
+    send_data(f"MOVD|{new_dir}".encode())
     handle_reply()
 
 
@@ -451,20 +396,6 @@ def upload_icon():
 
 # Begin server requests related functions
 
-def build_req_string(code, values = []):
-    """
-    Builds a request string
-    Gets string code and list of string values
-    """
-    try:
-        send_string = code
-        for value in values:
-            send_string += sep
-            send_string += value
-        return send_string.encode()
-    except:
-        print(traceback.format_exc())
-        return b""
 
 def login(cred, password):
     """
@@ -652,8 +583,10 @@ def protocol_parse_reply(reply):
     global cwd
     try:
         to_show = 'Invalid reply from server'
+        if reply == None:
+            return None
         reply = reply.decode()   # Parse the reply and aplit it according to the protocol seperator
-        fields = reply.split(sep)
+        fields = reply.split("|")
         code = fields[0]
         if code == 'ERRR':   # If server returned error show to user the error
             err_code = int(fields[1])
@@ -791,7 +724,7 @@ def handle_reply():
             print('\n==========================================================')
             print(f'  SERVER Reply: {to_show}')
             print('==========================================================')
-        if to_show == "Server acknowledged the exit message":   # If exit request succeded, dissconnect
+        if to_show == "Server acknowledged the exit message" or to_show == None:   # If exit request succeded, dissconnect
             print('Will exit ...')
             sock.close()
             print("Bye...")
@@ -844,7 +777,11 @@ def send_data(bdata):
         to_send = data_len + bdata
         logtcp('sent', to_send)
     
-    sock.send(to_send)
+    try:
+        sock.send(to_send)
+    except ConnectionResetError:
+        pass
+        
 
 def recv_data():
     """
@@ -876,7 +813,8 @@ def recv_data():
             logtcp('recv', bytes(msg_len) + msg)
         
         return msg
-    
+    except ConnectionResetError:
+        return None
     except Exception as err:
         print(traceback.format_exc())
 
@@ -921,4 +859,8 @@ def main(addr):
         print(traceback.format_exc())
 
 if __name__ == "__main__":   # Run main
-    main(("127.0.0.1", 31026))
+    ip = "127.0.0.1"
+    if len(sys.argv) == 2:
+        ip = sys.argv[1]
+    
+    main((ip, 31026))

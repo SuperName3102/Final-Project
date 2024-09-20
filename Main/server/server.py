@@ -1,9 +1,10 @@
 # 2024 © Idan Hazay
 # Import libraries
+
 from modules import client_requests as cr
 from modules import encrypting
 from modules import validity as v
-
+from modules.errors import Errors
 
 import socket
 import traceback
@@ -26,16 +27,19 @@ user_icons_path = f"{os.path.dirname(os.path.abspath(__file__))}\\user icons"
 log = False
 
 
+
 # User handling classes
 
 class Client:
     """
     Client class for handling a client
     """
-    def __init__(self, id, user, email, shared_secret, encryption):
+    def __init__(self, id, user, email, subscription_level, admin_level, shared_secret, encryption):
         self.id = id
         self.user = user
         self.email = email
+        self.subscription_level = subscription_level
+        self.admin_level = admin_level
         self.shared_secret = shared_secret
         self.encryption = encryption
         self.cwd = f"{cloud_path}\\{self.user}"
@@ -150,8 +154,10 @@ def protocol_build_reply(request, tid, sock):
     Returning the reply to the client
     """
     global clients
+    if request is None:
+        return None
     fields = request.decode()   # Parse the reply and aplit it according to the protocol seperator
-    fields = fields.split(sep)
+    fields = fields.split("|")
     code = fields[0]
 
     # Checking each indevidual code
@@ -163,13 +169,13 @@ def protocol_build_reply(request, tid, sock):
         cred = fields[1]
         password = fields[2]
         if (v.is_empty(fields[1:])):
-            return  f"ERRR{sep}101{sep}Cannot have an empty field"
+            return  f"ERRR|101|Cannot have an empty field"
         elif (v.check_illegal_chars(fields[1:])):
-            return  f"ERRR{sep}102{sep}Invalid chars used"
+            return  f"ERRR|102|Invalid chars used"
 
         if (cr.login_validation(cred, password)):
             if(not cr.verified(cred)):
-                reply = f"ERRR{sep}010{sep}User not verified"
+                reply = Errors.NOT_VERIFIED.value
             else:
                 user_dict = cr.get_user_data(cred)
                 username = user_dict["username"]
@@ -177,9 +183,11 @@ def protocol_build_reply(request, tid, sock):
                 clients[tid].user = username
                 clients[tid].email = email
                 clients[tid].cwd = f"{cloud_path}\\{username}"
-                reply = f"LOGS{sep}{email}{sep}{username}{sep}{password}"
+                clients[tid].subscription_level = user_dict["subscription_level"]
+                clients[tid].admin_level = user_dict["admin_level"]
+                reply = f"LOGS|{email}|{username}|{password}"
         else:
-            reply = f"ERRR{sep}004{sep}Please check your password and email/username and try again."
+            reply = Errors.LOGIN_DETAILS.value
     
     elif (code == "SIGU"):   # Client requests signup
         email = fields[1]
@@ -188,46 +196,46 @@ def protocol_build_reply(request, tid, sock):
         confirm_password = fields[4]
         
         if (v.is_empty(fields[1:])):
-            return  f"ERRR{sep}101{sep}Cannot have an empty field"
+            return  f"ERRR|101|Cannot have an empty field"
         elif (v.check_illegal_chars(fields[1:])):
-            return  f"ERRR{sep}102{sep}Invalid chars used"
+            return  f"ERRR|102|Invalid chars used"
         elif (not v.is_valid_email(email)):
-            return  f"ERRR{sep}103{sep}Invalid email address"
+            return  f"ERRR|103|Invalid email address"
         elif (not v.is_valid_username(username) or username == "guest"):
-            return  f"ERRR{sep}104{sep}Invalid username\nUsername has to be at least 4 long and contain only chars and numbers"
+            return  f"ERRR|104|Invalid username\nUsername has to be at least 4 long and contain only chars and numbers"
         elif (not v.is_valid_password(password)):
-            return  f"ERRR{sep}105{sep}Password does not meet requirements\nhas to be at least 8 long and contain at least 1 upper case and number"
+            return  f"ERRR|105|Password does not meet requirements\nhas to be at least 8 long and contain at least 1 upper case and number"
         elif (password != confirm_password):
-            return  f"ERRR{sep}106{sep}Passwords do not match"
+            return  f"ERRR|106|Passwords do not match"
         
         
         if (cr.user_exists(username)):
-            reply = f"ERRR{sep}005{sep}Username already registered"
+            reply = Errors.USER_REGISTERED.value
         elif(cr.email_registered(email)):
-            reply = f"ERRR{sep}006{sep}Email address already registered"
+            reply = Errors.EMAIL_REGISTERED.value
         else:
             user_details = [email, username, password]
             cr.signup_user(user_details)
             cr.send_verification(email)
-            reply = f"SIGS{sep}{email}{sep}{username}{sep}{password}"
+            reply = f"SIGS|{email}|{username}|{password}"
     
     elif (code == "FOPS"):   # Client requests password reset code
         email = fields[1]
         if (v.is_empty(fields[1:])):
-            return  f"ERRR{sep}101{sep}Cannot have an empty field"
+            return  f"ERRR|101|Cannot have an empty field"
         elif (v.check_illegal_chars(fields[1:])):
-            return  f"ERRR{sep}102{sep}Invalid chars used"
+            return  f"ERRR|102|Invalid chars used"
         elif (not v.is_valid_email(email)):
-            return  f"ERRR{sep}103{sep}Invalid email address"
+            return  f"ERRR|103|Invalid email address"
         
         if (cr.email_registered(email)):
             if(not cr.verified(email)):
-                reply = f"ERRR{sep}010{sep}User not verified"
+                reply = Errors.NOT_VERIFIED.value
             else:
                 cr.send_reset_mail(email)
-                reply = f"FOPR{sep}{email}"
+                reply = f"FOPR|{email}"
         else:
-            reply = f"ERRR{sep}007{sep}Email is not registered"
+            reply = Errors.EMAIL_NOT_REGISTERED.value
     
     elif (code == "PASR"):   # Client requests password reset
         email = fields[1]
@@ -236,23 +244,23 @@ def protocol_build_reply(request, tid, sock):
         confirm_new_password = fields[4]
         
         if (v.is_empty(fields[1:])):
-            return  f"ERRR{sep}101{sep}Cannot have an empty field"
+            return  f"ERRR|101|Cannot have an empty field"
         elif (v.check_illegal_chars(fields[1:])):
-            return  f"ERRR{sep}102{sep}Invalid chars used"
+            return  f"ERRR|102|Invalid chars used"
         elif (not v.is_valid_password(new_password)):
-            return  f"ERRR{sep}105{sep}Password does not meet requirements\nhas to be at least 8 long and contain at least 1 upper case and number"
+            return  f"ERRR|105|Password does not meet requirements\nhas to be at least 8 long and contain at least 1 upper case and number"
         elif (new_password != confirm_new_password):
-            return  f"ERRR{sep}106{sep}Passwords do not match"
+            return  f"ERRR|106|Passwords do not match"
         
         res = cr.check_code(email, code)
         if (res == "ok"):
             cr.change_password(email, new_password)
             clients[tid].user = "guest"
-            reply = f"PASS{sep}{email}{sep}{new_password}"
+            reply = f"PASS|{email}|{new_password}"
         elif(res == "code"):
-            reply = f"ERRR{sep}008{sep}Code not matching try again"
+            reply = Errors.NOT_MATCHING_CODE.value
         else:
-            reply = f"ERRR{sep}009{sep}Code validation time ran out"
+            reply = Errors.CODE_EXPIRED.value
     
     elif(code == "LOGU"):   # Client requests logout
         clients[tid].user = "guest"
@@ -262,60 +270,60 @@ def protocol_build_reply(request, tid, sock):
         email = fields[1]
         
         if (v.is_empty(fields[1:])):
-            return  f"ERRR{sep}101{sep}Cannot have an empty field"
+            return  f"ERRR|101|Cannot have an empty field"
         elif (v.check_illegal_chars(fields[1:])):
-            return  f"ERRR{sep}102{sep}Invalid chars used"
+            return  f"ERRR|102|Invalid chars used"
         elif (not v.is_valid_email(email)):
-            return  f"ERRR{sep}103{sep}Invalid email address"
+            return  f"ERRR|103|Invalid email address"
         
         if (cr.email_registered(email)):
             if(cr.verified(email)):
-                reply = f"ERRR{sep}011{sep}Already verified"
+                reply = Errors.ALREADY_VERIFIED.value
             else:
                 cr.send_verification(email)
-                reply = f"VERS{sep}{email}"
+                reply = f"VERS|{email}"
         else:
-            reply = f"ERRR{sep}007{sep}Email is not registered"
+            reply = Errors.EMAIL_NOT_REGISTERED.value
     
     elif(code == "VERC"):   # Client requests account verification
         email = fields[1]
         code = fields[2]
         
         if (v.is_empty(fields[1:])):
-            return  f"ERRR{sep}101{sep}Cannot have an empty field"
+            return  f"ERRR|101|Cannot have an empty field"
         elif (v.check_illegal_chars(fields[1:])):
-            return  f"ERRR{sep}102{sep}Invalid chars used"
+            return  f"ERRR|102|Invalid chars used"
         elif (not v.is_valid_email(email)):
-            return  f"ERRR{sep}103{sep}Invalid email address"
+            return  f"ERRR|103|Invalid email address"
         
         if (cr.email_registered(email)):
             res = cr.check_code(email, code)
             if (res == "ok"):
                 cr.verify_user(email)
-                reply = f"VERR{sep}{email}"
+                reply = f"VERR|{email}"
             elif(res == "code"):
-                reply = f"ERRR{sep}008{sep}Code not matching try again"
+                reply = Errors.NOT_MATCHING_CODE.value
             else:
-                reply = f"ERRR{sep}009{sep}Code validation time ran out"
+                reply = Errors.CODE_EXPIRED.value
         else:
-            reply = f"ERRR{sep}007{sep}Email is not registered"
+            reply = Errors.EMAIL_NOT_REGISTERED.value
     
     elif(code == "DELU"):   # Client requests user deletion
         email = fields[1]
         
         if (v.is_empty(fields[1:])):
-            return  f"ERRR{sep}101{sep}Cannot have an empty field"
+            return  f"ERRR|101|Cannot have an empty field"
         elif (v.check_illegal_chars(fields[1:])):
-            return  f"ERRR{sep}102{sep}Invalid chars used"
+            return  f"ERRR|102|Invalid chars used"
         elif (clients[tid].email !=email):
-            return  f"ERRR{sep}013{sep}Can't delete this user"
+            return  Errors.NO_DELETE_PERMS.value
         
         if(cr.user_exists(email)):
             cr.delete_user(email)
             clients[tid].user = "guest"
-            reply = f"DELR{sep}{email}"
+            reply = f"DELR|{email}"
         else:
-            reply = f"ERRR{sep}004{sep}Invalid credentials"
+            reply = Errors.LOGIN_DETAILS.value
     
     elif (code == "FILS"):
         file_name = fields[2]
@@ -325,22 +333,22 @@ def protocol_build_reply(request, tid, sock):
             if not os.path.exists(clients[tid].cwd):
                 os.makedirs(clients[tid].cwd)
             save_file(save_loc, size, sock, tid)
-            reply = f"FILR{sep}{file_name}{sep}was saved succefully"
+            reply = f"FILR|{file_name}|was saved succefully"
         except Exception:
             print(traceback.format_exc())
-            reply = f"ERRR{sep}012{sep}File didnt upload correctly"
+            reply = Errors.FILE_UPLOAD.value
     
     elif (code == "GETP"):
         reply = "PATH"
         files = cr.get_files(clients[tid].cwd)
         for file in files:
-            reply += f"{sep}{file}"
+            reply += f"|{file}"
     
     elif (code == "GETD"):
         reply = "PATD"
         directories = cr.get_directories(clients[tid].cwd)
         for directory in directories:
-            reply += f"{sep}{directory}"
+            reply += f"|{directory}"
     
     elif (code == "MOVD"):
         dir = fields[1]
@@ -351,33 +359,33 @@ def protocol_build_reply(request, tid, sock):
         if (os.path.isdir(new_cwd)):
             main_path = f"{cloud_path}\\{clients[tid].user}"
             if (not (cr.is_subpath(main_path, new_cwd))):
-                reply = f"ERRR{sep}014{sep}Invalid directory"
+                reply = Errors.INVALID_DIRECTORY.value
             else:
                 clients[tid].cwd = new_cwd
-                reply = f"MOVR{sep}{new_cwd.split("cloud")[1][1:]}{sep}moved succesfully"
+                reply = f"MOVR|{new_cwd.split("cloud")[1][1:]}|moved succesfully"
         else:
-            reply = f"ERRR{sep}014{sep}Invalid directory"
+            reply = Errors.INVALID_DIRECTORY.value
     
     elif (code == "DOWN"):
         file_name = fields[1]
         file_path = os.path.join(clients[tid].cwd, file_name)
         if(not os.path.isfile(file_path)):
-            reply = f"ERRR{sep}015{sep}File not found"
+            reply = Errors.FILE_NOT_FOUND.value
         else:
             try:
                 send_file_data(file_path, sock, tid)
-                reply = f"DOWR{sep}{file_name}{sep}was downloaded"
+                reply = f"DOWR|{file_name}|was downloaded"
             except Exception:
-                reply = f"ERRR{sep}016{sep}File didnt download correctly"
+                reply = Errors.FILE_DOWNLOAD.value
 
     elif (code == "NEWF"):
         folder_name = fields[1]
         folder_path = clients[tid].cwd + "\\" + folder_name
         if (not os.path.isdir(folder_path)):
             os.makedirs(folder_path, exist_ok=True)
-            reply = f"NEFR{sep}{folder_name}{sep}was created"
+            reply = f"NEFR|{folder_name}|was created"
         else:
-            reply = f"ERRR{sep}017{sep}A folder with name {folder_name} already exists"
+            reply = Errors.FOLDER_EXISTS.value
     
     elif (code == "RENA"):
         name = fields[1]
@@ -386,19 +394,19 @@ def protocol_build_reply(request, tid, sock):
         path = clients[tid].cwd + "\\" + name
         new_path = clients[tid].cwd + "\\" + new_name 
         if (not os.path.isfile(path) and not os.path.isdir(path)):
-            reply = f"ERRR{sep}015{sep}File or directory not found"
+            reply = Errors.FILE_NOT_FOUND.value
         elif (os.path.exists(new_path)):
-            reply = f"ERRR{sep}018{sep}{new_name} already exists"
+            reply = Errors.EXISTS.value
         else:
             os.rename(path, new_path)
-            reply = f"RENR{sep}{name}{sep}{new_name}{sep}File renamed succefully"
+            reply = f"RENR|{name}|{new_name}|File renamed succefully"
     
     elif (code == "GICO"):
         if (os.path.isfile(os.path.join(user_icons_path, clients[tid].user + ".ico"))):
             send_file_data(os.path.join(user_icons_path, clients[tid].user + ".ico"), sock, tid)
         else:
             send_file_data(os.path.join(user_icons_path, "guest.ico"), sock, tid)
-        reply = f"GICR{sep}Sent use profile picture"
+        reply = f"GICR|Sent use profile picture"
     
     elif (code == "ICOS"):
         file_name = fields[2]
@@ -406,24 +414,24 @@ def protocol_build_reply(request, tid, sock):
         try:
             save_path = os.path.join(user_icons_path, clients[tid].user + ".ico")
             save_file(save_path, size, sock, tid)
-            reply = f"ICOR{sep}Profile icon was uploaded succefully"
+            reply = f"ICOR|Profile icon was uploaded succefully"
         except Exception:
             print(traceback.format_exc())
-            reply = f"ERRR{sep}012{sep}File didnt upload correctly"
+            reply = Errors.FILE_UPLOAD.value
     
     elif code == 'DELF':
         name = fields[1]
         path = clients[tid].cwd + "\\" + name
         if not os.path.exists(path):
-            reply = f"ERRR{sep}015{sep}File or directory not found"
+            reply = Errors.FILE_NOT_FOUND.value
         elif os.path.isfile(path):
             os.remove(path)
-            reply = f"DLFR{sep}{name}{sep}was deleted!"
+            reply = f"DLFR|{name}|was deleted!"
         elif os.path.isdir(path):
             shutil.rmtree(path)
-            reply = f"DFFR{sep}{name}{sep}was deleted!"
+            reply = f"DFFR|{name}|was deleted!"
     else:
-        reply = f"ERRR{sep}002{sep}Code not supported"
+        reply = Errors.UNKNOWN.value
         fields = ''
     
     return reply
@@ -433,13 +441,19 @@ def handle_request(request, tid, sock):
     Getting client request and parsing it
     If some error occured or no response return general error
     """
+    client_exit = False
     try:
-        to_send = protocol_build_reply(request, tid, sock).encode()
+        to_send = protocol_build_reply(request, tid, sock)
+        if to_send == None:
+            return None, True
+        to_send = to_send.encode()
+        if (to_send == b"EXTR"):
+            client_exit = True
     except Exception as err:
         print(traceback.format_exc())
-        to_send = f"ERRR{sep}001{sep}General error"
+        to_send = Errors.GENERAL.value
         to_send = to_send.encode()
-    return to_send, False
+    return to_send, client_exit
 
 
 
@@ -453,8 +467,6 @@ def logtcp(dir, tid, byte_data):
         try:
             if (str(byte_data[0]) == "0"):
                 print("")
-        except AttributeError:
-            return
         except Exception:
             return
         if dir == 'sent':
@@ -481,8 +493,10 @@ def send_data(sock, tid, bdata):
         data_len = struct.pack('!l', len(bdata))
         to_send = data_len + bdata
         logtcp('sent', tid, to_send)
-    
-    sock.send(to_send)
+    try:
+        sock.send(to_send)
+    except ConnectionResetError:
+        pass
 
 def recv_data(sock, tid):
     """
@@ -511,6 +525,8 @@ def recv_data(sock, tid):
             msg = encrypting.decrypt(msg, clients[tid].shared_secret)
         return msg
     
+    except ConnectionResetError:
+        return None
     except Exception as err:
         print(traceback.format_exc())
 
@@ -530,7 +546,7 @@ def handle_client(sock, tid, addr):
         print(f'New Client number {tid} from {addr}')
         start = recv_data(sock, tid)
         code = start.split(b"|")[0]
-        clients[tid] = Client(tid, "guest", "guest", None, False)   # Setting client state
+        clients[tid] = Client(tid, "guest", "guest", 0, 0, None, False)   # Setting client state
         if (code == b"RSAR"):
             shared_secret = rsa_exchange(sock, tid)
         if(shared_secret == ""):
@@ -553,9 +569,9 @@ def handle_client(sock, tid, addr):
             entire_data = recv_data(sock, tid)   # Recieving data and  handling client
             logtcp('recv', tid, entire_data)
             to_send, finish = handle_request(entire_data, tid, sock)
-            if to_send != '':
+            if to_send != None:
                 send_data(sock, tid, to_send)
-            if finish:
+            if finish or to_send == None:
                 time.sleep(1)
                 break
         except socket.error as err:
@@ -587,9 +603,11 @@ def main(addr):
     print(f"Server listening on {addr}")
     srv_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     i = 1
-
-    create_keys()
-    load_keys()
+    try:
+        create_keys()
+        load_keys()
+    except:
+        srv_sock.close()
     
     print('Main thread: before accepting ...\n')
     while True:
@@ -606,6 +624,7 @@ def main(addr):
     print('Main thread: waiting to all clints to die')
     for t in threads:
         t.join()
+    
     srv_sock.close()
     print('Bye ..')
 
