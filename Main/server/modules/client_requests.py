@@ -184,7 +184,7 @@ def check_code(email, code):
     
     if(str_to_date(user.valid_until) < datetime.now()):
         return "time"
-    elif (not code.isdigit() or int(user.last_code) != int(code)):
+    elif (not code.isdigit() or int(user.last_code) != int(code) or int(code) < 0):
         return "code"
     else:
         return "ok"

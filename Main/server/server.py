@@ -320,6 +320,7 @@ def protocol_build_reply(request, tid, sock):
         
         if(cr.user_exists(email)):
             cr.delete_user(email)
+            shutil.rmtree(cloud_path + "\\" + clients[tid].user)
             clients[tid].user = "guest"
             reply = f"DELR|{email}"
         else:

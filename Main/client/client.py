@@ -15,7 +15,7 @@ import os
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QMessageBox, QApplication, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
 from PyQt6.QtGui import QIcon, QContextMenuEvent
-from PyQt6.QtCore import QSize
+from PyQt6.QtCore import QSize, Qt
 
 
 # Announce global vars
@@ -97,7 +97,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.main_page()
         if (os.path.isfile(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico")):
             self.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
-        self.layout = QVBoxLayout()
+
         self.setFixedSize(1000, 550)
     
     def main_page(self):
@@ -107,6 +107,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.signup_button.clicked.connect(self.signup_page)
             self.login_button.clicked.connect(self.login_page)
             self.exit_button.clicked.connect(exit_program)
+
         except:
             print(traceback.format_exc())
         
@@ -452,7 +453,6 @@ def send_verification(email):
     send_string = build_req_string("SVER", items)
     send_data(send_string)
     handle_reply()
-    window.verification_page(email)
 
 def verify(email, code):
     """
@@ -591,7 +591,7 @@ def protocol_parse_reply(reply):
         if code == 'ERRR':   # If server returned error show to user the error
             err_code = int(fields[1])
             window.set_error_message(fields[2])
-            if(err_code == 10):
+            if(err_code == 9):
                 window.send_verification_page()
             
             to_show = 'Server return an error: ' + fields[1] + ' ' + fields[2]
@@ -847,6 +847,8 @@ def main(addr):
         #gui.create_root()
         
         app = QtWidgets.QApplication(sys.argv)
+        #app.setAttribute(Qt.ApplicationAttribute.AA_UseHighDpiPixmaps, True)  # Enable DPI scaling for images
+        app.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)  # Use high DPI scaling policy
         with open(f"{os.path.dirname(os.path.abspath(__file__))}/gui/css/style.css", 'r') as f:
             app.setStyleSheet(f.read())
         window = MainWindow()
