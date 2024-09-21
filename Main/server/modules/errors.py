@@ -21,3 +21,7 @@ class Errors(Enum):
     FILE_DOWNLOAD = f"ERRR|015|File didnt download correctly"
     FOLDER_EXISTS = f"ERRR|016|This folder already exists"
     EXISTS = f"ERRR|017|File/Folder with same name already exists"
+    SAME_LEVEL = f"ERRR|018|Already at this subscription level"
+    INVALID_LEVEL = f"ERRR|019|Invalid subscription level"
+    MAX_STORAGE = f"ERRR|019|Max storage reached, try upgrading your subscription"
+    SIZE_LIMIT = f"ERRR|020|File exceeded max size of"

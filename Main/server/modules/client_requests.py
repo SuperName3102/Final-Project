@@ -26,7 +26,8 @@ class User:
     User class for building database
     Used to transfer between user instance and json data
     """
-    def __init__(self, email, username, password, salt = bcrypt.gensalt(), last_code = -1, valid_until = str(datetime.now()), verified = False, subscription_level = 0, admin_level = 0):
+
+    def __init__(self, email, username, password, salt=bcrypt.gensalt(), last_code=-1, valid_until=str(datetime.now()), verified=False, subscription_level=0, admin_level=0):
         self.email = email
         self.username = username
         self.password = password
@@ -42,8 +43,9 @@ def main():
     global pepper
     pepper = get_pepper()
 
+
 def get_pepper():
-    if(not os.path.isfile(pepper_file)):
+    if (not os.path.isfile(pepper_file)):
         new_pepper = secrets.token_hex(2000)
         with open(pepper_file, 'w') as file:
             file.write(new_pepper)
@@ -53,41 +55,52 @@ def get_pepper():
 
 # Begin client requests related functions
 
+
 def user_exists(username):
     """
     Checking if username is already registered
     """
     user = db.get_user(username)
-    if user != None: return True
-    else: return False
+    if user != None:
+        return True
+    else:
+        return False
+
 
 def verified(cred):
     """
     Checking if user is verified
     """
     user = db.get_user(cred)
-    if (user == None): return False
+    if (user == None):
+        return False
     user = User(**user)
     return user.verified
+
 
 def email_registered(email):
     """
     Checking if email address is already registered under an account 
     """
     user = db.get_user(email)
-    if user != None: return True
-    else: return False
+    if user != None:
+        return True
+    else:
+        return False
+
 
 def login_validation(cred, password):
     """
     Checking if login details match user in database
     """
     user = db.get_user(cred)
-    if (user == None): return False
+    if (user == None):
+        return False
     user = User(**user)
     if (user.password == hash_password(password, user.salt)):
         return True
-    else: return False
+    else:
+        return False
 
 
 def signup_user(user_details):
@@ -99,21 +112,25 @@ def signup_user(user_details):
     new_user.password = hash_password(new_user.password, new_user.salt)
     db.add_user(vars(new_user))
 
+
 def verify_user(username):
     """
     Verifying user
     """
     user = db.get_user(username)
-    if (user == None): return False
+    if (user == None):
+        return False
     user = User(**user)
     user.verified = True
     db.update_user(username, vars(user))
+
 
 def delete_user(username):
     """
     Deleting user from database
     """
     db.remove_user(username)
+
 
 def send_reset_mail(email):
     """
@@ -123,13 +140,15 @@ def send_reset_mail(email):
     Add expiry time
     """
     user = db.get_user(email)
-    if (user == None): return False
+    if (user == None):
+        return False
     user = User(**user)
-    code = random.randint(100000, 999999)   # Setting new code and updating user
+    # Setting new code and updating user
+    code = random.randint(100000, 999999)
     user.last_code = code
     user.valid_until = str(timedelta(minutes=10) + datetime.now())
     db.update_user(email, vars(user))
-    
+
     em = EmailMessage()   # Building mail and sending it
     em["From"] = gmail
     em["To"] = email
@@ -137,6 +156,7 @@ def send_reset_mail(email):
     body = f"Your password reset code is: {code}\nCode is valid for 10 minutes"
     em.set_content(body)
     send_mail(em, email)
+
 
 def send_verification(email):
     """
@@ -146,18 +166,21 @@ def send_verification(email):
     Add expiry time
     """
     user = db.get_user(email)
-    if (user == None): return False
+    if (user == None):
+        return False
     user = User(**user)
-    code = random.randint(100000, 999999)   # Setting new code and updating user
-    user.last_code = code 
+    # Setting new code and updating user
+    code = random.randint(100000, 999999)
+    user.last_code = code
     user.valid_until = str(timedelta(minutes=30) + datetime.now())
     db.update_user(email, vars(user))
-    
+
     em = EmailMessage()   # Building mail and sending it
     em["From"] = gmail
     em["To"] = email
     em["Subject"] = "Account Verification"
-    body = f"Your account verification code is: {code}\nCode is valid for 30 minutes"
+    body = f"Your account verification code is: {
+        code}\nCode is valid for 30 minutes"
     em.set_content(body)
     send_mail(em, email)
 
@@ -179,19 +202,22 @@ def check_code(email, code):
     Works for user verification and password recovery
     """
     user = db.get_user(email)
-    if (user == None): return False
+    if (user == None):
+        return False
     user = User(**user)
-    
-    if(str_to_date(user.valid_until) < datetime.now()):
+
+    if (str_to_date(user.valid_until) < datetime.now()):
         return "time"
     elif (not code.isdigit() or int(user.last_code) != int(code) or int(code) < 0):
         return "code"
     else:
         return "ok"
 
+
 def hash_password(password, salt):
     hashed_password = bcrypt.hashpw(password.encode() + pepper, salt)
     return hashed_password
+
 
 def str_to_date(str):
     """
@@ -201,19 +227,21 @@ def str_to_date(str):
     format = "%Y-%m-%d %H:%M:%S.%f"
     return datetime.strptime(str, format)
 
+
 def change_password(email, new_password):
-    
     """
     Changing user password
     Hashing the password with salf and pepper for security
     Updating the users database
     """
     user = db.get_user(email)
-    if (user == None): return False
+    if (user == None):
+        return False
     user = User(**user)
     user.salt = bcrypt.gensalt()
     user.password = hash_password(new_password, user.salt)
     db.update_user(email, vars(user))
+
 
 def get_user_data(cred):
     """
@@ -222,6 +250,7 @@ def get_user_data(cred):
     """
     return db.get_user(cred)
 
+
 def get_files(path):
     files = []
     for f in os.listdir(path):
@@ -229,11 +258,14 @@ def get_files(path):
             file_mod_time = os.path.getmtime(os.path.join(path, f))
             mod_time_datetime = datetime.fromtimestamp(file_mod_time)
             last_edit = mod_time_datetime.strftime('%d/%m/%Y %H:%M')
-            files.append(f"{f}~{last_edit}~{os.path.getsize(os.path.join(path, f))}")
+            files.append(f"{f}~{last_edit}~{
+                         os.path.getsize(os.path.join(path, f))}")
     return files
 
+
 def get_directories(path):
-    return [ f.name for f in os.scandir(path) if f.is_dir() ]
+    return [f.name for f in os.scandir(path) if f.is_dir()]
+
 
 def is_subpath(parent_path, sub_path):
     # Convert to Path objects
@@ -242,6 +274,16 @@ def is_subpath(parent_path, sub_path):
 
     # Check if sub_path is within parent_path
     return parent_path in sub_path.parents or parent_path == sub_path
+
+
+def change_level(email, new_level):
+    user = db.get_user(email)
+    if (user == None):
+        return False
+    user = User(**user)
+    user.subscription_level = new_level
+    db.update_user(email, vars(user))
+
 
 if __name__ == "__main__":
     main()

@@ -20,9 +20,9 @@
    <widget class="QPushButton" name="forgot_password_button">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>190</y>
-      <width>241</width>
+      <x>200</x>
+      <y>180</y>
+      <width>251</width>
       <height>51</height>
      </rect>
     </property>
@@ -98,9 +98,9 @@
    <widget class="QPushButton" name="delete_account_button">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>390</x>
       <y>370</y>
-      <width>241</width>
+      <width>221</width>
       <height>51</height>
      </rect>
     </property>
@@ -158,9 +158,9 @@
    <widget class="QPushButton" name="upload_icon_button">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>280</y>
-      <width>241</width>
+      <x>200</x>
+      <y>270</y>
+      <width>251</width>
       <height>51</height>
      </rect>
     </property>
@@ -169,6 +169,50 @@
     </property>
     <property name="text">
      <string>Upload Profile Icon</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="subscriptions_button">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>180</y>
+      <width>251</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Subscriptions</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="upload_icon_button_2">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>270</y>
+      <width>251</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Change Username</string>
     </property>
     <property name="iconSize">
      <size>

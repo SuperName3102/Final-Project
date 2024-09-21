@@ -1,58 +1,61 @@
-QWidget{
-    background-color: #222020;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+QWidget {
+  background-color: #222020;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-QPushButton{
-    font-size: 18px;
-    color: #ffffff;
-    padding: 1px 3px;
-    border-radius: 15px;
-    border:1px solid rgb(208, 173, 173);
-    background-color: #ff6537;
-    opacity: 0.8;
+QPushButton {
+  font-size: 18px;
+  color: #ffffff;
+  padding: 1px 3px;
+  border-radius: 15px;
+  border: 1px solid rgb(208, 173, 173);
+  background-color: #ff6537;
+  opacity: 0.8;
 }
 
 QPushButton:hover {
-    background-color: #ff4d00; 
+  background-color: #ff4d00;
 }
 QPushButton:pressed {
-    background-color: #891900;
+  background-color: #891900;
 }
 
-
-QTextEdit, QLineEdit {
-    color: #ffffff;
-    font-size: 16px;
-    border-radius: 7px;
-    background-color: #6e1a00;
-    outline: none;
-    border-bottom: 1px solid #ff6537;
-    padding:0 8px 0 8px;
+QTextEdit,
+QLineEdit {
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 7px;
+  background-color: #6e1a00;
+  outline: none;
+  border-bottom: 1px solid #ff6537;
+  padding: 0 8px 0 8px;
 }
-QTextEdit:hover, QLineEdit:hover{
-    border:1px solid #ff6537;
+QTextEdit:hover,
+QLineEdit:hover {
+  border: 1px solid #ff6537;
 }
 
-QTextEdit:focus, QLineEdit:focus{
-    border:2px solid #ff6537;
+QTextEdit:focus,
+QLineEdit:focus {
+  border: 2px solid #ff6537;
 }
 
 QMenu {
-    background-color: #252525;
-    border: 1px solid #666;
-    selection-background-color: #252525;
-    selection-color: #fff;
+  background-color: #252525;
+  border: 1px solid #666;
+  selection-background-color: #252525;
+  selection-color: #fff;
 }
 QMenu::item {
-    color: #ddd;
-    background-color: #252525;
+  color: #ddd;
+  background-color: #252525;
 }
 QMenu::item:selected {
-    background-color: #555;
-    color: #fff;
+  background-color: #555;
+  color: #fff;
 }
 
-
-
-    
+Line {
+  color: white;
+}
