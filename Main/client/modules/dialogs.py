@@ -8,9 +8,7 @@ from PyQt6.QtGui import QIcon
 def new_name_dialog(title, label, text=""):
     # Create a QApplication instance
     app = QApplication.instance()
-    app.setWindowIcon(
-        QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
-
+    app.setWindowIcon(QIcon(f"{os.path.dirname(os.path.dirname(os.path.abspath(__file__)))}/assets/icon.ico"))
     dialog = QInputDialog()
     folder_name, ok = dialog.getText(None, title, label, text=text)
 

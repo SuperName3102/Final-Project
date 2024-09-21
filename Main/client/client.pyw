@@ -17,7 +17,7 @@ import os
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QMessageBox, QApplication, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
 from PyQt6.QtGui import QIcon, QContextMenuEvent
-from PyQt6.QtCore import QSize, Qt
+from PyQt6.QtCore import QSize
 
 
 # Announce global vars
@@ -38,8 +38,7 @@ search_filter = None
 class FileButton(QPushButton):
     def __init__(self, text, parent=None):
         super().__init__(text, parent)
-        self.setSizePolicy(QSizePolicy.Policy.Expanding,
-                           QSizePolicy.Policy.Expanding)
+        self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.setStyleSheet("""
             QPushButton {
                 border-radius: 3px;  # Half of the width/height to make it round
