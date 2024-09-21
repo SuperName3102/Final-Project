@@ -411,12 +411,16 @@ def protocol_build_reply(request, tid, sock):
 
     elif (code == "FILS"):
         file_name = fields[1]
+        save_loc = clients[tid].cwd + "/" + file_name
         try:
             if (get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
                 throw_file(sock, tid)
                 reply = Errors.MAX_STORAGE.value
+            elif os.path.isfile(save_loc):
+                throw_file(sock, tid)
+                reply = Errors.FILE_EXISTS.value
+
             else:
-                save_loc = clients[tid].cwd + "/" + file_name
                 if not os.path.exists(clients[tid].cwd):
                     os.makedirs(clients[tid].cwd)
                 try:
