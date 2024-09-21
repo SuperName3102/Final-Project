@@ -7,8 +7,9 @@ from PyQt6.QtGui import QIcon
 
 def new_name_dialog(title, label, text=""):
     # Create a QApplication instance
-    app = QApplication.instance() 
-    app.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
+    app = QApplication.instance()
+    app.setWindowIcon(
+        QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
 
     dialog = QInputDialog()
     folder_name, ok = dialog.getText(None, title, label, text=text)
@@ -18,6 +19,7 @@ def new_name_dialog(title, label, text=""):
         return folder_name
     return None
 
+
 def show_confirmation_dialog(message):
     # Create a QMessageBox
     msg_box = QMessageBox()
@@ -25,7 +27,8 @@ def show_confirmation_dialog(message):
     msg_box.setWindowTitle("Confirmation")
     msg_box.setText(message)
 
-    msg_box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+    msg_box.setStandardButtons(
+        QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
     msg_box.setDefaultButton(QMessageBox.StandardButton.Yes)
     result = msg_box.exec()
 

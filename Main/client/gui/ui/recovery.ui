@@ -118,7 +118,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Back</string>
+     <string> Back</string>
     </property>
     <property name="iconSize">
      <size>
@@ -140,7 +140,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Reset</string>
+     <string> Reset</string>
     </property>
     <property name="iconSize">
      <size>
@@ -165,7 +165,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Send Again</string>
+     <string> Send Again</string>
     </property>
     <property name="iconSize">
      <size>

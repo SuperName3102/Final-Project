@@ -72,7 +72,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Create Account</string>
+     <string> Create Account</string>
     </property>
     <property name="iconSize">
      <size>
@@ -129,7 +129,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Back</string>
+     <string> Back</string>
     </property>
     <property name="iconSize">
      <size>

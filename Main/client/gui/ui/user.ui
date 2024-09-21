@@ -85,7 +85,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Logout</string>
+     <string> Logout</string>
     </property>
     <property name="iconSize">
      <size>
@@ -107,7 +107,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Upload File</string>
+     <string> Upload File</string>
     </property>
     <property name="iconSize">
      <size>
@@ -191,8 +191,8 @@
    <widget class="QLabel" name="storage_label">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>480</y>
+      <x>650</x>
+      <y>478</y>
       <width>271</width>
       <height>31</height>
      </rect>
@@ -209,8 +209,8 @@
    <widget class="QProgressBar" name="storage_remaining">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>502</y>
+      <x>650</x>
+      <y>500</y>
       <width>311</width>
       <height>21</height>
      </rect>
@@ -222,6 +222,30 @@
     </property>
     <property name="value">
      <number>24</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="search">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>480</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>  Search Filter: None</string>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

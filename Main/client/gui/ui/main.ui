@@ -36,7 +36,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Sign In</string>
+     <string> Sign In</string>
     </property>
     <property name="iconSize">
      <size>
@@ -103,7 +103,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Create Account</string>
+     <string> Create Account</string>
     </property>
     <property name="iconSize">
      <size>
@@ -141,7 +141,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Exit</string>
+     <string> Exit</string>
     </property>
     <property name="iconSize">
      <size>

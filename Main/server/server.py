@@ -383,6 +383,7 @@ def protocol_build_reply(request, tid, sock):
             res = cr.check_code(email, code)
             if (res == "ok"):
                 cr.verify_user(email)
+                cr.send_welcome_mail(email)
                 reply = f"VERR|{email}"
             elif (res == "code"):
                 reply = Errors.NOT_MATCHING_CODE.value
@@ -437,14 +438,31 @@ def protocol_build_reply(request, tid, sock):
             reply = Errors.FILE_UPLOAD.value
 
     elif (code == "GETP"):
+        if (len(fields) == 2):
+            search_filter = fields[1]
+            if (v.is_empty(fields[1:])):
+                return f"ERRR|101|Cannot have an empty field"
+            elif (v.check_illegal_chars(fields[1:])):
+                return f"ERRR|102|Invalid chars used"
+            files = cr.get_files(clients[tid].cwd, search_filter)
+        else:
+            files = cr.get_files(clients[tid].cwd)
         reply = "PATH"
-        files = cr.get_files(clients[tid].cwd)
         for file in files:
             reply += f"|{file}"
 
     elif (code == "GETD"):
+        if (len(fields) == 2):
+            search_filter = fields[1]
+            if (v.is_empty(fields[1:])):
+                return f"ERRR|101|Cannot have an empty field"
+            elif (v.check_illegal_chars(fields[1:])):
+                return f"ERRR|102|Invalid chars used"
+            directories = cr.get_directories(clients[tid].cwd, search_filter)
+        else:
+            directories = cr.get_directories(clients[tid].cwd)
+
         reply = "PATD"
-        directories = cr.get_directories(clients[tid].cwd)
         for directory in directories:
             reply += f"|{directory}"
 

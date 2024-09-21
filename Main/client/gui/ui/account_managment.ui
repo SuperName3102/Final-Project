@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Forgot Password</string>
+     <string> Forgot Password</string>
     </property>
     <property name="iconSize">
      <size>
@@ -108,7 +108,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Delete Account</string>
+     <string> Delete Account</string>
     </property>
     <property name="iconSize">
      <size>
@@ -130,7 +130,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Back</string>
+     <string> Back</string>
     </property>
     <property name="iconSize">
      <size>
@@ -168,7 +168,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Upload Profile Icon</string>
+     <string> Upload Profile Icon</string>
     </property>
     <property name="iconSize">
      <size>
@@ -190,7 +190,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Subscriptions</string>
+     <string> Subscriptions</string>
     </property>
     <property name="iconSize">
      <size>
@@ -212,7 +212,7 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Change Username</string>
+     <string> Change Username</string>
     </property>
     <property name="iconSize">
      <size>

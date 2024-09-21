@@ -206,7 +206,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Back</string>
+     <string> Back</string>
     </property>
     <property name="iconSize">
      <size>

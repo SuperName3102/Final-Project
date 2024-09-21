@@ -185,6 +185,18 @@ def send_verification(email):
     send_mail(em, email)
 
 
+def send_welcome_mail(email):
+    em = EmailMessage()   # Building mail and sending it
+    em["From"] = gmail
+    em["To"] = email
+    em["Subject"] = "Welcome!"
+    body = f"""Welcome to IdanCloud!\nCurrently you are at the basic subscription level and are welcome to upgrade at any time
+    \nYou have 100 GB of storage and a max file size of 50 MB, max upload speed of 5 MB/s and 10 MB/s download speed\nFor any question you are welcome to contact us at {gmail}
+    \nIdanCloud ©2024 - 2025"""
+    em.set_content(body)
+    send_mail(em, email)
+
+
 def send_mail(em, send_to):
     """
     Sending email to email address
@@ -251,21 +263,29 @@ def get_user_data(cred):
     return db.get_user(cred)
 
 
-def get_files(path):
+def get_files(path, name_filter=None):
     files = []
-    if (os.path.isdir(path)):
+    if os.path.isdir(path):
         for f in os.listdir(path):
             if os.path.isfile(os.path.join(path, f)):
-                file_mod_time = os.path.getmtime(os.path.join(path, f))
-                mod_time_datetime = datetime.fromtimestamp(file_mod_time)
-                last_edit = mod_time_datetime.strftime('%d/%m/%Y %H:%M')
-                files.append(f"{f}~{last_edit}~{
-                    os.path.getsize(os.path.join(path, f))}")
+                # Apply the filter if provided
+                if name_filter is None or name_filter.lower() in f.lower():
+                    file_mod_time = os.path.getmtime(os.path.join(path, f))
+                    mod_time_datetime = datetime.fromtimestamp(file_mod_time)
+                    last_edit = mod_time_datetime.strftime('%d/%m/%Y %H:%M')
+
+                    files.append(f"{f}~{last_edit}~{
+                                 os.path.getsize(os.path.join(path, f))}")
     return files
 
 
-def get_directories(path):
-    return [f.name for f in os.scandir(path) if f.is_dir()]
+def get_directories(path, name_filter=None):
+    if not os.path.isdir(path):
+        return []
+    return [
+        f.name for f in os.scandir(path)
+        if f.is_dir() and (name_filter is None or name_filter.lower() in f.name.lower())
+    ]
 
 
 def is_subpath(parent_path, sub_path):
