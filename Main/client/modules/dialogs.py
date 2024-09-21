@@ -15,7 +15,7 @@ def new_name_dialog(title, label, text=""):
     folder_name, ok = dialog.getText(None, title, label, text=text)
 
     # Check if the user clicked OK and returned valid text
-    if ok and folder_name:
+    if ok and folder_name and folder_name != text:
         return folder_name
     return None
 
