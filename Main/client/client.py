@@ -261,7 +261,7 @@ class MainWindow(QtWidgets.QMainWindow):
             if (directories == [] and files == []):
                 button = FileButton("No files or folders in this directory")
                 button.setStyleSheet(
-                    "background-color:dimgrey;font-size:14px;border-radius: 3px;border:1px solid darkgrey;")
+                    "background-color:red;font-size:14px;border-radius: 3px;border:1px solid darkgrey;")
                 scroll_layout.addWidget(button)
 
             if (cwd != user["username"]):
@@ -302,6 +302,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 lambda: delete_user(user["email"]))
             self.upload_icon_button.clicked.connect(lambda: upload_icon())
             self.subscriptions_button.clicked.connect(self.subscriptions_page)
+            self.change_username_button.clicked.connect(change_username)
             self.back_button.clicked.connect(self.user_page)
         except:
             print(traceback.format_exc())
@@ -479,6 +480,14 @@ def upload_icon():
             send_file(file_path)
     except:
         print(traceback.format_exc())
+
+
+def change_username():
+    name = user["username"]
+    new_name = new_name_dialog("Change Username", "Enter new  username:", name)
+    if new_name is not None and new_name != name:
+        send_data(b"CHUN|" + new_name.encode())
+        handle_reply()
 
 
 def subscribe(level):
@@ -832,6 +841,14 @@ def protocol_parse_reply(reply):
             global used_storage
             used_storage = round(int(fields[1])/1_000_000, 3)
             to_show = f"Current used storage is {used_storage}"
+
+        elif code == 'CHUR':
+            new_username = fields[1]
+            user["username"] = new_username
+            cwd = new_username
+            to_show = f"Username changed to {new_username}"
+            window.manage_account()
+            window.set_message(to_show)
 
     except Exception as e:   # Error
         print('Server replay bad format ' + str(e))

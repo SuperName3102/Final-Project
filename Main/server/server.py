@@ -258,6 +258,7 @@ def protocol_build_reply(request, tid, sock):
         if (cr.login_validation(cred, password)):
             if (not cr.verified(cred)):
                 reply = Errors.NOT_VERIFIED.value
+
             else:
                 user_dict = cr.get_user_data(cred)
                 username = user_dict["username"]
@@ -549,6 +550,25 @@ def protocol_build_reply(request, tid, sock):
     elif code == "GEUS":
         used_storage = get_user_storage(clients[tid].user)
         reply = f"GEUR|{used_storage}"
+
+    elif code == "CHUN":
+        new_username = fields[1]
+        if (v.is_empty(fields[1:])):
+            return f"ERRR|101|Cannot have an empty field"
+        elif (v.check_illegal_chars(fields[1:])):
+            return f"ERRR|102|Invalid chars used"
+        elif (not v.is_valid_username(new_username) or new_username == "guest"):
+            return f"ERRR|104|Invalid username\nUsername has to be at least 4 long and contain only chars and numbers"
+        elif (cr.user_exists(new_username)):
+            reply = Errors.USER_REGISTERED.value
+        else:
+            os.rename(cloud_path + "\\" +
+                      clients[tid].user, cloud_path + "\\" + new_username)
+            cr.change_username(clients[tid].user, new_username)
+            clients[tid].cwd = cloud_path + "\\" + new_username
+            clients[tid].user = new_username
+            reply = f"CHUR|{new_username}|Changed username"
+
     else:
         reply = Errors.UNKNOWN.value
         fields = ''

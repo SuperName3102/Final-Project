@@ -199,7 +199,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="upload_icon_button_2">
+   <widget class="QPushButton" name="change_username_button">
     <property name="geometry">
      <rect>
       <x>550</x>

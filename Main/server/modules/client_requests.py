@@ -285,6 +285,15 @@ def change_level(email, new_level):
     db.update_user(email, vars(user))
 
 
+def change_username(username, new_username):
+    user = db.get_user(username)
+    if (user == None):
+        return False
+    user = User(**user)
+    user.username = new_username
+    db.update_user(username, vars(user))
+
+
 if __name__ == "__main__":
     main()
 
