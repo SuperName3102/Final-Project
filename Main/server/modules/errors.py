@@ -27,3 +27,4 @@ class Errors(Enum):
     SIZE_LIMIT = f"ERRR|020|File exceeded max size of"
     FILE_EXISTS = f"ERRR|021|A file with that name already exists"
     PREVIEW_SIZE = f"ERRR|022|File exceeds max preview size of 10 MB"
+    NO_PREMISSION = f"ERRR|023|You cant upload file here"

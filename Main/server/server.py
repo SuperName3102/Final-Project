@@ -158,6 +158,9 @@ def get_user_storage(username):
                 total_size += os.path.getsize(fp)
     return total_size
 
+def is_guest(tid):
+    return clients[tid].user == "guest"
+
 # Key exchange
 
 
@@ -347,6 +350,10 @@ def protocol_build_reply(request, tid, sock):
 
     elif (code == "LOGU"):   # Client requests logout
         clients[tid].user = "guest"
+        clients[tid].email = "guest"
+        clients[tid].cwd = f"{cloud_path}\\guest"
+        clients[tid].subscription_level = 0
+        clients[tid].admin_level = 0
         reply = "LUGR"
 
     elif (code == "SVER"):   # Client requests account verification code
@@ -414,7 +421,10 @@ def protocol_build_reply(request, tid, sock):
         file_name = fields[1]
         save_loc = clients[tid].cwd + "/" + file_name
         try:
-            if (get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
+            if(is_guest(tid)):
+                throw_file(sock, tid)
+                reply = Errors.NO_PREMISSION.value
+            elif (get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
                 throw_file(sock, tid)
                 reply = Errors.MAX_STORAGE.value
             elif os.path.isfile(save_loc):
@@ -723,8 +733,7 @@ def handle_client(sock, tid, addr):
         print(f'New Client number {tid} from {addr}')
         start = recv_data(sock, tid)
         code = start.split(b"|")[0]
-        clients[tid] = Client(tid, "guest", "guest", 0, 0,
-                              None, False)   # Setting client state
+        clients[tid] = Client(tid, "guest", "guest", 0, 0, None, False)   # Setting client state
         if (code == b"RSAR"):
             shared_secret = rsa_exchange(sock, tid)
         if (shared_secret == ""):

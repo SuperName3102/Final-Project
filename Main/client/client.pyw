@@ -17,7 +17,7 @@ import os
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QMessageBox, QApplication, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
-from PyQt6.QtGui import QIcon, QContextMenuEvent
+from PyQt6.QtGui import QIcon, QContextMenuEvent, QDropEvent, QDragEnterEvent
 from PyQt6.QtCore import QSize
 
 
@@ -246,7 +246,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
             uic.loadUi(
                 f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
-
+            self.setAcceptDrops(True)
             self.set_cwd()
             self.draw_cwd(files, directories)
 
@@ -272,12 +272,27 @@ class MainWindow(QtWidgets.QMainWindow):
             self.user_button.setFixedSize(50, 50)
             self.user_button.setIconSize(QSize(40, 40))
             self.user_button.setStyleSheet("padding:0px;border-radius:5px;")
+            
             try:
                 self.user_button.setIcon((QIcon(user_icon)))
             except:
                 pass
         except:
             print(traceback.format_exc())
+    
+    def dragEnterEvent(self, event: QDragEnterEvent):
+        if event.mimeData().hasUrls():  # Check if the dragged object is a file (URL)
+            event.acceptProposedAction()  # Accept the drag event
+    
+    def dropEvent(self, event: QDropEvent):
+        if event.mimeData().hasUrls():
+            file_paths = [url.toLocalFile() for url in event.mimeData().urls()]
+            for file_path in file_paths:
+                file_name = file_path.split("/")[-1]
+                start_string = b'FILS|' + file_name.encode()
+                send_data(start_string)
+                send_file(file_path)
+                self.set_message(f"{len(file_paths)} file(s) dropped: {', '.join([fp.split('/')[-1] for fp in file_paths])}")
 
     def draw_cwd(self, files, directories):
         try:
@@ -307,8 +322,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 button = FileButton(" " + directory)
                 button.setStyleSheet(
                     "background-color:peru;font-size:14px;border-radius: 3px;border:1px solid peachpuff;")
-                button.clicked.connect(
-                    lambda checked, d=directory: move_dir(d))
+                button.clicked.connect(lambda checked, d=directory: move_dir(d))
                 button.setIcon(QIcon(assets_path + "\\folder.svg"))
                 scroll_layout.addWidget(button)
 
@@ -829,8 +843,7 @@ def protocol_parse_reply(reply):
             email = fields[1]
             username = fields[2]
             password = fields[3]
-            to_show = f'Signup was successful for user: {
-                username}, password:{password}'
+            to_show = f'Signup was successful for user: {username}, password:{password}'
 
             window.verification_page(email)
             window.set_message(f"Signup for user {
@@ -850,6 +863,10 @@ def protocol_parse_reply(reply):
                 "Password reset successful, please sign in again with your new password")
 
         elif code == 'LUGR':   # Logout was performed
+            user["email"] = "guest"
+            user["username"] = "guest"
+            user["password"] = "guest"
+            user["subscription_level"] = 0
             to_show = f'Logout succesfull'
             window.main_page()
             window.set_message(to_show)
