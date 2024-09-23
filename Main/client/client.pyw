@@ -6,6 +6,7 @@ from modules.dialogs import *
 from modules.helper import *
 from modules.limits import Limits
 from modules.logger import Logger
+from modules.file_viewer import *
 
 import socket
 import sys
@@ -120,8 +121,7 @@ class MainWindow(QtWidgets.QMainWindow):
         super().__init__()
         self.main_page()
         if (os.path.isfile(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico")):
-            self.setWindowIcon(
-                QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
+            self.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
 
         self.setFixedSize(1000, 550)
 
@@ -196,8 +196,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def forgot_password(self):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))
-                          }/gui/ui/forgot_password.ui", self)
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/forgot_password.ui", self)
             self.send_code_button.clicked.connect(
                 lambda: reset_password(self.email.text()))
             self.send_code_button.setShortcut("Return")
@@ -228,8 +227,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def send_verification_page(self):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))
-                          }/gui/ui/send_verification.ui", self)
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/send_verification.ui", self)
             self.send_code_button.clicked.connect(
                 lambda: send_verification(self.email.text()))
             self.send_code_button.setShortcut("Return")
@@ -301,7 +299,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 button = FileButton(f" {file} | {size}")
                 button.setStyleSheet(
                     "background-color:dimgrey;border:1px solid darkgrey;font-size:14px;border-radius: 3px;")
-                button.clicked.connect(lambda checked, b=button: b.download())
+                button.clicked.connect(lambda checked, f=file_name: view_file(f))
                 button.setIcon(QIcon(assets_path + "\\file.svg"))
                 scroll_layout.addWidget(button)
 
@@ -349,8 +347,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def manage_account(self):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))
-                          }/gui/ui/account_managment.ui", self)
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui", self)
 
             self.forgot_password_button.clicked.connect(
                 lambda: reset_password(user["email"]))
@@ -382,8 +379,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def subscriptions_page(self):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))
-                          }/gui/ui/subscription.ui", self)
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/subscription.ui", self)
 
             get_used_storage()
             self.back_button.clicked.connect(self.manage_account)
@@ -522,13 +518,28 @@ def save_file(save_loc):
                     f.write(data[4:])
                     break
                 else:
-                    protocol_parse_reply(data)
-                    return
+                    return protocol_parse_reply(data)
                 data = b''
     except:
         print(traceback.format_exc())
-    finally:
         handle_reply()
+    handle_reply()
+
+
+def view_file(file_name):
+    send_data(b"VIEW|" + file_name.encode())
+    save_path = f"{os.path.dirname(os.path.abspath(__file__))}\\temp-{file_name}"
+    response = save_file(save_path)
+    if response is not None:
+        print("File size is too big")
+        return
+    result = file_viewer_dialog("File Viewer", save_path)
+    if result:
+        print("File viewer opened and closed successfully.")
+    else:
+        print("File viewer did not function as expected.")
+
+    os.remove(save_path)
 
 
 def move_dir(new_dir):
@@ -934,7 +945,11 @@ def protocol_parse_reply(reply):
             to_show = f"Username changed to {new_username}"
             window.manage_account()
             window.set_message(to_show)
-
+        elif code == 'VIER':
+            file_name = fields[1]
+            to_show = f"File {file_name} was viewed"
+            window.set_message(to_show)
+            
     except Exception as e:   # Error
         print('Server replay bad format ' + str(e))
         print(traceback.format_exc())
@@ -1090,7 +1105,7 @@ def main(addr):
 
 
 if __name__ == "__main__":   # Run main
-    sys.stdout = Logger()
+    #sys.stdout = Logger()
     ip = "127.0.0.1"
     if len(sys.argv) == 2:
         ip = sys.argv[1]

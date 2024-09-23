@@ -584,12 +584,25 @@ def protocol_build_reply(request, tid, sock):
         elif (cr.user_exists(new_username)):
             reply = Errors.USER_REGISTERED.value
         else:
-            os.rename(cloud_path + "\\" +
-                      clients[tid].user, cloud_path + "\\" + new_username)
+            os.rename(cloud_path + "\\" + clients[tid].user, cloud_path + "\\" + new_username)
             cr.change_username(clients[tid].user, new_username)
             clients[tid].cwd = cloud_path + "\\" + new_username
             clients[tid].user = new_username
             reply = f"CHUR|{new_username}|Changed username"
+    
+    elif code == "VIEW":
+        file_name = fields[1]
+        file_path = os.path.join(clients[tid].cwd, file_name)
+        if (not os.path.isfile(file_path)):
+            reply = Errors.FILE_NOT_FOUND.value
+        elif (os.path.getsize(file_path) > 10_000_000):
+            reply = Errors.PREVIEW_SIZE.value
+        else:
+            try:
+                send_file_data(file_path, sock, tid)
+                reply = f"VIER|{file_name}|was viewed"
+            except Exception:
+                reply = Errors.FILE_DOWNLOAD.value
 
     else:
         reply = Errors.UNKNOWN.value
