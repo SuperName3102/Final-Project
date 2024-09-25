@@ -356,6 +356,10 @@ def protocol_build_reply(request, tid, sock):
         clients[tid].cwd = f"{cloud_path}\\guest"
         clients[tid].subscription_level = 0
         clients[tid].admin_level = 0
+        clients[tid].email = "guest"
+        clients[tid].cwd = f"{cloud_path}\\guest"
+        clients[tid].subscription_level = 0
+        clients[tid].admin_level = 0
         reply = "LUGR"
 
     elif (code == "SVER"):   # Client requests account verification code
@@ -731,6 +735,7 @@ def handle_client(sock, tid, addr):
         print(f'New Client number {tid} from {addr}')
         start = recv_data(sock, tid)
         code = start.split(b"|")[0]
+        clients[tid] = Client(tid, "guest", "guest", 0, 0, None, False)   # Setting client state
         clients[tid] = Client(tid, "guest", "guest", 0, 0, None, False)   # Setting client state
         if (code == b"RSAR"):
             shared_secret = rsa_exchange(sock, tid)
