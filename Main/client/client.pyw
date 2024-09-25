@@ -473,14 +473,11 @@ class MainWindow(QtWidgets.QMainWindow):
     def dropEvent(self, event: QDropEvent):
         if event.mimeData().hasUrls():
             file_paths = [url.toLocalFile() for url in event.mimeData().urls()]
-            
-            # Process each file separately
             for file_path in file_paths:
                 file_name = file_path.split("/")[-1]
-                send_data(b'FILS|' + file_name.encode())  # Send file name data
-                send_file(file_path)  # Send the actual file
-            
-            # Update label to reflect all the dropped files
+                start_string = b'FILS|' + file_name.encode()
+                send_data(start_string)
+                send_file(file_path)
             #self.set_message(f"{len(file_paths)} file(s) dropped: {', '.join([fp.split('/')[-1] for fp in file_paths])}")
 
     def set_error_message(self, msg):
@@ -854,8 +851,7 @@ def protocol_parse_reply(reply):
                 username}, password:{password}'
 
             window.verification_page(email)
-            window.set_message(f"Signup for user {
-                               username} completed. Verification code was sent to your email please verify your account")
+            window.set_message(f"Signup for user {username} completed. Verification code was sent to your email please verify your account")
 
         elif code == 'FOPR':   # Recovery mail sent
             to_show = f'Password reset code was sent to {fields[1]}'
@@ -871,6 +867,10 @@ def protocol_parse_reply(reply):
                 "Password reset successful, please sign in again with your new password")
 
         elif code == 'LUGR':   # Logout was performed
+            user["email"] = "guest"
+            user["username"] = "guest"
+            user["password"] = "guest"
+            user["subscription_level"] = 0
             to_show = f'Logout succesfull'
             window.main_page()
             window.set_message(to_show)
