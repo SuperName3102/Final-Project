@@ -17,7 +17,7 @@ import os
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QMessageBox, QApplication, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
-from PyQt6.QtGui import QIcon, QContextMenuEvent
+from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent
 from PyQt6.QtCore import QSize
 
 
@@ -451,16 +451,37 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def file_dialog(self):
         try:
-            file_path, _ = QFileDialog.getOpenFileName(
+            file_paths, _ = QFileDialog.getOpenFileNames(
                 self, "Open File", "", "All Files (*);;Text Files (*.txt)")
 
-            if file_path:
-                file_name = file_path.split("/")[-1]
-                start_string = b'FILS|' + file_name.encode()
-                send_data(start_string)
-                send_file(file_path)
+            if file_paths:  # Check if any files were selected
+                for file_path in file_paths:
+                    file_name = file_path.split("/")[-1]  # Extract the file name
+                    start_string = b'FILS|' + file_name.encode()
+                    # Assuming send_data and send_file are defined elsewhere
+                    send_data(start_string)
+                    send_file(file_path)  # Send the selected file
+                self.set_message(f"{len(file_paths)} file(s) uploaded: {', '.join([fp.split('/')[-1] for fp in file_paths])}")
         except:
             print(traceback.format_exc())
+    
+    def dragEnterEvent(self, event: QDragEnterEvent):
+        if event.mimeData().hasUrls():  # Check if the dragged object is a file (URL)
+            event.acceptProposedAction()  # Accept the drag event
+
+    # This function handles when the dragged object is dropped
+    def dropEvent(self, event: QDropEvent):
+        if event.mimeData().hasUrls():
+            file_paths = [url.toLocalFile() for url in event.mimeData().urls()]
+            
+            # Process each file separately
+            for file_path in file_paths:
+                file_name = file_path.split("/")[-1]
+                send_data(b'FILS|' + file_name.encode())  # Send file name data
+                send_file(file_path)  # Send the actual file
+            
+            # Update label to reflect all the dropped files
+            #self.set_message(f"{len(file_paths)} file(s) dropped: {', '.join([fp.split('/')[-1] for fp in file_paths])}")
 
     def set_error_message(self, msg):
         try:

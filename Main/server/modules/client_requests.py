@@ -12,6 +12,7 @@ import bcrypt
 from datetime import datetime, timedelta
 import secrets
 from pathlib import Path
+import uuid
 
 
 pepper_file = f"{os.path.dirname(os.path.abspath(__file__))}\\pepper.txt"
@@ -27,7 +28,11 @@ class User:
     Used to transfer between user instance and json data
     """
 
-    def __init__(self, email, username, password, salt=bcrypt.gensalt(), last_code=-1, valid_until=str(datetime.now()), verified=False, subscription_level=0, admin_level=0):
+    def __init__(self, id, email, username, password, salt=bcrypt.gensalt(), last_code=-1, valid_until=str(datetime.now()), verified=False, subscription_level = 0, admin_level = 0):
+        if id is None:
+            self.id = gen_id()
+        else:
+            self.id = id
         self.email = email
         self.username = username
         self.password = password
@@ -35,9 +40,14 @@ class User:
         self.last_code = last_code
         self.valid_until = valid_until
         self.verified = verified
-        self.subscription_level = 0
-        self.admin_level = 0
+        self.subscription_level = subscription_level
+        self.admin_level = admin_level
 
+def gen_id():
+    id = uuid.uuid4().hex
+    while db.get_user(id) is not None:
+        id = uuid.uuid4().hex
+    return id
 
 def main():
     global pepper
@@ -108,7 +118,7 @@ def signup_user(user_details):
     Creating new user in database
     From user instance
     """
-    new_user = User(*user_details)
+    new_user = User(None, *user_details)
     new_user.password = hash_password(new_user.password, new_user.salt)
     db.add_user(vars(new_user))
 

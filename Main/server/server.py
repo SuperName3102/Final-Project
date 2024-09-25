@@ -263,8 +263,9 @@ def protocol_build_reply(request, tid, sock):
                 user_dict = cr.get_user_data(cred)
                 username = user_dict["username"]
                 email = user_dict["email"]
-                clients[tid].user = username
-                clients[tid].email = email
+                clients[tid].id = user_dict["id"]
+                clients[tid].user = user_dict["username"]
+                clients[tid].email = user_dict["email"]
                 clients[tid].cwd = f"{cloud_path}\\{username}"
                 clients[tid].subscription_level = user_dict["subscription_level"]
                 clients[tid].admin_level = user_dict["admin_level"]
@@ -417,10 +418,12 @@ def protocol_build_reply(request, tid, sock):
             if (get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
                 throw_file(sock, tid)
                 reply = Errors.MAX_STORAGE.value
+            elif (clients[tid].user == "guest"):
+                throw_file(sock, tid)
+                reply = Errors.NOT_LOGGED.value
             elif os.path.isfile(save_loc):
                 throw_file(sock, tid)
                 reply = Errors.FILE_EXISTS.value
-
             else:
                 if not os.path.exists(clients[tid].cwd):
                     os.makedirs(clients[tid].cwd)
@@ -519,19 +522,16 @@ def protocol_build_reply(request, tid, sock):
             reply = f"RENR|{name}|{new_name}|File renamed succefully"
 
     elif (code == "GICO"):
-        if (os.path.isfile(os.path.join(user_icons_path, clients[tid].user + ".ico"))):
-            send_file_data(os.path.join(user_icons_path,
-                           clients[tid].user + ".ico"), sock, tid)
+        if (os.path.isfile(os.path.join(user_icons_path, clients[tid].id + ".ico"))):
+            send_file_data(os.path.join(user_icons_path, clients[tid].id + ".ico"), sock, tid)
         else:
-            send_file_data(os.path.join(
-                user_icons_path, "guest.ico"), sock, tid)
+            send_file_data(os.path.join(user_icons_path, "guest.ico"), sock, tid)
         reply = f"GICR|Sent use profile picture"
 
     elif (code == "ICOS"):
         file_name = fields[1]
         try:
-            save_path = os.path.join(
-                user_icons_path, clients[tid].user + ".ico")
+            save_path = os.path.join(user_icons_path, clients[tid].id + ".ico")
             try:
                 save_file(save_path, sock, tid)
                 reply = f"ICOR|Profile icon was uploaded succefully"
@@ -723,8 +723,7 @@ def handle_client(sock, tid, addr):
         print(f'New Client number {tid} from {addr}')
         start = recv_data(sock, tid)
         code = start.split(b"|")[0]
-        clients[tid] = Client(tid, "guest", "guest", 0, 0,
-                              None, False)   # Setting client state
+        clients[tid] = Client(tid, "guest", "guest", 0, 0, None, False)   # Setting client state
         if (code == b"RSAR"):
             shared_secret = rsa_exchange(sock, tid)
         if (shared_secret == ""):
