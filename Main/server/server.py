@@ -273,8 +273,7 @@ def protocol_build_reply(request, tid, sock):
                 clients[tid].cwd = f"{cloud_path}\\{username}"
                 clients[tid].subscription_level = user_dict["subscription_level"]
                 clients[tid].admin_level = user_dict["admin_level"]
-                reply = f"LOGS|{email}|{username}|{password}|{
-                    int(clients[tid].subscription_level)}"
+                reply = f"LOGS|{email}|{username}|{int(clients[tid].subscription_level)}"
         else:
             reply = Errors.LOGIN_DETAILS.value
 
@@ -616,6 +615,31 @@ def protocol_build_reply(request, tid, sock):
             except Exception:
                 reply = Errors.FILE_DOWNLOAD.value
 
+    elif code == "GENC":
+        if (is_guest(tid)):
+            reply = Errors.NOT_LOGGED.value
+        else:
+            cr.generate_cookie(clients[tid].id)
+            reply = f"COOK|{cr.get_cookie(clients[tid].id)}"
+    elif code == "COKE":
+        cookie = fields[1]
+        user_dict = cr.get_user_data(cookie)
+        if user_dict is None:
+            reply = Errors.INVALID_COOKIE.value
+        elif cr.cookie_expired(user_dict["id"]):
+            reply = Errors.EXPIRED_COOKIE.value
+        else:
+            username = user_dict["username"]
+            email = user_dict["email"]
+            clients[tid].id = user_dict["id"]
+            clients[tid].user = user_dict["username"]
+            clients[tid].email = user_dict["email"]
+            clients[tid].cwd = f"{cloud_path}\\{username}"
+            clients[tid].subscription_level = user_dict["subscription_level"]
+            clients[tid].admin_level = user_dict["admin_level"]
+            reply = f"LOGS|{email}|{username}|{int(clients[tid].subscription_level)}"
+            
+    
     else:
         reply = Errors.UNKNOWN.value
         fields = ''
@@ -735,7 +759,6 @@ def handle_client(sock, tid, addr):
         print(f'New Client number {tid} from {addr}')
         start = recv_data(sock, tid)
         code = start.split(b"|")[0]
-        clients[tid] = Client(tid, "guest", "guest", 0, 0, None, False)   # Setting client state
         clients[tid] = Client(tid, "guest", "guest", 0, 0, None, False)   # Setting client state
         if (code == b"RSAR"):
             shared_secret = rsa_exchange(sock, tid)

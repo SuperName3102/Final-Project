@@ -23,13 +23,14 @@ from PyQt6.QtCore import QSize
 
 # Announce global vars
 len_field = 4
-user = {}
+user = {"email": "guest", "username": "guest", "subscription_level": 0}
 encryption = False
 chunk_size = 65536
 cwd = ""
 used_storage = 0
 user_icon = f"{os.path.dirname(os.path.abspath(__file__))}/assets/user.ico"
 assets_path = f"{os.path.dirname(os.path.abspath(__file__))}/assets"
+cookie_path = f"{os.path.dirname(os.path.abspath(__file__))}/cookies/user.cookie"
 log = False
 search_filter = None
 
@@ -161,8 +162,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.signup_button.setIcon(QIcon(assets_path+"\\new_account.svg"))
 
             self.login_button.clicked.connect(self.login_page)
-            self.login_button.setStyleSheet(
-                "background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
+            self.login_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
 
             self.back_button.clicked.connect(self.main_page)
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
@@ -174,18 +174,14 @@ class MainWindow(QtWidgets.QMainWindow):
             uic.loadUi(
                 f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/login.ui", self)
             self.password.setEchoMode(QLineEdit.EchoMode.Password)
-            self.password_toggle.clicked.connect(
-                lambda: self.toggle_password(self.password))
+            self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
             self.forgot_password_button.clicked.connect(self.forgot_password)
-            self.forgot_password_button.setStyleSheet(
-                "background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
+            self.forgot_password_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
 
             self.signup_button.clicked.connect(self.signup_page)
-            self.signup_button.setStyleSheet(
-                "background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
+            self.signup_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
 
-            self.login_button.clicked.connect(
-                lambda: login(self.user.text(), self.password.text()))
+            self.login_button.clicked.connect(lambda: login(self.user.text(), self.password.text(), self.remember.isChecked()))
             self.login_button.setShortcut("Return")
             self.login_button.setIcon(QIcon(assets_path+"\\login.svg"))
 
@@ -604,6 +600,7 @@ def upload_icon():
         print(traceback.format_exc())
 
 
+
 def change_username():
     name = user["username"]
     new_name = new_name_dialog("Change Username", "Enter new  username:", name)
@@ -619,7 +616,7 @@ def subscribe(level):
 # Begin server requests related functions
 
 
-def login(cred, password):
+def login(cred, password, remember):
     """
     Send login request to server
     """
@@ -627,6 +624,10 @@ def login(cred, password):
     send_string = build_req_string("LOGN", items)
     send_data(send_string)
     handle_reply()
+    if remember and (user["email"] == cred or user["username"] == cred):
+        send_data(b"GENC")
+        handle_reply()
+    
 
 
 def logout():
@@ -768,7 +769,20 @@ def get_cwd_directories(filter=None):
         print(traceback.format_exc())
         return []
 
+def save_cookie(cookie):
+    with open(cookie_path, "w") as f:
+        f.write(cookie)
 
+def send_cookie():
+    try:
+        with open(cookie_path, "r") as f:
+            cookie = f.read()
+            send_data(b"COKE|" + cookie.encode())
+            handle_reply()
+    except:
+        pass
+    
+    
 # Key exchange
 
 def rsa_exchange():
@@ -845,13 +859,10 @@ def protocol_parse_reply(reply):
         elif code == 'LOGS':   # Login succeeded
             email = fields[1]
             username = fields[2]
-            password = fields[3]
-            to_show = f'Login was succesfull for user: {
-                username}, password:{password}'
+            to_show = f'Login was succesfull for user: {username}'
             user["email"] = email
             user["username"] = username
-            user["password"] = password
-            user["subscription_level"] = fields[4]
+            user["subscription_level"] = fields[3]
             get_user_icon()
             cwd = username
             window.user_page()
@@ -882,11 +893,6 @@ def protocol_parse_reply(reply):
         elif code == 'LUGR':   # Logout was performed
             user["email"] = "guest"
             user["username"] = "guest"
-            user["password"] = "guest"
-            user["subscription_level"] = 0
-            user["email"] = "guest"
-            user["username"] = "guest"
-            user["password"] = "guest"
             user["subscription_level"] = 0
             to_show = f'Logout succesfull'
             window.main_page()
@@ -987,6 +993,10 @@ def protocol_parse_reply(reply):
             file_name = fields[1]
             to_show = f"File {file_name} was viewed"
             window.set_message(to_show)
+        elif code == 'COOK':
+            cookie = fields[1]
+            save_cookie(cookie)
+            to_show = f"Cookie recieved"
             
     except Exception as e:   # Error
         print('Server replay bad format ' + str(e))
@@ -1125,16 +1135,15 @@ def main(addr):
         return
     try:
         rsa_exchange()
-
         # gui = threading.Thread(target=gui.create_root, args=())
         # gui.start()
         # gui.create_root()
 
         app = QtWidgets.QApplication(sys.argv)
-        with open(f"{os.path.dirname(os.path.abspath(__file__))}/gui/css/style.css", 'r') as f:
-            app.setStyleSheet(f.read())
+        with open(f"{os.path.dirname(os.path.abspath(__file__))}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
         window = MainWindow()
         window.show()
+        send_cookie()
         sys.exit(app.exec())
 
     except Exception as e:

@@ -28,3 +28,5 @@ class Errors(Enum):
     FILE_EXISTS = f"ERRR|021|A file with that name already exists"
     PREVIEW_SIZE = f"ERRR|022|File exceeds max preview size of 10 MB"
     NOT_LOGGED = f"ERRR|023|Can't upload files here"
+    INVALID_COOKIE = f"ERRR|024|Cookie is invalid"
+    EXPIRED_COOKIE = f"ERRR|025|Cookie is expired"

@@ -28,7 +28,7 @@ class User:
     Used to transfer between user instance and json data
     """
 
-    def __init__(self, id, email, username, password, salt=bcrypt.gensalt(), last_code=-1, valid_until=str(datetime.now()), verified=False, subscription_level = 0, admin_level = 0):
+    def __init__(self, id, email, username, password, salt=bcrypt.gensalt(), last_code=-1, valid_until=str(datetime.now()), verified=False, subscription_level = 0, admin_level = 0, cookie = "", cookie_expiration = -1):
         if id is None:
             self.id = gen_id()
         else:
@@ -42,6 +42,8 @@ class User:
         self.verified = verified
         self.subscription_level = subscription_level
         self.admin_level = admin_level
+        self.cookie = cookie
+        self.cookie_expiration = cookie_expiration
 
 def gen_id():
     id = uuid.uuid4().hex
@@ -324,6 +326,23 @@ def change_username(username, new_username):
     user.username = new_username
     db.update_user(username, vars(user))
 
+def generate_cookie(id):
+    cookie = str(secrets.token_hex(256))
+    while db.get_user(cookie) is not None:
+        cookie = str(secrets.token_hex(256))
+    cookie_expiration =  str(timedelta(weeks=4) + datetime.now())
+    db.update_user2(id, ["cookie", "cookie_expiration"], [cookie, cookie_expiration])
+
+def get_cookie(id):
+    return db.get_values(id, ["cookie"])[0]
+
+def cookie_expired(id):
+    user = db.get_user(id)
+    if (user == None):
+        return True
+    user = User(**user)
+    return (str_to_date(user.cookie_expiration) < datetime.now())
+    
 
 if __name__ == "__main__":
     main()

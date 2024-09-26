@@ -273,6 +273,24 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QCheckBox" name="remember">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>475</y>
+      <width>261</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string> Remember  Me</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

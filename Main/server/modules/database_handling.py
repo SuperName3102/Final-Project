@@ -14,8 +14,8 @@ permissions_table = "Permissions"
 def create_tables():
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
-    #cursor.execute(f"DROP TABLE users")
-    cursor.execute(f"CREATE TABLE IF NOT EXISTS {users_table} (id TEXT PRIMARY KEY, email TEXT UNIQUE, username TEXT UNIQUE, password TEXT, salt TEXT, last_code INTEGER, valid_until TEXT, verified BOOL, subscription_level INT, admin_level INT)")
+    cursor.execute(f"DROP TABLE Users")
+    cursor.execute(f"CREATE TABLE IF NOT EXISTS {users_table} (id TEXT PRIMARY KEY, email TEXT UNIQUE, username TEXT UNIQUE, password TEXT, salt TEXT, last_code INTEGER, valid_until TEXT, verified BOOL, subscription_level INT, admin_level INT, cookie TEXT, cookie_expiration TEXT)")
     cursor.execute(f"CREATE TABLE IF NOT EXISTS {files_table} (id TEXT PRIMARY KEY, sname TEXT UNIQUE, fname TEXT, path TEXT, owner_id TEXT)")
     cursor.execute(f"CREATE TABLE IF NOT EXISTS {permissions_table} (id TEXT PRIMARY KEY, file_id TEXT, user_id TEXT, read BOOL, write BOOL, del BOOL, rename BOOL, download BOOL, share BOOL)")
     conn.commit()
@@ -71,12 +71,43 @@ def update_user(cred, user_dict):
     remove_user(cred)
     add_user(user_dict)
 
+def update_user2(id, fields, new_values):
+    """
+    Update user with new user dict
+    Recieves a dict returns nothing
+    Removing user and adding the updated one
+    (May change in the future for better option)
+    """
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    sql = f"UPDATE {users_table} SET "
+    for field in fields[:-1]:
+        sql += f"{field} = ?, "
+    sql += f"{fields[-1]} = ? WHERE id = ?"
+    cursor.execute(sql, tuple(new_values + [id]))
+    conn.commit()
+    conn.close()
+
+def get_values(id, fields):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    sql = f"SELECT "
+    for field in fields[:-1]:
+        sql += f"{field}, "
+    sql += f"{fields[-1]} "
+    sql += f"FROM {users_table} WHERE id = ?"
+    cursor.execute(sql, (id,))
+    row = cursor.fetchone()
+    conn.commit()
+    conn.close()
+    return row
+
 
 def row_to_dict(row):
     """
     Gets a row of table and returns a dict with that row
     """
-    user_dict = {"id": row[0], "email": row[1], "username": row[2], "password": row[3],"salt": row[4],"last_code": row[5],"valid_until": row[6],"verified": bool(row[7]), "subscription_level": int(row[8]), "admin_level": int(row[9])}
+    user_dict = {"id": row[0], "email": row[1], "username": row[2], "password": row[3],"salt": row[4],"last_code": row[5],"valid_until": row[6],"verified": bool(row[7]), "subscription_level": int(row[8]), "admin_level": int(row[9]), "cookie": row[10], "cookie_expiration": row[11]}
     return user_dict
 
 def get_user(cred):
@@ -87,7 +118,7 @@ def get_user(cred):
     """
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
-    cursor.execute(f"SELECT * FROM {users_table} WHERE username = ? or email = ? or id = ?", (cred, cred, cred))
+    cursor.execute(f"SELECT * FROM {users_table} WHERE username = ? or email = ? or id = ? or cookie = ?", (cred, cred, cred, cred))
     row = cursor.fetchone()
     conn.close()
     if row == None: return None
