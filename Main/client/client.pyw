@@ -558,6 +558,7 @@ def view_file(file_id, file_name):
     save_path = f"{os.path.dirname(os.path.abspath(__file__))}\\temp-{file_name}"
     response = save_file(save_path)
     if response is not None:
+        os.remove(save_path)
         return
     result = file_viewer_dialog("File Viewer", save_path)
     if result:
