@@ -14,6 +14,7 @@ import traceback
 import rsa
 import struct
 import os
+import threading
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QMessageBox, QApplication, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
@@ -23,10 +24,9 @@ from PyQt6.QtCore import QSize
 
 # Announce global vars
 len_field = 4
-user = {"email": "guest", "username": "guest", "subscription_level": 0}
+user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""}
 encryption = False
 chunk_size = 65536
-cwd = ""
 used_storage = 0
 user_icon = f"{os.path.dirname(os.path.abspath(__file__))}/assets/user.ico"
 assets_path = f"{os.path.dirname(os.path.abspath(__file__))}/assets"
@@ -38,8 +38,9 @@ search_filter = None
 # Begin gui related functions
 
 class FileButton(QPushButton):
-    def __init__(self, text, parent=None):
+    def __init__(self, text, id = None, parent=None):
         super().__init__(text, parent)
+        self.id = id
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.setStyleSheet("""
             QPushButton {
@@ -80,23 +81,22 @@ class FileButton(QPushButton):
 
     def download(self):
         file_name = self.text().split(" | ")[0][1:]
-        file_path, _ = QFileDialog.getSaveFileName(
-            self, "Save File", file_name, "Text Files (*.txt);;All Files (*)")
+        file_path, _ = QFileDialog.getSaveFileName(self, "Save File", file_name, "Text Files (*.txt);;All Files (*)")
         if file_path:
-            send_data(b"DOWN|" + file_name.encode())
+            send_data(b"DOWN|" + self.id.encode())
             save_file(file_path)
 
     def rename(self):
         name = self.text().split(" | ")[0][1:]
         new_name = new_name_dialog("Rename", "Enter new file name:", name)
         if new_name is not None:
-            send_data(b"RENA|" + name.encode() + b"|" + new_name.encode())
+            send_data(b"RENA|" + self.id.encode() + b"|" + name.encode() + b"|" + new_name.encode())
             handle_reply()
 
     def delete(self):
         name = self.text().split(" | ")[0][1:]
         if show_confirmation_dialog("Are you sure you want to delete " + name):
-            send_data(b"DELF|" + name.encode() + b"|")
+            send_data(b"DELF|" + self.id.encode())
             handle_reply()
 
     def share(self):
@@ -112,8 +112,7 @@ def new_folder():
 
 def search():
     global search_filter
-    search_filter = new_name_dialog(
-        "Search", "Enter search filter:", search_filter)
+    search_filter = new_name_dialog("Search", "Enter search filter:", search_filter)
     window.user_page()
 
 
@@ -240,25 +239,21 @@ class MainWindow(QtWidgets.QMainWindow):
             directories = get_cwd_directories(search_filter)
             get_used_storage()
 
-            uic.loadUi(
-                f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
             self.setAcceptDrops(True)
             self.set_cwd()
             self.draw_cwd(files, directories)
 
             self.main_text.setText(f"Welcome {user["username"]}")
 
-            self.storage_label.setText(
-                f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
-            self.storage_remaining.setMaximum(
-                Limits(user["subscription_level"]).max_storage)
+            self.storage_label.setText(f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
+            self.storage_remaining.setMaximum(Limits(user["subscription_level"]).max_storage)
             self.storage_remaining.setValue(int(used_storage))
 
             self.search.setIcon(QIcon(assets_path+"\\search.svg"))
             self.search.setText(f"Search Filter: {search_filter}")
             self.search.clicked.connect(search)
-            self.search.setStyleSheet(
-                "background-color:transparent;font-size:13px;border:none;")
+            self.search.setStyleSheet("background-color:transparent;font-size:13px;border:none;")
 
             self.user_button.clicked.connect(lambda: self.manage_account())
             self.logout_button.clicked.connect(logout)
@@ -304,21 +299,23 @@ class MainWindow(QtWidgets.QMainWindow):
             scroll_layout.setSpacing(5)
 
             for i, file in enumerate(files):
-                file_name = file.split("~")[0]
-                size = format_file_size(int(file.split("~")[-1]))
-                file = " | ".join(file.split("~")[:-1])
-                button = FileButton(f" {file} | {size}")
-                button.setStyleSheet(
-                    "background-color:dimgrey;border:1px solid darkgrey;font-size:14px;border-radius: 3px;")
-                button.clicked.connect(lambda checked, f=file_name: view_file(f))
+                file = file.split("~")
+                file_name = file[0]
+                date = file[1][:-7]
+                size = format_file_size(int(file[2]))
+                file_id = file[3]
+                
+                button = FileButton(f" {file_name} | {date} | {size}", file_id)
+                button.setStyleSheet("background-color:dimgrey;border:1px solid darkgrey;font-size:14px;border-radius: 3px;")
+                button.clicked.connect(lambda checked, name=file_name, id = file_id: view_file(id, name))
                 button.setIcon(QIcon(assets_path + "\\file.svg"))
                 scroll_layout.addWidget(button)
 
             for index, directory in enumerate(directories):
-                button = FileButton(" " + directory)
-                button.setStyleSheet(
-                    "background-color:peru;font-size:14px;border-radius: 3px;border:1px solid peachpuff;")
-                button.clicked.connect(lambda checked, d=directory: move_dir(d))
+                directory = directory.split("~")
+                button = FileButton(" " + directory[0], directory[1])
+                button.setStyleSheet("background-color:peru;font-size:14px;border-radius: 3px;border:1px solid peachpuff;")
+                button.clicked.connect(lambda checked, id=directory[1]: move_dir(id))
                 button.setIcon(QIcon(assets_path + "\\folder.svg"))
                 scroll_layout.addWidget(button)
 
@@ -328,11 +325,10 @@ class MainWindow(QtWidgets.QMainWindow):
                     "background-color:red;font-size:14px;border-radius: 3px;border:1px solid darkgrey;")
                 scroll_layout.addWidget(button)
 
-            if (cwd != user["username"]):
+            if (user["cwd"] != ""):
                 button = FileButton("Back")
-                button.setStyleSheet(
-                    "background-color:green;font-size:14px;border-radius: 3px;border:1px solid lightgreen;")
-                button.clicked.connect(lambda: move_dir("/.."))
+                button.setStyleSheet("background-color:green;font-size:14px;border-radius: 3px;border:1px solid lightgreen;")
+                button.clicked.connect(lambda: move_dir(user["parent_cwd"]))
                 scroll_layout.addWidget(button)
 
             scroll_container_widget.setLayout(scroll_layout)
@@ -461,8 +457,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def file_dialog(self):
         try:
-            file_paths, _ = QFileDialog.getOpenFileNames(
-                self, "Open File", "", "All Files (*);;Text Files (*.txt)")
+            file_paths, _ = QFileDialog.getOpenFileNames(self, "Open File", "", "All Files (*);;Text Files (*.txt)")
 
             if file_paths:  # Check if any files were selected
                 for file_path in file_paths:
@@ -506,7 +501,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def set_cwd(self):
         if (hasattr(self, "cwd")):
             self.cwd.setStyleSheet("color: yellow; font-size: 17px;")
-            self.cwd.setText(f"CWD: {cwd}")
+            self.cwd.setText(f"CWD: {user['username']}\\{user['cwd_name']}")
 
 
 # Files functions
@@ -524,10 +519,14 @@ def send_file(file_path):
             data = f.read(left)
             if (data != b""):
                 send_data(b'FILE' + data)
+                return
     except:
         print(traceback.format_exc())
     finally:
         handle_reply()
+
+
+
 
 
 def save_file(save_loc):
@@ -554,12 +553,11 @@ def save_file(save_loc):
     handle_reply()
 
 
-def view_file(file_name):
-    send_data(b"VIEW|" + file_name.encode())
+def view_file(file_id, file_name):
+    send_data(b"VIEW|" + file_id.encode())
     save_path = f"{os.path.dirname(os.path.abspath(__file__))}\\temp-{file_name}"
     response = save_file(save_path)
     if response is not None:
-        print("File size is too big")
         return
     result = file_viewer_dialog("File Viewer", save_path)
     if result:
@@ -705,28 +703,12 @@ def delete_user(email):
 
 def confirm_account_deletion(email):
     # Create a QApplication instance if needed
-    app = QApplication.instance()
-    if app is None:
-        app = QApplication([])
+    confirm_email = new_name_dialog("Delete Account", "Enter account email:")
+    if email == confirm_email:
+        return True
+    else:
+        window.set_error_message("Entered email does not match account email")
 
-    app.setWindowIcon(
-        QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
-    while True:
-        # Create input dialog asking for email confirmation
-        entered_email, ok = QInputDialog.getText(
-            None, "Account delete confirmation", "Enter your email to confirm:")
-        if not ok:
-            return False
-        if entered_email == email:
-            return True
-        else:
-            error_msg = QMessageBox()
-            error_msg.setIcon(QMessageBox.Icon.Warning)
-            error_msg.setWindowTitle("Error")
-            error_msg.setText(
-                "The email you entered does not match account email.")
-            error_msg.setStandardButtons(QMessageBox.StandardButton.Ok)
-            error_msg.exec()
 
 
 def exit_program():
@@ -835,7 +817,6 @@ def protocol_parse_reply(reply):
     Checking error codes and respective answers to user
     Performing action according to response from server
     """
-    global cwd
     try:
         to_show = 'Invalid reply from server'
         if reply == None:
@@ -864,7 +845,6 @@ def protocol_parse_reply(reply):
             user["username"] = username
             user["subscription_level"] = fields[3]
             get_user_icon()
-            cwd = username
             window.user_page()
             window.set_message("Login was succesfull!")
 
@@ -884,16 +864,18 @@ def protocol_parse_reply(reply):
 
         elif code == 'PASS':   # Password was reset
             new_pwd = fields[2]
-            to_show = f'Password was reset for user: {
-                fields[1]}, new password: {new_pwd}'
+            to_show = f'Password was reset for user: {fields[1]}, new password: {new_pwd}'
+            logout()
             window.main_page()
-            window.set_message(
-                "Password reset successful, please sign in again with your new password")
+            window.set_message("Password reset successful, please sign in again with your new password")
 
         elif code == 'LUGR':   # Logout was performed
             user["email"] = "guest"
             user["username"] = "guest"
             user["subscription_level"] = 0
+            user["cwd"] = ""
+            user["parent_cwd"] = ""
+            user["cwd_name"] = ""
             to_show = f'Logout succesfull'
             window.main_page()
             window.set_message(to_show)
@@ -909,8 +891,7 @@ def protocol_parse_reply(reply):
             to_show = f'Verification for user {username} was succesfull'
 
             window.main_page()
-            window.set_message(f"Verification for user {
-                               username} completed. You may now log in to your account")
+            window.set_message(f"Verification for user {username} completed. You may now log in to your account")
 
         elif code == 'DELR':   # User deletion succeeded
             username = fields[1]
@@ -925,8 +906,10 @@ def protocol_parse_reply(reply):
             window.set_message(to_show)
 
         elif code == 'MOVR':
-            to_show = f'Directory {fields[1]} was moved into'
-            cwd = fields[1]
+            user["cwd"] = fields[1]
+            user["parent_cwd"] = fields[2]
+            user["cwd_name"] = fields[3]
+            to_show = f'Succesfully moved to {fields[3]}'
             window.user_page()
 
         elif code == 'DOWR':
@@ -985,7 +968,6 @@ def protocol_parse_reply(reply):
         elif code == 'CHUR':
             new_username = fields[1]
             user["username"] = new_username
-            cwd = new_username
             to_show = f"Username changed to {new_username}"
             window.manage_account()
             window.set_message(to_show)

@@ -30,3 +30,4 @@ class Errors(Enum):
     NOT_LOGGED = f"ERRR|023|Can't upload files here"
     INVALID_COOKIE = f"ERRR|024|Cookie is invalid"
     EXPIRED_COOKIE = f"ERRR|025|Cookie is expired"
+    NO_PERMS = f"ERRR|026|You don't have the permission to perform this action"

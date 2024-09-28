@@ -147,17 +147,6 @@ def send_file_data(file_path, sock, tid):
             os.remove(lock_path)
         raise
 
-
-def get_user_storage(username):
-    total_size = 0
-    for dirpath, dirnames, filenames in os.walk(cloud_path + "\\" + username):
-        for f in filenames:
-            fp = os.path.join(dirpath, f)
-            # Skip if the file is broken or inaccessible
-            if os.path.exists(fp):
-                total_size += os.path.getsize(fp)
-    return total_size
-
 def is_guest(tid):
     return clients[tid].user == "guest"
 
@@ -249,6 +238,7 @@ def protocol_build_reply(request, tid, sock):
     # Checking each indevidual code
     if code == 'EXIT':   # Client requests disconnection
         reply = 'EXTR'
+        clients[tid].id = tid
         clients[tid].user = "dead"
 
     elif (code == "LOGN"):   # Client requests login
@@ -270,7 +260,7 @@ def protocol_build_reply(request, tid, sock):
                 clients[tid].id = user_dict["id"]
                 clients[tid].user = user_dict["username"]
                 clients[tid].email = user_dict["email"]
-                clients[tid].cwd = f"{cloud_path}\\{username}"
+                clients[tid].cwd = f""
                 clients[tid].subscription_level = user_dict["subscription_level"]
                 clients[tid].admin_level = user_dict["admin_level"]
                 reply = f"LOGS|{email}|{username}|{int(clients[tid].subscription_level)}"
@@ -350,13 +340,10 @@ def protocol_build_reply(request, tid, sock):
             reply = Errors.CODE_EXPIRED.value
 
     elif (code == "LOGU"):   # Client requests logout
+        clients[tid].id = tid
         clients[tid].user = "guest"
         clients[tid].email = "guest"
-        clients[tid].cwd = f"{cloud_path}\\guest"
-        clients[tid].subscription_level = 0
-        clients[tid].admin_level = 0
-        clients[tid].email = "guest"
-        clients[tid].cwd = f"{cloud_path}\\guest"
+        clients[tid].cwd = f""
         clients[tid].subscription_level = 0
         clients[tid].admin_level = 0
         reply = "LUGR"
@@ -406,17 +393,10 @@ def protocol_build_reply(request, tid, sock):
 
     elif (code == "DELU"):   # Client requests user deletion
         email = fields[1]
-
-        if (v.is_empty(fields[1:])):
-            return f"ERRR|101|Cannot have an empty field"
-        elif (v.check_illegal_chars(fields[1:])):
-            return f"ERRR|102|Invalid chars used"
-        elif (clients[tid].email != email):
-            return Errors.NO_DELETE_PERMS.value
-
-        if (cr.user_exists(email)):
-            cr.delete_user(email)
-            shutil.rmtree(cloud_path + "\\" + clients[tid].user)
+        id = clients[tid].id
+        if (cr.user_exists(id)):
+            cr.delete_user(id)
+            clients[tid].id = tid
             clients[tid].user = "guest"
             reply = f"DELR|{email}"
         else:
@@ -429,23 +409,22 @@ def protocol_build_reply(request, tid, sock):
             if (is_guest(tid)):
                 throw_file(sock, tid)
                 reply = Errors.NOT_LOGGED.value
-            elif (get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
+            elif (cr.get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
                 throw_file(sock, tid)
                 reply = Errors.MAX_STORAGE.value
             elif os.path.isfile(save_loc):
                 throw_file(sock, tid)
                 reply = Errors.FILE_EXISTS.value
             else:
-                if not os.path.exists(clients[tid].cwd):
-                    os.makedirs(clients[tid].cwd)
                 try:
-                    save_file(save_loc, sock, tid)
+                    name = cr.gen_file_name()
+                    save_file(cloud_path + "\\" + name, sock, tid)
+                    size = os.path.getsize(cloud_path + "\\" + name)
+                    cr.new_file(name, file_name, clients[tid].cwd, clients[tid].id, size)
                     reply = f"FILR|{file_name}|was saved succefully"
                 except LimitExceeded:
                     throw_file(sock, tid)
-                    reply = Errors.SIZE_LIMIT.value + " " + \
-                        str(Limits(
-                            clients[tid].subscription_level).max_file_size) + " MB"
+                    reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
         except Exception:
             print(traceback.format_exc())
             throw_file(sock, tid)
@@ -458,9 +437,9 @@ def protocol_build_reply(request, tid, sock):
                 return f"ERRR|101|Cannot have an empty field"
             elif (v.check_illegal_chars(fields[1:])):
                 return f"ERRR|102|Invalid chars used"
-            files = cr.get_files(clients[tid].cwd, search_filter)
+            files = cr.get_files(clients[tid].id, clients[tid].cwd, search_filter)
         else:
-            files = cr.get_files(clients[tid].cwd)
+            files = cr.get_files(clients[tid].id, clients[tid].cwd)
         reply = "PATH"
         for file in files:
             reply += f"|{file}"
@@ -472,64 +451,52 @@ def protocol_build_reply(request, tid, sock):
                 return f"ERRR|101|Cannot have an empty field"
             elif (v.check_illegal_chars(fields[1:])):
                 return f"ERRR|102|Invalid chars used"
-            directories = cr.get_directories(clients[tid].cwd, search_filter)
+            directories = cr.get_directories(clients[tid].id, clients[tid].cwd, search_filter)
         else:
-            directories = cr.get_directories(clients[tid].cwd)
+            directories = cr.get_directories(clients[tid].id, clients[tid].cwd)
 
         reply = "PATD"
         for directory in directories:
             reply += f"|{directory}"
 
     elif (code == "MOVD"):
-        dir = fields[1]
-        if (dir == "/.."):
-            new_cwd = ("\\".join(clients[tid].cwd.split("\\")[:-1]))
-        else:
-            new_cwd = (clients[tid].cwd + "\\" + dir)
-        if (os.path.isdir(new_cwd)):
-            main_path = f"{cloud_path}\\{clients[tid].user}"
-            if (not (cr.is_subpath(main_path, new_cwd))):
-                reply = Errors.INVALID_DIRECTORY.value
-            else:
-                clients[tid].cwd = new_cwd
-                reply = f"MOVR|{new_cwd.split(
-                    "cloud")[1][1:]}|moved succesfully"
+        directory_id = fields[1]
+        if (cr.valid_directory(directory_id, clients[tid].id) or directory_id == ""):
+            clients[tid].cwd = directory_id
+            reply = f"MOVR|{directory_id}|{cr.get_parent_directory(directory_id)}|{cr.get_full_path(directory_id)}|moved succesfully"
+            
         else:
             reply = Errors.INVALID_DIRECTORY.value
 
     elif (code == "DOWN"):
-        file_name = fields[1]
-        file_path = os.path.join(clients[tid].cwd, file_name)
+        file_id = fields[1]
+        file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
         if (not os.path.isfile(file_path)):
             reply = Errors.FILE_NOT_FOUND.value
         else:
             try:
                 send_file_data(file_path, sock, tid)
-                reply = f"DOWR|{file_name}|was downloaded"
+                reply = f"DOWR|{cr.get_file_fname(file_id)}|was downloaded"
             except Exception:
                 reply = Errors.FILE_DOWNLOAD.value
 
     elif (code == "NEWF"):
         folder_name = fields[1]
-        folder_path = clients[tid].cwd + "\\" + folder_name
-        if (not os.path.isdir(folder_path)):
-            os.makedirs(folder_path, exist_ok=True)
-            reply = f"NEFR|{folder_name}|was created"
-        else:
-            reply = Errors.FOLDER_EXISTS.value
+        folder_path = clients[tid].cwd
+        cr.create_folder(folder_name, folder_path, clients[tid].id)
+        reply = f"NEFR|{folder_name}|was created"
 
     elif (code == "RENA"):
-        name = fields[1]
-        new_name = fields[2]
+        file_id = fields[1]
+        name = fields[2]
+        new_name = fields[3]
 
-        path = clients[tid].cwd + "\\" + name
-        new_path = clients[tid].cwd + "\\" + new_name
-        if (not os.path.isfile(path) and not os.path.isdir(path)):
-            reply = Errors.FILE_NOT_FOUND.value
-        elif (os.path.exists(new_path)):
-            reply = Errors.EXISTS.value
+        if (v.is_empty(fields[1:])):
+            return f"ERRR|101|Cannot have an empty field"
+        elif (not cr.is_owner(clients[tid].id, file_id)):
+            reply = Errors.NO_PERMS.value
         else:
-            os.rename(path, new_path)
+            cr.rename_file(file_id, new_name)
             reply = f"RENR|{name}|{new_name}|File renamed succefully"
 
     elif (code == "GICO"):
@@ -548,9 +515,7 @@ def protocol_build_reply(request, tid, sock):
                 reply = f"ICOR|Profile icon was uploaded succefully"
             except LimitExceeded:
                 throw_file(sock, tid)
-                reply = Errors.SIZE_LIMIT.value + " " +\
-                    str(Limits(
-                        clients[tid].subscription_level).max_file_size) + " MB"
+                reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
 
         except Exception:
             print(traceback.format_exc())
@@ -558,16 +523,18 @@ def protocol_build_reply(request, tid, sock):
             reply = Errors.FILE_UPLOAD.value
 
     elif code == 'DELF':
-        name = fields[1]
-        path = clients[tid].cwd + "\\" + name
-        if not os.path.exists(path):
-            reply = Errors.FILE_NOT_FOUND.value
-        elif os.path.isfile(path):
-            os.remove(path)
+        id = fields[1]
+        if cr.get_file_fname(id) is not None:
+            name = cr.get_file_fname(id)
+            cr.delete_file(id)
             reply = f"DLFR|{name}|was deleted!"
-        elif os.path.isdir(path):
-            shutil.rmtree(path)
+        elif cr.get_dir_name(id) is not None:
+            name = cr.get_dir_name(id)
+            cr.delete_directory(id)
             reply = f"DFFR|{name}|was deleted!"
+        else:
+            reply = Errors.FILE_NOT_FOUND.value
+        
 
     elif code == "SUBL":
         level = fields[1]
@@ -576,12 +543,12 @@ def protocol_build_reply(request, tid, sock):
         elif (int(level) < 0 or int(level) > 3):
             reply = Errors.INVALID_LEVEL.value
         else:
-            cr.change_level(clients[tid].email, int(level))
+            cr.change_level(clients[tid].id, int(level))
             clients[tid].subscription_level = int(level)
             reply = f"SUBR|{level}|Subscription level updated"
 
     elif code == "GEUS":
-        used_storage = get_user_storage(clients[tid].user)
+        used_storage = cr.get_user_storage(clients[tid].id)
         reply = f"GEUR|{used_storage}"
 
     elif code == "CHUN":
@@ -595,15 +562,13 @@ def protocol_build_reply(request, tid, sock):
         elif (cr.user_exists(new_username)):
             reply = Errors.USER_REGISTERED.value
         else:
-            os.rename(cloud_path + "\\" + clients[tid].user, cloud_path + "\\" + new_username)
-            cr.change_username(clients[tid].user, new_username)
-            clients[tid].cwd = cloud_path + "\\" + new_username
+            cr.change_username(clients[tid].id, new_username)
             clients[tid].user = new_username
             reply = f"CHUR|{new_username}|Changed username"
     
     elif code == "VIEW":
-        file_name = fields[1]
-        file_path = os.path.join(clients[tid].cwd, file_name)
+        file_id = fields[1]
+        file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
         if (not os.path.isfile(file_path)):
             reply = Errors.FILE_NOT_FOUND.value
         elif (os.path.getsize(file_path) > 10_000_000):
@@ -611,9 +576,10 @@ def protocol_build_reply(request, tid, sock):
         else:
             try:
                 send_file_data(file_path, sock, tid)
-                reply = f"VIER|{file_name}|was viewed"
+                reply = f"VIER|{cr.get_file_fname(file_id)}|was viewed"
             except Exception:
                 reply = Errors.FILE_DOWNLOAD.value
+
 
     elif code == "GENC":
         if (is_guest(tid)):
@@ -621,6 +587,7 @@ def protocol_build_reply(request, tid, sock):
         else:
             cr.generate_cookie(clients[tid].id)
             reply = f"COOK|{cr.get_cookie(clients[tid].id)}"
+    
     elif code == "COKE":
         cookie = fields[1]
         user_dict = cr.get_user_data(cookie)
@@ -634,7 +601,7 @@ def protocol_build_reply(request, tid, sock):
             clients[tid].id = user_dict["id"]
             clients[tid].user = user_dict["username"]
             clients[tid].email = user_dict["email"]
-            clients[tid].cwd = f"{cloud_path}\\{username}"
+            clients[tid].cwd = f""
             clients[tid].subscription_level = user_dict["subscription_level"]
             clients[tid].admin_level = user_dict["admin_level"]
             reply = f"LOGS|{email}|{username}|{int(clients[tid].subscription_level)}"
@@ -820,14 +787,14 @@ def main(addr):
     try:
         create_keys()
         load_keys()
+        cr.clean_db()
     except:
         srv_sock.close()
 
     print('Main thread: before accepting ...\n')
     while True:
         cli_sock, addr = srv_sock.accept()
-        t = threading.Thread(target=handle_client, args=(
-            cli_sock, str(i), addr))   # Accepting client and assigning id
+        t = threading.Thread(target=handle_client, args=(cli_sock, str(i), addr))   # Accepting client and assigning id
         t.start()
         i += 1
         threads.append(t)

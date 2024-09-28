@@ -13,9 +13,11 @@ from datetime import datetime, timedelta
 import secrets
 from pathlib import Path
 import uuid
+import traceback
 
 
 pepper_file = f"{os.path.dirname(os.path.abspath(__file__))}\\pepper.txt"
+server_path = f"{os.path.dirname(os.path.dirname(os.path.abspath(__file__)))}"
 gmail = "idancyber3102@gmail.com"
 gmail_password = "nkjg eaom gzne nyfa"
 
@@ -30,7 +32,7 @@ class User:
 
     def __init__(self, id, email, username, password, salt=bcrypt.gensalt(), last_code=-1, valid_until=str(datetime.now()), verified=False, subscription_level = 0, admin_level = 0, cookie = "", cookie_expiration = -1):
         if id is None:
-            self.id = gen_id()
+            self.id = gen_user_id()
         else:
             self.id = id
         self.email = email
@@ -45,11 +47,56 @@ class User:
         self.cookie = cookie
         self.cookie_expiration = cookie_expiration
 
-def gen_id():
+class File:
+    """
+    User class for building database
+    Used to transfer between user instance and json data
+    """
+
+    def __init__(self, id, sname, fname, parent, owner_id, size, last_edit = str(datetime.now())):
+        if id is None:
+            self.id = gen_file_id()
+        else:
+            self.id = id
+    
+        if sname is None:
+            self.sname = gen_file_name()
+        else:
+            self.sname = sname
+        self.fname = fname
+        self.parent = parent
+        self.owner_id = owner_id
+        self.size = size
+        self.last_edit = last_edit
+
+class Directory:
+    def __init__(self, id, name, parent, owner_id):
+        if id is None:
+            self.id = gen_file_id()
+        else:
+            self.id = id
+        self.name = name
+        self.parent = parent
+        self.owner_id = owner_id
+
+
+def gen_user_id():
     id = uuid.uuid4().hex
     while db.get_user(id) is not None:
         id = uuid.uuid4().hex
     return id
+
+def gen_file_id():
+    id = uuid.uuid4().hex
+    while db.get_file(id) is not None:
+        id = uuid.uuid4().hex
+    return id
+
+def gen_file_name():
+    name = uuid.uuid4().hex
+    while db.get_file(name) is not None:
+        name = uuid.uuid4().hex
+    return name
 
 def main():
     global pepper
@@ -122,26 +169,36 @@ def signup_user(user_details):
     """
     new_user = User(None, *user_details)
     new_user.password = hash_password(new_user.password, new_user.salt)
+    new_user.cookie = generate_cookie(new_user.id)
     db.add_user(vars(new_user))
 
 
-def verify_user(username):
+def verify_user(email):
     """
     Verifying user
     """
-    user = db.get_user(username)
-    if (user == None):
-        return False
-    user = User(**user)
-    user.verified = True
-    db.update_user(username, vars(user))
+    id = db.get_user_id(email)
+    db.update_user(id, "verified", True)
 
 
-def delete_user(username):
+def delete_user(id):
     """
     Deleting user from database
     """
-    db.remove_user(username)
+    files = db.get_files(id)
+    for file in files:
+        try:
+            file = File(**file)
+            os.remove(server_path + "\\cloud\\" + file.sname)
+        except:
+            print(traceback.format_exc())
+            continue
+    if os.path.exists(f"{server_path}\\user icons\\{id}.ico"):
+        os.remove(f"{server_path}\\user icons\\{id}.ico")
+    
+    db.remove_user(id)
+    
+    
 
 
 def send_reset_mail(email):
@@ -151,15 +208,10 @@ def send_reset_mail(email):
     Assigning it to user 
     Add expiry time
     """
-    user = db.get_user(email)
-    if (user == None):
-        return False
-    user = User(**user)
-    # Setting new code and updating user
+    id = db.get_user_id(email)
     code = random.randint(100000, 999999)
-    user.last_code = code
-    user.valid_until = str(timedelta(minutes=10) + datetime.now())
-    db.update_user(email, vars(user))
+    valid_until = str(timedelta(minutes=10) + datetime.now())
+    db.update_user(id, ["last_code", "valid_until"], [code, valid_until])
 
     em = EmailMessage()   # Building mail and sending it
     em["From"] = gmail
@@ -177,22 +229,18 @@ def send_verification(email):
     Assigning it to user 
     Add expiry time
     """
-    user = db.get_user(email)
-    if (user == None):
-        return False
-    user = User(**user)
+
     # Setting new code and updating user
+    id = db.get_user_id(email)
     code = random.randint(100000, 999999)
-    user.last_code = code
-    user.valid_until = str(timedelta(minutes=30) + datetime.now())
-    db.update_user(email, vars(user))
+    valid_until = str(timedelta(minutes=30) + datetime.now())
+    db.update_user(id, ["last_code", "valid_until"], [code, valid_until])
 
     em = EmailMessage()   # Building mail and sending it
     em["From"] = gmail
     em["To"] = email
     em["Subject"] = "Account Verification"
-    body = f"Your account verification code is: {
-        code}\nCode is valid for 30 minutes"
+    body = f"Your account verification code is: {code}\nCode is valid for 30 minutes"
     em.set_content(body)
     send_mail(em, email)
 
@@ -258,13 +306,10 @@ def change_password(email, new_password):
     Hashing the password with salf and pepper for security
     Updating the users database
     """
-    user = db.get_user(email)
-    if (user == None):
-        return False
-    user = User(**user)
-    user.salt = bcrypt.gensalt()
-    user.password = hash_password(new_password, user.salt)
-    db.update_user(email, vars(user))
+    id = db.get_user_id(email)
+    salt = bcrypt.gensalt()
+    password = hash_password(new_password, salt)
+    db.update_user(id, ["salt", "password"], [salt, password])
 
 
 def get_user_data(cred):
@@ -275,66 +320,46 @@ def get_user_data(cred):
     return db.get_user(cred)
 
 
-def get_files(path, name_filter=None):
-    files = []
-    if os.path.isdir(path):
-        for f in os.listdir(path):
-            if os.path.isfile(os.path.join(path, f)):
-                # Apply the filter if provided
-                if name_filter is None or name_filter.lower() in f.lower():
-                    file_mod_time = os.path.getmtime(os.path.join(path, f))
-                    mod_time_datetime = datetime.fromtimestamp(file_mod_time)
-                    last_edit = mod_time_datetime.strftime('%d/%m/%Y %H:%M')
-
-                    files.append(f"{f}~{last_edit}~{
-                                 os.path.getsize(os.path.join(path, f))}")
-    return files
+def get_files(owner_id, parent, name_filter=None):
+    files = db.get_files(owner_id)
+    parsed_files = []
+    for file in files:
+        file = File(**file)
+        if (name_filter is None or name_filter.lower() in file.fname.lower()) and file.parent == parent:
+            last_edit = str_to_date(file.last_edit)
+            parsed_files.append(f"{file.fname}~{last_edit}~{file.size}~{file.id}")
+        
+    return parsed_files
 
 
-def get_directories(path, name_filter=None):
-    if not os.path.isdir(path):
-        return []
-    return [
-        f.name for f in os.scandir(path)
-        if f.is_dir() and (name_filter is None or name_filter.lower() in f.name.lower())
-    ]
+def get_directories(owner_id, parent, name_filter=None):
+    directories = db.get_directories(owner_id)
+    parsed_directories = []
+    for directory in directories:
+        directory = Directory(**directory)
+        if (name_filter is None or name_filter.lower() in directory.name.lower()) and directory.parent == parent:
+            parsed_directories.append(f"{directory.name}~{directory.id}")
+    
+    return parsed_directories
+        
 
 
-def is_subpath(parent_path, sub_path):
-    # Convert to Path objects
-    parent_path = Path(parent_path).resolve()
-    sub_path = Path(sub_path).resolve()
-
-    # Check if sub_path is within parent_path
-    return parent_path in sub_path.parents or parent_path == sub_path
+def change_level(id, new_level):
+    db.update_user(id, "subscription_level", new_level)
 
 
-def change_level(email, new_level):
-    user = db.get_user(email)
-    if (user == None):
-        return False
-    user = User(**user)
-    user.subscription_level = new_level
-    db.update_user(email, vars(user))
-
-
-def change_username(username, new_username):
-    user = db.get_user(username)
-    if (user == None):
-        return False
-    user = User(**user)
-    user.username = new_username
-    db.update_user(username, vars(user))
+def change_username(id, new_username):
+    db.update_user(id, "username", new_username)
 
 def generate_cookie(id):
     cookie = str(secrets.token_hex(256))
     while db.get_user(cookie) is not None:
         cookie = str(secrets.token_hex(256))
     cookie_expiration =  str(timedelta(weeks=4) + datetime.now())
-    db.update_user2(id, ["cookie", "cookie_expiration"], [cookie, cookie_expiration])
+    db.update_user(id, ["cookie", "cookie_expiration"], [cookie, cookie_expiration])
 
 def get_cookie(id):
-    return db.get_values(id, ["cookie"])[0]
+    return db.get_user_values(id, ["cookie"])[0]
 
 def cookie_expired(id):
     user = db.get_user(id)
@@ -342,14 +367,162 @@ def cookie_expired(id):
         return True
     user = User(**user)
     return (str_to_date(user.cookie_expiration) < datetime.now())
+
+def new_file(sname, file_name, parent, owner_id, size):
+    file = File(None, sname, file_name, parent, owner_id, size)
+    db.add_file(vars(file))
+
+def get_file_sname(file_id):
+    file = db.get_file(file_id)
+    if (file == None):
+        return None
+    file = File(**file)
+    return file.sname
+
+def get_file_fname(file_id):
+    file = db.get_file(file_id)
+    if (file == None):
+        return None
+    file = File(**file)
+    return file.fname
+
+def is_owner(owner_id, file_id):
+    file = db.get_file(file_id)
+    if (file == None):
+        return None
+    file = File(**file)
+    return file.owner_id == owner_id
     
+
+def rename_file(id, new_name):
+    db.update_file(id, ["fname"], new_name)
+
+def delete_file(id):
+    sname = get_file_sname(id)
+    if os.path.exists(f"{server_path}\\cloud\\{sname}"):
+        os.remove(f"{server_path}\\cloud\\{sname}")
+    db.delete_file(id)
+
+def create_folder(name, parent, owner_id):
+    directory = Directory(None, name, parent, owner_id)
+    db.add_directory(vars(directory))
+
+
+def valid_directory(directory_id, owner_id):
+    directory = db.get_directory(directory_id)
+    if (directory == None):
+        return False
+    directory = Directory(**directory)
+    return directory.owner_id == owner_id
+    
+def get_dir_name(id):
+    if id == "":
+        return ""
+    directory = db.get_directory(id)
+    if (directory == None):
+        return None
+    directory = Directory(**directory)
+    return directory.name
+
+def get_parent_directory(id):
+    if id == "":
+        return ""
+    directory = db.get_directory(id)
+    if (directory == None):
+        return None
+    directory = Directory(**directory)
+    return directory.parent
+
+def get_full_path(id):
+    if id == "":
+        return ""
+    path = [""]
+    
+    directory = db.get_directory(id)
+    if (directory == None):
+        return None
+    directory = Directory(**directory)
+    path.append(directory.name)
+    while directory.parent != "":
+        directory = db.get_directory(directory.parent)
+        if (directory == None):
+            return None
+        directory = Directory(**directory)
+        path.append(directory.name)
+    path = "\\".join(path[::-1])
+    return path
+    
+def delete_directory(id):
+    sub_dirs = db.get_sub_directories(id)
+    if sub_dirs != []:
+        for sub_dir in sub_dirs:
+            delete_directory(sub_dir["id"])
+
+    files = db.get_directory_files(id)
+    for file in files:
+        try:
+            file = File(**file)
+            os.remove(server_path + "\\cloud\\" + file.sname)
+        except:
+            print(traceback.format_exc())
+            continue
+
+    db.delete_directory(id)
+
+def directory_size(id):
+    total = 0
+    files = db.get_directory_files(id)
+    for file in files:
+        try:
+            file = File(**file)
+            total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+        except:
+            print(traceback.format_exc())
+            continue
+    return total
+
+def get_user_storage(id):
+    
+    total = 0
+    total += directory_size("")
+    directories = db.get_directories(id)
+    for directory in directories:
+        directory = Directory(**directory)
+        total += directory_size(directory.id)
+    return total
+        
+def clean_db():
+    for name in os.listdir(server_path + "\\cloud"):
+        try:
+            if db.get_file(name) is None:
+                os.remove(server_path + "\\cloud\\" + name)
+        except:
+            print(traceback.format_exc())
+            continue
+    db_files = db.get_all_files()
+    for file in db_files:
+        try:
+            if not os.path.exists(server_path + "\\cloud\\" + file["sname"]) or (db.get_directory(file["parent"]) is None and file["parent"] != ""):
+                db.delete_file(file["id"])
+        except:
+            print(traceback.format_exc())
+            continue
+    db_directories = db.get_all_directories()
+    for directory in db_directories:
+        try:
+            if db.get_user(directory["owner_id"]) is None or (db.get_directory(directory["parent"]) is None and directory["parent"] != ""):
+                db.delete_directory(directory["id"])
+        except:
+            print(traceback.format_exc())
+            continue
+    
+        
 
 if __name__ == "__main__":
     main()
 
 # add manual user
-# main()
-# salt = bcrypt.gensalt()
-# password = hash_password("a", salt)
-# delete_user("a")
-# db.add_user(vars(User("a", "a", password, salt, verified=True)))
+#main()
+#salt = bcrypt.gensalt()
+#password = hash_password("a", salt)
+#db.add_user(vars(User("a", "a", "a", password, salt, verified=True)))

@@ -10,12 +10,19 @@ def new_name_dialog(title, label, text=""):
     app = QApplication.instance()
     app.setWindowIcon(QIcon(f"{os.path.dirname(os.path.dirname(os.path.abspath(__file__)))}/assets/icon.ico"))
     dialog = QInputDialog()
-    folder_name, ok = dialog.getText(None, title, label, text=text)
+    dialog.setWindowTitle(title)
+    dialog.setLabelText(label)
+    dialog.setTextValue(text)
+    dialog.resize(300, 300)  # Resize dialog to 300x200
+
+    # Get the text input
+    ok = dialog.exec()  # Show the dialog modally and wait for user input
 
     # Check if the user clicked OK and returned valid text
-    if ok and folder_name and folder_name != text:
-        return folder_name
-    return None
+    if ok == QInputDialog.DialogCode.Accepted:
+        folder_name = dialog.textValue()
+        if folder_name and folder_name != text:
+            return folder_name
 
 
 def show_confirmation_dialog(message):
@@ -25,8 +32,7 @@ def show_confirmation_dialog(message):
     msg_box.setWindowTitle("Confirmation")
     msg_box.setText(message)
 
-    msg_box.setStandardButtons(
-        QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+    msg_box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
     msg_box.setDefaultButton(QMessageBox.StandardButton.Yes)
     result = msg_box.exec()
 
