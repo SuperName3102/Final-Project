@@ -17,16 +17,16 @@ def create_tables():
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     #cursor.execute(f"DROP TABLE {users_table}")
-    cursor.execute(f"DROP TABLE {files_table}")
-    cursor.execute(f"DROP TABLE {directories_table}")
+    #cursor.execute(f"DROP TABLE {files_table}")
+    #cursor.execute(f"DROP TABLE {directories_table}")
     cursor.execute(f"DROP TABLE {permissions_table}")
     #cursor.execute(f"CREATE TABLE IF NOT EXISTS {users_table} (id TEXT PRIMARY KEY, email TEXT UNIQUE, username TEXT UNIQUE, password TEXT, salt TEXT, last_code INTEGER, valid_until TEXT, verified BOOL, subscription_level INT, admin_level INT, cookie TEXT UNIQUE, cookie_expiration TEXT)")
-    cursor.execute(f"CREATE TABLE IF NOT EXISTS {files_table} (id TEXT PRIMARY KEY, sname TEXT UNIQUE, fname TEXT, parent TEXT, owner_id TEXT, size TEXT, last_edit TEXT)")
-    cursor.execute(f"CREATE TABLE IF NOT EXISTS {directories_table} (id TEXT PRIMARY KEY, name TEXT, parent TEXT, owner_id TEXT)")
+    #cursor.execute(f"CREATE TABLE IF NOT EXISTS {files_table} (id TEXT PRIMARY KEY, sname TEXT UNIQUE, fname TEXT, parent TEXT, owner_id TEXT, size TEXT, last_edit TEXT)")
+    #cursor.execute(f"CREATE TABLE IF NOT EXISTS {directories_table} (id TEXT PRIMARY KEY, name TEXT, parent TEXT, owner_id TEXT)")
     cursor.execute(f"CREATE TABLE IF NOT EXISTS {permissions_table} (id TEXT PRIMARY KEY,  file_id TEXT, owner_id TEXT, user_id TEXT, read BOOL, write BOOL, del BOOL, rename BOOL, download BOOL, share BOOL)")
     conn.commit()
     conn.close()
-
+    
 def get_user_id(cred):
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
@@ -334,3 +334,48 @@ def get_all_directories():
     for directory in ans:
         directories.append(row_to_dict_directory(directory))
     return directories
+
+def get_share_file(file_id, user_id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM {permissions_table} WHERE file_id = ? and user_id = ?", (file_id, user_id))
+    row = cursor.fetchone()
+    conn.close()
+    return row
+
+def get_perms(id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM {permissions_table} WHERE id = ?", (id,))
+    row = cursor.fetchone()
+    conn.close()
+    return row
+
+
+def create_share(id, owner_id, file_id, user_id, new_perms):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    sql = f"INSERT INTO {permissions_table} (id, file_id, owner_id, user_id, read, write, del, rename, download, share) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"   # Insert all dict values and keys to database
+    try:
+        cursor.execute(sql, [id, file_id, owner_id, user_id] + new_perms)
+        conn.commit()
+    except sqlite3.IntegrityError:
+        print("Key values already exist in table")
+        conn.close()
+    conn.close()
+
+def update_sharing_premissions(file_id, user_id, new_perms):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    sql = f"UPDATE {permissions_table} set read = ?, write = ?, del = ?, rename = ?, download = ?, share = ? WHERE file_id = ? and user_id = ?"   # Insert all dict values and keys to database
+    cursor.execute(sql, new_perms + [file_id, user_id])
+    conn.commit()
+    conn.close()
+
+def get_file_perms(user_id, file_id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT read, write, del, rename, download, share FROM {permissions_table} WHERE user_id = ? and file_id = ?", (user_id, file_id))
+    row = cursor.fetchone()
+    conn.close()
+    return row

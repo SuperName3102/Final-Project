@@ -98,6 +98,12 @@ def gen_file_name():
         name = uuid.uuid4().hex
     return name
 
+def gen_perms_id():
+    name = uuid.uuid4().hex
+    while db.get_perms(name) is not None:
+        name = uuid.uuid4().hex
+    return name
+
 def main():
     global pepper
     pepper = get_pepper()
@@ -515,8 +521,51 @@ def clean_db():
         except:
             print(traceback.format_exc())
             continue
+
+def get_share_options(file_id, user_cred):
+    user_id = db.get_user_id(user_cred)
+    file = db.get_share_file(file_id, user_id)
+    return file
     
-        
+def share_file(file_id, user_cred, perms):
+    user_id = db.get_user_id(user_cred)
+    share = db.get_share_file(file_id, user_id)
+    if user_id is None:
+        return
+    if share is None:
+        id = gen_perms_id()
+        file = db.get_file(file_id)
+        if (file == None):
+            return
+        file = File(**file)
+        db.create_share(id, file.owner_id, file_id, user_id, perms)
+    else:
+        db.update_sharing_premissions(file_id, user_id, perms)
+
+
+def can_read(user_id, file_id):
+    perms = db.get_file_perms(user_id, file_id)
+    return is_owner(user_id, file_id) or (perms != None and perms[0] == "True")
+
+def can_write(user_id, file_id):
+    perms = db.get_file_perms(user_id, file_id)
+    return is_owner(user_id, file_id) or (perms != None and perms[1] == "True")
+
+def can_delete(user_id, file_id):
+    perms = db.get_file_perms(user_id, file_id)
+    return is_owner(user_id, file_id) or (perms != None and perms[2] == "True")
+
+def can_rename(user_id, file_id):
+    perms = db.get_file_perms(user_id, file_id)
+    return is_owner(user_id, file_id) or (perms != None and perms[3] == "True")
+
+def can_download(user_id, file_id):
+    perms = db.get_file_perms(user_id, file_id)
+    return is_owner(user_id, file_id) or (perms != None and perms[4] == "True")
+
+def can_share(user_id, file_id):
+    perms = db.get_file_perms(user_id, file_id)
+    return is_owner(user_id, file_id) or (perms != None and perms[5] == "True")
 
 if __name__ == "__main__":
     main()

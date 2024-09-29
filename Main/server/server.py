@@ -471,7 +471,9 @@ def protocol_build_reply(request, tid, sock):
     elif (code == "DOWN"):
         file_id = fields[1]
         file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
-        if (not os.path.isfile(file_path)):
+        if(not cr.can_download(clients[tid].id, file_id)):
+            reply = Errors.NO_PERMS.value
+        elif (not os.path.isfile(file_path)):
             reply = Errors.FILE_NOT_FOUND.value
         else:
             try:
@@ -493,7 +495,7 @@ def protocol_build_reply(request, tid, sock):
 
         if (v.is_empty(fields[1:])):
             return f"ERRR|101|Cannot have an empty field"
-        elif (not cr.is_owner(clients[tid].id, file_id)):
+        elif(not cr.can_rename(clients[tid].id, file_id)):
             reply = Errors.NO_PERMS.value
         else:
             cr.rename_file(file_id, new_name)
@@ -523,14 +525,16 @@ def protocol_build_reply(request, tid, sock):
             reply = Errors.FILE_UPLOAD.value
 
     elif code == 'DELF':
-        id = fields[1]
-        if cr.get_file_fname(id) is not None:
-            name = cr.get_file_fname(id)
-            cr.delete_file(id)
+        file_id = fields[1]
+        if(not cr.can_delete(clients[tid].id, file_id)):
+            reply = Errors.NO_PERMS.value
+        elif cr.get_file_fname(file_id) is not None:
+            name = cr.get_file_fname(file_id)
+            cr.delete_file(file_id)
             reply = f"DLFR|{name}|was deleted!"
-        elif cr.get_dir_name(id) is not None:
-            name = cr.get_dir_name(id)
-            cr.delete_directory(id)
+        elif cr.get_dir_name(file_id) is not None:
+            name = cr.get_dir_name(file_id)
+            cr.delete_directory(file_id)
             reply = f"DFFR|{name}|was deleted!"
         else:
             reply = Errors.FILE_NOT_FOUND.value
@@ -569,7 +573,9 @@ def protocol_build_reply(request, tid, sock):
     elif code == "VIEW":
         file_id = fields[1]
         file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
-        if (not os.path.isfile(file_path)):
+        if(not cr.can_download(clients[tid].id, file_id)):
+            reply = Errors.NO_PERMS.value
+        elif (not os.path.isfile(file_path)):
             reply = Errors.FILE_NOT_FOUND.value
         elif (os.path.getsize(file_path) > 10_000_000):
             reply = Errors.PREVIEW_SIZE.value
@@ -605,7 +611,39 @@ def protocol_build_reply(request, tid, sock):
             clients[tid].subscription_level = user_dict["subscription_level"]
             clients[tid].admin_level = user_dict["admin_level"]
             reply = f"LOGS|{email}|{username}|{int(clients[tid].subscription_level)}"
-            
+    
+    elif code == "SHRS":
+        file_id = fields[1]
+        user_cred = fields[2]
+        if cr.get_file_fname(file_id) is None:
+            reply = Errors.FILE_NOT_FOUND.value
+        elif(not cr.can_share(clients[tid].id, file_id)):
+            reply = Errors.NO_PERMS.value
+        elif user_cred == clients[tid].email or user_cred == clients[tid].user:
+            reply = Errors.SELF_SHARE.value
+        elif(cr.get_user_data(user_cred) is None):
+            reply = Errors.USER_NOT_FOUND.value
+        else:
+            sharing = cr.get_share_options(file_id, user_cred)
+            if sharing is None:
+                reply = f"SHRR|{file_id}|{user_cred}"
+            else:
+                reply = f"SHRR|{file_id}|{user_cred}|" + "|".join(sharing[4:])
+    
+    elif code == "SHRP":
+        file_id = fields[1]
+        user_cred = fields[2]
+        if cr.get_file_fname(file_id) is None:
+            reply = Errors.FILE_NOT_FOUND.value
+        elif(not cr.can_share(clients[tid].id, file_id)):
+            reply = Errors.NO_PERMS.value
+        elif user_cred == clients[tid].email or user_cred == clients[tid].user:
+            reply = Errors.SELF_SHARE.value
+        elif(cr.get_user_data(user_cred) is None):
+            reply = Errors.USER_NOT_FOUND.value
+        else:
+            cr.share_file(file_id, user_cred, fields[3:])
+            reply = f"SHPR|Sharing option with {user_cred} have been updated"
     
     else:
         reply = Errors.UNKNOWN.value

@@ -17,7 +17,7 @@ import os
 import threading
 
 from PyQt6 import QtWidgets, uic
-from PyQt6.QtWidgets import QWidget, QMessageBox, QApplication, QVBoxLayout, QPushButton, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
+from PyQt6.QtWidgets import QWidget, QMessageBox, QApplication, QVBoxLayout, QPushButton, QCheckBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
 from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent
 from PyQt6.QtCore import QSize
 
@@ -100,7 +100,11 @@ class FileButton(QPushButton):
             handle_reply()
 
     def share(self):
-        print(self.text())
+        name = self.text().split(" | ")[0][1:]
+        user_email = new_name_dialog("Share", f"Enter email/username of the user you want to share {name} with:")
+        if user_email is not None:
+            send_data(b"SHRS|" + self.id.encode() + b"|" + user_email.encode())
+            handle_reply()
 
 
 def new_folder():
@@ -425,8 +429,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def recovery(self, email):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(
-                __file__))}/gui/ui/recovery.ui", self)
+            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/recovery.ui", self)
             self.password.setEchoMode(QLineEdit.EchoMode.Password)
             self.confirm_password.setEchoMode(QLineEdit.EchoMode.Password)
 
@@ -435,8 +438,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.confirm_password_toggle.clicked.connect(
                 lambda: self.toggle_password(self.confirm_password))
 
-            self.reset_button.clicked.connect(lambda: password_recovery(
-                email, self.code.text(), self.password.text(), self.confirm_password.text()))
+            self.reset_button.clicked.connect(lambda: password_recovery(email, self.code.text(), self.password.text(), self.confirm_password.text()))
             self.reset_button.setShortcut("Return")
             self.reset_button.setIcon(QIcon(assets_path+"\\reset.svg"))
 
@@ -485,6 +487,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 send_file(file_path)
             #self.set_message(f"{len(file_paths)} file(s) dropped: {', '.join([fp.split('/')[-1] for fp in file_paths])}")
 
+    
     def set_error_message(self, msg):
         try:
             if (hasattr(self, "message")):
@@ -610,6 +613,58 @@ def change_username():
 
 def subscribe(level):
     send_data(b"SUBL|" + str(level).encode())
+    handle_reply()
+
+
+def share_file(file_id, user_cred, read = False, write = False, delete = False, rename = False, download = False, share = False):
+    app = QApplication.instance()  # Use existing QApplication
+    if app is None:
+        app = QApplication([])  # Create a new instance if it doesn't exist
+
+    dialog = QDialog()
+    layout = QVBoxLayout()
+    dialog.setWindowTitle("File Share Options")
+    dialog.resize(600, 400)
+        
+    read_cb = QCheckBox("Read")
+    read_cb.setChecked(read == "True")
+        
+    write_cb = QCheckBox("Write")
+    write_cb.setChecked(write == "True")
+        
+    delete_cb = QCheckBox("Delete")
+    delete_cb.setChecked(delete == "True")
+        
+    rename_cb = QCheckBox("Rename")
+    rename_cb.setChecked(rename == "True")
+        
+    download_cb = QCheckBox("Download")
+    download_cb.setChecked(download == "True")
+        
+    share_cb = QCheckBox("Share")
+    share_cb.setChecked(share == "True")
+
+    # Submit button
+    submit_btn = QPushButton("Submit")
+    submit_btn.setShortcut("Return")
+    submit_btn.clicked.connect(lambda: send_share_premissions(dialog, file_id, user_cred, read_cb.isChecked(), write_cb.isChecked(), delete_cb.isChecked(), rename_cb.isChecked(), download_cb.isChecked(), share_cb.isChecked()))
+
+        # Layout setup
+    layout = QVBoxLayout()
+    layout.addWidget(read_cb)
+    layout.addWidget(write_cb)
+    layout.addWidget(delete_cb)
+    layout.addWidget(rename_cb)
+    layout.addWidget(download_cb)
+    layout.addWidget(share_cb)
+    layout.addWidget(submit_btn)
+    dialog.setLayout(layout)
+    dialog.exec()
+
+def send_share_premissions(dialog, file_id, user_cred, read, write, delete, rename, download, share):
+    dialog.accept()
+    to_send = f"SHRP|{file_id}|{user_cred}|{read}|{write}|{delete}|{rename}|{download}|{share}"
+    send_data(to_send.encode())
     handle_reply()
 
 # Begin server requests related functions
@@ -980,6 +1035,17 @@ def protocol_parse_reply(reply):
             cookie = fields[1]
             save_cookie(cookie)
             to_show = f"Cookie recieved"
+        elif code == "SHRR":
+            file_id = fields[1]
+            user_cred = fields[2]
+            if len(fields) == 3:
+                share_file(file_id, user_cred)
+            else:
+                share_file(file_id, user_cred, *fields[3:])
+            to_show = "Sharing options recieved"
+        elif code == "SHPR":
+            to_show = fields[1]
+            window.set_message(to_show)
             
     except Exception as e:   # Error
         print('Server replay bad format ' + str(e))
