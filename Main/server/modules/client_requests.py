@@ -339,7 +339,10 @@ def get_files(owner_id, parent, name_filter=None):
 
 
 def get_directories(owner_id, parent, name_filter=None):
-    directories = db.get_directories(owner_id)
+    if parent == "":
+        directories = db.get_user_directories(owner_id)
+    else:
+        directories = db.get_directories(parent)
     parsed_directories = []
     for directory in directories:
         directory = Directory(**directory)
@@ -392,13 +395,19 @@ def get_file_fname(file_id):
     file = File(**file)
     return file.fname
 
-def is_owner(owner_id, file_id):
+def is_file_owner(owner_id, file_id):
     file = db.get_file(file_id)
     if (file == None):
         return None
     file = File(**file)
     return file.owner_id == owner_id
-    
+
+def is_dir_owner(owner_id, dir_id):
+    directory = db.get_directory(dir_id)
+    if (directory == None):
+        return None
+    directory = Directory(**directory)
+    return directory.owner_id == owner_id  
 
 def rename_file(id, new_name):
     db.update_file(id, ["fname"], new_name)
@@ -414,13 +423,30 @@ def create_folder(name, parent, owner_id):
     db.add_directory(vars(directory))
 
 
-def valid_directory(directory_id, owner_id):
+def valid_directory(directory_id, user_id):
     directory = db.get_directory(directory_id)
     if (directory == None):
         return False
     directory = Directory(**directory)
-    return directory.owner_id == owner_id
+    return directory.owner_id == user_id or is_shared(user_id, directory_id)
+
+def is_shared(user_id, directory_id):
+    directory = db.get_directory(directory_id)
+    if (directory == None):
+        return False
+    directory = Directory(**directory)
+    shared_dir = db.get_share_file(directory_id, user_id)
+    while shared_dir is None:
+        directory = db.get_directory(directory.parent)
+        if (directory == None):
+            return False
+        directory = Directory(**directory)
+        directory_id = directory.id
+        shared_dir = db.get_share_file(directory_id, user_id)
+    return True
     
+
+
 def get_dir_name(id):
     if id == "":
         return ""
@@ -491,7 +517,7 @@ def get_user_storage(id):
     
     total = 0
     total += directory_size("")
-    directories = db.get_directories(id)
+    directories = db.get_user_directories(id)
     for directory in directories:
         directory = Directory(**directory)
         total += directory_size(directory.id)
@@ -535,37 +561,62 @@ def share_file(file_id, user_cred, perms):
     if share is None:
         id = gen_perms_id()
         file = db.get_file(file_id)
-        if (file == None):
-            return
-        file = File(**file)
-        db.create_share(id, file.owner_id, file_id, user_id, perms)
+        directory = db.get_directory(file_id)
+        if (file != None):
+            file = File(**file)
+            db.create_share(id, file.owner_id, file_id, user_id, perms)
+        elif (directory != None):
+            directory = Directory(**directory)
+            db.create_share(id, directory.owner_id, file_id, user_id, perms)
     else:
         db.update_sharing_premissions(file_id, user_id, perms)
+
+def get_share_files(user_id, parent, name_filter=None):
+    files = db.get_all_share_files(user_id)
+    parsed_files = []
+    for file in files:
+        file = File(**file)
+        if (name_filter is None or name_filter.lower() in file.fname.lower()) and file.parent == parent:
+            last_edit = str_to_date(file.last_edit)
+            parsed_files.append(f"{file.fname}~{last_edit}~{file.size}~{file.id}")
+        
+    return parsed_files
+
+
+def get_share_directories(user_id, parent, name_filter=None):
+    directories = db.get_all_share_directories(user_id)
+    parsed_directories = []
+    for directory in directories:
+        directory = Directory(**directory)
+        if (name_filter is None or name_filter.lower() in directory.name.lower()) and directory.parent == parent:
+            parsed_directories.append(f"{directory.name}~{directory.id}")
+    
+    return parsed_directories
 
 
 def can_read(user_id, file_id):
     perms = db.get_file_perms(user_id, file_id)
-    return is_owner(user_id, file_id) or (perms != None and perms[0] == "True")
+    return is_file_owner(user_id, file_id) or is_dir_owner(user_id, file_id) or (perms != None and perms[0] == "True")
 
 def can_write(user_id, file_id):
     perms = db.get_file_perms(user_id, file_id)
-    return is_owner(user_id, file_id) or (perms != None and perms[1] == "True")
+    return is_file_owner(user_id, file_id) or is_dir_owner(user_id, file_id) or (perms != None and perms[1] == "True")
 
 def can_delete(user_id, file_id):
     perms = db.get_file_perms(user_id, file_id)
-    return is_owner(user_id, file_id) or (perms != None and perms[2] == "True")
+    return is_file_owner(user_id, file_id) or is_dir_owner(user_id, file_id) or (perms != None and perms[2] == "True")
 
 def can_rename(user_id, file_id):
     perms = db.get_file_perms(user_id, file_id)
-    return is_owner(user_id, file_id) or (perms != None and perms[3] == "True")
+    return is_file_owner(user_id, file_id) or is_dir_owner(user_id, file_id) or (perms != None and perms[3] == "True")
 
 def can_download(user_id, file_id):
     perms = db.get_file_perms(user_id, file_id)
-    return is_owner(user_id, file_id) or (perms != None and perms[4] == "True")
+    return is_file_owner(user_id, file_id) or is_dir_owner(user_id, file_id) or (perms != None and perms[4] == "True")
 
 def can_share(user_id, file_id):
     perms = db.get_file_perms(user_id, file_id)
-    return is_owner(user_id, file_id) or (perms != None and perms[5] == "True")
+    return is_file_owner(user_id, file_id) or is_dir_owner(user_id, file_id) or (perms != None and perms[5] == "True")
 
 if __name__ == "__main__":
     main()

@@ -431,31 +431,49 @@ def protocol_build_reply(request, tid, sock):
             reply = Errors.FILE_UPLOAD.value
 
     elif (code == "GETP"):
-        if (len(fields) == 2):
-            search_filter = fields[1]
-            if (v.is_empty(fields[1:])):
-                return f"ERRR|101|Cannot have an empty field"
-            elif (v.check_illegal_chars(fields[1:])):
-                return f"ERRR|102|Invalid chars used"
-            files = cr.get_files(clients[tid].id, clients[tid].cwd, search_filter)
-        else:
-            files = cr.get_files(clients[tid].id, clients[tid].cwd)
+        directory = fields[1]
+        if (len(fields) == 3): search_filter = fields[2]
+        else: search_filter = None
+        if (v.check_illegal_chars(fields[1:])):
+            return f"ERRR|102|Invalid chars used"
+        files = cr.get_files(clients[tid].id, directory, search_filter)
         reply = "PATH"
         for file in files:
             reply += f"|{file}"
 
     elif (code == "GETD"):
-        if (len(fields) == 2):
-            search_filter = fields[1]
-            if (v.is_empty(fields[1:])):
-                return f"ERRR|101|Cannot have an empty field"
-            elif (v.check_illegal_chars(fields[1:])):
-                return f"ERRR|102|Invalid chars used"
-            directories = cr.get_directories(clients[tid].id, clients[tid].cwd, search_filter)
-        else:
-            directories = cr.get_directories(clients[tid].id, clients[tid].cwd)
+        directory = fields[1]
+        if (len(fields) == 3): search_filter = fields[2]
+        else: search_filter = None
+        if (v.check_illegal_chars(fields[1:])):
+            return f"ERRR|102|Invalid chars used"
+        directories = cr.get_directories(clients[tid].id, directory, search_filter)
 
         reply = "PATD"
+        for directory in directories:
+            reply += f"|{directory}"
+    
+    elif (code == "GESP"):
+        directory = fields[1]
+        if (len(fields) == 3): search_filter = fields[2]
+        else: search_filter = None
+        if (v.check_illegal_chars(fields[1:])):
+            return f"ERRR|102|Invalid chars used"
+        files = cr.get_share_files(clients[tid].id, directory, search_filter)
+
+        reply = "PASH"
+        for file in files:
+            reply += f"|{file}"
+
+    elif (code == "GESD"):
+        directory = fields[1]
+        if (len(fields) == 3): search_filter = fields[2]
+        else: search_filter = None
+        if (v.check_illegal_chars(fields[1:])):
+            return f"ERRR|102|Invalid chars used"
+        directories = cr.get_share_directories(clients[tid].id, directory, search_filter)
+
+        reply = "PASD"
         for directory in directories:
             reply += f"|{directory}"
 
@@ -615,7 +633,7 @@ def protocol_build_reply(request, tid, sock):
     elif code == "SHRS":
         file_id = fields[1]
         user_cred = fields[2]
-        if cr.get_file_fname(file_id) is None:
+        if cr.get_file_fname(file_id) is None and cr.get_dir_name(file_id) is None:
             reply = Errors.FILE_NOT_FOUND.value
         elif(not cr.can_share(clients[tid].id, file_id)):
             reply = Errors.NO_PERMS.value
@@ -633,7 +651,7 @@ def protocol_build_reply(request, tid, sock):
     elif code == "SHRP":
         file_id = fields[1]
         user_cred = fields[2]
-        if cr.get_file_fname(file_id) is None:
+        if cr.get_file_fname(file_id) is None and cr.get_dir_name(file_id) is None:
             reply = Errors.FILE_NOT_FOUND.value
         elif(not cr.can_share(clients[tid].id, file_id)):
             reply = Errors.NO_PERMS.value

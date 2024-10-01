@@ -33,6 +33,7 @@ assets_path = f"{os.path.dirname(os.path.abspath(__file__))}/assets"
 cookie_path = f"{os.path.dirname(os.path.abspath(__file__))}/cookies/user.cookie"
 log = False
 search_filter = None
+share = False
 
 
 # Begin gui related functions
@@ -210,8 +211,7 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             uic.loadUi(f"{os.path.dirname(os.path.abspath(
                 __file__))}/gui/ui/verification.ui", self)
-            self.verify_button.clicked.connect(
-                lambda: verify(email, self.code.text()))
+            self.verify_button.clicked.connect(lambda: verify(email, self.code.text()))
             self.verify_button.setShortcut("Return")
             self.verify_button.setIcon(QIcon(assets_path+"\\verify.svg"))
 
@@ -239,8 +239,13 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def user_page(self):
         try:
-            files = get_cwd_files(search_filter)
-            directories = get_cwd_directories(search_filter)
+            if user["cwd"] == "" and share: 
+                files = get_cwd_shared_files(search_filter)
+                directories = get_cwd_shared_directories(search_filter)
+            else:
+                files = get_cwd_files(search_filter)
+                directories = get_cwd_directories(search_filter)
+                
             get_used_storage()
 
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
@@ -258,7 +263,11 @@ class MainWindow(QtWidgets.QMainWindow):
             self.search.setText(f"Search Filter: {search_filter}")
             self.search.clicked.connect(search)
             self.search.setStyleSheet("background-color:transparent;font-size:13px;border:none;")
-
+            
+            self.shared_button.clicked.connect(change_share)
+            if share:
+                self.shared_button.setText("Your files")
+    
             self.user_button.clicked.connect(lambda: self.manage_account())
             self.logout_button.clicked.connect(logout)
             self.logout_button.setIcon(QIcon(assets_path+"\\logout.svg"))
@@ -504,7 +513,8 @@ class MainWindow(QtWidgets.QMainWindow):
     def set_cwd(self):
         if (hasattr(self, "cwd")):
             self.cwd.setStyleSheet("color: yellow; font-size: 17px;")
-            self.cwd.setText(f"CWD: {user['username']}\\{user['cwd_name']}")
+            if share: self.cwd.setText(f"CWD: Shared\\{user['cwd_name']}")
+            else: self.cwd.setText(f"CWD: {user['username']}\\{user['cwd_name']}")
 
 
 # Files functions
@@ -571,6 +581,12 @@ def view_file(file_id, file_name):
 
     os.remove(save_path)
 
+
+def change_share():
+    global share
+    share = not share
+    move_dir("")
+        
 
 def move_dir(new_dir):
     send_data(f"MOVD|{new_dir}".encode())
@@ -777,7 +793,7 @@ def exit_program():
 
 
 def get_cwd_files(filter=None):
-    to_send = b"GETP"
+    to_send = b"GETP" + b"|" + user["cwd"].encode()
     if filter:
         to_send += b"|" + filter.encode()
     send_data(to_send)
@@ -791,15 +807,45 @@ def get_cwd_files(filter=None):
         print(traceback.format_exc())
         return []
 
+def get_cwd_shared_files(filter=None):
+    to_send = b"GESP" + b"|" + user["cwd"].encode()
+    if filter:
+        to_send += b"|" + filter.encode()
+    send_data(to_send)
+    data = recv_data()
+    try:
+        if (data[:4] != b"PASH"):
+            return []
+        data = data.decode()
+        return data.split("|")[1:]
+    except Exception:
+        print(traceback.format_exc())
+        return []
+
 
 def get_cwd_directories(filter=None):
-    to_send = b"GETD"
+    to_send = b"GETD" + b"|" + user["cwd"].encode()
     if filter:
         to_send += b"|" + filter.encode()
     send_data(to_send)
     data = recv_data()
     try:
         if (data[:4] != b"PATD"):
+            return []
+        data = data.decode()
+        return data.split("|")[1:]
+    except Exception:
+        print(traceback.format_exc())
+        return []
+
+def get_cwd_shared_directories(filter=None):
+    to_send = b"GESD" + b"|" + user["cwd"].encode()
+    if filter:
+        to_send += b"|" + filter.encode()
+    send_data(to_send)
+    data = recv_data()
+    try:
+        if (data[:4] != b"PASD"):
             return []
         data = data.decode()
         return data.split("|")[1:]
@@ -926,12 +972,14 @@ def protocol_parse_reply(reply):
             window.set_message("Password reset successful, please sign in again with your new password")
 
         elif code == 'LUGR':   # Logout was performed
+            global share
             user["email"] = "guest"
             user["username"] = "guest"
             user["subscription_level"] = 0
             user["cwd"] = ""
             user["parent_cwd"] = ""
             user["cwd_name"] = ""
+            share = False
             to_show = f'Logout succesfull'
             window.main_page()
             window.set_message(to_show)

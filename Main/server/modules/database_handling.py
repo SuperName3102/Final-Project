@@ -26,7 +26,7 @@ def create_tables():
     cursor.execute(f"CREATE TABLE IF NOT EXISTS {permissions_table} (id TEXT PRIMARY KEY,  file_id TEXT, owner_id TEXT, user_id TEXT, read BOOL, write BOOL, del BOOL, rename BOOL, download BOOL, share BOOL)")
     conn.commit()
     conn.close()
-    
+
 def get_user_id(cred):
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
@@ -253,15 +253,21 @@ def add_directory(directory_dict):
         conn.close()
     conn.close()
 
-def get_directories(owner_id):
-    """
-    Returns the user
-    Gets cred (username or password)
-    Returns dict of user
-    """
+def get_user_directories(owner_id):
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     cursor.execute(f"SELECT * FROM {directories_table} WHERE owner_id = ?", (owner_id,))
+    ans = cursor.fetchall()
+    conn.close()
+    directories = []
+    for directory in ans:
+        directories.append(row_to_dict_directory(directory))
+    return directories
+
+def get_directories(parent):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM {directories_table} WHERE parent = ?", (parent,))
     ans = cursor.fetchall()
     conn.close()
     directories = []
@@ -293,6 +299,7 @@ def delete_directory(id):
     cursor = conn.cursor()
     cursor.execute(f"DELETE FROM {directories_table} WHERE id = ?", (id,))
     cursor.execute(f"DELETE FROM {files_table} WHERE parent = ?", (id,))
+    cursor.execute(f"DELETE FROM {permissions_table} WHERE file_id = ?", (id,))
     conn.commit()
     conn.close()
 
@@ -342,6 +349,28 @@ def get_share_file(file_id, user_id):
     row = cursor.fetchone()
     conn.close()
     return row
+
+def get_all_share_files(user_id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT f.* FROM {files_table} f JOIN {permissions_table} p ON f.id = p.file_id WHERE p.user_id = ? and p.read = ?", (user_id, "True"))
+    ans = cursor.fetchall()
+    conn.close()
+    files = []
+    for file in ans:
+        files.append(row_to_dict_file(file))
+    return files
+
+def get_all_share_directories(user_id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT d.* FROM {directories_table} d JOIN {permissions_table} p ON d.id = p.file_id WHERE p.user_id = ? and p.read = ?", (user_id, "True"))
+    ans = cursor.fetchall()
+    conn.close()
+    directories = []
+    for directory in ans:
+        directories.append(row_to_dict_directory(directory))
+    return directories
 
 def get_perms(id):
     conn = sqlite3.connect(database)
