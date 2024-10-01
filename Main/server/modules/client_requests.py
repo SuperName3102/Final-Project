@@ -377,6 +377,9 @@ def cookie_expired(id):
     user = User(**user)
     return (str_to_date(user.cookie_expiration) < datetime.now())
 
+def get_user_id(cred):
+    return db.get_user_id(cred)
+
 def new_file(sname, file_name, parent, owner_id, size):
     file = File(None, sname, file_name, parent, owner_id, size)
     db.add_file(vars(file))
@@ -403,6 +406,8 @@ def is_file_owner(owner_id, file_id):
     return file.owner_id == owner_id
 
 def is_dir_owner(owner_id, dir_id):
+    if dir_id == "":
+        return True
     directory = db.get_directory(dir_id)
     if (directory == None):
         return None
@@ -617,6 +622,8 @@ def can_download(user_id, file_id):
 def can_share(user_id, file_id):
     perms = db.get_file_perms(user_id, file_id)
     return is_file_owner(user_id, file_id) or is_dir_owner(user_id, file_id) or (perms != None and perms[5] == "True")
+
+    
 
 if __name__ == "__main__":
     main()

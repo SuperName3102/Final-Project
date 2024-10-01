@@ -70,11 +70,9 @@ class FileButton(QPushButton):
         action.triggered.connect(self.share)
         action.setIcon(QIcon(assets_path + "\\share.svg"))
 
-        if not share:
-            action = menu.addAction(" New Folder")
-            action.triggered.connect(new_folder)
-            action.setIcon(QIcon(assets_path + "\\new_account.svg"))
-            #action.setEnabled(False)
+        action = menu.addAction(" New Folder")
+        action.triggered.connect(new_folder)
+        action.setIcon(QIcon(assets_path + "\\new_account.svg"))
 
         action = menu.addAction(" Search")
         action.triggered.connect(search)
@@ -267,12 +265,8 @@ class MainWindow(QtWidgets.QMainWindow):
             self.search.setStyleSheet("background-color:transparent;font-size:13px;border:none;")
             
             self.shared_button.clicked.connect(change_share)
-            self.shared_button.setIcon(QIcon(assets_path+"\\share.svg"))
             if share:
-                try: self.shared_button.setIcon((QIcon(user_icon)))
-                except: pass
-                self.shared_button.setText(" Your files")
-                self.upload_button.hide()
+                self.shared_button.setText("Your files")
     
             self.user_button.clicked.connect(lambda: self.manage_account())
             self.logout_button.clicked.connect(logout)
@@ -299,10 +293,10 @@ class MainWindow(QtWidgets.QMainWindow):
             file_paths = [url.toLocalFile() for url in event.mimeData().urls()]
             for file_path in file_paths:
                 file_name = file_path.split("/")[-1]
-                start_string = b'FILS|' + file_name.encode() + b"|" + user["cwd"].encode()
+                start_string = b'FILS|' + file_name.encode()
                 send_data(start_string)
                 send_file(file_path)
-                #self.set_message(f"{len(file_paths)} file(s) dropped: {', '.join([fp.split('/')[-1] for fp in file_paths])}")
+                self.set_message(f"{len(file_paths)} file(s) dropped: {', '.join([fp.split('/')[-1] for fp in file_paths])}")
 
     def draw_cwd(self, files, directories):
         try:
@@ -479,11 +473,11 @@ class MainWindow(QtWidgets.QMainWindow):
             if file_paths:  # Check if any files were selected
                 for file_path in file_paths:
                     file_name = file_path.split("/")[-1]  # Extract the file name
-                    start_string = b'FILS|' + file_name.encode() + b"|" + user["cwd"].encode()
+                    start_string = b'FILS|' + file_name.encode()
                     # Assuming send_data and send_file are defined elsewhere
                     send_data(start_string)
                     send_file(file_path)  # Send the selected file
-                #self.set_message(f"{len(file_paths)} file(s) uploaded: {', '.join([fp.split('/')[-1] for fp in file_paths])}")
+                self.set_message(f"{len(file_paths)} file(s) uploaded: {', '.join([fp.split('/')[-1] for fp in file_paths])}")
         except:
             print(traceback.format_exc())
     
@@ -497,7 +491,7 @@ class MainWindow(QtWidgets.QMainWindow):
             file_paths = [url.toLocalFile() for url in event.mimeData().urls()]
             for file_path in file_paths:
                 file_name = file_path.split("/")[-1]
-                start_string = b'FILS|' + file_name.encode() + b"|" + user["cwd"].encode()
+                start_string = b'FILS|' + file_name.encode()
                 send_data(start_string)
                 send_file(file_path)
             #self.set_message(f"{len(file_paths)} file(s) dropped: {', '.join([fp.split('/')[-1] for fp in file_paths])}")

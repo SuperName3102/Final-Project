@@ -251,17 +251,17 @@
    <widget class="QPushButton" name="shared_button">
     <property name="geometry">
      <rect>
-      <x>870</x>
-      <y>450</y>
-      <width>101</width>
-      <height>31</height>
+      <x>110</x>
+      <y>20</y>
+      <width>141</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Shared files</string>
+     <string> Shared files</string>
     </property>
     <property name="iconSize">
      <size>

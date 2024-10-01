@@ -33,3 +33,4 @@ class Errors(Enum):
     NO_PERMS = f"ERRR|026|You don't have the permission to perform this action"
     USER_NOT_FOUND = f"ERRR|027|User with this username/email was not found"
     SELF_SHARE = f"ERRR|028|You cannot share with yourself"
+    OWNER_SHARE = f"ERRR|029|You cannot share with owner"

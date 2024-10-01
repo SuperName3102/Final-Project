@@ -404,11 +404,14 @@ def protocol_build_reply(request, tid, sock):
 
     elif (code == "FILS"):
         file_name = fields[1]
-        save_loc = clients[tid].cwd + "/" + file_name
+        save_loc = fields[2] + "/" + file_name
         try:
             if (is_guest(tid)):
                 throw_file(sock, tid)
                 reply = Errors.NOT_LOGGED.value
+            elif (not cr.is_dir_owner(clients[tid].id, fields[2])):
+                throw_file(sock, tid)
+                reply = Errors.NO_PERMS.value
             elif (cr.get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
                 throw_file(sock, tid)
                 reply = Errors.MAX_STORAGE.value
@@ -503,8 +506,11 @@ def protocol_build_reply(request, tid, sock):
     elif (code == "NEWF"):
         folder_name = fields[1]
         folder_path = clients[tid].cwd
-        cr.create_folder(folder_name, folder_path, clients[tid].id)
-        reply = f"NEFR|{folder_name}|was created"
+        if not cr.is_dir_owner(clients[tid].id, folder_path):
+            reply = Errors.NO_PERMS.value
+        else:
+            cr.create_folder(folder_name, folder_path, clients[tid].id)
+            reply = f"NEFR|{folder_name}|was created"
 
     elif (code == "RENA"):
         file_id = fields[1]
@@ -639,6 +645,8 @@ def protocol_build_reply(request, tid, sock):
             reply = Errors.NO_PERMS.value
         elif user_cred == clients[tid].email or user_cred == clients[tid].user:
             reply = Errors.SELF_SHARE.value
+        elif (cr.is_file_owner(cr.get_user_id(user_cred), file_id) or cr.is_dir_owner(cr.get_user_id(user_cred), file_id)):
+            reply = Errors.OWNER_SHARE.value
         elif(cr.get_user_data(user_cred) is None):
             reply = Errors.USER_NOT_FOUND.value
         else:
@@ -657,6 +665,8 @@ def protocol_build_reply(request, tid, sock):
             reply = Errors.NO_PERMS.value
         elif user_cred == clients[tid].email or user_cred == clients[tid].user:
             reply = Errors.SELF_SHARE.value
+        elif (cr.is_file_owner(cr.get_user_id(user_cred), file_id) or cr.is_dir_owner(cr.get_user_id(user_cred), file_id)):
+            reply = Errors.OWNER_SHARE.value
         elif(cr.get_user_data(user_cred) is None):
             reply = Errors.USER_NOT_FOUND.value
         else:
