@@ -185,7 +185,7 @@ def get_file(cred):
     if row == None: return None
     return row_to_dict_file(row)
 
-def get_files(owner_id):
+def get_user_files(owner_id):
     """
     Returns the user
     Gets cred (username or password)
@@ -194,6 +194,23 @@ def get_files(owner_id):
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     cursor.execute(f"SELECT * FROM {files_table} WHERE owner_id = ?", (owner_id,))
+    ans = cursor.fetchall()
+    conn.close()
+    files = []
+    for file in ans:
+        files.append(row_to_dict_file(file))
+    return files
+
+
+def get_files(parent):
+    """
+    Returns the user
+    Gets cred (username or password)
+    Returns dict of user
+    """
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM {files_table} WHERE parent = ?", (parent,))
     ans = cursor.fetchall()
     conn.close()
     files = []
@@ -303,6 +320,28 @@ def delete_directory(id):
     conn.commit()
     conn.close()
 
+def update_directory(id, fields, new_values):
+    """
+    Update user with new user dict
+    Recieves a dict returns nothing
+    Removing user and adding the updated one
+    (May change in the future for better option)
+    """
+    if(type(fields) != type([])): fields = [fields]
+    if(type(new_values) != type([])): new_values = [new_values]
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    sql = f"UPDATE {directories_table} SET "
+    for field in fields[:-1]:
+        sql += f"{field} = ?, "
+    sql += f"{fields[-1]} = ? WHERE id = ?"
+    try:
+        cursor.execute(sql, tuple(new_values + [id]))
+        conn.commit()
+    except sqlite3.IntegrityError:
+        print("Key values already exist in table")
+        conn.close()
+    conn.close()
 
 def get_directory_files(parent_id):
     """

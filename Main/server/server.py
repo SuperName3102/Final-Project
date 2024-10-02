@@ -492,7 +492,7 @@ def protocol_build_reply(request, tid, sock):
     elif (code == "DOWN"):
         file_id = fields[1]
         file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
-        if(not cr.can_download(clients[tid].id, file_id)):
+        if(not cr.can_download(clients[tid].id, file_id) or is_guest(tid)):
             reply = Errors.NO_PERMS.value
         elif (not os.path.isfile(file_path)):
             reply = Errors.FILE_NOT_FOUND.value
@@ -506,7 +506,7 @@ def protocol_build_reply(request, tid, sock):
     elif (code == "NEWF"):
         folder_name = fields[1]
         folder_path = clients[tid].cwd
-        if not cr.is_dir_owner(clients[tid].id, folder_path):
+        if not cr.is_dir_owner(clients[tid].id, folder_path) or is_guest(tid):
             reply = Errors.NO_PERMS.value
         else:
             cr.create_folder(folder_name, folder_path, clients[tid].id)
@@ -522,7 +522,10 @@ def protocol_build_reply(request, tid, sock):
         elif(not cr.can_rename(clients[tid].id, file_id)):
             reply = Errors.NO_PERMS.value
         else:
-            cr.rename_file(file_id, new_name)
+            if (cr.get_file_fname(file_id) is not None):
+                cr.rename_file(file_id, new_name)
+            else:
+                cr.rename_directory(file_id, new_name)
             reply = f"RENR|{name}|{new_name}|File renamed succefully"
 
     elif (code == "GICO"):

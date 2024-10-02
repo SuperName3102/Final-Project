@@ -39,9 +39,12 @@ share = False
 # Begin gui related functions
 
 class FileButton(QPushButton):
-    def __init__(self, text, id = None, parent=None):
+    def __init__(self, text, id = None, parent=None, is_folder = False, shared_by = None, perms =["True", "True","True","True","True","True"]):
         super().__init__(text, parent)
         self.id = id
+        self.is_folder = is_folder
+        self.shared_by = shared_by
+        self.perms = perms
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.setStyleSheet("""
             QPushButton {
@@ -54,21 +57,27 @@ class FileButton(QPushButton):
 
     def contextMenuEvent(self, event: QContextMenuEvent):
         menu = QMenu(self)
-        action = menu.addAction(" Download")
-        action.triggered.connect(self.download)
-        action.setIcon(QIcon(assets_path + "\\download.svg"))
+        
+        if not self.is_folder and self.id != None and self.perms[4] == "True":
+            action = menu.addAction(" Download")
+            action.triggered.connect(self.download)
+            action.setIcon(QIcon(assets_path + "\\download.svg"))
 
-        action = menu.addAction(" Delete")
-        action.triggered.connect(self.delete)
-        action.setIcon(QIcon(assets_path + "\\delete.svg"))
+        if self.id != None:
+            if self.perms[2] == "True":
+                action = menu.addAction(" Delete")
+                action.triggered.connect(self.delete)
+                action.setIcon(QIcon(assets_path + "\\delete.svg"))
 
-        action = menu.addAction(" Rename")
-        action.triggered.connect(self.rename)
-        action.setIcon(QIcon(assets_path + "\\change_user.svg"))
-
-        action = menu.addAction(" Share")
-        action.triggered.connect(self.share)
-        action.setIcon(QIcon(assets_path + "\\share.svg"))
+            if self.perms[3] == "True":
+                action = menu.addAction(" Rename")
+                action.triggered.connect(self.rename)
+                action.setIcon(QIcon(assets_path + "\\change_user.svg"))
+            
+            if self.perms[5] == "True":
+                action = menu.addAction(" Share")
+                action.triggered.connect(self.share)
+                action.setIcon(QIcon(assets_path + "\\share.svg"))
 
         if not share:
             action = menu.addAction(" New Folder")
@@ -123,6 +132,7 @@ def search():
     window.user_page()
 
 
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -131,7 +141,9 @@ class MainWindow(QtWidgets.QMainWindow):
             self.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
 
         self.setFixedSize(1000, 550)
+    
 
+        
     def main_page(self):
         try:
             uic.loadUi(
@@ -323,8 +335,11 @@ class MainWindow(QtWidgets.QMainWindow):
                 date = file[1][:-7]
                 size = format_file_size(int(file[2]))
                 file_id = file[3]
-                
-                button = FileButton(f" {file_name} | {date} | {size}", file_id)
+                perms = file[5:]
+                if share:
+                    button = FileButton(f" {file_name} | {date} | {size} | From {file[4]}", file_id, shared_by=file[4], perms=perms)
+                else:
+                    button = FileButton(f" {file_name} | {date} | {size}", file_id)
                 button.setStyleSheet("background-color:dimgrey;border:1px solid darkgrey;font-size:14px;border-radius: 3px;")
                 button.clicked.connect(lambda checked, name=file_name, id = file_id: view_file(id, name))
                 button.setIcon(QIcon(assets_path + "\\file.svg"))
@@ -332,7 +347,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
             for index, directory in enumerate(directories):
                 directory = directory.split("~")
-                button = FileButton(" " + directory[0], directory[1])
+                perms = directory[3:]
+                if share:
+                    button = FileButton(f" {directory[0]} | From {directory[2]}", directory[1], is_folder=True, shared_by=directory[2], perms=perms)
+                else:
+                    button = FileButton(f" {directory[0]}", directory[1], is_folder=True)
                 button.setStyleSheet("background-color:peru;font-size:14px;border-radius: 3px;border:1px solid peachpuff;")
                 button.clicked.connect(lambda checked, id=directory[1]: move_dir(id))
                 button.setIcon(QIcon(assets_path + "\\folder.svg"))
