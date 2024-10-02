@@ -147,6 +147,37 @@ def send_file_data(file_path, sock, tid):
             os.remove(lock_path)
         raise
 
+def send_zip(zip_buffer, sock, tid):
+    size = len(zip_buffer.getbuffer())
+    left = size % chunk_size
+
+    start = time.time()
+    bytes_sent = 0
+    try:
+        for i in range(size//chunk_size):
+            data = zip_buffer.read(chunk_size)
+
+            current_time = time.time()
+            elapsed_time = current_time - start
+
+            if elapsed_time >= 1.0:
+                start = current_time
+                bytes_sent = 0
+
+            send_data(sock, tid, b"RILD" + data)
+            bytes_sent += len(data)
+            if bytes_sent >= Limits(clients[tid].subscription_level).max_download_speed * 1_000_000:
+                time_to_wait = 1.0 - elapsed_time
+                if time_to_wait > 0:
+                    time.sleep(time_to_wait)
+
+        data = zip_buffer.read(left)
+        if (data != b""):
+            send_data(sock, tid, b'RILE' + data)
+
+    except:
+        raise
+
 def is_guest(tid):
     return clients[tid].user == "guest"
 
@@ -491,10 +522,20 @@ def protocol_build_reply(request, tid, sock):
 
     elif (code == "DOWN"):
         file_id = fields[1]
-        file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
         if(not cr.can_download(clients[tid].id, file_id) or is_guest(tid)):
             reply = Errors.NO_PERMS.value
-        elif (not os.path.isfile(file_path)):
+            return reply
+        elif (cr.get_dir_name(file_id) != None):
+            zip_buffer = cr.zip_directory(file_id)
+            send_zip(zip_buffer, sock, tid)
+            zip_buffer.close()
+            reply = f"DOWR|{cr.get_dir_name(file_id)}|was downloaded"
+            return reply
+        elif(cr.get_file_sname(file_id) == None):
+            reply = Errors.FILE_NOT_FOUND.value
+            return reply
+        file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
+        if (cr.get_file_sname(file_id) == None or not os.path.isfile(file_path)):
             reply = Errors.FILE_NOT_FOUND.value
         else:
             try:
@@ -675,6 +716,17 @@ def protocol_build_reply(request, tid, sock):
         else:
             cr.share_file(file_id, user_cred, fields[3:])
             reply = f"SHPR|Sharing option with {user_cred} have been updated"
+    elif code == "SHRE":
+        id = fields[1]
+        file_name = cr.get_file_fname(id)
+        dir_name = cr.get_dir_name(id)
+        if file_name is None and dir_name is None:
+            reply = Errors.FILE_NOT_FOUND.value
+        cr.remove_share(clients[tid].id, id)
+        if file_name != None: name = file_name
+        else: name = dir_name
+        reply = f"SHRM|{name}|Share removed"
+            
     
     else:
         reply = Errors.UNKNOWN.value

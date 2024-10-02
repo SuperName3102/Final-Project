@@ -447,3 +447,49 @@ def get_file_perms(user_id, file_id):
     row = cursor.fetchone()
     conn.close()
     return row
+
+def remove_share(user_id, id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"DELETE FROM {permissions_table} WHERE file_id = ? and user_id = ?", (id, user_id))
+    conn.commit()
+    conn.close()
+
+
+
+def get_directory_contents(directory_id):
+    """
+    Recursively get all files and directories within the given directory.
+    
+    :param db_conn: The sqlite3 database connection.
+    :param directory_id: The ID of the directory to start from.
+    :return: A list of tuples (full_path, relative_path), where full_path is the path to the file on disk
+             and relative_path is the path to be used within the zip file.
+    """
+    contents = []
+    
+    # Get all files in this directory
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT sname, fname FROM {files_table} WHERE parent = ?", (directory_id,))
+    files = cursor.fetchall()
+    
+    # Assume files are stored in a folder with their ID as their name
+    for file_id, file_name in files:
+        full_path = os.path.join(f"{os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))}\\server\\cloud", str(file_id))  # Change 'your_file_directory' to the folder containing files
+        relative_path = file_name  # This is the name that will appear inside the zip
+        contents.append((full_path, relative_path))
+    
+    # Get all subdirectories
+    cursor.execute(f"SELECT id, name FROM {directories_table} WHERE parent = ?", (directory_id,))
+    subdirectories = cursor.fetchall()
+    
+    for subdirectory_id, subdirectory_name in subdirectories:
+        # Recursively get the contents of the subdirectory
+        subdir_contents = get_directory_contents(subdirectory_id)
+        
+        # For each item in the subdirectory, prepend the subdirectory name to the relative path
+        for full_path, relative_path in subdir_contents:
+            contents.append((full_path, os.path.join(subdirectory_name, relative_path)))
+    
+    return contents

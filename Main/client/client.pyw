@@ -17,7 +17,7 @@ import os
 import threading
 
 from PyQt6 import QtWidgets, uic
-from PyQt6.QtWidgets import QWidget, QMessageBox, QApplication, QVBoxLayout, QPushButton, QCheckBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
+from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
 from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent
 from PyQt6.QtCore import QSize
 
@@ -34,7 +34,7 @@ cookie_path = f"{os.path.dirname(os.path.abspath(__file__))}/cookies/user.cookie
 log = False
 search_filter = None
 share = False
-
+sort = "Name"
 
 # Begin gui related functions
 
@@ -58,7 +58,7 @@ class FileButton(QPushButton):
     def contextMenuEvent(self, event: QContextMenuEvent):
         menu = QMenu(self)
         
-        if not self.is_folder and self.id != None and self.perms[4] == "True":
+        if self.id != None and self.perms[4] == "True":
             action = menu.addAction(" Download")
             action.triggered.connect(self.download)
             action.setIcon(QIcon(assets_path + "\\download.svg"))
@@ -78,6 +78,11 @@ class FileButton(QPushButton):
                 action = menu.addAction(" Share")
                 action.triggered.connect(self.share)
                 action.setIcon(QIcon(assets_path + "\\share.svg"))
+            
+            if share and user["cwd"] == "":
+                action = menu.addAction(" Remove")
+                action.triggered.connect(self.remove)
+                action.setIcon(QIcon(assets_path + "\\remove.svg"))
 
         if not share:
             action = menu.addAction(" New Folder")
@@ -93,7 +98,8 @@ class FileButton(QPushButton):
 
     def download(self):
         file_name = self.text().split(" | ")[0][1:]
-        file_path, _ = QFileDialog.getSaveFileName(self, "Save File", file_name, "Text Files (*.txt);;All Files (*)")
+        if self.is_folder: file_path, _ = QFileDialog.getSaveFileName(self, "Save File", file_name, "Zip Files (*.zip);;All Files (*)")
+        else: file_path, _ = QFileDialog.getSaveFileName(self, "Save File", file_name, "Text Files (*.txt);;All Files (*)")
         if file_path:
             send_data(b"DOWN|" + self.id.encode())
             save_file(file_path)
@@ -117,6 +123,10 @@ class FileButton(QPushButton):
         if user_email is not None:
             send_data(b"SHRS|" + self.id.encode() + b"|" + user_email.encode())
             handle_reply()
+    
+    def remove(self):
+        send_data(B"SHRE|" + self.id.encode())
+        handle_reply()
 
 
 def new_folder():
@@ -259,12 +269,28 @@ class MainWindow(QtWidgets.QMainWindow):
             else:
                 files = get_cwd_files(search_filter)
                 directories = get_cwd_directories(search_filter)
-                
+            
+            
             get_used_storage()
 
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
             self.setAcceptDrops(True)
             self.set_cwd()
+            
+            if sort ==  "Name":
+                self.sort.setCurrentIndex(0)
+                files = sorted(files, key=lambda x: x.split("~")[0])
+                directories = sorted(directories, key=lambda x: x.split("~")[0])
+            elif sort == "Date":
+                self.sort.setCurrentIndex(1)
+                files = sorted(files, key=lambda x: x.split("~")[1])
+            elif sort == "Type":
+                self.sort.setCurrentIndex(2)
+                files = sorted(files, key=lambda x: x.split("~")[0].split(".")[-1])
+            elif sort == "Size":
+                self.sort.setCurrentIndex(3)
+                files = sorted(files, key=lambda x: int(x.split("~")[2]))
+                
             self.draw_cwd(files, directories)
 
             self.main_text.setText(f"Welcome {user["username"]}")
@@ -285,7 +311,10 @@ class MainWindow(QtWidgets.QMainWindow):
                 except: pass
                 self.shared_button.setText(" Your files")
                 self.upload_button.hide()
-    
+
+            self.sort.currentIndexChanged.connect(lambda: change_sort(self.sort.currentText()[1:]))
+        
+            
             self.user_button.clicked.connect(lambda: self.manage_account())
             self.logout_button.clicked.connect(logout)
             self.logout_button.setIcon(QIcon(assets_path+"\\logout.svg"))
@@ -611,7 +640,11 @@ def change_share():
     global share
     share = not share
     move_dir("")
-        
+
+def change_sort(new_sort):
+    global sort
+    sort = new_sort
+    window.user_page()
 
 def move_dir(new_dir):
     send_data(f"MOVD|{new_dir}".encode())
@@ -1118,6 +1151,11 @@ def protocol_parse_reply(reply):
             to_show = "Sharing options recieved"
         elif code == "SHPR":
             to_show = fields[1]
+            window.set_message(to_show)
+        elif code == "SHRM":
+            name = fields[1]
+            to_show = f"Succefully remove {name} from share"
+            window.user_page()
             window.set_message(to_show)
             
     except Exception as e:   # Error

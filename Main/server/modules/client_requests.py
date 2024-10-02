@@ -11,10 +11,10 @@ import os
 import bcrypt
 from datetime import datetime, timedelta
 import secrets
-from pathlib import Path
 import uuid
 import traceback
-
+import zipfile
+import io
 
 pepper_file = f"{os.path.dirname(os.path.abspath(__file__))}\\pepper.txt"
 server_path = f"{os.path.dirname(os.path.dirname(os.path.abspath(__file__)))}"
@@ -30,7 +30,7 @@ class User:
     Used to transfer between user instance and json data
     """
 
-    def __init__(self, id, email, username, password, salt=bcrypt.gensalt(), last_code=-1, valid_until=str(datetime.now()), verified=False, subscription_level = 0, admin_level = 0, cookie = "", cookie_expiration = -1):
+    def __init__(self, id, email, username, password, salt=bcrypt.gensalt(), last_code=-1, valid_until=None, verified=False, subscription_level = 0, admin_level = 0, cookie = "", cookie_expiration = -1):
         if id is None:
             self.id = gen_user_id()
         else:
@@ -40,6 +40,8 @@ class User:
         self.password = password
         self.salt = salt
         self.last_code = last_code
+        if valid_until == None:
+            valid_until = str(datetime.now())
         self.valid_until = valid_until
         self.verified = verified
         self.subscription_level = subscription_level
@@ -53,7 +55,7 @@ class File:
     Used to transfer between user instance and json data
     """
 
-    def __init__(self, id, sname, fname, parent, owner_id, size, last_edit = str(datetime.now())):
+    def __init__(self, id, sname, fname, parent, owner_id, size, last_edit = None):
         if id is None:
             self.id = gen_file_id()
         else:
@@ -67,6 +69,8 @@ class File:
         self.parent = parent
         self.owner_id = owner_id
         self.size = size
+        if last_edit == None:
+            last_edit = str(datetime.now())
         self.last_edit = last_edit
 
 class Directory:
@@ -640,7 +644,8 @@ def is_shared_file(user_id, file_id):
     parent = get_file_parent_directory(file_id)
     return is_shared_directory(user_id, parent)
 
-
+def remove_share(user_id, id):
+    db.remove_share(user_id, id)
 
 def can_read(user_id, id):
     perms = get_perms(user_id, id)
@@ -674,7 +679,32 @@ def get_perms(user_id, id):
         perms = db.get_file_perms(user_id, is_shared_file(user_id, id))
     return perms
         
+
+
+def zip_directory(directory_id):
+    """
+    Create a zip file containing all files and directories in the specified directory.
     
+    :param db_path: Path to the sqlite3 database.
+    :param directory_id: The ID of the directory to zip.
+    :param output_zip: The path of the output zip file.
+    """
+    
+    # Get the contents of the directory
+    directory_contents = db.get_directory_contents(directory_id)
+    
+    # Create the zip file
+    zip_buffer = io.BytesIO()
+    
+    # Create the zip file in memory
+    with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
+        for full_path, relative_path in directory_contents:
+            zf.write(full_path, relative_path)
+    
+    # Move the buffer's position to the beginning so it can be read
+    zip_buffer.seek(0)
+    return zip_buffer
+
 
 if __name__ == "__main__":
     main()
