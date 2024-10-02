@@ -534,9 +534,9 @@ def delete_directory(id):
 
     db.delete_directory(id)
 
-def directory_size(id):
+def directory_size(user_id, id):
     total = 0
-    files = db.get_directory_files(id)
+    files = db.get_user_directory_files(user_id, id)
     for file in files:
         try:
             file = File(**file)
@@ -548,11 +548,11 @@ def directory_size(id):
 
 def get_user_storage(id):
     total = 0
-    total += directory_size("")
+    total += directory_size(id, "")
     directories = db.get_user_directories(id)
     for directory in directories:
         directory = Directory(**directory)
-        total += directory_size(directory.id)
+        total += directory_size(id, directory.id)
     return total
         
 def clean_db():

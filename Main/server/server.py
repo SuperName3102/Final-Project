@@ -6,6 +6,7 @@ from modules import encrypting
 from modules import validity as v
 from modules.errors import Errors
 from modules.limits import Limits, LimitExceeded
+from modules.logger import Logger
 
 import socket
 import traceback
@@ -14,7 +15,7 @@ import threading
 import os
 import rsa
 import struct
-import shutil
+import sys
 from filelock import FileLock
 
 # Announce global vars
@@ -518,7 +519,8 @@ def protocol_build_reply(request, tid, sock):
             reply = f"MOVR|{directory_id}|{cr.get_parent_directory(directory_id)}|{cr.get_full_path(directory_id)}|moved succesfully"
             
         else:
-            reply = Errors.INVALID_DIRECTORY.value
+            clients[tid].cwd = ""
+            reply = f"MOVR|{""}|{cr.get_parent_directory("")}|{cr.get_full_path("")}|moved succesfully"
 
     elif (code == "DOWN"):
         file_id = fields[1]
@@ -934,4 +936,5 @@ def main(addr):
 
 if __name__ == '__main__':   # Run main
     cr.main()
+    sys.stdout = Logger()
     main(("0.0.0.0", 31026))

@@ -59,17 +59,27 @@ def file_viewer_dialog(title, file_path):
             content_widget.setPlainText(f"Error reading document: {str(e)}")
         layout.insertWidget(0, content_widget)
     else:
-        # Unsupported file type, try to open in native app
-        content_widget = QLabel(dialog)
-        content_widget.setText(f"Cannot open {"".join(file_path.split("\\")[-1].split("-")[1:])} in file viewer\nTry opening it in its defualt app")
-        content_widget.setStyleSheet("font-size: 20px")
-        content_widget.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        layout.insertWidget(0, content_widget)
+        # Attempt to open unsupported file types as plain text
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            content_widget = QTextEdit(dialog)
+            content_widget.setReadOnly(True)
+            content_widget.setPlainText(content)
+            layout.insertWidget(0, content_widget)
 
-        # Button to open in native app
-        open_native_button = QPushButton(f"Open {file_extension} in default app", dialog)
-        open_native_button.clicked.connect(lambda: open_in_native_app(file_path))
-        layout.addWidget(open_native_button)
+        except Exception as e:
+            # If reading as text fails, display an error message
+            content_widget = QLabel(dialog)
+            content_widget.setText(f"Cannot open {os.path.basename(file_path)} in file viewer.\n"f"Try opening it in its default app.")
+            content_widget.setStyleSheet("font-size: 20px")
+            content_widget.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            layout.insertWidget(0, content_widget)
+
+            # Button to open in native app
+            open_native_button = QPushButton(f"Open {os.path.splitext(file_path)[1]} in default app", dialog)
+            open_native_button.clicked.connect(lambda: open_in_native_app(file_path))
+            layout.addWidget(open_native_button)
 
     dialog.setLayout(layout)
     dialog.exec()

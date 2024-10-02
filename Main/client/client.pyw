@@ -17,7 +17,7 @@ import os
 import threading
 
 from PyQt6 import QtWidgets, uic
-from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu, QInputDialog
+from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
 from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent
 from PyQt6.QtCore import QSize
 
@@ -45,6 +45,8 @@ class FileButton(QPushButton):
         self.is_folder = is_folder
         self.shared_by = shared_by
         self.perms = perms
+        self.setMinimumHeight(30)
+        self.setMaximumWidth(868)
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.setStyleSheet("""
             QPushButton {
@@ -353,6 +355,7 @@ class MainWindow(QtWidgets.QMainWindow):
             outer_layout.addStretch(1)
             scroll = QScrollArea()
             scroll.setWidgetResizable(True)
+            scroll.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
 
             scroll_container_widget = QWidget()
             scroll_layout = QGridLayout()
@@ -402,8 +405,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
             scroll.setWidget(scroll_container_widget)
             scroll.setFixedSize(QSize(900, 340))
-            spacer = QSpacerItem(
-                20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+            spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
             outer_layout.addItem(spacer)
 
             center_layout = QHBoxLayout()
@@ -1295,9 +1297,6 @@ def main(addr):
         return
     try:
         rsa_exchange()
-        # gui = threading.Thread(target=gui.create_root, args=())
-        # gui.start()
-        # gui.create_root()
 
         app = QtWidgets.QApplication(sys.argv)
         with open(f"{os.path.dirname(os.path.abspath(__file__))}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
@@ -1312,7 +1311,7 @@ def main(addr):
 
 
 if __name__ == "__main__":   # Run main
-    #sys.stdout = Logger()
+    sys.stdout = Logger()
     ip = "127.0.0.1"
     if len(sys.argv) == 2:
         ip = sys.argv[1]

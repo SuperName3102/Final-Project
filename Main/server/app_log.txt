@@ -1,0 +1,142 @@
+2024-10-02 16:50:32 - Server listening on ('0.0.0.0', 31026)
+2024-10-02 16:50:32 - Main thread: before accepting ...
+2024-10-02 16:50:40 - New Client number 1 from ('127.0.0.1', 57749)
+2024-10-02 17:23:00 - Server listening on ('0.0.0.0', 31026)
+2024-10-02 17:23:00 - Main thread: before accepting ...
+2024-10-02 17:23:03 - New Client number 1 from ('127.0.0.1', 58019)
+2024-10-02 17:23:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 747, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 474, in protocol_build_reply
+    files = cr.get_files(clients[tid].id, directory, search_filter)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 347, in get_files
+    to_add += "~" + "~".join(get_perms(owner_id, file.id))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can only join an iterable
+2024-10-02 17:23:57 - Server listening on ('0.0.0.0', 31026)
+2024-10-02 17:23:58 - Main thread: before accepting ...
+2024-10-02 17:23:58 - New Client number 1 from ('127.0.0.1', 58042)
+2024-10-02 17:28:48 - Client 1 Exit
+2024-10-02 17:28:49 - New Client number 2 from ('127.0.0.1', 58074)
+2024-10-02 17:29:10 - Client 2 Exit
+2024-10-02 17:29:11 - New Client number 3 from ('127.0.0.1', 58090)
+2024-10-02 17:29:19 - Client 3 Exit
+2024-10-02 17:29:20 - New Client number 4 from ('127.0.0.1', 58098)
+2024-10-02 17:30:40 - Client 4 Exit
+2024-10-02 17:30:41 - New Client number 5 from ('127.0.0.1', 58111)
+2024-10-02 17:30:58 - Client 5 Exit
+2024-10-02 17:30:59 - New Client number 6 from ('127.0.0.1', 58120)
+2024-10-02 17:33:14 - Client 6 Exit
+2024-10-02 17:33:15 - New Client number 7 from ('127.0.0.1', 58160)
+2024-10-02 17:33:49 - Client 7 Exit
+2024-10-02 17:33:50 - New Client number 8 from ('127.0.0.1', 58173)
+2024-10-02 17:34:23 - Client 8 Exit
+2024-10-02 17:34:24 - New Client number 9 from ('127.0.0.1', 58185)
+2024-10-02 17:35:32 - Client 9 Exit
+2024-10-02 17:35:33 - New Client number 10 from ('127.0.0.1', 58199)
+2024-10-02 17:35:41 - Client 10 Exit
+2024-10-02 17:35:42 - New Client number 11 from ('127.0.0.1', 58208)
+2024-10-02 17:36:18 - Client 11 Exit
+2024-10-02 17:36:19 - New Client number 12 from ('127.0.0.1', 58216)
+2024-10-02 17:37:08 - Client 12 Exit
+2024-10-02 17:37:09 - New Client number 13 from ('127.0.0.1', 58229)
+2024-10-02 17:37:42 - Client 13 Exit
+2024-10-02 17:37:43 - New Client number 14 from ('127.0.0.1', 58238)
+2024-10-02 17:37:49 - Client 14 Exit
+2024-10-02 17:37:50 - New Client number 15 from ('127.0.0.1', 58248)
+2024-10-02 17:38:15 - Client 15 Exit
+2024-10-02 17:38:16 - New Client number 16 from ('127.0.0.1', 58262)
+2024-10-02 17:38:34 - Client 16 Exit
+2024-10-02 17:38:34 - New Client number 17 from ('127.0.0.1', 58276)
+2024-10-02 17:41:04 - Client 17 Exit
+2024-10-02 17:41:04 - New Client number 18 from ('127.0.0.1', 58293)
+2024-10-02 17:41:15 - Client 18 Exit
+2024-10-02 17:41:16 - New Client number 19 from ('127.0.0.1', 58304)
+2024-10-02 17:41:27 - Client 19 Exit
+2024-10-02 17:41:28 - New Client number 20 from ('127.0.0.1', 58312)
+2024-10-02 17:41:37 - Client 20 Exit
+2024-10-02 17:41:38 - New Client number 21 from ('127.0.0.1', 58325)
+2024-10-02 17:41:45 - Client 21 Exit
+2024-10-02 17:41:46 - New Client number 22 from ('127.0.0.1', 58336)
+2024-10-02 17:41:53 - Client 22 Exit
+2024-10-02 17:41:53 - New Client number 23 from ('127.0.0.1', 58347)
+2024-10-02 17:42:03 - Client 23 Exit
+2024-10-02 17:42:03 - New Client number 24 from ('127.0.0.1', 58358)
+2024-10-02 17:42:09 - Client 24 Exit
+2024-10-02 17:42:10 - New Client number 25 from ('127.0.0.1', 58366)
+2024-10-02 17:42:18 - Client 25 Exit
+2024-10-02 17:42:19 - New Client number 26 from ('127.0.0.1', 58375)
+2024-10-02 17:49:24 - Server listening on ('0.0.0.0', 31026)
+2024-10-02 17:49:24 - Main thread: before accepting ...
+2024-10-02 17:49:27 - New Client number 1 from ('127.0.0.1', 58449)
+2024-10-02 17:49:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 747, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 625, in protocol_build_reply
+    used_storage = cr.get_user_storage(clients[tid].id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 551, in get_user_storage
+    total += directory_size(id, "")
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 539, in directory_size
+    files = db.get_user_directory_files(user_id, id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 370, in get_user_directory_files
+    cursor.execute(f"SELECT * FROM {files_table} WHERE owner_id = ? parent = ?", (user_id, parent_id))
+sqlite3.OperationalError: near "parent": syntax error
+2024-10-02 17:50:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 747, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 625, in protocol_build_reply
+    used_storage = cr.get_user_storage(clients[tid].id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 551, in get_user_storage
+    total += directory_size(id, "")
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 539, in directory_size
+    files = db.get_user_directory_files(user_id, id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 370, in get_user_directory_files
+    cursor.execute(f"SELECT * FROM {files_table} WHERE owner_id = ? parent = ?", (user_id, parent_id))
+sqlite3.OperationalError: near "parent": syntax error
+2024-10-02 17:50:15 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 747, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 625, in protocol_build_reply
+    used_storage = cr.get_user_storage(clients[tid].id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 551, in get_user_storage
+    total += directory_size(id, "")
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 539, in directory_size
+    files = db.get_user_directory_files(user_id, id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 370, in get_user_directory_files
+    cursor.execute(f"SELECT * FROM {files_table} WHERE owner_id = ? parent = ?", (user_id, parent_id))
+sqlite3.OperationalError: near "parent": syntax error
+2024-10-02 17:50:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 747, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 625, in protocol_build_reply
+    used_storage = cr.get_user_storage(clients[tid].id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 551, in get_user_storage
+    total += directory_size(id, "")
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 539, in directory_size
+    files = db.get_user_directory_files(user_id, id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 370, in get_user_directory_files
+    cursor.execute(f"SELECT * FROM {files_table} WHERE owner_id = ? parent = ?", (user_id, parent_id))
+sqlite3.OperationalError: near "parent": syntax error
+2024-10-02 17:51:34 - Server listening on ('0.0.0.0', 31026)
+2024-10-02 17:51:35 - Main thread: before accepting ...
+2024-10-02 17:51:35 - New Client number 1 from ('127.0.0.1', 58477)
+2024-10-02 17:55:00 - Server listening on ('0.0.0.0', 31026)
+2024-10-02 17:55:00 - Main thread: before accepting ...

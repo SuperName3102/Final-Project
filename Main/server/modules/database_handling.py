@@ -359,6 +359,22 @@ def get_directory_files(parent_id):
         files.append(row_to_dict_file(file))
     return files
 
+def get_user_directory_files(user_id, parent_id):
+    """
+    Returns the user
+    Gets cred (username or password)
+    Returns dict of user
+    """
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM {files_table} WHERE owner_id = ? and parent = ?", (user_id, parent_id))
+    ans = cursor.fetchall()
+    conn.close()
+    files = []
+    for file in ans:
+        files.append(row_to_dict_file(file))
+    return files
+
 def get_sub_directories(parent_id):
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
