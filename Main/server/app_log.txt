@@ -140,3 +140,191 @@ sqlite3.OperationalError: near "parent": syntax error
 2024-10-02 17:51:35 - New Client number 1 from ('127.0.0.1', 58477)
 2024-10-02 17:55:00 - Server listening on ('0.0.0.0', 31026)
 2024-10-02 17:55:00 - Main thread: before accepting ...
+2024-10-03 18:59:41 - Server listening on ('0.0.0.0', 31026)
+2024-10-03 18:59:41 - Main thread: before accepting ...
+2024-10-03 18:59:44 - New Client number 1 from ('127.0.0.1', 53628)
+2024-10-03 19:02:38 - Client 1 Exit
+2024-10-03 19:02:42 - New Client number 2 from ('127.0.0.1', 53681)
+2024-10-03 19:12:27 - Server listening on ('0.0.0.0', 31026)
+2024-10-03 19:12:27 - Main thread: before accepting ...
+2024-10-03 19:12:27 - New Client number 1 from ('127.0.0.1', 53752)
+2024-10-03 19:13:17 - Server listening on ('0.0.0.0', 31026)
+2024-10-03 19:13:18 - Main thread: before accepting ...
+2024-10-03 19:13:18 - New Client number 1 from ('127.0.0.1', 53774)
+2024-10-03 19:14:30 - Server listening on ('0.0.0.0', 31026)
+2024-10-03 19:14:30 - Main thread: before accepting ...
+2024-10-03 19:14:31 - New Client number 1 from ('127.0.0.1', 53800)
+2024-10-03 19:16:47 - Client 1 Exit
+2024-10-03 19:21:41 - Server listening on ('0.0.0.0', 31026)
+2024-10-03 19:21:41 - Main thread: before accepting ...
+2024-10-03 19:21:44 - New Client number 1 from ('127.0.0.1', 54413)
+2024-10-03 19:24:05 - Server listening on ('0.0.0.0', 31026)
+2024-10-03 19:24:05 - Main thread: before accepting ...
+2024-10-03 19:24:05 - New Client number 1 from ('127.0.0.1', 54440)
+2024-10-03 19:24:47 - Client 1 Exit
+2024-10-03 19:24:48 - New Client number 2 from ('127.0.0.1', 54448)
+2024-10-03 19:28:50 - Client 2 Exit
+2024-10-03 19:28:51 - New Client number 3 from ('127.0.0.1', 54474)
+2024-10-03 19:40:30 - Client 3 Exit
+2024-10-03 19:40:31 - New Client number 4 from ('127.0.0.1', 54580)
+2024-10-03 19:43:38 - Client 4 Exit
+2024-10-03 19:43:39 - New Client number 5 from ('127.0.0.1', 54594)
+2024-10-03 19:44:52 - Client 5 Exit
+2024-10-03 19:44:53 - New Client number 6 from ('127.0.0.1', 54626)
+2024-10-03 19:45:10 - Client 6 Exit
+2024-10-03 19:45:11 - New Client number 7 from ('127.0.0.1', 54641)
+2024-10-03 19:52:39 - Client 7 Exit
+2024-10-03 19:52:40 - New Client number 8 from ('127.0.0.1', 54747)
+2024-10-03 19:59:52 - Client 8 Exit
+2024-10-03 19:59:53 - New Client number 9 from ('127.0.0.1', 54777)
+2024-10-03 20:00:24 - Client 9 Exit
+2024-10-03 20:00:25 - New Client number 10 from ('127.0.0.1', 54803)
+2024-10-03 20:15:39 - Client 10 Exit
+2024-10-03 20:18:48 - New Client number 11 from ('127.0.0.1', 54972)
+2024-10-03 20:18:51 - Client 11 Exit
+2024-10-03 20:19:18 - New Client number 12 from ('127.0.0.1', 54983)
+2024-10-03 20:20:39 - Server listening on ('0.0.0.0', 31026)
+2024-10-03 20:20:40 - Main thread: before accepting ...
+2024-10-03 20:20:40 - New Client number 1 from ('127.0.0.1', 55007)
+2024-10-03 20:23:22 - Client 1 Exit
+2024-10-03 20:23:23 - New Client number 2 from ('127.0.0.1', 55027)
+2024-10-03 20:23:29 - Client 2 Exit
+2024-10-03 20:23:39 - New Client number 3 from ('127.0.0.1', 55040)
+2024-10-03 20:24:16 - Client 3 Exit
+2024-10-03 20:24:17 - New Client number 4 from ('127.0.0.1', 55053)
+2024-10-03 20:25:27 - Client 4 Exit
+2024-10-03 20:25:28 - New Client number 5 from ('127.0.0.1', 55069)
+2024-10-03 20:25:35 - Client 5 Exit
+2024-10-03 20:25:36 - New Client number 6 from ('127.0.0.1', 55077)
+2024-10-03 20:25:42 - Client 6 Exit
+2024-10-03 20:27:01 - New Client number 7 from ('127.0.0.1', 55095)
+2024-10-03 20:27:21 - Client 7 Exit
+2024-10-03 20:27:21 - New Client number 8 from ('127.0.0.1', 55105)
+2024-10-03 20:27:27 - Client 8 Exit
+2024-10-03 20:27:35 - New Client number 9 from ('127.0.0.1', 55115)
+2024-10-03 20:27:40 - Client 9 Exit
+2024-10-03 20:27:56 - New Client number 10 from ('127.0.0.1', 55127)
+2024-10-03 20:43:12 - Client 10 Exit
+2024-10-03 20:43:13 - New Client number 11 from ('127.0.0.1', 55279)
+2024-10-03 20:44:00 - Client 11 Exit
+2024-10-03 20:44:00 - New Client number 12 from ('127.0.0.1', 55291)
+2024-10-03 20:44:36 - Client 12 Exit
+2024-10-03 20:44:37 - New Client number 13 from ('127.0.0.1', 55303)
+2024-10-03 20:45:20 - Client 13 Exit
+2024-10-03 20:45:21 - New Client number 14 from ('127.0.0.1', 55324)
+2024-10-03 20:45:36 - Client 14 Exit
+2024-10-03 20:45:36 - New Client number 15 from ('127.0.0.1', 55335)
+2024-10-03 20:46:38 - Client 15 Exit
+2024-10-03 20:46:39 - New Client number 16 from ('127.0.0.1', 55349)
+2024-10-03 20:48:46 - Client 16 Exit
+2024-10-03 20:48:47 - New Client number 17 from ('127.0.0.1', 55407)
+2024-10-03 20:49:14 - Client 17 Exit
+2024-10-03 20:49:15 - New Client number 18 from ('127.0.0.1', 55419)
+2024-10-03 20:51:04 - Client 18 Exit
+2024-10-03 20:51:05 - New Client number 19 from ('127.0.0.1', 55446)
+2024-10-03 20:51:42 - Client 19 Exit
+2024-10-03 20:51:43 - New Client number 20 from ('127.0.0.1', 55455)
+2024-10-03 20:53:01 - Client 20 Exit
+2024-10-03 20:53:01 - New Client number 21 from ('127.0.0.1', 55471)
+2024-10-04 00:34:57 - Client 21 Exit
+2024-10-04 00:34:57 - New Client number 22 from ('127.0.0.1', 55705)
+2024-10-04 00:35:28 - Client 22 Exit
+2024-10-04 00:35:29 - New Client number 23 from ('127.0.0.1', 55714)
+2024-10-04 00:35:37 - Client 23 Exit
+2024-10-04 00:35:38 - New Client number 24 from ('127.0.0.1', 55723)
+2024-10-04 00:36:44 - Client 24 Exit
+2024-10-04 00:36:45 - New Client number 25 from ('127.0.0.1', 55735)
+2024-10-04 00:36:50 - Client 25 Exit
+2024-10-04 00:37:17 - New Client number 26 from ('127.0.0.1', 55759)
+2024-10-04 00:37:23 - Client 26 Exit
+2024-10-04 00:38:35 - New Client number 27 from ('127.0.0.1', 55776)
+2024-10-04 00:38:39 - Client 27 Exit
+2024-10-04 00:38:45 - New Client number 28 from ('127.0.0.1', 55788)
+2024-10-04 00:43:01 - New Client number 29 from ('127.0.0.1', 55820)
+2024-10-04 00:43:24 - New Client number 30 from ('127.0.0.1', 55836)
+2024-10-04 00:51:35 - Client 30 Exit
+2024-10-04 00:51:36 - Client 29 Exit
+2024-10-04 00:51:36 - Client 28 Exit
+2024-10-04 00:51:38 - New Client number 31 from ('127.0.0.1', 55946)
+2024-10-04 00:51:40 - Client 31 Exit
+2024-10-04 00:51:59 - New Client number 32 from ('127.0.0.1', 55961)
+2024-10-04 00:56:57 - Client 32 Exit
+2024-10-04 00:57:25 - New Client number 33 from ('127.0.0.1', 56001)
+2024-10-04 00:57:30 - Client 33 Exit
+2024-10-04 00:57:34 - New Client number 34 from ('127.0.0.1', 56011)
+2024-10-04 00:58:54 - New Client number 35 from ('127.0.0.1', 56023)
+2024-10-04 00:59:36 - New Client number 36 from ('127.0.0.1', 56037)
+2024-10-04 00:59:41 - Client 36 Exit
+2024-10-04 01:04:34 - Client 34 Exit
+2024-10-04 01:04:35 - Client 35 Exit
+2024-10-04 01:04:43 - New Client number 37 from ('127.0.0.1', 56117)
+2024-10-04 01:10:54 - Client 37 Exit
+2024-10-04 01:10:55 - New Client number 38 from ('127.0.0.1', 56251)
+2024-10-04 01:11:19 - Client 38 Exit
+2024-10-04 01:11:19 - New Client number 39 from ('127.0.0.1', 56259)
+2024-10-04 01:11:39 - Client 39 Exit
+2024-10-04 01:11:39 - New Client number 40 from ('127.0.0.1', 56276)
+2024-10-04 01:14:17 - Client 40 Exit
+2024-10-04 01:14:17 - New Client number 41 from ('127.0.0.1', 56314)
+2024-10-04 01:14:49 - Client 41 Exit
+2024-10-04 01:14:50 - New Client number 42 from ('127.0.0.1', 56324)
+2024-10-04 01:15:54 - Client 42 Exit
+2024-10-04 01:15:55 - New Client number 43 from ('127.0.0.1', 56342)
+2024-10-04 01:16:07 - Client 43 Exit
+2024-10-04 01:16:07 - New Client number 44 from ('127.0.0.1', 56354)
+2024-10-04 01:16:29 - Client 44 Exit
+2024-10-04 01:16:30 - New Client number 45 from ('127.0.0.1', 56368)
+2024-10-04 01:17:04 - Client 45 Exit
+2024-10-04 01:17:04 - New Client number 46 from ('127.0.0.1', 56378)
+2024-10-04 01:18:14 - Client 46 Exit
+2024-10-04 01:18:14 - New Client number 47 from ('127.0.0.1', 56397)
+2024-10-04 01:19:09 - Client 47 Exit
+2024-10-04 01:19:09 - New Client number 48 from ('127.0.0.1', 56417)
+2024-10-04 01:21:08 - Client 48 Exit
+2024-10-04 01:21:09 - New Client number 49 from ('127.0.0.1', 56440)
+2024-10-04 01:21:13 - Client 49 Exit
+2024-10-04 01:22:00 - New Client number 50 from ('127.0.0.1', 56461)
+2024-10-04 01:22:48 - Client 50 Exit
+2024-10-04 01:22:49 - New Client number 51 from ('127.0.0.1', 56474)
+2024-10-04 01:22:54 - Client 51 Exit
+2024-10-04 01:23:21 - New Client number 52 from ('127.0.0.1', 56486)
+2024-10-04 01:23:26 - Client 52 Exit
+2024-10-04 01:23:55 - New Client number 53 from ('127.0.0.1', 56499)
+2024-10-04 01:24:28 - Client 53 Exit
+2024-10-04 01:24:29 - New Client number 54 from ('127.0.0.1', 56509)
+2024-10-04 01:25:03 - Client 54 Exit
+2024-10-04 01:25:04 - New Client number 55 from ('127.0.0.1', 56519)
+2024-10-04 01:26:02 - Client 55 Exit
+2024-10-04 01:26:02 - New Client number 56 from ('127.0.0.1', 56534)
+2024-10-04 01:27:19 - Client 56 Exit
+2024-10-04 01:27:20 - New Client number 57 from ('127.0.0.1', 56550)
+2024-10-04 01:27:53 - Client 57 Exit
+2024-10-04 01:27:54 - New Client number 58 from ('127.0.0.1', 56567)
+2024-10-04 01:28:40 - Client 58 Exit
+2024-10-04 01:28:41 - New Client number 59 from ('127.0.0.1', 56581)
+2024-10-04 01:31:58 - Client 59 Exit
+2024-10-04 01:31:59 - New Client number 60 from ('127.0.0.1', 56612)
+2024-10-04 01:32:18 - Client 60 Exit
+2024-10-04 01:32:19 - New Client number 61 from ('127.0.0.1', 56623)
+2024-10-04 01:34:04 - Client 61 Exit
+2024-10-04 01:34:05 - New Client number 62 from ('127.0.0.1', 56635)
+2024-10-04 01:35:08 - Client 62 Exit
+2024-10-04 01:35:08 - New Client number 63 from ('127.0.0.1', 56649)
+2024-10-04 01:35:21 - Client 63 Exit
+2024-10-04 01:35:21 - New Client number 64 from ('127.0.0.1', 56661)
+2024-10-04 01:36:24 - Client 64 Exit
+2024-10-04 01:36:24 - New Client number 65 from ('127.0.0.1', 56680)
+2024-10-04 01:36:28 - Client 65 Exit
+2024-10-04 01:36:56 - New Client number 66 from ('127.0.0.1', 56692)
+2024-10-04 01:39:25 - Client 66 Exit
+2024-10-04 01:39:25 - New Client number 67 from ('127.0.0.1', 56715)
+2024-10-04 01:40:14 - Client 67 Exit
+2024-10-04 01:40:15 - New Client number 68 from ('127.0.0.1', 56728)
+2024-10-04 01:41:56 - Client 68 Exit
+2024-10-04 01:41:57 - New Client number 69 from ('127.0.0.1', 56745)
+2024-10-04 01:42:33 - Client 69 Exit
+2024-10-04 01:42:34 - New Client number 70 from ('127.0.0.1', 56761)
+2024-10-04 01:43:10 - Client 70 Exit
+2024-10-04 01:43:10 - New Client number 71 from ('127.0.0.1', 56773)
+2024-10-04 01:43:25 - Client 71 Exit
+2024-10-04 01:43:26 - New Client number 72 from ('127.0.0.1', 56782)
