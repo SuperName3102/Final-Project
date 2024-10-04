@@ -8,12 +8,12 @@ from modules.limits import Limits
 from modules.logger import Logger
 from modules.file_viewer import *
 
-import socket, sys, traceback, rsa, struct, os, time
+import socket, sys, traceback, rsa, struct, os, threading
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
 from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent
-from PyQt6.QtCore import QSize,  QRect, QTimer
+from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal, QObject
 
 
 # Announce global vars
@@ -31,6 +31,7 @@ share = False
 sort = "Name"
 window_geometry = QRect(350, 200, 1000, 550)
 original_sizes = {}
+active_threads = []
 
 # Begin gui related functions
 
@@ -405,11 +406,12 @@ class MainWindow(QtWidgets.QMainWindow):
                     'font_size': font_size
                 }
             
-            self.setUpdatesEnabled(False)
+            
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
-            self.setUpdatesEnabled(True)
-                
+
+            self.file_upload_progress.hide()
+            
             self.main_text.setText(f"Welcome {user["username"]}")
 
             self.storage_label.setText(f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
@@ -615,8 +617,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.storage_remaining.setMaximum(Limits(user["subscription_level"]).max_storage)
             self.storage_remaining.setValue(int(used_storage))
-            self.storage_label.setText(
-                f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
+            self.storage_label.setText(f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
 
         except:
             print(traceback.format_exc())
@@ -712,26 +713,67 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
 # Files functions
-def send_file(file_path):
-    if (not os.path.isfile(file_path)):
-        window.set_error_message(f"File path was not found")
-        return
-    size = os.path.getsize(file_path)
-    left = size % chunk_size
-    try:
-        with open(file_path, 'rb') as f:
-            for i in range(size//chunk_size):
-                data = f.read(chunk_size)
-                send_data(b"FILD" + data)
-            data = f.read(left)
-            if (data != b""):
-                send_data(b'FILE' + data)
-                return
-    except:
-        print(traceback.format_exc())
-    finally:
-        handle_reply()
+class FileSenderThread(QThread):
+    finished = pyqtSignal()  # Signal to notify that file sending is done
+    error = pyqtSignal(str)  # Signal to notify error messages
 
+    def __init__(self, file_path):
+        super().__init__()
+        self.file_path = file_path
+
+    def run(self):
+        if not os.path.isfile(self.file_path):
+            self.error.emit("File path was not found")
+            return
+
+        size = os.path.getsize(self.file_path)
+        left = size % chunk_size
+        sent = 0
+        try: 
+            window.file_upload_progress.setMaximum(size)
+            window.file_upload_progress.setValue(0)
+        except: pass
+        try:
+            with open(self.file_path, 'rb') as f:
+                for i in range(size // chunk_size):
+                    data = f.read(chunk_size)
+                    send_data(b"FILD" + data)
+                    sent += chunk_size
+                    try: window.file_upload_progress.setValue(sent)
+                    except: continue
+                data = f.read(left)
+                if data != b"":
+                    send_data(b'FILE' + data)
+                    try: window.file_upload_progress.setValue(sent)
+                    except: pass
+            self.finished.emit()  # Notify that file sending is complete
+        except:
+            self.error.emit(traceback.format_exc())
+
+
+def send_file(file_path):
+    # Create the file sender thread
+    try: window.file_upload_progress.show()
+    except: pass
+    for child in window.findChildren(QPushButton):  # Find all QPushButton children
+        child.setEnabled(False)
+    thread = FileSenderThread(file_path)
+
+    # Connect signals to the appropriate slots
+    thread.finished.connect(handle_reply)  # Connect finished signal to handle_reply
+    thread.error.connect(window.set_error_message)  # Connect error signal to set error message
+    thread.finished.connect(thread.deleteLater)  # Clean up the thread when finished
+    active_threads.append(thread)
+    thread.finished.connect(lambda: active_threads.remove(thread))
+    thread.finished.connect(renable_buttons)
+
+    # Start the thread
+    thread.start()
+    
+
+def renable_buttons():
+    for child in window.findChildren(QPushButton):  # Find all QPushButton children
+        child.setEnabled(True)
 
 
 
@@ -752,7 +794,7 @@ def save_file(save_loc):
                     f.write(data[4:])
                     break
                 else:
-                    return protocol_parse_reply(data)
+                    protocol_parse_reply(data)
                 data = b''
     except:
         print(traceback.format_exc())

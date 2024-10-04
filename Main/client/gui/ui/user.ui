@@ -98,7 +98,7 @@
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>481</y>
+      <y>471</y>
       <width>221</width>
       <height>41</height>
      </rect>
@@ -123,7 +123,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>450</y>
+      <y>440</y>
       <width>1001</width>
       <height>21</height>
      </rect>
@@ -316,6 +316,28 @@
     </property>
     <property name="text">
      <string>Sort By:</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="file_upload_progress">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>520</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>

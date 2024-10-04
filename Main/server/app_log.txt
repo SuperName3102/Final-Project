@@ -461,3 +461,370 @@ sqlite3.OperationalError: near "parent": syntax error
 2024-10-04 11:33:39 - New Client number 33 from ('127.0.0.1', 55994)
 2024-10-04 11:34:36 - Client 33 Exit
 2024-10-04 11:34:37 - New Client number 34 from ('127.0.0.1', 56012)
+2024-10-04 11:37:46 - Server listening on ('0.0.0.0', 31026)
+2024-10-04 11:37:46 - Main thread: before accepting ...
+2024-10-04 11:37:49 - New Client number 1 from ('127.0.0.1', 58661)
+2024-10-04 11:38:50 - Client 1 Exit
+2024-10-04 11:38:51 - New Client number 2 from ('127.0.0.1', 58704)
+2024-10-04 11:38:55 - Client 2 Exit
+2024-10-04 11:53:12 - Server listening on ('0.0.0.0', 31026)
+2024-10-04 11:53:13 - Main thread: before accepting ...
+2024-10-04 11:53:18 - New Client number 1 from ('127.0.0.1', 64979)
+2024-10-04 11:56:03 - Client 1 Exit
+2024-10-04 11:56:03 - New Client number 2 from ('127.0.0.1', 65041)
+2024-10-04 11:59:23 - Client 2 Exit
+2024-10-04 11:59:23 - New Client number 3 from ('127.0.0.1', 65073)
+2024-10-04 12:01:28 - Client 3 Exit
+2024-10-04 12:01:29 - New Client number 4 from ('127.0.0.1', 65098)
+2024-10-04 12:01:51 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:01:51 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 474, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:01:52 - Client 4 Exit
+2024-10-04 12:01:53 - New Client number 5 from ('127.0.0.1', 65112)
+2024-10-04 12:02:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:02:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 474, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:02:12 - Client 5 Exit
+2024-10-04 12:02:12 - New Client number 6 from ('127.0.0.1', 65127)
+2024-10-04 12:03:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:03:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 474, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:03:05 - Client 6 Exit
+2024-10-04 12:03:05 - New Client number 7 from ('127.0.0.1', 65141)
+2024-10-04 12:03:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:03:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 474, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:03:12 - Client 7 Exit
+2024-10-04 12:04:21 - New Client number 8 from ('127.0.0.1', 65158)
+2024-10-04 12:05:40 - Server listening on ('0.0.0.0', 31026)
+2024-10-04 12:05:40 - Main thread: before accepting ...
+2024-10-04 12:05:40 - New Client number 1 from ('127.0.0.1', 65190)
+2024-10-04 12:20:17 - Client 1 Exit
+2024-10-04 12:20:18 - New Client number 2 from ('127.0.0.1', 65298)
+2024-10-04 12:21:02 - Client 2 Exit
+2024-10-04 12:21:03 - New Client number 3 from ('127.0.0.1', 65312)
+2024-10-04 12:24:12 - Client 3 Exit
+2024-10-04 12:24:12 - New Client number 4 from ('127.0.0.1', 65336)
+2024-10-04 12:25:45 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:25:45 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 474, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:25:46 - Client 4 Exit
+2024-10-04 12:25:47 - New Client number 5 from ('127.0.0.1', 65359)
+2024-10-04 12:26:34 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:26:34 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 474, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:26:35 - Client 5 Exit
+2024-10-04 12:26:36 - New Client number 6 from ('127.0.0.1', 65383)
+2024-10-04 12:28:17 - Client 6 Exit
+2024-10-04 12:28:17 - New Client number 7 from ('127.0.0.1', 65401)
+2024-10-04 12:28:25 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:28:25 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 474, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:28:26 - Client 7 Exit
+2024-10-04 12:28:47 - New Client number 8 from ('127.0.0.1', 65419)
+2024-10-04 12:28:55 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:28:55 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 474, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:28:56 - Client 8 Exit
+2024-10-04 12:29:10 - New Client number 9 from ('127.0.0.1', 65435)
+2024-10-04 12:29:27 - Client 9 Exit
+2024-10-04 12:29:27 - New Client number 10 from ('127.0.0.1', 65448)
+2024-10-04 12:29:35 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:29:35 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 474, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:29:36 - Client 10 Exit
+2024-10-04 12:29:39 - New Client number 11 from ('127.0.0.1', 65463)
+2024-10-04 12:31:05 - Client 11 Exit
+2024-10-04 12:31:05 - New Client number 12 from ('127.0.0.1', 65489)
+2024-10-04 12:31:44 - Client 12 Exit
+2024-10-04 12:31:44 - New Client number 13 from ('127.0.0.1', 65501)
+2024-10-04 12:33:26 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 465, in protocol_build_reply
+    save_file(cloud_path + "\\" + name, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in save_file
+    raise LimitExceeded("File exceeded size limit")
+modules.limits.LimitExceeded: File exceeded size limit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 470, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 118, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:33:38 - Client 13 Exit
+2024-10-04 12:33:38 - New Client number 14 from ('127.0.0.1', 65515)
+2024-10-04 12:33:53 - Client 14 Exit
+2024-10-04 12:33:53 - New Client number 15 from ('127.0.0.1', 65531)
+2024-10-04 12:35:28 - Client 15 Exit
+2024-10-04 12:35:28 - New Client number 16 from ('127.0.0.1', 49174)
+2024-10-04 12:40:29 - Client 16 Exit
+2024-10-04 12:40:29 - New Client number 17 from ('127.0.0.1', 49218)
+2024-10-04 12:40:58 - Client 17 Exit
+2024-10-04 12:40:58 - New Client number 18 from ('127.0.0.1', 49235)
+2024-10-04 12:41:45 - Client 18 Exit
+2024-10-04 12:41:45 - New Client number 19 from ('127.0.0.1', 49253)
+2024-10-04 12:42:23 - Client 19 Exit
+2024-10-04 12:42:23 - New Client number 20 from ('127.0.0.1', 49265)
+2024-10-04 12:44:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 595, in protocol_build_reply
+    save_file(save_path, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:44:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 595, in protocol_build_reply
+    save_file(save_path, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 603, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:44:57 - Client 20 Exit
+2024-10-04 12:44:58 - New Client number 21 from ('127.0.0.1', 49293)
+2024-10-04 12:45:07 - Client 21 Exit
+2024-10-04 12:45:07 - New Client number 22 from ('127.0.0.1', 49312)
+2024-10-04 12:45:20 - Client 22 Exit
+2024-10-04 12:45:20 - New Client number 23 from ('127.0.0.1', 49323)
+2024-10-04 12:45:29 - Client 23 Exit
+2024-10-04 12:45:30 - New Client number 24 from ('127.0.0.1', 49335)
+2024-10-04 12:46:02 - Server listening on ('0.0.0.0', 31026)
+2024-10-04 12:46:02 - Main thread: before accepting ...
+2024-10-04 12:46:02 - New Client number 1 from ('127.0.0.1', 49352)
+2024-10-04 12:46:33 - Client 1 Exit
+2024-10-04 12:46:34 - New Client number 2 from ('127.0.0.1', 49369)
+2024-10-04 12:47:54 - Client 2 Exit
+2024-10-04 12:47:55 - New Client number 3 from ('127.0.0.1', 49395)
+2024-10-04 12:48:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 595, in protocol_build_reply
+    save_file(save_path, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+2024-10-04 12:48:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 595, in protocol_build_reply
+    save_file(save_path, sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 63, in save_file
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 756, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 603, in protocol_build_reply
+    throw_file(sock, tid)
+  File "c:\Users\idanh\desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 112, in throw_file
+    raise Exception
+Exception
+2024-10-04 12:48:12 - Client 3 Exit
+2024-10-04 12:48:52 - New Client number 4 from ('127.0.0.1', 49412)
+2024-10-04 12:50:13 - Client 4 Exit
+2024-10-04 12:50:14 - New Client number 5 from ('127.0.0.1', 49429)
+2024-10-04 12:51:15 - Client 5 Exit
+2024-10-04 12:51:15 - New Client number 6 from ('127.0.0.1', 49452)
+2024-10-04 12:52:41 - Server listening on ('0.0.0.0', 31026)
+2024-10-04 12:52:42 - Main thread: before accepting ...
+2024-10-04 12:52:44 - New Client number 1 from ('127.0.0.1', 49501)

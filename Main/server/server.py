@@ -79,7 +79,9 @@ def save_file(save_path, sock, tid):
                         bytes_written += len(data) - 4
                         break
                     else:
-                        raise Exception
+                        t = threading.Thread(target=handle_simultaneous_request, args=(data, sock, tid))
+                        t.start()
+                        continue
 
                     if bytes_written >= Limits(clients[tid].subscription_level).max_upload_speed * 1_000_000:
                         time_to_wait = 1.0 - elapsed_time
@@ -93,6 +95,13 @@ def save_file(save_path, sock, tid):
         if os.path.exists(lock_path):
             os.remove(lock_path)
         raise
+
+def handle_simultaneous_request(entire_data, sock ,tid):
+    to_send, finish = handle_request(entire_data, tid, sock)
+    if to_send != None:
+        send_data(sock, tid, to_send)
+    if finish or to_send == None:
+        time.sleep(1)
 
 
 def throw_file(sock, tid):
