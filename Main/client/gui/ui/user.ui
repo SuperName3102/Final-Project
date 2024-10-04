@@ -339,6 +339,15 @@
     <property name="textVisible">
      <bool>false</bool>
     </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
+    <property name="textDirection">
+     <enum>QProgressBar::Direction::TopToBottom</enum>
+    </property>
    </widget>
   </widget>
  </widget>

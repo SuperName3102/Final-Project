@@ -828,3 +828,12 @@ Exception
 2024-10-04 12:52:41 - Server listening on ('0.0.0.0', 31026)
 2024-10-04 12:52:42 - Main thread: before accepting ...
 2024-10-04 12:52:44 - New Client number 1 from ('127.0.0.1', 49501)
+2024-10-04 12:53:12 - Server listening on ('0.0.0.0', 31026)
+2024-10-04 12:53:12 - Main thread: before accepting ...
+2024-10-04 12:53:12 - New Client number 1 from ('127.0.0.1', 49521)
+2024-10-04 12:53:41 - Client 1 Exit
+2024-10-04 12:53:42 - New Client number 2 from ('127.0.0.1', 49537)
+2024-10-04 12:53:47 - Client 2 Exit
+2024-10-04 12:53:47 - New Client number 3 from ('127.0.0.1', 49548)
+2024-10-04 12:55:10 - Client 3 Exit
+2024-10-04 12:55:11 - New Client number 4 from ('127.0.0.1', 49596)
