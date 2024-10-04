@@ -8,18 +8,12 @@ from modules.limits import Limits
 from modules.logger import Logger
 from modules.file_viewer import *
 
-import socket
-import sys
-import traceback
-import rsa
-import struct
-import os
-import threading
+import socket, sys, traceback, rsa, struct, os, time
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
 from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent
-from PyQt6.QtCore import QSize,  QRect
+from PyQt6.QtCore import QSize,  QRect, QTimer
 
 
 # Announce global vars
@@ -184,6 +178,7 @@ class MainWindow(QtWidgets.QMainWindow):
         height_ratio = new_height / self.original_height
         
         # Resize all child widgets based on the scaling factor
+        
         for widget in self.findChildren(QWidget):
             if widget in original_sizes.keys():
                 original_geometry = original_sizes[widget]['geometry']
@@ -203,14 +198,16 @@ class MainWindow(QtWidgets.QMainWindow):
                 else:
                     new_y = original_geometry.y()
                     new_height = original_geometry.height()
-                    
-                widget.setGeometry(new_x, new_y, new_width, new_height)
                 
-                new_font_size = max(int(original_font_size * width_ratio /  ((width_ratio - 1)/2 + 1)), 8)  # Use a minimum font size of 8
+                widget.setGeometry(new_x, new_y, new_width, new_height)
+                widget.updateGeometry()
+                
+                
+                new_font_size = max(int(original_font_size * (width_ratio + height_ratio)/2), 8)  # Use a minimum font size of 8
                 font = widget.font()
                 font.setPointSize(new_font_size)
                 widget.setFont(font)
-            
+            self.update() 
         
 
         
@@ -225,8 +222,10 @@ class MainWindow(QtWidgets.QMainWindow):
                     'geometry': widget.geometry(),
                     'font_size': font_size
                 }
+            self.setUpdatesEnabled(False)
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
+            self.setUpdatesEnabled(True) 
             
             self.signup_button.clicked.connect(self.signup_page)
             self.signup_button.setIcon(QIcon(assets_path+"\\new_account.svg"))
@@ -379,8 +378,8 @@ class MainWindow(QtWidgets.QMainWindow):
             
             
             get_used_storage()
-
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
+            
             self.setAcceptDrops(True)
             self.set_cwd()
             if sort ==  "Name":
@@ -406,8 +405,10 @@ class MainWindow(QtWidgets.QMainWindow):
                     'font_size': font_size
                 }
             
+            self.setUpdatesEnabled(False)
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
+            self.setUpdatesEnabled(True)
                 
             self.main_text.setText(f"Welcome {user["username"]}")
 
@@ -444,6 +445,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.user_button.setIcon((QIcon(user_icon)))
             except:
                 pass
+            
         except:
             print(traceback.format_exc())
     
