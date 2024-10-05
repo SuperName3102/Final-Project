@@ -67,6 +67,7 @@ def remove_user(id):
     cursor.execute(f"DELETE FROM {files_table} WHERE owner_id = ?", (id,))
     cursor.execute(f"DELETE FROM {directories_table} WHERE owner_id = ?", (id,))
     cursor.execute(f"DELETE FROM {permissions_table} WHERE owner_id = ?", (id,))
+    cursor.execute(f"DELETE FROM {permissions_table} WHERE user_id = ?", (id,))
     conn.commit()
     conn.close()
 

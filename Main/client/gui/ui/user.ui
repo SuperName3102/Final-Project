@@ -349,6 +349,19 @@
      <enum>QProgressBar::Direction::TopToBottom</enum>
     </property>
    </widget>
+   <widget class="QLabel" name="total_files">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>86</y>
+      <width>58</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

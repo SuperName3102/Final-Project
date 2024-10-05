@@ -23,3 +23,17 @@ def format_file_size(size):
         return f"{size / 1_000_000_000:,.2f} GB"
     else:  # Above 10,000,000,000,001 bytes (in TB)
         return f"{size / 1_000_000_000_000:,.2f} TB"
+    
+def parse_file_size(size_str):
+    units = {
+        "B": 1,
+        "KB": 1_000,
+        "MB": 1_000_000,
+        "GB": 1_000_000_000,
+        "TB": 1_000_000_000_000,
+    }
+    unit = size_str.split(" ")[1]
+    size = size_str.split(" ")[0]
+    if unit in units.keys():
+        return int(float(size) * units[unit])
+    return 0
