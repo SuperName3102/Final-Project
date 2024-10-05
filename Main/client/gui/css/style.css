@@ -5,7 +5,7 @@ QWidget {
 }
 
 QPushButton {
-  font-size: 18px;
+  /* font-size: 18px; */
   color: #ffffff;
   border-radius: 15px;
   border: 1px solid rgb(208, 173, 173);
@@ -23,7 +23,7 @@ QPushButton:pressed {
 QTextEdit,
 QLineEdit {
   color: #ffffff;
-  font-size: 16px;
+  /* font-size: 16px; */
   border-radius: 7px;
   background-color: #6e1a00;
   outline: none;

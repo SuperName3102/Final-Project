@@ -34,7 +34,7 @@ original_sizes = {}
 active_threads = []
 file_queue = []
 dont_send = False
-
+scroll = None
 # Begin gui related functions
 
 class FileButton(QPushButton):
@@ -45,7 +45,7 @@ class FileButton(QPushButton):
         self.shared_by = shared_by
         self.perms = perms
         self.setMinimumHeight(30)
-        self.setMaximumWidth(868)
+        #self.setMaximumWidth(868)
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.setStyleSheet("""
             QPushButton {
@@ -157,6 +157,14 @@ class MainWindow(QtWidgets.QMainWindow):
         if (os.path.isfile(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico")):
             self.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
         
+        
+        self.save_sizes()
+        self.setGeometry(window_geometry)
+        self.original_width = self.width()
+        self.original_height = self.height()
+        self.resize(1500, 700)
+
+    def save_sizes(self):
         for widget in self.findChildren(QWidget):
             # Save both the original geometry and the original font size (if the widget has a font)
             font_size = widget.font().pointSize()
@@ -164,23 +172,16 @@ class MainWindow(QtWidgets.QMainWindow):
                 'geometry': widget.geometry(),
                 'font_size': font_size
             }
-        
-        self.setGeometry(window_geometry)
-        self.original_width = self.width()
-        self.original_height = self.height()
-        self.resize(1500, 700)
-
-
+    
     def moveEvent(self, event: QMoveEvent):
         global window_geometry
         window_geometry = self.geometry()
     
     def resizeEvent(self, event):
         # Get the new window size
-        global window_geometry
+        global window_geometry, scroll
         new_width = self.width()
         new_height = self.height()
-        
 
         # Calculate the scaling factors for width and height
         width_ratio = new_width / self.original_width
@@ -211,12 +212,18 @@ class MainWindow(QtWidgets.QMainWindow):
                 widget.setGeometry(new_x, new_y, new_width, new_height)
                 widget.updateGeometry()
                 
-                
                 new_font_size = max(int(original_font_size * (width_ratio + height_ratio)/2), 8)  # Use a minimum font size of 8
+                
                 font = widget.font()
                 font.setPointSize(new_font_size)
                 widget.setFont(font)
-            self.update() 
+        
+        try:
+            if scroll != None:
+                scroll.setFixedSize(int(850*width_ratio), int(340*height_ratio))
+        except: pass
+        
+        self.update() 
         
 
         
@@ -224,17 +231,9 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/main.ui", self)
             
-            for widget in self.findChildren(QWidget):
-            # Save both the original geometry and the original font size (if the widget has a font)
-                font_size = widget.font().pointSize()
-                original_sizes[widget] = {
-                    'geometry': widget.geometry(),
-                    'font_size': font_size
-                }
-            self.setUpdatesEnabled(False)
+            self.save_sizes()
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
-            self.setUpdatesEnabled(True) 
             
             self.signup_button.clicked.connect(self.signup_page)
             self.signup_button.setIcon(QIcon(assets_path+"\\new_account.svg"))
@@ -251,22 +250,15 @@ class MainWindow(QtWidgets.QMainWindow):
     def signup_page(self):
         try:
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/signup.ui", self)
-            for widget in self.findChildren(QWidget):
-                font_size = widget.font().pointSize()
-                original_sizes[widget] = {
-                    'geometry': widget.geometry(),
-                    'font_size': font_size
-                }
+            self.save_sizes()
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
             
             self.password.setEchoMode(QLineEdit.EchoMode.Password)
             self.confirm_password.setEchoMode(QLineEdit.EchoMode.Password)
 
-            self.password_toggle.clicked.connect(
-                lambda: self.toggle_password(self.password))
-            self.confirm_password_toggle.clicked.connect(
-                lambda: self.toggle_password(self.confirm_password))
+            self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
+            self.confirm_password_toggle.clicked.connect(lambda: self.toggle_password(self.confirm_password))
 
             self.signup_button.clicked.connect(lambda: signup(self.email.text(), self.username.text(), self.password.text(), self.confirm_password.text()))
             self.signup_button.setShortcut("Return")
@@ -283,12 +275,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def login_page(self):
         try:
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/login.ui", self)
-            for widget in self.findChildren(QWidget):
-                font_size = widget.font().pointSize()
-                original_sizes[widget] = {
-                    'geometry': widget.geometry(),
-                    'font_size': font_size
-                }
+            self.save_sizes()
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
             
@@ -312,12 +299,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def forgot_password(self):
         try:
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/forgot_password.ui", self)
-            for widget in self.findChildren(QWidget):
-                font_size = widget.font().pointSize()
-                original_sizes[widget] = {
-                    'geometry': widget.geometry(),
-                    'font_size': font_size
-                }
+            self.save_sizes()
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
             
@@ -333,12 +315,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def verification_page(self, email):
         try:
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/verification.ui", self)
-            for widget in self.findChildren(QWidget):
-                font_size = widget.font().pointSize()
-                original_sizes[widget] = {
-                    'geometry': widget.geometry(),
-                    'font_size': font_size
-                }
+            self.save_sizes()
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
             
@@ -358,12 +335,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def send_verification_page(self):
         try:
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/send_verification.ui", self)
-            for widget in self.findChildren(QWidget):
-                font_size = widget.font().pointSize()
-                original_sizes[widget] = {
-                    'geometry': widget.geometry(),
-                    'font_size': font_size
-                }
+            self.save_sizes()
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
             
@@ -390,6 +362,7 @@ class MainWindow(QtWidgets.QMainWindow):
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
             self.setAcceptDrops(True)
             self.set_cwd()
+            
             if sort ==  "Name":
                 self.sort.setCurrentIndex(0)
                 files = sorted(files, key=lambda x: x.split("~")[0])
@@ -403,20 +376,14 @@ class MainWindow(QtWidgets.QMainWindow):
             elif sort == "Size":
                 self.sort.setCurrentIndex(3)
                 files = sorted(files, key=lambda x: int(x.split("~")[2]))
-                
+            
             self.draw_cwd(files, directories)
 
-            for widget in self.findChildren(QWidget):
-                font_size = widget.font().pointSize()
-                original_sizes[widget] = {
-                    'geometry': widget.geometry(),
-                    'font_size': font_size
-                }
-            
+            self.save_sizes()
             
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
-
+            
             self.file_upload_progress.hide()
             self.total_files.setText(f"{len(files) + len(directories)} items")
             
@@ -447,7 +414,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.logout_button.setIcon(QIcon(assets_path+"\\logout.svg"))
             self.upload_button.clicked.connect(lambda: self.file_dialog())
             self.upload_button.setIcon(QIcon(assets_path+"\\upload.svg"))
-            self.user_button.setFixedSize(50, 50)
+            #self.user_button.setFixedSize(50, 50)
             self.user_button.setIconSize(QSize(40, 40))
             self.user_button.setStyleSheet("padding:0px;border-radius:5px;")
             
@@ -459,9 +426,9 @@ class MainWindow(QtWidgets.QMainWindow):
         except:
             print(traceback.format_exc())
 
-
     def draw_cwd(self, files, directories):
         try:
+            global scroll
             central_widget = self.centralWidget()
 
             outer_layout = QVBoxLayout()
@@ -517,7 +484,9 @@ class MainWindow(QtWidgets.QMainWindow):
             scroll_container_widget.setLayout(scroll_layout)
 
             scroll.setWidget(scroll_container_widget)
-            scroll.setFixedSize(QSize(900, 340))
+            width_ratio = self.width() / self.original_width
+            height_ratio = self.height() / self.original_height
+            scroll.setFixedSize(int(850*width_ratio), int(340*height_ratio))
             spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
             outer_layout.addItem(spacer)
             center_layout = QHBoxLayout()
@@ -531,16 +500,12 @@ class MainWindow(QtWidgets.QMainWindow):
             central_widget.setLayout(outer_layout)
         except:
             print(traceback.format_exc())
+        
 
     def manage_account(self):
         try:
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui", self)
-            for widget in self.findChildren(QWidget):
-                font_size = widget.font().pointSize()
-                original_sizes[widget] = {
-                    'geometry': widget.geometry(),
-                    'font_size': font_size
-                }
+            self.save_sizes()
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
 
@@ -567,20 +532,14 @@ class MainWindow(QtWidgets.QMainWindow):
                 QIcon(assets_path + "\\change_user.svg"))
 
             self.back_button.clicked.connect(self.user_page)
-            self.back_button.setIcon(
-                QIcon(assets_path + "\\back.svg"))
+            self.back_button.setIcon(QIcon(assets_path + "\\back.svg"))
         except:
             print(traceback.format_exc())
 
     def subscriptions_page(self):
         try:
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/subscription.ui", self)
-            for widget in self.findChildren(QWidget):
-                font_size = widget.font().pointSize()
-                original_sizes[widget] = {
-                    'geometry': widget.geometry(),
-                    'font_size': font_size
-                }
+            self.save_sizes()
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
                 
@@ -620,12 +579,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def recovery(self, email):
         try:
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/recovery.ui", self)
-            for widget in self.findChildren(QWidget):
-                font_size = widget.font().pointSize()
-                original_sizes[widget] = {
-                    'geometry': widget.geometry(),
-                    'font_size': font_size
-                }
+            self.save_sizes()
             self.setGeometry(window_geometry)
             self.resize(window_geometry.width(), window_geometry.height())
                 
