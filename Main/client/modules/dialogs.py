@@ -13,7 +13,7 @@ def new_name_dialog(title, label, text=""):
     dialog.setWindowTitle(title)
     dialog.setLabelText(label)
     dialog.setTextValue(text)
-    dialog.resize(300, 300)  # Resize dialog to 300x200
+    dialog.resize(400, 300)  # Resize dialog to 300x200
 
     # Get the text input
     ok = dialog.exec()  # Show the dialog modally and wait for user input

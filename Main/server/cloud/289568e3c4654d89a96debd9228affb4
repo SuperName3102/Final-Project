@@ -12,8 +12,8 @@ import socket, sys, traceback, rsa, struct, os, time
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
-from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QFont
-from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
+from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent
+from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal, QTimer
 
 
 # Announce global vars
@@ -35,7 +35,6 @@ active_threads = []
 file_queue = []
 dont_send = False
 scroll = None
-scroll_size = [850, 340]
 # Begin gui related functions
 
 class FileButton(QPushButton):
@@ -48,8 +47,14 @@ class FileButton(QPushButton):
         self.setMinimumHeight(30)
         #self.setMaximumWidth(868)
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
-        self.setObjectName("file_button")
-        self.setStyleSheet(f"border-radius: 3px;text-align: center;padding: 5px;")
+        self.setStyleSheet("""
+            QPushButton {
+                border-radius: 3px;  # Half of the width/height to make it round
+                font-size: 13px;
+                text-align: center;
+                padding: 5px;
+            }
+        """)
 
     def contextMenuEvent(self, event: QContextMenuEvent):
         menu = QMenu(self)
@@ -174,7 +179,7 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def resizeEvent(self, event):
         # Get the new window size
-        global window_geometry, scroll, scroll_size
+        global window_geometry, scroll
         new_width = self.width()
         new_height = self.height()
 
@@ -206,22 +211,16 @@ class MainWindow(QtWidgets.QMainWindow):
                 
                 widget.setGeometry(new_x, new_y, new_width, new_height)
                 widget.updateGeometry()
-            
                 
                 new_font_size = max(int(original_font_size * (width_ratio + height_ratio)/2), 8)  # Use a minimum font size of 8
+                
                 font = widget.font()
                 font.setPointSize(new_font_size)
                 widget.setFont(font)
         
         try:
             if scroll != None:
-                for button in scroll.widget().findChildren(FileButton):
-                    font = button.font()
-                    font.setPointSize(max(int(9 * (width_ratio + height_ratio)/2), 8))
-                    button.setFont(font)
-                    button.setMinimumHeight(int(30*height_ratio))
-                scroll_size = [int(850*width_ratio), int(340*height_ratio)]
-                scroll.setFixedSize(scroll_size[0], scroll_size[1])
+                scroll.setFixedSize(int(850*width_ratio), int(340*height_ratio))
         except: pass
         
         self.update() 
@@ -230,13 +229,11 @@ class MainWindow(QtWidgets.QMainWindow):
         
     def main_page(self):
         try:
-            temp = window_geometry
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/main.ui", self)
             
             self.save_sizes()
-            self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.setGeometry(window_geometry)
+            self.resize(window_geometry.width(), window_geometry.height())
             
             self.signup_button.clicked.connect(self.signup_page)
             self.signup_button.setIcon(QIcon(assets_path+"\\new_account.svg"))
@@ -268,7 +265,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.signup_button.setIcon(QIcon(assets_path+"\\new_account.svg"))
 
             self.login_button.clicked.connect(self.login_page)
-            self.login_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;border:none;")
+            self.login_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
 
             self.back_button.clicked.connect(self.main_page)
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
@@ -284,12 +281,11 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.password.setEchoMode(QLineEdit.EchoMode.Password)
             self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
-
             self.forgot_password_button.clicked.connect(self.forgot_password)
-            self.forgot_password_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;border:none;")
+            self.forgot_password_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
 
             self.signup_button.clicked.connect(self.signup_page)
-            self.signup_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;border:none;")
+            self.signup_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;font-size:14px;border:none;")
 
             self.login_button.clicked.connect(lambda: login(self.user.text(), self.password.text(), self.remember.isChecked()))
             self.login_button.setShortcut("Return")
@@ -327,7 +323,8 @@ class MainWindow(QtWidgets.QMainWindow):
             self.verify_button.setShortcut("Return")
             self.verify_button.setIcon(QIcon(assets_path+"\\verify.svg"))
 
-            self.send_again_button.clicked.connect(lambda: send_verification(email))
+            self.send_again_button.clicked.connect(
+                lambda: send_verification(email))
             self.send_again_button.setIcon(QIcon(assets_path+"\\again.svg"))
 
             self.back_button.clicked.connect(self.main_page)
@@ -362,10 +359,7 @@ class MainWindow(QtWidgets.QMainWindow):
             
             
             get_used_storage()
-            temp = window_geometry
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui", self)
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
-            
             self.setAcceptDrops(True)
             self.set_cwd()
             
@@ -383,11 +377,12 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.sort.setCurrentIndex(3)
                 files = sorted(files, key=lambda x: int(x.split("~")[2]))
             
-            self.save_sizes()
             self.draw_cwd(files, directories)
-            self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+
+            self.save_sizes()
+            
+            self.setGeometry(window_geometry)
+            self.resize(window_geometry.width(), window_geometry.height())
             
             self.file_upload_progress.hide()
             self.total_files.setText(f"{len(files) + len(directories)} items")
@@ -401,7 +396,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.search.setIcon(QIcon(assets_path+"\\search.svg"))
             self.search.setText(f"Search Filter: {search_filter}")
             self.search.clicked.connect(search)
-            self.search.setStyleSheet("background-color:transparent;border:none;")
+            self.search.setStyleSheet("background-color:transparent;font-size:13px;border:none;")
             
             self.shared_button.clicked.connect(change_share)
             self.shared_button.setIcon(QIcon(assets_path+"\\share.svg"))
@@ -458,7 +453,7 @@ class MainWindow(QtWidgets.QMainWindow):
                     button = FileButton(f" {file_name} | {date} | {size} | From {file[4]}", file_id, shared_by=file[4], perms=perms)
                 else:
                     button = FileButton(f" {file_name} | {date} | {size}", file_id)
-                button.setStyleSheet(f"background-color:dimgrey;border:1px solid darkgrey;border-radius: 3px;")
+                button.setStyleSheet("background-color:dimgrey;border:1px solid darkgrey;font-size:14px;border-radius: 3px;")
                 button.clicked.connect(lambda checked, name=file_name, id = file_id: view_file(id, name))
                 button.setIcon(QIcon(assets_path + "\\file.svg"))
                 scroll_layout.addWidget(button)
@@ -470,26 +465,28 @@ class MainWindow(QtWidgets.QMainWindow):
                     button = FileButton(f" {directory[0]} | From {directory[2]}", directory[1], is_folder=True, shared_by=directory[2], perms=perms)
                 else:
                     button = FileButton(f" {directory[0]}", directory[1], is_folder=True)
-                button.setStyleSheet(f"background-color:peru;border-radius: 3px;border:1px solid peachpuff;")
+                button.setStyleSheet("background-color:peru;font-size:14px;border-radius: 3px;border:1px solid peachpuff;")
                 button.clicked.connect(lambda checked, id=directory[1]: move_dir(id))
                 button.setIcon(QIcon(assets_path + "\\folder.svg"))
                 scroll_layout.addWidget(button)
 
             if (directories == [] and files == []):
                 button = FileButton("No files or folders in this directory")
-                button.setStyleSheet(f"background-color:red;border-radius: 3px;border:1px solid darkgrey;")
+                button.setStyleSheet("background-color:red;font-size:14px;border-radius: 3px;border:1px solid darkgrey;")
                 scroll_layout.addWidget(button)
 
             if (user["cwd"] != ""):
                 button = FileButton("Back")
-                button.setStyleSheet(f"background-color:green;border-radius: 3px;border:1px solid lightgreen;")
+                button.setStyleSheet("background-color:green;font-size:14px;border-radius: 3px;border:1px solid lightgreen;")
                 button.clicked.connect(lambda: move_dir(user["parent_cwd"]))
                 scroll_layout.addWidget(button)
 
             scroll_container_widget.setLayout(scroll_layout)
 
             scroll.setWidget(scroll_container_widget)
-            scroll.setFixedSize(850, 340)
+            width_ratio = self.width() / self.original_width
+            height_ratio = self.height() / self.original_height
+            scroll.setFixedSize(int(850*width_ratio), int(340*height_ratio))
             spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
             outer_layout.addItem(spacer)
             center_layout = QHBoxLayout()
@@ -507,14 +504,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def manage_account(self):
         try:
-            global window_geometry
-            temp = window_geometry
             uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui", self)
-            window_geometry = temp
             self.save_sizes()
             self.setGeometry(window_geometry)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.resize(window_geometry.width(), window_geometry.height())
 
             self.forgot_password_button.clicked.connect(
                 lambda: reset_password(user["email"]))
@@ -643,19 +636,19 @@ class MainWindow(QtWidgets.QMainWindow):
     def set_error_message(self, msg):
         try:
             if (hasattr(self, "message")):
-                self.message.setStyleSheet("color: red;")
+                self.message.setStyleSheet("color: red; font-size: 15px;")
                 self.message.setText(msg)
         except Exception:
             pass
 
     def set_message(self, msg):
         if (hasattr(self, "message")):
-            self.message.setStyleSheet("color: lightgreen;")
+            self.message.setStyleSheet("color: lightgreen; font-size: 15px;")
             self.message.setText(msg)
 
     def set_cwd(self):
         if (hasattr(self, "cwd")):
-            self.cwd.setStyleSheet("color: yellow;")
+            self.cwd.setStyleSheet("color: yellow; font-size: 17px;")
             if share: self.cwd.setText(f"CWD: Shared\\{user['cwd_name']}")
             else: self.cwd.setText(f"CWD: {user['username']}\\{user['cwd_name']}")
 
