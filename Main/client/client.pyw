@@ -1,14 +1,15 @@
 # 2024 © Idan Hazay
 # Import libraries
 
-from modules import encrypting
 from modules.dialogs import *
 from modules.helper import *
 from modules.limits import Limits
 from modules.logger import Logger
 from modules.file_viewer import *
+from modules.networking import *
+from modules.key_exchange import *
 
-import socket, sys, traceback, rsa, struct, os, time
+import socket, sys, traceback, os
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
@@ -17,7 +18,6 @@ from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
 
 
 # Announce global vars
-len_field = 4
 user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""}
 encryption = False
 chunk_size = 65536
@@ -25,7 +25,6 @@ used_storage = 0
 user_icon = f"{os.path.dirname(os.path.abspath(__file__))}/assets/user.ico"
 assets_path = f"{os.path.dirname(os.path.abspath(__file__))}/assets"
 cookie_path = f"{os.path.dirname(os.path.abspath(__file__))}/cookies/user.cookie"
-log = False
 search_filter = None
 share = False
 sort = "Name"
@@ -40,16 +39,25 @@ scroll_size = [850, 340]
 
 class FileButton(QPushButton):
     def __init__(self, text, id = None, parent=None, is_folder = False, shared_by = None, perms =["True", "True","True","True","True","True"]):
-        super().__init__(text, parent)
+        super().__init__("|".join(text), parent)
+        self.setText = "|".join(text)
         self.id = id
         self.is_folder = is_folder
         self.shared_by = shared_by
         self.perms = perms
         self.setMinimumHeight(30)
-        #self.setMaximumWidth(868)
+
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
-        self.setObjectName("file_button")
-        self.setStyleSheet(f"border-radius: 3px;text-align: center;padding: 5px;")
+        self.setStyleSheet(f"padding:5px;")
+        
+        button_layout = QHBoxLayout()
+        button_layout.setContentsMargins(0, 0, 0, 0)  # Remove margins to align with button edges
+        button_layout.setSpacing(0)
+        for label in text:
+            label = QLabel(label)
+            if self.id is None: label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            button_layout.addWidget(label)
+        self.setLayout(button_layout)
 
     def contextMenuEvent(self, event: QContextMenuEvent):
         menu = QMenu(self)
@@ -84,7 +92,6 @@ class FileButton(QPushButton):
             action = menu.addAction(" New Folder")
             action.triggered.connect(new_folder)
             action.setIcon(QIcon(assets_path + "\\new_account.svg"))
-            #action.setEnabled(False)
 
         action = menu.addAction(" Search")
         action.triggered.connect(search)
@@ -216,9 +223,13 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             if scroll != None:
                 for button in scroll.widget().findChildren(FileButton):
-                    font = button.font()
-                    font.setPointSize(max(int(9 * (width_ratio + height_ratio)/2), 8))
-                    button.setFont(font)
+                    for i in range(button.layout().count()):
+                        label = button.layout().itemAt(i)
+                        label = label.widget()
+                        if isinstance(label, QLabel):
+                            font = label.font()
+                            font.setPointSize(max(int(9 * (width_ratio + height_ratio)/2), 8))
+                            label.setFont(font)
                     button.setMinimumHeight(int(30*height_ratio))
                 scroll_size = [int(850*width_ratio), int(340*height_ratio)]
                 scroll.setFixedSize(scroll_size[0], scroll_size[1])
@@ -446,6 +457,10 @@ class MainWindow(QtWidgets.QMainWindow):
             scroll_container_widget = QWidget()
             scroll_layout = QGridLayout()
             scroll_layout.setSpacing(5)
+            if not share: button = FileButton(["File Name", "Last Change", "Size"])
+            else: button = FileButton(["File Name", "Last Change", "Size", "Shared By"])
+            button.setStyleSheet(f"background-color:#001122;border-radius: 3px;border:1px solid darkgrey;border-radius: 3px;")
+            scroll_layout.addWidget(button)
 
             for i, file in enumerate(files):
                 file = file.split("~")
@@ -455,9 +470,9 @@ class MainWindow(QtWidgets.QMainWindow):
                 file_id = file[3]
                 perms = file[5:]
                 if share:
-                    button = FileButton(f" {file_name} | {date} | {size} | From {file[4]}", file_id, shared_by=file[4], perms=perms)
+                    button = FileButton(f" {file_name} | {date} | {size} | From {file[4]}".split("|"), file_id, shared_by=file[4], perms=perms)
                 else:
-                    button = FileButton(f" {file_name} | {date} | {size}", file_id)
+                    button = FileButton(f" {file_name} | {date} | {size}".split("|"), file_id)
                 button.setStyleSheet(f"background-color:dimgrey;border:1px solid darkgrey;border-radius: 3px;")
                 button.clicked.connect(lambda checked, name=file_name, id = file_id: view_file(id, name))
                 button.setIcon(QIcon(assets_path + "\\file.svg"))
@@ -467,21 +482,21 @@ class MainWindow(QtWidgets.QMainWindow):
                 directory = directory.split("~")
                 perms = directory[3:]
                 if share:
-                    button = FileButton(f" {directory[0]} | From {directory[2]}", directory[1], is_folder=True, shared_by=directory[2], perms=perms)
+                    button = FileButton(f" {directory[0]} | From {directory[2]}".split("|"), directory[1], is_folder=True, shared_by=directory[2], perms=perms)
                 else:
-                    button = FileButton(f" {directory[0]}", directory[1], is_folder=True)
+                    button = FileButton(f" {directory[0]}".split("|"), directory[1], is_folder=True)
                 button.setStyleSheet(f"background-color:peru;border-radius: 3px;border:1px solid peachpuff;")
                 button.clicked.connect(lambda checked, id=directory[1]: move_dir(id))
                 button.setIcon(QIcon(assets_path + "\\folder.svg"))
                 scroll_layout.addWidget(button)
 
             if (directories == [] and files == []):
-                button = FileButton("No files or folders in this directory")
+                button = FileButton(["No files or folders in this directory"])
                 button.setStyleSheet(f"background-color:red;border-radius: 3px;border:1px solid darkgrey;")
                 scroll_layout.addWidget(button)
 
             if (user["cwd"] != ""):
-                button = FileButton("Back")
+                button = FileButton(["Back"])
                 button.setStyleSheet(f"background-color:green;border-radius: 3px;border:1px solid lightgreen;")
                 button.clicked.connect(lambda: move_dir(user["parent_cwd"]))
                 scroll_layout.addWidget(button)
@@ -1218,48 +1233,6 @@ def send_cookie():
         pass
     
     
-# Key exchange
-
-def rsa_exchange():
-    global encryption
-    send_data(b"RSAR")
-    recv_rsa_key()
-    send_shared_secret()
-    encryption = True
-
-
-def recv_rsa_key():
-    """
-    RSA key recieve from server
-    Gets the length of the key in binary
-    Gets the useable key and saves it as global var for future use
-    """
-    global s_public_key
-
-    key_len_b = b""
-    while (len(key_len_b) < len_field):   # Recieve the length of the key
-        key_len_b += sock.recv(len_field - len(key_len_b))
-    key_len = int(struct.unpack("!l", key_len_b)[0])
-
-    key_binary = b""
-    while (len(key_binary) < key_len):   # Recieve the key according to its length
-        key_binary += sock.recv(key_len - len(key_binary))
-
-    logtcp('recv', key_len_b + key_binary)
-    s_public_key = rsa.PublicKey.load_pkcs1(key_binary)   # Save the key
-
-
-def send_shared_secret():
-    """
-    Create and send the shared secret
-    to server via secure rsa connection
-    """
-    global shared_secret
-    shared_secret = os.urandom(16)
-    key_to_send = rsa.encrypt(shared_secret, s_public_key)
-    key_len = struct.pack("!l", len(key_to_send))
-    to_send = key_len + key_to_send
-    sock.send(to_send)
 
 
 # Begin server replies handling functions
@@ -1487,85 +1460,6 @@ def handle_reply():
         return
 
 
-# Begin data handling and processing functions
-
-def logtcp(dir, byte_data):
-    """
-    Loggs the recieved data to console
-    """
-    if log:
-        try:
-            if (str(byte_data[0]) == "0"):
-                print("")
-        except AttributeError:
-            return
-        if dir == 'sent':   # Sen/recieved labels
-            print(f'C LOG:Sent     >>>{byte_data}')
-        else:
-            print(f'C LOG:Recieved <<<{byte_data}')
-
-
-def send_data(bdata):
-    """
-    Send data to server
-    Adds data encryption
-    Adds length
-    Loggs the encrypted and decrtpted data for readablity
-    Checks if encryption is used
-    """
-    if (encryption):
-        encrypted_data = encrypting.encrypt(bdata, shared_secret)
-        data_len = struct.pack('!l', len(encrypted_data))
-        to_send = data_len + encrypted_data
-        to_send_decrypted = str(len(bdata)).encode() + bdata
-        logtcp('sent', to_send)
-        logtcp('sent', to_send_decrypted)
-    else:
-        data_len = struct.pack('!l', len(bdata))
-        to_send = data_len + bdata
-        logtcp('sent', to_send)
-
-    try:
-        sock.send(to_send)
-    except ConnectionResetError:
-        pass
-
-
-def recv_data():
-    """
-    Data recieve function
-    Gets length of response and then the response
-    Makes sure its gotten everything
-    """
-    try:
-        b_len = b''
-        while (len(b_len) < len_field):   # Loop to get length in bytes
-            b_len += sock.recv(len_field - len(b_len))
-
-        msg_len = struct.unpack("!l", b_len)[0]
-
-        if msg_len == b'':
-            print('Seems client disconnected')
-        msg = b''
-
-        while (len(msg) < msg_len):   # Loop to recieve the rest of the response
-            chunk = sock.recv(msg_len - len(msg))
-            if not chunk:
-                print('Server disconnected abnormally.')
-                break
-            msg += chunk
-
-        if (encryption):  # If encryption is enabled decrypt and log encrypted
-            logtcp('recv', b_len + msg)   # Log encrypted data
-            msg = encrypting.decrypt(msg, shared_secret)
-            logtcp('recv', str(msg_len).encode() + msg)
-
-        return msg
-    except ConnectionResetError:
-        return None
-    except Exception as err:
-        print(traceback.format_exc())
-
 
 # Main function and start of code
 
@@ -1575,9 +1469,7 @@ def main(addr):
     Create tkinter root and start secure connection to server
     Connect to server via addr param
     """
-    global sock
-    global root
-    global window
+    global sock, root, window, encryption
 
     sock = socket.socket()
     try:
@@ -1588,7 +1480,12 @@ def main(addr):
             f'Error while trying to connect.  Check ip or port -- {addr}')
         return
     try:
-        rsa_exchange()
+        set_sock(sock)
+        shared_secret = rsa_exchange(sock) 
+        if not shared_secret:
+            sock.close()
+            return
+        set_secret(shared_secret)
 
         app = QtWidgets.QApplication(sys.argv)
         with open(f"{os.path.dirname(os.path.abspath(__file__))}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
