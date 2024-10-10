@@ -21,9 +21,10 @@ def file_viewer_dialog(title, file_path):
     app = QApplication.instance()  # Use existing QApplication
     if app is None:
         app = QApplication([])  # Create a new instance if it doesn't exist
-
+    
     file_extension = os.path.splitext(file_path)[1].lower()
     dialog = QDialog()
+    dialog.setStyleSheet("font-size:15px;")
     layout = QVBoxLayout()
     dialog.resize(600, 400)
 

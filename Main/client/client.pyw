@@ -53,8 +53,13 @@ class FileButton(QPushButton):
         button_layout = QHBoxLayout()
         button_layout.setContentsMargins(0, 0, 0, 0)  # Remove margins to align with button edges
         button_layout.setSpacing(0)
-        for label in text:
-            label = QLabel(label)
+        for i, label_text in enumerate(text):
+            label = QLabel(label_text)
+            if i == 0:
+                if self.is_folder:
+                    label.setText(f'&nbsp;<img src="{assets_path + "\\folder.svg"}" width="20" height="20">&nbsp;{label_text}')
+                elif self.id is not None:
+                    label.setText(f'&nbsp;<img src="{assets_path + "\\file.svg"}" width="16" height="20">&nbsp;{label_text}')
             if self.id is None: label.setAlignment(Qt.AlignmentFlag.AlignCenter)
             button_layout.addWidget(label)
         self.setLayout(button_layout)
@@ -164,6 +169,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setGeometry(window_geometry)
         self.original_width = self.width()
         self.original_height = self.height()
+        self.scroll_progress = 0
         self.resize(1500, 700)
 
     def save_sizes(self):
@@ -386,13 +392,15 @@ class MainWindow(QtWidgets.QMainWindow):
                 directories = sorted(directories, key=lambda x: x.split("~")[0])
             elif sort == "Date":
                 self.sort.setCurrentIndex(1)
-                files = sorted(files, key=lambda x: x.split("~")[1])
+                files = sorted(files, key=lambda x: str_to_date(x.split("~")[1]), reverse=True)
+                directories = sorted(directories, key=lambda x: str_to_date(x.split("~")[2]), reverse=True)
             elif sort == "Type":
                 self.sort.setCurrentIndex(2)
                 files = sorted(files, key=lambda x: x.split("~")[0].split(".")[-1])
             elif sort == "Size":
                 self.sort.setCurrentIndex(3)
-                files = sorted(files, key=lambda x: int(x.split("~")[2]))
+                files = sorted(files, key=lambda x: int(x.split("~")[2]), reverse=True)
+                directories = sorted(directories, key=lambda x: int(x.split("~")[3]), reverse=True)
             
             self.save_sizes()
             self.draw_cwd(files, directories)
@@ -446,14 +454,13 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             global scroll
             central_widget = self.centralWidget()
-
             outer_layout = QVBoxLayout()
             outer_layout.addStretch(1)
             scroll = QScrollArea()
             
             scroll.setWidgetResizable(True)
             scroll.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
-
+            scroll.verticalScrollBar().valueChanged.connect(self.scroll_changed)
             scroll_container_widget = QWidget()
             scroll_layout = QGridLayout()
             scroll_layout.setSpacing(5)
@@ -475,19 +482,19 @@ class MainWindow(QtWidgets.QMainWindow):
                     button = FileButton(f" {file_name} | {date} | {size}".split("|"), file_id)
                 button.setStyleSheet(f"background-color:dimgrey;border:1px solid darkgrey;border-radius: 3px;")
                 button.clicked.connect(lambda checked, name=file_name, id = file_id: view_file(id, name))
-                button.setIcon(QIcon(assets_path + "\\file.svg"))
                 scroll_layout.addWidget(button)
 
             for index, directory in enumerate(directories):
                 directory = directory.split("~")
-                perms = directory[3:]
+                size = format_file_size(int(directory[3]))
+                last_change = directory[2][:-7]
+                perms = directory[5:]
                 if share:
-                    button = FileButton(f" {directory[0]} | From {directory[2]}".split("|"), directory[1], is_folder=True, shared_by=directory[2], perms=perms)
+                    button = FileButton(f" {directory[0]} | {last_change} | {size} | From {directory[4]}".split("|"), directory[1], is_folder=True, shared_by=directory[2], perms=perms)
                 else:
-                    button = FileButton(f" {directory[0]}".split("|"), directory[1], is_folder=True)
+                    button = FileButton(f" {directory[0]} | {last_change} | {size}".split("|"), directory[1], is_folder=True)
                 button.setStyleSheet(f"background-color:peru;border-radius: 3px;border:1px solid peachpuff;")
                 button.clicked.connect(lambda checked, id=directory[1]: move_dir(id))
-                button.setIcon(QIcon(assets_path + "\\folder.svg"))
                 scroll_layout.addWidget(button)
 
             if (directories == [] and files == []):
@@ -500,7 +507,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 button.setStyleSheet(f"background-color:green;border-radius: 3px;border:1px solid lightgreen;")
                 button.clicked.connect(lambda: move_dir(user["parent_cwd"]))
                 scroll_layout.addWidget(button)
-
+            
             scroll_container_widget.setLayout(scroll_layout)
 
             scroll.setWidget(scroll_container_widget)
@@ -509,6 +516,7 @@ class MainWindow(QtWidgets.QMainWindow):
             outer_layout.addItem(spacer)
             center_layout = QHBoxLayout()
             center_layout.addStretch(1)  # Add stretchable space on the left
+            scroll.verticalScrollBar().setValue(self.scroll_progress)
             center_layout.addWidget(scroll)  # Add the scroll area
             center_layout.addStretch(1)  # Add stretchable space on the right
 
@@ -518,7 +526,9 @@ class MainWindow(QtWidgets.QMainWindow):
             central_widget.setLayout(outer_layout)
         except:
             print(traceback.format_exc())
-        
+    
+    def scroll_changed(self, value):
+        self.scroll_progress = value
 
     def manage_account(self):
         try:

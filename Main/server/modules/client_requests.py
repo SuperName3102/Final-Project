@@ -359,16 +359,32 @@ def get_directories(owner_id, parent, name_filter=None):
     for directory in directories:
         directory = Directory(**directory)
         if (name_filter is None or name_filter.lower() in directory.name.lower()) and directory.parent == parent:
+            size = directory_size(directory.owner_id, directory.id)
+            last_change = get_directory_last_change(directory.id)
+            if last_change == datetime.min: last_change = ""
             if directory.owner_id == owner_id:
-                to_add = f"{directory.name}~{directory.id}"
+                to_add = f"{directory.name}~{directory.id}~{last_change}~{size}"
             else:
-                to_add = f"{directory.name}~{directory.id}~{"".join((db.get_user_values(directory.owner_id, ["username"])))}"
+                to_add = f"{directory.name}~{directory.id}~{last_change}~{size}~{"".join((db.get_user_values(directory.owner_id, ["username"])))}"
                 to_add += "~" + "~".join(get_perms(owner_id, directory.id))
             parsed_directories.append(to_add)
     
     return parsed_directories
         
-
+def get_directory_last_change(id, lastest_edit = datetime.min):
+    for directory in db.get_directories(id):
+        directory = Directory(**directory)
+        lastest_edit = max(lastest_edit, get_directory_last_change(directory.id, lastest_edit))
+    files = db.get_files(id)
+    if files is None:
+        return lastest_edit
+    for file in files:
+        file = File(**file)
+        current_last_change = str_to_date(file.last_edit)
+        if current_last_change > lastest_edit:
+            lastest_edit = current_last_change
+    return lastest_edit
+        
 
 def change_level(id, new_level):
     db.update_user(id, "subscription_level", new_level)
@@ -621,7 +637,11 @@ def get_share_directories(user_id, parent, name_filter=None):
     for directory in directories:
         directory = Directory(**directory)
         if (name_filter is None or name_filter.lower() in directory.name.lower()):
-            parsed_directories.append(f"{directory.name}~{directory.id}~{"".join((db.get_user_values(directory.owner_id, ["username"])))}~{"~".join(get_perms(user_id, directory.id))}")
+            owner_name = "".join((db.get_user_values(directory.owner_id, ["username"])))
+            size = directory_size(directory.owner_id, directory.id)
+            last_change = get_directory_last_change(directory.id)
+            if last_change == datetime.min: last_change = ""
+            parsed_directories.append(f"{directory.name}~{directory.id}~{last_change}~{size}~{owner_name}~{"~".join(get_perms(user_id, directory.id))}")
 
     return parsed_directories
 

@@ -1,5 +1,5 @@
 # 2024 © Idan Hazay
-
+from datetime import datetime
 
 def build_req_string(code, values = []):
     """
@@ -37,3 +37,12 @@ def parse_file_size(size_str):
     if unit in units.keys():
         return int(float(size) * units[unit])
     return 0
+
+def str_to_date(str):
+    """
+    Transfer string of date to date
+    Helper function
+    """
+    if str == "": return datetime.min
+    format = "%Y-%m-%d %H:%M:%S.%f"
+    return datetime.strptime(str, format)

@@ -10,6 +10,7 @@ def new_name_dialog(title, label, text=""):
     app = QApplication.instance()
     app.setWindowIcon(QIcon(f"{os.path.dirname(os.path.dirname(os.path.abspath(__file__)))}/assets/icon.ico"))
     dialog = QInputDialog()
+    dialog.setStyleSheet("font-size:15px;")
     dialog.setWindowTitle(title)
     dialog.setLabelText(label)
     dialog.setTextValue(text)
@@ -28,6 +29,7 @@ def new_name_dialog(title, label, text=""):
 def show_confirmation_dialog(message):
     # Create a QMessageBox
     msg_box = QMessageBox()
+    msg_box.setStyleSheet("font-size:15px;")
     msg_box.setIcon(QMessageBox.Icon.Question)
     msg_box.setWindowTitle("Confirmation")
     msg_box.setText(message)
