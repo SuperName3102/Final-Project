@@ -19,7 +19,6 @@ from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
 
 # Announce global vars
 user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""}
-encryption = False
 chunk_size = 65536
 used_storage = 0
 user_icon = f"{os.path.dirname(os.path.abspath(__file__))}/assets/user.ico"
@@ -155,22 +154,19 @@ def search():
     search_filter = new_name_dialog("Search", "Enter search filter:", search_filter)
     window.user_page()
 
-
-
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.main_page()
         if (os.path.isfile(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico")):
             self.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
-        
-        
         self.save_sizes()
         self.setGeometry(window_geometry)
         self.original_width = self.width()
         self.original_height = self.height()
         self.scroll_progress = 0
         self.resize(1500, 700)
+        self.setAttribute(Qt.WidgetAttribute.WA_OpaquePaintEvent)
+        self.setAttribute(Qt.WidgetAttribute.WA_PaintOnScreen, True)
 
     def save_sizes(self):
         for widget in self.findChildren(QWidget):
@@ -225,6 +221,14 @@ class MainWindow(QtWidgets.QMainWindow):
                 font = widget.font()
                 font.setPointSize(new_font_size)
                 widget.setFont(font)
+                
+                if isinstance(widget, QPushButton):
+                    icon = widget.icon()
+                    if not icon.isNull():
+                        if widget.text() == "": base = 32
+                        else: base = 16
+                        new_icon_size = int(base * (width_ratio + height_ratio) / 2)  # Adjust the base icon size (e.g., 24)
+                        widget.setIconSize(QSize(new_icon_size, new_icon_size))
         
         try:
             if scroll != None:
@@ -240,20 +244,19 @@ class MainWindow(QtWidgets.QMainWindow):
                 scroll_size = [int(850*width_ratio), int(340*height_ratio)]
                 scroll.setFixedSize(scroll_size[0], scroll_size[1])
         except: pass
-        
         self.update() 
-        
+    
 
-        
+    
+    
     def main_page(self):
         try:
             temp = window_geometry
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/main.ui", self)
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/main.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
             
             self.save_sizes()
-            self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
             
             self.signup_button.clicked.connect(self.signup_page)
             self.signup_button.setIcon(QIcon(assets_path+"\\new_account.svg"))
@@ -263,16 +266,19 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.exit_button.clicked.connect(exit_program)
             self.exit_button.setIcon(QIcon(assets_path+"\\exit.svg"))
-
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
         except:
             print(traceback.format_exc())
 
     def signup_page(self):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/signup.ui", self)
+            temp = window_geometry
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/signup.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
             self.save_sizes()
-            self.setGeometry(window_geometry)
-            self.resize(window_geometry.width(), window_geometry.height())
             
             self.password.setEchoMode(QLineEdit.EchoMode.Password)
             self.confirm_password.setEchoMode(QLineEdit.EchoMode.Password)
@@ -289,15 +295,20 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.back_button.clicked.connect(self.main_page)
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
         except:
             print(traceback.format_exc())
 
     def login_page(self):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/login.ui", self)
+            temp = window_geometry
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/login.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
             self.save_sizes()
-            self.setGeometry(window_geometry)
-            self.resize(window_geometry.width(), window_geometry.height())
             
             self.password.setEchoMode(QLineEdit.EchoMode.Password)
             self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
@@ -314,15 +325,20 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.back_button.clicked.connect(self.main_page)
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
         except:
             print(traceback.format_exc())
 
     def forgot_password(self):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/forgot_password.ui", self)
+            temp = window_geometry
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/forgot_password.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
             self.save_sizes()
-            self.setGeometry(window_geometry)
-            self.resize(window_geometry.width(), window_geometry.height())
             
             self.send_code_button.clicked.connect(lambda: reset_password(self.email.text()))
             self.send_code_button.setShortcut("Return")
@@ -330,15 +346,20 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.back_button.clicked.connect(self.login_page)
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
         except:
             print(traceback.format_exc())
 
     def verification_page(self, email):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/verification.ui", self)
+            temp = window_geometry
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/verification.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
             self.save_sizes()
-            self.setGeometry(window_geometry)
-            self.resize(window_geometry.width(), window_geometry.height())
             
             self.verify_button.clicked.connect(lambda: verify(email, self.code.text()))
             self.verify_button.setShortcut("Return")
@@ -349,15 +370,20 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.back_button.clicked.connect(self.main_page)
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
         except:
             print(traceback.format_exc())
 
     def send_verification_page(self):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/send_verification.ui", self)
+            temp = window_geometry
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/send_verification.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
             self.save_sizes()
-            self.setGeometry(window_geometry)
-            self.resize(window_geometry.width(), window_geometry.height())
             
             self.send_code_button.clicked.connect(lambda: send_verification(self.email.text()))
             self.send_code_button.setShortcut("Return")
@@ -365,6 +391,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.back_button.clicked.connect(self.main_page)
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
         except:
             print(traceback.format_exc())
 
@@ -380,8 +410,12 @@ class MainWindow(QtWidgets.QMainWindow):
             
             get_used_storage()
             temp = window_geometry
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui", self)
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui", self)
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
             
             self.setAcceptDrops(True)
             self.set_cwd()
@@ -404,9 +438,6 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.save_sizes()
             self.draw_cwd(files, directories)
-            self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
             
             self.file_upload_progress.hide()
             self.total_files.setText(f"{len(files) + len(directories)} items")
@@ -418,7 +449,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.storage_remaining.setValue(int(used_storage))
 
             self.search.setIcon(QIcon(assets_path+"\\search.svg"))
-            self.search.setText(f"Search Filter: {search_filter}")
+            self.search.setText(f" Search Filter: {search_filter}")
             self.search.clicked.connect(search)
             self.search.setStyleSheet("background-color:transparent;border:none;")
             
@@ -438,7 +469,6 @@ class MainWindow(QtWidgets.QMainWindow):
             self.logout_button.setIcon(QIcon(assets_path+"\\logout.svg"))
             self.upload_button.clicked.connect(lambda: self.file_dialog())
             self.upload_button.setIcon(QIcon(assets_path+"\\upload.svg"))
-            #self.user_button.setFixedSize(50, 50)
             self.user_button.setIconSize(QSize(40, 40))
             self.user_button.setStyleSheet("padding:0px;border-radius:5px;")
             
@@ -446,6 +476,10 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.user_button.setIcon((QIcon(user_icon)))
             except:
                 pass
+            
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
             
         except:
             print(traceback.format_exc())
@@ -534,46 +568,42 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             global window_geometry
             temp = window_geometry
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui", self)
-            window_geometry = temp
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
             self.save_sizes()
-            self.setGeometry(window_geometry)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
 
-            self.forgot_password_button.clicked.connect(
-                lambda: reset_password(user["email"]))
-            self.forgot_password_button.setIcon(
-                QIcon(assets_path + "\\key.svg"))
+            self.forgot_password_button.clicked.connect(lambda: reset_password(user["email"]))
+            self.forgot_password_button.setIcon(QIcon(assets_path + "\\key.svg"))
 
-            self.delete_account_button.clicked.connect(
-                lambda: delete_user(user["email"]))
-            self.delete_account_button.setIcon(
-                QIcon(assets_path + "\\delete.svg"))
+            self.delete_account_button.clicked.connect(lambda: delete_user(user["email"]))
+            self.delete_account_button.setIcon(QIcon(assets_path + "\\delete.svg"))
 
             self.upload_icon_button.clicked.connect(lambda: upload_icon())
-            self.upload_icon_button.setIcon(
-                QIcon(assets_path + "\\profile.svg"))
+            self.upload_icon_button.setIcon(QIcon(assets_path + "\\profile.svg"))
 
             self.subscriptions_button.clicked.connect(self.subscriptions_page)
-            self.subscriptions_button.setIcon(
-                QIcon(assets_path + "\\upgrade.svg"))
+            self.subscriptions_button.setIcon(QIcon(assets_path + "\\upgrade.svg"))
 
             self.change_username_button.clicked.connect(change_username)
-            self.change_username_button.setIcon(
-                QIcon(assets_path + "\\change_user.svg"))
+            self.change_username_button.setIcon(QIcon(assets_path + "\\change_user.svg"))
 
             self.back_button.clicked.connect(self.user_page)
             self.back_button.setIcon(QIcon(assets_path + "\\back.svg"))
+            
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
         except:
             print(traceback.format_exc())
 
     def subscriptions_page(self):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/subscription.ui", self)
+            temp = window_geometry
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/subscription.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
             self.save_sizes()
-            self.setGeometry(window_geometry)
-            self.resize(window_geometry.width(), window_geometry.height())
                 
             get_used_storage()
             self.back_button.clicked.connect(self.manage_account)
@@ -604,35 +634,62 @@ class MainWindow(QtWidgets.QMainWindow):
             self.storage_remaining.setMaximum(Limits(user["subscription_level"]).max_storage)
             self.storage_remaining.setValue(int(used_storage))
             self.storage_label.setText(f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
-
+            
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
         except:
             print(traceback.format_exc())
 
     def recovery(self, email):
         try:
-            uic.loadUi(f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/recovery.ui", self)
+            temp = window_geometry
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/recovery.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
             self.save_sizes()
-            self.setGeometry(window_geometry)
-            self.resize(window_geometry.width(), window_geometry.height())
                 
             self.password.setEchoMode(QLineEdit.EchoMode.Password)
             self.confirm_password.setEchoMode(QLineEdit.EchoMode.Password)
 
-            self.password_toggle.clicked.connect(
-                lambda: self.toggle_password(self.password))
-            self.confirm_password_toggle.clicked.connect(
-                lambda: self.toggle_password(self.confirm_password))
+            self.password_toggle.clicked.connect(lambda: self.toggle_password(self.password))
+            self.confirm_password_toggle.clicked.connect(lambda: self.toggle_password(self.confirm_password))
 
             self.reset_button.clicked.connect(lambda: password_recovery(email, self.code.text(), self.password.text(), self.confirm_password.text()))
             self.reset_button.setShortcut("Return")
             self.reset_button.setIcon(QIcon(assets_path+"\\reset.svg"))
 
-            self.send_again_button.clicked.connect(
-                lambda: reset_password(email))
+            self.send_again_button.clicked.connect(lambda: reset_password(email))
             self.send_again_button.setIcon(QIcon(assets_path+"\\again.svg"))
 
             self.back_button.clicked.connect(self.manage_account)
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+        except:
+            print(traceback.format_exc())
+        
+    def not_connected_page(self, ip, port):
+        try:
+            temp = window_geometry
+            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/not_connected.ui"
+            update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            uic.loadUi(ui_path, self)
+            self.save_sizes()
+            
+            self.ip.setText(ip)
+            self.port.setText(str(port))
+            
+            self.connect_button.clicked.connect(lambda: connect_server(self.ip.text(), self.port.text()))
+            self.connect_button.setShortcut("Return")
+            self.connect_button.setIcon(QIcon(assets_path+"\\connect.svg"))
+            
+            self.setGeometry(temp)
+            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+
         except:
             print(traceback.format_exc())
 
@@ -998,6 +1055,7 @@ def share_file(file_id, user_cred, read = False, write = False, delete = False, 
 
     dialog = QDialog()
     dialog.setWindowTitle("File Share Options")
+    dialog.setStyleSheet("font-size:15px;")
     dialog.resize(600, 400)
 
     # Group the checkboxes for better organization
@@ -1456,11 +1514,14 @@ def handle_reply():
             print(f'  SERVER Reply: {to_show}')
             print('==========================================================')
         # If exit request succeded, dissconnect
-        if to_show == "Server acknowledged the exit message" or to_show == None:
-            print('Will exit ...')
+        if to_show == "Server acknowledged the exit message":
+            print('Succefully exit')
             sock.close()
-            print("Bye...")
-            sys.exit(0)
+            sys.exit()
+        elif to_show == None:
+            sock.close()
+            window.not_connected_page("127.0.0.1", 31026)
+            window.set_error_message("Lost connection to server")
     except socket.error as err:   # General error handling
         print(f'Got socket error: {err}')
         return
@@ -1472,38 +1533,44 @@ def handle_reply():
 
 
 # Main function and start of code
-
-def main(addr):
-    """
-    Main function
-    Create tkinter root and start secure connection to server
-    Connect to server via addr param
-    """
-    global sock, root, window, encryption
-
-    sock = socket.socket()
+def connect_server(ip, port):
+    global sock
+    window.set_message(f"Trying to connect to {ip} {port}...")
+    QApplication.processEvents()
     try:
-        sock.connect(addr)
-        print(f'Connect succeeded {addr}')
-    except:
-        print(
-            f'Error while trying to connect.  Check ip or port -- {addr}')
-        return
-    try:
+        port = int(port)
+        sock = socket.socket()
+        sock.connect((ip, int(port)))
         set_sock(sock)
         shared_secret = rsa_exchange(sock) 
         if not shared_secret:
             sock.close()
             return
         set_secret(shared_secret)
+        window.show()
+        window.main_page()
+        send_cookie()
+        window.set_message(f'Connect succeeded {ip} {port}')
+        return sock
+    except:
+        window.show()
+        window.not_connected_page(ip, port)
+        window.set_error_message(f'Server was not found {ip} {port}')
+        return None
 
+def main(ip, port):
+    """
+    Main function
+    Create tkinter root and start secure connection to server
+    Connect to server via addr param
+    """
+    global sock, window
+    try:
         app = QtWidgets.QApplication(sys.argv)
         with open(f"{os.path.dirname(os.path.abspath(__file__))}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
         window = MainWindow()
-        window.show()
-        send_cookie()
+        sock = connect_server(ip, port)
         sys.exit(app.exec())
-
     except Exception as e:
         print("Error:" + str(e))
         print(traceback.format_exc())
@@ -1515,4 +1582,5 @@ if __name__ == "__main__":   # Run main
     if len(sys.argv) == 2:
         ip = sys.argv[1]
 
-    main((ip, 31026))
+    main(ip, 31026)
+

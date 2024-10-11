@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <ui version="4.0">
  <class>IdanCloud</class>
  <widget class="QMainWindow" name="IdanCloud">
@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>550</height>
+    <width>1855</width>
+    <height>873</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -89,7 +89,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true" />
     </property>
     <property name="text">
      <string> Sign In</string>
@@ -162,7 +162,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true" />
     </property>
     <property name="text">
      <string> Back</string>
@@ -184,7 +184,7 @@
      </rect>
     </property>
     <property name="toolTip">
-     <string/>
+     <string />
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -208,7 +208,7 @@
      </font>
     </property>
     <property name="text">
-     <string/>
+     <string />
     </property>
     <property name="tristate">
      <bool>false</bool>
@@ -224,7 +224,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string />
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -243,7 +243,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string />
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -285,7 +285,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true" />
     </property>
     <property name="text">
      <string>Create Account</string>
@@ -325,8 +325,8 @@
     </property>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar" />
  </widget>
- <resources/>
- <connections/>
+ <resources />
+ <connections />
 </ui>

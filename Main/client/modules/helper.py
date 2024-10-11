@@ -1,5 +1,6 @@
 # 2024 © Idan Hazay
 from datetime import datetime
+import xml.etree.ElementTree as ET
 
 def build_req_string(code, values = []):
     """
@@ -46,3 +47,23 @@ def str_to_date(str):
     if str == "": return datetime.min
     format = "%Y-%m-%d %H:%M:%S.%f"
     return datetime.strptime(str, format)
+
+
+def update_ui_size(ui_file, new_width, new_height):
+    # Parse the XML file
+    tree = ET.parse(ui_file)
+    root = tree.getroot()
+    
+    # Find the geometry property
+    for widget in root.findall(".//widget[@class='QMainWindow']"):
+        geometry = widget.find("property[@name='geometry']/rect")
+        if geometry is not None:
+            # Update width and height
+            width_elem = geometry.find("width")
+            height_elem = geometry.find("height")
+            if width_elem is not None and height_elem is not None:
+                width_elem.text = str(new_width)
+                height_elem.text = str(new_height)
+    
+    # Save the modified XML back to the .ui file
+    tree.write(ui_file, encoding='utf-8', xml_declaration=True)

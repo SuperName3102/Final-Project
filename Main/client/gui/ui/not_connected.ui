@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>IdanCloud</class>
  <widget class="QMainWindow" name="IdanCloud">
@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1855</width>
-    <height>873</height>
+    <width>1000</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -17,15 +17,15 @@
    <string>IdanCloud</string>
   </property>
   <property name="styleSheet">
-   <string notr="true" />
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>50</x>
       <y>40</y>
-      <width>841</width>
+      <width>901</width>
       <height>51</height>
      </rect>
     </property>
@@ -56,7 +56,7 @@
 }</string>
     </property>
     <property name="text">
-     <string>Enter Verification Code</string>
+     <string>You Are Not Connected To Server</string>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -74,14 +74,14 @@
       <height>2</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout" />
+    <layout class="QGridLayout" name="gridLayout"/>
    </widget>
-   <widget class="QLineEdit" name="code">
+   <widget class="QLineEdit" name="ip">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>240</y>
-      <width>301</width>
+      <x>170</x>
+      <y>230</y>
+      <width>291</width>
       <height>51</height>
      </rect>
     </property>
@@ -89,14 +89,14 @@
      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
     <property name="placeholderText">
-     <string>Verification code</string>
+     <string>IP</string>
     </property>
    </widget>
-   <widget class="QLabel" name="code_label">
+   <widget class="QLabel" name="ip_label">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>210</y>
+      <x>180</x>
+      <y>200</y>
       <width>211</width>
       <height>21</height>
      </rect>
@@ -107,41 +107,19 @@
      </font>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span&gt;Verification Code:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span&gt;IP:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="back_button">
+   <widget class="QPushButton" name="connect_button">
     <property name="geometry">
      <rect>
-      <x>870</x>
-      <y>30</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true" />
-    </property>
-    <property name="text">
-     <string> Back</string>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>20</width>
-      <height>20</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="verify_button">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>380</y>
-      <width>171</width>
-      <height>51</height>
+      <x>400</x>
+      <y>400</y>
+      <width>201</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -150,10 +128,10 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true" />
+     <string notr="true"/>
     </property>
     <property name="text">
-     <string> Verify</string>
+     <string> Connect</string>
     </property>
     <property name="iconSize">
      <size>
@@ -165,52 +143,62 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="send_again_button">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>380</y>
-      <width>171</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true" />
-    </property>
-    <property name="text">
-     <string> Send Again</string>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>20</width>
-      <height>20</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QLabel" name="message">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>310</y>
+      <y>330</y>
       <width>1001</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string />
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QLineEdit" name="port">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>230</y>
+      <width>291</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Port</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="port_label">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>200</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span&gt;Port:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar" />
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources />
- <connections />
+ <resources/>
+ <connections/>
 </ui>
