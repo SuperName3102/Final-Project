@@ -170,7 +170,11 @@ class MainWindow(QtWidgets.QMainWindow):
         self.original_width = self.width()
         self.original_height = self.height()
         self.scroll_progress = 0
-        self.resize(1500, 700)
+        s_width = app.primaryScreen().geometry().width()
+        s_height = app.primaryScreen().geometry().height()
+        print(s_width, s_height)
+        self.resize(s_width*2//3, s_height*2//3)
+        self.move(s_width//6, s_height//6)
         self.setAttribute(Qt.WidgetAttribute.WA_OpaquePaintEvent)
         self.setAttribute(Qt.WidgetAttribute.WA_PaintOnScreen, True)
 
@@ -1573,7 +1577,7 @@ def main(ip, port):
     Create tkinter root and start secure connection to server
     Connect to server via addr param
     """
-    global sock, window
+    global sock, window, app
     try:
         app = QtWidgets.QApplication(sys.argv)
         with open(f"{os.path.dirname(os.path.abspath(__file__))}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
