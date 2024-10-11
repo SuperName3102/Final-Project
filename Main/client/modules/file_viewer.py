@@ -72,7 +72,7 @@ def file_viewer_dialog(title, file_path):
         except Exception as e:
             # If reading as text fails, display an error message
             content_widget = QLabel(dialog)
-            content_widget.setText(f"Cannot open {os.path.basename(file_path)} in file viewer.\n"f"Try opening it in its default app.")
+            content_widget.setText(f"Cannot open {os.path.basename(file_path)[5:]} in file viewer.\n"f"Try opening it in its default app.")
             content_widget.setStyleSheet("font-size: 20px")
             content_widget.setAlignment(Qt.AlignmentFlag.AlignCenter)
             layout.insertWidget(0, content_widget)

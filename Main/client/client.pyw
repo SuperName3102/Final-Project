@@ -235,7 +235,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 if isinstance(widget, QPushButton):
                     icon = widget.icon()
                     if not icon.isNull():
-                        if widget.text() == "": base = 32
+                        if widget.text() == "": base = 40
                         else: base = 16
                         new_icon_size = int(base * (width_ratio + height_ratio) / 2)  # Adjust the base icon size (e.g., 24)
                         widget.setIconSize(QSize(new_icon_size, new_icon_size))
@@ -480,7 +480,8 @@ class MainWindow(QtWidgets.QMainWindow):
             self.logout_button.setIcon(QIcon(assets_path+"\\logout.svg"))
             self.upload_button.clicked.connect(lambda: self.file_dialog())
             self.upload_button.setIcon(QIcon(assets_path+"\\upload.svg"))
-            self.user_button.setIconSize(QSize(40, 40))
+            
+            self.user_button.setIconSize(QSize(self.user_button.size().width(), self.user_button.size().height()))
             self.user_button.setStyleSheet("padding:0px;border-radius:5px;")
             
             try:
@@ -510,7 +511,7 @@ class MainWindow(QtWidgets.QMainWindow):
             scroll_layout = QGridLayout()
             scroll_layout.setSpacing(5)
             if not share: button = FileButton(["File Name", "Last Change", "Size"])
-            else: button = FileButton(["File Name", "Last Change", "Size", "Shared By"])
+            else: button = FileButton(["File Name", "Last Change", "Size", "Owner"])
             button.setStyleSheet(f"background-color:#001122;border-radius: 3px;border:1px solid darkgrey;border-radius: 3px;")
             scroll_layout.addWidget(button)
 
@@ -522,7 +523,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 file_id = file[3]
                 perms = file[5:]
                 if share:
-                    button = FileButton(f" {file_name} | {date} | {size} | From {file[4]}".split("|"), file_id, shared_by=file[4], perms=perms)
+                    button = FileButton(f" {file_name} | {date} | {size} | {file[4]}".split("|"), file_id, shared_by=file[4], perms=perms)
                 else:
                     button = FileButton(f" {file_name} | {date} | {size}".split("|"), file_id)
                 button.setStyleSheet(f"background-color:dimgrey;border:1px solid darkgrey;border-radius: 3px;")
@@ -535,7 +536,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 last_change = directory[2][:-7]
                 perms = directory[5:]
                 if share:
-                    button = FileButton(f" {directory[0]} | {last_change} | {size} | From {directory[4]}".split("|"), directory[1], is_folder=True, shared_by=directory[2], perms=perms)
+                    button = FileButton(f" {directory[0]} | {last_change} | {size} | {directory[4]}".split("|"), directory[1], is_folder=True, shared_by=directory[2], perms=perms)
                 else:
                     button = FileButton(f" {directory[0]} | {last_change} | {size}".split("|"), directory[1], is_folder=True)
                 button.setStyleSheet(f"background-color:peru;border-radius: 3px;border:1px solid peachpuff;")
@@ -749,8 +750,8 @@ class MainWindow(QtWidgets.QMainWindow):
     def set_cwd(self):
         if (hasattr(self, "cwd")):
             self.cwd.setStyleSheet("color: yellow;")
-            if share: self.cwd.setText(f"Shared: {" -> ".join(user['cwd_name'].split("\\"))}")
-            else: self.cwd.setText(f"{user['username']}: {" -> ".join(user['cwd_name'].split("\\"))}")
+            if share: self.cwd.setText(f"Shared > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
+            else: self.cwd.setText(f"{user['username']} > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
 
 
 
@@ -955,6 +956,7 @@ def save_file(save_loc, file_name, size):
     except: pass
     for child in window.findChildren(QPushButton):  # Find all QPushButton children
         child.setEnabled(False)
+    window.sort.setEnabled(False)
     thread = FileSaverThread(save_loc, file_name, size)
 
     active_threads.append(thread)
@@ -1061,7 +1063,7 @@ def subscribe(level):
     handle_reply()
 
 
-def share_file(file_id, user_cred, read = False, write = False, delete = False, rename = False, download = False, share = False):
+def share_file(file_id, user_cred, read = "False", write = "False", delete = "False", rename = "False", download = "False", share = "False"):
     app = QApplication.instance()  # Use existing QApplication
     if app is None:
         app = QApplication([])  # Create a new instance if it doesn't exist

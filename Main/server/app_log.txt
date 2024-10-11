@@ -2165,3 +2165,13 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\
 2024-10-11 15:29:56 - Main thread: before accepting ...
 2024-10-11 15:29:59 - New Client number 1 from ('127.0.0.1', 54771)
 2024-10-11 15:30:30 - Client 1 Exit
+2024-10-11 20:53:06 - Server listening on ('0.0.0.0', 31026)
+2024-10-11 20:53:06 - Main thread: before accepting ...
+2024-10-11 20:53:11 - New Client number 1 from ('127.0.0.1', 57258)
+2024-10-11 20:56:12 - Client 1 Exit
+2024-10-11 20:56:13 - New Client number 2 from ('127.0.0.1', 57306)
+2024-10-11 20:59:03 - Client 2 Exit
+2024-10-11 20:59:03 - New Client number 3 from ('127.0.0.1', 57399)
+2024-10-11 20:59:17 - New Client number 4 from ('127.0.0.1', 57401)
+2024-10-11 20:59:53 - Client 3 Exit
+2024-10-11 20:59:56 - Client 4 Exit
