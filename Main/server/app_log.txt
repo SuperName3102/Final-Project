@@ -1717,3 +1717,451 @@ Exception
                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'int' object has no attribute 'encode'
 2024-10-05 16:07:27 - Client 1 Exit
+2024-10-11 15:26:53 - Server listening on ('0.0.0.0', 31026)
+2024-10-11 15:26:53 - Main thread: before accepting ...
+2024-10-11 15:26:56 - New Client number 1 from ('127.0.0.1', 54728)
+2024-10-11 15:27:37 - Client 1 Exit
+2024-10-11 15:27:41 - New Client number 2 from ('127.0.0.1', 54736)
+2024-10-11 15:28:24 - New Client number 3 from ('127.0.0.1', 54741)
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\9afd1cea1e964cf296de873134acda9b'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\93d1f84f07314cc285cd44a532baa2ef'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6f5210dfb30c4a4ea10dc3dac362371a'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\a1d81e58fcb442a2b9ca80d9aaa492fd'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\d384ad0c11d74240b1b1fdb72a4629c9'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6bcb7b32bcbf4f9ca6fa777a132eba13'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\8bcbf1fdaaff4883aaab72d54da9ae9c'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\80a7faee322b47e29c7c56174d41b0b8'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\191fe98963a14bbaaf52ee64d81520cc'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\3804b2de21574b48b601f3086747952d'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\7081a10f9a2d48f2900725d490fa0897'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\b385fb38fb784b1a87992a75455443e6'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\2f5acba4655d4f81bd29cd3db917f68a'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\214c1648a11f4c12873558bbdd8e95b7'
+2024-10-11 15:29:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f253e9f147954dbeb0e3d1fa54260e1d'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6f5210dfb30c4a4ea10dc3dac362371a'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\a1d81e58fcb442a2b9ca80d9aaa492fd'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\d384ad0c11d74240b1b1fdb72a4629c9'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6bcb7b32bcbf4f9ca6fa777a132eba13'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\8bcbf1fdaaff4883aaab72d54da9ae9c'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\80a7faee322b47e29c7c56174d41b0b8'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\191fe98963a14bbaaf52ee64d81520cc'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\3804b2de21574b48b601f3086747952d'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\7081a10f9a2d48f2900725d490fa0897'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\b385fb38fb784b1a87992a75455443e6'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\2f5acba4655d4f81bd29cd3db917f68a'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\214c1648a11f4c12873558bbdd8e95b7'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f253e9f147954dbeb0e3d1fa54260e1d'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\9afd1cea1e964cf296de873134acda9b'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\93d1f84f07314cc285cd44a532baa2ef'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6f5210dfb30c4a4ea10dc3dac362371a'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\a1d81e58fcb442a2b9ca80d9aaa492fd'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\d384ad0c11d74240b1b1fdb72a4629c9'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6bcb7b32bcbf4f9ca6fa777a132eba13'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\8bcbf1fdaaff4883aaab72d54da9ae9c'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\80a7faee322b47e29c7c56174d41b0b8'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\191fe98963a14bbaaf52ee64d81520cc'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\3804b2de21574b48b601f3086747952d'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\7081a10f9a2d48f2900725d490fa0897'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\b385fb38fb784b1a87992a75455443e6'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\2f5acba4655d4f81bd29cd3db917f68a'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\214c1648a11f4c12873558bbdd8e95b7'
+2024-10-11 15:29:30 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f253e9f147954dbeb0e3d1fa54260e1d'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\9afd1cea1e964cf296de873134acda9b'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\93d1f84f07314cc285cd44a532baa2ef'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6f5210dfb30c4a4ea10dc3dac362371a'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\a1d81e58fcb442a2b9ca80d9aaa492fd'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\d384ad0c11d74240b1b1fdb72a4629c9'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6bcb7b32bcbf4f9ca6fa777a132eba13'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\8bcbf1fdaaff4883aaab72d54da9ae9c'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\80a7faee322b47e29c7c56174d41b0b8'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\191fe98963a14bbaaf52ee64d81520cc'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\3804b2de21574b48b601f3086747952d'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\7081a10f9a2d48f2900725d490fa0897'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\b385fb38fb784b1a87992a75455443e6'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\2f5acba4655d4f81bd29cd3db917f68a'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\214c1648a11f4c12873558bbdd8e95b7'
+2024-10-11 15:29:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f253e9f147954dbeb0e3d1fa54260e1d'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\9afd1cea1e964cf296de873134acda9b'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\93d1f84f07314cc285cd44a532baa2ef'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6f5210dfb30c4a4ea10dc3dac362371a'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\a1d81e58fcb442a2b9ca80d9aaa492fd'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\d384ad0c11d74240b1b1fdb72a4629c9'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6bcb7b32bcbf4f9ca6fa777a132eba13'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\8bcbf1fdaaff4883aaab72d54da9ae9c'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\80a7faee322b47e29c7c56174d41b0b8'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\191fe98963a14bbaaf52ee64d81520cc'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\3804b2de21574b48b601f3086747952d'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\7081a10f9a2d48f2900725d490fa0897'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\b385fb38fb784b1a87992a75455443e6'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\2f5acba4655d4f81bd29cd3db917f68a'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\214c1648a11f4c12873558bbdd8e95b7'
+2024-10-11 15:29:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f253e9f147954dbeb0e3d1fa54260e1d'
+2024-10-11 15:29:54 - Server listening on ('0.0.0.0', 31026)
+2024-10-11 15:29:56 - Main thread: before accepting ...
+2024-10-11 15:29:59 - New Client number 1 from ('127.0.0.1', 54771)
+2024-10-11 15:30:30 - Client 1 Exit

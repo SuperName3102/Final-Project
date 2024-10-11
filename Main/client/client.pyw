@@ -173,8 +173,8 @@ class MainWindow(QtWidgets.QMainWindow):
         s_width = app.primaryScreen().geometry().width()
         s_height = app.primaryScreen().geometry().height()
         print(s_width, s_height)
-        self.resize(s_width*2//3, s_height*2//3)
-        self.move(s_width//6, s_height//6)
+        self.resize(s_width*3//4, s_height*2//3)
+        self.move(s_width//8, s_height//6)
         self.setAttribute(Qt.WidgetAttribute.WA_OpaquePaintEvent)
         self.setAttribute(Qt.WidgetAttribute.WA_PaintOnScreen, True)
 
