@@ -1,6 +1,8 @@
 # 2024 © Idan Hazay
 from datetime import datetime
 import xml.etree.ElementTree as ET
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QFontMetrics
 
 def build_req_string(code, values = []):
     """
@@ -67,3 +69,28 @@ def update_ui_size(ui_file, new_width, new_height):
     
     # Save the modified XML back to the .ui file
     tree.write(ui_file, encoding='utf-8', xml_declaration=True)
+    
+    
+def truncate_label(label, text):
+    font_metrics = QFontMetrics(label.font())
+    max_width = int(label.width()//1.8)
+
+        # Check if the text fits
+    if font_metrics.horizontalAdvance(text) > max_width:
+            # Truncate the text with ellipsis
+        truncated_text = font_metrics.elidedText(text, Qt.TextElideMode.ElideRight, max_width)
+        return truncated_text
+    return text
+
+file_types = {
+    "zip": ["rar"],
+    "png": ["jpg", "jpeg", "jfif", "gif", "ico"],
+    "mp3": ["wav"],
+    "code": ["py", "js", "cs", "c", "cpp", "jar"],
+    "txt": ["css"]
+}
+def format_file_type(type):
+    for extention in file_types.keys():
+        if type in file_types[extention] or type == extention:
+            return extention
+    return type

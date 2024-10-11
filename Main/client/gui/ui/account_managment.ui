@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1855</width>
-    <height>873</height>
+    <width>1711</width>
+    <height>918</height>
    </rect>
   </property>
   <property name="acceptDrops">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>IdanCloud</string>

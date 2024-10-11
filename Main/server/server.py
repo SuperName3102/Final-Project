@@ -946,5 +946,5 @@ def main(addr):
 
 if __name__ == '__main__':   # Run main
     cr.main()
-    #sys.stdout = Logger()
+    sys.stdout = Logger()
     main(("0.0.0.0", 31026))

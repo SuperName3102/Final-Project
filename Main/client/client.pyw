@@ -56,11 +56,17 @@ class FileButton(QPushButton):
             label = QLabel(label_text)
             if i == 0:
                 if self.is_folder:
-                    label.setText(f'&nbsp;<img src="{assets_path + "\\folder.svg"}" width="20" height="20">&nbsp;{label_text}')
+                    label.setText(f'&nbsp;<img src="{assets_path + "\\folder.svg"}" width="20" height="20"><label>&nbsp;{truncate_label(label, label_text)}</label>')
                 elif self.id is not None:
-                    label.setText(f'&nbsp;<img src="{assets_path + "\\file.svg"}" width="16" height="20">&nbsp;{label_text}')
+                    icon_path = assets_path + "\\file_types\\" + format_file_type(label_text.split("~")[0].split(".")[-1][:-1]) + ".svg"
+                    if not os.path.isfile(icon_path): icon_path = assets_path + "\\file.svg"
+                    label.setText(f'&nbsp;<img src="{icon_path}" width="16" height="20">&nbsp;{truncate_label(label, label_text)}')
             if self.id is None: label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            button_layout.addWidget(label)
+            button_layout.addWidget(label, stretch=1)
+        button_layout.setStretch(0, 2)  # First label takes 2 parts
+        for i in range(1, len(text)):
+            button_layout.setStretch(i, 1)  # Other labels take 1 part each
+
         self.setLayout(button_layout)
 
     def contextMenuEvent(self, event: QContextMenuEvent):
@@ -417,7 +423,8 @@ class MainWindow(QtWidgets.QMainWindow):
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             
-            self.setAcceptDrops(True)
+            if share: self.setAcceptDrops(False)
+            else: self.setAcceptDrops(True)
             self.set_cwd()
             
             if sort ==  "Name":
@@ -738,8 +745,8 @@ class MainWindow(QtWidgets.QMainWindow):
     def set_cwd(self):
         if (hasattr(self, "cwd")):
             self.cwd.setStyleSheet("color: yellow;")
-            if share: self.cwd.setText(f"CWD: Shared\\{user['cwd_name']}")
-            else: self.cwd.setText(f"CWD: {user['username']}\\{user['cwd_name']}")
+            if share: self.cwd.setText(f"Shared: {" -> ".join(user['cwd_name'].split("\\"))}")
+            else: self.cwd.setText(f"{user['username']}: {" -> ".join(user['cwd_name'].split("\\"))}")
 
 
 
@@ -778,10 +785,13 @@ class FileSenderThread(QThread):
                         data = f.read(chunk_size)
                         send_data(b"FILD" + data)
                         sent += chunk_size
+                        self.progress_reset.emit(size)
                         self.progress.emit(sent)  # Update progress bar
+                        
                     data = f.read(left)
                     if data != b"":
                         send_data(b'FILE' + data)
+                        self.progress_reset.emit(size)
                         self.progress.emit(sent)  # Final progress update
             except:
                 print(traceback.format_exc())
@@ -815,6 +825,7 @@ def send_files():
     except: pass
     for child in window.findChildren(QPushButton):  # Find all QPushButton children
         child.setEnabled(False)
+    window.sort.setEnabled(False)
     thread = FileSenderThread()
 
     active_threads.append(thread)
@@ -837,6 +848,7 @@ def renable_buttons(message):
     file_queue = []
     for child in window.findChildren(QPushButton):  # Find all QPushButton children
         child.setEnabled(True)
+    window.sort.setEnabled(True)
     window.user_page()
     window.set_message(message)
 
@@ -1021,13 +1033,10 @@ def get_used_storage():
 
 def upload_icon():
     try:
-        file_path, _ = QFileDialog.getOpenFileName(
-            window, "Open File", "", "Icon Files (*.ico);")
-
+        file_path, _ = QFileDialog.getOpenFileName(window, "Open File", "", "Image Files (*.png *.jpg *.jpeg *.bmp *.gif *.ico);")
         if file_path:
             file_name = file_path.split("/")[-1]
             start_string = b'ICOS|' + file_name.encode()
-
             send_data(start_string)
             send_file(file_path)
     except:
@@ -1577,7 +1586,7 @@ def main(ip, port):
 
 
 if __name__ == "__main__":   # Run main
-    #sys.stdout = Logger()
+    sys.stdout = Logger()
     ip = "127.0.0.1"
     if len(sys.argv) == 2:
         ip = sys.argv[1]
