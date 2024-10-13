@@ -58,3 +58,29 @@ QMenu::item:selected {
 Line {
   color: white;
 }
+#file-label {
+  background-color: dimgrey;
+  border: 1px solid darkgrey;
+}
+
+#file-label:hover {
+  background-color: rgb(90, 90, 90);
+}
+
+QLabel#folder-label {
+  background-color: peru;
+  border: 1px solid peachpuff;
+}
+
+QLabel#folder-label:hover {
+  background-color: rgb(175, 115, 54);
+}
+
+QLabel#back-label {
+  background-color: green;
+  border: 1px solid lightgreen;
+}
+
+QLabel#back-label:hover {
+  background-color: rgb(1, 109, 1);
+}

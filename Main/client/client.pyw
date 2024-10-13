@@ -47,8 +47,6 @@ class FileButton(QPushButton):
         self.setMinimumHeight(30)
 
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
-        self.setStyleSheet(f"padding:5px;")
-        
         button_layout = QHBoxLayout()
         button_layout.setContentsMargins(0, 0, 0, 0)  # Remove margins to align with button edges
         button_layout.setSpacing(0)
@@ -62,6 +60,9 @@ class FileButton(QPushButton):
                     if not os.path.isfile(icon_path): icon_path = assets_path + "\\file.svg"
                     label.setText(f'&nbsp;<img src="{icon_path}" width="16" height="20">&nbsp;{truncate_label(label, label_text)}')
             if self.id is None: label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            if self.is_folder: label.setObjectName("folder-label")
+            elif self.id != None: label.setObjectName("file-label")
+            elif label_text == "Back": label.setObjectName("back-label")
             button_layout.addWidget(label, stretch=1)
         button_layout.setStretch(0, 2)  # First label takes 2 parts
         for i in range(1, len(text)):
@@ -112,7 +113,6 @@ class FileButton(QPushButton):
     def download(self):
         file_name = self.text().split(" | ")[0][1:]
         if self.is_folder: 
-
             file_path, _ = QFileDialog.getSaveFileName(self, "Save File", file_name, "Zip Files (*.zip);;All Files (*)")
         else: 
             size = parse_file_size(self.text().split(" | ")[2])
@@ -526,7 +526,6 @@ class MainWindow(QtWidgets.QMainWindow):
                     button = FileButton(f" {file_name} | {date} | {size} | {file[4]}".split("|"), file_id, shared_by=file[4], perms=perms)
                 else:
                     button = FileButton(f" {file_name} | {date} | {size}".split("|"), file_id)
-                button.setStyleSheet(f"background-color:dimgrey;border:1px solid darkgrey;border-radius: 3px;")
                 button.clicked.connect(lambda checked, name=file_name, id = file_id: view_file(id, name))
                 scroll_layout.addWidget(button)
 
@@ -539,7 +538,6 @@ class MainWindow(QtWidgets.QMainWindow):
                     button = FileButton(f" {directory[0]} | {last_change} | {size} | {directory[4]}".split("|"), directory[1], is_folder=True, shared_by=directory[2], perms=perms)
                 else:
                     button = FileButton(f" {directory[0]} | {last_change} | {size}".split("|"), directory[1], is_folder=True)
-                button.setStyleSheet(f"background-color:peru;border-radius: 3px;border:1px solid peachpuff;")
                 button.clicked.connect(lambda checked, id=directory[1]: move_dir(id))
                 scroll_layout.addWidget(button)
 
@@ -550,7 +548,6 @@ class MainWindow(QtWidgets.QMainWindow):
 
             if (user["cwd"] != ""):
                 button = FileButton(["Back"])
-                button.setStyleSheet(f"background-color:green;border-radius: 3px;border:1px solid lightgreen;")
                 button.clicked.connect(lambda: move_dir(user["parent_cwd"]))
                 scroll_layout.addWidget(button)
             
