@@ -426,25 +426,33 @@ class MainWindow(QtWidgets.QMainWindow):
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             
-            if share: self.setAcceptDrops(False)
-            else: self.setAcceptDrops(True)
+            if share: 
+                self.setAcceptDrops(False)
+                self.sort.addItem(" Owner")
+            else: 
+                self.setAcceptDrops(True)
             self.set_cwd()
-            
-            if sort ==  "Name":
+        
+            if sort ==  "Name" or not share and sort == "Owner":
                 self.sort.setCurrentIndex(0)
-                files = sorted(files, key=lambda x: x.split("~")[0])
-                directories = sorted(directories, key=lambda x: x.split("~")[0])
+                files = sorted(files, key=lambda x: x.split("~")[0].lower())
+                directories = sorted(directories, key=lambda x: x.split("~")[0].lower())
             elif sort == "Date":
                 self.sort.setCurrentIndex(1)
                 files = sorted(files, key=lambda x: str_to_date(x.split("~")[1]), reverse=True)
                 directories = sorted(directories, key=lambda x: str_to_date(x.split("~")[2]), reverse=True)
             elif sort == "Type":
                 self.sort.setCurrentIndex(2)
-                files = sorted(files, key=lambda x: x.split("~")[0].split(".")[-1])
+                files = sorted(files, key=lambda x: x.split("~")[0].split(".")[-1].lower())
             elif sort == "Size":
                 self.sort.setCurrentIndex(3)
                 files = sorted(files, key=lambda x: int(x.split("~")[2]), reverse=True)
                 directories = sorted(directories, key=lambda x: int(x.split("~")[3]), reverse=True)
+            elif share and sort == "Owner":
+                self.sort.setCurrentIndex(4)
+                files = sorted(files, key=lambda x: x.split("~")[4].lower())
+                directories = sorted(directories, key=lambda x: x.split("~")[4].lower())
+                
             
             self.save_sizes()
             self.draw_cwd(files, directories)

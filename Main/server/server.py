@@ -947,4 +947,7 @@ def main(addr):
 if __name__ == '__main__':   # Run main
     cr.main()
     sys.stdout = Logger()
-    main(("0.0.0.0", 31026))
+    port = 31026
+    if len(sys.argv) == 2:
+        port = sys.argv[1]
+    main(("0.0.0.0", int(port)))
