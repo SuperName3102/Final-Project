@@ -7,8 +7,7 @@ from datetime import datetime
 
 # Configure logging
 logging.basicConfig(
-    filename=f"{os.path.dirname(os.path.dirname(
-        os.path.abspath(__file__)))}\\app_log.txt",
+    filename=f"{os.getcwd()}\\app_log.txt",
     level=logging.INFO,
     format='%(asctime)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'

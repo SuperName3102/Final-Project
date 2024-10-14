@@ -21,9 +21,9 @@ from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
 user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""}
 chunk_size = 65536
 used_storage = 0
-user_icon = f"{os.path.dirname(os.path.abspath(__file__))}/assets/user.ico"
-assets_path = f"{os.path.dirname(os.path.abspath(__file__))}/assets"
-cookie_path = f"{os.path.dirname(os.path.abspath(__file__))}/cookies/user.cookie"
+user_icon = f"{os.getcwd()}/assets/user.ico"
+assets_path = f"{os.getcwd()}/assets"
+cookie_path = f"{os.getcwd()}/cookies/user.cookie"
 search_filter = None
 share = False
 sort = "Name"
@@ -163,8 +163,8 @@ def search():
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        if (os.path.isfile(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico")):
-            self.setWindowIcon(QIcon(f"{os.path.dirname(os.path.abspath(__file__))}/assets/icon.ico"))
+        if (os.path.isfile(f"{os.getcwd()}/assets/icon.ico")):
+            self.setWindowIcon(QIcon(f"{os.getcwd()}/assets/icon.ico"))
         self.save_sizes()
         self.setGeometry(window_geometry)
         self.original_width = self.width()
@@ -172,7 +172,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.scroll_progress = 0
         s_width = app.primaryScreen().geometry().width()
         s_height = app.primaryScreen().geometry().height()
-        print(s_width, s_height)
         self.resize(s_width*3//4, s_height*2//3)
         self.move(s_width//8, s_height//6)
         self.setAttribute(Qt.WidgetAttribute.WA_OpaquePaintEvent)
@@ -262,7 +261,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def main_page(self):
         try:
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/main.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/main.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             
@@ -285,7 +284,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def signup_page(self):
         try:
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/signup.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/signup.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
@@ -315,7 +314,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def login_page(self):
         try:
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/login.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/login.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
@@ -345,7 +344,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def forgot_password(self):
         try:
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/forgot_password.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/forgot_password.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
@@ -366,7 +365,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def verification_page(self, email):
         try:
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/verification.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/verification.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
@@ -390,7 +389,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def send_verification_page(self):
         try:
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/send_verification.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/send_verification.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
@@ -420,10 +419,10 @@ class MainWindow(QtWidgets.QMainWindow):
             
             get_used_storage()
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/account_managment.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/user.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/user.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             
@@ -577,7 +576,7 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             global window_geometry
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/account_managment.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/account_managment.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
@@ -609,7 +608,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def subscriptions_page(self):
         try:
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/subscription.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/subscription.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
@@ -653,7 +652,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def recovery(self, email):
         try:
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/recovery.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/recovery.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
@@ -683,7 +682,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def not_connected_page(self, ip, port):
         try:
             temp = window_geometry
-            ui_path = f"{os.path.dirname(os.path.abspath(__file__))}/gui/ui/not_connected.ui"
+            ui_path = f"{os.getcwd()}/gui/ui/not_connected.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
@@ -995,7 +994,7 @@ def save_file_data(save_loc):
 
 def view_file(file_id, file_name):
     send_data(b"VIEW|" + file_id.encode())
-    save_path = f"{os.path.dirname(os.path.abspath(__file__))}\\temp-{file_name}"
+    save_path = f"{os.getcwd()}\\temp-{file_name}"
     response = save_file_data(save_path)
     if response is not None:
         os.remove(save_path)
@@ -1579,7 +1578,9 @@ def main(ip, port):
     global sock, window, app
     try:
         app = QtWidgets.QApplication(sys.argv)
-        with open(f"{os.path.dirname(os.path.abspath(__file__))}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
+        try: 
+            with open(f"{os.getcwd()}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
+        except: pass
         window = MainWindow()
         sock = connect_server(ip, port)
         sys.exit(app.exec())

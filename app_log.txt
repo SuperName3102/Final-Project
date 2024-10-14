@@ -1,0 +1,12 @@
+2024-10-14 21:03:06 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.py", line 265, in main_page
+    update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\helper.py", line 56, in update_ui_size
+    tree = ET.parse(ui_file)
+           ^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\xml\etree\ElementTree.py", line 1204, in parse
+    tree.parse(source, parser)
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\xml\etree\ElementTree.py", line 558, in parse
+    source = open(source, "rb")
+             ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project/gui/ui/main.ui'
