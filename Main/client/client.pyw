@@ -24,16 +24,21 @@ used_storage = 0
 user_icon = f"{os.getcwd()}/assets/user.ico"
 assets_path = f"{os.getcwd()}/assets"
 cookie_path = f"{os.getcwd()}/cookies/user.cookie"
+
 search_filter = None
 share = False
 sort = "Name"
+
 window_geometry = QRect(350, 200, 1000, 550)
 original_sizes = {}
 active_threads = []
 file_queue = []
-dont_send = False
 scroll = None
 scroll_size = [850, 340]
+
+dont_send = False
+ip = "127.0.0.1"
+port = 31026
 # Begin gui related functions
 
 class FileButton(QPushButton):
@@ -687,7 +692,7 @@ class MainWindow(QtWidgets.QMainWindow):
         except:
             print(traceback.format_exc())
         
-    def not_connected_page(self, ip, port):
+    def not_connected_page(self):
         try:
             temp = window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/not_connected.ui"
@@ -701,6 +706,9 @@ class MainWindow(QtWidgets.QMainWindow):
             self.connect_button.clicked.connect(lambda: connect_server(self.ip.text(), self.port.text()))
             self.connect_button.setShortcut("Return")
             self.connect_button.setIcon(QIcon(assets_path+"\\connect.svg"))
+            
+            self.exit_button.clicked.connect(force_exit)
+            self.exit_button.setIcon(QIcon(assets_path+"\\exit.svg"))
             
             self.setGeometry(temp)
             self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
@@ -1244,6 +1252,8 @@ def exit_program():
     send_data(send_string)
     handle_reply()
 
+def force_exit():
+    sys.exit()
 
 def get_cwd_files(filter=None):
     to_send = b"GETP" + b"|" + user["cwd"].encode()
@@ -1539,7 +1549,7 @@ def handle_reply():
             sys.exit()
         elif to_show == None:
             sock.close()
-            window.not_connected_page("127.0.0.1", 31026)
+            window.not_connected_page()
             window.set_error_message("Lost connection to server")
     except socket.error as err:   # General error handling
         print(f'Got socket error: {err}')
@@ -1552,12 +1562,13 @@ def handle_reply():
 
 
 # Main function and start of code
-def connect_server(ip, port):
-    global sock
-    window.set_message(f"Trying to connect to {ip} {port}...")
+def connect_server(new_ip, new_port):
+    global sock, ip, port
+    window.set_message(f"Trying to connect to {new_ip} {new_port}...")
     QApplication.processEvents()
     try:
-        port = int(port)
+        ip = new_ip
+        port = int(new_port)
         sock = socket.socket()
         sock.connect((ip, int(port)))
         set_sock(sock)
@@ -1566,18 +1577,16 @@ def connect_server(ip, port):
             sock.close()
             return
         set_secret(shared_secret)
-        window.show()
         window.main_page()
         send_cookie()
         window.set_message(f'Connect succeeded {ip} {port}')
         return sock
     except:
-        window.show()
-        window.not_connected_page(ip, port)
+        window.not_connected_page()
         window.set_error_message(f'Server was not found {ip} {port}')
         return None
 
-def main(ip, port):
+def main():
     """
     Main function
     Create tkinter root and start secure connection to server
@@ -1590,6 +1599,8 @@ def main(ip, port):
             with open(f"{os.getcwd()}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
         except: pass
         window = MainWindow()
+        window.show()
+        window.not_connected_page()
         sock = connect_server(ip, port)
         sys.exit(app.exec())
     except Exception as e:
@@ -1599,9 +1610,8 @@ def main(ip, port):
 
 if __name__ == "__main__":   # Run main
     sys.stdout = Logger()
-    ip = "127.0.0.1"
-    if len(sys.argv) == 2:
-        ip = sys.argv[1]
+    if len(sys.argv) >= 2: ip = sys.argv[1]
+    if len(sys.argv) >= 3: port = sys.argv[2]
 
-    main(ip, 31026)
+    main()
 
