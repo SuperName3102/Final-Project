@@ -1307,6 +1307,7 @@ def get_cwd_shared_directories(filter=None):
         return []
 
 def save_cookie(cookie):
+    os.makedirs(os.getcwd() + "\\cookies")
     with open(cookie_path, "w") as f:
         f.write(cookie)
 
