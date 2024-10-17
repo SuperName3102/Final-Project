@@ -48,30 +48,26 @@
 2024-10-14 22:46:17 - Client 13 Exit
 2024-10-14 22:48:04 - New Client number 14 from ('127.0.0.1', 53372)
 2024-10-14 22:48:10 - Client 14 Exit
-2024-10-15 12:01:15 - Server listening on ('0.0.0.0', 31026)
-2024-10-15 12:01:16 - Main thread: before accepting ...
-2024-10-15 12:01:28 - New Client number 1 from ('192.168.1.1', 50216)
-2024-10-15 12:01:33 - New Client number 2 from ('192.168.1.1', 59679)
-2024-10-15 12:02:49 - Client 2 Exit
-2024-10-15 12:02:53 - New Client number 3 from ('127.0.0.1', 59710)
-2024-10-15 12:04:14 - Client 3 Exit
-2024-10-15 12:11:23 - New Client number 4 from ('127.0.0.1', 59932)
-2024-10-15 12:14:55 - Server listening on ('0.0.0.0', 31026)
-2024-10-15 12:14:55 - Main thread: before accepting ...
-2024-10-15 12:14:56 - New Client number 1 from ('192.168.1.1', 59990)
-2024-10-15 12:15:29 - Server listening on ('0.0.0.0', 3111)
-2024-10-15 12:15:29 - Main thread: before accepting ...
-2024-10-15 12:15:58 - New Client number 1 from ('127.0.0.1', 59992)
-2024-10-15 12:24:50 - Server listening on ('0.0.0.0', 31026)
-2024-10-15 12:24:50 - Main thread: before accepting ...
-2024-10-15 12:24:54 - New Client number 1 from ('192.168.1.1', 60087)
-2024-10-15 12:33:12 - Server listening on ('0.0.0.0', 31026)
-2024-10-15 12:33:13 - Main thread: before accepting ...
-2024-10-15 12:33:24 - New Client number 1 from ('127.0.0.1', 60154)
-2024-10-15 12:33:29 - Client 1 Exit
-2024-10-15 12:33:30 - New Client number 2 from ('127.0.0.1', 60155)
-2024-10-15 12:33:33 - Client 2 Exit
-2024-10-15 12:33:34 - New Client number 3 from ('127.0.0.1', 60156)
-2024-10-15 12:34:13 - New Client number 4 from ('127.0.0.1', 60158)
-2024-10-15 12:34:17 - Client 4 Exit
-2024-10-15 12:34:49 - Client 3 Exit
+2024-10-15 11:49:09 - Server listening on ('0.0.0.0', 31024)
+2024-10-15 11:49:10 - Main thread: before accepting ...
+2024-10-15 11:50:16 - New Client number 1 from ('127.0.0.1', 49971)
+2024-10-15 12:00:11 - Server listening on ('0.0.0.0', 31024)
+2024-10-15 12:00:12 - Main thread: before accepting ...
+2024-10-15 12:00:42 - New Client number 1 from ('127.0.0.1', 50193)
+2024-10-15 18:50:08 - Server listening on ('0.0.0.0', 31026)
+2024-10-15 18:50:09 - Main thread: before accepting ...
+2024-10-15 18:50:13 - New Client number 1 from ('127.0.0.1', 50882)
+2024-10-15 18:51:58 - Client 1 Exit
+2024-10-16 14:02:42 - Server listening on ('0.0.0.0', 31026)
+2024-10-16 14:02:43 - Main thread: before accepting ...
+2024-10-16 14:02:49 - New Client number 1 from ('127.0.0.1', 49967)
+2024-10-16 14:03:09 - Client 1 Exit
+2024-10-16 14:03:10 - New Client number 2 from ('127.0.0.1', 49972)
+2024-10-16 14:05:55 - Client 2 Exit
+2024-10-16 14:06:02 - New Client number 3 from ('127.0.0.1', 50215)
+2024-10-16 14:06:18 - Client 3 Exit
+2024-10-16 14:06:20 - New Client number 4 from ('127.0.0.1', 50220)
+2024-10-16 14:09:59 - Client 4 Exit
+2024-10-16 14:12:03 - Server listening on ('0.0.0.0', 31026)
+2024-10-16 14:12:03 - Main thread: before accepting ...
+2024-10-16 14:12:04 - New Client number 1 from ('127.0.0.1', 50375)

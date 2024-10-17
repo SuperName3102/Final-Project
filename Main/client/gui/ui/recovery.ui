@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <ui version="4.0">
  <class>IdanCloud</class>
  <widget class="QMainWindow" name="IdanCloud">
@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>550</height>
+    <width>1920</width>
+    <height>960</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -17,7 +17,7 @@
    <string>IdanCloud</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true" />
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -112,7 +112,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true" />
     </property>
     <property name="text">
      <string> Back</string>
@@ -139,7 +139,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true" />
     </property>
     <property name="text">
      <string> Reset</string>
@@ -169,7 +169,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true" />
     </property>
     <property name="text">
      <string> Send Again</string>
@@ -265,7 +265,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string />
     </property>
    </widget>
    <widget class="QCheckBox" name="confirm_password_toggle">
@@ -283,7 +283,7 @@
      </font>
     </property>
     <property name="text">
-     <string/>
+     <string />
     </property>
     <property name="iconSize">
      <size>
@@ -302,15 +302,15 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string />
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar" />
  </widget>
- <resources/>
- <connections/>
+ <resources />
+ <connections />
 </ui>
