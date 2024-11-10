@@ -73,7 +73,7 @@ def update_ui_size(ui_file, new_width, new_height):
     
 def truncate_label(label, text):
     font_metrics = QFontMetrics(label.font())
-    max_width = int(label.width()//1.8)
+    max_width = int(label.width()//1.9)
 
         # Check if the text fits
     if font_metrics.horizontalAdvance(text) > max_width:

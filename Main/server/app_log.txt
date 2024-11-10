@@ -71,3 +71,1660 @@
 2024-10-16 14:12:03 - Server listening on ('0.0.0.0', 31026)
 2024-10-16 14:12:03 - Main thread: before accepting ...
 2024-10-16 14:12:04 - New Client number 1 from ('127.0.0.1', 50375)
+2024-10-17 11:53:47 - Server listening on ('0.0.0.0', 31026)
+2024-10-17 11:53:48 - Main thread: before accepting ...
+2024-10-17 11:53:54 - New Client number 1 from ('127.0.0.1', 57960)
+2024-10-17 11:54:48 - Client 1 Exit
+2024-10-17 14:13:34 - Server listening on ('0.0.0.0', 31026)
+2024-10-17 14:13:35 - Main thread: before accepting ...
+2024-10-17 14:13:57 - New Client number 1 from ('192.168.1.1', 51693)
+2024-10-17 14:16:11 - Client 1 Exit
+2024-10-17 14:16:33 - New Client number 2 from ('192.168.1.1', 51707)
+2024-10-17 14:17:20 - New Client number 3 from ('127.0.0.1', 50760)
+2024-10-17 14:18:22 - Client 2 Exit
+2024-10-17 14:18:37 - New Client number 4 from ('192.168.1.1', 51721)
+2024-10-17 14:19:15 - Client 4 Exit
+2024-10-17 14:19:23 - Client 3 Exit
+2024-10-18 18:31:44 - Server listening on ('0.0.0.0', 31026)
+2024-10-18 18:31:46 - Main thread: before accepting ...
+2024-10-18 18:31:51 - New Client number 1 from ('127.0.0.1', 61778)
+2024-10-18 18:31:57 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 757, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 478, in protocol_build_reply
+    directory = fields[1]
+                ~~~~~~^^^
+IndexError: list index out of range
+2024-10-18 18:31:57 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 757, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 489, in protocol_build_reply
+    directory = fields[1]
+                ~~~~~~^^^
+IndexError: list index out of range
+2024-10-18 18:32:16 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 757, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 478, in protocol_build_reply
+    directory = fields[1]
+                ~~~~~~^^^
+IndexError: list index out of range
+2024-10-18 18:32:16 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 757, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 489, in protocol_build_reply
+    directory = fields[1]
+                ~~~~~~^^^
+IndexError: list index out of range
+2024-10-18 18:32:41 - New Client number 2 from ('127.0.0.1', 62734)
+2024-10-18 18:33:07 - Client 1 Exit
+2024-11-07 09:32:30 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 09:32:32 - Main thread: before accepting ...
+2024-11-07 09:32:37 - New Client number 1 from ('127.0.0.1', 50611)
+2024-11-07 09:33:05 - Client 1 Exit
+2024-11-07 09:33:08 - New Client number 2 from ('127.0.0.1', 55840)
+2024-11-07 09:37:02 - Client 2 Exit
+2024-11-07 09:37:05 - New Client number 3 from ('127.0.0.1', 56329)
+2024-11-07 09:37:22 - Client 3 Exit
+2024-11-07 09:37:25 - New Client number 4 from ('127.0.0.1', 56367)
+2024-11-07 09:38:33 - Client 4 Exit
+2024-11-07 09:38:36 - New Client number 5 from ('127.0.0.1', 56496)
+2024-11-07 09:39:25 - Client 5 Exit
+2024-11-07 09:39:27 - New Client number 6 from ('127.0.0.1', 56571)
+2024-11-07 09:40:20 - Client 6 Exit
+2024-11-07 09:40:23 - New Client number 7 from ('127.0.0.1', 56730)
+2024-11-07 09:41:50 - Client 7 Exit
+2024-11-07 09:41:53 - New Client number 8 from ('127.0.0.1', 56907)
+2024-11-07 09:42:30 - Client 8 Exit
+2024-11-07 09:42:33 - New Client number 9 from ('127.0.0.1', 56981)
+2024-11-07 09:43:14 - Client 9 Exit
+2024-11-07 09:43:17 - New Client number 10 from ('127.0.0.1', 57062)
+2024-11-07 09:54:37 - Client 10 Exit
+2024-11-07 09:54:40 - New Client number 11 from ('127.0.0.1', 58096)
+2024-11-07 09:55:03 - Client 11 Exit
+2024-11-07 09:55:06 - New Client number 12 from ('127.0.0.1', 58148)
+2024-11-07 09:58:43 - Client 12 Exit
+2024-11-07 09:58:46 - New Client number 13 from ('127.0.0.1', 58562)
+2024-11-07 10:04:08 - Client 13 Exit
+2024-11-07 11:53:01 - New Client number 14 from ('127.0.0.1', 60083)
+2024-11-07 11:53:34 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 11:53:36 - Main thread: before accepting ...
+2024-11-07 11:53:36 - New Client number 1 from ('127.0.0.1', 60090)
+2024-11-07 11:53:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 637, in protocol_build_reply
+    cr.delete_file(file_id)
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 460, in delete_file
+    db.delete_file(id)
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 248, in delete_file
+    cursor.execute(f"SELECT * FROM {deleted_table} WHERE item_id = ?", (id,))
+sqlite3.OperationalError: no such table: Deleted
+2024-11-07 11:54:38 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 11:54:39 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 586, in clean_db
+    db.delete_file(file["id"])
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 249, in delete_file
+    cursor.execute(f"SELECT * FROM {deleted_table} WHERE item_id = ?", (id,))
+sqlite3.OperationalError: no such column: item_id
+2024-11-07 11:54:39 - Main thread: before accepting ...
+2024-11-07 11:55:10 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 11:55:11 - Main thread: before accepting ...
+2024-11-07 11:55:21 - New Client number 1 from ('127.0.0.1', 60108)
+2024-11-07 11:55:21 - []
+2024-11-07 11:55:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 518, in protocol_build_reply
+    directories = cr.get_share_directories(clients[tid].id, directory, search_filter)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 661, in get_share_directories
+    directories = db.get_all_deleted_directories(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'modules.database_handling' has no attribute 'get_all_deleted_directories'. Did you mean: 'get_all_share_directories'?
+2024-11-07 11:56:05 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 11:56:05 - Main thread: before accepting ...
+2024-11-07 11:56:11 - New Client number 1 from ('127.0.0.1', 60115)
+2024-11-07 11:57:57 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 11:57:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 586, in clean_db
+    db.delete_file(file["id"])
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(f"INSERT INTO {deleted_table} (id, owner_id, time_to_delete) VALUES (?, ?, ?)", (id, get_file(id)["owner_id"]), str(timedelta(days=30) + datetime.now()))
+TypeError: execute expected at most 2 arguments, got 3
+2024-11-07 11:57:58 - Main thread: before accepting ...
+2024-11-07 11:59:20 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 11:59:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 586, in clean_db
+    db.delete_file(file["id"])
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(f"INSERT INTO {deleted_table} (id, owner_id, time_to_delete) VALUES (?, ?, ?)", (id, get_file(id)["owner_id"]), str(timedelta(days=30) + datetime.now()))
+TypeError: execute expected at most 2 arguments, got 3
+2024-11-07 11:59:23 - Main thread: before accepting ...
+2024-11-07 11:59:25 - New Client number 1 from ('127.0.0.1', 60128)
+2024-11-07 11:59:26 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\251322cd6ce348259910156d68998e80'
+2024-11-07 11:59:36 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 637, in protocol_build_reply
+    cr.delete_file(file_id)
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 460, in delete_file
+    db.delete_file(id)
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(f"INSERT INTO {deleted_table} (id, owner_id, time_to_delete) VALUES (?, ?, ?)", (id, get_file(id)["owner_id"]), str(timedelta(days=30) + datetime.now()))
+TypeError: execute expected at most 2 arguments, got 3
+2024-11-07 12:00:56 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:00:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 586, in clean_db
+    db.delete_file(file["id"])
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(f"INSERT INTO {deleted_table} (id, owner_id, time_to_delete) VALUES (?, ?, ?)", (id, get_file(id)["owner_id"]), str(timedelta(days=30) + datetime.now()))
+TypeError: execute expected at most 2 arguments, got 3
+2024-11-07 12:00:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 586, in clean_db
+    db.delete_file(file["id"])
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(f"INSERT INTO {deleted_table} (id, owner_id, time_to_delete) VALUES (?, ?, ?)", (id, get_file(id)["owner_id"]), str(timedelta(days=30) + datetime.now()))
+TypeError: execute expected at most 2 arguments, got 3
+2024-11-07 12:00:57 - Main thread: before accepting ...
+2024-11-07 12:01:38 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:01:39 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 586, in clean_db
+    db.delete_file(file["id"])
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(f"INSERT INTO {deleted_table} (id, owner_id, time_to_delete) VALUES (?, ?, ?)", (id, get_file(id)["owner_id"]), str(timedelta(days=30) + datetime.now()))
+TypeError: execute expected at most 2 arguments, got 3
+2024-11-07 12:01:39 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 586, in clean_db
+    db.delete_file(file["id"])
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(f"INSERT INTO {deleted_table} (id, owner_id, time_to_delete) VALUES (?, ?, ?)", (id, get_file(id)["owner_id"]), str(timedelta(days=30) + datetime.now()))
+TypeError: execute expected at most 2 arguments, got 3
+2024-11-07 12:01:39 - Main thread: before accepting ...
+2024-11-07 12:02:21 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:02:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 586, in clean_db
+    db.delete_file(file["id"])
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 253, in delete_file
+    cursor.execute(sql, (id, get_file(id)["owner_id"]), str(timedelta(days=30) + datetime.now()))
+TypeError: execute expected at most 2 arguments, got 3
+2024-11-07 12:02:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 586, in clean_db
+    db.delete_file(file["id"])
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 253, in delete_file
+    cursor.execute(sql, (id, get_file(id)["owner_id"]), str(timedelta(days=30) + datetime.now()))
+TypeError: execute expected at most 2 arguments, got 3
+2024-11-07 12:02:21 - Main thread: before accepting ...
+2024-11-07 12:02:29 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:03:48 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:03:49 - Main thread: before accepting ...
+2024-11-07 12:04:10 - New Client number 1 from ('127.0.0.1', 60159)
+2024-11-07 12:04:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\db25c7e18f904b209abf7584b87226df'
+2024-11-07 12:04:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\251322cd6ce348259910156d68998e80'
+2024-11-07 12:04:13 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6555aba9fa1e4d679503ae3ae46a115f'
+2024-11-07 12:04:13 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\db25c7e18f904b209abf7584b87226df'
+2024-11-07 12:04:13 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\251322cd6ce348259910156d68998e80'
+2024-11-07 12:04:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6555aba9fa1e4d679503ae3ae46a115f'
+2024-11-07 12:04:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\db25c7e18f904b209abf7584b87226df'
+2024-11-07 12:04:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\edf95b98f3eb437d872a6bead751a09e'
+2024-11-07 12:04:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\251322cd6ce348259910156d68998e80'
+2024-11-07 12:05:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 530, in protocol_build_reply
+    files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'modules.client_requests' has no attribute 'get_deleted_files'
+2024-11-07 12:05:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 542, in protocol_build_reply
+    directories = cr.get_deleted_directories(clients[tid].id, directory, search_filter)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'modules.client_requests' has no attribute 'get_deleted_directories'. Did you mean: 'get_share_directories'?
+2024-11-07 12:05:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6555aba9fa1e4d679503ae3ae46a115f'
+2024-11-07 12:05:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\db25c7e18f904b209abf7584b87226df'
+2024-11-07 12:05:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\edf95b98f3eb437d872a6bead751a09e'
+2024-11-07 12:05:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\251322cd6ce348259910156d68998e80'
+2024-11-07 12:05:55 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:05:56 - Main thread: before accepting ...
+2024-11-07 12:05:58 - New Client number 1 from ('127.0.0.1', 60166)
+2024-11-07 12:06:00 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 530, in protocol_build_reply
+    files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'modules.client_requests' has no attribute 'get_deleted_files'
+2024-11-07 12:06:00 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 542, in protocol_build_reply
+    directories = cr.get_deleted_directories(clients[tid].id, directory, search_filter)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'modules.client_requests' has no attribute 'get_deleted_directories'. Did you mean: 'get_share_directories'?
+2024-11-07 12:06:39 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:06:40 - Main thread: before accepting ...
+2024-11-07 12:06:44 - New Client number 1 from ('127.0.0.1', 60173)
+2024-11-07 12:06:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f485aecbd46e47f1aa18563c57e2a0aa'
+2024-11-07 12:10:11 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:10:12 - Main thread: before accepting ...
+2024-11-07 12:10:21 - New Client number 1 from ('127.0.0.1', 60182)
+2024-11-07 12:10:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 530, in protocol_build_reply
+    files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 649, in get_deleted_files
+    files = db.get_deleted_files(user_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 537, in get_deleted_files
+    cursor.execute(f"SELECT f.* FROM {files_table} f JOIN {deleted_table} p ON f.id = p.file_id WHERE p.owner_id = ?", (owner_id, "True"))
+sqlite3.OperationalError: no such column: p.file_id
+2024-11-07 12:10:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 542, in protocol_build_reply
+    directories = cr.get_deleted_directories(clients[tid].id, directory, search_filter)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 661, in get_deleted_directories
+    directories = db.get_deleted_files(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 537, in get_deleted_files
+    cursor.execute(f"SELECT f.* FROM {files_table} f JOIN {deleted_table} p ON f.id = p.file_id WHERE p.owner_id = ?", (owner_id, "True"))
+sqlite3.OperationalError: no such column: p.file_id
+2024-11-07 12:10:37 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:10:38 - Main thread: before accepting ...
+2024-11-07 12:10:39 - New Client number 1 from ('127.0.0.1', 60188)
+2024-11-07 12:10:41 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 530, in protocol_build_reply
+    files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 649, in get_deleted_files
+    files = db.get_deleted_files(user_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 537, in get_deleted_files
+    cursor.execute(f"SELECT f.* FROM {files_table} f JOIN {deleted_table} p ON f.id = p.id WHERE p.owner_id = ?", (owner_id, "True"))
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 2 supplied.
+2024-11-07 12:10:41 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 542, in protocol_build_reply
+    directories = cr.get_deleted_directories(clients[tid].id, directory, search_filter)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 661, in get_deleted_directories
+    directories = db.get_deleted_files(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 537, in get_deleted_files
+    cursor.execute(f"SELECT f.* FROM {files_table} f JOIN {deleted_table} p ON f.id = p.id WHERE p.owner_id = ?", (owner_id, "True"))
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 2 supplied.
+2024-11-07 12:11:37 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:11:37 - Main thread: before accepting ...
+2024-11-07 12:11:40 - New Client number 1 from ('127.0.0.1', 60195)
+2024-11-07 12:12:05 - []
+2024-11-07 12:12:09 - []
+2024-11-07 12:12:14 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\2bdbe49e730b4533a04f91cb526bd9c6'
+2024-11-07 12:12:21 - [('8543bd0c38b944429a8eae2271bd8612', '2bdbe49e730b4533a04f91cb526bd9c6', 'important things.txt', '', '285498b0131743c8a2a1617070b8d571', '385', '2024-10-07 16:44:23.946348')]
+2024-11-07 12:12:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 530, in protocol_build_reply
+    files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 652, in get_deleted_files
+    file = File(**file)
+           ^^^^^^^^^^^^
+TypeError: modules.client_requests.File() argument after ** must be a mapping, not tuple
+2024-11-07 12:12:21 - [('8543bd0c38b944429a8eae2271bd8612', '2bdbe49e730b4533a04f91cb526bd9c6', 'important things.txt', '', '285498b0131743c8a2a1617070b8d571', '385', '2024-10-07 16:44:23.946348')]
+2024-11-07 12:12:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 542, in protocol_build_reply
+    directories = cr.get_deleted_directories(clients[tid].id, directory, search_filter)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 664, in get_deleted_directories
+    directory = Directory(**directory)
+                ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: modules.client_requests.Directory() argument after ** must be a mapping, not tuple
+2024-11-07 12:12:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\2bdbe49e730b4533a04f91cb526bd9c6'
+2024-11-07 12:13:56 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:13:57 - Main thread: before accepting ...
+2024-11-07 12:13:59 - New Client number 1 from ('127.0.0.1', 60203)
+2024-11-07 12:14:00 - []
+2024-11-07 12:14:00 - []
+2024-11-07 12:14:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\fedbad5b66ed4059ade59a87df7f0963'
+2024-11-07 12:14:09 - [{'id': 'f32da6604a8f47f4ada32b7b128003a8', 'sname': 'fedbad5b66ed4059ade59a87df7f0963', 'fname': 'Infinity5.ahk', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '514', 'last_edit': '2024-10-07 16:44:23.957347'}]
+2024-11-07 12:14:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 530, in protocol_build_reply
+    files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 655, in get_deleted_files
+    parsed_files.append(f"{file.fname}~{last_edit}~{file.size}~{file.id}~{"".join((db.get_user_values(file.owner_id, ["username"])))}~{"~".join(get_perms(user_id, file.id))}")
+                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can only join an iterable
+2024-11-07 12:14:09 - []
+2024-11-07 12:14:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\fedbad5b66ed4059ade59a87df7f0963'
+2024-11-07 12:14:41 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:14:49 - Main thread: before accepting ...
+2024-11-07 12:14:52 - New Client number 1 from ('127.0.0.1', 60209)
+2024-11-07 12:15:31 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\9c233dd003b64c308af79bed19e98feb'
+2024-11-07 12:16:45 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:16:46 - Main thread: before accepting ...
+2024-11-07 12:16:51 - New Client number 1 from ('127.0.0.1', 60218)
+2024-11-07 12:17:01 - []
+2024-11-07 12:17:01 - []
+2024-11-07 12:17:26 - []
+2024-11-07 12:17:26 - []
+2024-11-07 12:17:57 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:17:58 - Main thread: before accepting ...
+2024-11-07 12:18:03 - New Client number 1 from ('127.0.0.1', 60225)
+2024-11-07 12:18:03 - []
+2024-11-07 12:18:03 - []
+2024-11-07 12:18:09 - [{'id': '307637c393234961a2dd4d1ab646691f', 'sname': '289568e3c4654d89a96debd9228affb4', 'fname': 'client.pyw', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '60271', 'last_edit': '2024-10-07 16:45:58.993724'}]
+2024-11-07 12:18:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 530, in protocol_build_reply
+    files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 654, in get_deleted_files
+    parsed_files.append(f"{file.fname}~{last_edit}~{file.size}~{file.id}~{"".join((db.get_user_values(file.owner_id, ["username"])))}~{"~".join(get_perms(user_id, file.id))}")
+                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can only join an iterable
+2024-11-07 12:18:09 - []
+2024-11-07 12:22:00 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:22:01 - Main thread: before accepting ...
+2024-11-07 12:22:04 - New Client number 1 from ('127.0.0.1', 60235)
+2024-11-07 12:22:08 - [{'id': '307637c393234961a2dd4d1ab646691f', 'sname': '289568e3c4654d89a96debd9228affb4', 'fname': 'client.pyw', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '60271', 'last_edit': '2024-10-07 16:45:58.993724'}, {'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-10-02 00:42:15.919720'}]
+2024-11-07 12:22:08 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 530, in protocol_build_reply
+    files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 654, in get_deleted_files
+    parsed_files.append(f"{file.fname}~{last_edit}~{file.size}~{file.id}~{"".join((db.get_user_values(file.owner_id, ["username"])))}~{"~".join(get_perms(user_id, file.id))}")
+                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can only join an iterable
+2024-11-07 12:22:08 - []
+2024-11-07 12:33:53 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:33:54 - Main thread: before accepting ...
+2024-11-07 12:33:56 - New Client number 1 from ('127.0.0.1', 60245)
+2024-11-07 12:33:58 - [{'id': '307637c393234961a2dd4d1ab646691f', 'sname': '289568e3c4654d89a96debd9228affb4', 'fname': 'client.pyw', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '60271', 'last_edit': None}, {'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': None}]
+2024-11-07 12:33:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 530, in protocol_build_reply
+    files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 654, in get_deleted_files
+    parsed_files.append(f"{file.fname}~{last_edit}~{file.size}~{file.id}~{"".join((db.get_user_values(file.owner_id, ["username"])))}~{"~".join(get_perms(user_id, file.id))}")
+                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can only join an iterable
+2024-11-07 12:33:58 - []
+2024-11-07 12:34:35 - [{'id': '307637c393234961a2dd4d1ab646691f', 'sname': '289568e3c4654d89a96debd9228affb4', 'fname': 'client.pyw', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '60271', 'last_edit': None}, {'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': None}]
+2024-11-07 12:35:13 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:35:14 - Main thread: before accepting ...
+2024-11-07 12:35:26 - New Client number 1 from ('127.0.0.1', 60251)
+2024-11-07 12:35:27 - [{'id': '307637c393234961a2dd4d1ab646691f', 'sname': '289568e3c4654d89a96debd9228affb4', 'fname': 'client.pyw', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '60271', 'last_edit': '2024-12-07 12:18:06.834512'}, {'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}]
+2024-11-07 12:36:02 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:36:03 - Main thread: before accepting ...
+2024-11-07 12:36:09 - New Client number 1 from ('127.0.0.1', 60258)
+2024-11-07 12:36:10 - [{'id': '307637c393234961a2dd4d1ab646691f', 'sname': '289568e3c4654d89a96debd9228affb4', 'fname': 'client.pyw', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '60271', 'last_edit': '2024-12-07 12:18:06.834512'}, {'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}]
+2024-11-07 12:36:10 - []
+2024-11-07 12:38:54 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 12:38:55 - Main thread: before accepting ...
+2024-11-07 12:39:00 - New Client number 1 from ('127.0.0.1', 60266)
+2024-11-07 12:39:02 - [{'id': '307637c393234961a2dd4d1ab646691f', 'sname': '289568e3c4654d89a96debd9228affb4', 'fname': 'client.pyw', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '60271', 'last_edit': '2024-12-07 12:18:06.834512'}, {'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}]
+2024-11-07 12:39:02 - []
+2024-11-07 12:39:08 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}]
+2024-11-07 12:39:08 - []
+2024-11-07 12:39:12 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}]
+2024-11-07 12:39:12 - []
+2024-11-07 12:39:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 641, in protocol_build_reply
+    cr.delete_directory(file_id)
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 539, in delete_directory
+    delete_directory(sub_dir["id"])
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 550, in delete_directory
+    db.delete_directory(id)
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 338, in delete_directory
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-11-07 13:35:40 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 13:35:41 - Main thread: before accepting ...
+2024-11-07 13:35:43 - New Client number 1 from ('127.0.0.1', 60282)
+2024-11-07 13:35:43 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f0ddd5553c5e4d2089fd9382cd56b2b8'
+2024-11-07 13:35:45 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f0ddd5553c5e4d2089fd9382cd56b2b8'
+2024-11-07 13:35:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f0ddd5553c5e4d2089fd9382cd56b2b8'
+2024-11-07 13:35:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f0ddd5553c5e4d2089fd9382cd56b2b8'
+2024-11-07 13:35:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f0ddd5553c5e4d2089fd9382cd56b2b8'
+2024-11-07 13:35:51 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f0ddd5553c5e4d2089fd9382cd56b2b8'
+2024-11-07 13:35:51 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f0ddd5553c5e4d2089fd9382cd56b2b8'
+2024-11-07 13:35:52 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f0ddd5553c5e4d2089fd9382cd56b2b8'
+2024-11-07 13:35:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 545, in delete_directory
+    os.remove(server_path + "\\cloud\\" + file.sname)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f0ddd5553c5e4d2089fd9382cd56b2b8'
+2024-11-07 13:35:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\5029347018564b09a6f1d0af12cdf700'
+2024-11-07 13:35:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\40fffbd499cc4e409891ee74aca3a23b'
+2024-11-07 13:35:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f0ddd5553c5e4d2089fd9382cd56b2b8'
+2024-11-07 13:36:09 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 13:36:09 - Main thread: before accepting ...
+2024-11-07 13:36:12 - New Client number 1 from ('127.0.0.1', 60288)
+2024-11-07 13:36:12 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\5029347018564b09a6f1d0af12cdf700'
+2024-11-07 13:36:12 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\40fffbd499cc4e409891ee74aca3a23b'
+2024-11-07 13:36:30 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}, {'id': '53de9c5429ca43d3a2054b2c1fd01b84', 'sname': '5029347018564b09a6f1d0af12cdf700', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:36:09.661033'}, {'id': 'e088e260c43a45c5976751240dbc577f', 'sname': '40fffbd499cc4e409891ee74aca3a23b', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:36:09.811702'}]
+2024-11-07 13:36:30 - [{'id': '35239ae41661467195cafed97126d256', 'name': 'fefew', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'd752d32d2edd498aa7eff41202335965', 'name': 'all - 1', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:36:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 783, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 542, in protocol_build_reply
+    directories = cr.get_deleted_directories(clients[tid].id, directory, search_filter)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 669, in get_deleted_directories
+    parsed_directories.append(f"{directory.name}~{directory.id}~{last_change}~{size}~{owner_name}~{"~".join(get_perms(user_id, directory.id))}")
+                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can only join an iterable
+2024-11-07 13:36:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\5029347018564b09a6f1d0af12cdf700'
+2024-11-07 13:36:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\40fffbd499cc4e409891ee74aca3a23b'
+2024-11-07 13:38:28 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 13:38:29 - Main thread: before accepting ...
+2024-11-07 13:38:38 - New Client number 1 from ('127.0.0.1', 60296)
+2024-11-07 13:38:45 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}, {'id': '1dda555cc91940c6a81255a58f16c397', 'sname': 'e37f542474ce46ffb291c20e83d53d81', 'fname': 'English Recording.mp3', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '536064', 'last_edit': '2024-12-07 13:38:43.668913'}]
+2024-11-07 13:38:45 - [{'id': '35239ae41661467195cafed97126d256', 'name': 'fefew', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'd752d32d2edd498aa7eff41202335965', 'name': 'all - 1', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:38:50 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}, {'id': '1dda555cc91940c6a81255a58f16c397', 'sname': 'e37f542474ce46ffb291c20e83d53d81', 'fname': 'English Recording.mp3', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '536064', 'last_edit': '2024-12-07 13:38:43.668913'}]
+2024-11-07 13:38:50 - [{'id': '35239ae41661467195cafed97126d256', 'name': 'fefew', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'd752d32d2edd498aa7eff41202335965', 'name': 'all - 1', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:38:53 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}, {'id': '1dda555cc91940c6a81255a58f16c397', 'sname': 'e37f542474ce46ffb291c20e83d53d81', 'fname': 'English Recording.mp3', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '536064', 'last_edit': '2024-12-07 13:38:43.668913'}]
+2024-11-07 13:38:53 - [{'id': '35239ae41661467195cafed97126d256', 'name': 'fefew', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'd752d32d2edd498aa7eff41202335965', 'name': 'all - 1', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:39:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:39:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:39:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:39:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:39:09 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}, {'id': '1dda555cc91940c6a81255a58f16c397', 'sname': 'e37f542474ce46ffb291c20e83d53d81', 'fname': 'English Recording.mp3', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '536064', 'last_edit': '2024-12-07 13:38:43.668913'}]
+2024-11-07 13:39:09 - [{'id': '35239ae41661467195cafed97126d256', 'name': 'fefew', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'd752d32d2edd498aa7eff41202335965', 'name': 'all - 1', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'dec54872b50742629c76fcaaed90eb52', 'name': 'hi', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'cbedc8ee71704277af24d3180585b9e6', 'name': 'fewfew', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'e15e2bc4cef94a3bb753337cb91bafdc', 'name': 'share', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:39:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:39:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:39:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:39:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:39:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:39:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:39:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:39:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:39:12 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:39:12 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:39:12 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:39:12 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:39:16 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}, {'id': '1dda555cc91940c6a81255a58f16c397', 'sname': 'e37f542474ce46ffb291c20e83d53d81', 'fname': 'English Recording.mp3', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '536064', 'last_edit': '2024-12-07 13:38:43.668913'}]
+2024-11-07 13:39:16 - [{'id': '35239ae41661467195cafed97126d256', 'name': 'fefew', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'd752d32d2edd498aa7eff41202335965', 'name': 'all - 1', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'dec54872b50742629c76fcaaed90eb52', 'name': 'hi', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'cbedc8ee71704277af24d3180585b9e6', 'name': 'fewfew', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'e15e2bc4cef94a3bb753337cb91bafdc', 'name': 'share', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:39:16 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:39:16 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:39:16 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:39:16 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:39:16 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:39:16 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:39:16 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:39:16 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 558, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:16 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 13:41:17 - Main thread: before accepting ...
+2024-11-07 13:41:23 - New Client number 1 from ('127.0.0.1', 60304)
+2024-11-07 13:41:23 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}, {'id': '1dda555cc91940c6a81255a58f16c397', 'sname': 'e37f542474ce46ffb291c20e83d53d81', 'fname': 'English Recording.mp3', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '536064', 'last_edit': '2024-12-07 13:38:43.668913'}, {'id': '9b31b390d994468794e54517d3e20838', 'sname': '6e9e7bf6753640519b7b5ebb34a79aa3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.783052'}, {'id': 'b1009dfef04742efb1576b58cf6e0b85', 'sname': 'bd97643b3a2e4753b01bfa72206fa233', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.796452'}, {'id': '9f36226c23d54295a69a532323616564', 'sname': 'ed75633351fe432290f11096966610ed', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.809923'}, {'id': '51e778f47b9e4038871a7e71d5a91875', 'sname': 'c0e77be7ec73400a817024c40e0b6ad3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'dec54872b50742629c76fcaaed90eb52', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.896126'}]
+2024-11-07 13:41:23 - [{'id': '35239ae41661467195cafed97126d256', 'name': 'fefew', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'd752d32d2edd498aa7eff41202335965', 'name': 'all - 1', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'dec54872b50742629c76fcaaed90eb52', 'name': 'hi', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'cbedc8ee71704277af24d3180585b9e6', 'name': 'fewfew', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'e15e2bc4cef94a3bb753337cb91bafdc', 'name': 'share', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:25 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:25 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:25 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:25 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:26 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}, {'id': '1dda555cc91940c6a81255a58f16c397', 'sname': 'e37f542474ce46ffb291c20e83d53d81', 'fname': 'English Recording.mp3', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '536064', 'last_edit': '2024-12-07 13:38:43.668913'}, {'id': '9b31b390d994468794e54517d3e20838', 'sname': '6e9e7bf6753640519b7b5ebb34a79aa3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.783052'}, {'id': 'b1009dfef04742efb1576b58cf6e0b85', 'sname': 'bd97643b3a2e4753b01bfa72206fa233', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.796452'}, {'id': '9f36226c23d54295a69a532323616564', 'sname': 'ed75633351fe432290f11096966610ed', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.809923'}, {'id': '51e778f47b9e4038871a7e71d5a91875', 'sname': 'c0e77be7ec73400a817024c40e0b6ad3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'dec54872b50742629c76fcaaed90eb52', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.896126'}]
+2024-11-07 13:41:26 - [{'id': '35239ae41661467195cafed97126d256', 'name': 'fefew', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'd752d32d2edd498aa7eff41202335965', 'name': 'all - 1', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'dec54872b50742629c76fcaaed90eb52', 'name': 'hi', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'cbedc8ee71704277af24d3180585b9e6', 'name': 'fewfew', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'e15e2bc4cef94a3bb753337cb91bafdc', 'name': 'share', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:41:26 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:26 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:26 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:26 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:26 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:26 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:26 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:26 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:29 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:29 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:29 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:29 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:30 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}, {'id': '1dda555cc91940c6a81255a58f16c397', 'sname': 'e37f542474ce46ffb291c20e83d53d81', 'fname': 'English Recording.mp3', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '536064', 'last_edit': '2024-12-07 13:38:43.668913'}, {'id': '9b31b390d994468794e54517d3e20838', 'sname': '6e9e7bf6753640519b7b5ebb34a79aa3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.783052'}, {'id': 'b1009dfef04742efb1576b58cf6e0b85', 'sname': 'bd97643b3a2e4753b01bfa72206fa233', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.796452'}, {'id': '9f36226c23d54295a69a532323616564', 'sname': 'ed75633351fe432290f11096966610ed', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.809923'}, {'id': '51e778f47b9e4038871a7e71d5a91875', 'sname': 'c0e77be7ec73400a817024c40e0b6ad3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'dec54872b50742629c76fcaaed90eb52', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.896126'}]
+2024-11-07 13:41:30 - [{'id': '35239ae41661467195cafed97126d256', 'name': 'fefew', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'd752d32d2edd498aa7eff41202335965', 'name': 'all - 1', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'dec54872b50742629c76fcaaed90eb52', 'name': 'hi', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'cbedc8ee71704277af24d3180585b9e6', 'name': 'fewfew', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'e15e2bc4cef94a3bb753337cb91bafdc', 'name': 'share', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:41:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:32 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:32 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:32 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:32 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:38 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:38 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:38 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:38 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:40 - [{'id': '1aeadf82fc054905b7927feeee183df5', 'sname': 'b0c9c72fdbaf46a08cffe9b7aff43bdb', 'fname': 'dewdew', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 12:22:06.821156'}, {'id': '1dda555cc91940c6a81255a58f16c397', 'sname': 'e37f542474ce46ffb291c20e83d53d81', 'fname': 'English Recording.mp3', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '536064', 'last_edit': '2024-12-07 13:38:43.668913'}, {'id': '9b31b390d994468794e54517d3e20838', 'sname': '6e9e7bf6753640519b7b5ebb34a79aa3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.783052'}, {'id': 'b1009dfef04742efb1576b58cf6e0b85', 'sname': 'bd97643b3a2e4753b01bfa72206fa233', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.796452'}, {'id': '9f36226c23d54295a69a532323616564', 'sname': 'ed75633351fe432290f11096966610ed', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.809923'}, {'id': '51e778f47b9e4038871a7e71d5a91875', 'sname': 'c0e77be7ec73400a817024c40e0b6ad3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'dec54872b50742629c76fcaaed90eb52', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:41:17.896126'}]
+2024-11-07 13:41:40 - [{'id': '35239ae41661467195cafed97126d256', 'name': 'fefew', 'parent': 'd752d32d2edd498aa7eff41202335965', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'd752d32d2edd498aa7eff41202335965', 'name': 'all - 1', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'dec54872b50742629c76fcaaed90eb52', 'name': 'hi', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'cbedc8ee71704277af24d3180585b9e6', 'name': 'fewfew', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'e15e2bc4cef94a3bb753337cb91bafdc', 'name': 'share', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': '7e8bf2a8daa14ce99a81fe8c44a939d1', 'name': 'hthtrhrt', 'parent': 'fb4724f654b14542b75eb03e99004243', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'fb4724f654b14542b75eb03e99004243', 'name': 'rename', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:41:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:41 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:41 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:41 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:41 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:41:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:41:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:41:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:41:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:42:04 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 13:42:04 - Main thread: before accepting ...
+2024-11-07 13:42:09 - New Client number 1 from ('127.0.0.1', 60310)
+2024-11-07 13:42:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:42:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:42:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:42:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:42:11 - [{'id': '9b31b390d994468794e54517d3e20838', 'sname': '6e9e7bf6753640519b7b5ebb34a79aa3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:42:04.586926'}, {'id': 'b1009dfef04742efb1576b58cf6e0b85', 'sname': 'bd97643b3a2e4753b01bfa72206fa233', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:42:04.601263'}, {'id': '9f36226c23d54295a69a532323616564', 'sname': 'ed75633351fe432290f11096966610ed', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:42:04.615246'}, {'id': '51e778f47b9e4038871a7e71d5a91875', 'sname': 'c0e77be7ec73400a817024c40e0b6ad3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'dec54872b50742629c76fcaaed90eb52', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:42:04.716769'}]
+2024-11-07 13:42:11 - []
+2024-11-07 13:42:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:42:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:42:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:42:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:42:14 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:42:14 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:42:14 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:42:14 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:42:14 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:42:17 - [{'id': '9b31b390d994468794e54517d3e20838', 'sname': '6e9e7bf6753640519b7b5ebb34a79aa3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'e15e2bc4cef94a3bb753337cb91bafdc', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:42:04.586926'}, {'id': 'b1009dfef04742efb1576b58cf6e0b85', 'sname': 'bd97643b3a2e4753b01bfa72206fa233', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:42:04.601263'}, {'id': '9f36226c23d54295a69a532323616564', 'sname': 'ed75633351fe432290f11096966610ed', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'cbedc8ee71704277af24d3180585b9e6', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:42:04.615246'}, {'id': '51e778f47b9e4038871a7e71d5a91875', 'sname': 'c0e77be7ec73400a817024c40e0b6ad3', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': 'dec54872b50742629c76fcaaed90eb52', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:42:04.716769'}]
+2024-11-07 13:42:17 - []
+2024-11-07 13:42:17 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e9e7bf6753640519b7b5ebb34a79aa3'
+2024-11-07 13:42:17 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd97643b3a2e4753b01bfa72206fa233'
+2024-11-07 13:42:17 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ed75633351fe432290f11096966610ed'
+2024-11-07 13:42:17 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 559, in directory_size
+    total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\genericpath.py", line 62, in getsize
+    return os.stat(filename).st_size
+           ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c0e77be7ec73400a817024c40e0b6ad3'
+2024-11-07 13:43:37 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 13:43:38 - Main thread: before accepting ...
+2024-11-07 13:44:51 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 13:44:52 - Main thread: before accepting ...
+2024-11-07 13:45:02 - New Client number 1 from ('127.0.0.1', 60325)
+2024-11-07 13:45:03 - []
+2024-11-07 13:45:03 - []
+2024-11-07 13:45:11 - [{'id': '0bdff06f05fe4f84b037dfce5051cebb', 'sname': '6ea4b02f74a84feba0c4abdac983495a', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:45:09.768533'}]
+2024-11-07 13:45:11 - []
+2024-11-07 13:45:21 - [{'id': '0bdff06f05fe4f84b037dfce5051cebb', 'sname': '6ea4b02f74a84feba0c4abdac983495a', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:45:09.768533'}]
+2024-11-07 13:45:21 - [{'id': '7e8bf2a8daa14ce99a81fe8c44a939d1', 'name': 'hthtrhrt', 'parent': 'fb4724f654b14542b75eb03e99004243', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'fb4724f654b14542b75eb03e99004243', 'name': 'rename', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:45:28 - [{'id': '0bdff06f05fe4f84b037dfce5051cebb', 'sname': '6ea4b02f74a84feba0c4abdac983495a', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:45:09.768533'}]
+2024-11-07 13:45:28 - [{'id': '7e8bf2a8daa14ce99a81fe8c44a939d1', 'name': 'hthtrhrt', 'parent': 'fb4724f654b14542b75eb03e99004243', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'fb4724f654b14542b75eb03e99004243', 'name': 'rename', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:45:33 - [{'id': '0bdff06f05fe4f84b037dfce5051cebb', 'sname': '6ea4b02f74a84feba0c4abdac983495a', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:45:09.768533'}]
+2024-11-07 13:45:33 - [{'id': '7e8bf2a8daa14ce99a81fe8c44a939d1', 'name': 'hthtrhrt', 'parent': 'fb4724f654b14542b75eb03e99004243', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'fb4724f654b14542b75eb03e99004243', 'name': 'rename', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:45:35 - [{'id': '0bdff06f05fe4f84b037dfce5051cebb', 'sname': '6ea4b02f74a84feba0c4abdac983495a', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:45:09.768533'}]
+2024-11-07 13:45:35 - [{'id': '7e8bf2a8daa14ce99a81fe8c44a939d1', 'name': 'hthtrhrt', 'parent': 'fb4724f654b14542b75eb03e99004243', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'fb4724f654b14542b75eb03e99004243', 'name': 'rename', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:45:44 - [{'id': '0bdff06f05fe4f84b037dfce5051cebb', 'sname': '6ea4b02f74a84feba0c4abdac983495a', 'fname': '\u05d4\u05e6\u05e2\u05ea \u05e4\u05e8\u05d5\u05d9\u05d9\u05e7\u05d8.docx', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571', 'size': '15056', 'last_edit': '2024-12-07 13:45:09.768533'}]
+2024-11-07 13:45:44 - [{'id': '7e8bf2a8daa14ce99a81fe8c44a939d1', 'name': 'hthtrhrt', 'parent': 'fb4724f654b14542b75eb03e99004243', 'owner_id': '285498b0131743c8a2a1617070b8d571'}, {'id': 'fb4724f654b14542b75eb03e99004243', 'name': 'rename', 'parent': '', 'owner_id': '285498b0131743c8a2a1617070b8d571'}]
+2024-11-07 13:53:57 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 13:53:58 - Main thread: before accepting ...
+2024-11-07 13:54:51 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 13:54:52 - Main thread: before accepting ...
+2024-11-07 13:54:53 - New Client number 1 from ('127.0.0.1', 60345)
+2024-11-07 13:57:18 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 13:57:19 - Main thread: before accepting ...
+2024-11-07 13:57:26 - New Client number 1 from ('127.0.0.1', 60353)
+2024-11-07 14:00:05 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 14:00:06 - Main thread: before accepting ...
+2024-11-07 14:00:20 - New Client number 1 from ('127.0.0.1', 60361)
+2024-11-07 14:05:03 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 14:05:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 588, in clean_db
+    elif is_deleted(file["id"]) and str_to_date(db.get_deleted_time) < datetime.now():
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 310, in str_to_date
+    return datetime.strptime(str, format)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: strptime() argument 1 must be str, not function
+2024-11-07 14:05:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 588, in clean_db
+    elif is_deleted(file["id"]) and str_to_date(db.get_deleted_time) < datetime.now():
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 310, in str_to_date
+    return datetime.strptime(str, format)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: strptime() argument 1 must be str, not function
+2024-11-07 14:05:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 588, in clean_db
+    elif is_deleted(file["id"]) and str_to_date(db.get_deleted_time) < datetime.now():
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 310, in str_to_date
+    return datetime.strptime(str, format)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: strptime() argument 1 must be str, not function
+2024-11-07 14:05:04 - Main thread: before accepting ...
+2024-11-07 14:05:33 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 14:05:34 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 588, in clean_db
+    elif is_deleted(file["id"]) and str_to_date(db.get_deleted_time(file["id"])) < datetime.now():
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 310, in str_to_date
+    return datetime.strptime(str, format)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: strptime() argument 1 must be str, not tuple
+2024-11-07 14:05:34 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 588, in clean_db
+    elif is_deleted(file["id"]) and str_to_date(db.get_deleted_time(file["id"])) < datetime.now():
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 310, in str_to_date
+    return datetime.strptime(str, format)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: strptime() argument 1 must be str, not tuple
+2024-11-07 14:05:34 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 588, in clean_db
+    elif is_deleted(file["id"]) and str_to_date(db.get_deleted_time(file["id"])) < datetime.now():
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 310, in str_to_date
+    return datetime.strptime(str, format)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: strptime() argument 1 must be str, not tuple
+2024-11-07 14:05:34 - Main thread: before accepting ...
+2024-11-07 14:06:13 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 14:06:21 - Main thread: before accepting ...
+2024-11-07 14:06:28 - New Client number 1 from ('127.0.0.1', 60383)
+2024-11-07 14:07:42 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 14:07:43 - Main thread: before accepting ...
+2024-11-07 14:08:50 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 14:08:52 - Main thread: before accepting ...
+2024-11-07 14:08:52 - New Client number 1 from ('127.0.0.1', 60396)
+2024-11-07 14:11:20 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 14:11:21 - Main thread: before accepting ...
+2024-11-07 14:11:27 - New Client number 1 from ('127.0.0.1', 60404)
+2024-11-07 14:12:39 - New Client number 2 from ('127.0.0.1', 60406)
+2024-11-07 14:14:14 - Client 1 Exit
+2024-11-07 14:14:15 - Client 2 Exit
+2024-11-07 14:14:18 - New Client number 3 from ('127.0.0.1', 60410)
+2024-11-07 14:14:44 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 14:14:45 - Main thread: before accepting ...
+2024-11-07 14:14:51 - New Client number 1 from ('127.0.0.1', 60416)
+2024-11-07 14:16:58 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 14:16:59 - Main thread: before accepting ...
+2024-11-07 14:17:26 - New Client number 1 from ('127.0.0.1', 60419)
+2024-11-07 14:17:47 - Client 1 Exit
+2024-11-07 15:00:51 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 15:00:53 - Main thread: before accepting ...
+2024-11-07 15:01:18 - New Client number 1 from ('127.0.0.1', 60435)
+2024-11-07 15:02:04 - Client 1 Exit
+2024-11-07 15:02:20 - New Client number 2 from ('127.0.0.1', 60448)
+2024-11-07 15:04:04 - Client 2 Exit
+2024-11-07 15:04:07 - New Client number 3 from ('127.0.0.1', 60456)
+2024-11-07 15:04:26 - Client 3 Exit
+2024-11-07 15:04:29 - New Client number 4 from ('127.0.0.1', 60462)
+2024-11-07 15:07:52 - Client 4 Exit
+2024-11-07 15:09:02 - Server listening on ('0.0.0.0', 31026)
+2024-11-07 15:09:03 - Main thread: before accepting ...
+2024-11-07 15:09:07 - New Client number 1 from ('127.0.0.1', 60467)

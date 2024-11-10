@@ -3,7 +3,7 @@
 # Import libraries
 import os
 import sqlite3
-from datetime import datetime
+from datetime import datetime, timedelta
 import traceback
 
 # Announce global vars
@@ -12,6 +12,7 @@ users_table = "Users"
 files_table = "Files"
 permissions_table = "Permissions"
 directories_table = "Directories"
+deleted_table = "Deleted"
 
 def create_tables():
     conn = sqlite3.connect(database)
@@ -19,11 +20,13 @@ def create_tables():
     #cursor.execute(f"DROP TABLE {users_table}")
     #cursor.execute(f"DROP TABLE {files_table}")
     #cursor.execute(f"DROP TABLE {directories_table}")
-    cursor.execute(f"DROP TABLE {permissions_table}")
+    #cursor.execute(f"DROP TABLE {permissions_table}")
+    cursor.execute(f"DROP TABLE {deleted_table}")
     #cursor.execute(f"CREATE TABLE IF NOT EXISTS {users_table} (id TEXT PRIMARY KEY, email TEXT UNIQUE, username TEXT UNIQUE, password TEXT, salt TEXT, last_code INTEGER, valid_until TEXT, verified BOOL, subscription_level INT, admin_level INT, cookie TEXT UNIQUE, cookie_expiration TEXT)")
     #cursor.execute(f"CREATE TABLE IF NOT EXISTS {files_table} (id TEXT PRIMARY KEY, sname TEXT UNIQUE, fname TEXT, parent TEXT, owner_id TEXT, size TEXT, last_edit TEXT)")
     #cursor.execute(f"CREATE TABLE IF NOT EXISTS {directories_table} (id TEXT PRIMARY KEY, name TEXT, parent TEXT, owner_id TEXT)")
-    cursor.execute(f"CREATE TABLE IF NOT EXISTS {permissions_table} (id TEXT PRIMARY KEY,  file_id TEXT, owner_id TEXT, user_id TEXT, read BOOL, write BOOL, del BOOL, rename BOOL, download BOOL, share BOOL)")
+    #cursor.execute(f"CREATE TABLE IF NOT EXISTS {permissions_table} (id TEXT PRIMARY KEY,  file_id TEXT, owner_id TEXT, user_id TEXT, read BOOL, write BOOL, del BOOL, rename BOOL, download BOOL, share BOOL)")
+    cursor.execute(f"CREATE TABLE IF NOT EXISTS {deleted_table} (id TEXT PRIMARY KEY, owner_id TEXT, time_to_delete TEXT)")
     conn.commit()
     conn.close()
 
@@ -241,10 +244,22 @@ def delete_file(id):
     """
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
-    cursor.execute(f"DELETE FROM {files_table} WHERE id = ?", (id,))
-    cursor.execute(f"DELETE FROM {permissions_table} WHERE file_id = ?", (id,))
-    conn.commit()
-    conn.close()
+    
+    cursor.execute(f"SELECT * FROM {deleted_table} WHERE id = ?", (id,))
+    ans = cursor.fetchall()
+    if ans == []:
+        sql = f"INSERT INTO {deleted_table} (id, owner_id, time_to_delete) VALUES (?, ?, ?)"
+        cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+        conn.commit()
+        conn.close()
+        return False
+    else:
+        cursor.execute(f"DELETE FROM {files_table} WHERE id = ?", (id,))
+        cursor.execute(f"DELETE FROM {permissions_table} WHERE file_id = ?", (id,))
+        cursor.execute(f"DELETE FROM {deleted_table} WHERE id = ?", (id,))
+        conn.commit()
+        conn.close()
+        return True
 
 def get_all_files():
     conn = sqlite3.connect(database)
@@ -315,11 +330,22 @@ def delete_directory(id):
     """
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
-    cursor.execute(f"DELETE FROM {directories_table} WHERE id = ?", (id,))
-    cursor.execute(f"DELETE FROM {files_table} WHERE parent = ?", (id,))
-    cursor.execute(f"DELETE FROM {permissions_table} WHERE file_id = ?", (id,))
-    conn.commit()
-    conn.close()
+    cursor.execute(f"SELECT * FROM {deleted_table} WHERE id = ?", (id,))
+    ans = cursor.fetchall()
+    if ans == []:
+        sql = f"INSERT INTO {deleted_table} (id, owner_id, time_to_delete) VALUES (?, ?, ?)"
+        cursor.execute(sql, [id, get_directory(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+        conn.commit()
+        conn.close()
+        return False
+    else:
+        cursor.execute(f"DELETE FROM {directories_table} WHERE id = ?", (id,))
+        cursor.execute(f"DELETE FROM {files_table} WHERE parent = ?", (id,))
+        cursor.execute(f"DELETE FROM {permissions_table} WHERE file_id = ?", (id,))
+        cursor.execute(f"DELETE FROM {deleted_table} WHERE id = ?", (id,))
+        conn.commit()
+        conn.close()
+        return True
 
 def update_directory(id, fields, new_values):
     """
@@ -510,3 +536,51 @@ def get_directory_contents(directory_id):
             contents.append((full_path, os.path.join(subdirectory_name, relative_path)))
     
     return contents
+
+
+def get_deleted_files(owner_id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT f.* FROM {files_table} f JOIN {deleted_table} p ON f.id = p.id WHERE p.owner_id = ?", (owner_id,))
+    ans = cursor.fetchall()
+    conn.close()
+    files = []
+    for file in ans:
+        file = row_to_dict_file(file)
+        file["last_edit"] = get_deleted_time(file["id"])[0]
+        files.append(file)
+    return files
+
+def get_deleted_directories(owner_id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT d.* FROM {directories_table} d JOIN {deleted_table} p ON d.id = p.id WHERE p.owner_id = ?", (owner_id,))
+    ans = cursor.fetchall()
+    conn.close()
+    directories = []
+    for directory in ans:
+        directories.append(row_to_dict_directory(directory))
+    return directories
+
+def get_deleted(id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM {deleted_table} WHERE id = ?", (id,))
+    row = cursor.fetchone()
+    conn.close()
+    return row
+
+def get_deleted_time(id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT time_to_delete FROM {deleted_table} WHERE id = ?", (id,))
+    row = cursor.fetchone()
+    conn.close()
+    return row
+
+def recover(id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute(f"DELETE FROM {deleted_table} WHERE id = ?", (id,))
+    conn.commit()
+    conn.close()

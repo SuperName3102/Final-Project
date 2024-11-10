@@ -19,8 +19,8 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>41</width>
-      <height>41</height>
+      <width>71</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
@@ -105,7 +105,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <pointsize>13</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -256,10 +256,10 @@
    <widget class="QPushButton" name="shared_button">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>130</x>
       <y>20</y>
-      <width>141</width>
-      <height>41</height>
+      <width>131</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -372,6 +372,49 @@
      <string />
     </property>
    </widget>
+   <widget class="QPushButton" name="recently_deleted_button">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>60</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true" />
+    </property>
+    <property name="text">
+     <string> Deleted</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <zorder>main_text</zorder>
+   <zorder>logout_button</zorder>
+   <zorder>upload_button</zorder>
+   <zorder>message</zorder>
+   <zorder>cwd</zorder>
+   <zorder>scrollFiles</zorder>
+   <zorder>storage_label</zorder>
+   <zorder>storage_remaining</zorder>
+   <zorder>search</zorder>
+   <zorder>shared_button</zorder>
+   <zorder>sort</zorder>
+   <zorder>label</zorder>
+   <zorder>file_upload_progress</zorder>
+   <zorder>recently_deleted_button</zorder>
+   <zorder>user_button</zorder>
+   <zorder>total_files</zorder>
   </widget>
  </widget>
  <resources />

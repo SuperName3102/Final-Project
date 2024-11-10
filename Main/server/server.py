@@ -520,6 +520,30 @@ def protocol_build_reply(request, tid, sock):
         reply = "PASD"
         for directory in directories:
             reply += f"|{directory}"
+    
+    elif (code == "GEDP"):
+        directory = fields[1]
+        if (len(fields) == 3): search_filter = fields[2]
+        else: search_filter = None
+        if (v.check_illegal_chars(fields[1:])):
+            return f"ERRR|102|Invalid chars used"
+        files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+
+        reply = "PADH"
+        for file in files:
+            reply += f"|{file}"
+
+    elif (code == "GEDD"):
+        directory = fields[1]
+        if (len(fields) == 3): search_filter = fields[2]
+        else: search_filter = None
+        if (v.check_illegal_chars(fields[1:])):
+            return f"ERRR|102|Invalid chars used"
+        directories = cr.get_deleted_directories(clients[tid].id, directory, search_filter)
+
+        reply = "PADD"
+        for directory in directories:
+            reply += f"|{directory}"
 
     elif (code == "MOVD"):
         directory_id = fields[1]
@@ -740,6 +764,19 @@ def protocol_build_reply(request, tid, sock):
         reply = f"SHRM|{name}|Share removed"
             
     
+    elif code == "RECO":
+        id = fields[1]
+        if(not cr.can_delete(clients[tid].id, id)):
+            reply = Errors.NO_PERMS.value
+        elif cr.get_file_fname(id) is not None:
+            name = cr.get_file_fname(id)
+        elif cr.get_dir_name(id) is not None:
+            name = cr.get_dir_name(id)
+        if name is None:
+            reply = Errors.FILE_NOT_FOUND.value
+        else:
+            cr.recover(id)
+            reply = f"RECR|{name}|was recovered!"
     else:
         reply = Errors.UNKNOWN.value
         fields = ''

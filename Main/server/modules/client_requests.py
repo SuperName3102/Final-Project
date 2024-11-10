@@ -338,7 +338,7 @@ def get_files(owner_id, parent, name_filter=None):
     parsed_files = []
     for file in files:
         file = File(**file)
-        if (name_filter is None or name_filter.lower() in file.fname.lower()) and file.parent == parent:
+        if (name_filter is None or name_filter.lower() in file.fname.lower()) and file.parent == parent and not is_deleted(file.id):
             last_edit = str_to_date(file.last_edit)
             if file.owner_id == owner_id:
                 to_add = f"{file.fname}~{last_edit}~{file.size}~{file.id}"
@@ -358,7 +358,7 @@ def get_directories(owner_id, parent, name_filter=None):
     parsed_directories = []
     for directory in directories:
         directory = Directory(**directory)
-        if (name_filter is None or name_filter.lower() in directory.name.lower()) and directory.parent == parent:
+        if (name_filter is None or name_filter.lower() in directory.name.lower()) and directory.parent == parent and not is_deleted(directory.id):
             size = directory_size(directory.owner_id, directory.id)
             last_change = get_directory_last_change(directory.id)
             if last_change == datetime.min: last_change = ""
@@ -455,9 +455,8 @@ def rename_directory(id, new_name):
 
 def delete_file(id):
     sname = get_file_sname(id)
-    if os.path.exists(f"{server_path}\\cloud\\{sname}"):
+    if os.path.exists(f"{server_path}\\cloud\\{sname}") and db.delete_file(id):
         os.remove(f"{server_path}\\cloud\\{sname}")
-    db.delete_file(id)
 
 def create_folder(name, parent, owner_id):
     directory = Directory(None, name, parent, owner_id)
@@ -540,15 +539,16 @@ def delete_directory(id):
             delete_directory(sub_dir["id"])
 
     files = db.get_directory_files(id)
-    for file in files:
-        try:
-            file = File(**file)
-            os.remove(server_path + "\\cloud\\" + file.sname)
-        except:
-            print(traceback.format_exc())
-            continue
+    if db.delete_directory(id):
+        for file in files:
+            try:
+                file = File(**file)
+                os.remove(server_path + "\\cloud\\" + file.sname)
+            except:
+                print(traceback.format_exc())
+                continue
 
-    db.delete_directory(id)
+    
 
 def directory_size(user_id, id):
     total = 0
@@ -584,6 +584,9 @@ def clean_db():
         try:
             if not os.path.exists(server_path + "\\cloud\\" + file["sname"]) or (db.get_directory(file["parent"]) is None and file["parent"] != ""):
                 db.delete_file(file["id"])
+                db.delete_file(file["id"])
+            elif is_deleted(file["id"]) and str_to_date(db.get_deleted_time(file["id"])[0]) < datetime.now():
+                db.delete_file(file["id"])
         except:
             print(traceback.format_exc())
             continue
@@ -591,6 +594,7 @@ def clean_db():
     for directory in db_directories:
         try:
             if db.get_user(directory["owner_id"]) is None or (db.get_directory(directory["parent"]) is None and directory["parent"] != ""):
+                db.delete_directory(directory["id"])
                 db.delete_directory(directory["id"])
         except:
             print(traceback.format_exc())
@@ -624,7 +628,7 @@ def get_share_files(user_id, parent, name_filter=None):
     parsed_files = []
     for file in files:
         file = File(**file)
-        if (name_filter is None or name_filter.lower() in file.fname.lower()):
+        if ((name_filter is None or name_filter.lower() in file.fname.lower()) and not is_deleted(file.id)):
             last_edit = str_to_date(file.last_edit)
             parsed_files.append(f"{file.fname}~{last_edit}~{file.size}~{file.id}~{"".join((db.get_user_values(file.owner_id, ["username"])))}~{"~".join(get_perms(user_id, file.id))}")
         
@@ -636,12 +640,37 @@ def get_share_directories(user_id, parent, name_filter=None):
     parsed_directories = []
     for directory in directories:
         directory = Directory(**directory)
-        if (name_filter is None or name_filter.lower() in directory.name.lower()):
+        if ((name_filter is None or name_filter.lower() in directory.name.lower()) and not is_deleted(directory.id)):
             owner_name = "".join((db.get_user_values(directory.owner_id, ["username"])))
             size = directory_size(directory.owner_id, directory.id)
             last_change = get_directory_last_change(directory.id)
             if last_change == datetime.min: last_change = ""
             parsed_directories.append(f"{directory.name}~{directory.id}~{last_change}~{size}~{owner_name}~{"~".join(get_perms(user_id, directory.id))}")
+
+    return parsed_directories
+
+def get_deleted_files(user_id, parent, name_filter=None):
+    files = db.get_deleted_files(user_id)
+    parsed_files = []
+    for file in files:
+        file = File(**file)
+        if (name_filter is None or name_filter.lower() in file.fname.lower()):
+            last_edit = str_to_date(file.last_edit)
+            parsed_files.append(f"{file.fname}~{last_edit}~{file.size}~{file.id}")
+        
+    return parsed_files
+
+
+def get_deleted_directories(user_id, parent, name_filter=None):
+    directories = db.get_deleted_directories(user_id)
+    parsed_directories = []
+    for directory in directories:
+        directory = Directory(**directory)
+        if (name_filter is None or name_filter.lower() in directory.name.lower()):
+            size = directory_size(directory.owner_id, directory.id)
+            last_change = db.get_deleted_time(directory.id)[0]
+            if last_change == datetime.min: last_change = ""
+            parsed_directories.append(f"{directory.name}~{directory.id}~{last_change}~{size}")
 
     return parsed_directories
 
@@ -725,6 +754,12 @@ def zip_directory(directory_id):
     zip_buffer.seek(0)
     return zip_buffer
 
+
+def is_deleted(id):
+    return db.get_deleted(id) != None
+
+def recover(id):
+    db.recover(id)
 
 if __name__ == "__main__":
     main()

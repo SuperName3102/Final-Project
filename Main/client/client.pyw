@@ -27,6 +27,7 @@ cookie_path = f"{os.getcwd()}/cookies/user.cookie"
 
 search_filter = None
 share = False
+deleted = False
 sort = "Name"
 
 window_geometry = QRect(350, 200, 1000, 550)
@@ -78,35 +79,42 @@ class FileButton(QPushButton):
     def contextMenuEvent(self, event: QContextMenuEvent):
         menu = QMenu(self)
         
-        if self.id != None and self.perms[4] == "True":
+        if self.id != None and self.perms[4] == "True" and not deleted:
             action = menu.addAction(" Download")
             action.triggered.connect(self.download)
             action.setIcon(QIcon(assets_path + "\\download.svg"))
 
         if self.id != None:
             if self.perms[2] == "True":
-                action = menu.addAction(" Delete")
-                action.triggered.connect(self.delete)
-                action.setIcon(QIcon(assets_path + "\\delete.svg"))
+                if deleted and user["cwd"] != "": pass
+                else:
+                    action = menu.addAction(" Delete")
+                    action.triggered.connect(self.delete)
+                    action.setIcon(QIcon(assets_path + "\\delete.svg"))
 
-            if self.perms[3] == "True":
+            if self.perms[3] == "True" and not deleted:
                 action = menu.addAction(" Rename")
                 action.triggered.connect(self.rename)
                 action.setIcon(QIcon(assets_path + "\\change_user.svg"))
             
-            if self.perms[5] == "True":
+            if self.perms[5] == "True" and not deleted:
                 action = menu.addAction(" Share")
                 action.triggered.connect(self.share)
                 action.setIcon(QIcon(assets_path + "\\share.svg"))
             
-            if share and user["cwd"] == "":
+            if share and user["cwd"] == "" and not deleted:
                 action = menu.addAction(" Remove")
                 action.triggered.connect(self.remove)
                 action.setIcon(QIcon(assets_path + "\\remove.svg"))
 
-        if not share:
+        if not share and not deleted:
             action = menu.addAction(" New Folder")
             action.triggered.connect(new_folder)
+            action.setIcon(QIcon(assets_path + "\\new_account.svg"))
+        
+        if deleted and user["cwd"] == "":
+            action = menu.addAction(" Recover")
+            action.triggered.connect(self.recover)
             action.setIcon(QIcon(assets_path + "\\new_account.svg"))
 
         action = menu.addAction(" Search")
@@ -150,6 +158,10 @@ class FileButton(QPushButton):
     
     def remove(self):
         send_data(B"SHRE|" + self.id.encode())
+        handle_reply()
+    
+    def recover(self):
+        send_data(b"RECO|" + self.id.encode())
         handle_reply()
 
 
@@ -239,7 +251,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 if isinstance(widget, QPushButton):
                     icon = widget.icon()
                     if not icon.isNull():
-                        if widget.text() == "": base = 40
+                        if widget.text() == "": base = 60
                         else: base = 16
                         new_icon_size = int(base * (width_ratio + height_ratio) / 2)  # Adjust the base icon size (e.g., 24)
                         widget.setIconSize(QSize(new_icon_size, new_icon_size))
@@ -414,7 +426,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def user_page(self):
         try:
-            if user["cwd"] == "" and share: 
+            if user["cwd"] == "" and deleted:
+                files = get_deleted_files(search_filter)
+                directories = get_deleted_directories(search_filter)
+            elif user["cwd"] == "" and share: 
                 files = get_cwd_shared_files(search_filter)
                 directories = get_cwd_shared_directories(search_filter)
             else:
@@ -431,14 +446,15 @@ class MainWindow(QtWidgets.QMainWindow):
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             
-            if share: 
+            if share or deleted: 
                 self.setAcceptDrops(False)
-                self.sort.addItem(" Owner")
             else: 
                 self.setAcceptDrops(True)
+            if share:
+                self.sort.addItem(" Owner")
             self.set_cwd()
         
-            if sort ==  "Name" or not share and sort == "Owner":
+            if sort == "Name" or not share and sort == "Owner":
                 self.sort.setCurrentIndex(0)
                 files = sorted(files, key=lambda x: x.split("~")[0].lower())
                 directories = sorted(directories, key=lambda x: x.split("~")[0].lower())
@@ -478,23 +494,39 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.shared_button.clicked.connect(change_share)
             self.shared_button.setIcon(QIcon(assets_path+"\\share.svg"))
-            if share:
-                try: self.shared_button.setIcon((QIcon(user_icon)))
-                except: pass
-                self.shared_button.setText(" Your files")
-                self.upload_button.hide()
-
+            
+            self.recently_deleted_button.clicked.connect(change_deleted)
+            self.recently_deleted_button.setIcon(QIcon(assets_path+"\\delete.svg"))
+            
             self.sort.currentIndexChanged.connect(lambda: change_sort(self.sort.currentText()[1:]))
         
             
             self.user_button.clicked.connect(lambda: self.manage_account())
             self.logout_button.clicked.connect(logout)
             self.logout_button.setIcon(QIcon(assets_path+"\\logout.svg"))
-            self.upload_button.clicked.connect(lambda: self.file_dialog())
             self.upload_button.setIcon(QIcon(assets_path+"\\upload.svg"))
             
+            if deleted:
+                try: self.upload_button.setIcon((QIcon(user_icon)))
+                except: pass
+                self.upload_button.setText(" Your files")
+                self.upload_button.clicked.connect(change_deleted)
+                self.recently_deleted_button.hide()
+                self.shared_button.hide()
+            
+            elif share:
+                try: self.upload_button.setIcon((QIcon(user_icon)))
+                except: pass
+                self.upload_button.setText(" Your files")
+                self.upload_button.clicked.connect(change_share)
+                self.shared_button.hide()
+                self.recently_deleted_button.hide()
+            
+            else:
+                self.upload_button.clicked.connect(lambda: self.file_dialog())
+            
             self.user_button.setIconSize(QSize(self.user_button.size().width(), self.user_button.size().height()))
-            self.user_button.setStyleSheet("padding:0px;border-radius:5px;")
+            self.user_button.setStyleSheet("padding:0px;border-radius:5px;border:none;background-color:transparent")
             
             try:
                 self.user_button.setIcon((QIcon(user_icon)))
@@ -522,8 +554,10 @@ class MainWindow(QtWidgets.QMainWindow):
             scroll_container_widget = QWidget()
             scroll_layout = QGridLayout()
             scroll_layout.setSpacing(5)
-            if not share: button = FileButton(["File Name", "Last Change", "Size"])
-            else: button = FileButton(["File Name", "Last Change", "Size", "Owner"])
+            if deleted: button = FileButton(["File Name", "Deleted In", "Size"])
+            elif share: button = FileButton(["File Name", "Last Change", "Size", "Owner"])
+            else: button = FileButton(["File Name", "Last Change", "Size"])
+                
             button.setStyleSheet(f"background-color:#001122;border-radius: 3px;border:1px solid darkgrey;border-radius: 3px;")
             scroll_layout.addWidget(button)
 
@@ -763,6 +797,7 @@ class MainWindow(QtWidgets.QMainWindow):
         if (hasattr(self, "cwd")):
             self.cwd.setStyleSheet("color: yellow;")
             if share: self.cwd.setText(f"Shared > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
+            elif deleted: self.cwd.setText(f"Deleted > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
             else: self.cwd.setText(f"{user['username']} > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
 
 
@@ -1029,6 +1064,11 @@ def change_share():
     share = not share
     move_dir("")
 
+def change_deleted():
+    global deleted
+    deleted = not deleted
+    move_dir("")
+
 def change_sort(new_sort):
     global sort
     sort = new_sort
@@ -1255,14 +1295,16 @@ def exit_program():
 def force_exit():
     sys.exit()
 
-def get_cwd_files(filter=None):
-    to_send = b"GETP" + b"|" + user["cwd"].encode()
+
+def get_files(type, filter):
+    get_types = {1: [b"GETP", b"PATH"], 2: [b"GESP", b"PASH"], 3: [b"GEDP", b"PADH"], 4: [b"GETD", b"PATD"], 5: [b"GESD", b"PASD"], 6: [b"GEDD", b"PADD"]}
+    to_send = get_types[type][0] + b"|" + user["cwd"].encode()
     if filter:
         to_send += b"|" + filter.encode()
     send_data(to_send)
     data = recv_data()
     try:
-        if (data[:4] != b"PATH"):
+        if (data[:4] != get_types[type][1]):
             return []
         data = data.decode()
         return data.split("|")[1:]
@@ -1270,51 +1312,24 @@ def get_cwd_files(filter=None):
         print(traceback.format_exc())
         return []
 
+def get_cwd_files(filter=None):
+    return get_files(1, filter)
+
 def get_cwd_shared_files(filter=None):
-    to_send = b"GESP" + b"|" + user["cwd"].encode()
-    if filter:
-        to_send += b"|" + filter.encode()
-    send_data(to_send)
-    data = recv_data()
-    try:
-        if (data[:4] != b"PASH"):
-            return []
-        data = data.decode()
-        return data.split("|")[1:]
-    except Exception:
-        print(traceback.format_exc())
-        return []
+    return get_files(2, filter)
+
+def get_deleted_files(filter=None):
+    return get_files(3, filter)
 
 
 def get_cwd_directories(filter=None):
-    to_send = b"GETD" + b"|" + user["cwd"].encode()
-    if filter:
-        to_send += b"|" + filter.encode()
-    send_data(to_send)
-    data = recv_data()
-    try:
-        if (data[:4] != b"PATD"):
-            return []
-        data = data.decode()
-        return data.split("|")[1:]
-    except Exception:
-        print(traceback.format_exc())
-        return []
+    return get_files(4, filter)
 
 def get_cwd_shared_directories(filter=None):
-    to_send = b"GESD" + b"|" + user["cwd"].encode()
-    if filter:
-        to_send += b"|" + filter.encode()
-    send_data(to_send)
-    data = recv_data()
-    try:
-        if (data[:4] != b"PASD"):
-            return []
-        data = data.decode()
-        return data.split("|")[1:]
-    except Exception:
-        print(traceback.format_exc())
-        return []
+    return get_files(5, filter)
+
+def get_deleted_directories(filter=None):
+    return get_files(6, filter)
 
 def save_cookie(cookie):
     os.makedirs(os.getcwd() + "\\cookies")
@@ -1394,7 +1409,7 @@ def protocol_parse_reply(reply):
             window.set_message("Password reset successful, please sign in again with your new password")
 
         elif code == 'LUGR':   # Logout was performed
-            global share
+            global share, deleted
             user["email"] = "guest"
             user["username"] = "guest"
             user["subscription_level"] = 0
@@ -1402,6 +1417,7 @@ def protocol_parse_reply(reply):
             user["parent_cwd"] = ""
             user["cwd_name"] = ""
             share = False
+            deleted = False
             to_show = f'Logout succesfull'
             window.main_page()
             window.set_message(to_show)
@@ -1519,6 +1535,11 @@ def protocol_parse_reply(reply):
         elif code == "SHRM":
             name = fields[1]
             to_show = f"Succefully remove {name} from share"
+            window.user_page()
+            window.set_message(to_show)
+        elif code == "RECR":
+            name = fields[1]
+            to_show = f"Succefully recovered {name}"
             window.user_page()
             window.set_message(to_show)
             
