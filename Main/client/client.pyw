@@ -1332,7 +1332,8 @@ def get_deleted_directories(filter=None):
     return get_files(6, filter)
 
 def save_cookie(cookie):
-    os.makedirs(os.getcwd() + "\\cookies")
+    if not os.path.exists(os.getcwd() + "\\cookies"):
+        os.makedirs(os.getcwd() + "\\cookies")
     with open(cookie_path, "w") as f:
         f.write(cookie)
 
@@ -1601,7 +1602,8 @@ def connect_server(new_ip, new_port):
         set_secret(shared_secret)
         window.main_page()
         send_cookie()
-        window.set_message(f'Connect succeeded {ip} {port}')
+        if user["username"] != "guest":
+            window.set_message(f'Connect succeeded {ip} {port}')
         return sock
     except:
         window.not_connected_page()
