@@ -23,6 +23,7 @@ all_to_die = False
 len_field = 4
 sep = "|"
 clients = {}
+files_in_use = []
 chunk_size = 65536
 cloud_path = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud"
 user_icons_path = f"{os.path.dirname(os.path.abspath(__file__))}\\user icons"
@@ -78,6 +79,8 @@ def save_file(save_path, sock, tid):
                         f.write(data[4:])
                         bytes_written += len(data) - 4
                         break
+                    elif (data[:4] == b"STOP"):
+                        raise StopIteration("File upload stopping")
                     else:
                         t = threading.Thread(target=handle_simultaneous_request, args=(data, sock, tid))
                         t.start()
@@ -268,7 +271,7 @@ def protocol_build_reply(request, tid, sock):
     Performing actions for each different code
     Returning the reply to the client
     """
-    global clients
+    global clients, files_in_use
     if request is None:
         return None
     # Parse the reply and aplit it according to the protocol seperator
@@ -443,36 +446,46 @@ def protocol_build_reply(request, tid, sock):
         else:
             reply = Errors.LOGIN_DETAILS.value
 
-    elif (code == "FILS"):
+    elif (code == "FILS" or code == "UPFL"):
         file_name = fields[1]
-        save_loc = fields[2] + "/" + file_name
+        parent = fields[2]
         try:
             if (is_guest(tid)):
                 throw_file(sock, tid)
                 reply = Errors.NOT_LOGGED.value
-            elif (not cr.is_dir_owner(clients[tid].id, fields[2])):
+            elif (not cr.is_dir_owner(clients[tid].id, parent)):
                 throw_file(sock, tid)
                 reply = Errors.NO_PERMS.value
             elif (cr.get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
                 throw_file(sock, tid)
                 reply = Errors.MAX_STORAGE.value
-            elif os.path.isfile(save_loc):
-                throw_file(sock, tid)
-                reply = Errors.FILE_EXISTS.value
             else:
                 try:
-                    name = cr.gen_file_name()
-                    save_file(cloud_path + "\\" + name, sock, tid)
-                    size = os.path.getsize(cloud_path + "\\" + name)
-                    cr.new_file(name, file_name, clients[tid].cwd, clients[tid].id, size)
-                    reply = f"FILR|{file_name}|was saved succefully"
+                    if code == "UPFL":
+                        name = cr.get_file_sname(file_name)
+                        if os.path.exists(cloud_path + "\\" + name):
+                            os.remove(cloud_path + "\\" + name)
+                        save_file(cloud_path + "\\" + name, sock, tid)
+                        size = os.path.getsize(cloud_path + "\\" + name)
+                        cr.update_file_size(file_name, size)
+                        reply = f"UPFR|{file_name}|was updated succefully"
+                    else:
+                        name = cr.gen_file_name()
+                        save_file(cloud_path + "\\" + name, sock, tid)
+                        size = os.path.getsize(cloud_path + "\\" + name)
+                        cr.new_file(name, file_name, clients[tid].cwd, clients[tid].id, size)
+                        reply = f"FILR|{file_name}|was saved succefully"
                 except LimitExceeded:
                     throw_file(sock, tid)
                     reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
+                except StopIteration:
+                    throw_file(sock, tid)
+                    reply = f"STOR|{file_name}|File upload stopped"
         except Exception:
             print(traceback.format_exc())
             throw_file(sock, tid)
             reply = Errors.FILE_UPLOAD.value
+    
 
     elif (code == "GETP"):
         directory = fields[1]
@@ -632,6 +645,8 @@ def protocol_build_reply(request, tid, sock):
         file_id = fields[1]
         if(not cr.can_delete(clients[tid].id, file_id)):
             reply = Errors.NO_PERMS.value
+        elif file_id in files_in_use:
+            reply = Errors.IN_USE.value
         elif cr.get_file_fname(file_id) is not None:
             name = cr.get_file_fname(file_id)
             cr.delete_file(file_id)
@@ -683,9 +698,12 @@ def protocol_build_reply(request, tid, sock):
             reply = Errors.FILE_NOT_FOUND.value
         elif (os.path.getsize(file_path) > 10_000_000):
             reply = Errors.PREVIEW_SIZE.value
+        elif file_id in files_in_use:
+            reply = Errors.IN_USE.value
         else:
             try:
                 send_file_data(file_path, sock, tid)
+                files_in_use.append(file_id)
                 reply = f"VIER|{cr.get_file_fname(file_id)}|was viewed"
             except Exception:
                 reply = Errors.FILE_DOWNLOAD.value
@@ -777,6 +795,10 @@ def protocol_build_reply(request, tid, sock):
         else:
             cr.recover(id)
             reply = f"RECR|{name}|was recovered!"
+    elif code == "VIEE":
+        file_id = fields[1]
+        files_in_use.remove(file_id)
+        reply = f"VIRR|{file_id}|stop viewing"
     else:
         reply = Errors.UNKNOWN.value
         fields = ''
@@ -939,7 +961,7 @@ def handle_client(sock, tid, addr):
 def cleaner():
     while True:
         cr.clean_db()
-        time.sleep(30)
+        time.sleep(300)
 
 def main(addr):
     """
@@ -988,7 +1010,7 @@ def main(addr):
 
 if __name__ == '__main__':   # Run main
     cr.main()
-    sys.stdout = Logger()
+    #sys.stdout = Logger()
     port = 31026
     if len(sys.argv) == 2:
         port = sys.argv[1]

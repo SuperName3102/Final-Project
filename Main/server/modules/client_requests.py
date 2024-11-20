@@ -450,6 +450,9 @@ def is_dir_owner(owner_id, dir_id):
 def rename_file(id, new_name):
     db.update_file(id, ["fname"], new_name)
 
+def update_file_size(file_id, new_size):
+    db.update_file(file_id, "size", new_size)
+
 def rename_directory(id, new_name):
     db.update_directory(id, ["name"], new_name)
 

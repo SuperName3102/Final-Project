@@ -533,6 +533,10 @@ class MainWindow(QtWidgets.QMainWindow):
             except:
                 pass
             
+            self.stop_button.hide()
+            self.stop_button.clicked.connect(self.stop_upload)
+            self.stop_button.setIcon(QIcon(assets_path+"\\stop.svg"))
+            
             self.setGeometry(temp)
             self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
             self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
@@ -799,6 +803,10 @@ class MainWindow(QtWidgets.QMainWindow):
             if share: self.cwd.setText(f"Shared > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
             elif deleted: self.cwd.setText(f"Deleted > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
             else: self.cwd.setText(f"{user['username']} > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
+    
+    def stop_upload(self):
+        self.stop_button.setEnabled(False)
+        send_data(b"STOP")
 
 
 
@@ -812,14 +820,19 @@ class FileSenderThread(QThread):
     progress_reset = pyqtSignal(int)
     message = pyqtSignal(str)  # Signal to update the message
 
-    def __init__(self):
+    def __init__(self, cmd, file_id):
         super().__init__()
         self.files_uploaded = []
+        self.cmd = cmd
+        self.file_id = file_id
 
     def run(self):
         for file_path in file_queue:
-            file_name = file_path.split("/")[-1]  # Extract the file name
-            start_string = b'FILS|' + file_name.encode() + b"|" + user["cwd"].encode()
+            if self.file_id != None:
+                file_name = self.file_id
+            else:
+                file_name = file_path.split("/")[-1]  # Extract the file name
+            start_string = self.cmd.encode() + b'|' + file_name.encode() + b"|" + user["cwd"].encode()
             send_data(start_string)
             if not os.path.isfile(file_path):
                 self.error.emit("File path was not found")
@@ -860,29 +873,35 @@ class FileSenderThread(QThread):
                 
                 if code == 'ERRR':   # If server returned error show to user the error
                     self.error.emit(fields[2])
-                    print(fields[2])
                 elif code == 'FILR':
                     to_show = f'File {fields[1]} was uploaded'
                     self.files_uploaded.append(fields[1])
-                    print(to_show)
                     self.message.emit(to_show)  # Send message via signal
+                else:
+                    self.message.emit("File was changed!")
             except:
                 print(traceback.format_exc())
+        if self.file_id != None: os.remove(file_path.split("/")[-1])
         self.finished.emit() 
             
 
 
-def send_files():
+def send_files(cmd = "FILS", file_id = None):
     try: window.file_upload_progress.show()
     except: pass
     for child in window.findChildren(QPushButton):  # Find all QPushButton children
         child.setEnabled(False)
     window.sort.setEnabled(False)
-    thread = FileSenderThread()
+    window.stop_button.setEnabled(True)
+    window.stop_button.show()
+    thread = FileSenderThread(cmd, file_id)
 
     active_threads.append(thread)
-
-    thread.finished.connect(lambda: renable_buttons(f"{len(thread.files_uploaded)} Files uploaded: {", ".join(thread.files_uploaded)}"))
+    if file_id != None: 
+        thread.finished.connect(lambda: end_view(file_id))
+        thread.finished.connect(lambda: renable_buttons(f"File changes have been saved!"))
+    else:
+        thread.finished.connect(lambda: renable_buttons(f"{len(thread.files_uploaded)} Files uploaded: {", ".join(thread.files_uploaded)}"))
     thread.finished.connect(thread.deleteLater)
     thread.finished.connect(lambda: active_threads.remove(thread))
     
@@ -901,6 +920,8 @@ def renable_buttons(message):
     for child in window.findChildren(QPushButton):  # Find all QPushButton children
         child.setEnabled(True)
     window.sort.setEnabled(True)
+    window.stop_button.setEnabled(False)
+    window.stop_button.hide()
     window.user_page()
     window.set_message(message)
 
@@ -970,10 +991,8 @@ class FileSaverThread(QThread):
                             code = fields[0]
                             if code == 'ERRR':   # If server returned error show to user the error
                                 self.error.emit(fields[2])
-                                print(fields[2])
                             elif code == 'DOWR':
                                 to_show = f'File {fields[1]} was downloaded'
-                                print(to_show)
                                 self.message.emit(to_show)  # Send message via signal
                             break
                         except:
@@ -987,10 +1006,8 @@ class FileSaverThread(QThread):
                             
                 if code == 'ERRR':   # If server returned error show to user the error
                     self.error.emit(fields[2])
-                    print(fields[2])
                 elif code == 'DOWR':
                     to_show = f'File {fields[1]} was downloaded'
-                    print(to_show)
                     self.message.emit(to_show)  # Send message via signal
         except:
             print(traceback.format_exc())
@@ -1051,13 +1068,18 @@ def view_file(file_id, file_name):
         os.remove(save_path)
         return
     result = file_viewer_dialog("File Viewer", save_path)
-    if result:
-        print("File viewer opened and closed successfully.")
-    else:
-        print("File viewer did not function as expected.")
 
-    os.remove(save_path)
+    save = show_confirmation_dialog("Do you want to save changes?")
+    if save:
+        file_queue.extend([save_path])  # Add dropped files to the queue
+        send_files("UPFL", file_id)
+    else: 
+        os.remove(save_path)
+        end_view(file_id)
 
+def end_view(file_id):
+    send_data(b"VIEE|" + file_id.encode())
+    handle_reply()
 
 def change_share():
     global share
@@ -1543,9 +1565,21 @@ def protocol_parse_reply(reply):
             to_show = f"Succefully recovered {name}"
             window.user_page()
             window.set_message(to_show)
+        elif code == "UPFR":
+            name = fields[1]
+            to_show = f"Succefully saved changes to file {name}"
+            window.user_page()
+            window.set_message(to_show)
+        elif code == "VIRR":
+            pass
+        elif code == "STOR":
+            name = fields[1]
+            to_show = f"Upload of {name} stopped"
+            window.set_message(to_show)
+        else:
+            window.set_message("Unknown command " + code)
             
     except Exception as e:   # Error
-        print('Server replay bad format ' + str(e))
         print(traceback.format_exc())
     return to_show
 
@@ -1561,10 +1595,6 @@ def handle_reply():
 
         to_show = protocol_parse_reply(reply)
         
-        if to_show != '':   # If got a reply, show it in console
-            print('\n==========================================================')
-            print(f'  SERVER Reply: {to_show}')
-            print('==========================================================')
         # If exit request succeded, dissconnect
         if to_show == "Server acknowledged the exit message":
             print('Succefully exit')
@@ -1575,10 +1605,9 @@ def handle_reply():
             window.not_connected_page()
             window.set_error_message("Lost connection to server")
     except socket.error as err:   # General error handling
-        print(f'Got socket error: {err}')
+        print(traceback.format_exc())
         return
     except Exception as err:
-        print(f'General error: {err}')
         print(traceback.format_exc())
         return
 
@@ -1628,7 +1657,6 @@ def main():
         sock = connect_server(ip, port)
         sys.exit(app.exec())
     except Exception as e:
-        print("Error:" + str(e))
         print(traceback.format_exc())
 
 

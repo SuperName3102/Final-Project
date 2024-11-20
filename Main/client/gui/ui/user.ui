@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1234</width>
-    <height>686</height>
+    <width>1920</width>
+    <height>960</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -399,6 +399,36 @@
      </size>
     </property>
    </widget>
+   <widget class="QPushButton" name="stop_button">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>470</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true" />
+    </property>
+    <property name="text">
+     <string> Stop</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+   </widget>
    <zorder>main_text</zorder>
    <zorder>logout_button</zorder>
    <zorder>upload_button</zorder>
@@ -415,6 +445,7 @@
    <zorder>recently_deleted_button</zorder>
    <zorder>user_button</zorder>
    <zorder>total_files</zorder>
+   <zorder>stop_button</zorder>
   </widget>
  </widget>
  <resources />
