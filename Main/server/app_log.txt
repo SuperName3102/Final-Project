@@ -1,0 +1,19 @@
+2024-11-20 10:30:20 - Server listening on ('0.0.0.0', 31026)
+2024-11-20 10:30:20 - Main thread: before accepting ...
+2024-11-20 10:30:25 - New Client number 1 from ('127.0.0.1', 50953)
+2024-11-20 10:30:45 - Client 1 Exit
+2024-11-20 10:51:57 - Server listening on ('0.0.0.0', 31026)
+2024-11-20 10:52:02 - Main thread: before accepting ...
+2024-11-20 10:52:12 - New Client number 1 from ('127.0.0.1', 51376)
+2024-11-20 11:22:39 - Server listening on ('0.0.0.0', 31026)
+2024-11-20 11:22:39 - Main thread: before accepting ...
+2024-11-20 11:22:49 - New Client number 1 from ('127.0.0.1', 51477)
+2024-11-20 11:24:46 - New Client number 2 from ('172.16.12.21', 49905)
+2024-11-20 11:30:31 - Client 2 Exit
+2024-11-20 11:42:20 - Client 1 Exit
+2024-11-20 12:59:54 - Server listening on ('0.0.0.0', 31026)
+2024-11-20 12:59:55 - Main thread: before accepting ...
+2024-11-20 13:00:03 - New Client number 1 from ('127.0.0.1', 51825)
+2024-11-20 13:11:51 - Server listening on ('0.0.0.0', 31026)
+2024-11-20 13:11:52 - Main thread: before accepting ...
+2024-11-20 13:11:53 - New Client number 1 from ('127.0.0.1', 51902)

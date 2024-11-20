@@ -936,6 +936,10 @@ def handle_client(sock, tid, addr):
     clients[tid].user = "dead"
     sock.close()
 
+def cleaner():
+    while True:
+        cr.clean_db()
+        time.sleep(30)
 
 def main(addr):
     """
@@ -957,7 +961,8 @@ def main(addr):
     try:
         create_keys()
         load_keys()
-        cr.clean_db()
+        scheduler = threading.Thread(target=cleaner)
+        scheduler.start()
     except:
         srv_sock.close()
 
