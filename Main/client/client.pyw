@@ -9,7 +9,7 @@ from modules.file_viewer import *
 from modules.networking import *
 from modules.key_exchange import *
 
-import socket, sys, traceback, os
+import socket, sys, traceback, os, threading
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
@@ -141,35 +141,29 @@ class FileButton(QPushButton):
         new_name = new_name_dialog("Rename", "Enter new file name:", name)
         if new_name is not None:
             send_data(b"RENA|" + self.id.encode() + b"|" + name.encode() + b"|" + new_name.encode())
-            handle_reply()
 
     def delete(self):
         name = self.text().split(" | ")[0][1:]
         if show_confirmation_dialog("Are you sure you want to delete " + name):
             send_data(b"DELF|" + self.id.encode())
-            handle_reply()
 
     def share(self):
         name = self.text().split(" | ")[0][1:]
         user_email = new_name_dialog("Share", f"Enter email/username of the user you want to share {name} with:")
         if user_email is not None:
             send_data(b"SHRS|" + self.id.encode() + b"|" + user_email.encode())
-            handle_reply()
     
     def remove(self):
         send_data(B"SHRE|" + self.id.encode())
-        handle_reply()
     
     def recover(self):
         send_data(b"RECO|" + self.id.encode())
-        handle_reply()
 
 
 def new_folder():
     new_folder = new_name_dialog("New Folder", "Enter new folder name:")
     if new_folder is not None:
         send_data(b"NEWF|" + new_folder.encode())
-        handle_reply()
 
 
 def search():
@@ -828,6 +822,7 @@ class FileSenderThread(QThread):
 
     def run(self):
         for file_path in file_queue:
+            window.stop_button.setEnabled(True)
             if self.file_id != None:
                 file_name = self.file_id
             else:
@@ -848,23 +843,20 @@ class FileSenderThread(QThread):
                 with open(file_path, 'rb') as f:
                     for i in range(size // chunk_size):
                         data = f.read(chunk_size)
-                        send_data(b"FILD" + data)
+                        send_data(b"FILD|" + file_name.encode() + b"|" + user["cwd"].encode() + "|" + data)
                         sent += chunk_size
                         self.progress_reset.emit(size)
                         self.progress.emit(sent)  # Update progress bar
                         
                     data = f.read(left)
                     if data != b"":
-                        send_data(b'FILE' + data)
+                        send_data(b'FILE|' + file_name.encode() + b"|" + user["cwd"].encode() + "|" + data)
                         self.progress_reset.emit(size)
                         self.progress.emit(sent)  # Final progress update
             except:
                 print(traceback.format_exc())
                 return
 
-            reply = recv_data()
-            if reply is None:
-                return None
             try:
                 # Parse the reply and split it according to the protocol separator
                 reply = reply.decode()
@@ -946,8 +938,6 @@ def send_file(file_path):
                 send_data(b'FILE' + data)
     except:
             print(traceback.format_exc())
-    finally:
-        handle_reply()
                 
 class FileSaverThread(QThread):
     finished = pyqtSignal()  # Signal to notify that file sending is done
@@ -1056,8 +1046,6 @@ def save_file_data(save_loc):
                 data = b''
     except:
         print(traceback.format_exc())
-        handle_reply()
-    handle_reply()
 
 
 def view_file(file_id, file_name):
@@ -1079,7 +1067,6 @@ def view_file(file_id, file_name):
 
 def end_view(file_id):
     send_data(b"VIEE|" + file_id.encode())
-    handle_reply()
 
 def change_share():
     global share
@@ -1098,7 +1085,6 @@ def change_sort(new_sort):
 
 def move_dir(new_dir):
     send_data(f"MOVD|{new_dir}".encode())
-    handle_reply()
 
 
 def get_user_icon():
@@ -1108,7 +1094,6 @@ def get_user_icon():
 
 def get_used_storage():
     send_data(b"GEUS")
-    handle_reply()
 
 
 def upload_icon():
@@ -1129,12 +1114,10 @@ def change_username():
     new_name = new_name_dialog("Change Username", "Enter new  username:", name)
     if new_name is not None and new_name != name:
         send_data(b"CHUN|" + new_name.encode())
-        handle_reply()
 
 
 def subscribe(level):
     send_data(b"SUBL|" + str(level).encode())
-    handle_reply()
 
 
 def share_file(file_id, user_cred, read = "False", write = "False", delete = "False", rename = "False", download = "False", share = "False"):
@@ -1204,7 +1187,6 @@ def send_share_premissions(dialog, file_id, user_cred, read, write, delete, rena
     dialog.accept()
     to_send = f"SHRP|{file_id}|{user_cred}|{read}|{write}|{delete}|{rename}|{download}|{share}"
     send_data(to_send.encode())
-    handle_reply()
 
 # Begin server requests related functions
 
@@ -1216,10 +1198,8 @@ def login(cred, password, remember):
     items = [cred, password]
     send_string = build_req_string("LOGN", items)
     send_data(send_string)
-    handle_reply()
     if remember and (user["email"] == cred or user["username"] == cred):
         send_data(b"GENC")
-        handle_reply()
     
 
 
@@ -1231,7 +1211,6 @@ def logout():
     logged_in_user = {}
     send_string = build_req_string("LOGU")
     send_data(send_string)
-    handle_reply()
 
 
 def signup(email, username, password, confirm_password):
@@ -1242,7 +1221,6 @@ def signup(email, username, password, confirm_password):
 
     send_string = build_req_string("SIGU", items)
     send_data(send_string)
-    handle_reply()
 
 
 def reset_password(email):
@@ -1252,7 +1230,6 @@ def reset_password(email):
     items = [email]
     send_string = build_req_string("FOPS", items)
     send_data(send_string)
-    handle_reply()
 
 
 def password_recovery(email, code, new_password, confirm_new_password):
@@ -1262,7 +1239,6 @@ def password_recovery(email, code, new_password, confirm_new_password):
     items = [email, code, new_password, confirm_new_password]
     send_string = build_req_string("PASR", items)
     send_data(send_string)
-    handle_reply()
 
 
 def send_verification(email):
@@ -1272,7 +1248,6 @@ def send_verification(email):
     items = [email]
     send_string = build_req_string("SVER", items)
     send_data(send_string)
-    handle_reply()
 
 
 def verify(email, code):
@@ -1282,7 +1257,7 @@ def verify(email, code):
     items = [email, code]
     send_string = build_req_string("VERC", items)
     send_data(send_string)
-    handle_reply()
+
 
 
 def delete_user(email):
@@ -1293,7 +1268,6 @@ def delete_user(email):
         items = [email]
         send_string = build_req_string("DELU", items)
         send_data(send_string)
-        handle_reply()
 
 
 def confirm_account_deletion(email):
@@ -1312,7 +1286,6 @@ def exit_program():
     """
     send_string = build_req_string("EXIT")
     send_data(send_string)
-    handle_reply()
 
 def force_exit():
     sys.exit()
@@ -1611,7 +1584,10 @@ def handle_reply():
         print(traceback.format_exc())
         return
 
-
+def recieve_replies():
+    while True:
+        try: handle_reply()
+        except: continue
 
 # Main function and start of code
 def connect_server(new_ip, new_port):
@@ -1655,6 +1631,8 @@ def main():
         window.show()
         window.not_connected_page()
         sock = connect_server(ip, port)
+        recieve_loop = threading.Thread(target=recieve_replies)
+        recieve_loop.start()
         sys.exit(app.exec())
     except Exception as e:
         print(traceback.format_exc())

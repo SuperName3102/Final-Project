@@ -29,9 +29,46 @@ cloud_path = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud"
 user_icons_path = f"{os.path.dirname(os.path.abspath(__file__))}\\user icons"
 log = False
 
+bytes_recieved = 0
+bytes_sent = 0
+
+files_uploading = {}
+
 
 # User handling classes
-
+class File:
+    def __init__(self, file_id, parent, size, tid):
+        self.file_id = file_id
+        self.file_name = cr.get_file_sname(file_id)
+        self.parent = parent
+        self.uploading = True
+        self.size = size
+        self.tid = tid
+        
+        self.start_download()
+    
+    def start_download(self):
+        self.add_data(b"\0", self.size)
+    
+    def add_data(self, data, location_infile):
+        save_path = cloud_path + "\\" + self.file_name
+        lock_path = f"{save_path}.lock"
+        lock = FileLock(lock_path)
+        try:
+            with lock:
+                with open(save_path, 'wb') as f:
+                    f.seek(location_infile)
+                    f.write(data)
+                    f.flush()
+        except:
+            self.uploading = False
+    
+    def delete(self):
+        save_path = cloud_path + "\\" + self.file_name
+        lock_path = f"{save_path}.lock"
+        if os.path.exists(lock_path): os.remove(lock_path)
+        if os.path.exists(save_path): os.remove(save_path)
+        
 class Client:
     """
     Client class for handling a client
@@ -47,57 +84,22 @@ class Client:
         self.encryption = encryption
         self.cwd = f"{cloud_path}\\{self.user}"
 
-
-def save_file(save_path, sock, tid):
-    data = b''
-    lock_path = f"{save_path}.lock"
-    lock = FileLock(lock_path)
-    total_size = 0
+def check_limits(tid):
+    global bytes_recieved
     start = time.time()
-    bytes_written = 0
-    try:
-        with lock:
-            with open(save_path, 'wb') as f:
-                while True:
-                    data = recv_data(sock, tid)
-                    if not data:
-                        raise Exception
-                    total_size += len(data) - 4
-                    if (total_size > Limits(clients[tid].subscription_level).max_file_size * 1_000_000):
-                        raise LimitExceeded("File exceeded size limit")
+    while True:
+        current_time = time.time()
+        elapsed_time = current_time - start
+        if elapsed_time >= 1.0:
+            start = current_time
+            bytes_recieved = 0
+        
+        if bytes_recieved >= Limits(clients[tid].subscription_level).max_upload_speed * 1_000_000:
+            time_to_wait = 1.0 - elapsed_time
+            if time_to_wait > 0:
+                time.sleep(time_to_wait)
+        time.sleep(0.05)
 
-                    current_time = time.time()
-                    elapsed_time = current_time - start
-                    if elapsed_time >= 1.0:
-                        start = current_time
-                        bytes_written = 0
-
-                    if (data[:4] == b"FILD"):
-                        f.write(data[4:])
-                        bytes_written += len(data) - 4
-                    elif (data[:4] == b"FILE"):
-                        f.write(data[4:])
-                        bytes_written += len(data) - 4
-                        break
-                    elif (data[:4] == b"STOP"):
-                        raise StopIteration("File upload stopping")
-                    else:
-                        t = threading.Thread(target=handle_simultaneous_request, args=(data, sock, tid))
-                        t.start()
-                        continue
-
-                    if bytes_written >= Limits(clients[tid].subscription_level).max_upload_speed * 1_000_000:
-                        time_to_wait = 1.0 - elapsed_time
-                        if time_to_wait > 0:
-                            time.sleep(time_to_wait)
-                    data = b''
-                f.flush()
-    except LimitExceeded as e:
-        if os.path.exists(save_path):
-            os.remove(save_path)
-        if os.path.exists(lock_path):
-            os.remove(lock_path)
-        raise
 
 def handle_simultaneous_request(entire_data, sock ,tid):
     to_send, finish = handle_request(entire_data, tid, sock)
@@ -449,38 +451,31 @@ def protocol_build_reply(request, tid, sock):
     elif (code == "FILS" or code == "UPFL"):
         file_name = fields[1]
         parent = fields[2]
+        size = fields[3]
         try:
             if (is_guest(tid)):
-                throw_file(sock, tid)
                 reply = Errors.NOT_LOGGED.value
             elif (not cr.is_dir_owner(clients[tid].id, parent)):
-                throw_file(sock, tid)
                 reply = Errors.NO_PERMS.value
+            if (size > Limits(clients[tid].subscription_level).max_file_size * 1_000_000):
+                reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
             elif (cr.get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
-                throw_file(sock, tid)
                 reply = Errors.MAX_STORAGE.value
+            elif (tid in files_uploading.keys()):
+                reply = Errors.ALREADY_UPLOADING.value
             else:
-                try:
-                    if code == "UPFL":
-                        name = cr.get_file_sname(file_name)
-                        if os.path.exists(cloud_path + "\\" + name):
-                            os.remove(cloud_path + "\\" + name)
-                        save_file(cloud_path + "\\" + name, sock, tid)
-                        size = os.path.getsize(cloud_path + "\\" + name)
-                        cr.update_file_size(file_name, size)
-                        reply = f"UPFR|{file_name}|was updated succefully"
-                    else:
-                        name = cr.gen_file_name()
-                        save_file(cloud_path + "\\" + name, sock, tid)
-                        size = os.path.getsize(cloud_path + "\\" + name)
-                        cr.new_file(name, file_name, clients[tid].cwd, clients[tid].id, size)
-                        reply = f"FILR|{file_name}|was saved succefully"
-                except LimitExceeded:
-                    throw_file(sock, tid)
-                    reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
-                except StopIteration:
-                    throw_file(sock, tid)
-                    reply = f"STOR|{file_name}|File upload stopped"
+                if code == "UPFL":
+                    name = cr.get_file_sname(file_name)
+                    if os.path.exists(cloud_path + "\\" + name):
+                        os.remove(cloud_path + "\\" + name)
+                    files_uploading[tid] = File(name, parent, size, tid)
+                    cr.update_file_size(file_name, size)
+                    reply = f"UPFR|{file_name}|was updated succefully"
+                else:
+                    name = cr.gen_file_name()
+                    files_uploading[tid] = File(name, parent, size, tid)
+                    cr.new_file(name, file_name, parent, clients[tid].id, size)
+                    reply = f"FILR|{file_name}|Upload started"
         except Exception:
             print(traceback.format_exc())
             throw_file(sock, tid)
@@ -799,6 +794,12 @@ def protocol_build_reply(request, tid, sock):
         file_id = fields[1]
         files_in_use.remove(file_id)
         reply = f"VIRR|{file_id}|stop viewing"
+    elif code == "STOP":
+        file_id = fields[1]
+        if file_id in files_uploading.keys():
+            del files_uploading[file_id]
+        reply = f"STOR|{file_id}|File upload stopped"
+        
     else:
         reply = Errors.UNKNOWN.value
         fields = ''
@@ -916,6 +917,8 @@ def handle_client(sock, tid, addr):
     try:
         finish = False
         print(f'New Client number {tid} from {addr}')
+        limits_checker = threading.Thread(target=check_limits, args=(tid,))
+        limits_checker.start()
         start = recv_data(sock, tid)
         code = start.split(b"|")[0]
         clients[tid] = Client(tid, "guest", "guest", 0, 0, None, False)   # Setting client state
