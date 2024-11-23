@@ -577,7 +577,7 @@ def get_user_storage(id):
 def clean_db():
     for name in os.listdir(server_path + "\\cloud"):
         try:
-            if db.get_file(name) is None:
+            if db.get_file(name) is None and db.get_user(name) is None:
                 os.remove(server_path + "\\cloud\\" + name)
         except:
             print(traceback.format_exc())

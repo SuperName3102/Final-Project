@@ -35,3 +35,5 @@ class Errors(Enum):
     SELF_SHARE = f"ERRR|028|You cannot share with yourself"
     OWNER_SHARE = f"ERRR|029|You cannot share with owner"
     IN_USE = f"ERRR|030|File is currently in use"
+    ALREADY_UPLOADING = f"ERRR|031|File have already started uploading"
+    FILE_SIZE = f"ERRR|032|Invalid file size or seek location"

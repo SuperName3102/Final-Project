@@ -33,38 +33,47 @@ bytes_recieved = 0
 bytes_sent = 0
 
 files_uploading = {}
+send_limit = {}
+recieve_limit = {}
 
 
 # User handling classes
 class File:
-    def __init__(self, file_id, parent, size, tid):
-        self.file_id = file_id
-        self.file_name = cr.get_file_sname(file_id)
+    def __init__(self, name, parent, size, id):
+        self.name = name
         self.parent = parent
         self.uploading = True
         self.size = size
-        self.tid = tid
+        self.id = id
         
         self.start_download()
     
     def start_download(self):
-        self.add_data(b"\0", self.size)
+        save_path = cloud_path + "\\" + self.name
+        with open(save_path, 'wb') as f:
+            f.seek(self.size - 1)
+            f.write(b"\0")
+            f.flush()
     
     def add_data(self, data, location_infile):
-        save_path = cloud_path + "\\" + self.file_name
+        save_path = cloud_path + "\\" + self.name
         lock_path = f"{save_path}.lock"
         lock = FileLock(lock_path)
         try:
             with lock:
-                with open(save_path, 'wb') as f:
+                with open(save_path, 'r+b') as f:
                     f.seek(location_infile)
                     f.write(data)
                     f.flush()
         except:
+            print(traceback.format_exc())
             self.uploading = False
+        finally:
+            if os.path.exists(lock_path): os.remove(lock_path)
+            
     
     def delete(self):
-        save_path = cloud_path + "\\" + self.file_name
+        save_path = cloud_path + "\\" + self.name
         lock_path = f"{save_path}.lock"
         if os.path.exists(lock_path): os.remove(lock_path)
         if os.path.exists(save_path): os.remove(save_path)
@@ -85,7 +94,7 @@ class Client:
         self.cwd = f"{cloud_path}\\{self.user}"
 
 def check_limits(tid):
-    global bytes_recieved
+    global bytes_recieved, bytes_sent, recieve_limit, send_limit
     start = time.time()
     while True:
         current_time = time.time()
@@ -93,105 +102,62 @@ def check_limits(tid):
         if elapsed_time >= 1.0:
             start = current_time
             bytes_recieved = 0
-        
+            bytes_sent = 0
+            recieve_limit[tid] = [False, 0]
+            send_limit[tid] = [False, 0]
+            
         if bytes_recieved >= Limits(clients[tid].subscription_level).max_upload_speed * 1_000_000:
-            time_to_wait = 1.0 - elapsed_time
-            if time_to_wait > 0:
-                time.sleep(time_to_wait)
+            send_limit[tid] = [True, 1.0 - elapsed_time]
+        if bytes_sent >= Limits(clients[tid].subscription_level).max_download_speed * 1_000_000:
+            recieve_limit[tid] = [True, 1.0 - elapsed_time]
         time.sleep(0.05)
 
 
-def handle_simultaneous_request(entire_data, sock ,tid):
-    to_send, finish = handle_request(entire_data, tid, sock)
-    if to_send != None:
-        send_data(sock, tid, to_send)
-    if finish or to_send == None:
-        time.sleep(1)
-
-
-def throw_file(sock, tid):
-    data = b''
-    while True:
-        data = recv_data(sock, tid)
-        if not data:
-            raise Exception
-        if (data[:4] == b"FILD"):
-            pass
-        elif (data[:4] == b"FILE"):
-            break
-        else:
-            raise Exception
-        data = b''
-
-
-def send_file_data(file_path, sock, tid):
-    size = os.path.getsize(file_path)
-    left = size % chunk_size
-
+def send_file_data(file_path, id, sock, tid):
     lock_path = f"{file_path}.lock"
     lock = FileLock(lock_path)
 
-    start = time.time()
-    bytes_sent = 0
+    if not os.path.isfile(file_path):
+        raise Exception
+    size = os.path.getsize(file_path)
+    left = size % chunk_size
+    sent = 0
     try:
         with lock:
-            with open(file_path, 'rb+') as f:
-                for i in range(size//chunk_size):
+            with open(file_path, 'rb') as f:
+                for i in range(size // chunk_size):
+                    location_infile = f.tell()
                     data = f.read(chunk_size)
-
-                    current_time = time.time()
-                    elapsed_time = current_time - start
-
-                    if elapsed_time >= 1.0:
-                        start = current_time
-                        bytes_sent = 0
-
-                    send_data(sock, tid, b"RILD" + data)
-                    bytes_sent += len(data)
-                    if bytes_sent >= Limits(clients[tid].subscription_level).max_download_speed * 1_000_000:
-                        time_to_wait = 1.0 - elapsed_time
-                        if time_to_wait > 0:
-                            time.sleep(time_to_wait)
-
+                    send_data(sock, tid, f"RILD|{id}|{location_infile}|".encode() + data)
+                    sent += chunk_size 
+                location_infile = f.tell()
                 data = f.read(left)
-                if (data != b""):
-                    send_data(sock, tid, b'RILE' + data)
-
+                if data != b"":
+                    send_data(sock, tid, f"RILE|{id}|{location_infile}|".encode() + data)
     except:
         if os.path.exists(lock_path):
             os.remove(lock_path)
         raise
 
-def send_zip(zip_buffer, sock, tid):
+
+
+def send_zip(zip_buffer, id, sock, tid):
     size = len(zip_buffer.getbuffer())
     left = size % chunk_size
-
-    start = time.time()
-    bytes_sent = 0
+    sent = 0
     try:
-        for i in range(size//chunk_size):
+        for i in range(size // chunk_size):
+            location_infile = zip_buffer.tell()
             data = zip_buffer.read(chunk_size)
-
-            current_time = time.time()
-            elapsed_time = current_time - start
-
-            if elapsed_time >= 1.0:
-                start = current_time
-                bytes_sent = 0
-
-            send_data(sock, tid, b"RILD" + data)
-            bytes_sent += len(data)
-            if bytes_sent >= Limits(clients[tid].subscription_level).max_download_speed * 1_000_000:
-                time_to_wait = 1.0 - elapsed_time
-                if time_to_wait > 0:
-                    time.sleep(time_to_wait)
-
-        data = zip_buffer.read(left)
-        if (data != b""):
-            send_data(sock, tid, b'RILE' + data)
-
+            send_data(sock, tid, f"RILD|{id}|{location_infile}|".encode() + data)
+            sent += chunk_size 
+        location_infile = zip_buffer.tell()
+        data = zip_buffer.read(chunk_size)
+        if data != b"":
+            send_data(sock, tid, f"RILE|{id}|{location_infile}|".encode() + data)
     except:
         raise
+    
 
 def is_guest(tid):
     return clients[tid].user == "guest"
@@ -277,9 +243,12 @@ def protocol_build_reply(request, tid, sock):
     if request is None:
         return None
     # Parse the reply and aplit it according to the protocol seperator
-    fields = request.decode()
-    fields = fields.split("|")
-    code = fields[0]
+    fields = request
+    fields = fields.split(b"|")
+    code = fields[0].decode()
+    
+    if code != "FILD" and code != "FILE":
+        fields = request.decode().split("|")
 
     # Checking each indevidual code
     if code == 'EXIT':   # Client requests disconnection
@@ -451,7 +420,8 @@ def protocol_build_reply(request, tid, sock):
     elif (code == "FILS" or code == "UPFL"):
         file_name = fields[1]
         parent = fields[2]
-        size = fields[3]
+        size = int(fields[3])
+        id = fields[4]
         try:
             if (is_guest(tid)):
                 reply = Errors.NOT_LOGGED.value
@@ -461,25 +431,50 @@ def protocol_build_reply(request, tid, sock):
                 reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
             elif (cr.get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
                 reply = Errors.MAX_STORAGE.value
-            elif (tid in files_uploading.keys()):
+            elif (id in files_uploading.keys()):
                 reply = Errors.ALREADY_UPLOADING.value
             else:
                 if code == "UPFL":
                     name = cr.get_file_sname(file_name)
                     if os.path.exists(cloud_path + "\\" + name):
                         os.remove(cloud_path + "\\" + name)
-                    files_uploading[tid] = File(name, parent, size, tid)
+                    files_uploading[id] = File(name, parent, size, id)
                     cr.update_file_size(file_name, size)
                     reply = f"UPFR|{file_name}|was updated succefully"
                 else:
                     name = cr.gen_file_name()
-                    files_uploading[tid] = File(name, parent, size, tid)
+                    files_uploading[id] = File(name, parent, size, id)
                     cr.new_file(name, file_name, parent, clients[tid].id, size)
-                    reply = f"FILR|{file_name}|Upload started"
+                    reply = f"FISS|{file_name}|Upload started"
         except Exception:
             print(traceback.format_exc())
-            throw_file(sock, tid)
             reply = Errors.FILE_UPLOAD.value
+    
+    elif (code == "FILD" or code == "FILE"):
+        id = fields[1].decode()
+        location_infile = int(fields[2].decode())
+        data = request[4 + len(id) + len(str(location_infile)) + 3:]
+        if id in files_uploading.keys():
+            file = files_uploading[id]
+        else: return Errors.FILE_NOT_FOUND.value
+        
+        if (is_guest(tid)):
+            reply = Errors.NOT_LOGGED.value
+        elif (not cr.is_dir_owner(clients[tid].id, file.parent)):
+            reply = Errors.NO_PERMS.value
+        elif (file.size > Limits(clients[tid].subscription_level).max_file_size * 1_000_000):
+            reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
+        elif (cr.get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
+            reply = Errors.MAX_STORAGE.value
+        else:
+            if location_infile + len(data) > file.size:
+                return Errors.FILE_SIZE.value
+            file.add_data(data, location_infile)
+            if code == "FILE": 
+                reply = f"FILR|{id}|File finished uploading"
+                if id in files_uploading.keys():
+                    del files_uploading[id]
+            else: reply = ""
     
 
     elif (code == "GETP"):
@@ -570,8 +565,7 @@ def protocol_build_reply(request, tid, sock):
             return reply
         elif (cr.get_dir_name(file_id) != None):
             zip_buffer = cr.zip_directory(file_id)
-            send_data(sock, tid, str(len(zip_buffer.getbuffer())).encode())
-            send_zip(zip_buffer, sock, tid)
+            send_zip(zip_buffer, file_id, sock, tid)
             zip_buffer.close()
             reply = f"DOWR|{cr.get_dir_name(file_id)}|was downloaded"
             return reply
@@ -583,7 +577,7 @@ def protocol_build_reply(request, tid, sock):
             reply = Errors.FILE_NOT_FOUND.value
         else:
             try:
-                send_file_data(file_path, sock, tid)
+                send_file_data(file_path, file_id, sock, tid)
                 reply = f"DOWR|{cr.get_file_fname(file_id)}|was downloaded"
             except Exception:
                 reply = Errors.FILE_DOWNLOAD.value
@@ -614,26 +608,21 @@ def protocol_build_reply(request, tid, sock):
             reply = f"RENR|{name}|{new_name}|File renamed succefully"
 
     elif (code == "GICO"):
-        if (os.path.isfile(os.path.join(user_icons_path, clients[tid].id + ".ico"))):
-            send_file_data(os.path.join(user_icons_path, clients[tid].id + ".ico"), sock, tid)
+        if (os.path.isfile(os.path.join(cloud_path, clients[tid].id))):
+            send_file_data(os.path.join(cloud_path, clients[tid].id), "user", sock, tid)
         else:
-            send_file_data(os.path.join(user_icons_path, "guest.ico"), sock, tid)
+            send_file_data(os.path.join(user_icons_path, "guest.ico"), "user", sock, tid)
         reply = f"GICR|Sent use profile picture"
 
     elif (code == "ICOS"):
-        file_name = fields[1]
+        size = int(fields[3])
+        id = fields[4]
         try:
-            save_path = os.path.join(user_icons_path, clients[tid].id + ".ico")
-            try:
-                save_file(save_path, sock, tid)
-                reply = f"ICOR|Profile icon was uploaded succefully"
-            except LimitExceeded:
-                throw_file(sock, tid)
-                reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
+            files_uploading[id] = File(clients[tid].id, "", size, id)
+            reply = f"ICOR|Profile icon started uploading"
 
         except Exception:
             print(traceback.format_exc())
-            throw_file(sock, tid)
             reply = Errors.FILE_UPLOAD.value
 
     elif code == 'DELF':
@@ -697,7 +686,7 @@ def protocol_build_reply(request, tid, sock):
             reply = Errors.IN_USE.value
         else:
             try:
-                send_file_data(file_path, sock, tid)
+                send_file_data(file_path, file_id, sock, tid)
                 files_in_use.append(file_id)
                 reply = f"VIER|{cr.get_file_fname(file_id)}|was viewed"
             except Exception:
@@ -795,10 +784,10 @@ def protocol_build_reply(request, tid, sock):
         files_in_use.remove(file_id)
         reply = f"VIRR|{file_id}|stop viewing"
     elif code == "STOP":
-        file_id = fields[1]
-        if file_id in files_uploading.keys():
-            del files_uploading[file_id]
-        reply = f"STOR|{file_id}|File upload stopped"
+        id = fields[1]
+        if id in files_uploading.keys():
+            del files_uploading[id]
+        reply = f"STOR|{id}|File upload stopped"
         
     else:
         reply = Errors.UNKNOWN.value
@@ -853,6 +842,11 @@ def send_data(sock, tid, bdata):
     Loggs the encrypted and decrtpted data for readablity
     Checks if encryption is used
     """
+    global bytes_sent
+    
+    if tid in send_limit.keys() and send_limit[tid][0]:
+        time.sleep(send_limit[tid][1])
+    
     if (clients[tid].encryption):
         encrypted_data = encrypting.encrypt(bdata, clients[tid].shared_secret)
         data_len = struct.pack('!l', len(encrypted_data))
@@ -865,6 +859,7 @@ def send_data(sock, tid, bdata):
         to_send = data_len + bdata
         logtcp('sent', tid, to_send)
     try:
+        bytes_sent += len(to_send)
         sock.send(to_send)
     except ConnectionResetError:
         pass
@@ -876,11 +871,14 @@ def recv_data(sock, tid):
     Gets length of response and then the response
     Makes sure its gotten everything
     """
+    global bytes_recieved
     try:
+        if tid in recieve_limit.keys() and recieve_limit[tid][0]:
+            time.sleep(recieve_limit[tid][1])
         b_len = b''
         while (len(b_len) < len_field):   # Loop to get length in bytes
             b_len += sock.recv(len_field - len(b_len))
-
+        bytes_recieved += len(b_len)
         msg_len = struct.unpack("!l", b_len)[0]
         if msg_len == b'':
             print('Seems client disconnected')
@@ -888,6 +886,7 @@ def recv_data(sock, tid):
 
         while (len(msg) < msg_len):   # Loop to recieve the rest of the response
             chunk = sock.recv(msg_len - len(msg))
+            bytes_recieved += len(chunk)
             if not chunk:
                 print('Server disconnected abnormally.')
                 break
@@ -917,8 +916,6 @@ def handle_client(sock, tid, addr):
     try:
         finish = False
         print(f'New Client number {tid} from {addr}')
-        limits_checker = threading.Thread(target=check_limits, args=(tid,))
-        limits_checker.start()
         start = recv_data(sock, tid)
         code = start.split(b"|")[0]
         clients[tid] = Client(tid, "guest", "guest", 0, 0, None, False)   # Setting client state
@@ -929,6 +926,9 @@ def handle_client(sock, tid, addr):
 
         clients[tid].shared_secret = shared_secret
         clients[tid].encryption = True
+        
+        limits_checker = threading.Thread(target=check_limits, args=(tid,))
+        limits_checker.start()
     except Exception:
         print(traceback.format_exc())
         # Releasing clienk and closing socket
