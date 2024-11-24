@@ -128,11 +128,15 @@ def send_file_data(file_path, id, sock, tid):
                 for i in range(size // chunk_size):
                     location_infile = f.tell()
                     data = f.read(chunk_size)
+                    if tid in send_limit.keys() and send_limit[tid][0]:
+                        time.sleep(send_limit[tid][1])
                     send_data(sock, tid, f"RILD|{id}|{location_infile}|".encode() + data)
                     sent += chunk_size 
                 location_infile = f.tell()
                 data = f.read(left)
                 if data != b"":
+                    if tid in send_limit.keys() and send_limit[tid][0]:
+                        time.sleep(send_limit[tid][1])
                     send_data(sock, tid, f"RILE|{id}|{location_infile}|".encode() + data)
     except:
         if os.path.exists(lock_path):
@@ -149,11 +153,15 @@ def send_zip(zip_buffer, id, sock, tid):
         for i in range(size // chunk_size):
             location_infile = zip_buffer.tell()
             data = zip_buffer.read(chunk_size)
+            if tid in send_limit.keys() and send_limit[tid][0]:
+                time.sleep(send_limit[tid][1])
             send_data(sock, tid, f"RILD|{id}|{location_infile}|".encode() + data)
             sent += chunk_size 
         location_infile = zip_buffer.tell()
-        data = zip_buffer.read(chunk_size)
+        data = zip_buffer.read(left)
         if data != b"":
+            if tid in send_limit.keys() and send_limit[tid][0]:
+                time.sleep(send_limit[tid][1])
             send_data(sock, tid, f"RILE|{id}|{location_infile}|".encode() + data)
     except:
         raise
@@ -427,7 +435,7 @@ def protocol_build_reply(request, tid, sock):
                 reply = Errors.NOT_LOGGED.value
             elif (not cr.is_dir_owner(clients[tid].id, parent)):
                 reply = Errors.NO_PERMS.value
-            if (size > Limits(clients[tid].subscription_level).max_file_size * 1_000_000):
+            elif (size > Limits(clients[tid].subscription_level).max_file_size * 1_000_000):
                 reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
             elif (cr.get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
                 reply = Errors.MAX_STORAGE.value
@@ -456,18 +464,25 @@ def protocol_build_reply(request, tid, sock):
         data = request[4 + len(id) + len(str(location_infile)) + 3:]
         if id in files_uploading.keys():
             file = files_uploading[id]
-        else: return Errors.FILE_NOT_FOUND.value
+        else: 
+            remove_file_mid_down(id)
+            return Errors.FILE_NOT_FOUND.value
         
         if (is_guest(tid)):
+            remove_file_mid_down(id)
             reply = Errors.NOT_LOGGED.value
         elif (not cr.is_dir_owner(clients[tid].id, file.parent)):
+            remove_file_mid_down(id)
             reply = Errors.NO_PERMS.value
         elif (file.size > Limits(clients[tid].subscription_level).max_file_size * 1_000_000):
+            remove_file_mid_down(id)
             reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
         elif (cr.get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
+            remove_file_mid_down(id)
             reply = Errors.MAX_STORAGE.value
         else:
             if location_infile + len(data) > file.size:
+                remove_file_mid_down(id)
                 return Errors.FILE_SIZE.value
             file.add_data(data, location_infile)
             if code == "FILE": 
@@ -785,8 +800,7 @@ def protocol_build_reply(request, tid, sock):
         reply = f"VIRR|{file_id}|stop viewing"
     elif code == "STOP":
         id = fields[1]
-        if id in files_uploading.keys():
-            del files_uploading[id]
+        remove_file_mid_down(id)
         reply = f"STOR|{id}|File upload stopped"
         
     else:
@@ -795,6 +809,13 @@ def protocol_build_reply(request, tid, sock):
 
     return reply
 
+def remove_file_mid_down(id):
+    if id in files_uploading.keys():
+        file_id = cr.get_file_id(files_uploading[id].name)
+        cr.delete_file(file_id)
+        cr.delete_file(file_id)
+        del files_uploading[id]
+    
 
 def handle_request(request, tid, sock):
     """
@@ -843,10 +864,6 @@ def send_data(sock, tid, bdata):
     Checks if encryption is used
     """
     global bytes_sent
-    
-    if tid in send_limit.keys() and send_limit[tid][0]:
-        time.sleep(send_limit[tid][1])
-    
     if (clients[tid].encryption):
         encrypted_data = encrypting.encrypt(bdata, clients[tid].shared_secret)
         data_len = struct.pack('!l', len(encrypted_data))

@@ -9,7 +9,7 @@ from modules.file_viewer import *
 from modules.networking import *
 from modules.key_exchange import *
 
-import socket, sys, traceback, os, uuid
+import socket, sys, traceback, os, uuid, hashlib, threading, time
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
@@ -45,6 +45,7 @@ port = 31026
 files = []
 directories = []
 files_downloading = {}
+uploading_file_id = ""
 
 last_msg = ""
 last_error_msg = ""
@@ -64,6 +65,10 @@ class File():
             f.flush()
     
     def add_data(self, data, location_infile):
+        try: window.file_upload_progress.show()
+        except: pass
+        update_progress(location_infile)
+        reset_progress(self.size) 
         try:
             with open(self.save_location, 'r+b') as f:
                 f.seek(location_infile)
@@ -77,7 +82,7 @@ class File():
 
 
 class FileButton(QPushButton):
-    def __init__(self, text, id = None, parent=None, is_folder = False, shared_by = None, perms =["True", "True","True","True","True","True"]):
+    def __init__(self, text, id = None, parent=None, is_folder = False, shared_by = None, perms =["True", "True","True","True","True","True"], size = 0):
         super().__init__("|".join(text), parent)
         self.setText = "|".join(text)
         self.id = id
@@ -85,6 +90,7 @@ class FileButton(QPushButton):
         self.shared_by = shared_by
         self.perms = perms
         self.setMinimumHeight(30)
+        self.file_size = size
 
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         button_layout = QHBoxLayout()
@@ -165,7 +171,9 @@ class FileButton(QPushButton):
             file_path, _ = QFileDialog.getSaveFileName(self, "Save File", file_name, "Text Files (*.txt);;All Files (*)")
         if file_path:
             send_data(b"DOWN|" + self.id.encode())
-            files_downloading[self.id] = File(file_path, self.id, 0)
+            files_downloading[self.id] = File(file_path, self.id, self.file_size)
+            try: window.file_upload_progress.show()
+            except: pass
             
 
     def rename(self):
@@ -508,7 +516,10 @@ class MainWindow(QtWidgets.QMainWindow):
             self.save_sizes()
             self.draw_cwd(files, directories)
             
-            self.file_upload_progress.hide()
+            if len(active_threads) == 0:
+                self.file_upload_progress.hide()
+                self.stop_button.hide()
+                
             self.total_files.setText(f"{len(files) + len(directories)} items")
             
             self.main_text.setText(f"Welcome {user["username"]}")
@@ -563,7 +574,6 @@ class MainWindow(QtWidgets.QMainWindow):
             except:
                 pass
             
-            self.stop_button.hide()
             self.stop_button.clicked.connect(self.stop_upload)
             self.stop_button.setIcon(QIcon(assets_path+"\\stop.svg"))
             
@@ -604,10 +614,10 @@ class MainWindow(QtWidgets.QMainWindow):
                 file_id = file[3]
                 perms = file[5:]
                 if share:
-                    button = FileButton(f" {file_name} | {date} | {size} | {file[4]}".split("|"), file_id, shared_by=file[4], perms=perms)
+                    button = FileButton(f" {file_name} | {date} | {size} | {file[4]}".split("|"), file_id, shared_by=file[4], perms=perms, size = int(file[2]))
                 else:
-                    button = FileButton(f" {file_name} | {date} | {size}".split("|"), file_id)
-                button.clicked.connect(lambda checked, name=file_name, id = file_id: view_file(id, name))
+                    button = FileButton(f" {file_name} | {date} | {size}".split("|"), file_id, size = int(file[2]))
+                button.clicked.connect(lambda checked, name=file_name, id = file_id: view_file(id, name, int(file[2])))
                 scroll_layout.addWidget(button)
 
             for index, directory in enumerate(directories):
@@ -616,9 +626,9 @@ class MainWindow(QtWidgets.QMainWindow):
                 last_change = directory[2][:-7]
                 perms = directory[5:]
                 if share:
-                    button = FileButton(f" {directory[0]} | {last_change} | {size} | {directory[4]}".split("|"), directory[1], is_folder=True, shared_by=directory[2], perms=perms)
+                    button = FileButton(f" {directory[0]} | {last_change} | {size} | {directory[4]}".split("|"), directory[1], is_folder=True, shared_by=directory[2], perms=perms, size = int(directory[3]))
                 else:
-                    button = FileButton(f" {directory[0]} | {last_change} | {size}".split("|"), directory[1], is_folder=True)
+                    button = FileButton(f" {directory[0]} | {last_change} | {size}".split("|"), directory[1], is_folder=True, size = int(directory[3]))
                 button.clicked.connect(lambda checked, id=directory[1]: move_dir(id))
                 scroll_layout.addWidget(button)
 
@@ -837,7 +847,9 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def stop_upload(self):
         self.stop_button.setEnabled(False)
-        send_data(b"STOP")
+        if active_threads != []:
+            active_threads[0].running = False
+        send_data(b"STOP|" + uploading_file_id.encode())
 
 
 
@@ -856,49 +868,78 @@ class FileSenderThread(QThread):
         self.files_uploaded = []
         self.cmd = cmd
         self.file_id = file_id
+        self.running = True
 
     def run(self):
-        for file_path in file_queue:
-            try: window.stop_button.setEnabled(True)
-            except: pass
-            if self.file_id != None:
-                file_name = self.file_id
-            else:
-                file_name = file_path.split("/")[-1]  # Extract the file name
-            file_id = uuid.uuid4().hex
-            start_string = f"{self.cmd}|{file_name}|{user["cwd"]}|{os.path.getsize(file_path)}|{file_id}"
-            send_data(start_string.encode())
-            if not os.path.isfile(file_path):
-                self.error.emit("File path was not found")
-                return
+        global uploading_file_id
+        try:
+            for file_path in file_queue:
+                start = time.time()
+                bytes_sent = 0
+                
+                try: window.stop_button.setEnabled(True)
+                except: pass
+                if self.file_id != None:
+                    file_name = self.file_id
+                else:
+                    file_name = file_path.split("/")[-1]  # Extract the file name
+                file_id = uuid.uuid4().hex
+                uploading_file_id = file_id
+                start_string = f"{self.cmd}|{file_name}|{user["cwd"]}|{os.path.getsize(file_path)}|{file_id}"
+                send_data(start_string.encode())
+                if not os.path.isfile(file_path):
+                    self.error.emit("File path was not found")
+                    return
 
-            size = os.path.getsize(file_path)
-            left = size % chunk_size
-            sent = 0
-            self.progress.emit(0)
-            self.progress_reset.emit(size)
-            self.message.emit(f"{file_name} is being uploaded")
-            try:
-                with open(file_path, 'rb') as f:
-                    for i in range(size // chunk_size):
+                size = os.path.getsize(file_path)
+                left = size % chunk_size
+                sent = 0
+                self.progress.emit(0)
+                self.progress_reset.emit(size)
+                self.message.emit(f"{file_name} is being uploaded")
+                try:
+                    with open(file_path, 'rb') as f:
+                        for i in range(size // chunk_size):
+                            if self.running == False:
+                                self.running = True
+                                break
+
+                            location_infile = f.tell()
+                            data = f.read(chunk_size)
+                            
+                            current_time = time.time()
+                            elapsed_time = current_time - start
+
+                            if elapsed_time >= 1.0:
+                                start = current_time
+                                bytes_sent = 0
+                                
+                            send_data(f"FILD|{file_id}|{location_infile}|".encode() + data)
+                            bytes_sent += len(data)
+
+                            sent += chunk_size
+                            self.progress_reset.emit(size)
+                            self.progress.emit(sent)  # Update progress bar
+                            
+                            if bytes_sent >= (Limits(user["subscription_level"]).max_upload_speed - 1) * 1_000_000:
+                                time_to_wait = 1.0 - elapsed_time
+                                if time_to_wait > 0:
+                                    time.sleep(time_to_wait)
+                        
                         location_infile = f.tell()
-                        data = f.read(chunk_size)
-                        send_data(f"FILD|{file_id}|{location_infile}|".encode() + data)
-                        sent += chunk_size
-                        self.progress_reset.emit(size)
-                        self.progress.emit(sent)  # Update progress bar
-                    
-                    location_infile = f.tell()
-                    data = f.read(left)
-                    if data != b"":
-                        send_data(f"FILE|{file_id}|{location_infile}|".encode() + data)
-                        self.progress_reset.emit(size)
-                        self.progress.emit(sent)  # Final progress update
-            except:
-                print(traceback.format_exc())
-                return
-        if self.file_id != None: os.remove(file_path.split("/")[-1])
-        self.finished.emit() 
+                        data = f.read(left)
+                        if data != b"":
+                            send_data(f"FILE|{file_id}|{location_infile}|".encode() + data)
+                            self.progress_reset.emit(size)
+                            self.progress.emit(sent)  # Final progress update
+                except:
+                    print(traceback.format_exc())
+                    return
+            if self.file_id != None: os.remove(file_path.split("/")[-1])
+            self.finished.emit() 
+        except:
+            print(traceback.format_exc())
+            print(type(file_queue))
             
 
 
@@ -916,6 +957,7 @@ def send_files(cmd = "FILS", file_id = None):
 
     thread.finished.connect(thread.deleteLater)
     thread.finished.connect(lambda: active_threads.remove(thread))
+    thread.finished.connect(finish_sending)
     
     thread.progress.connect(update_progress)
     thread.progress_reset.connect(reset_progress)# Connect progress signal to progress bar
@@ -923,6 +965,16 @@ def send_files(cmd = "FILS", file_id = None):
     thread.error.connect(window.set_error_message)
     
     thread.start()
+
+def finish_sending():
+    global file_queue
+    file_queue = []
+    try:
+        window.stop_button.setEnabled(False)
+        window.stop_button.hide()
+    except: pass
+    try: window.file_upload_progress.hide()
+    except: pass
 
 def update_progress(value):
     try: window.file_upload_progress.setValue(value)
@@ -1000,25 +1052,35 @@ class FileSaverThread(QThread):
             
 
 
+def compute_file_md5(file_path):
+    hash_func = hashlib.new('md5')
+    
+    with open(file_path, 'rb') as file:
+        # Read the file in chunks of 8192 bytes
+        while chunk := file.read(8192):
+            hash_func.update(chunk)
+    
+    return hash_func.hexdigest()
 
 
-
-def view_file(file_id, file_name):
+def view_file(file_id, file_name, size):
     send_data(b"VIEW|" + file_id.encode())
     save_path = f"{os.getcwd()}\\temp-{file_name}"
-    files_downloading[file_id] = File(save_path, file_id, 0, True)
+    files_downloading[file_id] = File(save_path, file_id, size, True)
 
     
 def activate_file_view(file_id):
     save_path = files_downloading[file_id].save_location
+    file_hash = compute_file_md5(save_path)
     file_viewer_dialog("File Viewer", save_path)
 
-    save = show_confirmation_dialog("Do you want to save changes?")
-    if save:
-        file_queue.extend([save_path])  # Add dropped files to the queue
-        send_files("UPFL", file_id)
-    else: 
-        os.remove(save_path)
+    if file_hash != compute_file_md5(save_path):
+        save = show_confirmation_dialog("Do you want to save changes?")
+        if save:
+            file_queue.extend([save_path])  # Add dropped files to the queue
+            send_files("UPFL", file_id)
+        else: os.remove(save_path)
+    else: os.remove(save_path)
 
 def end_view(file_id):
     send_data(b"VIEE|" + file_id.encode())
@@ -1316,6 +1378,9 @@ def protocol_parse_reply(reply):
             window.set_error_message(fields[2])
             if (err_code == 9):
                 window.send_verification_page()
+            elif (err_code == 20):
+                if active_threads != []:
+                    active_threads[0].running = False
 
             to_show = 'Server return an error: ' + fields[1] + ' ' + fields[2]
 
@@ -1423,9 +1488,10 @@ def protocol_parse_reply(reply):
                         end_view(file_id)
                         activate_file_view(file_id)
                     del files_downloading[file_id]
-                try: window.stop_button.setEnabled(False)
+                try: 
+                    window.stop_button.setEnabled(False)
+                    window.stop_button.hide()
                 except: pass
-                window.stop_button.hide()
             to_show = "File data recieved"
             
 
@@ -1527,6 +1593,7 @@ def protocol_parse_reply(reply):
         elif code == "STOR":
             name = fields[1]
             to_show = f"Upload of {name} stopped"
+            if active_threads != []: active_threads[0].running = False
             window.set_message(to_show)
         elif code == "PATH" or code == "PASH" or code == "PADH":
             files = fields[1:]
@@ -1545,6 +1612,16 @@ def protocol_parse_reply(reply):
         print(traceback.format_exc())
     return to_show
 
+def send_data(bdata, encryption = True):
+    global receive_thread
+    try: send_data_wrap(bdata, encryption)
+    except ConnectionResetError:
+        receive_thread.pause()
+        sock.close()
+        window.not_connected_page()
+        window.set_error_message("Lost connection to server")
+    except:
+        print(traceback.format_exc())
 
 def handle_reply(reply):
     """
@@ -1557,17 +1634,13 @@ def handle_reply(reply):
         to_show = protocol_parse_reply(reply)
         print(to_show)
         if to_show == "Invalid reply from server":
-            print(to_show)
+            print(reply)
         
         # If exit request succeded, dissconnect
         if to_show == "Server acknowledged the exit message":
             print('Succefully exit')
             sock.close()
             sys.exit()
-        elif to_show == None:
-            sock.close()
-            window.not_connected_page()
-            window.set_error_message("Lost connection to server")
     except socket.error as err:   # General error handling
         print(traceback.format_exc())
         return
@@ -1576,23 +1649,34 @@ def handle_reply(reply):
         return
 
 class ReceiveThread(QThread):
-    # Define a signal to emit data received from receive_replies
+    # Define a signal to emit data received from recv_data
     reply_received = pyqtSignal(bytes)
 
     def __init__(self):
         super().__init__()
         self.running = True  # Add a flag to control the thread loop
+        self._pause_event = threading.Event()  # Event to manage pausing
+        self._pause_event.set()  # Initially, the thread is not paused
 
     def run(self):
-         while self.running:
-            # Call your receive_replies logic here
-            reply = recv_data()  # Assume this method exists and returns a string
+        while self.running:
+            # Wait for the thread to be resumed if paused
+            self._pause_event.wait()
+
+            # Simulate receiving data
+            reply = recv_data()  # Assume this method exists and returns bytes
             if reply:
                 self.reply_received.emit(reply)  # Emit the received reply to the main thread
 
+    def pause(self):
+        self._pause_event.clear()
+
+    def resume(self):
+        self._pause_event.set()
+
 # Main function and start of code
 def connect_server(new_ip, new_port):
-    global sock, ip, port
+    global sock, ip, port, receive_thread
     window.set_message(f"Trying to connect to {new_ip} {new_port}...")
     QApplication.processEvents()
     try:
@@ -1607,11 +1691,15 @@ def connect_server(new_ip, new_port):
             return
         set_secret(shared_secret)
         window.main_page()
+        receive_thread.start()
+        receive_thread.resume()
         send_cookie()
+        
         if user["username"] != "guest":
             window.set_message(f'Connect succeeded {ip} {port}')
         return sock
     except:
+        receive_thread.pause()
         window.not_connected_page()
         window.set_error_message(f'Server was not found {ip} {port}')
         return None
@@ -1622,7 +1710,7 @@ def main():
     Create tkinter root and start secure connection to server
     Connect to server via addr param
     """
-    global sock, window, app
+    global sock, window, app, receive_thread
     try:
         app = QtWidgets.QApplication(sys.argv)
         try: 
@@ -1631,10 +1719,11 @@ def main():
         window = MainWindow()
         window.show()
         window.not_connected_page()
-        sock = connect_server(ip, port)
         receive_thread = ReceiveThread()
-        receive_thread.start()
         receive_thread.reply_received.connect(handle_reply)
+        #receive_thread.start()
+        sock = connect_server(ip, port)
+
         sys.exit(app.exec())
     except Exception as e:
         print(traceback.format_exc())

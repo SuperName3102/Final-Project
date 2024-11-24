@@ -330,6 +330,7 @@ def get_user_data(cred):
     return db.get_user(cred)
 
 
+
 def get_files(owner_id, parent, name_filter=None):
     if parent == "":
         files = db.get_user_files(owner_id)
@@ -416,6 +417,13 @@ def get_user_id(cred):
 def new_file(sname, file_name, parent, owner_id, size):
     file = File(None, sname, file_name, parent, owner_id, size)
     db.add_file(vars(file))
+
+def get_file_id(file_name):
+    file = db.get_file(file_name)
+    if (file == None):
+        return None
+    file = File(**file)
+    return file.id
 
 def get_file_sname(file_id):
     file = db.get_file(file_id)

@@ -31,7 +31,7 @@ def logtcp(dir, byte_data):
             print(f'C LOG:Recieved <<<{byte_data}')
 
 
-def send_data(bdata, encryption = True):
+def send_data_wrap(bdata, encryption):
     """
     Send data to server
     Adds data encryption
@@ -50,11 +50,8 @@ def send_data(bdata, encryption = True):
         data_len = struct.pack('!l', len(bdata))
         to_send = data_len + bdata
         logtcp('sent', to_send)
-
-    try:
-        sock.send(to_send)
-    except ConnectionResetError:
-        pass
+ 
+    sock.send(to_send)
 
 
 def recv_data(encryption = True):
@@ -86,5 +83,5 @@ def recv_data(encryption = True):
         return msg
     except ConnectionResetError:
         return None
-    except Exception as err:
-        print(traceback.format_exc())
+    except AttributeError: pass
+    except: print(traceback.format_exc())

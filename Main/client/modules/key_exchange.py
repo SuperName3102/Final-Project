@@ -7,7 +7,7 @@ import os, rsa, struct
 # Key exchange
 def rsa_exchange(sock):
     try:
-        send_data(b"RSAR", False)
+        send_data_wrap(b"RSAR", False)
         s_public_key = recv_rsa_key(sock)
         shared_secret = send_shared_secret(s_public_key, sock)
         return shared_secret
