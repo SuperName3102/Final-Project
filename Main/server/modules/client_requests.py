@@ -559,29 +559,27 @@ def delete_directory(id):
                 print(traceback.format_exc())
                 continue
 
-    
 
 def directory_size(user_id, id):
     total = 0
     files = db.get_user_directory_files(user_id, id)
+    
     for file in files:
         try:
             file = File(**file)
-            total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
+            if os.path.exists(server_path + "\\cloud\\" + file.sname):
+                total += os.path.getsize(server_path + "\\cloud\\" + file.sname)
         except:
             print(traceback.format_exc())
             continue
+    child_dirs = db.get_directories(id)
+    for child_dir in child_dirs:
+        total += directory_size(user_id, child_dir["id"])
     return total
 
 def get_user_storage(id):
-    total = 0
-    total += directory_size(id, "")
-    directories = db.get_user_directories(id)
-    for directory in directories:
-        directory = Directory(**directory)
-        total += directory_size(id, directory.id)
-    return total
-        
+    return directory_size(id, "")
+    
 def clean_db():
     for name in os.listdir(server_path + "\\cloud"):
         try:

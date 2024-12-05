@@ -9,7 +9,7 @@ from modules.file_viewer import *
 from modules.networking import *
 from modules.key_exchange import *
 
-import socket, sys, traceback, os, uuid, hashlib, threading, time
+import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, json
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
@@ -19,11 +19,13 @@ from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
 
 # Announce global vars
 user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""}
-chunk_size = 65536
+chunk_size = 524288
 used_storage = 0
 user_icon = f"{os.getcwd()}/assets/user.ico"
 assets_path = f"{os.getcwd()}/assets"
 cookie_path = f"{os.getcwd()}/cookies/user.cookie"
+uploading_files_json = "uploading_files.json"
+downloading_files_json = "downloading_files.json"
 
 search_filter = None
 share = False
@@ -50,30 +52,46 @@ uploading_file_id = ""
 last_msg = ""
 last_error_msg = ""
 
+
+def timing_decorator(func):
+    @functools.wraps(func)  # Preserves the original function's metadata
+    def wrapper(*args, **kwargs):
+        start_time = time.perf_counter()  # Start the timer
+        result = func(*args, **kwargs)   # Call the original function
+        end_time = time.perf_counter()  # End the timer
+        print(f"Function '{func.__name__}' took {end_time - start_time:.4f} seconds")
+        return result
+    return wrapper
+
 # Begin gui related functions
 class File():
-    def __init__(self, save_location, id, size, is_view = False):
+    def __init__(self, save_location, id, size, is_view = False, file_name = None):
         self.save_location = save_location
         self.id = id
         self.size = size
         self.is_view = is_view
+        self.file_name = file_name
         self.start_download()
     
     def start_download(self):
-        with open(self.save_location, 'wb') as f:
-            f.write(b"\0")
-            f.flush()
-    
+        if not os.path.exists(self.save_location):
+            with open(self.save_location, 'wb') as f:
+                f.write(b"\0")
+                f.flush()
+
     def add_data(self, data, location_infile):
         try: window.file_upload_progress.show()
         except: pass
         update_progress(location_infile)
         reset_progress(self.size) 
+        window.set_message(f"File {self.file_name} is downloading")
         try:
             with open(self.save_location, 'r+b') as f:
                 f.seek(location_infile)
                 f.write(data)
                 f.flush()
+                update_json(downloading_files_json, self.id, self.save_location, remove=True)
+                update_json(downloading_files_json, self.id, self.save_location, file=self, progress=location_infile)
         except:
             self.uploading = False
     
@@ -171,7 +189,8 @@ class FileButton(QPushButton):
             file_path, _ = QFileDialog.getSaveFileName(self, "Save File", file_name, "Text Files (*.txt);;All Files (*)")
         if file_path:
             send_data(b"DOWN|" + self.id.encode())
-            files_downloading[self.id] = File(file_path, self.id, self.file_size)
+            files_downloading[self.id] = File(file_path, self.id, self.file_size, file_name=file_name)
+            update_json(downloading_files_json, self.id, file_path, progress=0)
             try: window.file_upload_progress.show()
             except: pass
             
@@ -672,7 +691,6 @@ class MainWindow(QtWidgets.QMainWindow):
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
-
             self.forgot_password_button.clicked.connect(lambda: reset_password(user["email"]))
             self.forgot_password_button.setIcon(QIcon(assets_path + "\\key.svg"))
 
@@ -704,7 +722,6 @@ class MainWindow(QtWidgets.QMainWindow):
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
-                
             get_used_storage()
             self.back_button.clicked.connect(self.manage_account)
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
@@ -856,6 +873,33 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
 # Files functions
+def update_json(json_path, file_id, file_path, remove=False, file = None, progress = 0):
+    """Update the JSON file with the file upload details."""
+    if not os.path.exists(json_path):
+        with open(json_path, 'w') as f:
+            json.dump({}, f)  # Initialize as an empty dictionary
+
+    with open(json_path, 'r') as f:
+        files = json.load(f)
+
+    if remove:
+        # Remove the file from JSON if it exists
+        if file_id in files:
+            del files[file_id]
+    else:
+        if file == None: files[file_id] = {"file_path": file_path}
+        else: 
+            files[file_id] = {
+            "file_path": file_path,
+            "size": file.size,
+            "is_view": file.is_view,
+            "file_name": file.file_name,
+            "progress": progress
+        }
+
+    with open(json_path, 'w') as f:
+        json.dump(files, f, indent=4)
+
 class FileSenderThread(QThread):
     finished = pyqtSignal()  # Signal to notify that file sending is done
     error = pyqtSignal(str)  # Signal to notify error messages
@@ -863,12 +907,14 @@ class FileSenderThread(QThread):
     progress_reset = pyqtSignal(int)
     message = pyqtSignal(str)  # Signal to update the message
 
-    def __init__(self, cmd, file_id):
+    def __init__(self, cmd, file_id, resume_file_id, location_infile):
         super().__init__()
         self.files_uploaded = []
         self.cmd = cmd
         self.file_id = file_id
+        self.resume_file_id = resume_file_id
         self.running = True
+        self.location_infile = location_infile
 
     def run(self):
         global uploading_file_id
@@ -885,23 +931,28 @@ class FileSenderThread(QThread):
                     file_name = file_path.split("/")[-1]  # Extract the file name
                 file_id = uuid.uuid4().hex
                 uploading_file_id = file_id
-                start_string = f"{self.cmd}|{file_name}|{user["cwd"]}|{os.path.getsize(file_path)}|{file_id}"
-                send_data(start_string.encode())
+                if self.resume_file_id == None:
+                    print("start upload:", file_id)
+                    start_string = f"{self.cmd}|{file_name}|{user["cwd"]}|{os.path.getsize(file_path)}|{file_id}"
+                    send_data(start_string.encode())
+                    update_json(uploading_files_json, file_id, file_path)
+                else: file_id = self.resume_file_id
+                
                 if not os.path.isfile(file_path):
                     self.error.emit("File path was not found")
                     return
 
                 size = os.path.getsize(file_path)
                 left = size % chunk_size
-                sent = 0
-                self.progress.emit(0)
+                sent = self.location_infile
+                self.progress.emit(sent)
                 self.progress_reset.emit(size)
                 self.message.emit(f"{file_name} is being uploaded")
                 try:
                     with open(file_path, 'rb') as f:
-                        for i in range(size // chunk_size):
+                        f.seek(self.location_infile)
+                        for i in range((size - self.location_infile) // chunk_size):
                             if self.running == False:
-                                self.running = True
                                 break
 
                             location_infile = f.tell()
@@ -919,22 +970,28 @@ class FileSenderThread(QThread):
 
                             sent += chunk_size
                             self.progress_reset.emit(size)
+                            self.message.emit(f"{file_name} is being uploaded")
                             self.progress.emit(sent)  # Update progress bar
                             
                             if bytes_sent >= (Limits(user["subscription_level"]).max_upload_speed - 1) * 1_000_000:
                                 time_to_wait = 1.0 - elapsed_time
                                 if time_to_wait > 0:
                                     time.sleep(time_to_wait)
-                        
+                        if self.running == False:
+                            self.running = True
+                            continue
                         location_infile = f.tell()
                         data = f.read(left)
                         if data != b"":
                             send_data(f"FILE|{file_id}|{location_infile}|".encode() + data)
                             self.progress_reset.emit(size)
+                            self.message.emit(f"{file_name} is being uploaded")
                             self.progress.emit(sent)  # Final progress update
                 except:
                     print(traceback.format_exc())
                     return
+                finally:
+                    update_json(uploading_files_json, file_id, file_path, remove=True)
             if self.file_id != None: os.remove(file_path.split("/")[-1])
             self.finished.emit() 
         except:
@@ -943,14 +1000,14 @@ class FileSenderThread(QThread):
             
 
 
-def send_files(cmd = "FILS", file_id = None):
+def send_files(cmd = "FILS", file_id = None, resume_file_id = None, location_infile = 0):
     try: window.file_upload_progress.show()
     except: pass
     try:
         window.stop_button.setEnabled(True)
         window.stop_button.show()
     except: pass
-    thread = FileSenderThread(cmd, file_id)
+    thread = FileSenderThread(cmd, file_id, resume_file_id, location_infile)
 
     active_threads.append(thread)
 
@@ -985,73 +1042,6 @@ def reset_progress(value):
     except: pass
 
 
-                
-class FileSaverThread(QThread):
-    finished = pyqtSignal()  # Signal to notify that file sending is done
-    error = pyqtSignal(str)  # Signal to notify error messages
-    progress = pyqtSignal(int)  # Signal to update progress bar
-    progress_reset = pyqtSignal(int)
-    message = pyqtSignal(str)  # Signal to update the message
-
-    def __init__(self, save_loc, file_name, size):
-        super().__init__()
-        self.save_loc = save_loc
-        self.file_name = file_name
-        self.size = size
-
-    def run(self):
-        try:
-            if not os.path.exists(os.path.dirname(self.save_loc)):
-                os.makedirs(os.path.dirname(self.save_loc))
-            data = b''
-            self.progress.emit(0)
-            self.progress_reset.emit(self.size)# Initialize progress bar to 0
-            self.message.emit(f"{self.file_name} is being downloaded")
-            total = 0
-            with open(self.save_loc, 'wb') as f:
-                while True:
-                    data = recv_data()
-                    if not data:
-                        raise Exception
-                    total += len(data)
-                    self.progress.emit(total)
-                    if (data[:4] == b"RILD"):
-                        f.write(data[4:])
-                    elif (data[:4] == b"RILE"):
-                        f.write(data[4:])
-                        break
-                    else:
-                        try:
-                            # Parse the reply and split it according to the protocol separator
-                            reply = reply.decode()
-                            fields = reply.split("|")
-                            code = fields[0]
-                            if code == 'ERRR':   # If server returned error show to user the error
-                                self.error.emit(fields[2])
-                            elif code == 'DOWR':
-                                to_show = f'File {fields[1]} was downloaded'
-                                self.message.emit(to_show)  # Send message via signal
-                            break
-                        except:
-                            print(traceback.format_exc())
-                            break
-                    data = b''
-                reply = recv_data()
-                reply = reply.decode()
-                fields = reply.split("|")
-                code = fields[0]
-                            
-                if code == 'ERRR':   # If server returned error show to user the error
-                    self.error.emit(fields[2])
-                elif code == 'DOWR':
-                    to_show = f'File {fields[1]} was downloaded'
-                    self.message.emit(to_show)  # Send message via signal
-        except:
-            print(traceback.format_exc())
-        self.finished.emit() 
-            
-
-
 def compute_file_md5(file_path):
     hash_func = hashlib.new('md5')
     
@@ -1066,7 +1056,7 @@ def compute_file_md5(file_path):
 def view_file(file_id, file_name, size):
     send_data(b"VIEW|" + file_id.encode())
     save_path = f"{os.getcwd()}\\temp-{file_name}"
-    files_downloading[file_id] = File(save_path, file_id, size, True)
+    files_downloading[file_id] = File(save_path, file_id, size, True, file_name=file_name)
 
     
 def activate_file_view(file_id):
@@ -1106,7 +1096,7 @@ def move_dir(new_dir):
 
 def get_user_icon():
     send_data(b"GICO")
-    files_downloading["user"] = File(user_icon, "user", 0)
+    files_downloading["user"] = File(user_icon, "user", 0, file_name="User Icon")
 
 
 def get_used_storage():
@@ -1487,10 +1477,14 @@ def protocol_parse_reply(reply):
                     if files_downloading[file_id].is_view:
                         end_view(file_id)
                         activate_file_view(file_id)
+                    update_json(downloading_files_json, file_id, "", remove=True)
+                    window.set_message(f"File {files_downloading[file_id].file_name} finished downloading")
                     del files_downloading[file_id]
                 try: 
                     window.stop_button.setEnabled(False)
                     window.stop_button.hide()
+                except: pass
+                try: window.file_upload_progress.hide()
                 except: pass
             to_show = "File data recieved"
             
@@ -1592,8 +1586,10 @@ def protocol_parse_reply(reply):
             to_show = "File viewing released"
         elif code == "STOR":
             name = fields[1]
+            id = fields[2]
             to_show = f"Upload of {name} stopped"
             if active_threads != []: active_threads[0].running = False
+            update_json(uploading_files_json, id, "", remove=True)
             window.set_message(to_show)
         elif code == "PATH" or code == "PASH" or code == "PADH":
             files = fields[1:]
@@ -1605,12 +1601,62 @@ def protocol_parse_reply(reply):
             if files != None and directories != None:
                 window.run_user_page()
             to_show = "Got directories"
+        elif code == "RESR":
+            file_id = fields[1]
+            progress = fields[2]
+            resume_files_upload(file_id, progress)
+            to_show = f"File upload of file {file_id} continued at {progress}"
+        elif code == "RUSR":
+            id = fields[1]
+            progress = fields[2]
+            to_show = f"Resumed download of file {id} from byte {progress}"
         else:
             window.set_message("Unknown command " + code)
             
     except Exception as e:   # Error
         print(traceback.format_exc())
     return to_show
+
+def get_files_uploading_data():
+    if os.path.exists(uploading_files_json):
+        with open(uploading_files_json, 'r') as f:
+            return json.load(f)
+
+def get_files_downloading_data():
+    if os.path.exists(downloading_files_json):
+        with open(downloading_files_json, 'r') as f:
+            return json.load(f)
+
+
+def request_resume_download():
+    uploading_files = get_files_downloading_data()
+    # Iterate through the dictionary and print file_id and file_path
+    if uploading_files == None: return
+    for file_id, details in uploading_files.items():
+        file_path = details.get("file_path")
+        if not os.path.exists(file_path): continue
+        progress = details.get("progress")
+        send_data(f"RESD|{file_id}|{progress}".encode())
+        files_downloading[file_id] = File(file_path, file_id, details.get("size"), file_name=details.get("file_name"))
+
+def resume_files_upload(id, progress):
+    global file_queue
+
+    uploading_files = get_files_uploading_data()
+    # Iterate through the dictionary and print file_id and file_path
+    for file_id, details in uploading_files.items():
+        if id == file_id:
+            file_path = details.get("file_path")
+            if not os.path.exists(file_path): continue
+            file_queue.extend([file_path])
+            send_files(resume_file_id=file_id, location_infile=int(progress))
+            break
+
+def get_file_progress():
+    uploading_files = get_files_uploading_data()
+    if uploading_files == None: return
+    for file_id, details in uploading_files.items():
+        send_data(f"RESU|{file_id}".encode())
 
 def send_data(bdata, encryption = True):
     global receive_thread
@@ -1622,6 +1668,7 @@ def send_data(bdata, encryption = True):
         window.set_error_message("Lost connection to server")
     except:
         print(traceback.format_exc())
+
 
 def handle_reply(reply):
     """
@@ -1694,6 +1741,8 @@ def connect_server(new_ip, new_port):
         receive_thread.start()
         receive_thread.resume()
         send_cookie()
+        get_file_progress()
+        request_resume_download()
         
         if user["username"] != "guest":
             window.set_message(f'Connect succeeded {ip} {port}')
@@ -1721,7 +1770,6 @@ def main():
         window.not_connected_page()
         receive_thread = ReceiveThread()
         receive_thread.reply_received.connect(handle_reply)
-        #receive_thread.start()
         sock = connect_server(ip, port)
 
         sys.exit(app.exec())
@@ -1730,9 +1778,10 @@ def main():
 
 
 if __name__ == "__main__":   # Run main
-    #sys.stdout = Logger()
+    sys.stdout = Logger()
     if len(sys.argv) >= 2: ip = sys.argv[1]
     if len(sys.argv) >= 3: port = sys.argv[2]
-
-    main()
+    while True:
+        try: main()
+        except: print(traceback.format_exc())
 

@@ -24,7 +24,7 @@ len_field = 4
 sep = "|"
 clients = {}
 files_in_use = []
-chunk_size = 65536
+chunk_size = 524288
 cloud_path = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud"
 user_icons_path = f"{os.path.dirname(os.path.abspath(__file__))}\\user icons"
 log = False
@@ -39,12 +39,14 @@ recieve_limit = {}
 
 # User handling classes
 class File:
-    def __init__(self, name, parent, size, id):
+    def __init__(self, name, parent, size, id, file_name, curr_location_infile = 0):
         self.name = name
         self.parent = parent
         self.uploading = True
         self.size = size
         self.id = id
+        self.file_name = file_name
+        self.curr_location_infile = curr_location_infile
         
         self.start_download()
     
@@ -65,6 +67,7 @@ class File:
                     f.seek(location_infile)
                     f.write(data)
                     f.flush()
+                    self.curr_location_infile = location_infile
         except:
             print(traceback.format_exc())
             self.uploading = False
@@ -77,7 +80,7 @@ class File:
         lock_path = f"{save_path}.lock"
         if os.path.exists(lock_path): os.remove(lock_path)
         if os.path.exists(save_path): os.remove(save_path)
-        
+
 class Client:
     """
     Client class for handling a client
@@ -113,7 +116,7 @@ def check_limits(tid):
         time.sleep(0.05)
 
 
-def send_file_data(file_path, id, sock, tid):
+def send_file_data(file_path, id, sock, tid, progress = 0):
     lock_path = f"{file_path}.lock"
     lock = FileLock(lock_path)
 
@@ -121,11 +124,12 @@ def send_file_data(file_path, id, sock, tid):
         raise Exception
     size = os.path.getsize(file_path)
     left = size % chunk_size
-    sent = 0
+    sent = progress
     try:
         with lock:
             with open(file_path, 'rb') as f:
-                for i in range(size // chunk_size):
+                f.seek(progress)
+                for i in range((size - progress) // chunk_size):
                     location_infile = f.tell()
                     data = f.read(chunk_size)
                     if tid in send_limit.keys() and send_limit[tid][0]:
@@ -446,13 +450,13 @@ def protocol_build_reply(request, tid, sock):
                     name = cr.get_file_sname(file_name)
                     if os.path.exists(cloud_path + "\\" + name):
                         os.remove(cloud_path + "\\" + name)
-                    files_uploading[id] = File(name, parent, size, id)
+                    files_uploading[id] = File(name, parent, size, id, file_name)
                     cr.update_file_size(file_name, size)
                     reply = f"UPFR|{file_name}|was updated succefully"
                 else:
                     name = cr.gen_file_name()
-                    files_uploading[id] = File(name, parent, size, id)
-                    cr.new_file(name, file_name, parent, clients[tid].id, size)
+                    files_uploading[id] = File(name, parent, size, id, file_name)
+                    #cr.new_file(name, file_name, parent, clients[tid].id, size)
                     reply = f"FISS|{file_name}|Upload started"
         except Exception:
             print(traceback.format_exc())
@@ -465,28 +469,23 @@ def protocol_build_reply(request, tid, sock):
         if id in files_uploading.keys():
             file = files_uploading[id]
         else: 
-            remove_file_mid_down(id)
             return Errors.FILE_NOT_FOUND.value
         
         if (is_guest(tid)):
-            remove_file_mid_down(id)
             reply = Errors.NOT_LOGGED.value
         elif (not cr.is_dir_owner(clients[tid].id, file.parent)):
-            remove_file_mid_down(id)
             reply = Errors.NO_PERMS.value
         elif (file.size > Limits(clients[tid].subscription_level).max_file_size * 1_000_000):
-            remove_file_mid_down(id)
             reply = Errors.SIZE_LIMIT.value + " " + str(Limits(clients[tid].subscription_level).max_file_size) + " MB"
         elif (cr.get_user_storage(clients[tid].user) > Limits(clients[tid].subscription_level).max_storage * 1_000_000):
-            remove_file_mid_down(id)
             reply = Errors.MAX_STORAGE.value
         else:
             if location_infile + len(data) > file.size:
-                remove_file_mid_down(id)
                 return Errors.FILE_SIZE.value
             file.add_data(data, location_infile)
             if code == "FILE": 
-                reply = f"FILR|{id}|File finished uploading"
+                cr.new_file(file.name, file.file_name, file.parent, clients[tid].id, file.size)
+                reply = f"FILR|{file.file_name}|File finished uploading"
                 if id in files_uploading.keys():
                     del files_uploading[id]
             else: reply = ""
@@ -582,7 +581,7 @@ def protocol_build_reply(request, tid, sock):
             zip_buffer = cr.zip_directory(file_id)
             send_zip(zip_buffer, file_id, sock, tid)
             zip_buffer.close()
-            reply = f"DOWR|{cr.get_dir_name(file_id)}|was downloaded"
+            reply = f"DOWR|{cr.get_dir_name(file_id)}|{file_id}|was downloaded"
             return reply
         elif(cr.get_file_sname(file_id) == None):
             reply = Errors.FILE_NOT_FOUND.value
@@ -633,7 +632,7 @@ def protocol_build_reply(request, tid, sock):
         size = int(fields[3])
         id = fields[4]
         try:
-            files_uploading[id] = File(clients[tid].id, "", size, id)
+            files_uploading[id] = File(clients[tid].id, "", size, id, None)
             reply = f"ICOR|Profile icon started uploading"
 
         except Exception:
@@ -800,9 +799,20 @@ def protocol_build_reply(request, tid, sock):
         reply = f"VIRR|{file_id}|stop viewing"
     elif code == "STOP":
         id = fields[1]
-        remove_file_mid_down(id)
-        reply = f"STOR|{id}|File upload stopped"
-        
+        name = remove_file_mid_down(id)
+        reply = f"STOR|{name}|{id}|File upload stopped"
+    elif code == "RESU":
+        id = fields[1]
+        if id in files_uploading.keys():
+            progress = files_uploading[id].curr_location_infile
+            reply = f"RESR|{id}|{progress}"
+        else: reply = Errors.FILE_NOT_FOUND.value
+    elif code == "RESD":
+        id = fields[1]
+        progress = int(fields[2])
+        file_path = cloud_path + "\\" + cr.get_file_sname(id)
+        send_file_data(file_path, id, sock, tid, progress)
+        reply = f"RUSR|{id}|{progress}"
     else:
         reply = Errors.UNKNOWN.value
         fields = ''
@@ -811,10 +821,12 @@ def protocol_build_reply(request, tid, sock):
 
 def remove_file_mid_down(id):
     if id in files_uploading.keys():
+        name = files_uploading[id].file_name
         file_id = cr.get_file_id(files_uploading[id].name)
         cr.delete_file(file_id)
         cr.delete_file(file_id)
         del files_uploading[id]
+        return name
     
 
 def handle_request(request, tid, sock):
@@ -1030,7 +1042,7 @@ def main(addr):
 
 if __name__ == '__main__':   # Run main
     cr.main()
-    #sys.stdout = Logger()
+    sys.stdout = Logger()
     port = 31026
     if len(sys.argv) == 2:
         port = sys.argv[1]
