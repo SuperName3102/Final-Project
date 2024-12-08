@@ -403,3 +403,1371 @@ SystemExit: 0
 2024-12-08 13:29:25 - Current used storage is 111.047
 2024-12-08 13:29:25 - Got files
 2024-12-08 13:29:25 - Got directories
+2024-12-08 15:06:11 - Server return an error: 024 Cookie is invalid
+2024-12-08 15:06:14 - Login was succesfull for user: a
+2024-12-08 15:06:14 - File data recieved
+2024-12-08 15:06:14 - File data recieved
+2024-12-08 15:06:14 - Profile picture was recieved
+2024-12-08 15:06:14 - Current used storage is 20.302
+2024-12-08 15:06:14 - Got files
+2024-12-08 15:06:14 - Got directories
+2024-12-08 15:06:14 - Cookie recieved
+2024-12-08 15:06:24 - start upload:
+2024-12-08 15:06:24 - c7f1ce76028347ee8795bb3719b33d44
+2024-12-08 15:06:24 - File IdanCloud.zip started uploading
+2024-12-08 15:06:27 - Current used storage is 20.302
+2024-12-08 15:06:28 - Subscription level updated to professional
+2024-12-08 15:06:28 - Current used storage is 20.302
+2024-12-08 15:06:29 - Current used storage is 20.302
+2024-12-08 15:06:29 - Got files
+2024-12-08 15:06:29 - Got directories
+2024-12-08 15:06:29 - File IdanCloud.zip was uploaded
+2024-12-08 15:06:29 - Current used storage is 64.254
+2024-12-08 15:06:29 - Got files
+2024-12-08 15:06:30 - Got directories
+2024-12-08 15:06:34 - start upload:
+2024-12-08 15:06:34 - 70472c2c5ac24c84baf17ae25f240742
+2024-12-08 15:06:34 - File IdanCloud.zip started uploading
+2024-12-08 15:06:37 - File IdanCloud.zip was uploaded
+2024-12-08 15:06:37 - Current used storage is 108.206
+2024-12-08 15:06:37 - Got files
+2024-12-08 15:06:37 - Got directories
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:21 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:22 - File data recieved
+2024-12-08 15:07:23 - File data recieved
+2024-12-08 15:07:23 - File data recieved
+2024-12-08 15:07:23 - File IdanCloud.zip was downloaded
+2024-12-08 15:07:24 - Current used storage is 108.206
+2024-12-08 15:07:25 - Subscription level updated to free
+2024-12-08 15:07:25 - Current used storage is 108.206
+2024-12-08 15:07:26 - Current used storage is 108.206
+2024-12-08 15:07:26 - Got files
+2024-12-08 15:07:27 - Got directories
+2024-12-08 15:07:31 - File data recieved
+2024-12-08 15:07:31 - File data recieved
+2024-12-08 15:07:31 - File data recieved
+2024-12-08 15:07:31 - File data recieved
+2024-12-08 15:07:31 - File data recieved
+2024-12-08 15:07:31 - File data recieved
+2024-12-08 15:07:31 - File data recieved
+2024-12-08 15:07:31 - File data recieved
+2024-12-08 15:07:31 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File data recieved
+2024-12-08 15:07:32 - File IdanCloud.zip was downloaded
+2024-12-08 15:07:55 - Current used storage is 108.206
+2024-12-08 15:07:57 - Current used storage is 108.206
+2024-12-08 15:07:57 - Got files
+2024-12-08 15:07:57 - Got directories
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:02 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File data recieved
+2024-12-08 15:08:03 - File IdanCloud.zip was downloaded
+2024-12-08 15:08:43 - Login was succesfull for user: a
+2024-12-08 15:08:43 - File data recieved
+2024-12-08 15:08:43 - File data recieved
+2024-12-08 15:08:43 - Profile picture was recieved
+2024-12-08 15:08:43 - Current used storage is 108.206
+2024-12-08 15:08:43 - Got files
+2024-12-08 15:08:43 - Got directories
+2024-12-08 15:08:43 - Cookie recieved
+2024-12-08 15:09:39 - Succesfully moved to
+2024-12-08 15:09:39 - Current used storage is 108.206
+2024-12-08 15:09:39 - Got files
+2024-12-08 15:09:39 - Got directories
+2024-12-08 15:09:40 - Succesfully moved to
+2024-12-08 15:09:40 - Current used storage is 108.206
+2024-12-08 15:09:40 - Got files
+2024-12-08 15:09:40 - Got directories
+2024-12-08 15:09:51 - Unhandled exception:
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 198, in download
+    file_name = btn.text().split(" | ")[0][1:]
+                ^^^^^^^^^^
+RuntimeError: wrapped C/C++ object of type FileButton has been deleted
+2024-12-08 15:09:55 - Unhandled exception:
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 198, in download
+    file_name = btn.text().split(" | ")[0][1:]
+                ^^^^^^^^^^
+RuntimeError: wrapped C/C++ object of type FileButton has been deleted
+2024-12-08 15:10:53 - Login was succesfull for user: a
+2024-12-08 15:10:53 - File data recieved
+2024-12-08 15:10:53 - File data recieved
+2024-12-08 15:10:53 - Profile picture was recieved
+2024-12-08 15:10:53 - Current used storage is 108.206
+2024-12-08 15:10:53 - Got files
+2024-12-08 15:10:53 - Got directories
+2024-12-08 15:11:06 - Succesfully moved to
+2024-12-08 15:11:06 - Current used storage is 108.206
+2024-12-08 15:11:06 - Got files
+2024-12-08 15:11:06 - Got directories
+2024-12-08 15:11:08 - Succesfully moved to
+2024-12-08 15:11:08 - Current used storage is 108.206
+2024-12-08 15:11:08 - Got files
+2024-12-08 15:11:08 - Got directories
+2024-12-08 15:11:10 - File data recieved
+2024-12-08 15:11:10 - File data recieved
+2024-12-08 15:11:10 - File data recieved
+2024-12-08 15:11:10 - File data recieved
+2024-12-08 15:11:10 - File data recieved
+2024-12-08 15:11:10 - File data recieved
+2024-12-08 15:11:10 - File data recieved
+2024-12-08 15:11:10 - File data recieved
+2024-12-08 15:11:11 - File data recieved
+2024-12-08 15:11:11 - File files.zip was viewed
+2024-12-08 15:11:11 - File viewing released
+2024-12-08 15:11:12 - File data recieved
+2024-12-08 15:11:26 - File data recieved
+2024-12-08 15:11:26 - File data recieved
+2024-12-08 15:11:26 - File data recieved
+2024-12-08 15:11:26 - File data recieved
+2024-12-08 15:11:26 - File data recieved
+2024-12-08 15:11:26 - File data recieved
+2024-12-08 15:11:26 - File data recieved
+2024-12-08 15:11:26 - File data recieved
+2024-12-08 15:11:26 - File data recieved
+2024-12-08 15:11:26 - File data recieved
+2024-12-08 15:11:26 - File files.zip was downloaded
+2024-12-08 15:11:28 - File data recieved
+2024-12-08 15:11:28 - File data recieved
+2024-12-08 15:11:28 - File data recieved
+2024-12-08 15:11:28 - File data recieved
+2024-12-08 15:11:28 - File data recieved
+2024-12-08 15:11:28 - File data recieved
+2024-12-08 15:11:28 - File data recieved
+2024-12-08 15:11:29 - File data recieved
+2024-12-08 15:11:29 - File data recieved
+2024-12-08 15:11:29 - File files.zip was viewed
+2024-12-08 15:11:29 - File viewing released
+2024-12-08 15:11:29 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:40 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File data recieved
+2024-12-08 15:11:41 - File IdanCloud.zip was downloaded
+2024-12-08 15:15:44 - Login was succesfull for user: a
+2024-12-08 15:15:44 - File data recieved
+2024-12-08 15:15:44 - File data recieved
+2024-12-08 15:15:44 - Profile picture was recieved
+2024-12-08 15:15:44 - Current used storage is 108.206
+2024-12-08 15:15:44 - Got files
+2024-12-08 15:15:44 - Got directories
+2024-12-08 15:15:48 - File data recieved
+2024-12-08 15:15:48 - File data recieved
+2024-12-08 15:15:48 - File data recieved
+2024-12-08 15:15:48 - File data recieved
+2024-12-08 15:15:48 - File data recieved
+2024-12-08 15:15:48 - File data recieved
+2024-12-08 15:15:48 - File data recieved
+2024-12-08 15:15:48 - File data recieved
+2024-12-08 15:15:48 - File data recieved
+2024-12-08 15:15:49 - File data recieved
+2024-12-08 15:15:49 - File data recieved
+2024-12-08 15:15:49 - File data recieved
+2024-12-08 15:15:49 - File data recieved
+2024-12-08 15:15:49 - File data recieved
+2024-12-08 15:15:49 - File data recieved
+2024-12-08 15:15:49 - File data recieved
+2024-12-08 15:15:49 - File data recieved
+2024-12-08 15:15:49 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:50 - File data recieved
+2024-12-08 15:15:51 - File data recieved
+2024-12-08 15:15:51 - File data recieved
+2024-12-08 15:15:51 - File data recieved
+2024-12-08 15:15:51 - File data recieved
+2024-12-08 15:15:51 - File data recieved
+2024-12-08 15:15:51 - File data recieved
+2024-12-08 15:15:51 - File data recieved
+2024-12-08 15:15:51 - File data recieved
+2024-12-08 15:15:51 - File data recieved
+2024-12-08 15:15:52 - File data recieved
+2024-12-08 15:15:52 - File data recieved
+2024-12-08 15:15:52 - File data recieved
+2024-12-08 15:15:52 - File data recieved
+2024-12-08 15:15:52 - File data recieved
+2024-12-08 15:15:52 - File data recieved
+2024-12-08 15:15:52 - File data recieved
+2024-12-08 15:15:52 - File data recieved
+2024-12-08 15:15:52 - File data recieved
+2024-12-08 15:15:53 - File data recieved
+2024-12-08 15:15:53 - File data recieved
+2024-12-08 15:15:53 - File data recieved
+2024-12-08 15:15:53 - File data recieved
+2024-12-08 15:15:53 - File data recieved
+2024-12-08 15:15:53 - File data recieved
+2024-12-08 15:15:53 - File data recieved
+2024-12-08 15:15:53 - File data recieved
+2024-12-08 15:15:53 - File data recieved
+2024-12-08 15:15:53 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:54 - File data recieved
+2024-12-08 15:15:55 - File data recieved
+2024-12-08 15:15:55 - File data recieved
+2024-12-08 15:15:55 - File data recieved
+2024-12-08 15:15:55 - File data recieved
+2024-12-08 15:15:55 - File data recieved
+2024-12-08 15:15:55 - File data recieved
+2024-12-08 15:15:55 - File data recieved
+2024-12-08 15:15:55 - File data recieved
+2024-12-08 15:15:55 - File data recieved
+2024-12-08 15:15:56 - File data recieved
+2024-12-08 15:15:56 - File data recieved
+2024-12-08 15:15:56 - File data recieved
+2024-12-08 15:15:56 - File data recieved
+2024-12-08 15:15:56 - File data recieved
+2024-12-08 15:15:56 - File data recieved
+2024-12-08 15:15:56 - File data recieved
+2024-12-08 15:15:56 - File IdanCloud.zip was downloaded
+2024-12-08 15:15:57 - Succesfully moved to
+2024-12-08 15:15:57 - Current used storage is 108.206
+2024-12-08 15:15:57 - Got files
+2024-12-08 15:15:57 - Got directories
+2024-12-08 15:15:58 - Succesfully moved to
+2024-12-08 15:15:58 - Current used storage is 108.206
+2024-12-08 15:15:58 - Got files
+2024-12-08 15:15:58 - Got directories
+2024-12-08 15:16:13 - start upload:
+2024-12-08 15:16:13 - 45279a0506544b8fa7471c5ec53ce688
+2024-12-08 15:16:13 - File IdanCloud.zip started uploading
+2024-12-08 15:16:23 - File IdanCloud.zip was uploaded
+2024-12-08 15:16:23 - Current used storage is 152.158
+2024-12-08 15:16:23 - Got files
+2024-12-08 15:16:23 - Got directories
+2024-12-08 15:22:22 - Login was succesfull for user: a
+2024-12-08 15:22:22 - File data recieved
+2024-12-08 15:22:22 - File data recieved
+2024-12-08 15:22:22 - Profile picture was recieved
+2024-12-08 15:22:22 - Got directories
+2024-12-08 15:22:22 - Current used storage is 152.158
+2024-12-08 15:22:22 - Got files
+2024-12-08 15:22:30 - File data recieved
+2024-12-08 15:22:30 - File data recieved
+2024-12-08 15:22:30 - File data recieved
+2024-12-08 15:22:30 - File data recieved
+2024-12-08 15:22:30 - File data recieved
+2024-12-08 15:22:30 - File data recieved
+2024-12-08 15:22:30 - File data recieved
+2024-12-08 15:22:30 - File data recieved
+2024-12-08 15:22:31 - File data recieved
+2024-12-08 15:22:31 - File data recieved
+2024-12-08 15:22:31 - File data recieved
+2024-12-08 15:22:31 - File data recieved
+2024-12-08 15:22:31 - File data recieved
+2024-12-08 15:22:31 - File data recieved
+2024-12-08 15:22:31 - File data recieved
+2024-12-08 15:22:31 - File data recieved
+2024-12-08 15:22:32 - File data recieved
+2024-12-08 15:22:32 - File data recieved
+2024-12-08 15:22:32 - File data recieved
+2024-12-08 15:22:32 - File data recieved
+2024-12-08 15:22:32 - File data recieved
+2024-12-08 15:22:32 - File data recieved
+2024-12-08 15:22:32 - File data recieved
+2024-12-08 15:22:32 - File data recieved
+2024-12-08 15:22:32 - File data recieved
+2024-12-08 15:22:32 - File data recieved
+2024-12-08 15:22:33 - File data recieved
+2024-12-08 15:22:33 - File data recieved
+2024-12-08 15:22:33 - File data recieved
+2024-12-08 15:22:33 - File data recieved
+2024-12-08 15:22:33 - Succesfully moved to
+2024-12-08 15:22:33 - Got directories
+2024-12-08 15:22:33 - Got files
+2024-12-08 15:22:33 - Current used storage is 152.158
+2024-12-08 15:22:33 - File data recieved
+2024-12-08 15:22:33 - File data recieved
+2024-12-08 15:22:33 - File data recieved
+2024-12-08 15:22:34 - File data recieved
+2024-12-08 15:22:34 - File data recieved
+2024-12-08 15:22:34 - File data recieved
+2024-12-08 15:22:34 - File data recieved
+2024-12-08 15:22:34 - File data recieved
+2024-12-08 15:22:34 - File data recieved
+2024-12-08 15:22:34 - File data recieved
+2024-12-08 15:22:34 - Succesfully moved to
+2024-12-08 15:22:34 - Got directories
+2024-12-08 15:22:34 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - Got files
+2024-12-08 15:22:35 - Current used storage is 152.158
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:35 - File data recieved
+2024-12-08 15:22:36 - File data recieved
+2024-12-08 15:22:36 - File data recieved
+2024-12-08 15:22:36 - File data recieved
+2024-12-08 15:22:36 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - Got directories
+2024-12-08 15:22:37 - Got files
+2024-12-08 15:22:37 - Current used storage is 152.158
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:37 - File data recieved
+2024-12-08 15:22:38 - File data recieved
+2024-12-08 15:22:38 - File data recieved
+2024-12-08 15:22:38 - File data recieved
+2024-12-08 15:22:38 - File data recieved
+2024-12-08 15:22:38 - File data recieved
+2024-12-08 15:22:38 - File data recieved
+2024-12-08 15:22:38 - File data recieved
+2024-12-08 15:22:38 - File data recieved
+2024-12-08 15:22:38 - File data recieved
+2024-12-08 15:22:38 - File IdanCloud.zip was downloaded
+2024-12-08 15:22:43 - start upload:
+2024-12-08 15:22:43 - b6f291a5cde84a5a87e5444f116837db
+2024-12-08 15:22:43 - Server return an error: 014 File not found
+2024-12-08 15:22:43 - Server return an error: 014 File not found
+2024-12-08 15:22:43 - Server return an error: 014 File not found
+2024-12-08 15:22:43 - Server return an error: 014 File not found
+2024-12-08 15:22:43 - Server return an error: 014 File not found
+2024-12-08 15:22:43 - Server return an error: 014 File not found
+2024-12-08 15:22:43 - Server return an error: 014 File not found
+2024-12-08 15:22:43 - Server return an error: 014 File not found
+2024-12-08 15:22:43 - File IdanCloud.zip started uploading
+2024-12-08 15:22:46 - Succesfully moved to
+2024-12-08 15:22:46 - Got directories
+2024-12-08 15:22:46 - Got files
+2024-12-08 15:22:46 - Current used storage is 152.158
+2024-12-08 15:22:48 - Succesfully moved to
+2024-12-08 15:22:48 - Got directories
+2024-12-08 15:22:48 - Got files
+2024-12-08 15:22:48 - Current used storage is 152.158
+2024-12-08 15:22:50 - Got directories
+2024-12-08 15:22:50 - Got files
+2024-12-08 15:22:50 - Current used storage is 152.158
+2024-12-08 15:22:50 - Server return an error: 001 General error
+2024-12-08 15:22:53 - Got directories
+2024-12-08 15:22:53 - Got files
+2024-12-08 15:22:53 - Current used storage is 152.158
+2024-12-08 15:22:54 - File IdanCloud.zip was uploaded
+2024-12-08 15:23:08 - Invalid reply from server
+2024-12-08 15:23:08 - b'UPDR|Succesfully deleted 1 files'
+2024-12-08 15:23:08 - File IdanCloud.zip was deleted!
+2024-12-08 15:23:08 - Current used storage is 196.11
+2024-12-08 15:23:08 - Got directories
+2024-12-08 15:23:08 - Got files
+2024-12-08 15:23:12 - start upload:
+2024-12-08 15:23:12 - ae06be3bbf7c4f858895e248180c6f5f
+2024-12-08 15:23:12 - Server return an error: 014 File not found
+2024-12-08 15:23:12 - Server return an error: 014 File not found
+2024-12-08 15:23:12 - Server return an error: 014 File not found
+2024-12-08 15:23:12 - Server return an error: 014 File not found
+2024-12-08 15:23:12 - Server return an error: 014 File not found
+2024-12-08 15:23:12 - Server return an error: 014 File not found
+2024-12-08 15:23:12 - Server return an error: 014 File not found
+2024-12-08 15:23:12 - Server return an error: 014 File not found
+2024-12-08 15:23:12 - File IdanCloud.zip started uploading
+2024-12-08 15:23:14 - Current used storage is 196.11
+2024-12-08 15:23:14 - Subscription level updated to professional
+2024-12-08 15:23:14 - Current used storage is 196.11
+2024-12-08 15:23:16 - Server return an error: 001 General error
+2024-12-08 15:23:16 - Got directories
+2024-12-08 15:23:16 - Current used storage is 196.11
+2024-12-08 15:23:16 - Got files
+2024-12-08 15:23:16 - File IdanCloud.zip was uploaded
+2024-12-08 15:23:16 - Server return an error: 001 General error
+2024-12-08 15:24:55 - Login was succesfull for user: a
+2024-12-08 15:24:55 - File data recieved
+2024-12-08 15:24:55 - File data recieved
+2024-12-08 15:24:55 - Profile picture was recieved
+2024-12-08 15:24:55 - Got directories
+2024-12-08 15:24:56 - Got files
+2024-12-08 15:24:56 - Current used storage is 240.062
+2024-12-08 15:25:04 - start upload:
+2024-12-08 15:25:04 - ed5a7f260ad640b98f0c39545ab6c367
+2024-12-08 15:25:04 - File rockyou.txt started uploading
+2024-12-08 15:25:09 - Got directories
+2024-12-08 15:25:09 - Current used storage is 240.062
+2024-12-08 15:25:10 - Got files
+2024-12-08 15:25:10 - File rockyou.txt was uploaded
+2024-12-08 15:25:14 - Current used storage is 379.984
+2024-12-08 15:25:14 - Subscription level updated to free
+2024-12-08 15:25:14 - Current used storage is 379.984
+2024-12-08 15:25:16 - Current used storage is 379.984
+2024-12-08 15:25:16 - Got directories
+2024-12-08 15:25:16 - Got files
+2024-12-08 15:25:20 - start upload:
+2024-12-08 15:25:20 - ac7ebbfa4e124d1f98b77215b52f7f55
+2024-12-08 15:25:20 - Server return an error: 020 File exceeded max size of 50 MB
+2024-12-08 15:25:20 - Server return an error: 014 File not found
+2024-12-08 15:25:20 - Server return an error: 014 File not found
+2024-12-08 15:25:20 - Server return an error: 014 File not found
+2024-12-08 15:25:20 - Server return an error: 014 File not found
+2024-12-08 15:25:20 - Server return an error: 014 File not found
+2024-12-08 15:25:20 - Server return an error: 014 File not found
+2024-12-08 15:25:20 - Got directories
+2024-12-08 15:25:20 - Current used storage is 379.984
+2024-12-08 15:25:20 - Got files
+2024-12-08 15:25:33 - Invalid reply from server
+2024-12-08 15:25:33 - b'UPDR|Succesfully deleted 1 files'
+2024-12-08 15:25:33 - File rockyou.txt was deleted!
+2024-12-08 15:25:33 - Got directories
+2024-12-08 15:25:33 - Current used storage is 379.984
+2024-12-08 15:25:33 - Got files
+2024-12-08 15:25:37 - Invalid reply from server
+2024-12-08 15:25:37 - b'UPDR|Succesfully deleted 1 files'
+2024-12-08 15:25:37 - File IdanCloud.zip was deleted!
+2024-12-08 15:25:37 - Current used storage is 379.984
+2024-12-08 15:25:37 - Got files
+2024-12-08 15:25:37 - Got directories
+2024-12-08 15:25:40 - Succesfully moved to
+2024-12-08 15:25:40 - Got directories
+2024-12-08 15:25:40 - Got files
+2024-12-08 15:25:40 - Current used storage is 379.984
+2024-12-08 15:25:42 - Invalid reply from server
+2024-12-08 15:25:42 - b'UPDR|Succesfully deleted 1 files'
+2024-12-08 15:25:42 - File rockyou.txt was deleted!
+2024-12-08 15:25:42 - Got directories
+2024-12-08 15:25:42 - Got files
+2024-12-08 15:25:42 - Current used storage is 240.062
+2024-12-08 15:25:44 - Succesfully moved to
+2024-12-08 15:25:44 - Got directories
+2024-12-08 15:25:44 - Got files
+2024-12-08 15:25:44 - Current used storage is 240.062
+2024-12-08 15:25:47 - Succesfully moved to images\
+2024-12-08 15:25:47 - Got directories
+2024-12-08 15:25:47 - Got files
+2024-12-08 15:25:47 - Current used storage is 240.062
+2024-12-08 15:25:51 - Invalid reply from server
+2024-12-08 15:25:51 - b'UPDR|Succesfully deleted 3 files'
+2024-12-08 15:25:51 - File Minecraft_Logo.png was deleted!
+2024-12-08 15:25:51 - File 220764.jpg was deleted!
+2024-12-08 15:25:51 - Got files
+2024-12-08 15:25:51 - File twitch-overlay-maker-featuring-a-live-cam-panel-with-a-night-skyline-1251c.png was deleted!
+2024-12-08 15:25:51 - Got directories
+2024-12-08 15:25:51 - Current used storage is 240.062
+2024-12-08 15:25:57 - Invalid reply from server
+2024-12-08 15:25:57 - b'UPDR|Succesfully deleted 3 files'
+2024-12-08 15:25:57 - File cool snake - Copy.png was deleted!
+2024-12-08 15:25:57 - Got directories
+2024-12-08 15:25:57 - File coool gif.png was deleted!
+2024-12-08 15:25:57 - File Reddit 1 Million Pixel Art.png was deleted!
+2024-12-08 15:25:57 - Got files
+2024-12-08 15:25:57 - Current used storage is 240.062
+2024-12-08 15:26:02 - Succesfully moved to images\inbar\
+2024-12-08 15:26:02 - Got directories
+2024-12-08 15:26:02 - Got files
+2024-12-08 15:26:02 - Current used storage is 240.062
+2024-12-08 15:26:03 - Succesfully moved to images\
+2024-12-08 15:26:03 - Got directories
+2024-12-08 15:26:03 - Current used storage is 240.062
+2024-12-08 15:26:03 - Got files
+2024-12-08 15:26:04 - Succesfully moved to
+2024-12-08 15:26:04 - Got directories
+2024-12-08 15:26:04 - Current used storage is 240.062
+2024-12-08 15:26:04 - Got files
+2024-12-08 15:26:07 - Succesfully moved to
+2024-12-08 15:26:07 - Got directories
+2024-12-08 15:26:07 - Got files
+2024-12-08 15:26:07 - Current used storage is 240.062
+2024-12-08 15:26:08 - Succesfully moved to
+2024-12-08 15:26:08 - Got directories
+2024-12-08 15:26:08 - Current used storage is 240.062
+2024-12-08 15:26:08 - Got files
+2024-12-08 15:26:09 - Succesfully moved to
+2024-12-08 15:26:09 - Got files
+2024-12-08 15:26:09 - Got directories
+2024-12-08 15:26:09 - Current used storage is 240.062
+2024-12-08 15:26:14 - Invalid reply from server
+2024-12-08 15:26:14 - b'UPDR|Succesfully removed 1 files from share'
+2024-12-08 15:26:14 - Succefully remove 06_21_157t1.xlsx from share
+2024-12-08 15:26:14 - Got directories
+2024-12-08 15:26:14 - Current used storage is 240.062
+2024-12-08 15:26:14 - Server return an error: 001 General error
+2024-12-08 15:26:44 - Succesfully moved to
+2024-12-08 15:26:44 - Current used storage is 240.062
+2024-12-08 15:26:44 - Got directories
+2024-12-08 15:26:45 - Got files
+2024-12-08 15:26:46 - Succesfully moved to
+2024-12-08 15:26:46 - Got files
+2024-12-08 15:26:46 - Got directories
+2024-12-08 15:26:46 - Current used storage is 240.062
+2024-12-08 15:26:49 - Invalid reply from server
+2024-12-08 15:26:49 - b'UPDR|Succesfully removed 1 files from share'
+2024-12-08 15:26:49 - Succefully remove hi from share
+2024-12-08 15:26:49 - Server return an error: 001 General error
+2024-12-08 15:26:49 - Got directories
+2024-12-08 15:26:49 - Current used storage is 240.062
+2024-12-08 15:26:52 - Succesfully moved to
+2024-12-08 15:26:52 - Got files
+2024-12-08 15:26:52 - Got directories
+2024-12-08 15:26:52 - Current used storage is 240.062
+2024-12-08 15:26:54 - Succesfully moved to
+2024-12-08 15:26:54 - Got files
+2024-12-08 15:26:54 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 666, in draw_cwd
+    button = FileButton(f" {dir_name} | {last_change} | {size} | {directory[4]}".split("|"), dir_id, is_folder=True, shared_by=directory[2], perms=perms, size = int(directory[3]), name=file_name)
+                                                                                                                                                                                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'file_name' where it is not associated with a value
+2024-12-08 15:26:54 - Got directories
+2024-12-08 15:26:54 - Current used storage is 240.062
+2024-12-08 15:26:55 - Succesfully moved to
+2024-12-08 15:26:55 - Got directories
+2024-12-08 15:26:55 - Got files
+2024-12-08 15:26:55 - Current used storage is 240.062
+2024-12-08 15:26:56 - Succesfully moved to
+2024-12-08 15:26:56 - Got files
+2024-12-08 15:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 666, in draw_cwd
+    button = FileButton(f" {dir_name} | {last_change} | {size} | {directory[4]}".split("|"), dir_id, is_folder=True, shared_by=directory[2], perms=perms, size = int(directory[3]), name=file_name)
+                                                                                                                                                                                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'file_name' where it is not associated with a value
+2024-12-08 15:26:56 - Got directories
+2024-12-08 15:26:56 - Current used storage is 240.062
+2024-12-08 15:28:44 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\key_exchange.py", line 11, in rsa_exchange
+    s_public_key = recv_rsa_key(sock)
+                   ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\key_exchange.py", line 26, in recv_rsa_key
+    key_len_b += sock.recv(len_field - len(key_len_b))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2024-12-08 15:28:49 - Login was succesfull for user: a
+2024-12-08 15:28:49 - File data recieved
+2024-12-08 15:28:49 - File data recieved
+2024-12-08 15:28:49 - Profile picture was recieved
+2024-12-08 15:28:49 - Got directories
+2024-12-08 15:28:49 - Current used storage is 240.062
+2024-12-08 15:28:49 - Got files
+2024-12-08 15:29:02 - Succesfully moved to
+2024-12-08 15:29:02 - Got files
+2024-12-08 15:29:02 - Current used storage is 240.062
+2024-12-08 15:29:02 - Got directories
+2024-12-08 15:29:08 - Invalid reply from server
+2024-12-08 15:29:08 - b'UPDR|Succesfully removed 1 files from share'
+2024-12-08 15:29:08 - Succefully remove delete from share
+2024-12-08 15:29:08 - Got directories
+2024-12-08 15:29:08 - Got files
+2024-12-08 15:29:08 - Current used storage is 240.062
+2024-12-08 15:29:15 - Succesfully moved to
+2024-12-08 15:29:15 - Got directories
+2024-12-08 15:29:15 - Got files
+2024-12-08 15:29:15 - Current used storage is 240.062
+2024-12-08 15:29:17 - Logout succesfull
+2024-12-08 15:29:22 - Login was succesfull for user: idan
+2024-12-08 15:29:22 - File data recieved
+2024-12-08 15:29:22 - Profile picture was recieved
+2024-12-08 15:29:22 - Got files
+2024-12-08 15:29:22 - Current used storage is 1.088
+2024-12-08 15:29:22 - Got directories
+2024-12-08 15:29:28 - Invalid reply from server
+2024-12-08 15:29:28 - b'UPDR|Succesfully shared 6 files'
+2024-12-08 15:29:28 - Got files
+2024-12-08 15:29:28 - Current used storage is 1.088
+2024-12-08 15:29:28 - Got directories
+2024-12-08 15:29:31 - Sharing options recieved
+2024-12-08 15:29:31 - Sharing option with a have been updated
+2024-12-08 15:29:33 - Sharing options recieved
+2024-12-08 15:29:33 - Sharing option with a have been updated
+2024-12-08 15:29:34 - Sharing options recieved
+2024-12-08 15:29:35 - Sharing option with a have been updated
+2024-12-08 15:29:36 - Sharing options recieved
+2024-12-08 15:29:36 - Sharing option with a have been updated
+2024-12-08 15:29:38 - Sharing options recieved
+2024-12-08 15:29:38 - Sharing option with a have been updated
+2024-12-08 15:29:41 - Sharing options recieved
+2024-12-08 15:29:41 - Sharing option with a have been updated
+2024-12-08 15:29:42 - Logout succesfull
+2024-12-08 15:29:44 - Login was succesfull for user: a
+2024-12-08 15:29:44 - File data recieved
+2024-12-08 15:29:44 - File data recieved
+2024-12-08 15:29:44 - Profile picture was recieved
+2024-12-08 15:29:44 - Got directories
+2024-12-08 15:29:44 - Current used storage is 240.062
+2024-12-08 15:29:44 - Got files
+2024-12-08 15:29:49 - Got directories
+2024-12-08 15:29:49 - Current used storage is 240.062
+2024-12-08 15:29:49 - Got files
+2024-12-08 15:29:52 - Succesfully moved to
+2024-12-08 15:29:52 - Current used storage is 240.062
+2024-12-08 15:29:52 - Got files
+2024-12-08 15:29:52 - Got directories
+2024-12-08 15:29:55 - Invalid reply from server
+2024-12-08 15:29:55 - b'UPDR|Succesfully removed 1 files from share'
+2024-12-08 15:29:55 - Succefully remove English Recording.mp3 from share
+2024-12-08 15:29:55 - Server return an error: 001 General error
+2024-12-08 15:29:55 - Got directories
+2024-12-08 15:29:55 - Current used storage is 240.062
+2024-12-08 15:30:38 - Succesfully moved to
+2024-12-08 15:30:38 - Got directories
+2024-12-08 15:30:38 - Got files
+2024-12-08 15:30:38 - Current used storage is 240.062
+2024-12-08 15:30:40 - Succesfully moved to
+2024-12-08 15:30:42 - Current used storage is 240.062
+2024-12-08 15:30:47 - Got directories
+2024-12-08 15:30:47 - Got files
+2024-12-08 15:30:52 - Invalid reply from server
+2024-12-08 15:30:52 - b'UPDR|Succesfully removed 1 files from share'
+2024-12-08 15:30:52 - Succefully remove hello a please see this file from share
+2024-12-08 15:31:26 - Login was succesfull for user: a
+2024-12-08 15:31:26 - Got directories
+2024-12-08 15:31:26 - File data recieved
+2024-12-08 15:31:26 - File data recieved
+2024-12-08 15:31:26 - Profile picture was recieved
+2024-12-08 15:31:26 - Current used storage is 240.062
+2024-12-08 15:31:26 - Got files
+2024-12-08 15:31:27 - Succesfully moved to
+2024-12-08 15:31:27 - Got directories
+2024-12-08 15:31:27 - Got files
+2024-12-08 15:31:27 - Current used storage is 240.062
+2024-12-08 15:31:29 - Invalid reply from server
+2024-12-08 15:31:29 - b'UPDR|Succesfully removed 1 files from share'
+2024-12-08 15:31:29 - Got files
+2024-12-08 15:31:29 - Succefully remove vencord-settings-backup.jsonggjgjerigjeroigjreughjtiughtriughjturighjrtiuhjgrt from share
+2024-12-08 15:31:29 - Current used storage is 240.062
+2024-12-08 15:31:29 - Got directories
+2024-12-08 15:31:31 - Succesfully moved to
+2024-12-08 15:31:31 - Got directories
+2024-12-08 15:31:31 - Current used storage is 240.062
+2024-12-08 15:31:31 - Got files
+2024-12-08 15:31:32 - Succesfully moved to
+2024-12-08 15:31:32 - Got files
+2024-12-08 15:31:32 - Current used storage is 240.062
+2024-12-08 15:31:32 - Got directories
+2024-12-08 15:31:38 - Invalid reply from server
+2024-12-08 15:31:38 - b'UPDR|Succesfully removed 1 files from share'
+2024-12-08 15:31:38 - Succefully remove VSCode.css from share
+2024-12-08 15:31:38 - Got files
+2024-12-08 15:31:38 - Got directories
+2024-12-08 15:31:38 - Current used storage is 240.062
+2024-12-08 15:31:40 - Succesfully moved to all - 1\
+2024-12-08 15:31:40 - Got files
+2024-12-08 15:31:40 - Got directories
+2024-12-08 15:31:40 - Current used storage is 240.062
+2024-12-08 15:31:41 - Succesfully moved to all - 1\fefew\
+2024-12-08 15:31:41 - Got files
+2024-12-08 15:31:41 - Got directories
+2024-12-08 15:31:41 - Current used storage is 240.062
+2024-12-08 15:31:42 - Succesfully moved to all - 1\
+2024-12-08 15:31:42 - Got files
+2024-12-08 15:31:42 - Got directories
+2024-12-08 15:31:42 - Current used storage is 240.062
+2024-12-08 15:31:42 - Succesfully moved to
+2024-12-08 15:31:42 - Got files
+2024-12-08 15:31:42 - Got directories
+2024-12-08 15:31:42 - Current used storage is 240.062
+2024-12-08 15:31:43 - Succesfully moved to delete\
+2024-12-08 15:31:43 - Got files
+2024-12-08 15:31:43 - Got directories
+2024-12-08 15:31:43 - Current used storage is 240.062
+2024-12-08 15:31:44 - Succesfully moved to
+2024-12-08 15:31:44 - Got files
+2024-12-08 15:31:44 - Got directories
+2024-12-08 15:31:44 - Current used storage is 240.062
+2024-12-08 15:31:45 - Succesfully moved to rename\
+2024-12-08 15:31:45 - Got files
+2024-12-08 15:31:45 - Got directories
+2024-12-08 15:31:45 - Current used storage is 240.062
+2024-12-08 15:31:48 - Succesfully moved to
+2024-12-08 15:31:48 - Got files
+2024-12-08 15:31:48 - Got directories
+2024-12-08 15:31:48 - Current used storage is 240.062
+2024-12-08 15:31:49 - Succesfully moved to
+2024-12-08 15:31:49 - Current used storage is 240.062
+2024-12-08 15:31:49 - Got files
+2024-12-08 15:31:49 - Got directories
+2024-12-08 15:31:52 - Invalid reply from server
+2024-12-08 15:31:52 - b'UPDR|Succesfully deleted 1 files'
+2024-12-08 15:31:52 - File get repos github.sh was deleted!
+2024-12-08 15:31:52 - Got directories
+2024-12-08 15:31:52 - Current used storage is 240.062
+2024-12-08 15:31:52 - Got files
+2024-12-08 15:34:16 - Login was succesfull for user: a
+2024-12-08 15:34:16 - File data recieved
+2024-12-08 15:34:16 - File data recieved
+2024-12-08 15:34:16 - Profile picture was recieved
+2024-12-08 15:34:16 - Got directories
+2024-12-08 15:34:16 - Got files
+2024-12-08 15:34:16 - Current used storage is 240.062
+2024-12-08 15:34:22 - Login was succesfull for user: a
+2024-12-08 15:34:22 - File data recieved
+2024-12-08 15:34:22 - File data recieved
+2024-12-08 15:34:22 - Profile picture was recieved
+2024-12-08 15:34:22 - Got directories
+2024-12-08 15:34:22 - Got files
+2024-12-08 15:34:22 - Current used storage is 240.062
+2024-12-08 15:34:30 - Current used storage is 240.062
+2024-12-08 15:34:31 - Subscription level updated to professional
+2024-12-08 15:34:31 - Current used storage is 240.062
+2024-12-08 15:34:32 - Got directories
+2024-12-08 15:34:32 - Got files
+2024-12-08 15:34:32 - Current used storage is 240.062
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:56 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:57 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:58 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:34:59 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File data recieved
+2024-12-08 15:35:00 - File sssss.zip was downloaded
+2024-12-08 15:35:13 - Succesfully moved to
+2024-12-08 15:35:13 - Got directories
+2024-12-08 15:35:13 - Got files
+2024-12-08 15:35:13 - Current used storage is 240.062
+2024-12-08 15:35:20 - Invalid reply from server
+2024-12-08 15:35:20 - b'UPDR|Succesfully deleted 7 files'
+2024-12-08 15:35:20 - File IdanCloud.zip was deleted!
+2024-12-08 15:35:20 - File IdanCloud.zip was deleted!
+2024-12-08 15:35:20 - Got directories
+2024-12-08 15:35:20 - File coool gif.png was deleted!
+2024-12-08 15:35:20 - File Reddit 1 Million Pixel Art.png was deleted!
+2024-12-08 15:35:20 - File cool snake - Copy.png was deleted!
+2024-12-08 15:35:20 - Server return an error: 001 General error
+2024-12-08 15:35:20 - File Minecraft_Logo.png was deleted!
+2024-12-08 15:35:20 - File twitch-overlay-maker-featuring-a-live-cam-panel-with-a-night-skyline-1251c.png was deleted!
+2024-12-08 15:35:20 - Current used storage is 194.497
+2024-12-08 15:36:29 - Succesfully moved to
+2024-12-08 15:36:29 - Got directories
+2024-12-08 15:36:29 - Got files
+2024-12-08 15:36:29 - Current used storage is 150.545
+2024-12-08 15:37:30 - Login was succesfull for user: a
+2024-12-08 15:37:30 - File data recieved
+2024-12-08 15:37:30 - File data recieved
+2024-12-08 15:37:30 - Profile picture was recieved
+2024-12-08 15:37:30 - Current used storage is 150.545
+2024-12-08 15:37:30 - Got directories
+2024-12-08 15:37:30 - Got files
+2024-12-08 15:37:36 - Succesfully moved to
+2024-12-08 15:37:36 - Got directories
+2024-12-08 15:37:36 - Got files
+2024-12-08 15:37:36 - Current used storage is 150.545
+2024-12-08 15:37:40 - Invalid reply from server
+2024-12-08 15:37:40 - b'UPDR|Succesfully deleted 2 files'
+2024-12-08 15:37:40 - File client.pyw was deleted!
+2024-12-08 15:37:40 - File client.pyw was deleted!
+2024-12-08 15:37:40 - Got directories
+2024-12-08 15:37:40 - Got files
+2024-12-08 15:37:40 - Current used storage is 150.389
+2024-12-08 15:37:43 - Invalid reply from server
+2024-12-08 15:37:43 - b'UPDR|Succesfully recovered 1 files'
+2024-12-08 15:37:43 - Got directories
+2024-12-08 15:37:43 - Got files
+2024-12-08 15:37:43 - Succefully recovered הצעת פרוייקט.docx
+2024-12-08 15:37:43 - Current used storage is 150.389
+2024-12-08 15:37:46 - Invalid reply from server
+2024-12-08 15:37:46 - b'UPDR|Succesfully recovered 1 files'
+2024-12-08 15:37:46 - Got directories
+2024-12-08 15:37:46 - Succefully recovered הצעת פרוייקט.docx
+2024-12-08 15:37:46 - Current used storage is 150.389
+2024-12-08 15:37:46 - Got files
+2024-12-08 15:37:49 - Succesfully moved to
+2024-12-08 15:37:49 - Current used storage is 150.389
+2024-12-08 15:37:49 - Got directories
+2024-12-08 15:37:49 - Got files
+2024-12-08 15:37:51 - Succesfully moved to
+2024-12-08 15:37:51 - Got directories
+2024-12-08 15:37:51 - Got files
+2024-12-08 15:37:51 - Current used storage is 150.389
+2024-12-08 15:37:57 - Invalid reply from server
+2024-12-08 15:37:57 - b'UPDR|Succesfully recovered 1 files'
+2024-12-08 15:37:57 - Got directories
+2024-12-08 15:37:57 - Got files
+2024-12-08 15:37:57 - Succefully recovered עידן.mp4
+2024-12-08 15:37:57 - Current used storage is 150.389
+2024-12-08 15:38:36 - Succesfully moved to
+2024-12-08 15:38:36 - Got directories
+2024-12-08 15:38:36 - Got files
+2024-12-08 15:38:36 - Current used storage is 150.389

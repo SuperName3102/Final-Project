@@ -33,8 +33,6 @@ bytes_recieved = {}
 bytes_sent = {}
 
 files_uploading = {}
-send_limit = {}
-recieve_limit = {}
 
 
 # User handling classes
@@ -72,7 +70,9 @@ class File:
             print(traceback.format_exc())
             self.uploading = False
         finally:
-            if os.path.exists(lock_path): os.remove(lock_path)
+            try: 
+                if os.path.exists(lock_path): os.remove(lock_path)
+            except: pass
             
     
     def delete(self):
@@ -96,25 +96,6 @@ class Client:
         self.encryption = encryption
         self.cwd = f"{cloud_path}\\{self.user}"
 
-def check_limits(tid):
-    global bytes_recieved, bytes_sent, recieve_limit, send_limit
-    start = time.time()
-    while True:
-        current_time = time.time()
-        elapsed_time = current_time - start
-        if elapsed_time >= 1.0:
-            start = current_time
-            bytes_recieved[tid] = 0
-            bytes_sent[tid] = 0
-            recieve_limit[tid] = [False, 0]
-            send_limit[tid] = [False, 0]
-            
-        if bytes_recieved[tid] >= Limits(clients[tid].subscription_level).max_upload_speed * 1_000_000:
-            send_limit[tid] = [True, 1.0 - elapsed_time]
-        if bytes_sent[tid] >= Limits(clients[tid].subscription_level).max_download_speed * 1_000_000:
-            recieve_limit[tid] = [True, 1.0 - elapsed_time]
-        time.sleep(0.05)
-
 
 def send_file_data(file_path, id, sock, tid, progress = 0):
     lock_path = f"{file_path}.lock"
@@ -125,6 +106,9 @@ def send_file_data(file_path, id, sock, tid, progress = 0):
     size = os.path.getsize(file_path)
     left = size % chunk_size
     sent = progress
+    
+    start = time.time()
+    bytes_sent = 0
     try:
         with lock:
             with open(file_path, 'rb') as f:
@@ -132,15 +116,25 @@ def send_file_data(file_path, id, sock, tid, progress = 0):
                 for i in range((size - progress) // chunk_size):
                     location_infile = f.tell()
                     data = f.read(chunk_size)
-                    if tid in send_limit.keys() and send_limit[tid][0]:
-                        time.sleep(send_limit[tid][1])
+                    current_time = time.time()
+                    elapsed_time = current_time - start
+                    
+                    if elapsed_time >= 1.0:
+                        start = current_time
+                        bytes_sent = 0
+                    
                     send_data(sock, tid, f"RILD|{id}|{location_infile}|".encode() + data)
-                    sent += chunk_size 
+                    bytes_sent += len(data)
+                    sent += chunk_size
+                    
+                    if bytes_sent >= (Limits(clients[tid].subscription_level).max_upload_speed) * 1_000_000:
+                        time_to_wait = 1.0 - elapsed_time
+                        if time_to_wait > 0:
+                            time.sleep(time_to_wait)
+                    
                 location_infile = f.tell()
                 data = f.read(left)
                 if data != b"":
-                    if tid in send_limit.keys() and send_limit[tid][0]:
-                        time.sleep(send_limit[tid][1])
                     send_data(sock, tid, f"RILE|{id}|{location_infile}|".encode() + data)
     except:
         if os.path.exists(lock_path):
@@ -153,20 +147,27 @@ def send_zip(zip_buffer, id, sock, tid, progress = 0):
     size = len(zip_buffer.getbuffer())
     left = size % chunk_size
     sent = progress
+    start = time.time()
+    bytes_sent = 0
     try:
         zip_buffer.seek(progress)
         for i in range((size - progress) // chunk_size):
             location_infile = zip_buffer.tell()
             data = zip_buffer.read(chunk_size)
-            if tid in send_limit.keys() and send_limit[tid][0]:
-                time.sleep(send_limit[tid][1])
+            
+            current_time = time.time()
+            elapsed_time = current_time - start
+                    
+            if elapsed_time >= 1.0:
+                start = current_time
+                bytes_sent = 0
+            
             send_data(sock, tid, f"RILD|{id}|{location_infile}|".encode() + data)
+            bytes_sent += len(data)
             sent += chunk_size 
         location_infile = zip_buffer.tell()
         data = zip_buffer.read(left)
         if data != b"":
-            if tid in send_limit.keys() and send_limit[tid][0]:
-                time.sleep(send_limit[tid][1])
             send_data(sock, tid, f"RILE|{id}|{location_infile}|".encode() + data)
     except:
         raise
@@ -867,19 +868,22 @@ def handle_request(request, tid, sock):
     Getting client request and parsing it
     If some error occured or no response return general error
     """
-    client_exit = False
+    global finish
     try:
         to_send = protocol_build_reply(request, tid, sock)
         if to_send == None:
-            return None, True
+            time.sleep(1)
+            clients[tid] = None
+            return
         to_send = to_send.encode()
+        send_data(sock, tid, to_send)
         if (to_send == b"EXTR"):
-            client_exit = True
+            clients[tid] = None
+
     except Exception as err:
         print(traceback.format_exc())
         to_send = Errors.GENERAL.value
-        to_send = to_send.encode()
-    return to_send, client_exit
+        send_data(sock, tid, to_send.encode())
 
 
 # Begin data handling and processing functions
@@ -935,8 +939,6 @@ def recv_data(sock, tid):
     """
     global bytes_recieved
     try:
-        if tid in recieve_limit.keys() and recieve_limit[tid][0]:
-            time.sleep(recieve_limit[tid][1])
         b_len = b''
         while (len(b_len) < len_field):   # Loop to get length in bytes
             b_len += sock.recv(len_field - len(b_len))
@@ -990,15 +992,12 @@ def handle_client(sock, tid, addr):
         clients[tid].shared_secret = shared_secret
         clients[tid].encryption = True
         
-        
-        limits_checker = threading.Thread(target=check_limits, args=(tid,))
-        limits_checker.start()
     except Exception:
         print(traceback.format_exc())
         # Releasing clienk and closing socket
         print(f'Client {tid} connection error')
         if (tid in clients):
-            clients[tid].user = "dead"
+            clients[tid] = None
         sock.close()
         return
     while not finish:   # Main client loop
@@ -1008,12 +1007,9 @@ def handle_client(sock, tid, addr):
         try:
             # Recieving data and  handling client
             entire_data = recv_data(sock, tid)
-            to_send, finish = handle_request(entire_data, tid, sock)
-            if to_send != None:
-                send_data(sock, tid, to_send)
-            if finish or to_send == None:
-                time.sleep(1)
-                break
+            t = threading.Thread(target=handle_request, args=(entire_data, tid, sock))
+            t.start()
+            
         except socket.error as err:
             print(f'Socket Error exit client loop: err:  {err}')
             break
@@ -1022,7 +1018,7 @@ def handle_client(sock, tid, addr):
             print(traceback.format_exc())
             break
     print(f'Client {tid} Exit')   # Releasing clienk and closing socket
-    clients[tid].user = "dead"
+    clients[tid] = None
     sock.close()
 
 def cleaner():

@@ -638,11 +638,11 @@ def get_share_files(user_id, parent, name_filter=None):
     for file in files:
         file = File(**file)
         if ((name_filter is None or name_filter.lower() in file.fname.lower()) and not is_deleted(file.id)):
-            last_edit = str_to_date(file.last_edit)
-            parsed_files.append(f"{file.fname}~{last_edit}~{file.size}~{file.id}~{"".join((db.get_user_values(file.owner_id, ["username"])))}~{"~".join(get_perms(user_id, file.id))}")
-        
+            try:
+                last_edit = str_to_date(file.last_edit)
+                parsed_files.append(f"{file.fname}~{last_edit}~{file.size}~{file.id}~{"".join((db.get_user_values(file.owner_id, ["username"])))}~{"~".join(get_perms(user_id, file.id))}")
+            except: continue
     return parsed_files
-
 
 def get_share_directories(user_id, parent, name_filter=None):
     directories = db.get_all_share_directories(user_id)

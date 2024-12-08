@@ -546,9 +546,11 @@ def get_deleted_files(owner_id):
     conn.close()
     files = []
     for file in ans:
-        file = row_to_dict_file(file)
-        file["last_edit"] = get_deleted_time(file["id"])[0]
-        files.append(file)
+        try:
+            file = row_to_dict_file(file)
+            file["last_edit"] = get_deleted_time(file["id"])[0]
+            files.append(file)
+        except: continue
     return files
 
 def get_deleted_directories(owner_id):

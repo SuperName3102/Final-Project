@@ -540,7 +540,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.run_user_page()
 
     def run_user_page(self):
-        global files, directories
+        global files, directories, currently_selected
         try:
             temp = window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/account_managment.ui"
@@ -550,19 +550,16 @@ class MainWindow(QtWidgets.QMainWindow):
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             
-            if share or deleted: 
-                self.setAcceptDrops(False)
-            else: 
-                self.setAcceptDrops(True)
-            if share:
-                self.sort.addItem(" Owner")
+            if share or deleted: self.setAcceptDrops(False)
+            else: self.setAcceptDrops(True)
+            if share: self.sort.addItem(" Owner")
             self.set_cwd()
             
             if len(active_threads) == 0:
                 self.file_upload_progress.hide()
                 self.stop_button.hide()
                 
-            #self.total_files.setText(f"{len(files) + len(directories)} items")
+            currently_selected = []
             
             self.main_text.setText(f"Welcome {user["username"]}")
 
@@ -666,7 +663,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 last_change = directory[2][:-7]
                 perms = directory[5:]
                 if share:
-                    button = FileButton(f" {dir_name} | {last_change} | {size} | {directory[4]}".split("|"), dir_id, is_folder=True, shared_by=directory[2], perms=perms, size = int(directory[3]), name=file_name)
+                    button = FileButton(f" {dir_name} | {last_change} | {size} | {directory[4]}".split("|"), dir_id, is_folder=True, shared_by=directory[2], perms=perms, size = int(directory[3]), name=dir_name)
                 else:
                     button = FileButton(f" {dir_name} | {last_change} | {size}".split("|"), dir_id, is_folder=True, size = int(directory[3]), name=dir_name)
                 #button.clicked.connect(lambda checked, id=dir_id, name=dir_name, dir_size=int(directory[3]): select_item(dir_id, dir_name, dir_size, True))
@@ -1685,6 +1682,7 @@ def protocol_parse_reply(reply):
             msg = fields[1]
             window.user_page()
             window.set_message(msg)
+            to_show = msg
             
         else:
             window.set_message("Unknown command " + code)
