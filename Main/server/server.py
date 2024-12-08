@@ -29,8 +29,8 @@ cloud_path = f"{os.path.dirname(os.path.abspath(__file__))}\\cloud"
 user_icons_path = f"{os.path.dirname(os.path.abspath(__file__))}\\user icons"
 log = False
 
-bytes_recieved = 0
-bytes_sent = 0
+bytes_recieved = {}
+bytes_sent = {}
 
 files_uploading = {}
 send_limit = {}
@@ -104,14 +104,14 @@ def check_limits(tid):
         elapsed_time = current_time - start
         if elapsed_time >= 1.0:
             start = current_time
-            bytes_recieved = 0
-            bytes_sent = 0
+            bytes_recieved[tid] = 0
+            bytes_sent[tid] = 0
             recieve_limit[tid] = [False, 0]
             send_limit[tid] = [False, 0]
             
-        if bytes_recieved >= Limits(clients[tid].subscription_level).max_upload_speed * 1_000_000:
+        if bytes_recieved[tid] >= Limits(clients[tid].subscription_level).max_upload_speed * 1_000_000:
             send_limit[tid] = [True, 1.0 - elapsed_time]
-        if bytes_sent >= Limits(clients[tid].subscription_level).max_download_speed * 1_000_000:
+        if bytes_sent[tid] >= Limits(clients[tid].subscription_level).max_download_speed * 1_000_000:
             recieve_limit[tid] = [True, 1.0 - elapsed_time]
         time.sleep(0.05)
 
@@ -149,12 +149,13 @@ def send_file_data(file_path, id, sock, tid, progress = 0):
 
 
 
-def send_zip(zip_buffer, id, sock, tid):
+def send_zip(zip_buffer, id, sock, tid, progress = 0):
     size = len(zip_buffer.getbuffer())
     left = size % chunk_size
-    sent = 0
+    sent = progress
     try:
-        for i in range(size // chunk_size):
+        zip_buffer.seek(progress)
+        for i in range((size - progress) // chunk_size):
             location_infile = zip_buffer.tell()
             data = zip_buffer.read(chunk_size)
             if tid in send_limit.keys() and send_limit[tid][0]:
@@ -574,27 +575,42 @@ def protocol_build_reply(request, tid, sock):
 
     elif (code == "DOWN"):
         file_id = fields[1]
-        if(not cr.can_download(clients[tid].id, file_id) or is_guest(tid)):
-            reply = Errors.NO_PERMS.value
-            return reply
-        elif (cr.get_dir_name(file_id) != None):
-            zip_buffer = cr.zip_directory(file_id)
+        if "~" in file_id:
+            name = fields[2]
+            ids = file_id.split("~")
+            for id in ids:
+                if(not cr.can_download(clients[tid].id, id) or is_guest(tid)):
+                    reply = Errors.NO_PERMS.value
+                    return reply
+                elif (cr.get_file_sname(id) == None and cr.get_dir_name(id) == None):
+                    reply = Errors.FILE_NOT_FOUND.value
+                    return reply
+            zip_buffer = cr.zip_files(ids)
             send_zip(zip_buffer, file_id, sock, tid)
             zip_buffer.close()
-            reply = f"DOWR|{cr.get_dir_name(file_id)}|{file_id}|was downloaded"
-            return reply
-        elif(cr.get_file_sname(file_id) == None):
-            reply = Errors.FILE_NOT_FOUND.value
-            return reply
-        file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
-        if (cr.get_file_sname(file_id) == None or not os.path.isfile(file_path)):
-            reply = Errors.FILE_NOT_FOUND.value
+            reply = f"DOWR|{name}|{file_id}|was downloaded"
         else:
-            try:
-                send_file_data(file_path, file_id, sock, tid)
-                reply = f"DOWR|{cr.get_file_fname(file_id)}|was downloaded"
-            except Exception:
-                reply = Errors.FILE_DOWNLOAD.value
+            if(not cr.can_download(clients[tid].id, file_id) or is_guest(tid)):
+                reply = Errors.NO_PERMS.value
+                return reply
+            elif (cr.get_dir_name(file_id) != None):
+                zip_buffer = cr.zip_directory(file_id)
+                send_zip(zip_buffer, file_id, sock, tid)
+                zip_buffer.close()
+                reply = f"DOWR|{cr.get_dir_name(file_id)}|{file_id}|was downloaded"
+                return reply
+            elif(cr.get_file_sname(file_id) == None):
+                reply = Errors.FILE_NOT_FOUND.value
+                return reply
+            file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
+            if (cr.get_file_sname(file_id) == None or not os.path.isfile(file_path)):
+                reply = Errors.FILE_NOT_FOUND.value
+            else:
+                try:
+                    send_file_data(file_path, file_id, sock, tid)
+                    reply = f"DOWR|{cr.get_file_fname(file_id)}|was downloaded"
+                except Exception:
+                    reply = Errors.FILE_DOWNLOAD.value
 
     elif (code == "NEWF"):
         folder_name = fields[1]
@@ -691,11 +707,11 @@ def protocol_build_reply(request, tid, sock):
         file_id = fields[1]
         file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
         if(not cr.can_download(clients[tid].id, file_id)):
-            reply = Errors.NO_PERMS.value
+            reply = Errors.NO_PERMS.value + "|" + cr.get_file_fname(file_id)
         elif (not os.path.isfile(file_path)):
             reply = Errors.FILE_NOT_FOUND.value
         elif (os.path.getsize(file_path) > 10_000_000):
-            reply = Errors.PREVIEW_SIZE.value
+            reply = f"{Errors.PREVIEW_SIZE.value}|{cr.get_file_fname(file_id)}"
         elif file_id in files_in_use:
             reply = Errors.IN_USE.value
         else:
@@ -748,9 +764,9 @@ def protocol_build_reply(request, tid, sock):
         else:
             sharing = cr.get_share_options(file_id, user_cred)
             if sharing is None:
-                reply = f"SHRR|{file_id}|{user_cred}"
+                reply = f"SHRR|{file_id}|{user_cred}|{cr.get_file_fname(file_id)}"
             else:
-                reply = f"SHRR|{file_id}|{user_cred}|" + "|".join(sharing[4:])
+                reply = f"SHRR|{file_id}|{user_cred}|{cr.get_file_fname(file_id)}|" + "|".join(sharing[4:])
     
     elif code == "SHRP":
         file_id = fields[1]
@@ -810,9 +826,26 @@ def protocol_build_reply(request, tid, sock):
     elif code == "RESD":
         id = fields[1]
         progress = int(fields[2])
-        file_path = cloud_path + "\\" + cr.get_file_sname(id)
-        send_file_data(file_path, id, sock, tid, progress)
+        if cr.get_file_sname(id) != None: 
+            file_path = cloud_path + "\\" + cr.get_file_sname(id)
+            send_file_data(file_path, id, sock, tid, progress)
+        elif cr.get_dir_name(id) != None: 
+            zip_buffer = cr.zip_directory(id)
+            send_zip(zip_buffer, id, sock, tid)
+            zip_buffer.close()
+        elif "~" in id:
+            ids = id.split("~")
+            zip_buffer = cr.zip_files(ids)
+            send_zip(zip_buffer, id, sock, tid)
+            zip_buffer.close()
+        else:
+            reply = Errors.FILE_NOT_FOUND.value
+            return reply
+        
         reply = f"RUSR|{id}|{progress}"
+    elif code == "UPDT":
+        msg = fields[1]
+        reply = f"UPDR|{msg}"
     else:
         reply = Errors.UNKNOWN.value
         fields = ''
@@ -888,7 +921,7 @@ def send_data(sock, tid, bdata):
         to_send = data_len + bdata
         logtcp('sent', tid, to_send)
     try:
-        bytes_sent += len(to_send)
+        bytes_sent[tid] += len(to_send)
         sock.send(to_send)
     except ConnectionResetError:
         pass
@@ -907,7 +940,7 @@ def recv_data(sock, tid):
         b_len = b''
         while (len(b_len) < len_field):   # Loop to get length in bytes
             b_len += sock.recv(len_field - len(b_len))
-        bytes_recieved += len(b_len)
+        bytes_recieved[tid] += len(b_len)
         msg_len = struct.unpack("!l", b_len)[0]
         if msg_len == b'':
             print('Seems client disconnected')
@@ -915,7 +948,7 @@ def recv_data(sock, tid):
 
         while (len(msg) < msg_len):   # Loop to recieve the rest of the response
             chunk = sock.recv(msg_len - len(msg))
-            bytes_recieved += len(chunk)
+            bytes_recieved[tid] += len(chunk)
             if not chunk:
                 print('Server disconnected abnormally.')
                 break
@@ -940,11 +973,12 @@ def handle_client(sock, tid, addr):
     Client handling function
     Sends RSA public key and recieves shared secret for secure connection
     """
-    global all_to_die
-    global clients
+    global all_to_die, clients, bytes_sent, bytes_recieved
     try:
         finish = False
         print(f'New Client number {tid} from {addr}')
+        bytes_sent[tid] = 0
+        bytes_recieved[tid] = 0
         start = recv_data(sock, tid)
         code = start.split(b"|")[0]
         clients[tid] = Client(tid, "guest", "guest", 0, 0, None, False)   # Setting client state
@@ -955,6 +989,7 @@ def handle_client(sock, tid, addr):
 
         clients[tid].shared_secret = shared_secret
         clients[tid].encryption = True
+        
         
         limits_checker = threading.Thread(target=check_limits, args=(tid,))
         limits_checker.start()

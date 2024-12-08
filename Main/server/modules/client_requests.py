@@ -739,6 +739,30 @@ def get_perms(user_id, id):
         
 
 
+def zip_files(ids):
+    zip_buffer = io.BytesIO()
+    
+    with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
+        for file_id in ids:
+            # Check if it's a file or a directory
+            if get_file_sname(file_id) is not None:
+                # It's a file
+                file_path = server_path + "\\cloud\\" + get_file_sname(file_id)
+                file_name = get_file_fname(file_id)
+                zf.write(file_path, file_name)
+            elif get_dir_name(file_id) is not None:
+                # It's a directory, use zip_directory to add its contents
+                directory_buffer = zip_directory(file_id)
+                with zipfile.ZipFile(directory_buffer, 'r') as dir_zip:
+                    for name in dir_zip.namelist():
+                        dir_name = get_dir_name(file_id)
+                        # Maintain folder structure by writing with its directory name
+                        zf.writestr(f"{dir_name}/{name}", dir_zip.read(name))
+        
+        # Reset the buffer position to the beginning and send the zip
+    zip_buffer.seek(0)
+    return zip_buffer
+
 def zip_directory(directory_id):
     """
     Create a zip file containing all files and directories in the specified directory.

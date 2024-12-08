@@ -16,11 +16,14 @@ logging.basicConfig(
 
 class Logger:
     def __init__(self):
-        self.terminal = sys.stdout
+        self.terminal = sys.stdout  # Store the original stdout so we can still print to console
+        sys.stdout = self  # Redirect sys.stdout to the Logger instance
 
     def write(self, message):
         if message.strip():  # Log non-empty messages
             logging.info(message.strip())
+            try: self.terminal.write(message + "\n")  # Also write the message to the console
+            except: pass
 
     def flush(self):
-        pass  # For compatibility with some IO operations that may expect flush
+        self.terminal.flush()  # Make sure to flush stdout buffer for compatibility

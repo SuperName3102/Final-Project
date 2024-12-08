@@ -1,8 +1,9 @@
 QWidget {
   background-color: #191919;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   color: #ffffff;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 QPushButton {
@@ -84,4 +85,13 @@ QLabel#back-label {
 
 QLabel#back-label:hover {
   background-color: rgb(1, 109, 1);
+}
+
+QLabel#selected {
+  background-color: blue;
+  border: 1px solid lightblue;
+}
+
+QLabel#selected:hover {
+  background-color: darkblue;
 }

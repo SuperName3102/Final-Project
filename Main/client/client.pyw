@@ -9,23 +9,22 @@ from modules.file_viewer import *
 from modules.networking import *
 from modules.key_exchange import *
 
-import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, json
+import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, json, subprocess
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
-from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QFont
+from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QFont, QGuiApplication
 from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
 
 
 # Announce global vars
 user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""}
 chunk_size = 524288
-used_storage = 0
 user_icon = f"{os.getcwd()}/assets/user.ico"
 assets_path = f"{os.getcwd()}/assets"
 cookie_path = f"{os.getcwd()}/cookies/user.cookie"
-uploading_files_json = "uploading_files.json"
-downloading_files_json = "downloading_files.json"
+uploading_files_json = f"{os.getcwd()}/cache/uploading_files.json"
+downloading_files_json = f"{os.getcwd()}/cache/downloading_files.json"
 
 search_filter = None
 share = False
@@ -47,6 +46,7 @@ port = 31026
 files = []
 directories = []
 files_downloading = {}
+currently_selected = []
 uploading_file_id = ""
 
 last_msg = ""
@@ -100,7 +100,7 @@ class File():
 
 
 class FileButton(QPushButton):
-    def __init__(self, text, id = None, parent=None, is_folder = False, shared_by = None, perms =["True", "True","True","True","True","True"], size = 0):
+    def __init__(self, text, id = None, parent=None, is_folder = False, shared_by = None, perms =["True", "True","True","True","True","True"], size = 0, name=""):
         super().__init__("|".join(text), parent)
         self.setText = "|".join(text)
         self.id = id
@@ -109,6 +109,8 @@ class FileButton(QPushButton):
         self.perms = perms
         self.setMinimumHeight(30)
         self.file_size = size
+        self.name = name
+        self.lables = []
 
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         button_layout = QHBoxLayout()
@@ -128,6 +130,7 @@ class FileButton(QPushButton):
             elif self.id != None: label.setObjectName("file-label")
             elif label_text == "Back": label.setObjectName("back-label")
             button_layout.addWidget(label, stretch=1)
+            self.lables.append(label)
         button_layout.setStretch(0, 2)  # First label takes 2 parts
         for i in range(1, len(text)):
             button_layout.setStretch(i, 1)  # Other labels take 1 part each
@@ -136,33 +139,33 @@ class FileButton(QPushButton):
 
     def contextMenuEvent(self, event: QContextMenuEvent):
         menu = QMenu(self)
-        
-        if self.id != None and self.perms[4] == "True" and not deleted:
+
+        if check_all_id() and check_all_perms(4) and not deleted and currently_selected != []:
             action = menu.addAction(" Download")
-            action.triggered.connect(self.download)
+            action.triggered.connect(download)
             action.setIcon(QIcon(assets_path + "\\download.svg"))
 
-        if self.id != None:
-            if self.perms[2] == "True":
+        if check_all_id() and currently_selected != []:
+            if check_all_perms(2):
                 if deleted and user["cwd"] != "": pass
                 else:
                     action = menu.addAction(" Delete")
-                    action.triggered.connect(self.delete)
+                    action.triggered.connect(delete)
                     action.setIcon(QIcon(assets_path + "\\delete.svg"))
 
-            if self.perms[3] == "True" and not deleted:
+            if check_all_perms(3) and not deleted and len(currently_selected) == 1:
                 action = menu.addAction(" Rename")
                 action.triggered.connect(self.rename)
                 action.setIcon(QIcon(assets_path + "\\change_user.svg"))
             
-            if self.perms[5] == "True" and not deleted:
+            if check_all_perms(5) and not deleted:
                 action = menu.addAction(" Share")
-                action.triggered.connect(self.share)
+                action.triggered.connect(share_action)
                 action.setIcon(QIcon(assets_path + "\\share.svg"))
             
             if share and user["cwd"] == "" and not deleted:
                 action = menu.addAction(" Remove")
-                action.triggered.connect(self.remove)
+                action.triggered.connect(remove)
                 action.setIcon(QIcon(assets_path + "\\remove.svg"))
 
         if not share and not deleted:
@@ -170,9 +173,9 @@ class FileButton(QPushButton):
             action.triggered.connect(new_folder)
             action.setIcon(QIcon(assets_path + "\\new_account.svg"))
         
-        if deleted and user["cwd"] == "":
+        if deleted and user["cwd"] == "" and currently_selected != []:
             action = menu.addAction(" Recover")
-            action.triggered.connect(self.recover)
+            action.triggered.connect(recover)
             action.setIcon(QIcon(assets_path + "\\new_account.svg"))
 
         action = menu.addAction(" Search")
@@ -180,43 +183,70 @@ class FileButton(QPushButton):
         action.setIcon(QIcon(assets_path + "\\search.svg"))
 
         menu.exec(event.globalPos())
-
-    def download(self):
-        file_name = self.text().split(" | ")[0][1:]
-        if self.is_folder: 
-            file_path, _ = QFileDialog.getSaveFileName(self, "Save File", file_name, "Zip Files (*.zip);;All Files (*)")
-        else: 
-            file_path, _ = QFileDialog.getSaveFileName(self, "Save File", file_name, "Text Files (*.txt);;All Files (*)")
-        if file_path:
-            send_data(b"DOWN|" + self.id.encode())
-            files_downloading[self.id] = File(file_path, self.id, self.file_size, file_name=file_name)
-            update_json(downloading_files_json, self.id, file_path, progress=0)
-            try: window.file_upload_progress.show()
-            except: pass
             
-
     def rename(self):
         name = self.text().split(" | ")[0][1:]
         new_name = new_name_dialog("Rename", "Enter new file name:", name)
         if new_name is not None:
             send_data(b"RENA|" + self.id.encode() + b"|" + name.encode() + b"|" + new_name.encode())
 
-    def delete(self):
-        name = self.text().split(" | ")[0][1:]
-        if show_confirmation_dialog("Are you sure you want to delete " + name):
-            send_data(b"DELF|" + self.id.encode())
 
-    def share(self):
-        name = self.text().split(" | ")[0][1:]
-        user_email = new_name_dialog("Share", f"Enter email/username of the user you want to share {name} with:")
-        if user_email is not None:
-            send_data(b"SHRS|" + self.id.encode() + b"|" + user_email.encode())
+def download():
+    global currently_selected
+    if len(currently_selected) == 1:
+        btn = currently_selected[0]
+        file_name = btn.text().split(" | ")[0][1:]
+        if btn.is_folder: 
+            file_path, _ = QFileDialog.getSaveFileName(btn, "Save File", file_name, "Zip Files (*.zip);;All Files (*)")
+        else: 
+            file_path, _ = QFileDialog.getSaveFileName(btn, "Save File", file_name, "Text Files (*.txt);;All Files (*)")
+        if file_path:
+            send_data(b"DOWN|" + btn.id.encode())
+            files_downloading[btn.id] = File(file_path, btn.id, btn.file_size, file_name=file_name)
+            update_json(downloading_files_json, btn.id, file_path,file=files_downloading[btn.id], progress=0)
+            try: window.file_upload_progress.show()
+            except: pass
+    else:
+        file_path, _ = QFileDialog.getSaveFileName(window, "Save File", "", "Zip Files (*.zip);;All Files (*)")
+        name = file_path.split("/")[-1]
+        ids = "~".join(btn.id for btn in currently_selected)
+        size = sum(btn.file_size for btn in currently_selected)
+        if file_path:
+            send_data(f"DOWN|{ids}|{name}".encode())
+            files_downloading[ids] = File(file_path, ids, size, file_name=name)
+            update_json(downloading_files_json, ids, file_path, file=files_downloading[ids], progress=0)
+            try: window.file_upload_progress.show()
+            except: pass
+
+
+def delete():
+    global currently_selected
+    if show_confirmation_dialog(f"Are you sure you want to delete {len(currently_selected)} files?"):
+        for btn in currently_selected:
+            send_data(b"DELF|" + btn.id.encode())
+        update_userpage(f"Succesfully deleted {len(currently_selected)} files")
+        currently_selected = []
+
+def share_action():
+    user_email = new_name_dialog("Share", f"Enter email/username of the user you want to share {len(currently_selected)} files with:")
+    if user_email is not None:
+        for btn in currently_selected:
+            send_data(b"SHRS|" + btn.id.encode() + b"|" + user_email.encode())
+        update_userpage(f"Succesfully shared {len(currently_selected)} files")
     
-    def remove(self):
-        send_data(B"SHRE|" + self.id.encode())
+def remove():
+    global currently_selected
+    for btn in currently_selected:
+        send_data(B"SHRE|" + btn.id.encode())
+    update_userpage(f"Succesfully removed {len(currently_selected)} files from share")
+    currently_selected = []
     
-    def recover(self):
-        send_data(b"RECO|" + self.id.encode())
+def recover():
+    global currently_selected
+    for btn in currently_selected:
+        send_data(b"RECO|" + btn.id.encode())  
+    update_userpage(f"Succesfully recovered {len(currently_selected)} files")
+    currently_selected = []
 
 
 def new_folder():
@@ -229,6 +259,21 @@ def search():
     global search_filter
     search_filter = new_name_dialog("Search", "Enter search filter:", search_filter)
     window.user_page()
+
+def check_all_perms(perm):
+    for button in currently_selected:
+        if button.perms[perm] != "True": return False
+    return True
+
+def check_all_id():
+    for button in currently_selected:
+        if button.id == None: return False
+    return True
+
+def remove_selected(button):
+    global currently_selected
+    if button in currently_selected: currently_selected.remove(button)
+
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -481,6 +526,7 @@ class MainWindow(QtWidgets.QMainWindow):
         global files, directories
         files = None
         directories = None
+        get_used_storage()
         if user["cwd"] == "" and deleted:
             get_deleted_files(search_filter)
             get_deleted_directories(search_filter)
@@ -490,11 +536,12 @@ class MainWindow(QtWidgets.QMainWindow):
         else:
             get_cwd_files(search_filter)
             get_cwd_directories(search_filter)
+            
+        self.run_user_page()
 
     def run_user_page(self):
         global files, directories
         try:
-            get_used_storage()
             temp = window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/account_managment.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
@@ -510,42 +557,16 @@ class MainWindow(QtWidgets.QMainWindow):
             if share:
                 self.sort.addItem(" Owner")
             self.set_cwd()
-        
-            if sort == "Name" or not share and sort == "Owner":
-                self.sort.setCurrentIndex(0)
-                files = sorted(files, key=lambda x: x.split("~")[0].lower())
-                directories = sorted(directories, key=lambda x: x.split("~")[0].lower())
-            elif sort == "Date":
-                self.sort.setCurrentIndex(1)
-                files = sorted(files, key=lambda x: str_to_date(x.split("~")[1]), reverse=True)
-                directories = sorted(directories, key=lambda x: str_to_date(x.split("~")[2]), reverse=True)
-            elif sort == "Type":
-                self.sort.setCurrentIndex(2)
-                files = sorted(files, key=lambda x: x.split("~")[0].split(".")[-1].lower())
-            elif sort == "Size":
-                self.sort.setCurrentIndex(3)
-                files = sorted(files, key=lambda x: int(x.split("~")[2]), reverse=True)
-                directories = sorted(directories, key=lambda x: int(x.split("~")[3]), reverse=True)
-            elif share and sort == "Owner":
-                self.sort.setCurrentIndex(4)
-                files = sorted(files, key=lambda x: x.split("~")[4].lower())
-                directories = sorted(directories, key=lambda x: x.split("~")[4].lower())
-                
-            
-            self.save_sizes()
-            self.draw_cwd(files, directories)
             
             if len(active_threads) == 0:
                 self.file_upload_progress.hide()
                 self.stop_button.hide()
                 
-            self.total_files.setText(f"{len(files) + len(directories)} items")
+            #self.total_files.setText(f"{len(files) + len(directories)} items")
             
             self.main_text.setText(f"Welcome {user["username"]}")
 
-            self.storage_label.setText(f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
             self.storage_remaining.setMaximum(Limits(user["subscription_level"]).max_storage)
-            self.storage_remaining.setValue(int(used_storage))
 
             self.search.setIcon(QIcon(assets_path+"\\search.svg"))
             self.search.setText(f" Search Filter: {search_filter}")
@@ -560,7 +581,6 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.sort.currentIndexChanged.connect(lambda: change_sort(self.sort.currentText()[1:]))
         
-            
             self.user_button.clicked.connect(lambda: self.manage_account())
             self.logout_button.clicked.connect(logout)
             self.logout_button.setIcon(QIcon(assets_path+"\\logout.svg"))
@@ -588,14 +608,11 @@ class MainWindow(QtWidgets.QMainWindow):
             self.user_button.setIconSize(QSize(self.user_button.size().width(), self.user_button.size().height()))
             self.user_button.setStyleSheet("padding:0px;border-radius:5px;border:none;background-color:transparent")
             
-            try:
-                self.user_button.setIcon((QIcon(user_icon)))
-            except:
-                pass
+            try: self.user_button.setIcon((QIcon(user_icon)))
+            except: pass
             
             self.stop_button.clicked.connect(self.stop_upload)
             self.stop_button.setIcon(QIcon(assets_path+"\\stop.svg"))
-            
             self.setGeometry(temp)
             self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
             self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
@@ -608,6 +625,7 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             global scroll
             central_widget = self.centralWidget()
+            
             outer_layout = QVBoxLayout()
             outer_layout.addStretch(1)
             scroll = QScrollArea()
@@ -633,22 +651,26 @@ class MainWindow(QtWidgets.QMainWindow):
                 file_id = file[3]
                 perms = file[5:]
                 if share:
-                    button = FileButton(f" {file_name} | {date} | {size} | {file[4]}".split("|"), file_id, shared_by=file[4], perms=perms, size = int(file[2]))
+                    button = FileButton(f" {file_name} | {date} | {size} | {file[4]}".split("|"), file_id, shared_by=file[4], perms=perms, size = int(file[2]), name=file_name)
                 else:
-                    button = FileButton(f" {file_name} | {date} | {size}".split("|"), file_id, size = int(file[2]))
-                button.clicked.connect(lambda checked, name=file_name, id = file_id: view_file(id, name, int(file[2])))
+                    button = FileButton(f" {file_name} | {date} | {size}".split("|"), file_id, size = int(file[2]), name=file_name)
+                #button.clicked.connect(lambda checked, name=file_name, id = file_id, file_size=int(file[2]): select_item(id, name, file_size, False))
+                button.clicked.connect(lambda checked, btn=button: select_item(btn))
                 scroll_layout.addWidget(button)
 
             for index, directory in enumerate(directories):
                 directory = directory.split("~")
+                dir_name = directory[0]
+                dir_id = directory[1]
                 size = format_file_size(int(directory[3]))
                 last_change = directory[2][:-7]
                 perms = directory[5:]
                 if share:
-                    button = FileButton(f" {directory[0]} | {last_change} | {size} | {directory[4]}".split("|"), directory[1], is_folder=True, shared_by=directory[2], perms=perms, size = int(directory[3]))
+                    button = FileButton(f" {dir_name} | {last_change} | {size} | {directory[4]}".split("|"), dir_id, is_folder=True, shared_by=directory[2], perms=perms, size = int(directory[3]), name=file_name)
                 else:
-                    button = FileButton(f" {directory[0]} | {last_change} | {size}".split("|"), directory[1], is_folder=True, size = int(directory[3]))
-                button.clicked.connect(lambda checked, id=directory[1]: move_dir(id))
+                    button = FileButton(f" {dir_name} | {last_change} | {size}".split("|"), dir_id, is_folder=True, size = int(directory[3]), name=dir_name)
+                #button.clicked.connect(lambda checked, id=dir_id, name=dir_name, dir_size=int(directory[3]): select_item(dir_id, dir_name, dir_size, True))
+                button.clicked.connect(lambda checked, btn=button: select_item(btn))
                 scroll_layout.addWidget(button)
 
             if (directories == [] and files == []):
@@ -749,8 +771,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.professional_button.setStyleSheet("background-color:dimgrey")
 
             self.storage_remaining.setMaximum(Limits(user["subscription_level"]).max_storage)
-            self.storage_remaining.setValue(int(used_storage))
-            self.storage_label.setText(f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
+    
             
             self.setGeometry(temp)
             self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
@@ -870,12 +891,15 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
 
+def update_userpage(msg):
+    send_data(f"UPDT|{msg}".encode())
 
 
 # Files functions
 def update_json(json_path, file_id, file_path, remove=False, file = None, progress = 0):
     """Update the JSON file with the file upload details."""
     if not os.path.exists(json_path):
+        os.makedirs(os.getcwd() + "\\cache")
         with open(json_path, 'w') as f:
             json.dump({}, f)  # Initialize as an empty dictionary
 
@@ -1032,6 +1056,7 @@ def finish_sending():
     except: pass
     try: window.file_upload_progress.hide()
     except: pass
+    window.user_page()
 
 def update_progress(value):
     try: window.file_upload_progress.setValue(value)
@@ -1044,14 +1069,58 @@ def reset_progress(value):
 
 def compute_file_md5(file_path):
     hash_func = hashlib.new('md5')
-    
     with open(file_path, 'rb') as file:
-        # Read the file in chunks of 8192 bytes
         while chunk := file.read(8192):
             hash_func.update(chunk)
     
     return hash_func.hexdigest()
 
+def control_pressed():
+    modifiers = QGuiApplication.queryKeyboardModifiers()
+    return modifiers & Qt.KeyboardModifier.ControlModifier
+
+def select_item(btn):
+    global currently_selected, app
+    item_id = btn.id
+    item_name = btn.name
+    
+    if btn in currently_selected and len(currently_selected) == 1:
+        if btn.is_folder: 
+            move_dir(item_id)
+            reset_selected()
+        else: view_file(item_id, item_name, btn.file_size)
+    elif control_pressed() and btn not in currently_selected:
+        currently_selected.append(btn)
+    elif control_pressed() and btn in currently_selected:
+        currently_selected.remove(btn)
+    else:
+        reset_selected()
+        currently_selected = [btn]
+    
+    if btn in currently_selected:
+        for label in btn.lables:
+            label.setObjectName("selected")
+    else:
+        for label in btn.lables:
+            if btn.is_folder: label.setObjectName("folder-label")
+            else: label.setObjectName("file-label")
+    
+    with open(f"{os.getcwd()}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
+    window.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+    window.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+
+    
+def reset_selected():
+    global currently_selected
+    for btn in currently_selected:
+        for label in btn.lables:
+            try:
+                if btn.is_folder: label.setObjectName("folder-label")
+                else: label.setObjectName("file-label")
+            except RuntimeError:
+                if label in currently_selected: currently_selected.remove(label)
+    currently_selected = []
+        
 
 def view_file(file_id, file_name, size):
     send_data(b"VIEW|" + file_id.encode())
@@ -1089,6 +1158,7 @@ def change_sort(new_sort):
     global sort
     sort = new_sort
     window.run_user_page()
+    update_current_files()
 
 def move_dir(new_dir):
     send_data(f"MOVD|{new_dir}".encode())
@@ -1125,7 +1195,7 @@ def subscribe(level):
     send_data(b"SUBL|" + str(level).encode())
 
 
-def share_file(file_id, user_cred, read = "False", write = "False", delete = "False", rename = "False", download = "False", share = "False"):
+def share_file(file_id, user_cred, file_name, read = "False", write = "False", delete = "False", rename = "False", download = "False", share = "False"):
     app = QApplication.instance()  # Use existing QApplication
     if app is None:
         app = QApplication([])  # Create a new instance if it doesn't exist
@@ -1136,7 +1206,7 @@ def share_file(file_id, user_cred, read = "False", write = "False", delete = "Fa
     dialog.resize(600, 400)
 
     # Group the checkboxes for better organization
-    permissions_group = QGroupBox("Permissions")
+    permissions_group = QGroupBox(f"File sharing premission of {file_name} with {user_cred}")
     permissions_layout = QGridLayout()
 
     read_cb = QCheckBox("Read")
@@ -1371,6 +1441,13 @@ def protocol_parse_reply(reply):
             elif (err_code == 20):
                 if active_threads != []:
                     active_threads[0].running = False
+            elif (err_code == 22 or err_code == 26):
+                try:
+                    name = fields[3]
+                    file_path = f"{os.getcwd()}\\temp-{name}"
+                    if os.path.exists(file_path): os.remove(file_path)
+                except: pass
+                
 
             to_show = 'Server return an error: ' + fields[1] + ' ' + fields[2]
 
@@ -1447,14 +1524,10 @@ def protocol_parse_reply(reply):
 
         elif code == 'FILR':
             to_show = f'File {fields[1]} was uploaded'
-
-            window.user_page()
             window.set_message(to_show)
         
         elif code == 'FISS':
             to_show = f'File {fields[1]} started uploading'
-
-            window.user_page()
             window.set_message(to_show)
 
         elif code == 'MOVR':
@@ -1514,13 +1587,11 @@ def protocol_parse_reply(reply):
         elif code == 'DLFR':
             file_name = fields[1]
             to_show = f"File {file_name} was deleted!"
-            window.user_page()
             window.set_message(to_show)
 
         elif code == 'DFFR':
             folder_name = fields[1]
             to_show = f"Folder {folder_name} was deleted!"
-            window.user_page()
             window.set_message(to_show)
 
         elif code == 'SUBR':
@@ -1538,8 +1609,9 @@ def protocol_parse_reply(reply):
             window.set_message(to_show)
 
         elif code == 'GEUR':
-            global used_storage
             used_storage = round(int(fields[1])/1_000_000, 3)
+            window.storage_remaining.setValue(int(used_storage))
+            window.storage_label.setText(f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
             to_show = f"Current used storage is {used_storage}"
 
         elif code == 'CHUR':
@@ -1559,10 +1631,11 @@ def protocol_parse_reply(reply):
         elif code == "SHRR":
             file_id = fields[1]
             user_cred = fields[2]
+            file_name = fields[3]
             if len(fields) == 3:
-                share_file(file_id, user_cred)
+                share_file(file_id, user_cred, file_name)
             else:
-                share_file(file_id, user_cred, *fields[3:])
+                share_file(file_id, user_cred, file_name, *fields[4:])
             to_show = "Sharing options recieved"
         elif code == "SHPR":
             to_show = fields[1]
@@ -1570,12 +1643,10 @@ def protocol_parse_reply(reply):
         elif code == "SHRM":
             name = fields[1]
             to_show = f"Succefully remove {name} from share"
-            window.user_page()
             window.set_message(to_show)
         elif code == "RECR":
             name = fields[1]
             to_show = f"Succefully recovered {name}"
-            window.user_page()
             window.set_message(to_show)
         elif code == "UPFR":
             name = fields[1]
@@ -1594,12 +1665,12 @@ def protocol_parse_reply(reply):
         elif code == "PATH" or code == "PASH" or code == "PADH":
             files = fields[1:]
             if files != None and directories != None:
-                window.run_user_page()
+                update_current_files()
             to_show = "Got files"
         elif code == "PATD" or code == "PASD" or code == "PADD":
             directories = fields[1:]
             if files != None and directories != None:
-                window.run_user_page()
+                update_current_files()
             to_show = "Got directories"
         elif code == "RESR":
             file_id = fields[1]
@@ -1610,12 +1681,48 @@ def protocol_parse_reply(reply):
             id = fields[1]
             progress = fields[2]
             to_show = f"Resumed download of file {id} from byte {progress}"
+        elif "UPDR":
+            msg = fields[1]
+            window.user_page()
+            window.set_message(msg)
+            
         else:
             window.set_message("Unknown command " + code)
             
     except Exception as e:   # Error
         print(traceback.format_exc())
     return to_show
+
+def update_current_files():
+    global files, directories
+    window.sort.currentIndexChanged.disconnect()
+    if sort == "Name" or not share and sort == "Owner":
+        window.sort.setCurrentIndex(0)
+        files = sorted(files, key=lambda x: x.split("~")[0].lower())
+        directories = sorted(directories, key=lambda x: x.split("~")[0].lower())
+    elif sort == "Date":
+        window.sort.setCurrentIndex(1)
+        files = sorted(files, key=lambda x: str_to_date(x.split("~")[1]), reverse=True)
+        directories = sorted(directories, key=lambda x: str_to_date(x.split("~")[2]), reverse=True)
+    elif sort == "Type":
+        window.sort.setCurrentIndex(2)
+        files = sorted(files, key=lambda x: x.split("~")[0].split(".")[-1].lower())
+    elif sort == "Size":
+        window.sort.setCurrentIndex(3)
+        files = sorted(files, key=lambda x: int(x.split("~")[2]), reverse=True)
+        directories = sorted(directories, key=lambda x: int(x.split("~")[3]), reverse=True)
+    elif share and sort == "Owner":
+        window.sort.setCurrentIndex(4)
+        files = sorted(files, key=lambda x: x.split("~")[4].lower())
+        directories = sorted(directories, key=lambda x: x.split("~")[4].lower())
+    window.sort.currentIndexChanged.connect(lambda: change_sort(window.sort.currentText()[1:]))             
+    window.save_sizes()
+    window.draw_cwd(files, directories)
+    window.total_files.setText(f"{len(files) + len(directories)} items")
+    window.resize(window_geometry.width() + 1, window_geometry.height() + 1)
+    window.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+    
+    
 
 def get_files_uploading_data():
     if os.path.exists(uploading_files_json):
@@ -1753,6 +1860,21 @@ def connect_server(new_ip, new_port):
         window.set_error_message(f'Server was not found {ip} {port}')
         return None
 
+
+def global_exception_handler(exc_type, exc_value, exc_traceback):
+    """Handle uncaught exceptions."""
+    error_message = "".join(traceback.format_exception(exc_type, exc_value, exc_traceback))
+    print(f"Unhandled exception:\n{error_message}")
+
+    QMessageBox.critical(
+        None,
+        "Application Error",
+        f"An unexpected error occurred:\n\n{exc_value}",
+        QMessageBox.StandardButton.Ok,
+    )
+    
+    
+
 def main():
     """
     Main function
@@ -1760,6 +1882,7 @@ def main():
     Connect to server via addr param
     """
     global sock, window, app, receive_thread
+    sys.excepthook = global_exception_handler
     try:
         app = QtWidgets.QApplication(sys.argv)
         try: 
@@ -1771,7 +1894,6 @@ def main():
         receive_thread = ReceiveThread()
         receive_thread.reply_received.connect(handle_reply)
         sock = connect_server(ip, port)
-
         sys.exit(app.exec())
     except Exception as e:
         print(traceback.format_exc())
@@ -1781,7 +1903,5 @@ if __name__ == "__main__":   # Run main
     sys.stdout = Logger()
     if len(sys.argv) >= 2: ip = sys.argv[1]
     if len(sys.argv) >= 3: port = sys.argv[2]
-    while True:
-        try: main()
-        except: print(traceback.format_exc())
+    main()
 

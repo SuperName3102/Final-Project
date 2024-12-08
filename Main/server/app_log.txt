@@ -1,0 +1,1310 @@
+2024-12-05 17:30:06 - Server listening on ('0.0.0.0', 31026)
+2024-12-05 17:30:07 - Main thread: before accepting ...
+2024-12-05 17:30:13 - New Client number 1 from ('127.0.0.1', 52422)
+2024-12-05 17:30:26 - New Client number 2 from ('127.0.0.1', 52425)
+2024-12-05 17:30:28 - Client 1 Exit
+2024-12-05 17:53:47 - Server listening on ('0.0.0.0', 31026)
+2024-12-05 17:53:47 - Main thread: before accepting ...
+2024-12-05 17:53:52 - New Client number 1 from ('127.0.0.1', 52620)
+2024-12-05 17:55:27 - New Client number 2 from ('127.0.0.1', 52669)
+2024-12-05 17:55:35 - Client 2 Exit
+2024-12-05 18:32:22 - Server listening on ('0.0.0.0', 31026)
+2024-12-05 18:32:22 - Main thread: before accepting ...
+2024-12-05 18:36:20 - Server listening on ('0.0.0.0', 3333)
+2024-12-05 18:36:21 - Main thread: before accepting ...
+2024-12-05 18:36:52 - Server listening on ('0.0.0.0', 3102)
+2024-12-05 18:36:52 - Main thread: before accepting ...
+2024-12-05 18:38:48 - New Client number 1 from ('127.0.0.1', 57202)
+2024-12-05 18:38:55 - Client 1 Exit
+2024-12-05 18:39:06 - New Client number 2 from ('192.168.1.122', 57206)
+2024-12-05 18:39:15 - Client 2 Exit
+2024-12-07 22:25:55 - Server listening on ('0.0.0.0', 31026)
+2024-12-07 22:25:55 - Main thread: before accepting ...
+2024-12-07 22:25:59 - New Client number 1 from ('127.0.0.1', 54100)
+2024-12-07 22:28:54 - New Client number 2 from ('127.0.0.1', 54140)
+2024-12-07 22:28:56 - Client 1 Exit
+2024-12-07 22:28:58 - Client 2 Exit
+2024-12-07 22:29:39 - New Client number 3 from ('127.0.0.1', 54187)
+2024-12-07 22:29:57 - Client 3 Exit
+2024-12-07 22:29:58 - New Client number 4 from ('127.0.0.1', 54199)
+2024-12-07 22:30:03 - Client 4 Exit
+2024-12-07 22:30:18 - New Client number 5 from ('127.0.0.1', 54225)
+2024-12-07 22:30:47 - Client 5 Exit
+2024-12-07 22:30:48 - New Client number 6 from ('127.0.0.1', 54241)
+2024-12-07 22:32:22 - Client 6 Exit
+2024-12-07 22:32:23 - New Client number 7 from ('127.0.0.1', 54262)
+2024-12-07 22:34:27 - Client 7 Exit
+2024-12-07 22:34:28 - New Client number 8 from ('127.0.0.1', 54301)
+2024-12-07 22:38:55 - Client 8 Exit
+2024-12-07 22:38:56 - New Client number 9 from ('127.0.0.1', 54380)
+2024-12-07 22:39:07 - Client 9 Exit
+2024-12-07 22:39:08 - New Client number 10 from ('127.0.0.1', 54392)
+2024-12-07 22:39:34 - Client 10 Exit
+2024-12-07 22:39:35 - New Client number 11 from ('127.0.0.1', 54411)
+2024-12-07 22:39:40 - Client 11 Exit
+2024-12-07 22:39:48 - New Client number 12 from ('127.0.0.1', 54426)
+2024-12-07 22:40:33 - Client 12 Exit
+2024-12-07 22:40:34 - New Client number 13 from ('127.0.0.1', 54444)
+2024-12-07 22:41:49 - Client 13 Exit
+2024-12-07 22:44:05 - New Client number 14 from ('127.0.0.1', 54489)
+2024-12-07 22:45:43 - Client 14 Exit
+2024-12-07 22:45:44 - New Client number 15 from ('127.0.0.1', 54513)
+2024-12-07 22:45:58 - Client 15 Exit
+2024-12-07 22:46:25 - New Client number 16 from ('127.0.0.1', 54532)
+2024-12-07 22:48:01 - Client 16 Exit
+2024-12-07 22:48:02 - New Client number 17 from ('127.0.0.1', 54563)
+2024-12-07 22:48:47 - Client 17 Exit
+2024-12-07 22:49:33 - New Client number 18 from ('127.0.0.1', 54587)
+2024-12-07 22:49:46 - Client 18 Exit
+2024-12-07 22:49:49 - New Client number 19 from ('127.0.0.1', 54601)
+2024-12-07 22:49:56 - Client 19 Exit
+2024-12-07 22:51:14 - New Client number 20 from ('127.0.0.1', 54629)
+2024-12-07 22:51:52 - Client 20 Exit
+2024-12-07 22:51:53 - New Client number 21 from ('127.0.0.1', 54644)
+2024-12-07 22:53:56 - Client 21 Exit
+2024-12-07 22:53:57 - New Client number 22 from ('127.0.0.1', 54676)
+2024-12-07 22:54:09 - Client 22 Exit
+2024-12-07 22:54:10 - New Client number 23 from ('127.0.0.1', 54690)
+2024-12-07 22:54:15 - Client 23 Exit
+2024-12-07 22:54:29 - New Client number 24 from ('127.0.0.1', 54703)
+2024-12-07 22:54:35 - Client 24 Exit
+2024-12-07 22:57:20 - New Client number 25 from ('127.0.0.1', 54753)
+2024-12-07 22:58:47 - Client 25 Exit
+2024-12-07 22:58:48 - New Client number 26 from ('127.0.0.1', 54780)
+2024-12-07 22:58:52 - New Client number 27 from ('127.0.0.1', 54785)
+2024-12-07 22:58:54 - Client 26 Exit
+2024-12-07 22:58:54 - Client 27 Exit
+2024-12-07 22:59:22 - New Client number 28 from ('127.0.0.1', 54796)
+2024-12-07 22:59:24 - Client 28 Exit
+2024-12-07 22:59:26 - New Client number 29 from ('127.0.0.1', 54809)
+2024-12-07 22:59:30 - Client 29 Exit
+2024-12-07 22:59:33 - New Client number 30 from ('127.0.0.1', 54826)
+2024-12-07 22:59:36 - New Client number 31 from ('127.0.0.1', 54832)
+2024-12-07 22:59:38 - Client 31 Exit
+2024-12-07 22:59:38 - Client 30 Exit
+2024-12-07 23:00:13 - New Client number 32 from ('127.0.0.1', 54849)
+2024-12-07 23:00:16 - New Client number 33 from ('127.0.0.1', 54857)
+2024-12-07 23:00:18 - Client 33 Exit
+2024-12-07 23:00:18 - Client 32 Exit
+2024-12-07 23:01:24 - New Client number 34 from ('127.0.0.1', 54875)
+2024-12-07 23:01:28 - New Client number 35 from ('127.0.0.1', 54881)
+2024-12-07 23:01:30 - Client 35 Exit
+2024-12-07 23:01:30 - Client 34 Exit
+2024-12-07 23:01:42 - New Client number 36 from ('127.0.0.1', 54890)
+2024-12-07 23:02:04 - New Client number 37 from ('127.0.0.1', 54896)
+2024-12-07 23:02:12 - Client 36 Exit
+2024-12-07 23:02:12 - Client 37 Exit
+2024-12-07 23:02:53 - New Client number 38 from ('127.0.0.1', 54908)
+2024-12-07 23:02:57 - Client 38 Exit
+2024-12-07 23:03:19 - New Client number 39 from ('127.0.0.1', 54918)
+2024-12-07 23:03:23 - Client 39 Exit
+2024-12-07 23:03:58 - New Client number 40 from ('127.0.0.1', 54929)
+2024-12-07 23:04:02 - Client 40 Exit
+2024-12-07 23:04:08 - New Client number 41 from ('127.0.0.1', 54945)
+2024-12-07 23:07:52 - Client 41 Exit
+2024-12-07 23:07:53 - New Client number 42 from ('127.0.0.1', 54978)
+2024-12-07 23:08:08 - Client 42 Exit
+2024-12-07 23:08:12 - New Client number 43 from ('127.0.0.1', 54989)
+2024-12-07 23:08:50 - Client 43 Exit
+2024-12-07 23:08:51 - New Client number 44 from ('127.0.0.1', 55008)
+2024-12-07 23:09:17 - Client 44 Exit
+2024-12-07 23:09:18 - New Client number 45 from ('127.0.0.1', 55023)
+2024-12-07 23:09:38 - Client 45 Exit
+2024-12-07 23:09:39 - New Client number 46 from ('127.0.0.1', 55037)
+2024-12-07 23:10:13 - Server listening on ('0.0.0.0', 31026)
+2024-12-07 23:10:14 - Main thread: before accepting ...
+2024-12-07 23:10:17 - New Client number 1 from ('127.0.0.1', 55055)
+2024-12-07 23:10:36 - Client 1 Exit
+2024-12-07 23:13:23 - New Client number 2 from ('127.0.0.1', 55102)
+2024-12-07 23:13:29 - Client 2 Exit
+2024-12-08 08:54:34 - New Client number 3 from ('127.0.0.1', 60196)
+2024-12-08 08:55:05 - Client 3 Exit
+2024-12-08 08:55:06 - New Client number 4 from ('127.0.0.1', 60211)
+2024-12-08 08:55:23 - Client 4 Exit
+2024-12-08 08:55:24 - New Client number 5 from ('127.0.0.1', 60224)
+2024-12-08 08:56:25 - Client 5 Exit
+2024-12-08 08:56:26 - New Client number 6 from ('127.0.0.1', 60244)
+2024-12-08 09:30:09 - Client 6 Exit
+2024-12-08 09:30:10 - New Client number 7 from ('127.0.0.1', 60600)
+2024-12-08 09:30:58 - Client 7 Exit
+2024-12-08 09:30:59 - New Client number 8 from ('127.0.0.1', 60618)
+2024-12-08 09:33:09 - Client 8 Exit
+2024-12-08 09:33:10 - New Client number 9 from ('127.0.0.1', 60650)
+2024-12-08 09:35:05 - Client 9 Exit
+2024-12-08 09:35:06 - New Client number 10 from ('127.0.0.1', 60681)
+2024-12-08 09:39:38 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 09:39:38 - Main thread: before accepting ...
+2024-12-08 09:39:41 - New Client number 1 from ('127.0.0.1', 60750)
+2024-12-08 09:43:26 - New Client number 2 from ('127.0.0.1', 60798)
+2024-12-08 09:43:26 - Client 1 Exit
+2024-12-08 09:49:08 - Client 2 Exit
+2024-12-08 09:49:09 - New Client number 3 from ('127.0.0.1', 60867)
+2024-12-08 09:57:46 - Client 3 Exit
+2024-12-08 09:57:47 - New Client number 4 from ('127.0.0.1', 60997)
+2024-12-08 09:58:11 - Client 4 Exit
+2024-12-08 09:58:12 - New Client number 5 from ('127.0.0.1', 61013)
+2024-12-08 09:58:46 - Client 5 Exit
+2024-12-08 09:58:47 - New Client number 6 from ('127.0.0.1', 61030)
+2024-12-08 10:01:08 - Client 6 Exit
+2024-12-08 10:01:09 - New Client number 7 from ('127.0.0.1', 61075)
+2024-12-08 10:01:41 - Client 7 Exit
+2024-12-08 10:01:42 - New Client number 8 from ('127.0.0.1', 61090)
+2024-12-08 10:01:55 - Client 8 Exit
+2024-12-08 10:01:56 - New Client number 9 from ('127.0.0.1', 61106)
+2024-12-08 10:06:49 - Client 9 Exit
+2024-12-08 10:06:50 - New Client number 10 from ('127.0.0.1', 61152)
+2024-12-08 10:06:54 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 10:06:55 - Main thread: before accepting ...
+2024-12-08 10:06:58 - New Client number 1 from ('127.0.0.1', 61172)
+2024-12-08 10:07:55 - Client 1 Exit
+2024-12-08 10:07:56 - New Client number 2 from ('127.0.0.1', 61191)
+2024-12-08 10:08:48 - Client 2 Exit
+2024-12-08 10:09:07 - New Client number 3 from ('127.0.0.1', 61216)
+2024-12-08 10:10:01 - Client 3 Exit
+2024-12-08 10:10:02 - New Client number 4 from ('127.0.0.1', 61239)
+2024-12-08 10:10:54 - Client 4 Exit
+2024-12-08 10:10:55 - New Client number 5 from ('127.0.0.1', 61267)
+2024-12-08 10:11:44 - Client 5 Exit
+2024-12-08 10:11:45 - New Client number 6 from ('127.0.0.1', 61293)
+2024-12-08 10:14:01 - Client 6 Exit
+2024-12-08 10:14:02 - New Client number 7 from ('127.0.0.1', 61327)
+2024-12-08 10:14:08 - Client 7 Exit
+2024-12-08 10:15:02 - New Client number 8 from ('127.0.0.1', 61346)
+2024-12-08 10:15:31 - Client 8 Exit
+2024-12-08 10:15:35 - New Client number 9 from ('127.0.0.1', 61371)
+2024-12-08 10:17:13 - Client 9 Exit
+2024-12-08 10:18:40 - New Client number 10 from ('127.0.0.1', 61399)
+2024-12-08 10:19:40 - New Client number 11 from ('127.0.0.1', 61424)
+2024-12-08 10:21:09 - Client 11 Exit
+2024-12-08 10:21:10 - Client 10 Exit
+2024-12-08 10:21:11 - New Client number 12 from ('127.0.0.1', 61443)
+2024-12-08 10:21:29 - Client 12 Exit
+2024-12-08 10:21:30 - New Client number 13 from ('127.0.0.1', 61454)
+2024-12-08 10:22:09 - Client 13 Exit
+2024-12-08 10:22:10 - New Client number 14 from ('127.0.0.1', 61469)
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17.lock'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:26:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\a9d505c4e8f24f969bd6bb77199bae17'
+2024-12-08 10:29:25 - Client 14 Exit
+2024-12-08 10:29:26 - New Client number 15 from ('127.0.0.1', 61540)
+2024-12-08 10:31:22 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 10:31:22 - Main thread: before accepting ...
+2024-12-08 10:31:24 - New Client number 1 from ('127.0.0.1', 61606)
+2024-12-08 10:32:45 - Client 1 Exit
+2024-12-08 10:32:46 - New Client number 2 from ('127.0.0.1', 61618)
+2024-12-08 10:33:09 - Client 2 Exit
+2024-12-08 10:33:10 - New Client number 3 from ('127.0.0.1', 61631)
+2024-12-08 10:33:39 - Client 3 Exit
+2024-12-08 10:33:40 - New Client number 4 from ('127.0.0.1', 61646)
+2024-12-08 10:34:16 - Client 4 Exit
+2024-12-08 10:34:17 - New Client number 5 from ('127.0.0.1', 61664)
+2024-12-08 10:36:29 - Client 5 Exit
+2024-12-08 10:36:30 - New Client number 6 from ('127.0.0.1', 61696)
+2024-12-08 10:37:34 - Client 6 Exit
+2024-12-08 10:37:35 - New Client number 7 from ('127.0.0.1', 61719)
+2024-12-08 10:39:22 - Client 7 Exit
+2024-12-08 10:39:23 - New Client number 8 from ('127.0.0.1', 61747)
+2024-12-08 10:39:41 - Client 8 Exit
+2024-12-08 10:39:42 - New Client number 9 from ('127.0.0.1', 61760)
+2024-12-08 10:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:23 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:24 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:24 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:24 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:24 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:41:24 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\f818cc5602644b78845c0fa9b97519e2'
+2024-12-08 10:46:36 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 10:46:37 - Main thread: before accepting ...
+2024-12-08 10:46:40 - New Client number 1 from ('127.0.0.1', 61842)
+2024-12-08 10:46:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 913, in recv_data
+    bytes_recieved[tid] += len(b_len)
+    ~~~~~~~~~~~~~~^^^^^
+KeyError: '1'
+2024-12-08 10:46:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 952, in handle_client
+    code = start.split(b"|")[0]
+           ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+2024-12-08 10:46:40 - Client 1 connection error
+2024-12-08 10:47:18 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 10:47:18 - Main thread: before accepting ...
+2024-12-08 10:47:19 - New Client number 1 from ('127.0.0.1', 61863)
+2024-12-08 10:50:25 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 10:50:26 - Main thread: before accepting ...
+2024-12-08 10:50:28 - New Client number 1 from ('127.0.0.1', 61912)
+2024-12-08 10:55:33 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 10:55:33 - Main thread: before accepting ...
+2024-12-08 10:55:35 - New Client number 1 from ('127.0.0.1', 61990)
+2024-12-08 11:07:15 - Client 1 Exit
+2024-12-08 11:07:16 - New Client number 2 from ('127.0.0.1', 62107)
+2024-12-08 11:09:12 - Client 2 Exit
+2024-12-08 11:09:13 - New Client number 3 from ('127.0.0.1', 62130)
+2024-12-08 11:10:15 - Client 3 Exit
+2024-12-08 11:10:16 - New Client number 4 from ('127.0.0.1', 62160)
+2024-12-08 11:10:45 - Client 4 Exit
+2024-12-08 11:10:46 - New Client number 5 from ('127.0.0.1', 62179)
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:10:49 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 66, in add_data
+    with open(save_path, 'r+b') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\ff26cd0b99c549c09420dee01728ba23'
+2024-12-08 11:11:39 - Client 5 Exit
+2024-12-08 11:11:40 - New Client number 6 from ('127.0.0.1', 62201)
+2024-12-08 11:11:49 - Client 6 Exit
+2024-12-08 11:11:50 - New Client number 7 from ('127.0.0.1', 62211)
+2024-12-08 11:20:40 - Client 7 Exit
+2024-12-08 11:20:41 - New Client number 8 from ('127.0.0.1', 62299)
+2024-12-08 11:21:10 - Client 8 Exit
+2024-12-08 11:21:11 - New Client number 9 from ('127.0.0.1', 62316)
+2024-12-08 11:21:37 - Client 9 Exit
+2024-12-08 11:21:38 - New Client number 10 from ('127.0.0.1', 62332)
+2024-12-08 11:21:58 - Client 10 Exit
+2024-12-08 11:21:59 - New Client number 11 from ('127.0.0.1', 62344)
+2024-12-08 11:31:37 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 11:31:38 - Main thread: before accepting ...
+2024-12-08 11:31:39 - New Client number 1 from ('127.0.0.1', 62484)
+2024-12-08 11:31:39 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:32:58 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 11:32:58 - Main thread: before accepting ...
+2024-12-08 11:33:07 - New Client number 1 from ('127.0.0.1', 62501)
+2024-12-08 11:33:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:33:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:33:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:35:18 - Client 1 Exit
+2024-12-08 11:35:19 - New Client number 2 from ('127.0.0.1', 62523)
+2024-12-08 11:35:19 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:35:19 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:35:19 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:35:19 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:36:04 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 11:36:04 - Main thread: before accepting ...
+2024-12-08 11:36:10 - New Client number 1 from ('127.0.0.1', 62548)
+2024-12-08 11:36:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:36:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:36:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:36:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 826, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:36:54 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 11:36:54 - Main thread: before accepting ...
+2024-12-08 11:36:55 - New Client number 1 from ('127.0.0.1', 62573)
+2024-12-08 11:36:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 857, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:36:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 857, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:36:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 857, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:36:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 857, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:36:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 857, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:38:04 - Client 1 Exit
+2024-12-08 11:38:05 - New Client number 2 from ('127.0.0.1', 62590)
+2024-12-08 11:40:58 - Client 2 Exit
+2024-12-08 11:40:59 - New Client number 3 from ('127.0.0.1', 62639)
+2024-12-08 11:40:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 857, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:42:29 - Client 3 Exit
+2024-12-08 11:42:30 - New Client number 4 from ('127.0.0.1', 62664)
+2024-12-08 11:42:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 857, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:45:13 - Client 4 Exit
+2024-12-08 11:45:14 - New Client number 5 from ('127.0.0.1', 62708)
+2024-12-08 11:45:14 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 857, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    progress = int(fields[2])
+               ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'
+2024-12-08 11:47:05 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 11:47:05 - Main thread: before accepting ...
+2024-12-08 11:47:12 - New Client number 1 from ('127.0.0.1', 62762)
+2024-12-08 11:47:12 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    file_path = cloud_path + "\\" + cr.get_file_sname(id)
+                ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "NoneType") to str
+2024-12-08 11:50:29 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 11:50:29 - Main thread: before accepting ...
+2024-12-08 11:50:33 - New Client number 1 from ('127.0.0.1', 62810)
+2024-12-08 11:50:33 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    file_path = cloud_path + "\\" + cr.get_file_sname(id)
+                ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "NoneType") to str
+2024-12-08 11:50:33 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 856, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 827, in protocol_build_reply
+    file_path = cloud_path + "\\" + cr.get_file_sname(id)
+                ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "NoneType") to str
+2024-12-08 11:57:57 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 11:57:57 - Main thread: before accepting ...
+2024-12-08 11:57:59 - New Client number 1 from ('127.0.0.1', 62944)
+2024-12-08 11:57:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 871, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 835, in protocol_build_reply
+    elif "~" in file_id:
+                ^^^^^^^
+UnboundLocalError: cannot access local variable 'file_id' where it is not associated with a value
+2024-12-08 11:57:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 871, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 835, in protocol_build_reply
+    elif "~" in file_id:
+                ^^^^^^^
+UnboundLocalError: cannot access local variable 'file_id' where it is not associated with a value
+2024-12-08 11:59:26 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 11:59:27 - Main thread: before accepting ...
+2024-12-08 11:59:30 - New Client number 1 from ('127.0.0.1', 62978)
+2024-12-08 11:59:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 871, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 835, in protocol_build_reply
+    elif "~" in file_id:
+                ^^^^^^^
+UnboundLocalError: cannot access local variable 'file_id' where it is not associated with a value
+2024-12-08 11:59:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 871, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 835, in protocol_build_reply
+    elif "~" in file_id:
+                ^^^^^^^
+UnboundLocalError: cannot access local variable 'file_id' where it is not associated with a value
+2024-12-08 12:00:06 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 12:00:06 - Main thread: before accepting ...
+2024-12-08 12:00:08 - New Client number 1 from ('127.0.0.1', 63003)
+2024-12-08 12:01:47 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 12:01:47 - Main thread: before accepting ...
+2024-12-08 12:01:51 - New Client number 1 from ('127.0.0.1', 63041)
+2024-12-08 12:01:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 871, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 587, in protocol_build_reply
+    zip_buffer = cr.zip_files(ids)
+                 ^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 750, in zip_files
+    zf.write(file_name, os.path.basename(file_path))
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\zipfile\__init__.py", line 1841, in write
+    zinfo = ZipInfo.from_file(filename, arcname,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\zipfile\__init__.py", line 557, in from_file
+    st = os.stat(filename)
+         ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'catppuccin.txt'
+2024-12-08 12:02:12 - Client 1 Exit
+2024-12-08 12:02:13 - New Client number 2 from ('127.0.0.1', 63048)
+2024-12-08 12:02:13 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 871, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 837, in protocol_build_reply
+    zip_buffer = cr.zip_files(ids)
+                 ^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 750, in zip_files
+    zf.write(file_name, os.path.basename(file_path))
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\zipfile\__init__.py", line 1841, in write
+    zinfo = ZipInfo.from_file(filename, arcname,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\zipfile\__init__.py", line 557, in from_file
+    st = os.stat(filename)
+         ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'catppuccin.txt'
+2024-12-08 12:02:19 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 871, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 587, in protocol_build_reply
+    zip_buffer = cr.zip_files(ids)
+                 ^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 750, in zip_files
+    zf.write(file_name, os.path.basename(file_path))
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\zipfile\__init__.py", line 1841, in write
+    zinfo = ZipInfo.from_file(filename, arcname,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\AppData\Local\Programs\Python\Python312\Lib\zipfile\__init__.py", line 557, in from_file
+    st = os.stat(filename)
+         ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'catppuccin.txt'
+2024-12-08 12:04:09 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 12:04:09 - Main thread: before accepting ...
+2024-12-08 12:04:11 - New Client number 1 from ('127.0.0.1', 63089)
+2024-12-08 12:04:38 - Client 1 Exit
+2024-12-08 12:04:39 - New Client number 2 from ('127.0.0.1', 63102)
+2024-12-08 12:05:28 - Client 2 Exit
+2024-12-08 12:05:29 - New Client number 3 from ('127.0.0.1', 63116)
+2024-12-08 12:06:21 - Client 3 Exit
+2024-12-08 12:06:22 - New Client number 4 from ('127.0.0.1', 63134)
+2024-12-08 12:09:26 - Client 4 Exit
+2024-12-08 12:09:37 - New Client number 5 from ('127.0.0.1', 63210)
+2024-12-08 12:10:43 - Client 5 Exit
+2024-12-08 12:11:14 - New Client number 6 from ('127.0.0.1', 63241)
+2024-12-08 12:57:27 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 12:57:27 - Main thread: before accepting ...
+2024-12-08 12:57:30 - New Client number 1 from ('127.0.0.1', 63688)
+2024-12-08 12:59:35 - Client 1 Exit
+2024-12-08 12:59:36 - New Client number 2 from ('127.0.0.1', 63729)
+2024-12-08 13:00:14 - Client 2 Exit
+2024-12-08 13:00:15 - New Client number 3 from ('127.0.0.1', 63748)
+2024-12-08 13:01:57 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 13:01:57 - Main thread: before accepting ...
+2024-12-08 13:01:58 - New Client number 1 from ('127.0.0.1', 63784)
+2024-12-08 13:02:29 - Client 1 Exit
+2024-12-08 13:02:30 - New Client number 2 from ('127.0.0.1', 63799)
+2024-12-08 13:03:16 - Client 2 Exit
+2024-12-08 13:03:17 - New Client number 3 from ('127.0.0.1', 63817)
+2024-12-08 13:04:31 - New Client number 4 from ('127.0.0.1', 63838)
+2024-12-08 13:04:32 - Client 3 Exit
+2024-12-08 13:04:51 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 872, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 578, in protocol_build_reply
+    name = fields[2]
+           ~~~~~~^^^
+IndexError: list index out of range
+2024-12-08 13:05:02 - Server listening on ('0.0.0.0', 31026)
+2024-12-08 13:05:02 - Main thread: before accepting ...
+2024-12-08 13:05:04 - New Client number 1 from ('127.0.0.1', 63857)
+2024-12-08 13:07:43 - Client 1 Exit
+2024-12-08 13:07:44 - New Client number 2 from ('127.0.0.1', 63884)
+2024-12-08 13:18:28 - New Client number 3 from ('127.0.0.1', 64052)
+2024-12-08 13:18:32 - Client 3 Exit
+2024-12-08 13:19:44 - Client 2 Exit
+2024-12-08 13:23:17 - New Client number 4 from ('127.0.0.1', 64114)
+2024-12-08 13:25:02 - Client 4 Exit
+2024-12-08 13:25:56 - New Client number 5 from ('127.0.0.1', 64146)
+2024-12-08 13:27:35 - New Client number 6 from ('127.0.0.1', 64179)
+2024-12-08 13:27:58 - New Client number 7 from ('127.0.0.1', 64187)
+2024-12-08 13:28:28 - Client 6 Exit
+2024-12-08 13:28:28 - Client 7 Exit
+2024-12-08 13:29:02 - Client 5 Exit
+2024-12-08 13:29:25 - New Client number 8 from ('127.0.0.1', 64204)
+2024-12-08 13:29:51 - Client 8 Exit
+2024-12-08 13:30:06 - New Client number 9 from ('127.0.0.1', 64227)
+2024-12-08 13:30:49 - Client 9 Exit
