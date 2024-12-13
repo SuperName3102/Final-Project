@@ -48,6 +48,7 @@ directories = []
 files_downloading = {}
 currently_selected = []
 uploading_file_id = ""
+used_storage = 0
 
 last_msg = ""
 last_error_msg = ""
@@ -564,6 +565,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.main_text.setText(f"Welcome {user["username"]}")
 
             self.storage_remaining.setMaximum(Limits(user["subscription_level"]).max_storage)
+            self.set_used_storage()
 
             self.search.setIcon(QIcon(assets_path+"\\search.svg"))
             self.search.setText(f" Search Filter: {search_filter}")
@@ -768,6 +770,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.professional_button.setStyleSheet("background-color:dimgrey")
 
             self.storage_remaining.setMaximum(Limits(user["subscription_level"]).max_storage)
+            self.set_used_storage()
     
             
             self.setGeometry(temp)
@@ -879,6 +882,10 @@ class MainWindow(QtWidgets.QMainWindow):
             if share: self.cwd.setText(f"Shared > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
             elif deleted: self.cwd.setText(f"Deleted > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
             else: self.cwd.setText(f"{user['username']} > {" > ".join(user['cwd_name'].split("\\"))}"[:-3])
+    
+    def set_used_storage(self):
+        self.storage_remaining.setValue(int(used_storage))
+        self.storage_label.setText(f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
     
     def stop_upload(self):
         self.stop_button.setEnabled(False)
@@ -1022,6 +1029,7 @@ class FileSenderThread(QThread):
 
 
 def send_files(cmd = "FILS", file_id = None, resume_file_id = None, location_infile = 0):
+    if len(active_threads) >= 1: return
     try: window.file_upload_progress.show()
     except: pass
     try:
@@ -1521,6 +1529,7 @@ def protocol_parse_reply(reply):
 
         elif code == 'FILR':
             to_show = f'File {fields[1]} was uploaded'
+            window.user_page()
             window.set_message(to_show)
         
         elif code == 'FISS':
@@ -1528,10 +1537,12 @@ def protocol_parse_reply(reply):
             window.set_message(to_show)
 
         elif code == 'MOVR':
+            global scrol
             user["cwd"] = fields[1]
             user["parent_cwd"] = fields[2]
             user["cwd_name"] = fields[3]
             to_show = f'Succesfully moved to {fields[3]}'
+            window.scroll_progress = 0
             window.user_page()
             
         elif code == "RILD" or code == "RILE":
@@ -1606,9 +1617,9 @@ def protocol_parse_reply(reply):
             window.set_message(to_show)
 
         elif code == 'GEUR':
+            global used_storage
             used_storage = round(int(fields[1])/1_000_000, 3)
-            window.storage_remaining.setValue(int(used_storage))
-            window.storage_label.setText(f"Storage used ({format_file_size(used_storage*1_000_000)} / {Limits(user["subscription_level"]).max_storage//1000} GB):")
+            window.set_used_storage()
             to_show = f"Current used storage is {used_storage}"
 
         elif code == 'CHUR':

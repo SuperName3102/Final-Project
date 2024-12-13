@@ -468,10 +468,14 @@ def protocol_build_reply(request, tid, sock):
         id = fields[1].decode()
         location_infile = int(fields[2].decode())
         data = request[4 + len(id) + len(str(location_infile)) + 3:]
-        if id in files_uploading.keys():
-            file = files_uploading[id]
-        else: 
-            return Errors.FILE_NOT_FOUND.value
+        
+        file = None
+        for i in range (5):
+            if id in files_uploading.keys():
+                file = files_uploading[id]
+                break
+            time.sleep(1)
+        if file == None: return Errors.FILE_NOT_FOUND.value
         
         if (is_guest(tid)):
             reply = Errors.NOT_LOGGED.value

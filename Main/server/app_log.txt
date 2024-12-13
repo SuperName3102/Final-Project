@@ -26195,3 +26195,33 @@ TypeError: 'NoneType' object is not subscriptable
 2024-12-08 15:37:22 - Server listening on ('0.0.0.0', 31026)
 2024-12-08 15:37:22 - Main thread: before accepting ...
 2024-12-08 15:37:30 - New Client number 1 from ('127.0.0.1', 64980)
+2024-12-13 18:56:03 - Server listening on ('0.0.0.0', 31026)
+2024-12-13 18:56:04 - Main thread: before accepting ...
+2024-12-13 18:56:08 - New Client number 1 from ('127.0.0.1', 63420)
+2024-12-13 19:43:42 - Server listening on ('0.0.0.0', 31026)
+2024-12-13 19:43:42 - Main thread: before accepting ...
+2024-12-13 19:43:45 - New Client number 1 from ('127.0.0.1', 64570)
+2024-12-13 19:44:55 - New Client number 2 from ('127.0.0.1', 64589)
+2024-12-13 19:45:37 - Server listening on ('0.0.0.0', 31026)
+2024-12-13 19:45:37 - Main thread: before accepting ...
+2024-12-13 19:46:01 - Server listening on ('0.0.0.0', 31026)
+2024-12-13 19:46:02 - Main thread: before accepting ...
+2024-12-13 19:46:07 - New Client number 1 from ('127.0.0.1', 64619)
+2024-12-13 20:02:58 - Server listening on ('0.0.0.0', 31026)
+2024-12-13 20:02:59 - Main thread: before accepting ...
+2024-12-13 20:02:59 - New Client number 1 from ('127.0.0.1', 64905)
+2024-12-13 20:07:33 - Server listening on ('0.0.0.0', 31026)
+2024-12-13 20:07:33 - Main thread: before accepting ...
+2024-12-13 20:07:34 - New Client number 1 from ('127.0.0.1', 64995)
+2024-12-13 20:08:01 - Server listening on ('0.0.0.0', 31026)
+2024-12-13 20:08:01 - Main thread: before accepting ...
+2024-12-13 20:08:06 - New Client number 1 from ('127.0.0.1', 65017)
+2024-12-13 20:09:28 - New Client number 2 from ('127.0.0.1', 65048)
+2024-12-13 20:12:39 - Server listening on ('0.0.0.0', 31026)
+2024-12-13 20:12:39 - Main thread: before accepting ...
+2024-12-13 20:12:49 - New Client number 1 from ('127.0.0.1', 65132)
+2024-12-13 20:47:35 - New Client number 2 from ('127.0.0.1', 49498)
+2024-12-13 20:47:55 - General Error %s exit client loop: can't start new thread
+2024-12-13 20:47:57 - Server listening on ('0.0.0.0', 31026)
+2024-12-13 20:47:58 - Main thread: before accepting ...
+2024-12-13 20:48:03 - New Client number 1 from ('127.0.0.1', 49520)
