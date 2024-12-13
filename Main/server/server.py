@@ -127,7 +127,7 @@ def send_file_data(file_path, id, sock, tid, progress = 0):
                     bytes_sent += len(data)
                     sent += chunk_size
                     
-                    if bytes_sent >= (Limits(clients[tid].subscription_level).max_upload_speed) * 1_000_000:
+                    if bytes_sent >= (Limits(clients[tid].subscription_level).max_download_speed) * 1_000_000:
                         time_to_wait = 1.0 - elapsed_time
                         if time_to_wait > 0:
                             time.sleep(time_to_wait)
@@ -165,6 +165,10 @@ def send_zip(zip_buffer, id, sock, tid, progress = 0):
             send_data(sock, tid, f"RILD|{id}|{location_infile}|".encode() + data)
             bytes_sent += len(data)
             sent += chunk_size 
+            if bytes_sent >= (Limits(clients[tid].subscription_level).max_download_speed) * 1_000_000:
+                time_to_wait = 1.0 - elapsed_time
+                if time_to_wait > 0:
+                    time.sleep(time_to_wait)
         location_infile = zip_buffer.tell()
         data = zip_buffer.read(left)
         if data != b"":
