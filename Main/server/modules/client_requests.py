@@ -580,10 +580,10 @@ def directory_size(user_id, id):
 def get_user_storage(id):
     return directory_size(id, "")
     
-def clean_db():
+def clean_db(files_uploading):
     for name in os.listdir(server_path + "\\cloud"):
         try:
-            if db.get_file(name) is None and db.get_user(name) is None:
+            if db.get_file(name) is None and db.get_user(name) is None and not any(obj.name == name for obj in files_uploading.values()):
                 os.remove(server_path + "\\cloud\\" + name)
         except:
             print(traceback.format_exc())

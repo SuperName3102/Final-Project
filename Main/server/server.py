@@ -37,7 +37,7 @@ files_uploading = {}
 
 # User handling classes
 class File:
-    def __init__(self, name, parent, size, id, file_name, curr_location_infile = 0):
+    def __init__(self, name, parent, size, id, file_name, curr_location_infile = 0, icon = False):
         self.name = name
         self.parent = parent
         self.uploading = True
@@ -45,23 +45,23 @@ class File:
         self.id = id
         self.file_name = file_name
         self.curr_location_infile = curr_location_infile
+        if icon: self.save_path = user_icons_path + "\\" + self.name + ".ico"
+        else: self.save_path = cloud_path + "\\" + self.name
         
         self.start_download()
     
     def start_download(self):
-        save_path = cloud_path + "\\" + self.name
-        with open(save_path, 'wb') as f:
+        with open(self.save_path, 'wb') as f:
             f.seek(self.size - 1)
             f.write(b"\0")
             f.flush()
     
     def add_data(self, data, location_infile):
-        save_path = cloud_path + "\\" + self.name
-        lock_path = f"{save_path}.lock"
+        lock_path = f"{self.save_path}.lock"
         lock = FileLock(lock_path)
         try:
             with lock:
-                with open(save_path, 'r+b') as f:
+                with open(self.save_path, 'r+b') as f:
                     f.seek(location_infile)
                     f.write(data)
                     f.flush()
@@ -76,10 +76,9 @@ class File:
             
     
     def delete(self):
-        save_path = cloud_path + "\\" + self.name
-        lock_path = f"{save_path}.lock"
+        lock_path = f"{self.save_path}.lock"
         if os.path.exists(lock_path): os.remove(lock_path)
-        if os.path.exists(save_path): os.remove(save_path)
+        if os.path.exists(self.save_path): os.remove(self.save_path)
 
 class Client:
     """
@@ -493,8 +492,9 @@ def protocol_build_reply(request, tid, sock):
             if location_infile + len(data) > file.size:
                 return Errors.FILE_SIZE.value
             file.add_data(data, location_infile)
-            if code == "FILE": 
-                cr.new_file(file.name, file.file_name, file.parent, clients[tid].id, file.size)
+            if code == "FILE":
+                if file.name != clients[tid].user:
+                    cr.new_file(file.name, file.file_name, file.parent, clients[tid].id, file.size)
                 reply = f"FILR|{file.file_name}|File finished uploading"
                 if id in files_uploading.keys():
                     del files_uploading[id]
@@ -647,8 +647,8 @@ def protocol_build_reply(request, tid, sock):
             reply = f"RENR|{name}|{new_name}|File renamed succefully"
 
     elif (code == "GICO"):
-        if (os.path.isfile(os.path.join(cloud_path, clients[tid].id))):
-            send_file_data(os.path.join(cloud_path, clients[tid].id), "user", sock, tid)
+        if (os.path.isfile(os.path.join(user_icons_path, clients[tid].id) + ".ico")):
+            send_file_data(os.path.join(user_icons_path, clients[tid].id) + ".ico", "user", sock, tid)
         else:
             send_file_data(os.path.join(user_icons_path, "guest.ico"), "user", sock, tid)
         reply = f"GICR|Sent use profile picture"
@@ -657,7 +657,7 @@ def protocol_build_reply(request, tid, sock):
         size = int(fields[3])
         id = fields[4]
         try:
-            files_uploading[id] = File(clients[tid].id, "", size, id, None)
+            files_uploading[id] = File(clients[tid].id, "", size, id, clients[tid].id, icon=True)
             reply = f"ICOR|Profile icon started uploading"
 
         except Exception:
@@ -831,7 +831,7 @@ def protocol_build_reply(request, tid, sock):
         if id in files_uploading.keys():
             progress = files_uploading[id].curr_location_infile
             reply = f"RESR|{id}|{progress}"
-        else: reply = Errors.FILE_NOT_FOUND.value
+        else: reply = Errors.FILE_NOT_FOUND.value + "|" + id
     elif code == "RESD":
         id = fields[1]
         progress = int(fields[2])
@@ -1032,8 +1032,8 @@ def handle_client(sock, tid, addr):
 
 def cleaner():
     while True:
-        cr.clean_db()
-        time.sleep(300)
+        cr.clean_db(files_uploading)
+        time.sleep(1)
 
 def dhcp_listen():
     dhcp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

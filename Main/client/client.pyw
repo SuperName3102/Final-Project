@@ -13,7 +13,7 @@ import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, js
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
-from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QGuiApplication
+from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QGuiApplication, QResizeEvent
 from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
 
 
@@ -369,8 +369,6 @@ class MainWindow(QtWidgets.QMainWindow):
                 scroll_size = [int(850*width_ratio), int(340*height_ratio)]
                 scroll.setFixedSize(scroll_size[0], scroll_size[1])
         except: pass
-        self.update() 
-    
 
     
     
@@ -392,8 +390,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.exit_button.clicked.connect(exit_program)
             self.exit_button.setIcon(QIcon(assets_path+"\\exit.svg"))
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
         except:
             print(traceback.format_exc())
 
@@ -422,8 +419,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
             
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
         except:
             print(traceback.format_exc())
 
@@ -452,8 +448,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
             
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
         except:
             print(traceback.format_exc())
 
@@ -473,8 +468,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
             
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
         except:
             print(traceback.format_exc())
 
@@ -497,8 +491,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
             
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
         except:
             print(traceback.format_exc())
 
@@ -518,8 +511,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
             
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
         except:
             print(traceback.format_exc())
     
@@ -613,8 +605,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.stop_button.clicked.connect(self.stop_upload)
             self.stop_button.setIcon(QIcon(assets_path+"\\stop.svg"))
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
             
             
         except:
@@ -686,6 +677,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
             scroll.setWidget(scroll_container_widget)
             scroll.setFixedSize(850, 340)
+            
             spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
             outer_layout.addItem(spacer)
             center_layout = QHBoxLayout()
@@ -693,7 +685,6 @@ class MainWindow(QtWidgets.QMainWindow):
             scroll.verticalScrollBar().setValue(self.scroll_progress)
             center_layout.addWidget(scroll)  # Add the scroll area
             center_layout.addStretch(1)  # Add stretchable space on the right
-
             # Add the centered scroll area layout to the outer layout
             outer_layout.addLayout(center_layout)
             outer_layout.addStretch(1)
@@ -731,8 +722,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.back_button.setIcon(QIcon(assets_path + "\\back.svg"))
             
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
         except:
             print(traceback.format_exc())
 
@@ -774,8 +764,7 @@ class MainWindow(QtWidgets.QMainWindow):
     
             
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
         except:
             print(traceback.format_exc())
 
@@ -804,12 +793,11 @@ class MainWindow(QtWidgets.QMainWindow):
             self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
             
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
         except:
             print(traceback.format_exc())
         
-    def not_connected_page(self):
+    def not_connected_page(self, connect = True):
         try:
             temp = window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/not_connected.ui"
@@ -827,8 +815,8 @@ class MainWindow(QtWidgets.QMainWindow):
             self.exit_button.setIcon(QIcon(assets_path+"\\exit.svg"))
             
             self.setGeometry(temp)
-            self.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-            self.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+            self.force_update_window()
+            if connect: connect_server(ip, port, True)
 
         except:
             print(traceback.format_exc())
@@ -892,7 +880,10 @@ class MainWindow(QtWidgets.QMainWindow):
             active_threads[0].running = False
         send_data(b"STOP|" + uploading_file_id.encode())
 
-
+    def force_update_window(self):
+        size = self.size()
+        resize_event = QResizeEvent(size, size)
+        self.resizeEvent(resize_event)
 
 def update_userpage(msg):
     send_data(f"UPDT|{msg}".encode())
@@ -1064,10 +1055,22 @@ def finish_sending():
     window.user_page()
 
 def update_progress(value):
+    try: window.file_upload_progress.show()
+    except: pass
+    try:
+        window.stop_button.setEnabled(True)
+        window.stop_button.show()
+    except: pass
     try: window.file_upload_progress.setValue(value)
     except: pass
 
 def reset_progress(value):
+    try: window.file_upload_progress.show()
+    except: pass
+    try:
+        window.stop_button.setEnabled(True)
+        window.stop_button.show()
+    except: pass
     try: window.file_upload_progress.setMaximum(value)
     except: pass
 
@@ -1110,9 +1113,11 @@ def select_item(btn):
             if btn.is_folder: label.setObjectName("folder-label")
             else: label.setObjectName("file-label")
     
-    with open(f"{os.getcwd()}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
-    window.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-    window.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+    if user["username"].lower() == "emily": 
+        with open(f"{os.getcwd()}/gui/css/emily.css", 'r') as f: app.setStyleSheet(f.read())
+    else: 
+        with open(f"{os.getcwd()}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
+    window.force_update_window()
 
     
 def reset_selected():
@@ -1443,6 +1448,12 @@ def protocol_parse_reply(reply):
             window.set_error_message(fields[2])
             if (err_code == 9):
                 window.send_verification_page()
+            elif (err_code == 14):
+                try:
+                    file_id = fields[3]
+                    update_json(uploading_files_json, file_id, "", remove=True)
+                except: 
+                    print(traceback.format_exc())
             elif (err_code == 20):
                 if active_threads != []:
                     active_threads[0].running = False
@@ -1468,12 +1479,8 @@ def protocol_parse_reply(reply):
             user["username"] = username
             user["subscription_level"] = fields[3]
             get_user_icon()
-            window.setStyleSheet("""
-                MainWindow {
-                background-image: url('../../assets/secret.png');
-                background-repeat: no-repeat; 
-                background-position: center;
-                }""")
+            if user["username"].lower() == "emily":
+                with open(f"{os.getcwd()}/gui/css/emily.css", 'r') as f: app.setStyleSheet(f.read())
             window.user_page()
             window.set_message("Login was succesfull!")
             if remember:
@@ -1502,6 +1509,8 @@ def protocol_parse_reply(reply):
 
         elif code == 'LUGR':   # Logout was performed
             global share, deleted
+            if user["username"].lower() == "emily":
+                with open(f"{os.getcwd()}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
             user["email"] = "guest"
             user["username"] = "guest"
             user["subscription_level"] = 0
@@ -1573,7 +1582,7 @@ def protocol_parse_reply(reply):
                 except: pass
                 try: window.file_upload_progress.hide()
                 except: pass
-            to_show = "File data recieved"
+            to_show = "File data recieved " + str(location_infile)
             
 
         elif code == 'DOWR':
@@ -1734,8 +1743,7 @@ def update_current_files():
     window.save_sizes()
     window.draw_cwd(files, directories)
     window.total_files.setText(f"{len(files) + len(directories)} items")
-    window.resize(window_geometry.width() + 1, window_geometry.height() + 1)
-    window.resize(window_geometry.width() - 1, window_geometry.height() - 1)
+    window.force_update_window()
     
     
 
@@ -1786,7 +1794,7 @@ def send_data(bdata, encryption = True):
     except ConnectionResetError:
         receive_thread.pause()
         sock.close()
-        connect_server(ip, port)
+        window.not_connected_page()
         window.set_error_message("Lost connection to server")
     except:
         print(traceback.format_exc())
@@ -1844,7 +1852,7 @@ class ReceiveThread(QThread):
         self._pause_event.set()
 
 # Main function and start of code
-def connect_server(new_ip, new_port):
+def connect_server(new_ip, new_port, loop = False):
     global sock, ip, port, receive_thread
     window.set_message(f"Trying to connect to {new_ip} {new_port}...")
     QApplication.processEvents()
@@ -1871,8 +1879,9 @@ def connect_server(new_ip, new_port):
             window.set_message(f'Connect succeeded {ip} {port}')
         return sock
     except:
-        receive_thread.pause()
-        window.not_connected_page()
+        if not loop:
+            receive_thread.pause()
+            window.not_connected_page()
         window.set_error_message(f'Server was not found {ip} {port}')
         return None
 
@@ -1885,7 +1894,7 @@ def search_server():
         search_socket.sendto(b"SEAR", ("255.255.255.255", 31026))
         response = None
         i = 0
-        while response == None and i < 5:
+        while response == None and i < 3:
             response, addr = search_socket.recvfrom(1024)
             time.sleep(0.2)
             i+=1
@@ -1924,7 +1933,7 @@ def main():
         except: pass
         window = MainWindow()
         window.show()
-        window.not_connected_page()
+        window.not_connected_page(False)
         receive_thread = ReceiveThread()
         receive_thread.reply_received.connect(handle_reply)
         sock = connect_server(ip, port)
