@@ -495,7 +495,8 @@ def protocol_build_reply(request, tid, sock):
             if code == "FILE":
                 if file.name != clients[tid].user:
                     cr.new_file(file.name, file.file_name, file.parent, clients[tid].id, file.size)
-                reply = f"FILR|{file.file_name}|File finished uploading"
+                    reply = f"FILR|{file.file_name}|File finished uploading"
+                else: reply = f"ICUP|Profile icon uploaded"
                 if id in files_uploading.keys():
                     del files_uploading[id]
             else: reply = ""
@@ -858,7 +859,6 @@ def protocol_build_reply(request, tid, sock):
     else:
         reply = Errors.UNKNOWN.value
         fields = ''
-
     return reply
 
 def remove_file_mid_down(id):

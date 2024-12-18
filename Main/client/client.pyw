@@ -1006,6 +1006,7 @@ class FileSenderThread(QThread):
                             self.progress_reset.emit(size)
                             self.message.emit(f"{file_name} is being uploaded")
                             self.progress.emit(sent)  # Final progress update
+                            
                 except:
                     print(traceback.format_exc())
                     return
@@ -1601,12 +1602,18 @@ def protocol_parse_reply(reply):
 
         elif code == 'GICR':
             to_show = "Profile picture was recieved"
-
+            try:
+                if share or deleted: window.upload_button.setIcon((QIcon(user_icon)))
+                window.user_button.setIcon((QIcon(user_icon)))
+            except: pass
+        
         elif code == 'ICOR':
-            to_show = "Profile icon was uploaded succefully!"
-            get_user_icon()
+            to_show = "Profile icon started uploading succefully!"
             window.set_message(to_show)
-
+        
+        elif code == 'ICUP':
+            to_show = "Profile icon uploaded succefully!"
+            get_user_icon()
         elif code == 'DLFR':
             file_name = fields[1]
             to_show = f"File {file_name} was deleted!"
@@ -1712,6 +1719,7 @@ def protocol_parse_reply(reply):
             
         else:
             window.set_message("Unknown command " + code)
+        if code != "RILD" and code != "RILE": window.force_update_window()
             
     except Exception as e:   # Error
         print(traceback.format_exc())

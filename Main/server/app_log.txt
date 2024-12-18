@@ -66617,3 +66617,485 @@ TypeError: unsupported operand type(s) for +: 'bool' and 'str'
 2024-12-18 18:41:12 - New Client number 1 from ('192.168.56.1', 53406)
 2024-12-18 18:43:36 - Client 1 disconnected
 2024-12-18 18:43:36 - Client 1 Exit
+2024-12-18 20:06:31 - Server listening on ('0.0.0.0', 3102)
+2024-12-18 20:06:32 - Main thread: before accepting ...
+2024-12-18 20:06:36 - New Client number 1 from ('192.168.56.1', 54454)
+2024-12-18 20:09:35 - Client 1 disconnected
+2024-12-18 20:09:35 - Client 1 Exit
+2024-12-18 20:09:38 - New Client number 2 from ('192.168.56.1', 54479)
+2024-12-18 20:15:36 - Server listening on ('0.0.0.0', 3102)
+2024-12-18 20:15:36 - Main thread: before accepting ...
+2024-12-18 20:15:39 - New Client number 1 from ('192.168.56.1', 54523)
+2024-12-18 20:17:38 - Client 1 disconnected
+2024-12-18 20:17:38 - Client 1 Exit
+2024-12-18 20:17:41 - New Client number 2 from ('192.168.56.1', 54547)
+2024-12-18 20:20:41 - Client 2 disconnected
+2024-12-18 20:20:41 - Client 2 Exit
+2024-12-18 20:20:44 - New Client number 3 from ('192.168.56.1', 54578)
+2024-12-18 20:21:07 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 463, in protocol_build_reply
+    files_uploading[id] = File(name, parent, size, id, file_name)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 51, in __init__
+    self.start_download()
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 55, in start_download
+    f.seek(self.size - 1)
+OSError: [Errno 22] Invalid argument
+2024-12-18 20:21:23 - Client 3 disconnected
+2024-12-18 20:21:23 - Client 3 Exit
+2024-12-18 20:21:24 - New Client number 4 from ('192.168.56.1', 54581)
+2024-12-18 20:23:02 - Client 4 disconnected
+2024-12-18 20:23:02 - Client 4 Exit
+2024-12-18 20:23:05 - New Client number 5 from ('192.168.56.1', 54593)
+2024-12-18 20:24:29 - Client 5 disconnected
+2024-12-18 20:24:29 - Client 5 Exit
+2024-12-18 20:24:33 - New Client number 6 from ('192.168.56.1', 54604)
+2024-12-18 20:24:47 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\47b688baa0e54d11b2d6034e8cf45f57.lock'
+2024-12-18 20:24:47 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\b538a828cd3643fa8d3ff8cf4d69f680.lock'
+2024-12-18 20:25:14 - New Client number 7 from ('192.168.56.1', 54609)
+2024-12-18 20:25:26 - Client 6 disconnected
+2024-12-18 20:25:26 - Client 6 Exit
+2024-12-18 20:25:27 - Client 7 disconnected
+2024-12-18 20:25:27 - Client 7 Exit
+2024-12-18 20:25:30 - New Client number 8 from ('192.168.56.1', 54611)
+2024-12-18 20:30:51 - New Client number 9 from ('192.168.56.1', 54677)
+2024-12-18 20:31:28 - Client 8 disconnected
+2024-12-18 20:31:28 - Client 8 Exit
+2024-12-18 20:31:30 - Client 9 disconnected
+2024-12-18 20:31:30 - Client 9 Exit
+2024-12-18 20:31:34 - New Client number 10 from ('192.168.56.1', 54722)
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:31:52 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 595, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-12-18 20:32:09 - Client 10 disconnected
+2024-12-18 20:32:09 - Client 10 Exit
