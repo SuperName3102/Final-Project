@@ -51,7 +51,7 @@ with zipfile.ZipFile(zip_file, 'w') as zipf:
 
     # Add the 'assets' and 'gui' folders to the zip file
     for folder in folders_to_include:
-        folder_path = os.path.join(current_folder, folder)
+        folder_path = folder
         if os.path.exists(folder_path):
             for root, dirs, files in os.walk(folder_path):
                 for file in files:

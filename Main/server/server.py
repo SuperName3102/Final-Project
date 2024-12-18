@@ -880,13 +880,14 @@ def handle_request(request, tid, sock):
     try:
         to_send = protocol_build_reply(request, tid, sock)
         if to_send == None:
-            time.sleep(1)
             clients[tid] = None
+            print(f"Client {tid} disconnected")
             return
         to_send = to_send.encode()
         send_data(sock, tid, to_send)
         if (to_send == b"EXTR"):
             clients[tid] = None
+            print(f"Client {tid} disconnected")
 
     except Exception as err:
         print(traceback.format_exc())
@@ -1008,7 +1009,7 @@ def handle_client(sock, tid, addr):
             clients[tid] = None
         sock.close()
         return
-    while not finish:   # Main client loop
+    while not finish and clients[tid] != None:   # Main client loop
         if all_to_die:
             print('will close due to main server issue')
             break
@@ -1033,6 +1034,15 @@ def cleaner():
     while True:
         cr.clean_db()
         time.sleep(300)
+
+def dhcp_listen():
+    dhcp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    dhcp_socket.bind(("", 31026))
+    while True:
+        data, addr = dhcp_socket.recvfrom(1024)
+        if data.decode() == "SEAR":
+            response_message = f"SERR|{socket.gethostbyname(socket.gethostname())}|{port}"
+            dhcp_socket.sendto(response_message.encode(), addr)
 
 def main(addr):
     """
@@ -1059,6 +1069,9 @@ def main(addr):
     except:
         srv_sock.close()
 
+    dhcp_listener = threading.Thread(target=dhcp_listen)
+    dhcp_listener.start()
+    
     print('Main thread: before accepting ...\n')
     while True:
         cli_sock, addr = srv_sock.accept()
@@ -1082,7 +1095,7 @@ def main(addr):
 if __name__ == '__main__':   # Run main
     cr.main()
     sys.stdout = Logger()
-    port = 31026
+    port = 3102
     if len(sys.argv) == 2:
         port = sys.argv[1]
     main(("0.0.0.0", int(port)))

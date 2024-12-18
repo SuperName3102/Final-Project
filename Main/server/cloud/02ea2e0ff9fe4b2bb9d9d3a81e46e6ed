@@ -1,0 +1,29 @@
+2024-12-18 11:47:35 - Traceback (most recent call last):
+  File "client.pyw", line 816, in not_connected_page
+  File "modules\helper.py", line 56, in update_ui_size
+  File "xml\etree\ElementTree.py", line 1204, in parse
+  File "xml\etree\ElementTree.py", line 558, in parse
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\david\\Downloads\\IdanCloud/gui/ui/not_connected.ui'
+2024-12-18 11:47:35 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-18 11:47:35 - Traceback (most recent call last):
+  File "client.pyw", line 381, in main_page
+  File "modules\helper.py", line 56, in update_ui_size
+  File "xml\etree\ElementTree.py", line 1204, in parse
+  File "xml\etree\ElementTree.py", line 558, in parse
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\david\\Downloads\\IdanCloud/gui/ui/main.ui'
+2024-12-18 11:47:35 - Traceback (most recent call last):
+  File "client.pyw", line 1411, in send_cookie
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\david\\Downloads\\IdanCloud/cookies/user.cookie'
+2024-12-18 11:48:35 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-18 11:48:35 - Traceback (most recent call last):
+  File "client.pyw", line 1411, in send_cookie
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\david\\Downloads\\IdanCloud/cookies/user.cookie'
+2024-12-18 11:48:45 - Login was succesfull for user: a
+2024-12-18 11:48:45 - File data recieved
+2024-12-18 11:48:45 - File data recieved
+2024-12-18 11:48:45 - Got directories
+2024-12-18 11:48:45 - Got files
+2024-12-18 11:48:45 - Current used storage is 67.313
+2024-12-18 11:48:45 - Profile picture was recieved
+2024-12-18 11:48:53 - start upload:
+2024-12-18 11:48:53 - 5d04c1a433554fd787f82a33787fa047

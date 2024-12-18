@@ -9,11 +9,11 @@ from modules.file_viewer import *
 from modules.networking import *
 from modules.key_exchange import *
 
-import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, json, subprocess
+import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, json
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
-from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QFont, QGuiApplication
+from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QGuiApplication
 from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
 
 
@@ -816,7 +816,6 @@ class MainWindow(QtWidgets.QMainWindow):
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
-            
             self.ip.setText(ip)
             self.port.setText(str(port))
             
@@ -902,8 +901,9 @@ def update_userpage(msg):
 # Files functions
 def update_json(json_path, file_id, file_path, remove=False, file = None, progress = 0):
     """Update the JSON file with the file upload details."""
-    if not os.path.exists(json_path):
+    if not os.path.exists(os.getcwd() + "\\cache"):
         os.makedirs(os.getcwd() + "\\cache")
+    if not os.path.exists(json_path):
         with open(json_path, 'w') as f:
             json.dump({}, f)  # Initialize as an empty dictionary
 
@@ -1468,6 +1468,12 @@ def protocol_parse_reply(reply):
             user["username"] = username
             user["subscription_level"] = fields[3]
             get_user_icon()
+            window.setStyleSheet("""
+                MainWindow {
+                background-image: url('../../assets/secret.png');
+                background-repeat: no-repeat; 
+                background-position: center;
+                }""")
             window.user_page()
             window.set_message("Login was succesfull!")
             if remember:
@@ -1780,7 +1786,7 @@ def send_data(bdata, encryption = True):
     except ConnectionResetError:
         receive_thread.pause()
         sock.close()
-        window.not_connected_page()
+        connect_server(ip, port)
         window.set_error_message("Lost connection to server")
     except:
         print(traceback.format_exc())
@@ -1846,6 +1852,7 @@ def connect_server(new_ip, new_port):
         ip = new_ip
         port = int(new_port)
         sock = socket.socket()
+        search_server()
         sock.connect((ip, int(port)))
         set_sock(sock)
         shared_secret = rsa_exchange(sock) 
@@ -1869,6 +1876,26 @@ def connect_server(new_ip, new_port):
         window.set_error_message(f'Server was not found {ip} {port}')
         return None
 
+def search_server():
+    global ip, port
+    try:
+        search_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        search_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+        search_socket.settimeout(3)
+        search_socket.sendto(b"SEAR", ("255.255.255.255", 31026))
+        response = None
+        i = 0
+        while response == None and i < 5:
+            response, addr = search_socket.recvfrom(1024)
+            time.sleep(0.2)
+            i+=1
+        response = response.decode().split("|")
+        if response[0] == "SERR":
+            ip, port = (response[1], response[2])
+            print(f"recieved ip and port from server: {ip, port}")
+            return
+    except:
+        print(traceback.format_exc())
 
 def global_exception_handler(exc_type, exc_value, exc_traceback):
     """Handle uncaught exceptions."""
@@ -1881,8 +1908,6 @@ def global_exception_handler(exc_type, exc_value, exc_traceback):
         f"An unexpected error occurred:\n\n{exc_value}",
         QMessageBox.StandardButton.Ok,
     )
-    
-    
 
 def main():
     """
