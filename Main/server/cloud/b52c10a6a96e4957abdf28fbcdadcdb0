@@ -1,0 +1,216 @@
+/**
+ * @name SuperCatppuccinDiscord
+ * @author SuperName | SuperName#9048
+ * @description Catppuccin UI styled theme for better discord
+ * @version 1.0
+ */
+
+ /* Profile banner color */
+@import url(https://maendisease.github.io/BetterDiscordStuff/css/ProfileBannerSkins.css);
+
+/* Macos style tutlebar buttons */
+@import url(https://dablulite.github.io/macos-titlebar-buttons/import.css);
+
+/* Catppuccin mocha lavender */
+@import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-lavender.theme.css");
+
+/* Bubble chat messages */
+@import url(https://maendisease.github.io/BetterDiscordStuff/css/ChatBubbles.css);
+
+/* Settings icons */
+@import url("https://mwittrien.github.io/BetterDiscordAddons/Themes/_res/SettingsIcons.css");
+
+/* Radial status */
+@import url("https://discordstyles.github.io/RadialStatus/dist/RadialStatus.css");
+
+/* Chat bubbles */
+@import url(https://maendisease.github.io/BetterDiscordStuff/css/ChatBubbles.css);
+
+/* @import url("https://warrayquipsome.github.io/Chillax/Addons/IconPackEdited.css"); */
+/* @import url("https://nyri4.github.io/Discolored/main.css"); */
+/*@import url("https://warrayquipsome.github.io/Chillax/Addons/AvatarOnlyMemberList.css");*/
+/* @import url("https://discordstyles.github.io/SoftX/ServerRings.css"); */
+/* @import url("https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/base/Microsoft.css"); */
+
+
+@font-face {
+  font-family: "He";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/fredoka/v9/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8E-mKpNk.woff2)
+    format("woff2");
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+* {
+  font-family: He, "Recursive Sans Casual" !important;
+}
+
+
+
+
+
+:root {
+  --rs-small-spacing: 1px; /* Gap between avatar and status for members list/dms | MUST end in px */
+  --rs-medium-spacing: 2px; /* Gap between avatar and status for User popout | MUST end in px */
+  --rs-large-spacing: 3px; /* Gap between avatar and status for User profiles | MUST end in px */
+
+  --rs-small-width: 2px; /* Thickness of status border for members list/dms | MUST end in px */
+  --rs-medium-width: 3px; /* Thickness of status border for User popout | MUST end in px */
+  --rs-large-width: 4px; /* Thickness of status border for User profile | MUST end in px */
+
+  --rs-avatar-shape: 50%; /* 50% for round - 0% for square */
+
+  --rs-online-color: #a6da95; /* Colour for online status */
+  --rs-idle-color: #f5a97f; /* Colour for idle status */
+  --rs-dnd-color: #ed8796; /* Colour for dnd status */
+  --rs-offline-color: #5b6078; /* Colour for offline status */
+  --rs-streaming-color: #c6a0f6; /* Colour for streaming status */
+  --rs-invisible-color: #5b6078; /* Colour for invisible status - Note: this will only show for your own invisibility */
+  --rs-phone-color: #a6da95;
+  --lavender: #b4befe; /* Colour of the ring and phone icon when a user is on their phone |  */
+
+  --rs-phone-visible: block; /* Visibility of the phone icon next to a users avatar. | block = visible | none = hidden */
+
+
+  --roles-roundness: 0.05; /* change the 0 to any other number if you want the roles to be fully round */
+  --roles-roundness-calc: calc((var(--roles-roundness) + 0.21) * 25px);
+
+  --rs-version: "2.0.8";
+  --mactitlebar-left-margin: 5px;
+  --mactitlebar-top-margin: 10px;
+  --mactitlebar-button-width: 20px;
+  --mactitlebar-button-height: 20px;
+  --mactitlebar-button-border-radius: 50px;
+  --mactitlebar-close-btn-back: #f25056;
+  --mactitlebar-min-btn-back: #fac536;
+  --mactitlebar-max-btn-back: #39ea49;
+  --macbuttons-serverlist-inner-top-margin: 32px;
+  /*guilds inner ul element*/
+  --macbuttons-serverlist-outer-top-margin: 0;
+  --macbuttons-serverlist-outer-height: 100%;
+  --chat-bubble: 1;
+
+
+/* Bubble chat messages */
+  --chat-bubble-background-color: var(--background-secondary);
+  --chat-bubble-border-color: var(--background-secondary-alt);
+  --chat-bubble-code-background-color: var(--background-secondary-alt);
+
+  --chat-bubble-max-width: 90%;
+  --chat-bubble-border-radius: 8px;
+
+  --chat-bubble-box-shadow-h-offset: 0;
+  --chat-bubble-box-shadow-v-offset: 4px;
+  --chat-bubble-box-shadow-blur: 4px;
+    
+  --chat-bubble-box-shadow-color-h: 0;
+  --chat-bubble-box-shadow-color-s: 0%;
+  --chat-bubble-box-shadow-color-l: 0%;
+  --chat-bubble-box-shadow-color-a: 0.16;
+}
+
+/* Messages Slide In Chat */
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.message-2CShn3 {
+  animation: slide-up 0.4s ease;
+}
+
+
+/* edited text */
+.timestamp-p1Df1m:not(.timestampInline-_lS3aK, .timestampVisibleOnHover-9PEuZS) time::after {
+        content: " (" attr(aria-label) ")";
+        color: var(--text-muted);
+        font-size: 0.625rem;
+        font-weight: 400;
+        line-height: 1;
+        text-transform: lowercase;
+}
+.edited-1v5nT8:not(.message-translate-indicator) {
+    display: none;
+}
+
+/*Home Button*/
+.homeIcon-r0w4ny path {
+  fill: transparent;
+}
+.homeIcon-r0w4ny {
+  background: url("https://opencollective-production.s3.us-west-1.amazonaws.com/41035a00-2e30-11ed-a09f-793ad6517273.png")
+    center/cover no-repeat;
+  min-width: 55px;
+  min-height: 55px;
+}
+
+/* Muted channel icon */
+.modeMuted-2T4MDZ .icon-2W8DHg path{ display: none; }
+.modeMuted-2T4MDZ .iconContainer-21RCa3{ position: relative; }
+.modeMuted-2T4MDZ .iconContainer-21RCa3:before{
+    content: '🔇';
+    position: absolute;
+    font-size: 20px; 
+}
+
+/* Rounded Menu Buttons */
+.menu-1QACrS,
+.colorDefault-CDqZdO {
+  border-radius: 10px;
+ 
+}
+
+/* Rounded User Panel */
+.panels-3wFtMD {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  border: 2px solid #45475a;
+  border-radius: 12px;
+  box-shadow: 0 0 3px 1px rgba(17, 17, 27, 0.45);
+}
+.theme-dark .container-YkUktl,
+.container-1zzFcN {
+  background-color: transparent;
+}
+.panels-3wFtMD .container-YkUktl .flex-2S1XBF {
+  margin-left: -10px;
+}
+
+
+/* Role Colors */
+.role-2TIOKu {
+  transform: translate(0);
+  border: 0;
+  border-radius: var(--roles-roundness-calc);
+}
+.role-2TIOKu .roleRemoveIcon-387wKV {
+  margin: 0;
+  left: unset;
+  transform: translate(50%, -50%);
+}
+.role-2TIOKu .roleRemoveButton-17oXnT {
+  position: static;
+}
+.role-2TIOKu .roleCircle-3K9O3d:before {
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  background: inherit;
+  border-radius: var(--roles-roundness-calc);
+  border: 2px solid transparent;
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+}

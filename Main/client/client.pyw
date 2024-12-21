@@ -52,7 +52,7 @@ used_storage = 0
 
 last_msg = ""
 last_error_msg = ""
-
+last_load = time.time()
 
 def timing_decorator(func):
     @functools.wraps(func)  # Preserves the original function's metadata
@@ -669,6 +669,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 scroll_layout.addWidget(button)
 
             if (user["cwd"] != ""):
+                # Create the "Back" button
                 button = FileButton(["Back"])
                 button.clicked.connect(lambda: move_dir(user["parent_cwd"]))
                 scroll_layout.addWidget(button)
@@ -1544,8 +1545,11 @@ def protocol_parse_reply(reply):
             window.set_message(to_show)
 
         elif code == 'FILR':
+            global last_load
             to_show = f'File {fields[1]} was uploaded'
-            window.user_page()
+            if time.time() - last_load > 0.5:
+                window.user_page()
+                last_load = time.time()
             window.set_message(to_show)
         
         elif code == 'FISS':

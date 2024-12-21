@@ -67099,3 +67099,128 @@ TypeError: 'NoneType' object is not subscriptable
 TypeError: 'NoneType' object is not subscriptable
 2024-12-18 20:32:09 - Client 10 disconnected
 2024-12-18 20:32:09 - Client 10 Exit
+2024-12-19 19:09:46 - Server listening on ('0.0.0.0', 3102)
+2024-12-19 19:09:47 - Main thread: before accepting ...
+2024-12-19 19:11:15 - New Client number 1 from ('192.168.56.1', 56096)
+2024-12-21 17:17:23 - Server listening on ('0.0.0.0', 3102)
+2024-12-21 17:17:24 - Main thread: before accepting ...
+2024-12-21 17:17:29 - New Client number 1 from ('192.168.56.1', 52733)
+2024-12-21 17:21:31 - Client 1 disconnected
+2024-12-21 17:21:31 - Client 1 Exit
+2024-12-21 17:21:33 - New Client number 2 from ('192.168.56.1', 52857)
+2024-12-21 17:22:50 - Client 2 disconnected
+2024-12-21 17:22:50 - Client 2 Exit
+2024-12-21 17:22:54 - New Client number 3 from ('192.168.56.1', 52882)
+2024-12-21 17:23:00 - Client 3 disconnected
+2024-12-21 17:23:00 - Client 3 Exit
+2024-12-21 17:23:03 - New Client number 4 from ('192.168.56.1', 52886)
+2024-12-21 17:23:40 - New Client number 5 from ('192.168.56.1', 52931)
+2024-12-21 17:24:10 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\2a58e5a2633e4950a7fbf400be43c46e.lock'
+2024-12-21 17:24:25 - Client 5 disconnected
+2024-12-21 17:24:25 - Client 5 Exit
+2024-12-21 17:24:28 - New Client number 6 from ('192.168.56.1', 52952)
+2024-12-21 17:24:51 - Client 6 disconnected
+2024-12-21 17:24:51 - Client 6 Exit
+2024-12-21 17:24:53 - New Client number 7 from ('192.168.56.1', 52969)
+2024-12-21 17:25:28 - Client 7 disconnected
+2024-12-21 17:25:28 - Client 7 Exit
+2024-12-21 17:25:30 - New Client number 8 from ('192.168.56.1', 52983)
+2024-12-21 17:27:58 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:27:59 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:01 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:15 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:16 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:17 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:19 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:20 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:21 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:23 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:24 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:25 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:28:27 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\32f0a8846dee4a76856643d733b28105.lock'
+2024-12-21 17:31:28 - Client 8 disconnected
+2024-12-21 17:31:28 - Client 8 Exit
+2024-12-21 17:31:31 - New Client number 9 from ('192.168.56.1', 53048)
+2024-12-21 17:32:27 - Client 9 disconnected
+2024-12-21 17:32:27 - Client 9 Exit
+2024-12-21 17:32:30 - New Client number 10 from ('192.168.56.1', 53063)
+2024-12-21 17:35:21 - Client 10 disconnected
+2024-12-21 17:35:21 - Client 10 Exit
+2024-12-21 17:35:23 - New Client number 11 from ('192.168.56.1', 53088)
+2024-12-21 17:35:48 - Client 11 disconnected
+2024-12-21 17:35:48 - Client 11 Exit
+2024-12-21 17:35:50 - New Client number 12 from ('192.168.56.1', 53106)
+2024-12-21 17:38:43 - Client 12 disconnected
+2024-12-21 17:38:43 - Client 12 Exit
+2024-12-21 17:38:45 - New Client number 13 from ('192.168.56.1', 53129)
+2024-12-21 17:40:21 - Client 13 disconnected
+2024-12-21 17:40:21 - Client 13 Exit
+2024-12-21 17:40:23 - New Client number 14 from ('192.168.56.1', 53145)
+2024-12-21 17:40:45 - Client 14 disconnected
+2024-12-21 17:40:45 - Client 14 Exit
+2024-12-21 17:40:48 - New Client number 15 from ('192.168.56.1', 53161)
+2024-12-21 17:41:05 - Client 15 disconnected
+2024-12-21 17:41:05 - Client 15 Exit
+2024-12-21 17:41:07 - New Client number 16 from ('192.168.56.1', 53175)
+2024-12-21 17:42:11 - Client 4 disconnected
+2024-12-21 17:42:11 - Client 4 Exit
+2024-12-21 17:45:36 - Client 16 disconnected
+2024-12-21 17:45:36 - Client 16 Exit
+2024-12-21 17:45:39 - New Client number 17 from ('192.168.56.1', 53205)
+2024-12-21 17:47:30 - Client 17 disconnected
+2024-12-21 17:47:30 - Client 17 Exit
+2024-12-21 17:47:33 - New Client number 18 from ('192.168.56.1', 53224)
+2024-12-21 17:48:52 - Client 18 disconnected
+2024-12-21 17:48:52 - Client 18 Exit
+2024-12-21 17:48:55 - New Client number 19 from ('192.168.56.1', 53239)
+2024-12-21 17:49:18 - Client 19 disconnected
+2024-12-21 17:49:18 - Client 19 Exit
+2024-12-21 17:49:20 - New Client number 20 from ('192.168.56.1', 53259)
+2024-12-21 17:50:00 - Key values already exist in table
+2024-12-21 17:51:50 - Client 20 disconnected
+2024-12-21 17:51:50 - Client 20 Exit
+2024-12-21 17:52:06 - New Client number 21 from ('192.168.56.1', 53300)
+2024-12-21 17:53:35 - Client 21 disconnected
+2024-12-21 17:53:35 - Client 21 Exit
