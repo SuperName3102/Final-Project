@@ -9,12 +9,13 @@ from modules.file_viewer import *
 from modules.networking import *
 from modules.key_exchange import *
 
+
 import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, json
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
 from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QGuiApplication, QResizeEvent
-from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
+from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal, QFile
 
 
 # Announce global vars
@@ -1119,6 +1120,7 @@ def select_item(btn):
         with open(f"{os.getcwd()}/gui/css/emily.css", 'r') as f: app.setStyleSheet(f.read())
     else: 
         with open(f"{os.getcwd()}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
+    
     window.force_update_window()
 
     
@@ -1557,7 +1559,6 @@ def protocol_parse_reply(reply):
             window.set_message(to_show)
 
         elif code == 'MOVR':
-            global scrol
             user["cwd"] = fields[1]
             user["parent_cwd"] = fields[2]
             user["cwd_name"] = fields[3]

@@ -58,3 +58,607 @@
 2024-12-21 17:53:28 - Got files
 2024-12-21 17:53:28 - Got directories
 2024-12-21 17:53:28 - Current used storage is 6.23
+2024-12-25 10:57:02 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 10:57:02 - Login was succesfull for user: a
+2024-12-25 10:57:02 - File data recieved 0
+2024-12-25 10:57:02 - Profile picture was recieved
+2024-12-25 10:57:02 - Current used storage is 24.047
+2024-12-25 10:57:02 - Got directories
+2024-12-25 10:57:02 - Got files
+2024-12-25 10:57:04 - Logout succesfull
+2024-12-25 10:57:11 - Login was succesfull for user: Emily
+2024-12-25 10:57:11 - File data recieved 0
+2024-12-25 10:57:11 - Profile picture was recieved
+2024-12-25 10:57:11 - Got directories
+2024-12-25 10:57:11 - Got files
+2024-12-25 10:57:11 - Current used storage is 6.232
+2024-12-25 10:57:15 - Got files
+2024-12-25 10:57:15 - Got directories
+2024-12-25 10:57:15 - Current used storage is 6.232
+2024-12-25 10:57:18 - Logout succesfull
+2024-12-25 11:56:03 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 11:56:03 - Login was succesfull for user: a
+2024-12-25 11:56:03 - File data recieved 0
+2024-12-25 11:56:03 - Profile picture was recieved
+2024-12-25 11:56:03 - Got directories
+2024-12-25 11:56:03 - Got files
+2024-12-25 11:56:03 - Current used storage is 24.047
+2024-12-25 11:56:28 - Logout succesfull
+2024-12-25 11:56:39 - Login was succesfull for user: Emily
+2024-12-25 11:56:39 - File data recieved 0
+2024-12-25 11:56:39 - Profile picture was recieved
+2024-12-25 11:56:39 - Current used storage is 6.232
+2024-12-25 11:56:39 - Got directories
+2024-12-25 11:56:39 - Got files
+2024-12-25 12:32:49 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:32:49 - Login was succesfull for user: a
+2024-12-25 12:32:49 - File data recieved 0
+2024-12-25 12:32:49 - Profile picture was recieved
+2024-12-25 12:32:49 - Got directories
+2024-12-25 12:32:49 - Current used storage is 24.047
+2024-12-25 12:32:49 - Got files
+2024-12-25 12:32:52 - Succesfully moved to aa\
+2024-12-25 12:32:52 - Got files
+2024-12-25 12:32:52 - Got directories
+2024-12-25 12:32:52 - Current used storage is 24.047
+2024-12-25 12:32:53 - Succesfully moved to
+2024-12-25 12:32:53 - Got directories
+2024-12-25 12:32:53 - Current used storage is 24.047
+2024-12-25 12:32:53 - Got files
+2024-12-25 12:33:31 - Succesfully moved to aa\
+2024-12-25 12:33:31 - Got directories
+2024-12-25 12:33:31 - Got files
+2024-12-25 12:33:31 - Current used storage is 24.047
+2024-12-25 12:33:32 - Succesfully moved to
+2024-12-25 12:33:32 - Got directories
+2024-12-25 12:33:32 - Current used storage is 24.047
+2024-12-25 12:33:32 - Got files
+2024-12-25 12:33:33 - Succesfully moved to images\
+2024-12-25 12:33:33 - Got directories
+2024-12-25 12:33:33 - Got files
+2024-12-25 12:33:33 - Current used storage is 24.047
+2024-12-25 12:33:35 - Succesfully moved to
+2024-12-25 12:33:35 - Got directories
+2024-12-25 12:33:35 - Current used storage is 24.047
+2024-12-25 12:33:35 - Got files
+2024-12-25 12:33:36 - Succesfully moved to images 2\
+2024-12-25 12:33:36 - Got directories
+2024-12-25 12:33:36 - Got files
+2024-12-25 12:33:36 - Current used storage is 24.047
+2024-12-25 12:33:38 - Succesfully moved to
+2024-12-25 12:33:38 - Got directories
+2024-12-25 12:33:38 - Current used storage is 24.047
+2024-12-25 12:33:38 - Got files
+2024-12-25 12:33:39 - Succesfully moved to aa\
+2024-12-25 12:33:39 - Got files
+2024-12-25 12:33:39 - Got directories
+2024-12-25 12:33:39 - Current used storage is 24.047
+2024-12-25 12:33:59 - Succesfully moved to
+2024-12-25 12:33:59 - Got directories
+2024-12-25 12:33:59 - Got files
+2024-12-25 12:33:59 - Current used storage is 24.047
+2024-12-25 12:34:00 - Succesfully moved to images\
+2024-12-25 12:34:00 - Got directories
+2024-12-25 12:34:00 - Got files
+2024-12-25 12:34:00 - Current used storage is 24.047
+2024-12-25 12:34:02 - Succesfully moved to images\inbar\
+2024-12-25 12:34:02 - Current used storage is 24.047
+2024-12-25 12:34:02 - Got directories
+2024-12-25 12:34:02 - Got files
+2024-12-25 12:34:03 - Succesfully moved to images\
+2024-12-25 12:34:03 - Got directories
+2024-12-25 12:34:03 - Got files
+2024-12-25 12:34:03 - Current used storage is 24.047
+2024-12-25 12:34:05 - Succesfully moved to
+2024-12-25 12:34:05 - Got directories
+2024-12-25 12:34:05 - Current used storage is 24.047
+2024-12-25 12:34:05 - Got files
+2024-12-25 12:34:28 - Logout succesfull
+2024-12-25 12:34:34 - Login was succesfull for user: Emily
+2024-12-25 12:34:34 - File data recieved 0
+2024-12-25 12:34:34 - Profile picture was recieved
+2024-12-25 12:34:34 - Current used storage is 6.232
+2024-12-25 12:34:34 - Got directories
+2024-12-25 12:34:34 - Got files
+2024-12-25 12:34:35 - Succesfully moved to
+2024-12-25 12:34:35 - Got directories
+2024-12-25 12:34:35 - Got files
+2024-12-25 12:34:35 - Current used storage is 6.232
+2024-12-25 12:34:38 - Got files
+2024-12-25 12:34:38 - Got directories
+2024-12-25 12:34:38 - Current used storage is 6.232
+2024-12-25 12:34:43 - Got directories
+2024-12-25 12:34:43 - Got files
+2024-12-25 12:34:43 - Current used storage is 6.232
+2024-12-25 12:34:47 - Succesfully moved to
+2024-12-25 12:34:47 - Got directories
+2024-12-25 12:34:47 - Got files
+2024-12-25 12:34:47 - Current used storage is 6.232
+2024-12-25 12:34:55 - Logout succesfull
+2024-12-25 12:34:58 - Login was succesfull for user: a
+2024-12-25 12:34:58 - File data recieved 0
+2024-12-25 12:34:58 - Profile picture was recieved
+2024-12-25 12:34:58 - Got files
+2024-12-25 12:34:58 - Got directories
+2024-12-25 12:34:58 - Current used storage is 24.047
+2024-12-25 12:35:00 - Got files
+2024-12-25 12:35:00 - Current used storage is 24.047
+2024-12-25 12:35:00 - Got directories
+2024-12-25 12:35:02 - Succesfully moved to aa\
+2024-12-25 12:35:02 - Got files
+2024-12-25 12:35:02 - Got directories
+2024-12-25 12:35:02 - Current used storage is 24.047
+2024-12-25 12:35:03 - Succesfully moved to
+2024-12-25 12:35:03 - Got directories
+2024-12-25 12:35:03 - Got files
+2024-12-25 12:35:03 - Current used storage is 24.047
+2024-12-25 12:35:04 - Succesfully moved to aa\
+2024-12-25 12:35:04 - Got files
+2024-12-25 12:35:04 - Got directories
+2024-12-25 12:35:04 - Current used storage is 24.047
+2024-12-25 12:35:05 - Succesfully moved to
+2024-12-25 12:35:05 - Got directories
+2024-12-25 12:35:05 - Got files
+2024-12-25 12:35:05 - Current used storage is 24.047
+2024-12-25 12:35:06 - Succesfully moved to aa\
+2024-12-25 12:35:06 - Got files
+2024-12-25 12:35:06 - Got directories
+2024-12-25 12:35:06 - Current used storage is 24.047
+2024-12-25 12:35:07 - Succesfully moved to
+2024-12-25 12:35:07 - Got directories
+2024-12-25 12:35:07 - Current used storage is 24.047
+2024-12-25 12:35:07 - Got files
+2024-12-25 12:35:08 - Logout succesfull
+2024-12-25 12:35:10 - Login was succesfull for user: a
+2024-12-25 12:35:10 - File data recieved 0
+2024-12-25 12:35:11 - Profile picture was recieved
+2024-12-25 12:35:11 - Got files
+2024-12-25 12:35:11 - Got directories
+2024-12-25 12:35:11 - Current used storage is 24.047
+2024-12-25 12:35:11 - Succesfully moved to aa\
+2024-12-25 12:35:11 - Got files
+2024-12-25 12:35:11 - Got directories
+2024-12-25 12:35:11 - Current used storage is 24.047
+2024-12-25 12:35:12 - Succesfully moved to
+2024-12-25 12:35:12 - Got directories
+2024-12-25 12:35:12 - Current used storage is 24.047
+2024-12-25 12:35:12 - Got files
+2024-12-25 12:35:14 - Succesfully moved to
+2024-12-25 12:35:14 - Got directories
+2024-12-25 12:35:14 - Current used storage is 24.047
+2024-12-25 12:35:14 - Got files
+2024-12-25 12:35:15 - Succesfully moved to
+2024-12-25 12:35:15 - Got directories
+2024-12-25 12:35:15 - Current used storage is 24.047
+2024-12-25 12:35:15 - Got files
+2024-12-25 12:35:32 - Succesfully moved to aa\
+2024-12-25 12:35:32 - Got directories
+2024-12-25 12:35:32 - Got files
+2024-12-25 12:35:32 - Current used storage is 24.047
+2024-12-25 12:35:33 - Succesfully moved to
+2024-12-25 12:35:33 - Got directories
+2024-12-25 12:35:33 - Got files
+2024-12-25 12:35:33 - Current used storage is 24.047
+2024-12-25 12:36:30 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:36:30 - Login was succesfull for user: a
+2024-12-25 12:36:30 - File data recieved 0
+2024-12-25 12:36:30 - Profile picture was recieved
+2024-12-25 12:36:30 - Got directories
+2024-12-25 12:36:30 - Current used storage is 24.047
+2024-12-25 12:36:30 - Got files
+2024-12-25 12:36:31 - Logout succesfull
+2024-12-25 12:36:34 - Login was succesfull for user: a
+2024-12-25 12:36:34 - File data recieved 0
+2024-12-25 12:36:35 - Profile picture was recieved
+2024-12-25 12:36:35 - Got directories
+2024-12-25 12:36:35 - Got files
+2024-12-25 12:36:35 - Current used storage is 24.047
+2024-12-25 12:38:04 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:38:04 - Login was succesfull for user: a
+2024-12-25 12:38:04 - File data recieved 0
+2024-12-25 12:38:04 - Profile picture was recieved
+2024-12-25 12:38:04 - Got directories
+2024-12-25 12:38:04 - Current used storage is 24.047
+2024-12-25 12:38:04 - Got files
+2024-12-25 12:38:05 - Logout succesfull
+2024-12-25 12:38:12 - Login was succesfull for user: Emily
+2024-12-25 12:38:12 - File data recieved 0
+2024-12-25 12:38:12 - Profile picture was recieved
+2024-12-25 12:38:12 - Got directories
+2024-12-25 12:38:12 - Current used storage is 6.232
+2024-12-25 12:38:12 - Got files
+2024-12-25 12:38:12 - Cookie recieved
+2024-12-25 12:39:52 - Got directories
+2024-12-25 12:39:52 - Got files
+2024-12-25 12:39:52 - Current used storage is 6.232
+2024-12-25 12:39:52 - Logout succesfull
+2024-12-25 12:39:58 - Login was succesfull for user: Emily
+2024-12-25 12:39:58 - File data recieved 0
+2024-12-25 12:39:58 - Profile picture was recieved
+2024-12-25 12:39:58 - Got directories
+2024-12-25 12:39:58 - Got files
+2024-12-25 12:39:58 - Current used storage is 6.232
+2024-12-25 12:40:25 - Got directories
+2024-12-25 12:40:25 - Got files
+2024-12-25 12:40:25 - Current used storage is 6.232
+2024-12-25 12:40:25 - Logout succesfull
+2024-12-25 12:40:31 - Login was succesfull for user: Emily
+2024-12-25 12:40:31 - File data recieved 0
+2024-12-25 12:40:31 - Profile picture was recieved
+2024-12-25 12:40:31 - Got directories
+2024-12-25 12:40:31 - Got files
+2024-12-25 12:40:31 - Current used storage is 6.232
+2024-12-25 12:40:42 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:40:42 - Login was succesfull for user: Emily
+2024-12-25 12:40:42 - File data recieved 0
+2024-12-25 12:40:42 - Profile picture was recieved
+2024-12-25 12:40:42 - Got directories
+2024-12-25 12:40:42 - Got files
+2024-12-25 12:40:42 - Current used storage is 6.232
+2024-12-25 12:41:46 - Got directories
+2024-12-25 12:41:46 - Got files
+2024-12-25 12:41:46 - Current used storage is 6.232
+2024-12-25 12:41:46 - Logout succesfull
+2024-12-25 12:41:52 - Login was succesfull for user: Emily
+2024-12-25 12:41:52 - File data recieved 0
+2024-12-25 12:41:52 - Profile picture was recieved
+2024-12-25 12:41:52 - Got directories
+2024-12-25 12:41:52 - Got files
+2024-12-25 12:41:52 - Current used storage is 6.232
+2024-12-25 12:43:00 - Got directories
+2024-12-25 12:43:00 - Got files
+2024-12-25 12:43:00 - Current used storage is 6.232
+2024-12-25 12:43:00 - Logout succesfull
+2024-12-25 12:43:07 - Login was succesfull for user: Emily
+2024-12-25 12:43:07 - File data recieved 0
+2024-12-25 12:43:07 - Profile picture was recieved
+2024-12-25 12:43:07 - Got directories
+2024-12-25 12:43:07 - Got files
+2024-12-25 12:43:07 - Current used storage is 6.232
+2024-12-25 12:43:17 - Succesfully moved to Idan love\
+2024-12-25 12:43:17 - Got files
+2024-12-25 12:43:17 - Got directories
+2024-12-25 12:43:17 - Current used storage is 6.232
+2024-12-25 12:43:18 - Succesfully moved to
+2024-12-25 12:43:18 - Got directories
+2024-12-25 12:43:18 - Got files
+2024-12-25 12:43:18 - Current used storage is 6.232
+2024-12-25 12:43:20 - Succesfully moved to Idan love\
+2024-12-25 12:43:20 - Got directories
+2024-12-25 12:43:20 - Got files
+2024-12-25 12:43:20 - Current used storage is 6.232
+2024-12-25 12:43:21 - Succesfully moved to
+2024-12-25 12:43:21 - Got directories
+2024-12-25 12:43:21 - Got files
+2024-12-25 12:43:21 - Current used storage is 6.232
+2024-12-25 12:44:32 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:44:32 - Login was succesfull for user: Emily
+2024-12-25 12:44:32 - File data recieved 0
+2024-12-25 12:44:32 - Profile picture was recieved
+2024-12-25 12:44:32 - Got directories
+2024-12-25 12:44:32 - Got files
+2024-12-25 12:44:32 - Current used storage is 6.232
+2024-12-25 12:45:13 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:45:13 - Login was succesfull for user: Emily
+2024-12-25 12:45:13 - File data recieved 0
+2024-12-25 12:45:13 - Profile picture was recieved
+2024-12-25 12:45:13 - Got directories
+2024-12-25 12:45:13 - Got files
+2024-12-25 12:45:13 - Current used storage is 6.232
+2024-12-25 12:45:18 - Got directories
+2024-12-25 12:45:18 - Got files
+2024-12-25 12:45:18 - Current used storage is 6.232
+2024-12-25 12:45:27 - Got directories
+2024-12-25 12:45:27 - Got files
+2024-12-25 12:45:27 - Current used storage is 6.232
+2024-12-25 12:45:27 - Logout succesfull
+2024-12-25 12:45:31 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:45:32 - Login was succesfull for user: Emily
+2024-12-25 12:45:32 - File data recieved 0
+2024-12-25 12:45:32 - Profile picture was recieved
+2024-12-25 12:45:32 - Got directories
+2024-12-25 12:45:32 - Got files
+2024-12-25 12:45:32 - Current used storage is 6.232
+2024-12-25 12:46:04 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:46:04 - Login was succesfull for user: Emily
+2024-12-25 12:46:04 - File data recieved 0
+2024-12-25 12:46:04 - Profile picture was recieved
+2024-12-25 12:46:04 - Got directories
+2024-12-25 12:46:04 - Got files
+2024-12-25 12:46:04 - Current used storage is 6.232
+2024-12-25 12:46:08 - Succesfully moved to
+2024-12-25 12:46:08 - Got files
+2024-12-25 12:46:08 - Got directories
+2024-12-25 12:46:08 - Current used storage is 6.232
+2024-12-25 12:46:15 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:46:15 - Login was succesfull for user: Emily
+2024-12-25 12:46:15 - File data recieved 0
+2024-12-25 12:46:15 - Profile picture was recieved
+2024-12-25 12:46:15 - Got directories
+2024-12-25 12:46:15 - Got files
+2024-12-25 12:46:15 - Current used storage is 6.232
+2024-12-25 12:46:18 - Got directories
+2024-12-25 12:46:18 - Got files
+2024-12-25 12:46:18 - Current used storage is 6.232
+2024-12-25 12:46:29 - Got directories
+2024-12-25 12:46:29 - Got files
+2024-12-25 12:46:29 - Current used storage is 6.232
+2024-12-25 12:46:44 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:46:44 - Login was succesfull for user: Emily
+2024-12-25 12:46:44 - File data recieved 0
+2024-12-25 12:46:44 - Profile picture was recieved
+2024-12-25 12:46:44 - Got directories
+2024-12-25 12:46:44 - Got files
+2024-12-25 12:46:44 - Current used storage is 6.232
+2024-12-25 12:47:14 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:47:14 - Login was succesfull for user: Emily
+2024-12-25 12:47:14 - File data recieved 0
+2024-12-25 12:47:14 - Profile picture was recieved
+2024-12-25 12:47:14 - Got directories
+2024-12-25 12:47:14 - Got files
+2024-12-25 12:47:14 - Current used storage is 6.232
+2024-12-25 12:48:10 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:48:10 - Login was succesfull for user: Emily
+2024-12-25 12:48:10 - File data recieved 0
+2024-12-25 12:48:10 - Profile picture was recieved
+2024-12-25 12:48:10 - Got files
+2024-12-25 12:48:10 - Got directories
+2024-12-25 12:48:10 - Current used storage is 6.232
+2024-12-25 12:48:49 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:48:49 - Login was succesfull for user: Emily
+2024-12-25 12:48:49 - File data recieved 0
+2024-12-25 12:48:49 - Profile picture was recieved
+2024-12-25 12:48:49 - Got files
+2024-12-25 12:48:49 - Got directories
+2024-12-25 12:48:49 - Current used storage is 6.232
+2024-12-25 12:49:24 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:49:24 - Login was succesfull for user: Emily
+2024-12-25 12:49:24 - File data recieved 0
+2024-12-25 12:49:24 - Profile picture was recieved
+2024-12-25 12:49:24 - Got files
+2024-12-25 12:49:24 - Got directories
+2024-12-25 12:49:24 - Current used storage is 6.232
+2024-12-25 12:49:31 - Logout succesfull
+2024-12-25 12:49:42 - Login was succesfull for user: a
+2024-12-25 12:49:42 - File data recieved 0
+2024-12-25 12:49:42 - Profile picture was recieved
+2024-12-25 12:49:42 - Current used storage is 24.047
+2024-12-25 12:49:42 - Got directories
+2024-12-25 12:49:42 - Got files
+2024-12-25 12:49:45 - Logout succesfull
+2024-12-25 12:49:56 - Login was succesfull for user: Emily
+2024-12-25 12:49:56 - File data recieved 0
+2024-12-25 12:49:56 - Profile picture was recieved
+2024-12-25 12:49:56 - Got directories
+2024-12-25 12:49:57 - Got files
+2024-12-25 12:49:57 - Current used storage is 6.232
+2024-12-25 12:50:04 - Got directories
+2024-12-25 12:50:04 - Got files
+2024-12-25 12:50:05 - Current used storage is 6.232
+2024-12-25 12:50:33 - File VSCode.css was viewed
+2024-12-25 12:50:33 - File viewing released
+2024-12-25 12:50:34 - File data recieved 0
+2024-12-25 12:50:37 - Succesfully moved to Idan love\
+2024-12-25 12:50:37 - Got files
+2024-12-25 12:50:37 - Current used storage is 6.232
+2024-12-25 12:50:37 - Got directories
+2024-12-25 12:50:38 - Succesfully moved to
+2024-12-25 12:50:38 - Got directories
+2024-12-25 12:50:38 - Got files
+2024-12-25 12:50:38 - Current used storage is 6.232
+2024-12-25 12:50:40 - Succesfully moved to Idan love\
+2024-12-25 12:50:40 - Got files
+2024-12-25 12:50:40 - Got directories
+2024-12-25 12:50:40 - Current used storage is 6.232
+2024-12-25 12:50:41 - Succesfully moved to
+2024-12-25 12:50:41 - Got files
+2024-12-25 12:50:41 - Got directories
+2024-12-25 12:50:41 - Current used storage is 6.232
+2024-12-25 12:50:43 - Succesfully moved to Idan love\
+2024-12-25 12:50:43 - Got files
+2024-12-25 12:50:43 - Got directories
+2024-12-25 12:50:43 - Current used storage is 6.232
+2024-12-25 12:50:45 - Logout succesfull
+2024-12-25 12:50:49 - Login was succesfull for user: a
+2024-12-25 12:50:49 - File data recieved 0
+2024-12-25 12:50:49 - Profile picture was recieved
+2024-12-25 12:50:49 - Got files
+2024-12-25 12:50:49 - Got directories
+2024-12-25 12:50:49 - Current used storage is 24.047
+2024-12-25 12:50:50 - Succesfully moved to images\
+2024-12-25 12:50:50 - Got directories
+2024-12-25 12:50:50 - Got files
+2024-12-25 12:50:50 - Current used storage is 24.047
+2024-12-25 12:50:52 - Succesfully moved to
+2024-12-25 12:50:52 - Got directories
+2024-12-25 12:50:52 - Got files
+2024-12-25 12:50:52 - Current used storage is 24.047
+2024-12-25 12:56:10 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:56:10 - Login was succesfull for user: Emily
+2024-12-25 12:56:10 - File data recieved 0
+2024-12-25 12:56:10 - Profile picture was recieved
+2024-12-25 12:56:10 - Got directories
+2024-12-25 12:56:10 - Got files
+2024-12-25 12:56:10 - Current used storage is 6.232
+2024-12-25 12:56:23 - Got files
+2024-12-25 12:56:23 - Got directories
+2024-12-25 12:56:23 - Current used storage is 6.232
+2024-12-25 12:56:26 - File important things.txt was viewed
+2024-12-25 12:56:26 - File viewing released
+2024-12-25 12:56:27 - File data recieved 0
+2024-12-25 12:57:06 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:57:07 - Login was succesfull for user: Emily
+2024-12-25 12:57:07 - File data recieved 0
+2024-12-25 12:57:07 - Profile picture was recieved
+2024-12-25 12:57:07 - Got directories
+2024-12-25 12:57:07 - Got files
+2024-12-25 12:57:07 - Current used storage is 6.232
+2024-12-25 12:59:17 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 12:59:17 - Login was succesfull for user: Emily
+2024-12-25 12:59:17 - File data recieved 0
+2024-12-25 12:59:17 - Profile picture was recieved
+2024-12-25 12:59:17 - Got files
+2024-12-25 12:59:17 - Got directories
+2024-12-25 12:59:17 - Current used storage is 6.232
+2024-12-25 13:01:04 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 13:01:04 - Login was succesfull for user: Emily
+2024-12-25 13:01:04 - File data recieved 0
+2024-12-25 13:01:04 - Profile picture was recieved
+2024-12-25 13:01:04 - Got directories
+2024-12-25 13:01:04 - Got files
+2024-12-25 13:01:04 - Current used storage is 6.232
+2024-12-25 13:02:01 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 13:02:01 - Login was succesfull for user: Emily
+2024-12-25 13:02:01 - File data recieved 0
+2024-12-25 13:02:01 - Profile picture was recieved
+2024-12-25 13:02:01 - Got directories
+2024-12-25 13:02:01 - Got files
+2024-12-25 13:02:01 - Current used storage is 6.232
+2024-12-25 13:02:04 - Got directories
+2024-12-25 13:02:04 - Got files
+2024-12-25 13:02:04 - Current used storage is 6.232
+2024-12-25 13:02:15 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 13:02:15 - Login was succesfull for user: Emily
+2024-12-25 13:02:15 - File data recieved 0
+2024-12-25 13:02:15 - Profile picture was recieved
+2024-12-25 13:02:15 - Got directories
+2024-12-25 13:02:15 - Got files
+2024-12-25 13:02:15 - Current used storage is 6.232
+2024-12-25 13:05:06 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 13:05:06 - Login was succesfull for user: Emily
+2024-12-25 13:05:06 - File data recieved 0
+2024-12-25 13:05:06 - Profile picture was recieved
+2024-12-25 13:05:06 - Got directories
+2024-12-25 13:05:06 - Got files
+2024-12-25 13:05:06 - Current used storage is 6.232
+2024-12-25 13:05:08 - Got directories
+2024-12-25 13:05:08 - Got files
+2024-12-25 13:05:08 - Current used storage is 6.232
+2024-12-25 13:05:58 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 13:05:58 - Login was succesfull for user: Emily
+2024-12-25 13:05:58 - File data recieved 0
+2024-12-25 13:05:58 - Profile picture was recieved
+2024-12-25 13:05:58 - Got files
+2024-12-25 13:05:58 - Got directories
+2024-12-25 13:05:58 - Current used storage is 6.232
+2024-12-25 13:06:04 - Got directories
+2024-12-25 13:06:04 - Got files
+2024-12-25 13:06:04 - Current used storage is 6.232
+2024-12-25 13:06:51 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 13:06:52 - Login was succesfull for user: Emily
+2024-12-25 13:06:52 - File data recieved 0
+2024-12-25 13:06:52 - Profile picture was recieved
+2024-12-25 13:06:52 - Got directories
+2024-12-25 13:06:52 - Got files
+2024-12-25 13:06:52 - Current used storage is 6.232
+2024-12-25 13:07:26 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 13:07:27 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1490, in protocol_parse_reply
+    with open(f"{os.getcwd()}/gui/css/emily.css", 'r') as f: app.setStyleSheet(f.read())
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\client/gui/css/emily.css'
+2024-12-25 13:07:27 - Login was succesfull for user: Emily
+2024-12-25 13:07:27 - File data recieved 0
+2024-12-25 13:07:27 - Profile picture was recieved
+2024-12-25 13:07:50 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 13:07:50 - Login was succesfull for user: Emily
+2024-12-25 13:07:50 - File data recieved 0
+2024-12-25 13:07:50 - Profile picture was recieved
+2024-12-25 13:07:50 - Got directories
+2024-12-25 13:07:50 - Current used storage is 6.232
+2024-12-25 13:07:50 - Got files
+2024-12-25 13:11:08 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 13:11:08 - Login was succesfull for user: Emily
+2024-12-25 13:11:08 - File data recieved 0
+2024-12-25 13:11:08 - Profile picture was recieved
+2024-12-25 13:11:08 - Got directories
+2024-12-25 13:11:08 - Got files
+2024-12-25 13:11:08 - Current used storage is 6.232
+2024-12-25 13:13:41 - recieved ip and port from server: ('172.16.12.23', '3102')
+2024-12-25 13:13:41 - Login was succesfull for user: Emily
+2024-12-25 13:13:41 - File data recieved 0
+2024-12-25 13:13:41 - Profile picture was recieved
+2024-12-25 13:13:41 - Got directories
+2024-12-25 13:13:41 - Got files
+2024-12-25 13:13:41 - Current used storage is 6.232
+2024-12-25 13:13:43 - Got directories
+2024-12-25 13:13:43 - Got files
+2024-12-25 13:13:43 - Current used storage is 6.232
+2024-12-25 13:14:02 - start upload:
+2024-12-25 13:14:02 - 589bd3cb0ffc42e3b8f21ecca5940027
+2024-12-25 13:14:02 - Profile icon started uploading succefully!
+2024-12-25 13:14:02 - Got directories
+2024-12-25 13:14:02 - Got files
+2024-12-25 13:14:02 - File af8a718f4cdb4e9cb116a692b9f63817 was uploaded
+2024-12-25 13:14:02 - Current used storage is 6.232
+2024-12-25 13:14:02 - Got directories
+2024-12-25 13:14:02 - Got files
+2024-12-25 13:14:03 - Current used storage is 6.232
+2024-12-25 13:14:06 - Got directories
+2024-12-25 13:14:07 - Got files
+2024-12-25 13:14:07 - Current used storage is 6.232
+2024-12-25 13:14:07 - Logout succesfull
+2024-12-25 13:14:13 - Login was succesfull for user: Emily
+2024-12-25 13:14:13 - File data recieved 0
+2024-12-25 13:14:13 - Profile picture was recieved
+2024-12-25 13:14:13 - Got files
+2024-12-25 13:14:13 - Got directories
+2024-12-25 13:14:13 - Current used storage is 6.232
+2024-12-25 13:14:16 - Got directories
+2024-12-25 13:14:16 - Got files
+2024-12-25 13:14:16 - Current used storage is 6.232
+2024-12-25 13:14:16 - Succesfully moved to
+2024-12-25 13:14:16 - Got directories
+2024-12-25 13:14:16 - Got files
+2024-12-25 13:14:16 - Current used storage is 6.232
+2024-12-25 15:54:13 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1913, in search_server
+    response, addr = search_socket.recvfrom(1024)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+2024-12-25 15:54:18 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1879, in connect_server
+    sock.connect((ip, int(port)))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1913, in search_server
+    response, addr = search_socket.recvfrom(1024)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+2024-12-25 15:54:21 - recieved ip and port from server: ('192.168.1.247', '3102')
+2024-12-25 15:54:21 - Login was succesfull for user: Emily
+2024-12-25 15:54:21 - File data recieved 0
+2024-12-25 15:54:21 - Profile picture was recieved
+2024-12-25 15:54:21 - Got directories
+2024-12-25 15:54:21 - Got files
+2024-12-25 15:54:21 - Current used storage is 6.232
+2024-12-25 15:54:24 - Got directories
+2024-12-25 15:54:24 - Got files
+2024-12-25 15:54:24 - Current used storage is 6.232
+2024-12-25 15:55:33 - recieved ip and port from server: ('192.168.1.247', '3102')
+2024-12-25 15:55:33 - Login was succesfull for user: Emily
+2024-12-25 15:55:33 - File data recieved 0
+2024-12-25 15:55:33 - Profile picture was recieved
+2024-12-25 15:55:33 - Got directories
+2024-12-25 15:55:33 - Got files
+2024-12-25 15:55:33 - Current used storage is 6.232
+2024-12-25 15:55:36 - Got directories
+2024-12-25 15:55:36 - Got files
+2024-12-25 15:55:36 - Current used storage is 6.232
+2024-12-25 15:56:58 - recieved ip and port from server: ('192.168.1.247', '3102')
+2024-12-25 15:56:58 - Login was succesfull for user: Emily
+2024-12-25 15:56:58 - File data recieved 0
+2024-12-25 15:56:58 - Profile picture was recieved
+2024-12-25 15:56:58 - Got directories
+2024-12-25 15:56:58 - Got files
+2024-12-25 15:56:58 - Current used storage is 6.232
+2024-12-25 15:57:39 - recieved ip and port from server: ('192.168.1.247', '3102')
+2024-12-25 15:57:39 - Login was succesfull for user: Emily
+2024-12-25 15:57:39 - File data recieved 0
+2024-12-25 15:57:39 - Profile picture was recieved
+2024-12-25 15:57:39 - Got directories
+2024-12-25 15:57:39 - Got files
+2024-12-25 15:57:39 - Current used storage is 6.232
