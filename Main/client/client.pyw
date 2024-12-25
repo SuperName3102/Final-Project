@@ -31,6 +31,7 @@ search_filter = None
 share = False
 deleted = False
 sort = "Name"
+sort_direction = True
 remember = False
 
 window_geometry = QRect(350, 200, 1000, 550)
@@ -127,7 +128,17 @@ class FileButton(QPushButton):
                     icon_path = assets_path + "\\file_types\\" + format_file_type(label_text.split("~")[0].split(".")[-1][:-1]) + ".svg"
                     if not os.path.isfile(icon_path): icon_path = assets_path + "\\file.svg"
                     label.setText(f'&nbsp;<img src="{icon_path}" width="16" height="20">&nbsp;{truncate_label(label, label_text)}')
-            if self.id is None: label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            if self.id is None: 
+                label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+                if label_text != "Back":
+                    if i == 0: b_sort = "Name"
+                    elif i == 1: b_sort = "Date"
+                    #elif i == 2: b_sort = "Type"
+                    elif i == 2: b_sort = "Size"
+                    elif i == 3: b_sort = "Owner"
+                    label.mousePressEvent  =  lambda event, sort_key=b_sort: change_sort(sort_key)
+                    if b_sort == sort:
+                        label.setText(f'<img src="{assets_path}\\{'asc.svg' if sort_direction else 'dsc.svg'}" width="20" height="20"><label>&nbsp;&nbsp;{label_text}</label>')
             if self.is_folder: label.setObjectName("folder-label")
             elif self.id != None: label.setObjectName("file-label")
             elif label_text == "Back": label.setObjectName("back-label")
@@ -559,7 +570,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.storage_remaining.setMaximum(Limits(user["subscription_level"]).max_storage)
             self.set_used_storage()
-
+            
+            self.sort.currentIndexChanged.connect(lambda: change_sort(self.sort.currentText()[1:]))
+            
             self.search.setIcon(QIcon(assets_path+"\\search.svg"))
             self.search.setText(f" Search Filter: {search_filter}")
             self.search.clicked.connect(search)
@@ -570,8 +583,6 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.recently_deleted_button.clicked.connect(change_deleted)
             self.recently_deleted_button.setIcon(QIcon(assets_path+"\\delete.svg"))
-            
-            self.sort.currentIndexChanged.connect(lambda: change_sort(self.sort.currentText()[1:]))
         
             self.user_button.clicked.connect(lambda: self.manage_account())
             self.logout_button.clicked.connect(logout)
@@ -612,7 +623,7 @@ class MainWindow(QtWidgets.QMainWindow):
         except:
             print(traceback.format_exc())
 
-    def draw_cwd(self, files, directories):
+    def draw_cwd(self):
         try:
             global scroll
             central_widget = self.centralWidget()
@@ -1169,7 +1180,8 @@ def change_deleted():
     move_dir("")
 
 def change_sort(new_sort):
-    global sort
+    global sort, sort_direction
+    if sort == new_sort: sort_direction = not sort_direction
     sort = new_sort
     window.run_user_page()
     update_current_files()
@@ -1735,27 +1747,28 @@ def update_current_files():
     window.sort.currentIndexChanged.disconnect()
     if sort == "Name" or not share and sort == "Owner":
         window.sort.setCurrentIndex(0)
-        files = sorted(files, key=lambda x: x.split("~")[0].lower())
-        directories = sorted(directories, key=lambda x: x.split("~")[0].lower())
+        files = sorted(files, key=lambda x: x.split("~")[0].lower(), reverse=sort_direction)
+        directories = sorted(directories, key=lambda x: x.split("~")[0].lower(), reverse=sort_direction)
     elif sort == "Date":
         window.sort.setCurrentIndex(1)
-        files = sorted(files, key=lambda x: str_to_date(x.split("~")[1]), reverse=True)
-        directories = sorted(directories, key=lambda x: str_to_date(x.split("~")[2]), reverse=True)
+        files = sorted(files, key=lambda x: str_to_date(x.split("~")[1]), reverse=sort_direction)
+        directories = sorted(directories, key=lambda x: str_to_date(x.split("~")[2]), reverse=sort_direction)
     elif sort == "Type":
         window.sort.setCurrentIndex(2)
-        files = sorted(files, key=lambda x: x.split("~")[0].split(".")[-1].lower())
+        files = sorted(files, key=lambda x: x.split("~")[0].split(".")[-1].lower(), reverse=sort_direction)
     elif sort == "Size":
         window.sort.setCurrentIndex(3)
-        files = sorted(files, key=lambda x: int(x.split("~")[2]), reverse=True)
-        directories = sorted(directories, key=lambda x: int(x.split("~")[3]), reverse=True)
+        files = sorted(files, key=lambda x: int(x.split("~")[2]), reverse=sort_direction)
+        directories = sorted(directories, key=lambda x: int(x.split("~")[3]), reverse=sort_direction)
     elif share and sort == "Owner":
         window.sort.setCurrentIndex(4)
-        files = sorted(files, key=lambda x: x.split("~")[4].lower())
-        directories = sorted(directories, key=lambda x: x.split("~")[4].lower())
-    window.sort.currentIndexChanged.connect(lambda: change_sort(window.sort.currentText()[1:]))             
+        files = sorted(files, key=lambda x: x.split("~")[4].lower(), reverse=sort_direction)
+        directories = sorted(directories, key=lambda x: x.split("~")[4].lower(), reverse=sort_direction)      
+         
     window.save_sizes()
-    window.draw_cwd(files, directories)
+    window.draw_cwd()
     window.total_files.setText(f"{len(files) + len(directories)} items")
+    window.sort.currentIndexChanged.connect(lambda: change_sort(window.sort.currentText()[1:]))    
     window.force_update_window()
     
     

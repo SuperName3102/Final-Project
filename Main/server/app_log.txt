@@ -84,3 +84,6 @@
 2024-12-25 13:13:41 - New Client number 27 from ('172.16.12.23', 52041)
 2024-12-25 13:14:22 - Client 27 disconnected
 2024-12-25 13:14:22 - Client 27 Exit
+2024-12-25 19:28:24 - Server listening on ('0.0.0.0', 3102)
+2024-12-25 19:28:24 - Main thread: before accepting ...
+2024-12-25 19:28:27 - New Client number 1 from ('192.168.56.1', 51605)
