@@ -130,7 +130,7 @@ class FileButton(QPushButton):
                     label.setText(f'&nbsp;<img src="{icon_path}" width="16" height="20">&nbsp;{truncate_label(label, label_text)}')
             if self.id is None: 
                 label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-                if label_text != "Back":
+                if label_text != "Back" and label_text != "No files or folders in this directory":
                     if i == 0: b_sort = "Name"
                     elif i == 1: b_sort = "Date"
                     #elif i == 2: b_sort = "Type"
@@ -305,6 +305,21 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setAttribute(Qt.WidgetAttribute.WA_OpaquePaintEvent)
         self.setAttribute(Qt.WidgetAttribute.WA_PaintOnScreen, True)
 
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key.Key_Delete and len(currently_selected) > 0:
+            delete()
+        elif event.key() == Qt.Key.Key_R and event.modifiers() & Qt.KeyboardModifier.ControlModifier:
+            if user["username"] != "guest":
+                self.user_page()
+        elif event.key() == Qt.Key.Key_A and event.modifiers() & Qt.KeyboardModifier.ControlModifier:
+            if scroll != None:
+                for button in scroll.widget().findChildren(FileButton):
+                    if button.id != None and button not in currently_selected:
+                        select_item(button)
+        elif event.key() == Qt.Key.Key_S and event.modifiers() & Qt.KeyboardModifier.ControlModifier:
+            if user["username"] != "guest": search()
+        super().keyPressEvent(event)
+    
     def save_sizes(self):
         for widget in self.findChildren(QWidget):
             # Save both the original geometry and the original font size (if the widget has a font)
@@ -578,6 +593,10 @@ class MainWindow(QtWidgets.QMainWindow):
             self.search.clicked.connect(search)
             self.search.setStyleSheet("background-color:transparent;border:none;")
             
+            self.refresh.setIcon(QIcon(assets_path+"\\refresh.svg"))
+            self.refresh.clicked.connect(self.user_page)
+            self.refresh.setStyleSheet("background-color:transparent;border:none;")
+            
             self.shared_button.clicked.connect(change_share)
             self.shared_button.setIcon(QIcon(assets_path+"\\share.svg"))
             
@@ -687,7 +706,6 @@ class MainWindow(QtWidgets.QMainWindow):
                 scroll_layout.addWidget(button)
             
             scroll_container_widget.setLayout(scroll_layout)
-
             scroll.setWidget(scroll_container_widget)
             scroll.setFixedSize(850, 340)
             
@@ -695,7 +713,6 @@ class MainWindow(QtWidgets.QMainWindow):
             outer_layout.addItem(spacer)
             center_layout = QHBoxLayout()
             center_layout.addStretch(1)  # Add stretchable space on the left
-            scroll.verticalScrollBar().setValue(self.scroll_progress)
             center_layout.addWidget(scroll)  # Add the scroll area
             center_layout.addStretch(1)  # Add stretchable space on the right
             # Add the centered scroll area layout to the outer layout
@@ -1127,10 +1144,10 @@ def select_item(btn):
             if btn.is_folder: label.setObjectName("folder-label")
             else: label.setObjectName("file-label")
     
-    if user["username"].lower() == "emily": 
-        with open(f"{os.getcwd()}/gui/css/emily.css", 'r') as f: app.setStyleSheet(f.read())
-    else: 
-        with open(f"{os.getcwd()}/gui/css/style.css", 'r') as f: app.setStyleSheet(f.read())
+    current_stylesheet = app.styleSheet()
+    # Clear and reapply the stylesheet
+    app.setStyleSheet("")
+    app.setStyleSheet(current_stylesheet)
     
     window.force_update_window()
 
@@ -1764,12 +1781,14 @@ def update_current_files():
         window.sort.setCurrentIndex(4)
         files = sorted(files, key=lambda x: x.split("~")[4].lower(), reverse=sort_direction)
         directories = sorted(directories, key=lambda x: x.split("~")[4].lower(), reverse=sort_direction)      
-         
+
     window.save_sizes()
     window.draw_cwd()
     window.total_files.setText(f"{len(files) + len(directories)} items")
     window.sort.currentIndexChanged.connect(lambda: change_sort(window.sort.currentText()[1:]))    
     window.force_update_window()
+    scroll.verticalScrollBar().setMaximum(window.scroll_progress)
+    scroll.verticalScrollBar().setValue(window.scroll_progress)
     
     
 

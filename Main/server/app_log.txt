@@ -87,3 +87,407 @@
 2024-12-25 19:28:24 - Server listening on ('0.0.0.0', 3102)
 2024-12-25 19:28:24 - Main thread: before accepting ...
 2024-12-25 19:28:27 - New Client number 1 from ('192.168.56.1', 51605)
+2025-01-03 11:28:52 - Server listening on ('0.0.0.0', 3102)
+2025-01-03 11:28:52 - Main thread: before accepting ...
+2025-01-03 11:28:54 - New Client number 1 from ('192.168.1.247', 54218)
+2025-01-03 11:29:15 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\21b81838cb9b4d35ac4b70bc80f29373.lock'
+2025-01-03 11:31:08 - Client 1 disconnected
+2025-01-03 11:31:08 - Client 1 Exit
+2025-01-03 11:31:13 - New Client number 2 from ('192.168.1.247', 54239)
+2025-01-03 11:32:27 - Client 2 disconnected
+2025-01-03 11:32:27 - Client 2 Exit
+2025-01-03 11:32:30 - New Client number 3 from ('192.168.1.247', 54251)
+2025-01-03 11:34:24 - Client 3 disconnected
+2025-01-03 11:34:24 - Client 3 Exit
+2025-01-03 11:34:27 - New Client number 4 from ('192.168.1.247', 54285)
+2025-01-03 11:37:03 - New Client number 5 from ('192.168.1.247', 54310)
+2025-01-03 11:37:14 - Client 4 disconnected
+2025-01-03 11:37:14 - Client 4 Exit
+2025-01-03 11:37:14 - Client 5 disconnected
+2025-01-03 11:37:14 - Client 5 Exit
+2025-01-03 11:38:43 - New Client number 6 from ('192.168.1.247', 54328)
+2025-01-03 11:39:02 - New Client number 7 from ('192.168.1.247', 54335)
+2025-01-03 11:39:32 - New Client number 8 from ('192.168.1.247', 54337)
+2025-01-03 11:39:57 - Client 6 disconnected
+2025-01-03 11:39:57 - Client 6 Exit
+2025-01-03 11:39:58 - Client 7 disconnected
+2025-01-03 11:39:58 - Client 7 Exit
+2025-01-03 11:45:41 - Client 8 disconnected
+2025-01-03 11:45:41 - Client 8 Exit
+2025-01-03 11:45:45 - New Client number 9 from ('192.168.1.247', 54420)
+2025-01-03 11:46:09 - Client 9 disconnected
+2025-01-03 11:46:09 - Client 9 Exit
+2025-01-03 11:46:13 - New Client number 10 from ('192.168.1.247', 54422)
+2025-01-03 11:48:00 - Client 10 disconnected
+2025-01-03 11:48:00 - Client 10 Exit
+2025-01-03 11:51:00 - New Client number 11 from ('192.168.1.247', 54461)
+2025-01-03 11:51:54 - Client 11 disconnected
+2025-01-03 11:51:54 - Client 11 Exit
+2025-01-03 11:51:57 - New Client number 12 from ('192.168.1.247', 54463)
+2025-01-03 11:52:23 - Client 12 disconnected
+2025-01-03 11:52:23 - Client 12 Exit
+2025-01-03 11:52:28 - New Client number 13 from ('192.168.1.247', 54466)
+2025-01-03 11:52:53 - New Client number 14 from ('192.168.1.247', 54467)
+2025-01-03 11:53:57 - Client 13 disconnected
+2025-01-03 11:53:57 - Client 13 Exit
+2025-01-03 11:53:58 - Client 14 disconnected
+2025-01-03 11:53:58 - Client 14 Exit
+2025-01-03 11:54:25 - New Client number 15 from ('192.168.1.247', 54478)
+2025-01-03 11:55:13 - Client 15 disconnected
+2025-01-03 11:55:13 - Client 15 Exit
+2025-01-03 11:55:16 - New Client number 16 from ('192.168.1.247', 54489)
+2025-01-03 11:58:27 - Client 16 disconnected
+2025-01-03 11:58:27 - Client 16 Exit
+2025-01-03 11:58:29 - New Client number 17 from ('192.168.1.247', 54537)
+2025-01-03 11:59:37 - Client 17 disconnected
+2025-01-03 11:59:37 - Client 17 Exit
+2025-01-03 11:59:40 - New Client number 18 from ('192.168.1.247', 54542)
+2025-01-03 12:00:46 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\081481c8928647399649fbb81f7a373b'
+2025-01-03 12:00:47 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\093ec79cbf914cc985d1a78c04fe404e'
+2025-01-03 12:00:47 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\0f5396dcf5f649cc9738975987640060'
+2025-01-03 12:00:47 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\21b81838cb9b4d35ac4b70bc80f29373'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\2723d3f7186449c8ba6bf86fc325c5df'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\2f64272a252243fa92e1ec2e4565bbfc'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\358780a1e7ac4679a4c6243c22005494'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\35af9bc2c61e4c77adea9770e252a7bb'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\35f99c91959a4533a414b88a07a860c4'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\366f95f058e245cea86b3268781189f8'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\36fa9d16948146b4a43883abb3b32eca'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\38cc0b90258948af84d9845684297967'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\39f779a315c34eaebeabae2773ca82d0'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\3ae4324a603c4ac9ae63a90c1bf186ee'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\3eb4c0e1deda4c0f8153d995b39b0263'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\3f7a0510a3c74e8ca041b32e03f9ef49'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\442648241aaa4788a87217fff3fc0bbd'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\485ec2892cc946f2a3020c6784c5d4f2'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\49af3cc708194982874123d8bea81bd5'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\52f126b952fb4028b4bef757b0c46bd9'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\55677cb6233c4f809a02155781784aa2'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\58f12c13f44f453d91c96c1c7ab9ffb1'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\5b26f79ab54d4b688c2a581d8b18b4df'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\5be2b4bbc04d45198eb9147c29bbdf46'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\5f7165fc777349a1b2fb104bf87b5d9a'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\607bbad22adc4675863585336c656990'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\60a861918e684941b939c2d2cd030c1b'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\618d9ffd346e4497a8cbbcad045d318b'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\61fd864f81d04977acfb24c7576c07b3'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\63e999b15553419381a77e3c27a4f8de'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\64f8a486c1f1410db64d4f21136f7867'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6818b5d902b54da28320557f2958d73e'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\691052622f9042af96548e632b83c96e'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6c11d164622c43348cb94e37792aa105'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\6e6047647e524f0c95bcad489a50431e'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\71931fa5250b42f0bd47f5d38516b5d2'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\73e74cd81706485e92ca1fcd77ecfc91'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\740f4d9f30e14cf6959aba7632a1bf29'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\7730e5370e4d4034891856c485499d8d'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\775657b5466945b493604cc780b88a04'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\797ee548a9964cc588e6d0794a06db7b'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\7a61e4c5afb146ffac6df855ece78eea'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\7ef770b96a10456b9c73e22b43f229ba'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\871a5213448746219daecc9d01f871ef'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\898c65c72ea2474fbad200a5c99758ce'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\8b3e4ec318ff423582a5f5e375d600cb'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\8fb6b92049b148a3966d081be13dc704'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\9020feb212604489a174e34b1b234b6a'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\945e51e90d314ec69bdcbc458f0c1695'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\96174f0814234e09879cc834be7a8cf4'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\9d5ededd532e4e8abd6dc045c870dc0a'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\9e7020f1003b4c76a220e4cb54f452be'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\a489ab8a64464e5eb3bd7aca12136838'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\a7aa21c2d86840d9951c9b12e06abe44'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ac730a65a3e74d80b1c2716eeba7dfde'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ae8d16e836594ee289859b75daac7b6b'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\af3d298fe2a94315b8b26865e04416ab'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\af44b051f1e24028ac707d7b4aee0142'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\b2de1a18fc0842b4b954dfef9414a92b'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\b4342743b89b47a7bd611c35dc005517'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\b52c10a6a96e4957abdf28fbcdadcdb0'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\b6610f3687704d8da67c3a267d648d5f'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\b8d5e7c3cd394acc844987daaa85da71'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bd1e8957519440aeb6ce7b1a06fcebe5'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\bf7d9818b63b4dde93c80452162da074'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\c7286335497944fe91a1814065d0e409'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\cf53b2b67e9b4e4fb3b05c086ed6664c'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\cfe36f41cf0c465a9cef8cb2259dd1f7'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\d04d2b11000a4d43bb90627989100556'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\d0da224f431b4e15acb43af40738e63e'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\d0f988692b1a428db0f0d4853115296d'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\d1a2cbf948634fbc91dfbd249d735c15'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\d7178143ad554ae0b6e91557d7700bc3'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\db9c3b2d295941afb81290b997c31e35'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\dc4a696f0e95447692459e3bda051875'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ddd414927db54ef798cf627668fe0f20'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\df4d21ce5a024e2c8a0ea7cb837466b5'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\e10e1aae55044c9f9d46f664b9e57500'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\e7d74d45b1f9470da66ad1f732af5838'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\e9267ac0477044bd9bcd6380aaba0129'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f10039fe3e1b4ef380962c9507990487'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\f1080b03a0994705a9cc4d19c7505598'
+2025-01-03 12:00:48 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\ff5cdad14fd64c18a45615429dcca97f'
+2025-01-03 12:01:58 - Client 18 disconnected
+2025-01-03 12:01:58 - Client 18 Exit
+2025-01-03 12:02:01 - New Client number 19 from ('192.168.1.247', 54568)
+2025-01-03 12:07:41 - Client 19 disconnected
+2025-01-03 12:07:41 - Client 19 Exit
+2025-01-03 12:07:50 - New Client number 20 from ('192.168.1.247', 54649)
+2025-01-03 12:08:58 - Client 20 disconnected
+2025-01-03 12:08:58 - Client 20 Exit
+2025-01-03 12:09:01 - New Client number 21 from ('192.168.1.247', 54658)
+2025-01-03 12:10:43 - Client 21 disconnected
+2025-01-03 12:10:43 - Client 21 Exit
+2025-01-03 12:10:47 - New Client number 22 from ('192.168.1.247', 54675)
+2025-01-03 12:11:27 - Client 22 disconnected
+2025-01-03 12:11:27 - Client 22 Exit
