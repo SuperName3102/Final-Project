@@ -20,6 +20,7 @@ from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal, QFile
 
 # Announce global vars
 user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""}
+
 chunk_size = 524288
 user_icon = f"{os.getcwd()}/assets/user.ico"
 assets_path = f"{os.getcwd()}/assets"

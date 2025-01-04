@@ -17,6 +17,7 @@ import rsa
 import struct
 import sys
 from filelock import FileLock
+from requests import get
 
 # Announce global vars
 all_to_die = False
@@ -1059,6 +1060,14 @@ def main(addr):
     srv_sock.listen(20)
 
     print(f"Server listening on {addr}")
+    
+    try:
+        public_ip = get('https://api.ipify.org').content.decode('utf8')
+    except Exception:
+        public_ip = "No IP found"
+    local_ip = socket.gethostbyname(socket.gethostname())
+    print(f"Public server ip: {public_ip}, local server ip: {local_ip}")
+
     srv_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     i = 1
     try:

@@ -1,6 +1,6 @@
 # 2024 © Idan Hazay
 
-from modules.global_vars import *
+from modules.config import *
 from modules.networking import *
 import os, rsa, struct
 

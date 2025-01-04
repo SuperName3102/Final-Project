@@ -1,7 +1,7 @@
 # 2024 © Idan Hazay
 
 import modules.encrypting as encrypting
-from modules.global_vars import *
+from modules.config import *
 import struct 
 
 log = False

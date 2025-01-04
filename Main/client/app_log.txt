@@ -1,639 +1,529 @@
-2025-01-03 11:32:30 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:32:30 - Login was succesfull for user: a
-2025-01-03 11:32:30 - File data recieved 0
-2025-01-03 11:32:31 - Profile picture was recieved
-2025-01-03 11:32:31 - Got directories
-2025-01-03 11:32:31 - Current used storage is 36.45
-2025-01-03 11:32:31 - 1254
-2025-01-03 11:32:31 - 0
-2025-01-03 11:32:31 - 0
-2025-01-03 11:32:31 - Got files
-2025-01-03 11:32:35 - Got directories
-2025-01-03 11:32:35 - Current used storage is 36.45
-2025-01-03 11:32:35 - 1254
-2025-01-03 11:32:35 - 1310
-2025-01-03 11:32:35 - 1254
-2025-01-03 11:32:35 - Got files
-2025-01-03 11:32:53 - Got directories
-2025-01-03 11:32:53 - Current used storage is 36.45
-2025-01-03 11:32:53 - 1254
-2025-01-03 11:32:53 - 1142
-2025-01-03 11:32:53 - 1142
-2025-01-03 11:32:53 - Got files
-2025-01-03 11:32:56 - Got directories
-2025-01-03 11:32:56 - Current used storage is 36.45
-2025-01-03 11:32:56 - 1254
-2025-01-03 11:32:56 - 1142
-2025-01-03 11:32:56 - 1142
-2025-01-03 11:32:56 - Got files
-2025-01-03 11:34:27 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:34:27 - Login was succesfull for user: a
-2025-01-03 11:34:27 - File data recieved 0
-2025-01-03 11:34:27 - Profile picture was recieved
-2025-01-03 11:34:27 - Got directories
-2025-01-03 11:34:27 - Current used storage is 36.45
-2025-01-03 11:34:28 - 1250
-2025-01-03 11:34:28 - 0
-2025-01-03 11:34:28 - 0
-2025-01-03 11:34:28 - Got files
-2025-01-03 11:37:03 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:37:04 - Login was succesfull for user: a
-2025-01-03 11:37:04 - File data recieved 0
-2025-01-03 11:37:04 - Profile picture was recieved
-2025-01-03 11:37:04 - Got directories
-2025-01-03 11:37:04 - Current used storage is 36.45
-2025-01-03 11:37:04 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1717, in protocol_parse_reply
-    update_current_files()
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1771, in update_current_files
-    window.draw_cwd()
-TypeError: MainWindow.draw_cwd() missing 2 required positional arguments: 'files' and 'directories'
-2025-01-03 11:37:04 - Invalid reply from server
-2025-01-03 11:37:04 - b'PATH|\xd7\xa2\xd7\x99\xd7\x93\xd7\x9f.mp4~2024-10-11 14:04:27.265471~15056~3d92b9a36f804b85bf27181d6fc1b84d|\xd7\xa2\xd7\x92\xd7\xa0\xd7\x95\xd7\x9f.docx~2024-12-13 21:02:43.191743~38059~320c04bb1c1f44098a006593857d0866|app_log.txt~2024-12-21 17:49:59.756689~287965~dd48f8886ff144b68a010ccbc824e210|catppuccin.txt~2025-01-03 11:29:14.810880~8404~7106cfbc7e9e46cfb19c0faaa47317cc|mocha.qbtheme~2025-01-03 11:29:14.928119~5735~a5c650dc011347959acfc01d5772aa95|Complete discord theme.css~2025-01-03 11:29:14.996709~6908~0fe364684f884b8c85da52bc45bd384b|VSCode.css~2025-01-03 11:29:15.109011~4424~8f167bee9c6942d29d9106322a823157|macchiato.qbtheme~2025-01-03 11:29:15.254208~5498~f4f5b764d8e24b3bb114bae6bb22e161|explorer.exe~2025-01-03 11:29:15.337135~5575576~36e13f5da5d84fe8b93c30656c6efcad|get repos github.sh~2025-01-03 11:29:15.944774~839~65c9917bfb5b44ddb55c2af654b64004|Infinity5.ahk~2025-01-03 11:29:16.047028~514~c996f9e0664643c2b0a82ccbcae478aa|important things.txt~2025-01-03 11:29:16.076312~385~cf0a7242d4ca4b889dc030a36743fcf1|1.dat~2025-01-03 11:29:27.526434~1018496~e708d940ed4b4f2194e682be5f1bd0c1|Chevron_v2.2.0.zip~2025-01-03 11:29:27.611605~1933168~9397abe7271746b1b5137ccf7562fbda|AD Save, Slot 1 #3 (2023-1-31).txt~2025-01-03 11:29:27.658759~9702~85cc45d90ee74cb391bcd8213dcc375d|ThemeTool.exe~2025-01-03 11:29:27.716307~221696~d79db9e8bb8a4d4080c80f60e6ea52f3|vencord-settings-backup.json~2025-01-03 11:29:27.743265~23664~2099b335ae7a442297ade1a994686d4f|catppuccin.txt~2025-01-03 11:29:27.774162~8404~1e86a43c300241dba4f3458c5abf7793|Complete discord theme.css~2025-01-03 11:29:27.847463~6908~53efc284b5c1415186b79c1830be3103|catppuccin-macchiato.theme.css~2025-01-03 11:29:27.836981~112707~6577022cd78a4765a7aed568abf1a5f0|macchiato.qbtheme~2025-01-03 11:29:27.882840~5498~4d63adbb30b2442197ee1430657dab4d|mocha.qbtheme~2025-01-03 11:29:27.914219~5735~27a7daffa1d54dc4aebe01beca95863c|06_21_157t1.xlsx~2025-01-03 11:29:27.960219~43958~8bddbca4d8ec41a28f410573df46d36b|Infinity5.ahk~2025-01-03 11:29:28.000997~514~997bbc3283a144d5a97a1f0f1c0c34fb|VSCode.css~2025-01-03 11:29:28.021713~4424~407dd2cccad8448db00cbb7c11ff275c|get repos github.sh~2025-01-03 11:29:28.053713~839~f77a29d121fe4383bb9fb303343d88c2|Cider.lnk~2025-01-03 11:29:28.096242~1337~9aa6382405814278b5ae037a09e463e5|important things.txt~2025-01-03 11:29:28.123539~385~cbf95092f39c40c7a9d3bf2c816ad152|AD Save, Slot 1 #3 (2023-1-31).txt~2025-01-03 11:29:29.886505~9702~e75812eb837140dd85fb046249359957|1.dat~2025-01-03 11:29:29.911326~1018496~359c5af730414600a22dd0113be5445f|catppuccin-macchiato.theme.css~2025-01-03 11:29:29.935064~112707~53acdc1205e84a44a43f9daf45f5aef3|Complete discord theme.css~2025-01-03 11:29:30.045678~6908~bcf11693e6e344009a4a8e65c26e2454|06_21_157t1.xlsx~2025-01-03 11:29:30.095142~43958~d4ba45fb17b145cfb3db03c3854d7cf0|Cider.lnk~2025-01-03 11:29:30.142987~1337~82219cf4cebb4cf1adb9601b05b2320a|vencord-settings-backup.json~2025-01-03 11:29:30.181102~23664~fee234fd4f1841d88e57f23e87da68d9|ThemeTool.exe~2025-01-03 11:29:30.209507~221696~8240822d7d8741748e69cff324c2fa99|mocha.qbtheme~2025-01-03 11:29:30.183952~5735~9905f9bbb1064601960434a0602164e6|Infinity5.ahk~2025-01-03 11:29:30.246572~514~e4acb6a39943458ab628a07413c04d66|macchiato.qbtheme~2025-01-03 11:29:30.310077~5498~3a39360f100d4b2ab2b12927ca90786e|get repos github.sh~2025-01-03 11:29:30.353800~839~165e4ce0718f419b94a633a9afd5f5be|Chevron_v2.2.0.zip~2025-01-03 11:29:30.303078~1933168~a4e70836cfca424c9d8d6706a6ede636|catppuccin.txt~2025-01-03 11:29:30.418486~8404~085fc1ade52e4f08bbae55b8a7b28bf7|VSCode.css~2025-01-03 11:29:30.453491~4424~2979eff5505740c3b50fb47cbb161527|important things.txt~2025-01-03 11:29:30.492204~385~8774f1f3e8ac4876988e7598704fd1d4'
-2025-01-03 11:37:08 - Got directories
-2025-01-03 11:37:08 - Current used storage is 36.45
-2025-01-03 11:37:08 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1717, in protocol_parse_reply
-    update_current_files()
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1771, in update_current_files
-    window.draw_cwd()
-TypeError: MainWindow.draw_cwd() missing 2 required positional arguments: 'files' and 'directories'
-2025-01-03 11:37:08 - Invalid reply from server
-2025-01-03 11:37:08 - b'PATH|\xd7\xa2\xd7\x99\xd7\x93\xd7\x9f.mp4~2024-10-11 14:04:27.265471~15056~3d92b9a36f804b85bf27181d6fc1b84d|\xd7\xa2\xd7\x92\xd7\xa0\xd7\x95\xd7\x9f.docx~2024-12-13 21:02:43.191743~38059~320c04bb1c1f44098a006593857d0866|app_log.txt~2024-12-21 17:49:59.756689~287965~dd48f8886ff144b68a010ccbc824e210|catppuccin.txt~2025-01-03 11:29:14.810880~8404~7106cfbc7e9e46cfb19c0faaa47317cc|mocha.qbtheme~2025-01-03 11:29:14.928119~5735~a5c650dc011347959acfc01d5772aa95|Complete discord theme.css~2025-01-03 11:29:14.996709~6908~0fe364684f884b8c85da52bc45bd384b|VSCode.css~2025-01-03 11:29:15.109011~4424~8f167bee9c6942d29d9106322a823157|macchiato.qbtheme~2025-01-03 11:29:15.254208~5498~f4f5b764d8e24b3bb114bae6bb22e161|explorer.exe~2025-01-03 11:29:15.337135~5575576~36e13f5da5d84fe8b93c30656c6efcad|get repos github.sh~2025-01-03 11:29:15.944774~839~65c9917bfb5b44ddb55c2af654b64004|Infinity5.ahk~2025-01-03 11:29:16.047028~514~c996f9e0664643c2b0a82ccbcae478aa|important things.txt~2025-01-03 11:29:16.076312~385~cf0a7242d4ca4b889dc030a36743fcf1|1.dat~2025-01-03 11:29:27.526434~1018496~e708d940ed4b4f2194e682be5f1bd0c1|Chevron_v2.2.0.zip~2025-01-03 11:29:27.611605~1933168~9397abe7271746b1b5137ccf7562fbda|AD Save, Slot 1 #3 (2023-1-31).txt~2025-01-03 11:29:27.658759~9702~85cc45d90ee74cb391bcd8213dcc375d|ThemeTool.exe~2025-01-03 11:29:27.716307~221696~d79db9e8bb8a4d4080c80f60e6ea52f3|vencord-settings-backup.json~2025-01-03 11:29:27.743265~23664~2099b335ae7a442297ade1a994686d4f|catppuccin.txt~2025-01-03 11:29:27.774162~8404~1e86a43c300241dba4f3458c5abf7793|Complete discord theme.css~2025-01-03 11:29:27.847463~6908~53efc284b5c1415186b79c1830be3103|catppuccin-macchiato.theme.css~2025-01-03 11:29:27.836981~112707~6577022cd78a4765a7aed568abf1a5f0|macchiato.qbtheme~2025-01-03 11:29:27.882840~5498~4d63adbb30b2442197ee1430657dab4d|mocha.qbtheme~2025-01-03 11:29:27.914219~5735~27a7daffa1d54dc4aebe01beca95863c|06_21_157t1.xlsx~2025-01-03 11:29:27.960219~43958~8bddbca4d8ec41a28f410573df46d36b|Infinity5.ahk~2025-01-03 11:29:28.000997~514~997bbc3283a144d5a97a1f0f1c0c34fb|VSCode.css~2025-01-03 11:29:28.021713~4424~407dd2cccad8448db00cbb7c11ff275c|get repos github.sh~2025-01-03 11:29:28.053713~839~f77a29d121fe4383bb9fb303343d88c2|Cider.lnk~2025-01-03 11:29:28.096242~1337~9aa6382405814278b5ae037a09e463e5|important things.txt~2025-01-03 11:29:28.123539~385~cbf95092f39c40c7a9d3bf2c816ad152|AD Save, Slot 1 #3 (2023-1-31).txt~2025-01-03 11:29:29.886505~9702~e75812eb837140dd85fb046249359957|1.dat~2025-01-03 11:29:29.911326~1018496~359c5af730414600a22dd0113be5445f|catppuccin-macchiato.theme.css~2025-01-03 11:29:29.935064~112707~53acdc1205e84a44a43f9daf45f5aef3|Complete discord theme.css~2025-01-03 11:29:30.045678~6908~bcf11693e6e344009a4a8e65c26e2454|06_21_157t1.xlsx~2025-01-03 11:29:30.095142~43958~d4ba45fb17b145cfb3db03c3854d7cf0|Cider.lnk~2025-01-03 11:29:30.142987~1337~82219cf4cebb4cf1adb9601b05b2320a|vencord-settings-backup.json~2025-01-03 11:29:30.181102~23664~fee234fd4f1841d88e57f23e87da68d9|ThemeTool.exe~2025-01-03 11:29:30.209507~221696~8240822d7d8741748e69cff324c2fa99|mocha.qbtheme~2025-01-03 11:29:30.183952~5735~9905f9bbb1064601960434a0602164e6|Infinity5.ahk~2025-01-03 11:29:30.246572~514~e4acb6a39943458ab628a07413c04d66|macchiato.qbtheme~2025-01-03 11:29:30.310077~5498~3a39360f100d4b2ab2b12927ca90786e|get repos github.sh~2025-01-03 11:29:30.353800~839~165e4ce0718f419b94a633a9afd5f5be|Chevron_v2.2.0.zip~2025-01-03 11:29:30.303078~1933168~a4e70836cfca424c9d8d6706a6ede636|catppuccin.txt~2025-01-03 11:29:30.418486~8404~085fc1ade52e4f08bbae55b8a7b28bf7|VSCode.css~2025-01-03 11:29:30.453491~4424~2979eff5505740c3b50fb47cbb161527|important things.txt~2025-01-03 11:29:30.492204~385~8774f1f3e8ac4876988e7598704fd1d4'
-2025-01-03 11:38:43 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:38:44 - Login was succesfull for user: a
-2025-01-03 11:38:44 - File data recieved 0
-2025-01-03 11:38:44 - Profile picture was recieved
-2025-01-03 11:38:44 - Current used storage is 36.45
-2025-01-03 11:38:44 - Got directories
-2025-01-03 11:38:44 - Got files
-2025-01-03 11:38:47 - Got directories
-2025-01-03 11:38:47 - Current used storage is 36.45
-2025-01-03 11:38:47 - Got files
-2025-01-03 11:38:50 - Got directories
-2025-01-03 11:38:50 - Current used storage is 36.45
-2025-01-03 11:38:50 - Got files
-2025-01-03 11:39:02 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:39:03 - Login was succesfull for user: a
-2025-01-03 11:39:03 - File data recieved 0
-2025-01-03 11:39:03 - Profile picture was recieved
-2025-01-03 11:39:03 - Got directories
-2025-01-03 11:39:03 - Current used storage is 36.45
-2025-01-03 11:39:03 - Got files
-2025-01-03 11:39:05 - Got directories
-2025-01-03 11:39:05 - Current used storage is 36.45
-2025-01-03 11:39:06 - Got files
-2025-01-03 11:39:32 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:39:33 - Login was succesfull for user: a
-2025-01-03 11:39:33 - File data recieved 0
-2025-01-03 11:39:33 - Profile picture was recieved
-2025-01-03 11:39:33 - Got directories
-2025-01-03 11:39:33 - Current used storage is 36.45
-2025-01-03 11:39:33 - Got files
-2025-01-03 11:39:35 - Got directories
-2025-01-03 11:39:35 - Current used storage is 36.45
-2025-01-03 11:39:35 - Got files
-2025-01-03 11:39:37 - Got directories
-2025-01-03 11:39:37 - Current used storage is 36.45
-2025-01-03 11:39:37 - Got files
-2025-01-03 11:39:40 - Got directories
-2025-01-03 11:39:40 - Current used storage is 36.45
-2025-01-03 11:39:41 - Got files
-2025-01-03 11:39:43 - Got directories
-2025-01-03 11:39:43 - Current used storage is 36.45
-2025-01-03 11:39:44 - Got files
-2025-01-03 11:39:46 - Got directories
-2025-01-03 11:39:46 - Current used storage is 36.45
-2025-01-03 11:39:46 - Got files
-2025-01-03 11:39:48 - Got directories
-2025-01-03 11:39:48 - Current used storage is 36.45
-2025-01-03 11:39:49 - Got files
-2025-01-03 11:40:00 - Got directories
-2025-01-03 11:40:00 - Current used storage is 36.45
-2025-01-03 11:40:00 - Got files
-2025-01-03 11:40:03 - Got directories
-2025-01-03 11:40:03 - Current used storage is 36.45
-2025-01-03 11:40:03 - Got files
-2025-01-03 11:40:06 - Got directories
-2025-01-03 11:40:06 - Current used storage is 36.45
-2025-01-03 11:40:06 - Got files
-2025-01-03 11:41:39 - Got directories
-2025-01-03 11:41:39 - Current used storage is 36.45
-2025-01-03 11:41:39 - Got files
-2025-01-03 11:41:56 - Got directories
-2025-01-03 11:41:56 - Current used storage is 36.45
-2025-01-03 11:41:56 - Got files
-2025-01-03 11:42:04 - Got directories
-2025-01-03 11:42:04 - Current used storage is 36.45
-2025-01-03 11:42:04 - Got files
-2025-01-03 11:45:45 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:45:46 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 581, in run_user_page
-    self.refresh.setIcon(QIcon(assets_path+"\\refresh.svg"))
-    ^^^^^^^^^^^^
-AttributeError: 'MainWindow' object has no attribute 'refresh'
-2025-01-03 11:45:46 - Login was succesfull for user: a
-2025-01-03 11:45:46 - File data recieved 0
-2025-01-03 11:45:46 - Profile picture was recieved
-2025-01-03 11:45:46 - Got directories
-2025-01-03 11:45:46 - Got files
-2025-01-03 11:45:46 - Current used storage is 36.45
-2025-01-03 11:46:13 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:46:13 - Login was succesfull for user: a
-2025-01-03 11:46:13 - File data recieved 0
-2025-01-03 11:46:13 - Profile picture was recieved
-2025-01-03 11:46:13 - Current used storage is 36.45
-2025-01-03 11:46:13 - Got directories
-2025-01-03 11:46:13 - Got files
-2025-01-03 11:46:14 - Got directories
-2025-01-03 11:46:14 - Current used storage is 36.45
-2025-01-03 11:46:15 - Got files
-2025-01-03 11:46:15 - Got directories
-2025-01-03 11:46:15 - Current used storage is 36.45
-2025-01-03 11:46:16 - Got files
-2025-01-03 11:46:22 - Succesfully deleted 4 files
-2025-01-03 11:46:22 - File \u05e2\u05d9\u05d3\u05df.mp4 was deleted!
-2025-01-03 11:46:22 - File VSCode.css was deleted!
-2025-01-03 11:46:22 - File VSCode.css was deleted!
-2025-01-03 11:46:22 - File \u05e2\u05d2\u05e0\u05d5\u05df.docx was deleted!
-2025-01-03 11:46:22 - Got directories
-2025-01-03 11:46:22 - Current used storage is 36.45
-2025-01-03 11:46:22 - Got files
-2025-01-03 11:46:23 - Got directories
-2025-01-03 11:46:23 - Current used storage is 36.45
-2025-01-03 11:46:23 - Got files
-2025-01-03 11:46:40 - start upload:
-2025-01-03 11:46:40 - b8a663510560483dbf39cefa21709939
-2025-01-03 11:46:40 - File \u05e1\u05e4\u05e8 \u05e8\u05e9\u05ea\u05d5\u05ea.pdf started uploading
-2025-01-03 11:46:44 - Got directories
-2025-01-03 11:46:44 - Got files
-2025-01-03 11:46:44 - Current used storage is 36.45
-2025-01-03 11:46:45 - File \u05e1\u05e4\u05e8 \u05e8\u05e9\u05ea\u05d5\u05ea.pdf was uploaded
-2025-01-03 11:46:45 - Got directories
-2025-01-03 11:46:45 - Current used storage is 54.303
-2025-01-03 11:46:45 - Got files
-2025-01-03 11:47:14 - Got directories
-2025-01-03 11:47:15 - Current used storage is 54.303
-2025-01-03 11:47:15 - Got files
-2025-01-03 11:47:27 - Current used storage is 54.303
-2025-01-03 11:47:27 - Got directories
-2025-01-03 11:47:27 - Got files
-2025-01-03 11:47:28 - Got directories
-2025-01-03 11:47:28 - Current used storage is 54.303
-2025-01-03 11:47:28 - Got files
-2025-01-03 11:47:29 - Got directories
-2025-01-03 11:47:29 - Current used storage is 54.303
-2025-01-03 11:47:29 - Got files
-2025-01-03 11:47:31 - Got directories
-2025-01-03 11:47:31 - Current used storage is 54.303
-2025-01-03 11:47:31 - Got files
-2025-01-03 11:47:35 - Got directories
-2025-01-03 11:47:35 - Current used storage is 54.303
-2025-01-03 11:47:35 - Got files
-2025-01-03 11:47:36 - Got directories
-2025-01-03 11:47:36 - Current used storage is 54.303
-2025-01-03 11:47:36 - Got files
-2025-01-03 11:47:39 - Got directories
-2025-01-03 11:47:39 - Current used storage is 54.303
-2025-01-03 11:47:39 - Got files
-2025-01-03 11:47:51 - Succesfully deleted 6 files
-2025-01-03 11:47:51 - File explorer.exe was deleted!
-2025-01-03 11:47:51 - File \u05e1\u05e4\u05e8 \u05e8\u05e9\u05ea\u05d5\u05ea.pdf was deleted!
-2025-01-03 11:47:51 - File 1.dat was deleted!
-2025-01-03 11:47:51 - File Chevron_v2.2.0.zip was deleted!
-2025-01-03 11:47:51 - File 1.dat was deleted!
-2025-01-03 11:47:51 - File Chevron_v2.2.0.zip was deleted!
-2025-01-03 11:47:51 - Got directories
-2025-01-03 11:47:51 - Current used storage is 54.303
-2025-01-03 11:47:51 - Got files
-2025-01-03 11:51:00 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:51:01 - Login was succesfull for user: a
-2025-01-03 11:51:01 - File data recieved 0
-2025-01-03 11:51:01 - Profile picture was recieved
-2025-01-03 11:51:01 - Got directories
-2025-01-03 11:51:01 - Current used storage is 54.303
-2025-01-03 11:51:01 - Got files
-2025-01-03 11:51:34 - Current used storage is 54.303
-2025-01-03 11:51:34 - Got directories
-2025-01-03 11:51:34 - Got files
-2025-01-03 11:51:57 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:51:57 - Login was succesfull for user: a
-2025-01-03 11:51:57 - File data recieved 0
-2025-01-03 11:51:57 - Profile picture was recieved
-2025-01-03 11:51:57 - Got directories
-2025-01-03 11:51:57 - Current used storage is 54.303
-2025-01-03 11:51:57 - Got files
-2025-01-03 11:52:28 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:52:28 - Login was succesfull for user: a
-2025-01-03 11:52:28 - File data recieved 0
-2025-01-03 11:52:28 - Profile picture was recieved
-2025-01-03 11:52:28 - Got directories
-2025-01-03 11:52:28 - Current used storage is 54.303
-2025-01-03 11:52:29 - Got files
-2025-01-03 11:52:31 - <enum 'Key'>
-2025-01-03 11:52:53 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:52:53 - Login was succesfull for user: a
-2025-01-03 11:52:53 - File data recieved 0
-2025-01-03 11:52:53 - Profile picture was recieved
-2025-01-03 11:52:53 - Got directories
-2025-01-03 11:52:53 - Current used storage is 54.303
-2025-01-03 11:52:53 - Got files
-2025-01-03 11:52:54 - <enum 'Key'>
-2025-01-03 11:52:57 - Succesfully deleted 1 files
-2025-01-03 11:52:58 - File vencord-settings-backup.json was deleted!
-2025-01-03 11:52:58 - Got directories
-2025-01-03 11:52:58 - Current used storage is 54.303
-2025-01-03 11:52:58 - Got files
-2025-01-03 11:53:00 - <enum 'Key'>
-2025-01-03 11:53:00 - Succesfully deleted 1 files
-2025-01-03 11:53:00 - File VSCode.css was deleted!
-2025-01-03 11:53:00 - Current used storage is 54.303
-2025-01-03 11:53:00 - Got directories
-2025-01-03 11:53:00 - Got files
-2025-01-03 11:53:01 - <enum 'Key'>
-2025-01-03 11:53:02 - <enum 'Key'>
-2025-01-03 11:53:02 - <enum 'Key'>
-2025-01-03 11:54:25 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:54:25 - Login was succesfull for user: a
-2025-01-03 11:54:25 - File data recieved 0
-2025-01-03 11:54:25 - Profile picture was recieved
-2025-01-03 11:54:25 - Got directories
-2025-01-03 11:54:25 - Current used storage is 54.303
-2025-01-03 11:54:25 - Got files
-2025-01-03 11:55:16 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:55:16 - Login was succesfull for user: a
-2025-01-03 11:55:16 - File data recieved 0
-2025-01-03 11:55:16 - Profile picture was recieved
-2025-01-03 11:55:16 - Got directories
-2025-01-03 11:55:16 - Current used storage is 54.303
-2025-01-03 11:55:16 - Got files
-2025-01-03 11:55:18 - Got directories
-2025-01-03 11:55:18 - Current used storage is 54.303
-2025-01-03 11:55:18 - Got files
-2025-01-03 11:55:20 - Current used storage is 54.303
-2025-01-03 11:55:20 - Got directories
-2025-01-03 11:55:20 - Got files
-2025-01-03 11:55:26 - Succesfully deleted 4 files
-2025-01-03 11:55:26 - File ThemeTool.exe was deleted!
-2025-01-03 11:55:26 - File vencord-settings-backup.json was deleted!
-2025-01-03 11:55:26 - File mocha.qbtheme was deleted!
-2025-01-03 11:55:26 - File ThemeTool.exe was deleted!
-2025-01-03 11:55:26 - Got directories
-2025-01-03 11:55:26 - Current used storage is 54.303
-2025-01-03 11:55:26 - Got files
-2025-01-03 11:55:29 - Current used storage is 54.303
-2025-01-03 11:55:29 - Got directories
-2025-01-03 11:55:29 - Got files
-2025-01-03 11:55:34 - Succesfully deleted 7 files
-2025-01-03 11:55:34 - File Infinity5.ahk was deleted!
-2025-01-03 11:55:34 - File macchiato.qbtheme was deleted!
-2025-01-03 11:55:34 - File mocha.qbtheme was deleted!
-2025-01-03 11:55:34 - File macchiato.qbtheme was deleted!
-2025-01-03 11:55:34 - File macchiato.qbtheme was deleted!
-2025-01-03 11:55:34 - File Infinity5.ahk was deleted!
-2025-01-03 11:55:34 - File mocha.qbtheme was deleted!
-2025-01-03 11:55:34 - Got directories
-2025-01-03 11:55:35 - Current used storage is 54.303
-2025-01-03 11:55:35 - Got files
-2025-01-03 11:55:42 - Got directories
-2025-01-03 11:55:42 - Current used storage is 54.303
-2025-01-03 11:55:42 - Got files
-2025-01-03 11:55:45 - Succesfully moved to
-2025-01-03 11:55:45 - Got directories
-2025-01-03 11:55:45 - Got files
-2025-01-03 11:55:45 - Current used storage is 54.303
-2025-01-03 11:55:55 - Succesfully recovered 6 files
-2025-01-03 11:55:55 - Got directories
-2025-01-03 11:55:55 - Succefully recovered \u05de\u05d9\u05d5\u05df \u05d0\u05d9\u05e9\u05d9\u05d5\u05ea.txt
-2025-01-03 11:55:55 - Succefully recovered \u05de\u05d9\u05d5\u05df \u05d0\u05d9\u05e9\u05d9\u05d5\u05ea.txt
-2025-01-03 11:55:55 - Succefully recovered \u05e2\u05d2\u05e0\u05d5\u05df.docx
-2025-01-03 11:55:55 - Succefully recovered \u05e1\u05e4\u05e8 \u05e8\u05e9\u05ea\u05d5\u05ea.pdf
-2025-01-03 11:55:55 - Succefully recovered \u05e2\u05d9\u05d3\u05df.mp4
-2025-01-03 11:55:55 - Succefully recovered \u05e9\u05d0\u05dc\u05d5\u05df \u05e2\u05d9\u05d3\u05df \u05d7\u05d6\u05d0\u05d9 330905159.docx
-2025-01-03 11:55:55 - Current used storage is 54.303
-2025-01-03 11:55:55 - Got files
-2025-01-03 11:55:58 - Got directories
-2025-01-03 11:55:58 - Current used storage is 54.303
-2025-01-03 11:55:58 - Got files
-2025-01-03 11:56:01 - Succesfully moved to
-2025-01-03 11:56:01 - Current used storage is 54.303
-2025-01-03 11:56:01 - Got directories
-2025-01-03 11:56:02 - Got files
-2025-01-03 11:56:37 - Got directories
-2025-01-03 11:56:37 - Current used storage is 54.303
-2025-01-03 11:56:37 - Got files
-2025-01-03 11:57:09 - Got directories
-2025-01-03 11:57:09 - Current used storage is 54.303
-2025-01-03 11:57:09 - Got files
-2025-01-03 11:57:09 - Current used storage is 54.303
-2025-01-03 11:57:09 - Got directories
-2025-01-03 11:57:09 - Got files
-2025-01-03 11:57:09 - Got directories
-2025-01-03 11:57:09 - Current used storage is 54.303
-2025-01-03 11:57:10 - Got files
-2025-01-03 11:57:10 - Got directories
-2025-01-03 11:57:10 - Current used storage is 54.303
-2025-01-03 11:57:10 - Got files
-2025-01-03 11:57:10 - Got directories
-2025-01-03 11:57:10 - Current used storage is 54.303
-2025-01-03 11:57:10 - Got files
-2025-01-03 11:57:11 - Current used storage is 54.303
-2025-01-03 11:57:11 - Got directories
-2025-01-03 11:57:12 - Got files
-2025-01-03 11:57:23 - Succesfully moved to
-2025-01-03 11:57:23 - Got directories
-2025-01-03 11:57:23 - Current used storage is 54.303
-2025-01-03 11:57:23 - Got files
-2025-01-03 11:58:29 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:58:30 - Login was succesfull for user: a
-2025-01-03 11:58:30 - File data recieved 0
-2025-01-03 11:58:30 - Profile picture was recieved
-2025-01-03 11:58:30 - Got directories
-2025-01-03 11:58:30 - Current used storage is 54.303
-2025-01-03 11:58:30 - Got files
-2025-01-03 11:58:45 - Succesfully moved to images 2\
-2025-01-03 11:58:45 - Got directories
-2025-01-03 11:58:45 - Got files
-2025-01-03 11:58:45 - Current used storage is 54.303
-2025-01-03 11:59:40 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 11:59:40 - Login was succesfull for user: a
-2025-01-03 11:59:40 - File data recieved 0
-2025-01-03 11:59:40 - Profile picture was recieved
-2025-01-03 11:59:40 - Got directories
-2025-01-03 11:59:40 - Current used storage is 54.303
-2025-01-03 11:59:40 - Got files
-2025-01-03 11:59:49 - Succesfully moved to images\
-2025-01-03 11:59:49 - Got directories
-2025-01-03 11:59:49 - Got files
-2025-01-03 11:59:49 - Current used storage is 54.303
-2025-01-03 11:59:56 - Succesfully moved to
-2025-01-03 11:59:56 - Got directories
-2025-01-03 11:59:56 - Current used storage is 54.303
-2025-01-03 11:59:57 - Got files
-2025-01-03 11:59:59 - Folder aaaaa was created
-2025-01-03 11:59:59 - Got directories
-2025-01-03 11:59:59 - Current used storage is 54.303
-2025-01-03 12:00:00 - Got files
-2025-01-03 12:00:02 - Succesfully moved to aaaaa\
-2025-01-03 12:00:02 - Got files
-2025-01-03 12:00:02 - Got directories
-2025-01-03 12:00:02 - Current used storage is 54.303
-2025-01-03 12:00:07 - Succesfully moved to
-2025-01-03 12:00:07 - Got directories
-2025-01-03 12:00:07 - Current used storage is 54.303
-2025-01-03 12:00:07 - Got files
-2025-01-03 12:00:21 - Succesfully moved to
-2025-01-03 12:00:21 - Got directories
-2025-01-03 12:00:21 - Current used storage is 54.303
-2025-01-03 12:00:21 - Got files
-2025-01-03 12:00:46 - Succesfully deleted 87 files
-2025-01-03 12:00:46 - File vencord-settings-backup.json was deleted!
-2025-01-03 12:00:46 - File mocha.qbtheme was deleted!
-2025-01-03 12:00:46 - File vencord-settings-backup.json was deleted!
-2025-01-03 12:00:46 - File VSCode.css was deleted!
-2025-01-03 12:00:46 - File Infinity5.ahk was deleted!
-2025-01-03 12:00:46 - File ThemeTool.exe was deleted!
-2025-01-03 12:00:46 - File Infinity5.ahk was deleted!
-2025-01-03 12:00:46 - File macchiato.qbtheme was deleted!
-2025-01-03 12:00:46 - File Infinity5.ahk was deleted!
-2025-01-03 12:00:46 - File macchiato.qbtheme was deleted!
-2025-01-03 12:00:46 - File Infinity5.ahk was deleted!
-2025-01-03 12:00:46 - File VSCode.css was deleted!
-2025-01-03 12:00:46 - File mocha.qbtheme was deleted!
-2025-01-03 12:00:46 - File VSCode.css was deleted!
-2025-01-03 12:00:46 - File VSCode.css was deleted!
-2025-01-03 12:00:46 - File important things.txt was deleted!
-2025-01-03 12:00:46 - File Infinity5.ahk was deleted!
-2025-01-03 12:00:46 - Got directories
-2025-01-03 12:00:46 - File bluetooth.png was deleted!
-2025-01-03 12:00:46 - File ThemeTool.exe was deleted!
-2025-01-03 12:00:46 - File Infinity5.ahk was deleted!
-2025-01-03 12:00:46 - File bookmarks.png was deleted!
-2025-01-03 12:00:46 - File client.pyw was deleted!
-2025-01-03 12:00:46 - File aim.png was deleted!
-2025-01-03 12:00:46 - File Complete discord theme.css was deleted!
-2025-01-03 12:00:46 - File get repos github.sh was deleted!
-2025-01-03 12:00:46 - File macchiato.qbtheme was deleted!
-2025-01-03 12:00:46 - File airplay.png was deleted!
-2025-01-03 12:00:46 - File beejive im.png was deleted!
-2025-01-03 12:00:46 - File get repos github.sh was deleted!
-2025-01-03 12:00:46 - File catppuccin-macchiato.theme.css was deleted!
-2025-01-03 12:00:46 - File Adobe.png was deleted!
-2025-01-03 12:00:47 - File macchiato.qbtheme was deleted!
-2025-01-03 12:00:47 - File catppuccin.txt was deleted!
-2025-01-03 12:00:47 - File amazon.png was deleted!
-2025-01-03 12:00:47 - File body.png was deleted!
-2025-01-03 12:00:47 - File important things.txt was deleted!
-2025-01-03 12:00:47 - File mocha.qbtheme was deleted!
-2025-01-03 12:00:47 - File macchiato.qbtheme was deleted!
-2025-01-03 12:00:47 - File Chevron_v2.2.0.zip was deleted!
-2025-01-03 12:00:47 - File after effects.png was deleted!
-2025-01-03 12:00:47 - File important things.txt was deleted!
-2025-01-03 12:00:47 - File client.pyw was deleted!
-2025-01-03 12:00:47 - File Blank.ico was deleted!
-2025-01-03 12:00:47 - File VSCode.css was deleted!
-2025-01-03 12:00:47 - File explorer.exe was deleted!
-2025-01-03 12:00:47 - Current used storage is 54.28
-2025-01-03 12:00:47 - File get repos github.sh was deleted!
-2025-01-03 12:00:47 - File AD Save, Slot 1 #3 (2023-1-31).txt was deleted!
-2025-01-03 12:00:47 - File 1.dat was deleted!
-2025-01-03 12:00:47 - File catppuccin.txt was deleted!
-2025-01-03 12:00:47 - File avast.png was deleted!
-2025-01-03 12:00:47 - File get repos github.sh was deleted!
-2025-01-03 12:00:47 - File 2019-11-11_22.23.44.png was deleted!
-2025-01-03 12:00:47 - File ThemeTool.exe was deleted!
-2025-01-03 12:00:47 - File macchiato.qbtheme was deleted!
-2025-01-03 12:00:47 - File apple2.png was deleted!
-2025-01-03 12:00:47 - File client.pyw was deleted!
-2025-01-03 12:00:47 - File 1.dat was deleted!
-2025-01-03 12:00:47 - File vencord-settings-backup.json was deleted!
-2025-01-03 12:00:47 - File a.png was deleted!
-2025-01-03 12:00:47 - File AD Save, Slot 1 #3 (2023-1-31).txt was deleted!
-2025-01-03 12:00:47 - File bbc news.png was deleted!
-2025-01-03 12:00:47 - Folder aa was deleted!
-2025-01-03 12:00:47 - File android.png was deleted!
-2025-01-03 12:00:47 - File antivirus - universal.png was deleted!
-2025-01-03 12:00:47 - File badoo.png was deleted!
-2025-01-03 12:00:47 - File catppuccin.txt was deleted!
-2025-01-03 12:00:47 - File important things.txt was deleted!
-2025-01-03 12:00:47 - File app_log.txt was deleted!
-2025-01-03 12:00:47 - File adobe reader.png was deleted!
-2025-01-03 12:00:47 - Folder dd was deleted!
-2025-01-03 12:00:47 - File battlenet multi.ico was deleted!
-2025-01-03 12:00:47 - File app_log.txt was deleted!
-2025-01-03 12:00:47 - File blogger.png was deleted!
-2025-01-03 12:00:47 - File VSCode.css was deleted!
-2025-01-03 12:00:48 - File app draw.png was deleted!
-2025-01-03 12:00:48 - File catppuccin.txt was deleted!
-2025-01-03 12:00:48 - File Chevron_v2.2.0.zip was deleted!
-2025-01-03 12:00:48 - File appstore.png was deleted!
-2025-01-03 12:00:48 - File blurb.png was deleted!
-2025-01-03 12:00:48 - File vencord-settings-backup.json was deleted!
-2025-01-03 12:00:48 - File battery.png was deleted!
-2025-01-03 12:00:48 - File Complete discord theme.css was deleted!
-2025-01-03 12:00:48 - File adobe air.png was deleted!
-2025-01-03 12:00:48 - File bebo.png was deleted!
-2025-01-03 12:00:48 - File aero-middle-finger-2.cur was deleted!
-2025-01-03 12:00:48 - File Complete discord theme.css was deleted!
-2025-01-03 12:00:48 - Got files
-2025-01-03 12:00:48 - File 06_21_157t1.xlsx was deleted!
-2025-01-03 12:00:52 - Got files
-2025-01-03 12:00:52 - Got directories
-2025-01-03 12:00:52 - Current used storage is 32.885
-2025-01-03 12:00:56 - Succesfully moved to
-2025-01-03 12:00:56 - Got files
-2025-01-03 12:00:56 - Got directories
-2025-01-03 12:00:56 - Current used storage is 32.885
-2025-01-03 12:01:05 - Succesfully moved to
-2025-01-03 12:01:05 - Got files
-2025-01-03 12:01:05 - Got directories
-2025-01-03 12:01:05 - Current used storage is 32.885
-2025-01-03 12:01:07 - Succesfully moved to
-2025-01-03 12:01:07 - Got files
-2025-01-03 12:01:07 - Got directories
-2025-01-03 12:01:07 - Current used storage is 32.885
-2025-01-03 12:01:10 - Succesfully moved to yarden\
-2025-01-03 12:01:10 - Got files
-2025-01-03 12:01:10 - Got directories
-2025-01-03 12:01:10 - Current used storage is 32.885
-2025-01-03 12:01:11 - Succesfully moved to
-2025-01-03 12:01:11 - Got files
-2025-01-03 12:01:11 - Got directories
-2025-01-03 12:01:11 - Current used storage is 32.885
-2025-01-03 12:01:13 - Succesfully moved to yarden\
-2025-01-03 12:01:13 - Current used storage is 32.885
-2025-01-03 12:01:13 - Got files
-2025-01-03 12:01:13 - Got directories
-2025-01-03 12:01:19 - Succesfully moved to
-2025-01-03 12:01:19 - Got files
-2025-01-03 12:01:19 - Current used storage is 32.885
-2025-01-03 12:01:19 - Got directories
-2025-01-03 12:01:20 - Succesfully moved to
-2025-01-03 12:01:20 - Got files
-2025-01-03 12:01:20 - Got directories
-2025-01-03 12:01:20 - Current used storage is 32.885
-2025-01-03 12:01:22 - Succesfully moved to delete\
-2025-01-03 12:01:22 - Got files
-2025-01-03 12:01:22 - Got directories
-2025-01-03 12:01:22 - Current used storage is 32.885
-2025-01-03 12:01:23 - Succesfully moved to
-2025-01-03 12:01:23 - Got files
-2025-01-03 12:01:23 - Got directories
-2025-01-03 12:01:23 - Current used storage is 32.885
-2025-01-03 12:01:26 - Succesfully moved to all - 1\
-2025-01-03 12:01:26 - Got files
-2025-01-03 12:01:26 - Got directories
-2025-01-03 12:01:26 - Current used storage is 32.885
-2025-01-03 12:01:29 - Succesfully moved to all - 1\fefew\
-2025-01-03 12:01:29 - Got files
-2025-01-03 12:01:29 - Got directories
-2025-01-03 12:01:29 - Current used storage is 32.885
-2025-01-03 12:01:31 - Succesfully moved to all - 1\
-2025-01-03 12:01:31 - Got files
-2025-01-03 12:01:32 - Got directories
-2025-01-03 12:01:32 - Current used storage is 32.885
-2025-01-03 12:01:32 - Succesfully moved to
-2025-01-03 12:01:32 - Got files
-2025-01-03 12:01:32 - Got directories
-2025-01-03 12:01:32 - Current used storage is 32.885
-2025-01-03 12:02:01 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 12:02:01 - Login was succesfull for user: a
-2025-01-03 12:02:01 - File data recieved 0
-2025-01-03 12:02:01 - Profile picture was recieved
-2025-01-03 12:02:01 - Got files
-2025-01-03 12:02:01 - Current used storage is 32.885
-2025-01-03 12:02:01 - Got directories
-2025-01-03 12:07:50 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 12:07:51 - Login was succesfull for user: a
-2025-01-03 12:07:51 - File data recieved 0
-2025-01-03 12:07:51 - Profile picture was recieved
-2025-01-03 12:07:51 - Got files
-2025-01-03 12:07:51 - Current used storage is 32.885
-2025-01-03 12:07:51 - Got directories
-2025-01-03 12:08:01 - File Cider.lnk was viewed
-2025-01-03 12:08:01 - File viewing released
-2025-01-03 12:08:02 - File data recieved 0
-2025-01-03 12:08:09 - File Cider.lnk was viewed
-2025-01-03 12:08:09 - File viewing released
-2025-01-03 12:08:10 - File data recieved 0
-2025-01-03 12:08:12 - Succesfully moved to images 2\
-2025-01-03 12:08:12 - Got directories
-2025-01-03 12:08:12 - Got files
-2025-01-03 12:08:12 - Current used storage is 32.885
-2025-01-03 12:08:19 - File 3561115175_e2bd5a8ff0_b.jpg was viewed
-2025-01-03 12:08:19 - File viewing released
-2025-01-03 12:08:20 - File data recieved 0
-2025-01-03 12:08:22 - Succesfully moved to
-2025-01-03 12:08:22 - Got directories
-2025-01-03 12:08:22 - Got files
-2025-01-03 12:08:22 - Current used storage is 32.885
-2025-01-03 12:09:01 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 12:09:02 - Login was succesfull for user: a
-2025-01-03 12:09:02 - File data recieved 0
-2025-01-03 12:09:02 - Profile picture was recieved
-2025-01-03 12:09:02 - Got files
-2025-01-03 12:09:02 - Current used storage is 32.885
-2025-01-03 12:09:02 - Got directories
-2025-01-03 12:09:04 - Got directories
-2025-01-03 12:09:05 - Got files
-2025-01-03 12:09:05 - Current used storage is 32.885
-2025-01-03 12:09:07 - Got files
-2025-01-03 12:09:07 - Got directories
-2025-01-03 12:09:07 - Current used storage is 32.885
-2025-01-03 12:10:08 - Got files
-2025-01-03 12:10:08 - Current used storage is 32.885
-2025-01-03 12:10:08 - Got directories
-2025-01-03 12:10:11 - Got files
-2025-01-03 12:10:11 - Current used storage is 32.885
-2025-01-03 12:10:11 - Got directories
-2025-01-03 12:10:13 - Logout succesfull
-2025-01-03 12:10:15 - Got files
-2025-01-03 12:10:15 - Got directories
-2025-01-03 12:10:15 - Current used storage is 0.0
-2025-01-03 12:10:17 - Logout succesfull
-2025-01-03 12:10:47 - recieved ip and port from server: ('192.168.1.247', '3102')
-2025-01-03 12:10:47 - Login was succesfull for user: a
-2025-01-03 12:10:47 - File data recieved 0
-2025-01-03 12:10:47 - Profile picture was recieved
-2025-01-03 12:10:47 - Got files
-2025-01-03 12:10:47 - Got directories
-2025-01-03 12:10:47 - Current used storage is 32.885
-2025-01-03 12:10:49 - Got files
-2025-01-03 12:10:49 - Got directories
-2025-01-03 12:10:49 - Current used storage is 32.885
-2025-01-03 12:10:50 - Logout succesfull
-2025-01-03 12:10:54 - Login was succesfull for user: a
-2025-01-03 12:10:54 - File data recieved 0
-2025-01-03 12:10:54 - Profile picture was recieved
-2025-01-03 12:10:54 - Got files
-2025-01-03 12:10:54 - Got directories
-2025-01-03 12:10:54 - Current used storage is 32.885
-2025-01-03 12:10:58 - Succesfully moved to
-2025-01-03 12:10:58 - Got files
-2025-01-03 12:10:58 - Got directories
-2025-01-03 12:10:58 - Current used storage is 32.885
-2025-01-03 12:11:01 - Succesfully moved to
-2025-01-03 12:11:01 - Got files
-2025-01-03 12:11:01 - Got directories
-2025-01-03 12:11:01 - Current used storage is 32.885
-2025-01-03 12:11:06 - Succesfully deleted 1 files
-2025-01-03 12:11:06 - File \u05e1\u05e4\u05e8 \u05e8\u05e9\u05ea\u05d5\u05ea.pdf was deleted!
-2025-01-03 12:11:06 - Got files
-2025-01-03 12:11:06 - Got directories
-2025-01-03 12:11:06 - Current used storage is 32.885
-2025-01-03 12:11:09 - Current used storage is 32.885
-2025-01-03 12:11:09 - Got directories
-2025-01-03 12:11:09 - Got files
-2025-01-03 12:11:11 - Succesfully moved to
-2025-01-03 12:11:11 - Got directories
-2025-01-03 12:11:11 - Got files
-2025-01-03 12:11:11 - Current used storage is 32.885
-2025-01-03 12:11:14 - Succesfully deleted 1 files
-2025-01-03 12:11:14 - File \u05e1\u05e4\u05e8 \u05e8\u05e9\u05ea\u05d5\u05ea.pdf was deleted!
-2025-01-03 12:11:14 - Got files
-2025-01-03 12:11:14 - Got directories
-2025-01-03 12:11:14 - Current used storage is 15.032
-2025-01-03 12:11:15 - Succesfully moved to
-2025-01-03 12:11:15 - Got files
-2025-01-03 12:11:16 - Got directories
-2025-01-03 12:11:16 - Current used storage is 15.032
+2025-01-04 17:13:07 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-04 17:13:07 - Login was succesfull for user: a
+2025-01-04 17:13:07 - File data recieved 0
+2025-01-04 17:13:07 - Profile picture was recieved
+2025-01-04 17:13:07 - Current used storage is 15.036
+2025-01-04 17:13:07 - Got directories
+2025-01-04 17:13:07 - 830
+2025-01-04 17:13:07 - 0
+2025-01-04 17:13:07 - Got files
+2025-01-04 17:13:09 - Got files
+2025-01-04 17:13:09 - 830
+2025-01-04 17:13:09 - 0
+2025-01-04 17:13:09 - Got directories
+2025-01-04 17:13:09 - Current used storage is 15.036
+2025-01-04 17:13:15 - Got directories
+2025-01-04 17:13:15 - 830
+2025-01-04 17:13:15 - 0
+2025-01-04 17:13:15 - Got files
+2025-01-04 17:13:15 - Current used storage is 15.036
+2025-01-04 17:16:17 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-04 17:16:17 - Login was succesfull for user: a
+2025-01-04 17:16:17 - File data recieved 0
+2025-01-04 17:16:17 - Profile picture was recieved
+2025-01-04 17:16:17 - Got files
+2025-01-04 17:16:17 - Got directories
+2025-01-04 17:16:17 - Current used storage is 15.036
+2025-01-04 17:16:21 - Got files
+2025-01-04 17:16:21 - Got directories
+2025-01-04 17:16:21 - Current used storage is 15.036
+2025-01-04 17:16:34 - Succesfully moved to images 2\
+2025-01-04 17:16:34 - Got directories
+2025-01-04 17:16:34 - Current used storage is 15.036
+2025-01-04 17:16:34 - Got files
+2025-01-04 17:16:36 - Succesfully moved to
+2025-01-04 17:16:36 - Got directories
+2025-01-04 17:16:36 - Got files
+2025-01-04 17:16:36 - Current used storage is 15.036
+2025-01-04 17:16:37 - File Cider.lnk was viewed
+2025-01-04 17:16:37 - File viewing released
+2025-01-04 17:16:38 - File data recieved 0
+2025-01-04 17:16:40 - File Cider.lnk was viewed
+2025-01-04 17:16:40 - File viewing released
+2025-01-04 17:16:40 - File data recieved 0
+2025-01-04 17:16:42 - Succesfully moved to images\
+2025-01-04 17:16:42 - Got files
+2025-01-04 17:16:42 - Current used storage is 15.036
+2025-01-04 17:16:42 - Got directories
+2025-01-04 17:18:35 - Got directories
+2025-01-04 17:18:35 - Got files
+2025-01-04 17:18:35 - Current used storage is 15.036
+2025-01-04 17:18:47 - Succesfully moved to
+2025-01-04 17:18:47 - Got files
+2025-01-04 17:18:47 - Got directories
+2025-01-04 17:18:47 - Current used storage is 15.036
+2025-01-04 17:19:06 - Succesfully moved to yarden\
+2025-01-04 17:19:06 - Got files
+2025-01-04 17:19:06 - Got directories
+2025-01-04 17:19:06 - Current used storage is 15.036
+2025-01-04 17:19:07 - Succesfully moved to
+2025-01-04 17:19:07 - Got files
+2025-01-04 17:19:07 - Got directories
+2025-01-04 17:19:07 - Current used storage is 15.036
+2025-01-04 17:19:09 - Succesfully moved to images 2\
+2025-01-04 17:19:09 - Got directories
+2025-01-04 17:19:09 - Got files
+2025-01-04 17:19:09 - Current used storage is 15.036
+2025-01-04 17:19:10 - Succesfully moved to
+2025-01-04 17:19:10 - Got directories
+2025-01-04 17:19:10 - Current used storage is 15.036
+2025-01-04 17:19:10 - Got files
+2025-01-04 17:19:12 - Succesfully moved to images\
+2025-01-04 17:19:12 - Got directories
+2025-01-04 17:19:12 - Got files
+2025-01-04 17:19:12 - Current used storage is 15.036
+2025-01-04 17:19:14 - Succesfully moved to
+2025-01-04 17:19:14 - Got files
+2025-01-04 17:19:14 - Got directories
+2025-01-04 17:19:14 - Current used storage is 15.036
+2025-01-04 17:20:06 - Got files
+2025-01-04 17:20:06 - Current used storage is 15.036
+2025-01-04 17:20:06 - Got directories
+2025-01-04 17:21:07 - Succesfully deleted 2 files
+2025-01-04 17:21:07 - File מיון אישיות.txt was deleted!
+2025-01-04 17:21:07 - Current used storage is 15.036
+2025-01-04 17:21:07 - Got files
+2025-01-04 17:21:07 - Got directories
+2025-01-04 17:21:07 - File מיון אישיות.txt was deleted!
+2025-01-04 17:21:09 - Succesfully moved to
+2025-01-04 17:21:09 - Got directories
+2025-01-04 17:21:09 - Got files
+2025-01-04 17:21:09 - Current used storage is 15.036
+2025-01-04 17:21:12 - Succesfully deleted 2 files
+2025-01-04 17:21:12 - File מיון אישיות.txt was deleted!
+2025-01-04 17:21:12 - Got directories
+2025-01-04 17:21:12 - Got files
+2025-01-04 17:21:12 - File מיון אישיות.txt was deleted!
+2025-01-04 17:21:12 - Current used storage is 15.024
+2025-01-04 17:21:14 - Succesfully moved to
+2025-01-04 17:21:14 - Current used storage is 15.012
+2025-01-04 17:21:14 - Got directories
+2025-01-04 17:21:14 - Got files
+2025-01-04 17:21:34 - Succesfully deleted 1 files
+2025-01-04 17:21:34 - File שאלון עידן חזאי 330905159.docx was deleted!
+2025-01-04 17:21:34 - Got directories
+2025-01-04 17:21:34 - Current used storage is 15.012
+2025-01-04 17:21:34 - Got files
+2025-01-04 17:21:35 - Succesfully moved to
+2025-01-04 17:21:35 - Got directories
+2025-01-04 17:21:35 - Got files
+2025-01-04 17:21:35 - Current used storage is 15.012
+2025-01-04 17:21:37 - Succesfully deleted 1 files
+2025-01-04 17:21:37 - File שאלון עידן חזאי 330905159.docx was deleted!
+2025-01-04 17:21:37 - Got directories
+2025-01-04 17:21:37 - Got files
+2025-01-04 17:21:37 - Current used storage is 14.93
+2025-01-04 17:21:42 - Succesfully moved to
+2025-01-04 17:21:42 - Got directories
+2025-01-04 17:21:42 - Current used storage is 14.93
+2025-01-04 17:21:42 - Got files
+2025-01-04 17:21:49 - Succesfully moved to yarden\
+2025-01-04 17:21:49 - Got files
+2025-01-04 17:21:49 - Got directories
+2025-01-04 17:21:49 - Current used storage is 14.93
+2025-01-04 17:21:50 - Succesfully moved to yarden\hi\
+2025-01-04 17:21:50 - Got directories
+2025-01-04 17:21:50 - Got files
+2025-01-04 17:21:50 - Current used storage is 14.93
+2025-01-04 17:21:51 - Succesfully moved to yarden\
+2025-01-04 17:21:51 - Got files
+2025-01-04 17:21:51 - Got directories
+2025-01-04 17:21:51 - Current used storage is 14.93
+2025-01-04 17:21:52 - Succesfully moved to
+2025-01-04 17:21:52 - Got files
+2025-01-04 17:21:52 - Current used storage is 14.93
+2025-01-04 17:21:52 - Got directories
+2025-01-04 17:21:53 - Succesfully moved to images 2\
+2025-01-04 17:21:53 - Got directories
+2025-01-04 17:21:53 - Got files
+2025-01-04 17:21:53 - Current used storage is 14.93
+2025-01-04 17:22:01 - Succesfully moved to
+2025-01-04 17:22:01 - Got directories
+2025-01-04 17:22:01 - Got files
+2025-01-04 17:22:01 - Current used storage is 14.93
+2025-01-04 17:22:03 - Succesfully moved to aaaaa\
+2025-01-04 17:22:03 - Got files
+2025-01-04 17:22:03 - Got directories
+2025-01-04 17:22:03 - Current used storage is 14.93
+2025-01-04 17:22:04 - Succesfully moved to
+2025-01-04 17:22:04 - Got files
+2025-01-04 17:22:04 - Current used storage is 14.93
+2025-01-04 17:22:04 - Got directories
+2025-01-04 17:22:05 - Succesfully moved to aa\
+2025-01-04 17:22:05 - Got files
+2025-01-04 17:22:05 - Got directories
+2025-01-04 17:22:05 - Current used storage is 14.93
+2025-01-04 17:22:05 - Succesfully moved to
+2025-01-04 17:22:05 - Got files
+2025-01-04 17:22:05 - Current used storage is 14.93
+2025-01-04 17:22:05 - Got directories
+2025-01-04 17:22:06 - Succesfully moved to
+2025-01-04 17:22:06 - Got files
+2025-01-04 17:22:06 - Got directories
+2025-01-04 17:22:06 - Current used storage is 14.93
+2025-01-04 17:22:07 - Succesfully moved to
+2025-01-04 17:22:07 - Got files
+2025-01-04 17:22:07 - Got directories
+2025-01-04 17:22:07 - Current used storage is 14.93
+2025-01-04 17:22:08 - Succesfully moved to
+2025-01-04 17:22:08 - Got files
+2025-01-04 17:22:08 - Got directories
+2025-01-04 17:22:08 - Current used storage is 14.93
+2025-01-04 17:22:09 - Succesfully moved to rename\
+2025-01-04 17:22:09 - Got directories
+2025-01-04 17:22:09 - Got files
+2025-01-04 17:22:09 - Current used storage is 14.93
+2025-01-04 17:22:09 - Succesfully moved to
+2025-01-04 17:22:09 - Got files
+2025-01-04 17:22:09 - Got directories
+2025-01-04 17:22:09 - Current used storage is 14.93
+2025-01-04 17:22:10 - Succesfully moved to delete\
+2025-01-04 17:22:10 - Got files
+2025-01-04 17:22:10 - Got directories
+2025-01-04 17:22:10 - Current used storage is 14.93
+2025-01-04 17:22:10 - Succesfully moved to
+2025-01-04 17:22:10 - Got files
+2025-01-04 17:22:10 - Current used storage is 14.93
+2025-01-04 17:22:10 - Got directories
+2025-01-04 17:22:11 - Succesfully moved to all - 1\
+2025-01-04 17:22:11 - Got files
+2025-01-04 17:22:11 - Got directories
+2025-01-04 17:22:11 - Current used storage is 14.93
+2025-01-04 17:22:11 - Succesfully moved to
+2025-01-04 17:22:11 - Got files
+2025-01-04 17:22:11 - Current used storage is 14.93
+2025-01-04 17:22:11 - Got directories
+2025-01-04 17:22:12 - Succesfully moved to
+2025-01-04 17:22:12 - Got directories
+2025-01-04 17:22:12 - Got files
+2025-01-04 17:22:12 - Current used storage is 14.93
+2025-01-04 17:22:16 - File עידן.mp4 was viewed
+2025-01-04 17:22:16 - File viewing released
+2025-01-04 17:22:17 - File data recieved 0
+2025-01-04 17:22:36 - Succesfully deleted 24 files
+2025-01-04 17:22:36 - File עידן.mp4 was deleted!
+2025-01-04 17:22:36 - File catppuccin-macchiato.theme.css was deleted!
+2025-01-04 17:22:36 - File important things.txt was deleted!
+2025-01-04 17:22:36 - File catppuccin.txt was deleted!
+2025-01-04 17:22:36 - File app_log.txt was deleted!
+2025-01-04 17:22:36 - File get repos github.sh was deleted!
+2025-01-04 17:22:36 - File get repos github.sh was deleted!
+2025-01-04 17:22:36 - File catppuccin.txt was deleted!
+2025-01-04 17:22:36 - File get repos github.sh was deleted!
+2025-01-04 17:22:36 - File important things.txt was deleted!
+2025-01-04 17:22:36 - File catppuccin.txt was deleted!
+2025-01-04 17:22:36 - File 06_21_157t1.xlsx was deleted!
+2025-01-04 17:22:36 - File Cider.lnk was deleted!
+2025-01-04 17:22:36 - File Cider.lnk was deleted!
+2025-01-04 17:22:36 - File 06_21_157t1.xlsx was deleted!
+2025-01-04 17:22:36 - File catppuccin-macchiato.theme.css was deleted!
+2025-01-04 17:22:36 - File Infinity5.ahk was deleted!
+2025-01-04 17:22:36 - File Complete discord theme.css was deleted!
+2025-01-04 17:22:36 - Got directories
+2025-01-04 17:22:36 - File עגנון.docx was deleted!
+2025-01-04 17:22:36 - File Complete discord theme.css was deleted!
+2025-01-04 17:22:36 - File Complete discord theme.css was deleted!
+2025-01-04 17:22:36 - File AD Save, Slot 1 #3 (2023-1-31).txt was deleted!
+2025-01-04 17:22:36 - File important things.txt was deleted!
+2025-01-04 17:22:36 - Current used storage is 14.93
+2025-01-04 17:22:36 - Got files
+2025-01-04 17:22:36 - File AD Save, Slot 1 #3 (2023-1-31).txt was deleted!
+2025-01-04 17:22:38 - Succesfully moved to
+2025-01-04 17:22:38 - Got files
+2025-01-04 17:22:38 - Got directories
+2025-01-04 17:22:38 - Current used storage is 14.93
+2025-01-04 17:22:39 - Succesfully moved to
+2025-01-04 17:22:39 - Got directories
+2025-01-04 17:22:39 - Got files
+2025-01-04 17:22:39 - Current used storage is 14.93
+2025-01-04 17:22:40 - Succesfully moved to
+2025-01-04 17:22:40 - Got directories
+2025-01-04 17:22:40 - Got files
+2025-01-04 17:22:41 - Current used storage is 14.93
+2025-01-04 17:22:45 - Succesfully deleted 24 files
+2025-01-04 17:22:45 - File עידן.mp4 was deleted!
+2025-01-04 17:22:45 - File Cider.lnk was deleted!
+2025-01-04 17:22:45 - File catppuccin.txt was deleted!
+2025-01-04 17:22:45 - File catppuccin-macchiato.theme.css was deleted!
+2025-01-04 17:22:45 - File important things.txt was deleted!
+2025-01-04 17:22:45 - File catppuccin-macchiato.theme.css was deleted!
+2025-01-04 17:22:45 - File app_log.txt was deleted!
+2025-01-04 17:22:45 - File Complete discord theme.css was deleted!
+2025-01-04 17:22:45 - File get repos github.sh was deleted!
+2025-01-04 17:22:45 - Got directories
+2025-01-04 17:22:45 - File AD Save, Slot 1 #3 (2023-1-31).txt was deleted!
+2025-01-04 17:22:45 - File עגנון.docx was deleted!
+2025-01-04 17:22:45 - File Cider.lnk was deleted!
+2025-01-04 17:22:45 - File 06_21_157t1.xlsx was deleted!
+2025-01-04 17:22:45 - File catppuccin.txt was deleted!
+2025-01-04 17:22:45 - File Infinity5.ahk was deleted!
+2025-01-04 17:22:45 - File Complete discord theme.css was deleted!
+2025-01-04 17:22:45 - File AD Save, Slot 1 #3 (2023-1-31).txt was deleted!
+2025-01-04 17:22:45 - File Complete discord theme.css was deleted!
+2025-01-04 17:22:45 - File important things.txt was deleted!
+2025-01-04 17:22:45 - File get repos github.sh was deleted!
+2025-01-04 17:22:45 - File 06_21_157t1.xlsx was deleted!
+2025-01-04 17:22:45 - File get repos github.sh was deleted!
+2025-01-04 17:22:45 - File important things.txt was deleted!
+2025-01-04 17:22:45 - Got files
+2025-01-04 17:22:45 - File catppuccin.txt was deleted!
+2025-01-04 17:22:45 - Current used storage is 14.93
+2025-01-04 17:22:48 - Succesfully moved to
+2025-01-04 17:22:48 - Got files
+2025-01-04 17:22:48 - Got directories
+2025-01-04 17:22:48 - Current used storage is 14.199
+2025-01-04 17:22:49 - Succesfully moved to
+2025-01-04 17:22:49 - Got directories
+2025-01-04 17:22:49 - Current used storage is 14.199
+2025-01-04 17:22:49 - Got files
+2025-01-04 17:22:50 - Succesfully moved to
+2025-01-04 17:22:50 - Got files
+2025-01-04 17:22:50 - Current used storage is 14.199
+2025-01-04 17:22:50 - Got directories
+2025-01-04 17:22:51 - Succesfully moved to
+2025-01-04 17:22:51 - Got files
+2025-01-04 17:22:51 - Got directories
+2025-01-04 17:22:51 - Current used storage is 14.199
+2025-01-04 17:23:42 - Got files
+2025-01-04 17:23:42 - Got directories
+2025-01-04 17:23:42 - Current used storage is 14.199
+2025-01-04 17:23:42 - Got files
+2025-01-04 17:23:42 - Current used storage is 14.199
+2025-01-04 17:23:42 - Got directories
+2025-01-04 17:23:43 - Got files
+2025-01-04 17:23:43 - Got directories
+2025-01-04 17:23:43 - Current used storage is 14.199
+2025-01-04 17:23:43 - Got files
+2025-01-04 17:23:43 - Got directories
+2025-01-04 17:23:43 - Current used storage is 14.199
+2025-01-04 17:23:43 - Got files
+2025-01-04 17:23:43 - Current used storage is 14.199
+2025-01-04 17:23:43 - Got directories
+2025-01-04 17:23:43 - Got files
+2025-01-04 17:23:43 - Got directories
+2025-01-04 17:23:43 - Current used storage is 14.199
+2025-01-04 17:23:43 - Got files
+2025-01-04 17:23:43 - Got directories
+2025-01-04 17:23:43 - Current used storage is 14.199
+2025-01-04 17:23:43 - Got files
+2025-01-04 17:23:43 - Got directories
+2025-01-04 17:23:43 - Current used storage is 14.199
+2025-01-04 17:23:43 - Got files
+2025-01-04 17:23:43 - Got directories
+2025-01-04 17:23:43 - Current used storage is 14.199
+2025-01-04 17:23:48 - Got files
+2025-01-04 17:23:48 - Got directories
+2025-01-04 17:23:48 - Current used storage is 14.199
+2025-01-04 17:23:49 - Got files
+2025-01-04 17:23:49 - Got directories
+2025-01-04 17:23:49 - Current used storage is 14.199
+2025-01-04 17:23:49 - Got files
+2025-01-04 17:23:49 - Got directories
+2025-01-04 17:23:49 - Current used storage is 14.199
+2025-01-04 17:23:49 - Got files
+2025-01-04 17:23:49 - Current used storage is 14.199
+2025-01-04 17:23:49 - Got directories
+2025-01-04 17:23:49 - Got files
+2025-01-04 17:23:49 - Current used storage is 14.199
+2025-01-04 17:23:49 - Got directories
+2025-01-04 17:23:50 - Got files
+2025-01-04 17:23:50 - Got directories
+2025-01-04 17:23:50 - Current used storage is 14.199
+2025-01-04 17:23:50 - Got files
+2025-01-04 17:23:50 - Got directories
+2025-01-04 17:23:50 - Current used storage is 14.199
+2025-01-04 17:23:50 - Got files
+2025-01-04 17:23:50 - Got directories
+2025-01-04 17:23:50 - Current used storage is 14.199
+2025-01-04 17:23:50 - Got files
+2025-01-04 17:23:50 - Current used storage is 14.199
+2025-01-04 17:23:50 - Got directories
+2025-01-04 17:23:50 - Got files
+2025-01-04 17:23:50 - Got directories
+2025-01-04 17:23:50 - Current used storage is 14.199
+2025-01-04 17:23:51 - Got files
+2025-01-04 17:23:51 - Got directories
+2025-01-04 17:23:51 - Current used storage is 14.199
+2025-01-04 17:23:51 - Got files
+2025-01-04 17:23:51 - Got directories
+2025-01-04 17:23:51 - Current used storage is 14.199
+2025-01-04 17:23:51 - Got files
+2025-01-04 17:23:51 - Got directories
+2025-01-04 17:23:51 - Current used storage is 14.199
+2025-01-04 17:23:51 - Got files
+2025-01-04 17:23:51 - Current used storage is 14.199
+2025-01-04 17:23:51 - Got directories
+2025-01-04 17:23:52 - Got files
+2025-01-04 17:23:52 - Current used storage is 14.199
+2025-01-04 17:23:52 - Got directories
+2025-01-04 17:23:52 - Got files
+2025-01-04 17:23:52 - Got directories
+2025-01-04 17:23:52 - Current used storage is 14.199
+2025-01-04 17:23:52 - Got files
+2025-01-04 17:23:52 - Current used storage is 14.199
+2025-01-04 17:23:52 - Got directories
+2025-01-04 17:23:52 - Got files
+2025-01-04 17:23:52 - Got directories
+2025-01-04 17:23:52 - Current used storage is 14.199
+2025-01-04 17:23:53 - Got files
+2025-01-04 17:23:53 - Got directories
+2025-01-04 17:23:53 - Current used storage is 14.199
+2025-01-04 17:23:53 - Got files
+2025-01-04 17:23:53 - Current used storage is 14.199
+2025-01-04 17:23:53 - Got directories
+2025-01-04 17:23:53 - Got files
+2025-01-04 17:23:53 - Got directories
+2025-01-04 17:23:53 - Current used storage is 14.199
+2025-01-04 17:23:53 - Got files
+2025-01-04 17:23:53 - Got directories
+2025-01-04 17:23:53 - Current used storage is 14.199
+2025-01-04 17:23:53 - Got files
+2025-01-04 17:23:53 - Got directories
+2025-01-04 17:23:53 - Current used storage is 14.199
+2025-01-04 17:23:53 - Got files
+2025-01-04 17:23:53 - Got directories
+2025-01-04 17:23:53 - Current used storage is 14.199
+2025-01-04 17:23:53 - Got files
+2025-01-04 17:23:53 - Current used storage is 14.199
+2025-01-04 17:23:53 - Got directories
+2025-01-04 17:24:03 - Got files
+2025-01-04 17:24:03 - Got directories
+2025-01-04 17:24:03 - Current used storage is 14.199
+2025-01-04 17:24:04 - Got files
+2025-01-04 17:24:04 - Got directories
+2025-01-04 17:24:04 - Current used storage is 14.199
+2025-01-04 17:24:04 - Got files
+2025-01-04 17:24:04 - Got directories
+2025-01-04 17:24:04 - Current used storage is 14.199
+2025-01-04 17:24:04 - Got files
+2025-01-04 17:24:04 - Got directories
+2025-01-04 17:24:04 - Current used storage is 14.199
+2025-01-04 17:24:04 - Got files
+2025-01-04 17:24:04 - Got directories
+2025-01-04 17:24:04 - Current used storage is 14.199
+2025-01-04 17:24:04 - Got files
+2025-01-04 17:24:04 - Current used storage is 14.199
+2025-01-04 17:24:04 - Got directories
+2025-01-04 17:24:04 - Got files
+2025-01-04 17:24:04 - Current used storage is 14.199
+2025-01-04 17:24:04 - Got directories
+2025-01-04 17:24:04 - Got files
+2025-01-04 17:24:04 - Got directories
+2025-01-04 17:24:04 - Current used storage is 14.199
+2025-01-04 17:24:04 - Got files
+2025-01-04 17:24:04 - Got directories
+2025-01-04 17:24:04 - Current used storage is 14.199
+2025-01-04 17:24:04 - Got files
+2025-01-04 17:24:04 - Got directories
+2025-01-04 17:24:04 - Current used storage is 14.199
+2025-01-04 17:24:04 - Got files
+2025-01-04 17:24:04 - Got directories
+2025-01-04 17:24:04 - Current used storage is 14.199
+2025-01-04 17:24:05 - Got files
+2025-01-04 17:24:05 - Current used storage is 14.199
+2025-01-04 17:24:05 - Got directories
+2025-01-04 17:24:05 - Got files
+2025-01-04 17:24:05 - Got directories
+2025-01-04 17:24:05 - Current used storage is 14.199
+2025-01-04 17:24:05 - Got files
+2025-01-04 17:24:05 - Got directories
+2025-01-04 17:24:05 - Current used storage is 14.199
+2025-01-04 17:24:05 - Got files
+2025-01-04 17:24:05 - Current used storage is 14.199
+2025-01-04 17:24:05 - Got directories
+2025-01-04 17:24:05 - Got files
+2025-01-04 17:24:05 - Current used storage is 14.199
+2025-01-04 17:24:05 - Got directories
+2025-01-04 17:24:05 - Got files
+2025-01-04 17:24:05 - Got directories
+2025-01-04 17:24:05 - Current used storage is 14.199
+2025-01-04 17:24:05 - Got files
+2025-01-04 17:24:05 - Got directories
+2025-01-04 17:24:05 - Current used storage is 14.199
+2025-01-04 17:24:05 - Got files
+2025-01-04 17:24:05 - Got directories
+2025-01-04 17:24:05 - Current used storage is 14.199
+2025-01-04 17:24:22 - Got files
+2025-01-04 17:24:22 - Got directories
+2025-01-04 17:24:22 - Current used storage is 14.199
+2025-01-04 17:24:35 - Got files
+2025-01-04 17:24:35 - Got directories
+2025-01-04 17:24:35 - Current used storage is 14.199
+2025-01-04 17:24:37 - Succesfully moved to rename\
+2025-01-04 17:24:37 - Got directories
+2025-01-04 17:24:37 - Got files
+2025-01-04 17:24:37 - Current used storage is 14.199
+2025-01-04 17:24:37 - Succesfully moved to
+2025-01-04 17:24:37 - Got files
+2025-01-04 17:24:37 - Got directories
+2025-01-04 17:24:37 - Current used storage is 14.199
+2025-01-04 17:24:38 - Succesfully moved to delete\
+2025-01-04 17:24:38 - Got files
+2025-01-04 17:24:38 - Got directories
+2025-01-04 17:24:38 - Current used storage is 14.199
+2025-01-04 17:24:39 - Succesfully moved to
+2025-01-04 17:24:39 - Got files
+2025-01-04 17:24:39 - Got directories
+2025-01-04 17:24:39 - Current used storage is 14.199
+2025-01-04 17:24:40 - Succesfully moved to
+2025-01-04 17:24:40 - Got files
+2025-01-04 17:24:40 - Got directories
+2025-01-04 17:24:40 - Current used storage is 14.199
+2025-01-04 17:25:03 - Got files
+2025-01-04 17:25:03 - Got directories
+2025-01-04 17:25:03 - Current used storage is 14.199
+2025-01-04 17:25:06 - Current used storage is 14.199
+2025-01-04 17:25:07 - Got files
+2025-01-04 17:25:07 - Current used storage is 14.199
+2025-01-04 17:25:07 - Got directories
+2025-01-04 17:25:13 - Succesfully moved to
+2025-01-04 17:25:13 - Got files
+2025-01-04 17:25:13 - Got directories
+2025-01-04 17:25:13 - Current used storage is 14.199
+2025-01-04 17:25:14 - Succesfully moved to
+2025-01-04 17:25:14 - Got files
+2025-01-04 17:25:14 - Got directories
+2025-01-04 17:25:14 - Current used storage is 14.199
+2025-01-04 17:25:14 - Succesfully moved to
+2025-01-04 17:25:14 - Got files
+2025-01-04 17:25:14 - Got directories
+2025-01-04 17:25:14 - Current used storage is 14.199
+2025-01-04 17:25:15 - Succesfully moved to
+2025-01-04 17:25:15 - Got files
+2025-01-04 17:25:15 - Got directories
+2025-01-04 17:25:15 - Current used storage is 14.199
+2025-01-04 17:25:16 - Succesfully moved to
+2025-01-04 17:25:16 - Got files
+2025-01-04 17:25:16 - Got directories
+2025-01-04 17:25:16 - Current used storage is 14.199
+2025-01-04 17:25:17 - Succesfully moved to
+2025-01-04 17:25:17 - Got files
+2025-01-04 17:25:17 - Got directories
+2025-01-04 17:25:17 - Current used storage is 14.199
+2025-01-04 17:25:18 - Succesfully moved to
+2025-01-04 17:25:18 - Got files
+2025-01-04 17:25:18 - Got directories
+2025-01-04 17:25:18 - Current used storage is 14.199
+2025-01-04 17:25:19 - Succesfully moved to
+2025-01-04 17:25:19 - Got files
+2025-01-04 17:25:19 - Got directories
+2025-01-04 17:25:19 - Current used storage is 14.199
+2025-01-04 17:34:45 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-04 17:34:45 - Login was succesfull for user: a
+2025-01-04 17:34:45 - File data recieved 0
+2025-01-04 17:34:45 - Got files
+2025-01-04 17:34:45 - Profile picture was recieved
+2025-01-04 17:34:45 - Got directories
+2025-01-04 17:34:45 - Current used storage is 14.199
+2025-01-04 17:34:47 - Got files
+2025-01-04 17:34:47 - Current used storage is 14.199
+2025-01-04 17:34:47 - Got directories
+2025-01-04 17:34:48 - Succesfully moved to yarden\
+2025-01-04 17:34:48 - Got files
+2025-01-04 17:34:48 - Got directories
+2025-01-04 17:34:48 - Current used storage is 14.199
+2025-01-04 17:34:49 - Succesfully moved to
+2025-01-04 17:34:49 - Got files
+2025-01-04 17:34:49 - Got directories
+2025-01-04 17:34:49 - Current used storage is 14.199
+2025-01-04 17:34:49 - Logout succesfull

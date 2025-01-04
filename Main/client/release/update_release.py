@@ -15,11 +15,14 @@ client_exe_in_dist = os.path.join(dist_folder, 'client.exe')
 new_exe = os.path.join(current_folder, 'IdanCloud.exe')
 
 # Define the folders to be zipped
-folders_to_include = [main_folder + '/assets', main_folder + '/gui']
+folders_to_include = {
+    "assets": os.path.join(main_folder, 'assets'),
+    "gui": os.path.join(main_folder, 'gui')
+}
 zip_file = os.path.join(current_folder, 'IdanCloud.zip')
 
 # Run PyInstaller to package client.pyw
-subprocess.run(['pyinstaller', '--onefile', main_folder + '/client.pyw'])
+subprocess.run(['pyinstaller', '--onefile', os.path.join(main_folder, 'client.pyw')])
 
 # Remove old IdanCloud.exe if it exists
 if os.path.exists(old_exe):
@@ -50,13 +53,13 @@ with zipfile.ZipFile(zip_file, 'w') as zipf:
         zipf.write(new_exe, os.path.basename(new_exe))
 
     # Add the 'assets' and 'gui' folders to the zip file
-    for folder in folders_to_include:
-        folder_path = folder
+    for folder_name, folder_path in folders_to_include.items():
         if os.path.exists(folder_path):
             for root, dirs, files in os.walk(folder_path):
                 for file in files:
                     file_path = os.path.join(root, file)
-                    arcname = os.path.relpath(file_path, current_folder)  # Preserve folder structure in the zip
+                    # Calculate arcname to preserve folder structure relative to its parent directory
+                    arcname = os.path.join(folder_name, os.path.relpath(file_path, folder_path))
                     zipf.write(file_path, arcname)
 
 if os.path.exists(new_exe):
