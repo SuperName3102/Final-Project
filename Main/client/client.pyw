@@ -14,7 +14,7 @@ import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, js
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
-from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QGuiApplication, QResizeEvent, QCursor
+from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QGuiApplication, QResizeEvent, QCursor, QBackingStore
 from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
 
 
@@ -310,7 +310,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.original_width = self.width()
         self.original_height = self.height()
         self.scroll_progress = 0
-        self.last_scroll_progress = 0
         s_width = app.primaryScreen().geometry().width()
         s_height = app.primaryScreen().geometry().height()
         self.resize(s_width*3//4, s_height*2//3)
@@ -333,18 +332,6 @@ class MainWindow(QtWidgets.QMainWindow):
         elif event.key() == Qt.Key.Key_S and event.modifiers() & Qt.KeyboardModifier.ControlModifier:
             if user["username"] != "guest": search()
         super().keyPressEvent(event)
-    
-    def wheelEvent(self, event):
-        try:
-            super().wheelEvent(event)
-            self.last_scroll_progress = self.scroll_progress
-            if event.angleDelta().y() < 0:  # Scroll down
-                if scroll.underMouse() and self.scroll_progress == self.last_scroll_progress and self.scroll_progress != 0:
-                    self.current_files_amount += items_to_load
-                    if len(directories) + len(files) < int(items_amount):
-                        self.user_page()
-        except:
-            pass
     
     def save_sizes(self):
         for widget in self.findChildren(QWidget):
@@ -422,9 +409,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 scroll_size = [int(850*width_ratio), int(340*height_ratio)]
                 scroll.setFixedSize(scroll_size[0], scroll_size[1])
         except: pass
-
-    
-    
+        
     def main_page(self):
         try:
             temp = window_geometry
@@ -582,7 +567,7 @@ class MainWindow(QtWidgets.QMainWindow):
         else:
             get_cwd_files(search_filter)
             get_cwd_directories(search_filter)
-            
+        
         self.run_user_page()
 
     def run_user_page(self):
@@ -595,6 +580,7 @@ class MainWindow(QtWidgets.QMainWindow):
             ui_path = f"{os.getcwd()}/gui/ui/user.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
+
             
             if share or deleted: self.setAcceptDrops(False)
             else: self.setAcceptDrops(True)
@@ -660,7 +646,6 @@ class MainWindow(QtWidgets.QMainWindow):
             except: pass
             
             self.stop_button.clicked.connect(self.stop_upload)
-            self.stop_button.setIcon(QIcon(assets_path+"\\stop.svg"))
             self.setGeometry(temp)
             self.force_update_window()
             
@@ -679,7 +664,6 @@ class MainWindow(QtWidgets.QMainWindow):
             
             scroll.setWidgetResizable(True)
             scroll.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
-            scroll.verticalScrollBar().valueChanged.connect(self.scroll_changed)
             scroll_container_widget = QWidget()
             scroll_layout = QGridLayout()
             scroll_layout.setSpacing(5)
@@ -690,7 +674,7 @@ class MainWindow(QtWidgets.QMainWindow):
             button.setStyleSheet(f"background-color:#001122;border-radius: 3px;border:1px solid darkgrey;border-radius: 3px;")
             scroll_layout.addWidget(button)
 
-            for i, file in enumerate(files):
+            for file in files:
                 file = file.split("~")
                 file_name = file[0]
                 date = file[1][:-7]
@@ -701,11 +685,10 @@ class MainWindow(QtWidgets.QMainWindow):
                     button = FileButton(f" {file_name} | {date} | {size} | {file[4]}".split("|"), file_id, shared_by=file[4], perms=perms, size = int(file[2]), name=file_name)
                 else:
                     button = FileButton(f" {file_name} | {date} | {size}".split("|"), file_id, size = int(file[2]), name=file_name)
-                #button.clicked.connect(lambda checked, name=file_name, id = file_id, file_size=int(file[2]): select_item(id, name, file_size, False))
                 button.clicked.connect(lambda checked, btn=button: select_item(btn))
                 scroll_layout.addWidget(button)
 
-            for index, directory in enumerate(directories):
+            for directory in directories:
                 directory = directory.split("~")
                 dir_name = directory[0]
                 dir_id = directory[1]
@@ -716,7 +699,6 @@ class MainWindow(QtWidgets.QMainWindow):
                     button = FileButton(f" {dir_name} | {last_change} | {size} | {directory[4]}".split("|"), dir_id, is_folder=True, shared_by=directory[2], perms=perms, size = int(directory[3]), name=dir_name)
                 else:
                     button = FileButton(f" {dir_name} | {last_change} | {size}".split("|"), dir_id, is_folder=True, size = int(directory[3]), name=dir_name)
-                #button.clicked.connect(lambda checked, id=dir_id, name=dir_name, dir_size=int(directory[3]): select_item(dir_id, dir_name, dir_size, True))
                 button.clicked.connect(lambda checked, btn=button: select_item(btn))
                 scroll_layout.addWidget(button)
 
@@ -750,6 +732,11 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def scroll_changed(self, value):
         self.scroll_progress = value
+        total_scroll_height = scroll.verticalScrollBar().maximum()
+        if self.scroll_progress/total_scroll_height > 0.95 and len(directories) + len(files) < int(items_amount):
+            self.current_files_amount += items_to_load
+            self.user_page()
+
 
     def manage_account(self):
         try:
@@ -1792,31 +1779,21 @@ def update_current_files():
     window.sort.currentIndexChanged.disconnect()
     if sort == "Name" or not share and sort == "Owner":
         window.sort.setCurrentIndex(0)
-        files = sorted(files, key=lambda x: x.split("~")[0].lower(), reverse=sort_direction)
-        directories = sorted(directories, key=lambda x: x.split("~")[0].lower(), reverse=sort_direction)
     elif sort == "Date":
         window.sort.setCurrentIndex(1)
-        files = sorted(files, key=lambda x: str_to_date(x.split("~")[1]), reverse=sort_direction)
-        directories = sorted(directories, key=lambda x: str_to_date(x.split("~")[2]), reverse=sort_direction)
     elif sort == "Type":
         window.sort.setCurrentIndex(2)
-        files = sorted(files, key=lambda x: x.split("~")[0].split(".")[-1].lower(), reverse=sort_direction)
     elif sort == "Size":
         window.sort.setCurrentIndex(3)
-        files = sorted(files, key=lambda x: int(x.split("~")[2]), reverse=sort_direction)
-        directories = sorted(directories, key=lambda x: int(x.split("~")[3]), reverse=sort_direction)
     elif share and sort == "Owner":
-        window.sort.setCurrentIndex(4)
-        files = sorted(files, key=lambda x: x.split("~")[4].lower(), reverse=sort_direction)
-        directories = sorted(directories, key=lambda x: x.split("~")[4].lower(), reverse=sort_direction)      
+        window.sort.setCurrentIndex(4) 
 
     window.save_sizes()
     window.draw_cwd()
     window.sort.currentIndexChanged.connect(lambda: change_sort(window.sort.currentText()[1:]))    
-    window.force_update_window()
     scroll.verticalScrollBar().setMaximum(window.scroll_progress)
     scroll.verticalScrollBar().setValue(window.scroll_progress)
-    
+    scroll.verticalScrollBar().valueChanged.connect(window.scroll_changed)
     
 
 def get_files_uploading_data():

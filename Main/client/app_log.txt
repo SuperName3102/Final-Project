@@ -2668,3 +2668,1631 @@ Traceback (most recent call last):
     response, addr = search_socket.recvfrom(1024)
                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TimeoutError: timed out
+2025-01-05 23:54:42 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-05 23:54:42 - Login was succesfull for user: a
+2025-01-05 23:54:42 - File data recieved 0
+2025-01-05 23:54:42 - Profile picture was recieved
+2025-01-05 23:54:42 - Got files
+2025-01-05 23:54:42 - Current used storage is 21.789
+2025-01-05 23:54:42 - Got directories
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:44 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:45 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:46 - 895
+2025-01-05 23:54:47 - Current used storage is 21.789
+2025-01-05 23:54:47 - Got files
+2025-01-05 23:54:47 - 811
+2025-01-05 23:54:47 - Got directories
+2025-01-05 23:54:47 - 1735
+2025-01-05 23:54:47 - 1735
+2025-01-05 23:54:47 - 1735
+2025-01-05 23:54:47 - 1735
+2025-01-05 23:54:47 - 1735
+2025-01-05 23:54:47 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:48 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:49 - 1735
+2025-01-05 23:54:50 - 1735
+2025-01-05 23:54:50 - 1735
+2025-01-05 23:54:50 - 1735
+2025-01-05 23:54:50 - 1735
+2025-01-05 23:54:50 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:54:51 - 1735
+2025-01-05 23:56:35 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-05 23:56:35 - Login was succesfull for user: a
+2025-01-05 23:56:35 - File data recieved 0
+2025-01-05 23:56:35 - Profile picture was recieved
+2025-01-05 23:56:35 - Got files
+2025-01-05 23:56:35 - Current used storage is 21.789
+2025-01-05 23:56:35 - Got directories
+2025-01-05 23:56:35 - 895
+2025-01-05 23:56:36 - 1317
+2025-01-05 23:56:36 - 1739
+2025-01-05 23:56:36 - 2161
+2025-01-05 23:56:36 - 2583
+2025-01-05 23:56:36 - 3005
+2025-01-05 23:56:36 - 3427
+2025-01-05 23:56:36 - 3849
+2025-01-05 23:56:36 - 4271
+2025-01-05 23:56:36 - 4693
+2025-01-05 23:56:36 - 5115
+2025-01-05 23:56:36 - 5537
+2025-01-05 23:56:36 - 5959
+2025-01-05 23:56:36 - 6381
+2025-01-05 23:56:36 - 6803
+2025-01-05 23:56:36 - 7225
+2025-01-05 23:56:36 - 7647
+2025-01-05 23:56:36 - 8069
+2025-01-05 23:56:37 - 8491
+2025-01-05 23:56:37 - 8913
+2025-01-05 23:56:37 - 9335
+2025-01-05 23:56:37 - 9757
+2025-01-05 23:56:37 - 10179
+2025-01-05 23:56:37 - 10601
+2025-01-05 23:56:37 - 11023
+2025-01-05 23:56:37 - 11445
+2025-01-05 23:56:37 - 11867
+2025-01-05 23:56:37 - 12289
+2025-01-05 23:56:37 - 12711
+2025-01-05 23:56:37 - 13133
+2025-01-05 23:56:37 - 13555
+2025-01-05 23:56:37 - 13977
+2025-01-05 23:56:37 - 14399
+2025-01-05 23:56:37 - 14821
+2025-01-05 23:56:37 - 15243
+2025-01-05 23:56:37 - 15665
+2025-01-05 23:56:37 - 16087
+2025-01-05 23:56:37 - 16509
+2025-01-05 23:56:37 - 16931
+2025-01-05 23:56:37 - 17353
+2025-01-05 23:56:37 - 17775
+2025-01-05 23:56:37 - 18197
+2025-01-05 23:56:37 - 18619
+2025-01-05 23:56:37 - 19041
+2025-01-05 23:56:37 - 19463
+2025-01-05 23:56:37 - 19885
+2025-01-05 23:56:37 - 20307
+2025-01-05 23:56:37 - 20729
+2025-01-05 23:56:37 - 21151
+2025-01-05 23:56:37 - 21573
+2025-01-05 23:56:37 - 21995
+2025-01-05 23:56:37 - 22417
+2025-01-05 23:56:37 - 22839
+2025-01-05 23:56:37 - 23261
+2025-01-05 23:56:37 - 23683
+2025-01-05 23:56:37 - 24105
+2025-01-05 23:56:37 - 24527
+2025-01-05 23:56:37 - 24949
+2025-01-05 23:56:37 - 25371
+2025-01-05 23:56:37 - 25793
+2025-01-05 23:56:37 - 26215
+2025-01-05 23:56:37 - 26637
+2025-01-05 23:56:37 - 27059
+2025-01-05 23:56:37 - 27481
+2025-01-05 23:56:37 - 27903
+2025-01-05 23:56:37 - 28325
+2025-01-05 23:56:38 - 28747
+2025-01-05 23:56:38 - 29169
+2025-01-05 23:56:38 - 29591
+2025-01-05 23:56:38 - 30013
+2025-01-05 23:56:38 - 30435
+2025-01-05 23:56:38 - 30857
+2025-01-05 23:56:38 - 31279
+2025-01-05 23:56:38 - 31701
+2025-01-05 23:56:38 - 32123
+2025-01-05 23:56:38 - 32545
+2025-01-05 23:56:38 - 32967
+2025-01-05 23:56:38 - 33389
+2025-01-05 23:56:38 - 33811
+2025-01-05 23:56:38 - 34233
+2025-01-05 23:56:38 - 34655
+2025-01-05 23:56:38 - 35077
+2025-01-05 23:56:38 - 35499
+2025-01-05 23:56:38 - 35921
+2025-01-05 23:56:38 - 36343
+2025-01-05 23:56:38 - 36765
+2025-01-05 23:56:38 - 37187
+2025-01-05 23:56:39 - 37609
+2025-01-05 23:56:39 - 38031
+2025-01-05 23:57:09 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-05 23:57:09 - Login was succesfull for user: a
+2025-01-05 23:57:09 - File data recieved 0
+2025-01-05 23:57:09 - Profile picture was recieved
+2025-01-05 23:57:09 - Current used storage is 21.789
+2025-01-05 23:57:09 - Got files
+2025-01-05 23:57:09 - Got directories
+2025-01-05 23:57:10 - 895
+2025-01-05 23:57:10 - 895
+2025-01-05 23:57:10 - 895
+2025-01-05 23:57:10 - 895
+2025-01-05 23:57:10 - 895
+2025-01-05 23:57:10 - 895
+2025-01-05 23:57:10 - 895
+2025-01-05 23:57:10 - Got files
+2025-01-05 23:57:10 - Current used storage is 21.789
+2025-01-05 23:57:10 - 1308
+2025-01-05 23:57:10 - Got directories
+2025-01-05 23:57:10 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:12 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:13 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:14 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - 1735
+2025-01-05 23:57:15 - Got files
+2025-01-05 23:57:15 - 2008
+2025-01-05 23:57:15 - Got directories
+2025-01-05 23:57:15 - Current used storage is 21.789
+2025-01-05 23:57:16 - 2575
+2025-01-05 23:57:16 - 2575
+2025-01-05 23:57:16 - 2575
+2025-01-05 23:57:18 - 2575
+2025-01-05 23:57:18 - 2575
+2025-01-05 23:57:19 - 2575
+2025-01-05 23:57:19 - 2575
+2025-01-05 23:57:19 - 2575
+2025-01-05 23:57:19 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:20 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:21 - 2575
+2025-01-05 23:57:22 - 2575
+2025-01-05 23:57:22 - 2575
+2025-01-05 23:57:22 - 2575
+2025-01-05 23:57:23 - 2575
+2025-01-05 23:57:23 - 2575
+2025-01-05 23:57:23 - 2575
+2025-01-05 23:57:24 - 2575
+2025-01-05 23:57:24 - 2575
+2025-01-05 23:57:27 - Got files
+2025-01-05 23:57:27 - Current used storage is 21.789
+2025-01-05 23:57:28 - 2008
+2025-01-05 23:57:28 - Got directories
+2025-01-06 00:02:43 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:02:43 - Login was succesfull for user: a
+2025-01-06 00:02:43 - File data recieved 0
+2025-01-06 00:02:43 - Profile picture was recieved
+2025-01-06 00:02:43 - Got files
+2025-01-06 00:02:43 - Current used storage is 21.789
+2025-01-06 00:02:43 - Got directories
+2025-01-06 00:03:35 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:03:35 - Login was succesfull for user: a
+2025-01-06 00:03:35 - File data recieved 0
+2025-01-06 00:03:35 - Profile picture was recieved
+2025-01-06 00:03:35 - Current used storage is 21.789
+2025-01-06 00:03:35 - Got files
+2025-01-06 00:03:35 - Got directories
+2025-01-06 00:03:37 - Got files
+2025-01-06 00:03:37 - Current used storage is 21.789
+2025-01-06 00:03:37 - Got directories
+2025-01-06 00:03:37 - Got files
+2025-01-06 00:03:37 - Current used storage is 21.789
+2025-01-06 00:03:37 - Got directories
+2025-01-06 00:03:37 - Got files
+2025-01-06 00:03:37 - Current used storage is 21.789
+2025-01-06 00:03:38 - Got directories
+2025-01-06 00:03:38 - Current used storage is 21.789
+2025-01-06 00:03:38 - Got files
+2025-01-06 00:03:38 - Got directories
+2025-01-06 00:03:38 - Current used storage is 21.789
+2025-01-06 00:03:38 - Got files
+2025-01-06 00:03:38 - Got directories
+2025-01-06 00:03:38 - Current used storage is 21.789
+2025-01-06 00:03:38 - Got files
+2025-01-06 00:03:38 - Got directories
+2025-01-06 00:03:38 - Current used storage is 21.789
+2025-01-06 00:03:38 - Got files
+2025-01-06 00:03:38 - Got directories
+2025-01-06 00:03:38 - Current used storage is 21.789
+2025-01-06 00:03:38 - Got files
+2025-01-06 00:03:39 - Got directories
+2025-01-06 00:03:39 - Current used storage is 21.789
+2025-01-06 00:03:39 - Got directories
+2025-01-06 00:03:39 - Got files
+2025-01-06 00:03:39 - Got files
+2025-01-06 00:03:39 - Current used storage is 21.789
+2025-01-06 00:03:39 - Got directories
+2025-01-06 00:03:39 - Current used storage is 21.789
+2025-01-06 00:03:39 - Got files
+2025-01-06 00:03:39 - Got directories
+2025-01-06 00:03:39 - Current used storage is 21.789
+2025-01-06 00:03:39 - Got files
+2025-01-06 00:03:39 - Got directories
+2025-01-06 00:03:39 - Got files
+2025-01-06 00:03:39 - Current used storage is 21.789
+2025-01-06 00:03:40 - Got directories
+2025-01-06 00:03:40 - Current used storage is 21.789
+2025-01-06 00:03:40 - Got files
+2025-01-06 00:03:40 - Got directories
+2025-01-06 00:03:40 - Got files
+2025-01-06 00:03:40 - Current used storage is 21.789
+2025-01-06 00:03:40 - Got directories
+2025-01-06 00:03:40 - Current used storage is 21.789
+2025-01-06 00:03:40 - Got files
+2025-01-06 00:03:40 - Got directories
+2025-01-06 00:03:40 - Got files
+2025-01-06 00:03:40 - Current used storage is 21.789
+2025-01-06 00:03:40 - Got directories
+2025-01-06 00:03:40 - Got files
+2025-01-06 00:03:40 - Current used storage is 21.789
+2025-01-06 00:03:41 - Got directories
+2025-01-06 00:03:41 - Current used storage is 21.789
+2025-01-06 00:03:41 - Got files
+2025-01-06 00:03:41 - Got directories
+2025-01-06 00:03:41 - Got files
+2025-01-06 00:03:41 - Current used storage is 21.789
+2025-01-06 00:03:41 - Got directories
+2025-01-06 00:03:41 - Current used storage is 21.789
+2025-01-06 00:03:41 - Got files
+2025-01-06 00:03:41 - Got directories
+2025-01-06 00:03:41 - Got files
+2025-01-06 00:03:41 - Current used storage is 21.789
+2025-01-06 00:03:41 - Got directories
+2025-01-06 00:03:41 - Current used storage is 21.789
+2025-01-06 00:03:41 - Got files
+2025-01-06 00:03:41 - Got directories
+2025-01-06 00:03:41 - Got files
+2025-01-06 00:03:41 - Current used storage is 21.789
+2025-01-06 00:03:42 - Got directories
+2025-01-06 00:03:42 - Current used storage is 21.789
+2025-01-06 00:03:42 - Got files
+2025-01-06 00:03:42 - Got directories
+2025-01-06 00:03:42 - Got files
+2025-01-06 00:03:42 - Current used storage is 21.789
+2025-01-06 00:03:42 - Got directories
+2025-01-06 00:03:42 - Got files
+2025-01-06 00:03:42 - Current used storage is 21.789
+2025-01-06 00:03:42 - Got directories
+2025-01-06 00:03:42 - Current used storage is 21.789
+2025-01-06 00:03:42 - Got files
+2025-01-06 00:03:43 - Got directories
+2025-01-06 00:03:43 - Got files
+2025-01-06 00:03:43 - Current used storage is 21.789
+2025-01-06 00:03:43 - Got directories
+2025-01-06 00:03:43 - Got files
+2025-01-06 00:03:43 - Current used storage is 21.789
+2025-01-06 00:03:43 - Got directories
+2025-01-06 00:03:43 - Current used storage is 21.789
+2025-01-06 00:03:43 - Got files
+2025-01-06 00:03:43 - Got directories
+2025-01-06 00:03:43 - Got files
+2025-01-06 00:03:43 - Current used storage is 21.789
+2025-01-06 00:03:43 - Got directories
+2025-01-06 00:03:43 - Got files
+2025-01-06 00:03:44 - Got directories
+2025-01-06 00:03:44 - Current used storage is 21.789
+2025-01-06 00:03:44 - Got files
+2025-01-06 00:03:44 - Current used storage is 21.789
+2025-01-06 00:03:44 - Got directories
+2025-01-06 00:03:44 - Got files
+2025-01-06 00:03:44 - Current used storage is 21.789
+2025-01-06 00:03:44 - Got directories
+2025-01-06 00:03:44 - Current used storage is 21.789
+2025-01-06 00:03:44 - Got files
+2025-01-06 00:03:44 - Got directories
+2025-01-06 00:03:44 - Got files
+2025-01-06 00:03:44 - Current used storage is 21.789
+2025-01-06 00:03:44 - Got directories
+2025-01-06 00:03:44 - Current used storage is 21.789
+2025-01-06 00:03:44 - Got files
+2025-01-06 00:03:45 - Got directories
+2025-01-06 00:03:45 - Current used storage is 21.789
+2025-01-06 00:03:45 - Got files
+2025-01-06 00:03:45 - Got directories
+2025-01-06 00:03:45 - Got files
+2025-01-06 00:03:45 - Current used storage is 21.789
+2025-01-06 00:03:45 - Got directories
+2025-01-06 00:03:45 - Current used storage is 21.789
+2025-01-06 00:03:45 - Got files
+2025-01-06 00:03:45 - Got directories
+2025-01-06 00:03:45 - Current used storage is 21.789
+2025-01-06 00:03:45 - Got files
+2025-01-06 00:03:45 - Got directories
+2025-01-06 00:03:45 - Current used storage is 21.789
+2025-01-06 00:03:45 - Got files
+2025-01-06 00:03:46 - Got directories
+2025-01-06 00:03:46 - Current used storage is 21.789
+2025-01-06 00:03:46 - Got files
+2025-01-06 00:03:46 - Got directories
+2025-01-06 00:03:46 - Got files
+2025-01-06 00:03:46 - Current used storage is 21.789
+2025-01-06 00:03:46 - Got directories
+2025-01-06 00:03:46 - Got files
+2025-01-06 00:03:46 - Current used storage is 21.789
+2025-01-06 00:03:46 - Got directories
+2025-01-06 00:03:46 - Current used storage is 21.789
+2025-01-06 00:03:46 - Got files
+2025-01-06 00:03:46 - Got directories
+2025-01-06 00:03:46 - Current used storage is 21.789
+2025-01-06 00:03:46 - Got files
+2025-01-06 00:03:47 - Got directories
+2025-01-06 00:03:47 - Got files
+2025-01-06 00:03:47 - Current used storage is 21.789
+2025-01-06 00:03:47 - Got directories
+2025-01-06 00:03:47 - Current used storage is 21.789
+2025-01-06 00:03:47 - Got directories
+2025-01-06 00:03:47 - Got files
+2025-01-06 00:03:47 - Got files
+2025-01-06 00:03:47 - Current used storage is 21.789
+2025-01-06 00:03:47 - Got directories
+2025-01-06 00:03:47 - Current used storage is 21.789
+2025-01-06 00:03:47 - Got files
+2025-01-06 00:03:47 - Got directories
+2025-01-06 00:03:47 - Got files
+2025-01-06 00:03:47 - Current used storage is 21.789
+2025-01-06 00:03:48 - Got directories
+2025-01-06 00:03:48 - Got directories
+2025-01-06 00:03:48 - Got files
+2025-01-06 00:03:48 - Current used storage is 21.789
+2025-01-06 00:03:48 - Current used storage is 21.789
+2025-01-06 00:03:48 - Got files
+2025-01-06 00:03:48 - Got directories
+2025-01-06 00:03:48 - Current used storage is 21.789
+2025-01-06 00:03:48 - Got files
+2025-01-06 00:03:48 - Got directories
+2025-01-06 00:03:48 - Got files
+2025-01-06 00:03:48 - Current used storage is 21.789
+2025-01-06 00:03:48 - Got directories
+2025-01-06 00:03:48 - Current used storage is 21.789
+2025-01-06 00:03:48 - Got files
+2025-01-06 00:03:49 - Got directories
+2025-01-06 00:03:49 - Got files
+2025-01-06 00:03:49 - Current used storage is 21.789
+2025-01-06 00:03:49 - Got directories
+2025-01-06 00:03:49 - Got files
+2025-01-06 00:03:49 - Current used storage is 21.789
+2025-01-06 00:03:49 - Got directories
+2025-01-06 00:03:49 - Got files
+2025-01-06 00:03:49 - Current used storage is 21.789
+2025-01-06 00:03:49 - Got directories
+2025-01-06 00:03:49 - Got files
+2025-01-06 00:03:49 - Current used storage is 21.789
+2025-01-06 00:04:41 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:04:42 - Login was succesfull for user: a
+2025-01-06 00:04:42 - File data recieved 0
+2025-01-06 00:04:42 - Profile picture was recieved
+2025-01-06 00:04:42 - Current used storage is 21.789
+2025-01-06 00:04:42 - Got files
+2025-01-06 00:04:42 - Got directories
+2025-01-06 00:04:44 - Got files
+2025-01-06 00:04:44 - Current used storage is 21.789
+2025-01-06 00:04:44 - Got directories
+2025-01-06 00:04:44 - Current used storage is 21.789
+2025-01-06 00:04:44 - Got files
+2025-01-06 00:04:44 - Got directories
+2025-01-06 00:04:44 - Current used storage is 21.789
+2025-01-06 00:04:44 - Got files
+2025-01-06 00:04:45 - Got directories
+2025-01-06 00:05:06 - Succesfully moved to
+2025-01-06 00:05:06 - Got files
+2025-01-06 00:05:06 - Got directories
+2025-01-06 00:05:06 - Current used storage is 21.789
+2025-01-06 00:05:08 - Succesfully moved to
+2025-01-06 00:05:08 - Current used storage is 21.789
+2025-01-06 00:05:08 - Got files
+2025-01-06 00:05:08 - Got directories
+2025-01-06 00:05:15 - Current used storage is 21.789
+2025-01-06 00:05:15 - Got files
+2025-01-06 00:05:16 - Got directories
+2025-01-06 00:05:16 - Got files
+2025-01-06 00:05:16 - Got directories
+2025-01-06 00:05:16 - Current used storage is 21.789
+2025-01-06 00:05:16 - Current used storage is 21.789
+2025-01-06 00:05:16 - Got files
+2025-01-06 00:05:16 - Got directories
+2025-01-06 00:07:20 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:07:21 - Login was succesfull for user: a
+2025-01-06 00:07:21 - File data recieved 0
+2025-01-06 00:07:21 - Profile picture was recieved
+2025-01-06 00:07:21 - Current used storage is 21.789
+2025-01-06 00:07:21 - Got files
+2025-01-06 00:07:21 - Got directories
+2025-01-06 00:07:42 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:07:42 - Login was succesfull for user: a
+2025-01-06 00:07:42 - File data recieved 0
+2025-01-06 00:07:42 - Profile picture was recieved
+2025-01-06 00:07:42 - Current used storage is 21.789
+2025-01-06 00:07:42 - Got files
+2025-01-06 00:07:42 - Got directories
+2025-01-06 00:07:45 - Current used storage is 21.789
+2025-01-06 00:07:45 - Got files
+2025-01-06 00:07:45 - Got directories
+2025-01-06 00:07:48 - Current used storage is 21.789
+2025-01-06 00:07:48 - Got files
+2025-01-06 00:07:48 - Got directories
+2025-01-06 00:07:50 - Current used storage is 21.789
+2025-01-06 00:07:50 - Got files
+2025-01-06 00:07:51 - Got directories
+2025-01-06 00:08:12 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:08:12 - Login was succesfull for user: a
+2025-01-06 00:08:12 - File data recieved 0
+2025-01-06 00:08:12 - Profile picture was recieved
+2025-01-06 00:08:12 - Current used storage is 21.789
+2025-01-06 00:08:12 - Got files
+2025-01-06 00:08:13 - Got directories
+2025-01-06 00:08:18 - Current used storage is 21.789
+2025-01-06 00:08:18 - Got files
+2025-01-06 00:08:18 - Got directories
+2025-01-06 00:08:56 - Got files
+2025-01-06 00:08:56 - Current used storage is 21.789
+2025-01-06 00:08:57 - Got directories
+2025-01-06 00:09:34 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:09:34 - Login was succesfull for user: a
+2025-01-06 00:09:34 - File data recieved 0
+2025-01-06 00:09:34 - Profile picture was recieved
+2025-01-06 00:09:34 - Got files
+2025-01-06 00:09:34 - Current used storage is 21.789
+2025-01-06 00:09:34 - Got directories
+2025-01-06 00:09:58 - Current used storage is 21.789
+2025-01-06 00:09:58 - Got files
+2025-01-06 00:09:59 - Got directories
+2025-01-06 00:10:00 - Got files
+2025-01-06 00:10:00 - Current used storage is 21.789
+2025-01-06 00:10:00 - Got directories
+2025-01-06 00:10:31 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:10:32 - Login was succesfull for user: a
+2025-01-06 00:10:32 - File data recieved 0
+2025-01-06 00:10:32 - Profile picture was recieved
+2025-01-06 00:10:32 - Current used storage is 21.789
+2025-01-06 00:10:32 - Got files
+2025-01-06 00:10:32 - Got directories
+2025-01-06 00:12:40 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:12:40 - Login was succesfull for user: a
+2025-01-06 00:12:40 - File data recieved 0
+2025-01-06 00:12:40 - Profile picture was recieved
+2025-01-06 00:12:40 - Got files
+2025-01-06 00:12:40 - Current used storage is 21.789
+2025-01-06 00:12:40 - Got directories
+2025-01-06 00:16:29 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:16:29 - Login was succesfull for user: a
+2025-01-06 00:16:29 - File data recieved 0
+2025-01-06 00:16:29 - Profile picture was recieved
+2025-01-06 00:16:29 - Current used storage is 21.789
+2025-01-06 00:16:29 - Got files
+2025-01-06 00:16:29 - Got directories
+2025-01-06 00:16:31 - Current used storage is 21.789
+2025-01-06 00:16:31 - Got files
+2025-01-06 00:16:31 - Got directories
+2025-01-06 00:16:33 - Current used storage is 21.789
+2025-01-06 00:16:33 - Got files
+2025-01-06 00:16:33 - Got directories
+2025-01-06 00:16:36 - Got files
+2025-01-06 00:16:36 - Current used storage is 21.789
+2025-01-06 00:16:36 - Got directories
+2025-01-06 00:17:03 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:17:04 - Login was succesfull for user: a
+2025-01-06 00:17:04 - File data recieved 0
+2025-01-06 00:17:04 - Profile picture was recieved
+2025-01-06 00:17:04 - Got files
+2025-01-06 00:17:04 - Current used storage is 21.789
+2025-01-06 00:17:04 - Got directories
+2025-01-06 00:19:03 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:19:04 - Login was succesfull for user: a
+2025-01-06 00:19:04 - File data recieved 0
+2025-01-06 00:19:04 - Profile picture was recieved
+2025-01-06 00:19:04 - Got files
+2025-01-06 00:19:04 - Current used storage is 21.789
+2025-01-06 00:19:04 - Got directories
+2025-01-06 00:19:07 - Current used storage is 21.789
+2025-01-06 00:19:07 - Got files
+2025-01-06 00:19:08 - Got directories
+2025-01-06 00:19:13 - Current used storage is 21.789
+2025-01-06 00:19:13 - Got files
+2025-01-06 00:19:13 - Got directories
+2025-01-06 00:20:19 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:20:19 - Login was succesfull for user: a
+2025-01-06 00:20:19 - File data recieved 0
+2025-01-06 00:20:19 - Profile picture was recieved
+2025-01-06 00:20:19 - Current used storage is 21.789
+2025-01-06 00:20:19 - Got files
+2025-01-06 00:20:19 - Got directories
+2025-01-06 00:20:20 - Current used storage is 21.789
+2025-01-06 00:20:20 - Got files
+2025-01-06 00:20:20 - Got directories
+2025-01-06 00:21:44 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:21:44 - Login was succesfull for user: a
+2025-01-06 00:21:44 - File data recieved 0
+2025-01-06 00:21:44 - Profile picture was recieved
+2025-01-06 00:21:44 - Current used storage is 21.789
+2025-01-06 00:21:44 - Got files
+2025-01-06 00:21:45 - Got directories
+2025-01-06 00:21:46 - Current used storage is 21.789
+2025-01-06 00:21:46 - Got files
+2025-01-06 00:21:47 - Got directories
+2025-01-06 00:21:47 - Current used storage is 21.789
+2025-01-06 00:21:47 - Got files
+2025-01-06 00:21:47 - Got directories
+2025-01-06 00:21:47 - Current used storage is 21.789
+2025-01-06 00:21:47 - Got files
+2025-01-06 00:21:47 - Got directories
+2025-01-06 00:22:22 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:22:23 - Login was succesfull for user: a
+2025-01-06 00:22:23 - File data recieved 0
+2025-01-06 00:22:23 - Profile picture was recieved
+2025-01-06 00:22:23 - Got files
+2025-01-06 00:22:23 - Current used storage is 21.789
+2025-01-06 00:22:23 - Got directories
+2025-01-06 00:22:24 - Got files
+2025-01-06 00:22:24 - Current used storage is 21.789
+2025-01-06 00:22:24 - Got directories
+2025-01-06 00:22:24 - Got files
+2025-01-06 00:22:24 - Current used storage is 21.789
+2025-01-06 00:22:24 - Got directories
+2025-01-06 00:22:24 - Current used storage is 21.789
+2025-01-06 00:22:24 - Got files
+2025-01-06 00:22:24 - Got directories
+2025-01-06 00:22:57 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:22:58 - Login was succesfull for user: a
+2025-01-06 00:22:58 - File data recieved 0
+2025-01-06 00:22:58 - Profile picture was recieved
+2025-01-06 00:22:58 - Current used storage is 21.789
+2025-01-06 00:22:58 - Got files
+2025-01-06 00:22:58 - Got directories
+2025-01-06 00:22:59 - Current used storage is 21.789
+2025-01-06 00:22:59 - Got files
+2025-01-06 00:22:59 - Got directories
+2025-01-06 00:23:01 - Got files
+2025-01-06 00:23:01 - Current used storage is 21.789
+2025-01-06 00:23:01 - Got directories
+2025-01-06 00:23:02 - Current used storage is 21.789
+2025-01-06 00:23:02 - Got files
+2025-01-06 00:23:03 - Got directories
+2025-01-06 00:23:15 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:23:15 - Login was succesfull for user: a
+2025-01-06 00:23:15 - File data recieved 0
+2025-01-06 00:23:15 - Profile picture was recieved
+2025-01-06 00:23:15 - Got files
+2025-01-06 00:23:15 - Current used storage is 21.789
+2025-01-06 00:23:15 - Got directories
+2025-01-06 00:23:17 - Current used storage is 21.789
+2025-01-06 00:23:17 - Got files
+2025-01-06 00:23:17 - Got directories
+2025-01-06 00:23:30 - Current used storage is 21.789
+2025-01-06 00:23:30 - Got files
+2025-01-06 00:23:30 - Got directories
+2025-01-06 00:23:48 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:23:49 - Login was succesfull for user: a
+2025-01-06 00:23:49 - File data recieved 0
+2025-01-06 00:23:49 - Profile picture was recieved
+2025-01-06 00:23:49 - Got files
+2025-01-06 00:23:49 - Current used storage is 21.789
+2025-01-06 00:23:49 - Got directories
+2025-01-06 00:23:51 - Current used storage is 21.789
+2025-01-06 00:23:51 - Got files
+2025-01-06 00:23:51 - Got directories
+2025-01-06 00:23:56 - Current used storage is 21.789
+2025-01-06 00:23:56 - Got files
+2025-01-06 00:23:57 - Got directories
+2025-01-06 00:26:35 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:26:35 - Login was succesfull for user: a
+2025-01-06 00:26:35 - File data recieved 0
+2025-01-06 00:26:36 - Profile picture was recieved
+2025-01-06 00:26:36 - Got files
+2025-01-06 00:26:36 - Current used storage is 21.789
+2025-01-06 00:26:36 - Got directories
+2025-01-06 00:26:38 - Got files
+2025-01-06 00:26:38 - Current used storage is 21.789
+2025-01-06 00:26:38 - Got directories
+2025-01-06 00:26:42 - Current used storage is 21.789
+2025-01-06 00:26:42 - Got files
+2025-01-06 00:26:42 - Got directories
+2025-01-06 00:26:46 - Got files
+2025-01-06 00:26:46 - Current used storage is 21.789
+2025-01-06 00:26:46 - Got directories
+2025-01-06 00:27:33 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:27:33 - Login was succesfull for user: a
+2025-01-06 00:27:33 - File data recieved 0
+2025-01-06 00:27:33 - Profile picture was recieved
+2025-01-06 00:27:33 - Got files
+2025-01-06 00:27:33 - Current used storage is 21.789
+2025-01-06 00:27:33 - Got directories
+2025-01-06 00:27:50 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:27:50 - Login was succesfull for user: a
+2025-01-06 00:27:50 - File data recieved 0
+2025-01-06 00:27:50 - Profile picture was recieved
+2025-01-06 00:27:50 - Current used storage is 21.789
+2025-01-06 00:27:50 - Got files
+2025-01-06 00:27:50 - Got directories
+2025-01-06 00:28:00 - Current used storage is 21.789
+2025-01-06 00:28:00 - Got files
+2025-01-06 00:28:00 - Got directories
+2025-01-06 00:28:03 - Current used storage is 21.789
+2025-01-06 00:28:03 - Got files
+2025-01-06 00:28:03 - Got directories
+2025-01-06 00:28:10 - Current used storage is 21.789
+2025-01-06 00:28:10 - Got files
+2025-01-06 00:28:10 - Got directories
+2025-01-06 00:29:26 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:29:27 - File data recieved 0
+2025-01-06 00:29:27 - Profile picture was recieved
+2025-01-06 00:29:27 - Current used storage is 21.789
+2025-01-06 00:29:27 - Got files
+2025-01-06 00:29:27 - Login was succesfull for user: a
+2025-01-06 00:29:27 - Got directories
+2025-01-06 00:29:29 - Current used storage is 21.789
+2025-01-06 00:29:30 - Got files
+2025-01-06 00:29:30 - Got directories
+2025-01-06 00:29:33 - Current used storage is 21.789
+2025-01-06 00:29:33 - Got files
+2025-01-06 00:29:34 - Got directories
+2025-01-06 00:30:38 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:30:38 - Login was succesfull for user: a
+2025-01-06 00:30:38 - File data recieved 0
+2025-01-06 00:30:38 - Profile picture was recieved
+2025-01-06 00:30:38 - Got files
+2025-01-06 00:30:38 - Current used storage is 21.789
+2025-01-06 00:30:39 - Got directories
+2025-01-06 00:30:41 - Current used storage is 21.789
+2025-01-06 00:30:41 - Got files
+2025-01-06 00:30:41 - Got directories
+2025-01-06 00:30:43 - Got files
+2025-01-06 00:30:43 - Current used storage is 21.789
+2025-01-06 00:30:43 - Got directories
+2025-01-06 00:30:47 - Current used storage is 21.789
+2025-01-06 00:30:48 - Current used storage is 21.789
+2025-01-06 00:30:48 - Got files
+2025-01-06 00:30:48 - Got directories
+2025-01-06 00:32:39 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:32:39 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 580, in run_user_page
+    backing_store.beginPaint(QRect(self.rect()))
+TypeError: beginPaint(self, a0: QRegion): argument 1 has unexpected type 'QRect'
+2025-01-06 00:32:39 - Login was succesfull for user: a
+2025-01-06 00:32:39 - File data recieved 0
+2025-01-06 00:32:39 - Profile picture was recieved
+2025-01-06 00:32:39 - Got files
+2025-01-06 00:32:39 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1702, in protocol_parse_reply
+    window.set_used_storage()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 929, in set_used_storage
+    self.storage_remaining.setValue(int(used_storage))
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'storage_remaining'
+2025-01-06 00:32:39 - Invalid reply from server
+2025-01-06 00:32:39 - b'GEUR|21789481'
+2025-01-06 00:32:39 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1761, in protocol_parse_reply
+    window.total_files.setText(f"{items_amount} items")
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'total_files'
+2025-01-06 00:32:39 - Invalid reply from server
+2025-01-06 00:32:39 - b'PATD|61'
+2025-01-06 00:33:18 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:33:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 580, in run_user_page
+    backing_store.beginPaint(QRect(self.rect()))
+TypeError: beginPaint(self, a0: QRegion): argument 1 has unexpected type 'QRect'
+2025-01-06 00:33:18 - Login was succesfull for user: a
+2025-01-06 00:33:18 - File data recieved 0
+2025-01-06 00:33:18 - Profile picture was recieved
+2025-01-06 00:33:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1702, in protocol_parse_reply
+    window.set_used_storage()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 929, in set_used_storage
+    self.storage_remaining.setValue(int(used_storage))
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'storage_remaining'
+2025-01-06 00:33:18 - Invalid reply from server
+2025-01-06 00:33:18 - b'GEUR|21789481'
+2025-01-06 00:33:18 - Got files
+2025-01-06 00:33:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1764, in protocol_parse_reply
+    update_current_files()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1791, in update_current_files
+    window.sort.currentIndexChanged.disconnect()
+    ^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'sort'. Did you mean: 'port'?
+2025-01-06 00:33:18 - Invalid reply from server
+2025-01-06 00:33:18 - b'PATD|61'
+2025-01-06 00:33:41 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:33:41 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 580, in run_user_page
+    backing_store.beginPaint(QRect(self.rect()))
+TypeError: beginPaint(self, a0: QRegion): argument 1 has unexpected type 'QRect'
+2025-01-06 00:33:41 - Login was succesfull for user: a
+2025-01-06 00:33:41 - File data recieved 0
+2025-01-06 00:33:41 - Profile picture was recieved
+2025-01-06 00:33:42 - Got files
+2025-01-06 00:33:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1702, in protocol_parse_reply
+    window.set_used_storage()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 929, in set_used_storage
+    self.storage_remaining.setValue(int(used_storage))
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'storage_remaining'
+2025-01-06 00:33:42 - Invalid reply from server
+2025-01-06 00:33:42 - b'GEUR|21789481'
+2025-01-06 00:33:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1764, in protocol_parse_reply
+    update_current_files()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1793, in update_current_files
+    window.sort.setCurrentIndex(0)
+    ^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'sort'. Did you mean: 'port'?
+2025-01-06 00:33:42 - Invalid reply from server
+2025-01-06 00:33:42 - b'PATD|61'
+2025-01-06 00:34:04 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:34:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 580, in run_user_page
+    backing_store.beginPaint(QRect(self.rect()))
+TypeError: beginPaint(self, a0: QRegion): argument 1 has unexpected type 'QRect'
+2025-01-06 00:34:04 - Login was succesfull for user: a
+2025-01-06 00:34:04 - File data recieved 0
+2025-01-06 00:34:04 - Profile picture was recieved
+2025-01-06 00:34:04 - Got files
+2025-01-06 00:34:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1702, in protocol_parse_reply
+    window.set_used_storage()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 929, in set_used_storage
+    self.storage_remaining.setValue(int(used_storage))
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'storage_remaining'
+2025-01-06 00:34:04 - Invalid reply from server
+2025-01-06 00:34:04 - b'GEUR|21789481'
+2025-01-06 00:34:04 - Got directories
+2025-01-06 00:34:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 580, in run_user_page
+    backing_store.beginPaint(QRect(self.rect()))
+TypeError: beginPaint(self, a0: QRegion): argument 1 has unexpected type 'QRect'
+2025-01-06 00:34:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1702, in protocol_parse_reply
+    window.set_used_storage()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 929, in set_used_storage
+    self.storage_remaining.setValue(int(used_storage))
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'storage_remaining'
+2025-01-06 00:34:07 - Invalid reply from server
+2025-01-06 00:34:07 - b'GEUR|21789481'
+2025-01-06 00:34:07 - Got files
+2025-01-06 00:34:07 - Got directories
+2025-01-06 00:34:08 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 580, in run_user_page
+    backing_store.beginPaint(QRect(self.rect()))
+TypeError: beginPaint(self, a0: QRegion): argument 1 has unexpected type 'QRect'
+2025-01-06 00:34:08 - Unhandled exception:
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 748, in scroll_changed
+    if self.scroll_progress/total_scroll_height > 0.95 and len(directories) + len(files) < int(items_amount):
+                                                           ^^^^^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+2025-01-06 00:34:08 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1702, in protocol_parse_reply
+    window.set_used_storage()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 929, in set_used_storage
+    self.storage_remaining.setValue(int(used_storage))
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'storage_remaining'
+2025-01-06 00:34:08 - Invalid reply from server
+2025-01-06 00:34:08 - b'GEUR|21789481'
+2025-01-06 00:34:09 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 748, in scroll_changed
+    if self.scroll_progress/total_scroll_height > 0.95 and len(directories) + len(files) < int(items_amount):
+                                                           ^^^^^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1783, in protocol_parse_reply
+    if code != "RILD" and code != "RILE": window.force_update_window()
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 941, in force_update_window
+    self.resizeEvent(resize_event)
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 381, in resizeEvent
+    widget.setGeometry(new_x, new_y, new_width, new_height)
+SystemError: <built-in method setGeometry of QWidget object at 0x000002158D450C30> returned a result with an exception set
+2025-01-06 00:34:09 - Got files
+2025-01-06 00:34:09 - Got directories
+2025-01-06 00:34:41 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:34:41 - Login was succesfull for user: a
+2025-01-06 00:34:41 - File data recieved 0
+2025-01-06 00:34:41 - Profile picture was recieved
+2025-01-06 00:34:41 - Got files
+2025-01-06 00:34:41 - Current used storage is 21.789
+2025-01-06 00:34:41 - Got directories
+2025-01-06 00:34:43 - Current used storage is 21.789
+2025-01-06 00:34:43 - Got files
+2025-01-06 00:34:43 - Got directories
+2025-01-06 00:35:13 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:35:13 - Login was succesfull for user: a
+2025-01-06 00:35:13 - File data recieved 0
+2025-01-06 00:35:13 - Profile picture was recieved
+2025-01-06 00:35:13 - Current used storage is 21.789
+2025-01-06 00:35:13 - Got files
+2025-01-06 00:35:13 - Got directories
+2025-01-06 00:35:14 - Current used storage is 21.789
+2025-01-06 00:35:14 - Got files
+2025-01-06 00:35:14 - Got directories
+2025-01-06 00:35:15 - Current used storage is 21.789
+2025-01-06 00:35:15 - Got files
+2025-01-06 00:35:15 - Got directories
+2025-01-06 00:35:16 - Current used storage is 21.789
+2025-01-06 00:35:16 - Got files
+2025-01-06 00:35:16 - Got directories
+2025-01-06 00:35:18 - Current used storage is 21.789
+2025-01-06 00:35:18 - Got files
+2025-01-06 00:35:18 - Got directories
+2025-01-06 00:35:19 - Current used storage is 21.789
+2025-01-06 00:35:19 - Got files
+2025-01-06 00:35:19 - Got directories
+2025-01-06 00:35:22 - Got files
+2025-01-06 00:35:22 - Current used storage is 21.789
+2025-01-06 00:35:22 - Got directories
+2025-01-06 00:35:26 - Current used storage is 21.789
+2025-01-06 00:35:26 - Got files
+2025-01-06 00:35:26 - Got directories
+2025-01-06 00:35:30 - Current used storage is 21.789
+2025-01-06 00:35:30 - Got files
+2025-01-06 00:35:30 - Got directories
+2025-01-06 00:35:33 - Current used storage is 21.789
+2025-01-06 00:35:33 - Got files
+2025-01-06 00:35:33 - Got directories
+2025-01-06 00:36:04 - Current used storage is 21.789
+2025-01-06 00:36:05 - Current used storage is 21.789
+2025-01-06 00:36:05 - Got files
+2025-01-06 00:36:05 - Got directories
+2025-01-06 00:37:03 - Current used storage is 21.789
+2025-01-06 00:37:03 - Got files
+2025-01-06 00:37:04 - Got directories
+2025-01-06 00:37:04 - Got files
+2025-01-06 00:37:04 - Current used storage is 21.789
+2025-01-06 00:37:04 - Got directories
+2025-01-06 00:37:05 - Got files
+2025-01-06 00:37:05 - Current used storage is 21.789
+2025-01-06 00:37:05 - Got directories
+2025-01-06 00:37:06 - Current used storage is 21.789
+2025-01-06 00:37:06 - Got files
+2025-01-06 00:37:06 - Got directories
+2025-01-06 00:37:07 - Got files
+2025-01-06 00:37:07 - Current used storage is 21.789
+2025-01-06 00:37:07 - Got directories
+2025-01-06 00:38:30 - Current used storage is 21.789
+2025-01-06 00:38:30 - Got files
+2025-01-06 00:38:30 - Got directories
+2025-01-06 00:38:32 - Current used storage is 21.789
+2025-01-06 00:38:32 - Got files
+2025-01-06 00:38:33 - Got directories
+2025-01-06 00:38:33 - Current used storage is 21.789
+2025-01-06 00:38:33 - Got files
+2025-01-06 00:38:33 - Got directories
+2025-01-06 00:38:34 - Current used storage is 21.789
+2025-01-06 00:38:34 - Got files
+2025-01-06 00:38:34 - Got directories
+2025-01-06 00:38:35 - Current used storage is 21.789
+2025-01-06 00:38:35 - Got files
+2025-01-06 00:38:35 - Got directories
+2025-01-06 00:38:36 - Got files
+2025-01-06 00:38:36 - Current used storage is 21.789
+2025-01-06 00:38:36 - Got directories
+2025-01-06 00:39:04 - Got files
+2025-01-06 00:39:04 - Current used storage is 21.789
+2025-01-06 00:39:04 - Got directories
+2025-01-06 00:39:05 - Current used storage is 21.789
+2025-01-06 00:39:05 - Got files
+2025-01-06 00:39:05 - Got directories
+2025-01-06 00:39:06 - Got files
+2025-01-06 00:39:06 - Current used storage is 21.789
+2025-01-06 00:39:06 - Got directories
+2025-01-06 00:39:06 - Current used storage is 21.789
+2025-01-06 00:39:06 - Got files
+2025-01-06 00:39:06 - Got directories
+2025-01-06 00:39:07 - Current used storage is 21.789
+2025-01-06 00:39:07 - Got files
+2025-01-06 00:39:07 - Got directories
+2025-01-06 00:39:08 - Current used storage is 21.789
+2025-01-06 00:39:08 - Got files
+2025-01-06 00:39:09 - Got directories
+2025-01-06 00:39:11 - Got files
+2025-01-06 00:39:11 - Got directories
+2025-01-06 00:39:11 - Current used storage is 21.789
+2025-01-06 00:39:12 - Current used storage is 21.789
+2025-01-06 00:39:12 - Got files
+2025-01-06 00:39:12 - Got directories
+2025-01-06 00:39:27 - Current used storage is 21.789
+2025-01-06 00:39:27 - Got files
+2025-01-06 00:39:27 - Got directories
+2025-01-06 00:39:28 - Current used storage is 21.789
+2025-01-06 00:39:28 - Got files
+2025-01-06 00:39:28 - Got directories
+2025-01-06 00:39:28 - Current used storage is 21.789
+2025-01-06 00:39:28 - Got files
+2025-01-06 00:39:28 - Got directories
+2025-01-06 00:39:29 - Current used storage is 21.789
+2025-01-06 00:39:29 - Got files
+2025-01-06 00:39:29 - Got directories
+2025-01-06 00:39:30 - Got files
+2025-01-06 00:39:30 - Current used storage is 21.789
+2025-01-06 00:39:30 - Got directories
+2025-01-06 00:39:31 - Current used storage is 21.789
+2025-01-06 00:39:31 - Got files
+2025-01-06 00:39:31 - Got directories
+2025-01-06 00:40:26 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:40:27 - Login was succesfull for user: a
+2025-01-06 00:40:27 - File data recieved 0
+2025-01-06 00:40:27 - Profile picture was recieved
+2025-01-06 00:40:27 - Got files
+2025-01-06 00:40:27 - Current used storage is 21.789
+2025-01-06 00:40:27 - Got directories
+2025-01-06 00:40:28 - Got files
+2025-01-06 00:40:28 - Current used storage is 21.789
+2025-01-06 00:40:28 - Got directories
+2025-01-06 00:40:38 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:40:38 - Login was succesfull for user: a
+2025-01-06 00:40:38 - File data recieved 0
+2025-01-06 00:40:39 - Profile picture was recieved
+2025-01-06 00:40:39 - Current used storage is 21.789
+2025-01-06 00:40:39 - Got files
+2025-01-06 00:40:39 - Got directories
+2025-01-06 00:40:40 - Current used storage is 21.789
+2025-01-06 00:40:40 - Got files
+2025-01-06 00:40:40 - Got directories
+2025-01-06 00:40:41 - Got files
+2025-01-06 00:40:41 - Current used storage is 21.789
+2025-01-06 00:40:41 - Got directories
+2025-01-06 00:40:41 - Current used storage is 21.789
+2025-01-06 00:40:41 - Got files
+2025-01-06 00:40:41 - Got directories
+2025-01-06 00:40:42 - Current used storage is 21.789
+2025-01-06 00:40:42 - Got files
+2025-01-06 00:40:42 - Got directories
+2025-01-06 00:40:43 - Current used storage is 21.789
+2025-01-06 00:40:43 - Got files
+2025-01-06 00:40:43 - Got directories
+2025-01-06 00:40:43 - Got files
+2025-01-06 00:40:43 - Current used storage is 21.789
+2025-01-06 00:40:43 - Got directories
+2025-01-06 00:40:44 - Current used storage is 21.789
+2025-01-06 00:40:44 - Got files
+2025-01-06 00:40:44 - Got directories
+2025-01-06 00:41:19 - Current used storage is 21.789
+2025-01-06 00:41:19 - Got files
+2025-01-06 00:41:19 - Got directories
+2025-01-06 00:41:27 - Current used storage is 21.789
+2025-01-06 00:41:27 - Got files
+2025-01-06 00:41:28 - Got directories
+2025-01-06 00:41:32 - Got files
+2025-01-06 00:41:32 - Current used storage is 21.789
+2025-01-06 00:41:33 - Got directories
+2025-01-06 00:41:34 - Current used storage is 21.789
+2025-01-06 00:41:34 - Got files
+2025-01-06 00:41:34 - Got directories
+2025-01-06 00:41:35 - Current used storage is 21.789
+2025-01-06 00:41:35 - Got files
+2025-01-06 00:41:35 - Got directories
+2025-01-06 00:41:35 - Got files
+2025-01-06 00:41:35 - Current used storage is 21.789
+2025-01-06 00:41:35 - Got directories
+2025-01-06 00:41:36 - Current used storage is 21.789
+2025-01-06 00:41:36 - Got files
+2025-01-06 00:41:36 - Got directories
+2025-01-06 00:41:36 - Current used storage is 21.789
+2025-01-06 00:41:36 - Got files
+2025-01-06 00:41:36 - Got directories
+2025-01-06 00:41:37 - Current used storage is 21.789
+2025-01-06 00:41:39 - Current used storage is 21.789
+2025-01-06 00:41:58 - Got files
+2025-01-06 00:41:58 - Current used storage is 21.789
+2025-01-06 00:41:58 - Got directories
+2025-01-06 00:42:28 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:42:28 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 679, in draw_cwd
+    for i, file in enumerate(files):
+                   ^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-01-06 00:42:28 - Login was succesfull for user: a
+2025-01-06 00:42:28 - File data recieved 0
+2025-01-06 00:42:28 - Profile picture was recieved
+2025-01-06 00:42:28 - Current used storage is 21.789
+2025-01-06 00:42:28 - Got files
+2025-01-06 00:42:28 - Got directories
+2025-01-06 00:42:29 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 679, in draw_cwd
+    for i, file in enumerate(files):
+                   ^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-01-06 00:42:29 - Got files
+2025-01-06 00:42:29 - Current used storage is 21.789
+2025-01-06 00:42:29 - Got directories
+2025-01-06 00:42:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 679, in draw_cwd
+    for i, file in enumerate(files):
+                   ^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-01-06 00:42:30 - Current used storage is 21.789
+2025-01-06 00:42:30 - Got files
+2025-01-06 00:42:30 - Got directories
+2025-01-06 00:42:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 679, in draw_cwd
+    for i, file in enumerate(files):
+                   ^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-01-06 00:42:30 - Current used storage is 21.789
+2025-01-06 00:42:30 - Got files
+2025-01-06 00:42:31 - Got directories
+2025-01-06 00:42:31 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 679, in draw_cwd
+    for i, file in enumerate(files):
+                   ^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-01-06 00:42:31 - Current used storage is 21.789
+2025-01-06 00:42:31 - Got files
+2025-01-06 00:42:31 - Got directories
+2025-01-06 00:42:31 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 679, in draw_cwd
+    for i, file in enumerate(files):
+                   ^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-01-06 00:42:31 - Current used storage is 21.789
+2025-01-06 00:42:32 - Got files
+2025-01-06 00:42:32 - Got directories
+2025-01-06 00:43:47 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:43:48 - Login was succesfull for user: a
+2025-01-06 00:43:48 - File data recieved 0
+2025-01-06 00:43:48 - Profile picture was recieved
+2025-01-06 00:43:48 - Got files
+2025-01-06 00:43:48 - Current used storage is 21.789
+2025-01-06 00:43:48 - Got directories
+2025-01-06 00:43:49 - Succesfully moved to
+2025-01-06 00:43:49 - Got files
+2025-01-06 00:43:49 - Got directories
+2025-01-06 00:43:49 - Current used storage is 21.789
+2025-01-06 00:43:50 - Got files
+2025-01-06 00:43:50 - Got directories
+2025-01-06 00:43:50 - Current used storage is 21.789
+2025-01-06 00:43:51 - Got files
+2025-01-06 00:43:51 - Got directories
+2025-01-06 00:43:51 - Current used storage is 21.789
+2025-01-06 00:44:13 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:44:14 - Login was succesfull for user: a
+2025-01-06 00:44:14 - File data recieved 0
+2025-01-06 00:44:14 - Profile picture was recieved
+2025-01-06 00:44:14 - Got files
+2025-01-06 00:44:14 - Current used storage is 21.789
+2025-01-06 00:44:14 - Got directories
+2025-01-06 00:44:15 - Succesfully moved to
+2025-01-06 00:44:15 - Got files
+2025-01-06 00:44:15 - Got directories
+2025-01-06 00:44:15 - Current used storage is 21.789
+2025-01-06 00:44:44 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:44:44 - Login was succesfull for user: a
+2025-01-06 00:44:44 - File data recieved 0
+2025-01-06 00:44:44 - Profile picture was recieved
+2025-01-06 00:44:44 - Current used storage is 21.789
+2025-01-06 00:44:44 - Got files
+2025-01-06 00:44:44 - Got directories
+2025-01-06 00:44:46 - Current used storage is 21.789
+2025-01-06 00:44:46 - Got files
+2025-01-06 00:44:46 - Got directories
+2025-01-06 00:44:46 - Current used storage is 21.789
+2025-01-06 00:44:46 - Got files
+2025-01-06 00:44:46 - Got directories
+2025-01-06 00:44:47 - Got files
+2025-01-06 00:44:47 - Current used storage is 21.789
+2025-01-06 00:44:47 - Got directories
+2025-01-06 00:44:47 - Current used storage is 21.789
+2025-01-06 00:44:47 - Got directories
+2025-01-06 00:44:48 - Got files
+2025-01-06 00:44:48 - Current used storage is 21.789
+2025-01-06 00:44:48 - Got files
+2025-01-06 00:44:48 - Got directories
+2025-01-06 00:44:48 - Current used storage is 21.789
+2025-01-06 00:44:48 - Got files
+2025-01-06 00:44:48 - Got directories
+2025-01-06 00:44:49 - Current used storage is 21.789
+2025-01-06 00:44:49 - Got files
+2025-01-06 00:44:49 - Got directories
+2025-01-06 00:44:49 - Current used storage is 21.789
+2025-01-06 00:44:49 - Got files
+2025-01-06 00:44:49 - Got directories
+2025-01-06 00:44:50 - Current used storage is 21.789
+2025-01-06 00:44:50 - Got files
+2025-01-06 00:44:50 - Got directories
+2025-01-06 00:44:50 - Current used storage is 21.789
+2025-01-06 00:44:50 - Got files
+2025-01-06 00:44:51 - Got directories
+2025-01-06 00:45:07 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:45:07 - Login was succesfull for user: a
+2025-01-06 00:45:07 - File data recieved 0
+2025-01-06 00:45:07 - Profile picture was recieved
+2025-01-06 00:45:07 - Got files
+2025-01-06 00:45:07 - Current used storage is 21.789
+2025-01-06 00:45:07 - Got directories
+2025-01-06 00:45:09 - Current used storage is 21.789
+2025-01-06 00:45:09 - Got files
+2025-01-06 00:45:09 - Got directories
+2025-01-06 00:45:09 - Current used storage is 21.789
+2025-01-06 00:45:10 - Got files
+2025-01-06 00:45:10 - Got directories
+2025-01-06 00:45:10 - Current used storage is 21.789
+2025-01-06 00:45:10 - Got files
+2025-01-06 00:45:10 - Got directories
+2025-01-06 00:45:11 - Current used storage is 21.789
+2025-01-06 00:45:11 - Got files
+2025-01-06 00:45:11 - Got directories
+2025-01-06 00:45:29 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:45:29 - Login was succesfull for user: a
+2025-01-06 00:45:29 - File data recieved 0
+2025-01-06 00:45:29 - Profile picture was recieved
+2025-01-06 00:45:29 - Current used storage is 21.789
+2025-01-06 00:45:29 - Got files
+2025-01-06 00:45:29 - Got directories
+2025-01-06 00:45:30 - Current used storage is 21.789
+2025-01-06 00:45:30 - Got files
+2025-01-06 00:45:30 - Got directories
+2025-01-06 00:45:31 - Current used storage is 21.789
+2025-01-06 00:45:31 - Got files
+2025-01-06 00:45:31 - Got directories
+2025-01-06 00:45:32 - Current used storage is 21.789
+2025-01-06 00:45:32 - Got files
+2025-01-06 00:45:32 - Got directories
+2025-01-06 00:45:32 - Current used storage is 21.789
+2025-01-06 00:45:32 - Got files
+2025-01-06 00:45:32 - Got directories
+2025-01-06 00:45:32 - Current used storage is 21.789
+2025-01-06 00:45:32 - Got files
+2025-01-06 00:45:33 - Got directories
+2025-01-06 00:45:33 - Current used storage is 21.789
+2025-01-06 00:45:33 - Got files
+2025-01-06 00:45:33 - Got directories
+2025-01-06 00:45:34 - Succesfully moved to
+2025-01-06 00:45:34 - Got files
+2025-01-06 00:45:34 - Got directories
+2025-01-06 00:45:34 - Current used storage is 21.789
+2025-01-06 00:45:35 - Succesfully moved to
+2025-01-06 00:45:35 - Current used storage is 21.789
+2025-01-06 00:45:35 - Got files
+2025-01-06 00:45:35 - Got directories
+2025-01-06 00:45:36 - Succesfully moved to
+2025-01-06 00:45:36 - Got files
+2025-01-06 00:45:36 - Got directories
+2025-01-06 00:45:36 - Current used storage is 21.789
+2025-01-06 00:45:39 - Succesfully moved to
+2025-01-06 00:45:39 - Current used storage is 21.789
+2025-01-06 00:45:39 - Got files
+2025-01-06 00:45:39 - Got directories
+2025-01-06 00:45:42 - Succesfully moved to
+2025-01-06 00:45:42 - Got files
+2025-01-06 00:45:42 - Got directories
+2025-01-06 00:45:42 - Current used storage is 21.789
+2025-01-06 00:45:43 - Succesfully moved to
+2025-01-06 00:45:43 - Got files
+2025-01-06 00:45:43 - Current used storage is 21.789
+2025-01-06 00:45:43 - Got directories
+2025-01-06 00:45:44 - Current used storage is 21.789
+2025-01-06 00:45:44 - Got files
+2025-01-06 00:45:44 - Got directories
+2025-01-06 00:45:45 - Current used storage is 21.789
+2025-01-06 00:45:45 - Got files
+2025-01-06 00:45:45 - Got directories
+2025-01-06 00:45:45 - Current used storage is 21.789
+2025-01-06 00:45:45 - Got files
+2025-01-06 00:45:45 - Got directories
+2025-01-06 00:45:45 - Current used storage is 21.789
+2025-01-06 00:45:45 - Got files
+2025-01-06 00:45:45 - Got directories
+2025-01-06 00:46:00 - Current used storage is 21.789
+2025-01-06 00:46:00 - Got files
+2025-01-06 00:46:00 - Got directories
+2025-01-06 00:46:01 - Succesfully moved to
+2025-01-06 00:46:01 - Got files
+2025-01-06 00:46:01 - Got directories
+2025-01-06 00:46:02 - Current used storage is 21.789
+2025-01-06 00:46:03 - Got files
+2025-01-06 00:46:03 - Got directories
+2025-01-06 00:46:03 - Current used storage is 21.789
+2025-01-06 00:46:05 - Succesfully moved to
+2025-01-06 00:46:05 - Current used storage is 21.789
+2025-01-06 00:46:05 - Got files
+2025-01-06 00:46:05 - Got directories
+2025-01-06 00:46:05 - Current used storage is 21.789
+2025-01-06 00:46:05 - Got files
+2025-01-06 00:46:06 - Got directories
+2025-01-06 00:46:08 - Current used storage is 21.789
+2025-01-06 00:46:08 - Got files
+2025-01-06 00:46:08 - Got directories
+2025-01-06 00:46:09 - Current used storage is 21.789
+2025-01-06 00:46:09 - Got files
+2025-01-06 00:46:09 - Got directories
+2025-01-06 00:46:15 - Got files
+2025-01-06 00:46:15 - Current used storage is 21.789
+2025-01-06 00:46:15 - Got directories
+2025-01-06 00:46:17 - Succesfully moved to
+2025-01-06 00:46:17 - Got files
+2025-01-06 00:46:17 - Got directories
+2025-01-06 00:46:17 - Current used storage is 21.789
+2025-01-06 00:46:17 - Succesfully moved to
+2025-01-06 00:46:17 - Current used storage is 21.789
+2025-01-06 00:46:17 - Got files
+2025-01-06 00:46:18 - Got directories
+2025-01-06 00:46:20 - Current used storage is 21.789
+2025-01-06 00:46:20 - Got files
+2025-01-06 00:46:20 - Got directories
+2025-01-06 00:46:24 - Current used storage is 21.789
+2025-01-06 00:46:24 - Got files
+2025-01-06 00:46:25 - Got directories
+2025-01-06 00:46:29 - File \u05e9\u05d0\u05dc\u05d5\u05df \u05e2\u05d9\u05d3\u05df \u05d7\u05d6\u05d0\u05d9 330905159.docx was viewed
+2025-01-06 00:46:29 - File viewing released
+2025-01-06 00:46:32 - File data recieved 0
+2025-01-06 00:46:34 - Got files
+2025-01-06 00:46:34 - Current used storage is 21.789
+2025-01-06 00:46:34 - Got directories
+2025-01-06 00:46:35 - Got files
+2025-01-06 00:46:35 - Current used storage is 21.789
+2025-01-06 00:46:35 - Got directories
+2025-01-06 00:46:36 - Got files
+2025-01-06 00:46:36 - Current used storage is 21.789
+2025-01-06 00:46:36 - Got directories
+2025-01-06 00:47:10 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-06 00:47:34 - Login was succesfull for user: a
+2025-01-06 00:47:34 - File data recieved 0
+2025-01-06 00:47:34 - Profile picture was recieved
+2025-01-06 00:47:34 - Got files
+2025-01-06 00:47:34 - Current used storage is 21.789
+2025-01-06 00:47:35 - Got directories
+2025-01-06 00:47:40 - Succesfully moved to
+2025-01-06 00:47:40 - Got files
+2025-01-06 00:47:40 - Got directories
+2025-01-06 00:47:40 - Current used storage is 21.789
+2025-01-06 00:47:42 - Got files
+2025-01-06 00:47:42 - Got directories
+2025-01-06 00:47:42 - Current used storage is 21.789
+2025-01-06 00:47:42 - Got directories
+2025-01-06 00:47:42 - Got files
+2025-01-06 00:47:42 - Current used storage is 21.789
+2025-01-06 00:47:43 - Got files
+2025-01-06 00:47:43 - Got directories
+2025-01-06 00:47:43 - Current used storage is 21.789
+2025-01-06 00:47:43 - Got files
+2025-01-06 00:47:43 - Got directories
+2025-01-06 00:47:43 - Current used storage is 21.789
+2025-01-06 00:47:43 - Got files
+2025-01-06 00:47:43 - Got directories
+2025-01-06 00:47:43 - Current used storage is 21.789
+2025-01-06 00:47:43 - Got files
+2025-01-06 00:47:43 - Got directories
+2025-01-06 00:47:43 - Current used storage is 21.789
+2025-01-06 00:47:44 - Succesfully moved to
+2025-01-06 00:47:44 - Got files
+2025-01-06 00:47:44 - Current used storage is 21.789
+2025-01-06 00:47:45 - Got directories
+2025-01-06 00:47:45 - Current used storage is 21.789
+2025-01-06 00:47:45 - Got files
+2025-01-06 00:47:45 - Got directories
+2025-01-06 00:47:46 - Current used storage is 21.789
+2025-01-06 00:47:46 - Got files
+2025-01-06 00:47:46 - Got directories
+2025-01-06 00:47:47 - Current used storage is 21.789
+2025-01-06 00:47:47 - Got files
+2025-01-06 00:47:47 - Got directories
+2025-01-06 00:47:47 - Current used storage is 21.789
+2025-01-06 00:47:47 - Got files
+2025-01-06 00:47:47 - Got directories
+2025-01-06 00:47:48 - Succesfully moved to
+2025-01-06 00:47:48 - Got files
+2025-01-06 00:47:48 - Got directories
+2025-01-06 00:47:48 - Current used storage is 21.789
+2025-01-06 00:47:48 - Got files
+2025-01-06 00:47:48 - Got directories
+2025-01-06 00:47:48 - Current used storage is 21.789
+2025-01-06 00:47:49 - Got files
+2025-01-06 00:47:49 - Got directories
+2025-01-06 00:47:49 - Current used storage is 21.789
+2025-01-06 00:47:49 - Got files
+2025-01-06 00:47:49 - Got directories
+2025-01-06 00:47:49 - Current used storage is 21.789
+2025-01-06 00:47:49 - Got files
+2025-01-06 00:47:49 - Got directories
+2025-01-06 00:47:49 - Current used storage is 21.789
+2025-01-06 00:47:49 - Got files
+2025-01-06 00:47:49 - Got directories
+2025-01-06 00:47:49 - Current used storage is 21.789
+2025-01-06 00:47:50 - Got files
+2025-01-06 00:47:50 - Got directories
+2025-01-06 00:47:50 - Current used storage is 21.789
+2025-01-06 00:47:50 - Got files
+2025-01-06 00:47:50 - Got directories
+2025-01-06 00:47:50 - Current used storage is 21.789
+2025-01-06 00:47:50 - Got files
+2025-01-06 00:47:50 - Got directories
+2025-01-06 00:47:50 - Current used storage is 21.789
+2025-01-06 00:47:51 - Got files
+2025-01-06 00:47:51 - Got directories
+2025-01-06 00:47:51 - Current used storage is 21.789
+2025-01-06 00:47:51 - Got files
+2025-01-06 00:47:51 - Got directories
+2025-01-06 00:47:51 - Current used storage is 21.789
+2025-01-06 00:47:51 - Got directories
+2025-01-06 00:47:51 - Got files
+2025-01-06 00:47:51 - Current used storage is 21.789
+2025-01-06 00:47:51 - Got files
+2025-01-06 00:47:51 - Got directories
+2025-01-06 00:47:51 - Current used storage is 21.789
+2025-01-06 00:47:51 - Got files
+2025-01-06 00:47:51 - Got directories
+2025-01-06 00:47:51 - Current used storage is 21.789
+2025-01-06 00:47:51 - Got files
+2025-01-06 00:47:51 - Got directories
+2025-01-06 00:47:51 - Current used storage is 21.789
+2025-01-06 00:47:52 - Got files
+2025-01-06 00:47:52 - Got directories
+2025-01-06 00:47:52 - Current used storage is 21.789
+2025-01-06 00:47:52 - Got files
+2025-01-06 00:47:52 - Got directories
+2025-01-06 00:47:52 - Current used storage is 21.789
+2025-01-06 00:47:53 - Succesfully moved to
+2025-01-06 00:47:53 - Got files
+2025-01-06 00:47:53 - Got directories
+2025-01-06 00:47:53 - Current used storage is 21.789
