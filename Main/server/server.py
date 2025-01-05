@@ -8,14 +8,8 @@ from modules.errors import Errors
 from modules.limits import Limits, LimitExceeded
 from modules.logger import Logger
 
-import socket
-import traceback
-import time
-import threading
-import os
-import rsa
-import struct
-import sys
+import socket, traceback, time, threading, os, rsa, struct, sys
+from datetime import datetime
 from filelock import FileLock
 from requests import get
 
@@ -180,6 +174,14 @@ def send_zip(zip_buffer, id, sock, tid, progress = 0):
 def is_guest(tid):
     return clients[tid].user == "guest"
 
+def str_to_date(str):
+    """
+    Transfer string of date to date
+    Helper function
+    """
+    if str == "": return datetime.min
+    format = "%Y-%m-%d %H:%M:%S.%f"
+    return datetime.strptime(str, format)
 
 # Key exchange
 
@@ -503,76 +505,66 @@ def protocol_build_reply(request, tid, sock):
             else: reply = ""
     
 
-    elif (code == "GETP"):
+    elif (code == "GETP" or code == "GETD" or code == "GESP" or code == "GESD" or code == "GEDP" or code == "GEDD"):
         directory = fields[1]
-        if (len(fields) == 3): search_filter = fields[2]
+        amount = int(fields[2])
+        sort = fields[3]
+        sort_direction = fields[4] == "True"
+        if (len(fields) == 6): search_filter = fields[5]
         else: search_filter = None
         if (v.check_illegal_chars(fields[1:])):
             return f"ERRR|102|Invalid chars used"
-        files = cr.get_files(clients[tid].id, directory, search_filter)
-        reply = "PATH"
-        for file in files:
-            reply += f"|{file}"
+        prev_amount = 0
+        if (code == "GETP"):
+            items = cr.get_files(clients[tid].id, directory, search_filter)
+            reply = "PATH"
+        elif (code == "GETD"):
+            items = cr.get_directories(clients[tid].id, directory, search_filter)
+            prev_amount = len(cr.get_files(clients[tid].id, directory, search_filter))
+            reply = "PATD"
+        elif (code == "GESP"):
+            items = cr.get_share_files(clients[tid].id, directory, search_filter)
+            reply = "PASH"
+        elif (code == "GESD"):
+            items = cr.get_share_directories(clients[tid].id, directory, search_filter)
+            prev_amount = len(cr.get_share_files(clients[tid].id, directory, search_filter))
+            reply = "PASD"
+        elif (code == "GEDP"):
+            items = cr.get_deleted_files(clients[tid].id, directory, search_filter)
+            reply = "PADH"
+        elif (code == "GEDD"):
+            items = cr.get_deleted_directories(clients[tid].id, directory, search_filter)
+            prev_amount = len(cr.get_deleted_files(clients[tid].id, directory, search_filter))
+            reply = "PADD"
+        
+        total = len(items) + prev_amount
+        amount-=prev_amount
+        if amount > len(items): amount = len(items)
+        elif amount < 0: amount = 0
+        
+        if sort == "Name" or ((code == "GETD" or code == "GESD" or code == "GEDD") and sort) == "Owner":
+            items = sorted(items, key=lambda x: x.split("~")[0].lower(), reverse=sort_direction)
+            
+        elif sort == "Date":
+            if (code == "GETD" or code == "GESD" or code == "GEDD"): 
+                items = sorted(items, key=lambda x: str_to_date(x.split("~")[2]), reverse=sort_direction)
+            else:
+                items = sorted(items, key=lambda x: str_to_date(x.split("~")[1]), reverse=sort_direction)
 
-    elif (code == "GETD"):
-        directory = fields[1]
-        if (len(fields) == 3): search_filter = fields[2]
-        else: search_filter = None
-        if (v.check_illegal_chars(fields[1:])):
-            return f"ERRR|102|Invalid chars used"
-        directories = cr.get_directories(clients[tid].id, directory, search_filter)
+        elif sort == "Type" and (code == "GETP" or code == "GESP" or code == "GEDP"):
+            items = sorted(items, key=lambda x: x.split("~")[0].split(".")[-1].lower(), reverse=sort_direction)
+            
+        elif sort == "Size":
+            if (code == "GETD" or code == "GESD" or code == "GEDD"): 
+                items = sorted(items, key=lambda x: int(x.split("~")[3]), reverse=sort_direction)
+            else: 
+                items = sorted(items, key=lambda x: int(x.split("~")[2]), reverse=sort_direction)
+        elif sort == "Owner" and (code == "GETD" or code == "GESD" or code == "GEDD"):
+            items = sorted(items, key=lambda x: x.split("~")[4].lower(), reverse=sort_direction)
 
-        reply = "PATD"
-        for directory in directories:
-            reply += f"|{directory}"
-    
-    elif (code == "GESP"):
-        directory = fields[1]
-        if (len(fields) == 3): search_filter = fields[2]
-        else: search_filter = None
-        if (v.check_illegal_chars(fields[1:])):
-            return f"ERRR|102|Invalid chars used"
-        files = cr.get_share_files(clients[tid].id, directory, search_filter)
-
-        reply = "PASH"
-        for file in files:
-            reply += f"|{file}"
-
-    elif (code == "GESD"):
-        directory = fields[1]
-        if (len(fields) == 3): search_filter = fields[2]
-        else: search_filter = None
-        if (v.check_illegal_chars(fields[1:])):
-            return f"ERRR|102|Invalid chars used"
-        directories = cr.get_share_directories(clients[tid].id, directory, search_filter)
-
-        reply = "PASD"
-        for directory in directories:
-            reply += f"|{directory}"
-    
-    elif (code == "GEDP"):
-        directory = fields[1]
-        if (len(fields) == 3): search_filter = fields[2]
-        else: search_filter = None
-        if (v.check_illegal_chars(fields[1:])):
-            return f"ERRR|102|Invalid chars used"
-        files = cr.get_deleted_files(clients[tid].id, directory, search_filter)
-
-        reply = "PADH"
-        for file in files:
-            reply += f"|{file}"
-
-    elif (code == "GEDD"):
-        directory = fields[1]
-        if (len(fields) == 3): search_filter = fields[2]
-        else: search_filter = None
-        if (v.check_illegal_chars(fields[1:])):
-            return f"ERRR|102|Invalid chars used"
-        directories = cr.get_deleted_directories(clients[tid].id, directory, search_filter)
-
-        reply = "PADD"
-        for directory in directories:
-            reply += f"|{directory}"
+        reply += f"|{total}"
+        for item in items[:amount]:
+            reply += f"|{item}"
 
     elif (code == "MOVD"):
         directory_id = fields[1]
@@ -1034,7 +1026,7 @@ def handle_client(sock, tid, addr):
 def cleaner():
     while True:
         cr.clean_db(files_uploading)
-        time.sleep(1)
+        time.sleep(100)
 
 def dhcp_listen():
     dhcp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

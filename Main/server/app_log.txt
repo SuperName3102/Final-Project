@@ -1,3 +1,308 @@
 2025-01-04 17:39:50 - Server listening on ('0.0.0.0', 3102)
 2025-01-04 17:39:51 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
 2025-01-04 17:39:51 - Main thread: before accepting ...
+2025-01-05 21:37:20 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 21:37:20 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 21:37:20 - Main thread: before accepting ...
+2025-01-05 21:37:22 - New Client number 1 from ('192.168.56.1', 54329)
+2025-01-05 21:39:03 - Client 1 disconnected
+2025-01-05 21:39:03 - Client 1 Exit
+2025-01-05 21:39:05 - New Client number 2 from ('192.168.56.1', 54351)
+2025-01-05 21:39:21 - Client 2 disconnected
+2025-01-05 21:39:21 - Client 2 Exit
+2025-01-05 21:39:23 - New Client number 3 from ('192.168.56.1', 54363)
+2025-01-05 21:39:58 - Client 3 disconnected
+2025-01-05 21:39:58 - Client 3 Exit
+2025-01-05 21:40:00 - New Client number 4 from ('192.168.56.1', 54385)
+2025-01-05 21:40:22 - Client 4 disconnected
+2025-01-05 21:40:22 - Client 4 Exit
+2025-01-05 21:40:25 - New Client number 5 from ('192.168.56.1', 54400)
+2025-01-05 21:40:48 - Client 5 disconnected
+2025-01-05 21:40:48 - Client 5 Exit
+2025-01-05 21:40:50 - New Client number 6 from ('192.168.56.1', 54418)
+2025-01-05 21:41:50 - Client 6 disconnected
+2025-01-05 21:41:50 - Client 6 Exit
+2025-01-05 21:41:53 - New Client number 7 from ('192.168.56.1', 54437)
+2025-01-05 21:49:56 - Client 7 Exit
+2025-01-05 21:49:56 - Client 7 disconnected
+2025-01-05 21:50:02 - New Client number 8 from ('192.168.56.1', 54543)
+2025-01-05 21:53:42 - Client 8 disconnected
+2025-01-05 21:53:42 - Client 8 Exit
+2025-01-05 21:53:44 - New Client number 9 from ('192.168.56.1', 54566)
+2025-01-05 21:56:51 - Client 9 disconnected
+2025-01-05 21:56:51 - Client 9 Exit
+2025-01-05 21:56:53 - New Client number 10 from ('192.168.56.1', 54597)
+2025-01-05 22:00:31 - Client 10 disconnected
+2025-01-05 22:00:31 - Client 10 Exit
+2025-01-05 22:00:33 - New Client number 11 from ('192.168.56.1', 54631)
+2025-01-05 22:01:20 - Client 11 disconnected
+2025-01-05 22:01:20 - Client 11 Exit
+2025-01-05 22:01:22 - New Client number 12 from ('192.168.56.1', 54653)
+2025-01-05 22:01:33 - Client 12 disconnected
+2025-01-05 22:01:33 - Client 12 Exit
+2025-01-05 22:01:35 - New Client number 13 from ('192.168.56.1', 54662)
+2025-01-05 22:01:51 - Client 13 disconnected
+2025-01-05 22:01:51 - Client 13 Exit
+2025-01-05 22:01:54 - New Client number 14 from ('192.168.56.1', 54680)
+2025-01-05 22:02:53 - Client 14 disconnected
+2025-01-05 22:02:53 - Client 14 Exit
+2025-01-05 22:02:56 - New Client number 15 from ('192.168.56.1', 54695)
+2025-01-05 22:25:16 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 22:25:17 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 22:25:17 - Main thread: before accepting ...
+2025-01-05 22:25:19 - New Client number 1 from ('192.168.56.1', 55749)
+2025-01-05 22:26:44 - Client 1 disconnected
+2025-01-05 22:26:44 - Client 1 Exit
+2025-01-05 22:26:47 - New Client number 2 from ('192.168.56.1', 55777)
+2025-01-05 22:31:47 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 22:31:48 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 22:31:48 - Main thread: before accepting ...
+2025-01-05 22:31:50 - New Client number 1 from ('192.168.56.1', 55868)
+2025-01-05 22:31:50 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 838, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 529, in protocol_build_reply
+    if amount > len(items): amount = len(items)
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'str' and 'int'
+2025-01-05 22:31:50 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 838, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 528, in protocol_build_reply
+    if (code == "GEDD" or code == "GESD" or code == "GETD") and amount - prev_amount <= 0: amount = 0
+                                                                ~~~~~~~^~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+2025-01-05 22:32:06 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 22:32:07 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 22:32:07 - Main thread: before accepting ...
+2025-01-05 22:32:08 - New Client number 1 from ('192.168.56.1', 55888)
+2025-01-05 22:32:11 - Client 1 disconnected
+2025-01-05 22:32:11 - Client 1 Exit
+2025-01-05 22:32:13 - New Client number 2 from ('192.168.56.1', 55898)
+2025-01-05 22:33:07 - Client 2 disconnected
+2025-01-05 22:33:07 - Client 2 Exit
+2025-01-05 22:33:10 - New Client number 3 from ('192.168.56.1', 55919)
+2025-01-05 22:34:14 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 22:34:14 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 22:34:15 - Main thread: before accepting ...
+2025-01-05 22:34:17 - New Client number 1 from ('192.168.56.1', 55956)
+2025-01-05 22:35:06 - Client 1 disconnected
+2025-01-05 22:35:06 - Client 1 Exit
+2025-01-05 22:35:09 - New Client number 2 from ('192.168.56.1', 55981)
+2025-01-05 22:40:15 - Client 2 disconnected
+2025-01-05 22:40:15 - Client 2 Exit
+2025-01-05 22:40:17 - New Client number 3 from ('192.168.56.1', 56051)
+2025-01-05 22:40:49 - Client 3 disconnected
+2025-01-05 22:40:49 - Client 3 Exit
+2025-01-05 22:40:52 - New Client number 4 from ('192.168.56.1', 56067)
+2025-01-05 22:52:11 - Client 4 disconnected
+2025-01-05 22:52:11 - Client 4 Exit
+2025-01-05 22:52:14 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 22:52:15 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 22:52:15 - Main thread: before accepting ...
+2025-01-05 22:52:19 - New Client number 1 from ('192.168.56.1', 56201)
+2025-01-05 22:52:19 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 870, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 510, in protocol_build_reply
+    sort = fields[3]
+           ~~~~~~^^^
+IndexError: list index out of range
+2025-01-05 22:52:19 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 870, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 510, in protocol_build_reply
+    sort = fields[3]
+           ~~~~~~^^^
+IndexError: list index out of range
+2025-01-05 22:52:45 - Client 1 disconnected
+2025-01-05 22:52:45 - Client 1 Exit
+2025-01-05 22:52:48 - New Client number 2 from ('192.168.56.1', 56217)
+2025-01-05 22:52:53 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 870, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 548, in protocol_build_reply
+    items = sorted(items, key=lambda x: str_to_date(x.split("~")[1]), reverse=sort_direction)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 548, in <lambda>
+    items = sorted(items, key=lambda x: str_to_date(x.split("~")[1]), reverse=sort_direction)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 183, in str_to_date
+    return datetime.strptime(str, format)
+           ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+2025-01-05 22:52:53 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 870, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 546, in protocol_build_reply
+    items = sorted(items, key=lambda x: str_to_date(x.split("~")[2]), reverse=sort_direction)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 546, in <lambda>
+    items = sorted(items, key=lambda x: str_to_date(x.split("~")[2]), reverse=sort_direction)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 183, in str_to_date
+    return datetime.strptime(str, format)
+           ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+2025-01-05 22:53:08 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 22:53:08 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 22:53:08 - Main thread: before accepting ...
+2025-01-05 22:53:09 - New Client number 1 from ('192.168.56.1', 56243)
+2025-01-05 22:53:12 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 870, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 548, in protocol_build_reply
+    items = sorted(items, key=lambda x: str_to_date(x.split("~")[1]), reverse=sort_direction)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 548, in <lambda>
+    items = sorted(items, key=lambda x: str_to_date(x.split("~")[1]), reverse=sort_direction)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 183, in str_to_date
+    return datetime.strptime(str, format)
+           ^^^^^^^^^^^^^^^^^
+AttributeError: module 'datetime' has no attribute 'strptime'
+2025-01-05 22:53:12 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 870, in handle_request
+    to_send = protocol_build_reply(request, tid, sock)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 546, in protocol_build_reply
+    items = sorted(items, key=lambda x: str_to_date(x.split("~")[2]), reverse=sort_direction)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 546, in <lambda>
+    items = sorted(items, key=lambda x: str_to_date(x.split("~")[2]), reverse=sort_direction)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 183, in str_to_date
+    return datetime.strptime(str, format)
+           ^^^^^^^^^^^^^^^^^
+AttributeError: module 'datetime' has no attribute 'strptime'
+2025-01-05 22:53:31 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 22:53:31 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 22:53:31 - Main thread: before accepting ...
+2025-01-05 22:53:32 - New Client number 1 from ('192.168.56.1', 56274)
+2025-01-05 22:55:01 - Client 1 disconnected
+2025-01-05 22:55:01 - Client 1 Exit
+2025-01-05 22:55:03 - New Client number 2 from ('192.168.56.1', 56297)
+2025-01-05 22:55:53 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 22:55:53 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 22:55:53 - Main thread: before accepting ...
+2025-01-05 22:55:55 - New Client number 1 from ('192.168.56.1', 56339)
+2025-01-05 22:57:50 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 22:57:51 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 22:57:51 - Main thread: before accepting ...
+2025-01-05 22:58:27 - New Client number 1 from ('192.168.56.1', 56383)
+2025-01-05 22:58:57 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\40b3f2df4be9426db5e083ae79b08c39.lock'
+2025-01-05 22:58:58 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\15ec7e434f854785a8871017d4731943.lock'
+2025-01-05 22:58:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\15ec7e434f854785a8871017d4731943.lock'
+2025-01-05 22:59:01 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\15ec7e434f854785a8871017d4731943.lock'
+2025-01-05 22:59:02 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\15ec7e434f854785a8871017d4731943.lock'
+2025-01-05 22:59:03 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\15ec7e434f854785a8871017d4731943.lock'
+2025-01-05 23:01:36 - Client 1 disconnected
+2025-01-05 23:01:36 - Client 1 Exit
+2025-01-05 23:01:38 - New Client number 2 from ('192.168.56.1', 56424)
+2025-01-05 23:02:19 - Client 2 disconnected
+2025-01-05 23:02:19 - Client 2 Exit
+2025-01-05 23:02:21 - New Client number 3 from ('192.168.56.1', 56442)
+2025-01-05 23:09:12 - Client 3 disconnected
+2025-01-05 23:09:12 - Client 3 Exit
+2025-01-05 23:09:15 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 23:09:16 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 23:09:16 - Main thread: before accepting ...
+2025-01-05 23:09:20 - New Client number 1 from ('192.168.56.1', 56566)
+2025-01-05 23:09:51 - Client 1 disconnected
+2025-01-05 23:09:51 - Client 1 Exit
+2025-01-05 23:09:53 - New Client number 2 from ('192.168.56.1', 56580)
+2025-01-05 23:17:45 - Client 2 disconnected
+2025-01-05 23:17:45 - Client 2 Exit
+2025-01-05 23:17:48 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 23:17:48 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 23:17:49 - Main thread: before accepting ...
+2025-01-05 23:17:52 - New Client number 1 from ('192.168.56.1', 56690)
+2025-01-05 23:18:02 - Client 1 disconnected
+2025-01-05 23:18:02 - Client 1 Exit
+2025-01-05 23:18:04 - New Client number 2 from ('192.168.56.1', 56700)
+2025-01-05 23:18:22 - Client 2 disconnected
+2025-01-05 23:18:22 - Client 2 Exit
+2025-01-05 23:18:25 - New Client number 3 from ('192.168.56.1', 56716)
+2025-01-05 23:18:46 - Client 3 disconnected
+2025-01-05 23:18:46 - Client 3 Exit
+2025-01-05 23:18:48 - New Client number 4 from ('192.168.56.1', 56736)
+2025-01-05 23:19:13 - Client 4 disconnected
+2025-01-05 23:19:13 - Client 4 Exit
+2025-01-05 23:19:15 - New Client number 5 from ('192.168.56.1', 56749)
+2025-01-05 23:19:51 - Client 5 disconnected
+2025-01-05 23:19:51 - Client 5 Exit
+2025-01-05 23:19:53 - New Client number 6 from ('192.168.56.1', 56768)
+2025-01-05 23:20:04 - Client 6 disconnected
+2025-01-05 23:20:04 - Client 6 Exit
+2025-01-05 23:20:06 - New Client number 7 from ('192.168.56.1', 56781)
+2025-01-05 23:21:57 - Client 7 disconnected
+2025-01-05 23:21:57 - Client 7 Exit
+2025-01-05 23:21:59 - New Client number 8 from ('192.168.56.1', 56813)
+2025-01-05 23:22:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\0ee2fcd7b4df407aae67900d78444129'
+2025-01-05 23:22:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\0ee5566881554c19bd86cae20b64e0c4'
+2025-01-05 23:22:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\15ec7e434f854785a8871017d4731943'
+2025-01-05 23:22:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\197d85d6b74a4ed4aaa30e5c89aea9cf'
+2025-01-05 23:22:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\1a3ed7f989d84be59cd9470c72f6ae53'
+2025-01-05 23:22:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\244d0547564848e1822acdc03e141c4a'
+2025-01-05 23:22:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\5988896d687f4d3ebe3c2352b34586d5'
+2025-01-05 23:22:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\6448cd7a6bb848dd81fd6d02aed7c2c2'
+2025-01-05 23:22:42 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\client_requests.py", line 587, in clean_db
+    os.remove(server_path + "\\cloud\\" + name)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\server\\cloud\\bad767c56f3f49119a79a5711773e404'
+2025-01-05 23:23:03 - Server listening on ('0.0.0.0', 3102)
+2025-01-05 23:23:03 - Public server ip: 46.121.5.143, local server ip: 192.168.56.1
+2025-01-05 23:23:04 - Main thread: before accepting ...
+2025-01-05 23:23:05 - New Client number 1 from ('192.168.56.1', 56840)
+2025-01-05 23:23:32 - Client 1 disconnected
+2025-01-05 23:23:32 - Client 1 disconnected
+2025-01-05 23:23:32 - Client 1 Exit

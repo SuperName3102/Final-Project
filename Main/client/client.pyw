@@ -14,8 +14,8 @@ import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, js
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
-from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QGuiApplication, QResizeEvent
-from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal, QFile
+from PyQt6.QtGui import QIcon, QContextMenuEvent, QDragEnterEvent, QDropEvent, QMoveEvent, QGuiApplication, QResizeEvent, QCursor
+from PyQt6.QtCore import QSize,  QRect, QThread, pyqtSignal
 
 
 # Announce global vars
@@ -52,6 +52,8 @@ files_downloading = {}
 currently_selected = []
 uploading_file_id = ""
 used_storage = 0
+items_amount = 0
+items_to_load = 20
 
 last_msg = ""
 last_error_msg = ""
@@ -289,6 +291,15 @@ def remove_selected(button):
     if button in currently_selected: currently_selected.remove(button)
 
 
+def is_mouse_hovering(scroll_area: QScrollArea) -> bool:
+    mouse_pos = QCursor.pos()  # Get the current global mouse position
+    widget_geometry = scroll_area.geometry()  # Get the geometry of the scroll area
+    widget_pos = scroll_area.mapToGlobal(widget_geometry.topLeft())  # Convert to global position
+    widget_rect = widget_geometry.translated(widget_pos)  # Translate geometry to global coordinates
+    
+    return widget_rect.contains(mouse_pos)  # Check if the mouse is within the widget's rectangle
+
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -299,12 +310,14 @@ class MainWindow(QtWidgets.QMainWindow):
         self.original_width = self.width()
         self.original_height = self.height()
         self.scroll_progress = 0
+        self.last_scroll_progress = 0
         s_width = app.primaryScreen().geometry().width()
         s_height = app.primaryScreen().geometry().height()
         self.resize(s_width*3//4, s_height*2//3)
         self.move(s_width//8, s_height//6)
         self.setAttribute(Qt.WidgetAttribute.WA_OpaquePaintEvent)
         self.setAttribute(Qt.WidgetAttribute.WA_PaintOnScreen, True)
+        self.current_files_amount = items_to_load
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key.Key_Delete and len(currently_selected) > 0:
@@ -320,6 +333,18 @@ class MainWindow(QtWidgets.QMainWindow):
         elif event.key() == Qt.Key.Key_S and event.modifiers() & Qt.KeyboardModifier.ControlModifier:
             if user["username"] != "guest": search()
         super().keyPressEvent(event)
+    
+    def wheelEvent(self, event):
+        try:
+            super().wheelEvent(event)
+            self.last_scroll_progress = self.scroll_progress
+            if event.angleDelta().y() < 0:  # Scroll down
+                if scroll.underMouse() and self.scroll_progress == self.last_scroll_progress and self.scroll_progress != 0:
+                    self.current_files_amount += items_to_load
+                    if len(directories) + len(files) < int(items_amount):
+                        self.user_page()
+        except:
+            pass
     
     def save_sizes(self):
         for widget in self.findChildren(QWidget):
@@ -1201,8 +1226,7 @@ def change_sort(new_sort):
     global sort, sort_direction
     if sort == new_sort: sort_direction = not sort_direction
     sort = new_sort
-    window.run_user_page()
-    update_current_files()
+    window.user_page()
 
 def move_dir(new_dir):
     send_data(f"MOVD|{new_dir}".encode())
@@ -1412,11 +1436,10 @@ def force_exit():
 
 def get_files(type, filter):
     global file, directories
-    get_types = {1: [b"GETP", b"PATH"], 2: [b"GESP", b"PASH"], 3: [b"GEDP", b"PADH"], 4: [b"GETD", b"PATD"], 5: [b"GESD", b"PASD"], 6: [b"GEDD", b"PADD"]}
-    to_send = get_types[type][0] + b"|" + user["cwd"].encode()
+    get_types = {1: ["GETP", "PATH"], 2: ["GESP", "PASH"], 3: ["GEDP", "PADH"], 4: ["GETD", "PATD"], 5: ["GESD", "PASD"], 6: ["GEDD", "PADD"]}
+    to_send = f"{get_types[type][0]}|{user["cwd"]}|{window.current_files_amount}|{sort}|{sort_direction}".encode()
     if filter:
         to_send += b"|" + filter.encode()
-
     send_data(to_send)
 
 
@@ -1594,6 +1617,7 @@ def protocol_parse_reply(reply):
             user["cwd_name"] = fields[3]
             to_show = f'Succesfully moved to {fields[3]}'
             window.scroll_progress = 0
+            window.current_files_amount = items_to_load
             window.user_page()
             
         elif code == "RILD" or code == "RILE":
@@ -1728,12 +1752,15 @@ def protocol_parse_reply(reply):
             update_json(uploading_files_json, id, "", remove=True)
             window.set_message(to_show)
         elif code == "PATH" or code == "PASH" or code == "PADH":
-            files = fields[1:]
+            files = fields[2:]
             if files != None and directories != None:
                 update_current_files()
             to_show = "Got files"
         elif code == "PATD" or code == "PASD" or code == "PADD":
-            directories = fields[1:]
+            global items_amount
+            items_amount = fields[1]
+            window.total_files.setText(f"{items_amount} items")
+            directories = fields[2:]
             if files != None and directories != None:
                 update_current_files()
             to_show = "Got directories"
@@ -1785,7 +1812,6 @@ def update_current_files():
 
     window.save_sizes()
     window.draw_cwd()
-    window.total_files.setText(f"{len(files) + len(directories)} items")
     window.sort.currentIndexChanged.connect(lambda: change_sort(window.sort.currentText()[1:]))    
     window.force_update_window()
     scroll.verticalScrollBar().setMaximum(window.scroll_progress)
