@@ -274,7 +274,7 @@ def new_folder():
 def search():
     global search_filter
     search_filter = new_name_dialog("Search", "Enter search filter:", search_filter)
-    window.user_page()
+    window.update_user_page()
 
 def check_all_perms(perm):
     for button in currently_selected:
@@ -289,15 +289,6 @@ def check_all_id():
 def remove_selected(button):
     global currently_selected
     if button in currently_selected: currently_selected.remove(button)
-
-
-def is_mouse_hovering(scroll_area: QScrollArea) -> bool:
-    mouse_pos = QCursor.pos()  # Get the current global mouse position
-    widget_geometry = scroll_area.geometry()  # Get the geometry of the scroll area
-    widget_pos = scroll_area.mapToGlobal(widget_geometry.topLeft())  # Convert to global position
-    widget_rect = widget_geometry.translated(widget_pos)  # Translate geometry to global coordinates
-    
-    return widget_rect.contains(mouse_pos)  # Check if the mouse is within the widget's rectangle
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -349,6 +340,11 @@ class MainWindow(QtWidgets.QMainWindow):
     def resizeEvent(self, event):
         # Get the new window size
         global window_geometry, scroll, scroll_size
+        QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
+
+        # Block the event loop while processing the resize
+        QApplication.processEvents()
+        
         new_width = self.width()
         new_height = self.height()
 
@@ -409,6 +405,9 @@ class MainWindow(QtWidgets.QMainWindow):
                 scroll_size = [int(850*width_ratio), int(340*height_ratio)]
                 scroll.setFixedSize(scroll_size[0], scroll_size[1])
         except: pass
+
+        QApplication.restoreOverrideCursor()
+        QApplication.processEvents()
         
     def main_page(self):
         try:
@@ -554,6 +553,10 @@ class MainWindow(QtWidgets.QMainWindow):
             print(traceback.format_exc())
     
     def user_page(self):
+        self.update_user_page()
+        
+        self.run_user_page()
+    def update_user_page(self):
         global files, directories
         files = None
         directories = None
@@ -567,8 +570,6 @@ class MainWindow(QtWidgets.QMainWindow):
         else:
             get_cwd_files(search_filter)
             get_cwd_directories(search_filter)
-        
-        self.run_user_page()
 
     def run_user_page(self):
         global files, directories, currently_selected
@@ -580,7 +581,6 @@ class MainWindow(QtWidgets.QMainWindow):
             ui_path = f"{os.getcwd()}/gui/ui/user.ui"
             update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
             uic.loadUi(ui_path, self)
-
             
             if share or deleted: self.setAcceptDrops(False)
             else: self.setAcceptDrops(True)
@@ -656,6 +656,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def draw_cwd(self):
         try:
             global scroll
+            
             central_widget = self.centralWidget()
             
             outer_layout = QVBoxLayout()

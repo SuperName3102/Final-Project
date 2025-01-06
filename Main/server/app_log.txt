@@ -432,3 +432,48 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\
 2025-01-06 00:47:10 - New Client number 41 from ('192.168.1.247', 57088)
 2025-01-06 00:48:14 - Client 41 disconnected
 2025-01-06 00:48:14 - Client 41 Exit
+2025-01-06 13:56:35 - Server listening on ('0.0.0.0', 3102)
+2025-01-06 13:56:37 - Public server ip: 77.137.180.134, local server ip: 172.16.18.166
+2025-01-06 13:56:37 - Main thread: before accepting ...
+2025-01-06 13:56:42 - New Client number 1 from ('172.16.18.166', 57853)
+2025-01-06 13:59:24 - New Client number 2 from ('172.16.18.166', 57890)
+2025-01-06 13:59:47 - New Client number 3 from ('172.16.18.166', 57893)
+2025-01-06 14:00:40 - Client 3 disconnected
+2025-01-06 14:00:40 - Client 3 Exit
+2025-01-06 14:00:41 - Client 2 disconnected
+2025-01-06 14:00:41 - Client 2 Exit
+2025-01-06 14:00:43 - Client 1 disconnected
+2025-01-06 14:00:43 - Client 1 Exit
+2025-01-06 17:23:23 - Server listening on ('0.0.0.0', 3102)
+2025-01-06 17:23:24 - Public server ip: 46.121.5.143, local server ip: 192.168.1.247
+2025-01-06 17:23:24 - Main thread: before accepting ...
+2025-01-06 17:23:35 - New Client number 1 from ('192.168.1.247', 58041)
+2025-01-06 17:25:39 - Client 1 disconnected
+2025-01-06 17:25:39 - Client 1 Exit
+2025-01-06 17:25:43 - New Client number 2 from ('192.168.1.247', 58124)
+2025-01-06 17:28:33 - Client 2 disconnected
+2025-01-06 17:28:33 - Client 2 Exit
+2025-01-06 17:28:37 - New Client number 3 from ('192.168.1.247', 58168)
+2025-01-06 17:29:15 - Client 3 disconnected
+2025-01-06 17:29:15 - Client 3 Exit
+2025-01-06 17:29:19 - New Client number 4 from ('192.168.1.247', 58185)
+2025-01-06 17:29:37 - Client 4 disconnected
+2025-01-06 17:29:37 - Client 4 Exit
+2025-01-06 17:29:41 - New Client number 5 from ('192.168.1.247', 58201)
+2025-01-06 17:36:56 - Client 5 disconnected
+2025-01-06 17:36:56 - Client 5 Exit
+2025-01-06 17:37:00 - New Client number 6 from ('192.168.1.247', 58254)
+2025-01-06 17:40:09 - Client 6 disconnected
+2025-01-06 17:40:09 - Client 6 Exit
+2025-01-06 17:40:13 - New Client number 7 from ('192.168.1.247', 58286)
+2025-01-06 17:40:48 - Client 7 disconnected
+2025-01-06 17:40:48 - Client 7 Exit
+2025-01-06 17:40:52 - New Client number 8 from ('192.168.1.247', 58300)
+2025-01-06 17:41:28 - Client 8 disconnected
+2025-01-06 17:41:28 - Client 8 Exit
+2025-01-06 17:41:32 - New Client number 9 from ('192.168.1.247', 58316)
+2025-01-06 19:51:27 - Client 9 disconnected
+2025-01-06 19:51:27 - Client 9 Exit
+2025-01-06 19:51:33 - New Client number 10 from ('192.168.1.247', 58548)
+2025-01-06 19:51:46 - Client 10 disconnected
+2025-01-06 19:51:46 - Client 10 Exit
