@@ -10,7 +10,7 @@ from modules.networking import *
 from modules.key_exchange import *
 
 
-import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, json
+import socket, sys, traceback, os, uuid, hashlib, threading, time, functools, json, psutil
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
@@ -274,7 +274,7 @@ def new_folder():
 def search():
     global search_filter
     search_filter = new_name_dialog("Search", "Enter search filter:", search_filter)
-    window.update_user_page()
+    window.user_page()
 
 def check_all_perms(perm):
     for button in currently_selected:
@@ -340,10 +340,10 @@ class MainWindow(QtWidgets.QMainWindow):
     def resizeEvent(self, event):
         # Get the new window size
         global window_geometry, scroll, scroll_size
-        QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
+        #QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
 
         # Block the event loop while processing the resize
-        QApplication.processEvents()
+        #QApplication.processEvents()
         
         new_width = self.width()
         new_height = self.height()
@@ -406,8 +406,8 @@ class MainWindow(QtWidgets.QMainWindow):
                 scroll.setFixedSize(scroll_size[0], scroll_size[1])
         except: pass
 
-        QApplication.restoreOverrideCursor()
-        QApplication.processEvents()
+        #QApplication.restoreOverrideCursor()
+        #QApplication.processEvents()
         
     def main_page(self):
         try:
@@ -590,7 +590,6 @@ class MainWindow(QtWidgets.QMainWindow):
             if len(active_threads) == 0:
                 self.file_upload_progress.hide()
                 self.stop_button.hide()
-                
             currently_selected = []
             
             self.main_text.setText(f"Welcome {user["username"]}")
@@ -1517,9 +1516,11 @@ def protocol_parse_reply(reply):
             to_show = 'Server acknowledged the exit message'
 
         elif code == 'LOGS':   # Login succeeded
+            global search_filter
             email = fields[1]
             username = fields[2]
             to_show = f'Login was succesfull for user: {username}'
+            search_filter = None
             user["email"] = email
             user["username"] = username
             user["subscription_level"] = fields[3]
@@ -1935,13 +1936,36 @@ def connect_server(new_ip, new_port, loop = False):
         window.set_error_message(f'Server was not found {ip} {port}')
         return None
 
+def get_broadcast_address(ip, netmask):
+    """
+    Calculate the broadcast address for the LAN.
+    """
+    ip_binary = struct.unpack('>I', socket.inet_aton(ip))[0]
+    netmask_binary = struct.unpack('>I', socket.inet_aton(netmask))[0]
+    broadcast_binary = ip_binary | ~netmask_binary & 0xFFFFFFFF
+    return socket.inet_ntoa(struct.pack('>I', broadcast_binary))
+
+def get_subnet_mask():
+    addrs = psutil.net_if_addrs()
+    stats = psutil.net_if_stats()
+# Get the active interface with an assigned IPv4 address
+    for interface, addrs_list in addrs.items():
+        if stats[interface].isup:
+            for addr in addrs_list:
+                if addr.family == socket.AF_INET and addr.address == socket.gethostbyname(socket.gethostname()):  # Ignore localhost
+                    return addr.netmask
+
 def search_server():
     global ip, port
     try:
-        search_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        search_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         search_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         search_socket.settimeout(3)
-        search_socket.sendto(b"SEAR", ("255.255.255.255", 31026))
+        netmask = get_subnet_mask()  # Adjust based on your network configuration
+        print(f"Netmask: {netmask}")
+        print(f"IP: {socket.gethostbyname(socket.gethostname())}")
+        broadcast_address = get_broadcast_address(socket.gethostbyname(socket.gethostname()), netmask)
+        search_socket.sendto(b"SEAR", (broadcast_address, 31026))
         response = None
         i = 0
         while response == None and i < 3:
@@ -1953,6 +1977,8 @@ def search_server():
             ip, port = (response[1], response[2])
             print(f"recieved ip and port from server: {ip, port}")
             return
+    except TimeoutError:
+        print("No server found")
     except:
         print(traceback.format_exc())
 

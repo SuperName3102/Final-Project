@@ -477,3 +477,227 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\
 2025-01-06 19:51:33 - New Client number 10 from ('192.168.1.247', 58548)
 2025-01-06 19:51:46 - Client 10 disconnected
 2025-01-06 19:51:46 - Client 10 Exit
+2025-01-09 07:51:25 - Server listening on ('0.0.0.0', 3102)
+2025-01-09 07:51:27 - Public server ip: 77.137.180.134, local server ip: 172.16.18.166
+2025-01-09 07:51:28 - Main thread: before accepting ...
+2025-01-09 07:51:40 - New Client number 1 from ('172.16.18.166', 63852)
+2025-01-09 07:54:36 - Client 1 disconnected
+2025-01-09 07:54:36 - Client 1 Exit
+2025-01-09 07:54:39 - New Client number 2 from ('172.16.18.166', 63957)
+2025-01-09 07:56:43 - New Client number 3 from ('172.16.18.166', 63986)
+2025-01-09 07:57:07 - New Client number 4 from ('172.16.18.166', 63988)
+2025-01-09 07:58:00 - Client 2 disconnected
+2025-01-09 07:58:00 - Client 2 Exit
+2025-01-09 07:58:01 - Client 3 disconnected
+2025-01-09 07:58:01 - Client 3 Exit
+2025-01-09 07:58:02 - Client 4 disconnected
+2025-01-09 07:58:02 - Client 4 Exit
+2025-01-09 07:58:14 - New Client number 5 from ('172.16.18.166', 64001)
+2025-01-09 08:01:46 - Client 5 disconnected
+2025-01-09 08:01:46 - Client 5 Exit
+2025-01-09 08:01:50 - New Client number 6 from ('172.16.18.166', 64026)
+2025-01-09 08:01:58 - Client 6 disconnected
+2025-01-09 08:01:58 - Client 6 Exit
+2025-01-09 08:43:52 - Server listening on ('0.0.0.0', 3102)
+2025-01-09 08:43:53 - Public server ip: 77.137.180.134, local server ip: 172.16.18.166
+2025-01-09 08:43:54 - Main thread: before accepting ...
+2025-01-09 08:43:59 - New Client number 1 from ('172.16.18.166', 64138)
+2025-01-09 08:50:14 - Client 1 disconnected
+2025-01-09 08:50:14 - Client 1 Exit
+2025-01-09 08:50:18 - New Client number 2 from ('172.16.18.166', 64202)
+2025-01-09 08:53:41 - New Client number 3 from ('172.16.18.166', 64262)
+2025-01-09 08:54:01 - Client 3 disconnected
+2025-01-09 08:54:01 - Client 3 Exit
+2025-01-09 08:57:52 - Server listening on ('0.0.0.0', 3102)
+2025-01-09 08:57:54 - Public server ip: 77.137.180.134, local server ip: 172.16.18.166
+2025-01-09 08:57:54 - Main thread: before accepting ...
+2025-01-09 09:01:23 - New Client number 1 from ('172.16.49.189', 50399)
+2025-01-09 09:03:23 - New Client number 2 from ('172.16.18.166', 64445)
+2025-01-09 09:04:07 - Client 1 disconnected
+2025-01-09 09:04:07 - Client 1 Exit
+2025-01-09 09:04:45 - Client 2 disconnected
+2025-01-09 09:04:45 - Client 2 Exit
+2025-01-09 09:09:42 - New Client number 3 from ('172.16.49.202', 64830)
+2025-01-09 09:10:07 - Client 3 disconnected
+2025-01-09 09:10:07 - Client 3 Exit
+2025-01-14 17:21:08 - Server listening on ('0.0.0.0', 3102)
+2025-01-14 17:21:09 - Public server ip: 46.116.252.21, local server ip: 10.100.102.247
+2025-01-14 17:21:10 - Main thread: before accepting ...
+2025-01-14 17:21:16 - New Client number 1 from ('10.100.102.247', 49758)
+2025-01-14 17:22:52 - Client 1 disconnected
+2025-01-14 17:22:52 - Client 1 Exit
+2025-01-15 10:27:32 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 10:27:33 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 10:27:34 - Main thread: before accepting ...
+2025-01-15 10:33:43 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 10:33:44 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 10:33:46 - Main thread: before accepting ...
+2025-01-15 10:33:58 - ('192.168.56.1', 60215)
+2025-01-15 10:33:58 - New Client number 1 from ('172.16.20.119', 51308)
+2025-01-15 10:34:23 - ('192.168.56.1', 63944)
+2025-01-15 10:34:24 - New Client number 2 from ('172.16.20.119', 51311)
+2025-01-15 10:34:30 - Client 2 disconnected
+2025-01-15 10:34:30 - Client 2 Exit
+2025-01-15 10:35:34 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 10:35:35 - Public server ip: 31.168.21.75, local server ip: 172.16.20.119
+2025-01-15 10:35:36 - Main thread: before accepting ...
+2025-01-15 10:37:22 - New DHCP request:
+2025-01-15 10:37:22 - ('192.168.56.1', 56151)
+2025-01-15 10:37:22 - New Client number 1 from ('172.16.20.119', 51345)
+2025-01-15 10:59:26 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 10:59:27 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 10:59:27 - Main thread: before accepting ...
+2025-01-15 10:59:36 - New DHCP request:
+2025-01-15 10:59:36 - ('192.168.56.1', 55980)
+2025-01-15 10:59:36 - New Client number 1 from ('172.16.20.119', 51597)
+2025-01-15 11:00:29 - New DHCP request:
+2025-01-15 11:00:29 - ('192.168.56.1', 55981)
+2025-01-15 11:00:29 - New Client number 2 from ('172.16.20.119', 51600)
+2025-01-15 11:04:00 - New DHCP request:
+2025-01-15 11:04:00 - ('192.168.56.1', 58622)
+2025-01-15 11:04:00 - New Client number 3 from ('172.16.20.119', 51711)
+2025-01-15 11:04:06 - Client 3 disconnected
+2025-01-15 11:04:06 - Client 3 Exit
+2025-01-15 11:04:11 - New DHCP request:
+2025-01-15 11:04:11 - ('192.168.56.1', 57856)
+2025-01-15 11:04:11 - New Client number 4 from ('172.16.20.119', 51720)
+2025-01-15 11:04:41 - Client 2 disconnected
+2025-01-15 11:04:41 - Client 2 Exit
+2025-01-15 11:04:42 - Client 1 disconnected
+2025-01-15 11:04:42 - Client 1 Exit
+2025-01-15 11:04:45 - Client 4 disconnected
+2025-01-15 11:04:45 - Client 4 Exit
+2025-01-15 11:10:22 - New DHCP request:
+2025-01-15 11:10:22 - ('192.168.56.1', 59999)
+2025-01-15 11:10:23 - New Client number 5 from ('172.16.20.119', 51783)
+2025-01-15 11:14:11 - New DHCP request:
+2025-01-15 11:14:11 - ('192.168.56.1', 60729)
+2025-01-15 11:14:11 - New Client number 6 from ('172.16.20.119', 51822)
+2025-01-15 11:14:48 - Client 6 disconnected
+2025-01-15 11:14:48 - Client 6 Exit
+2025-01-15 11:16:06 - New DHCP request:
+2025-01-15 11:16:06 - ('192.168.56.1', 64669)
+2025-01-15 11:16:06 - New Client number 7 from ('172.16.20.119', 51825)
+2025-01-15 11:16:11 - Client 7 disconnected
+2025-01-15 11:16:11 - Client 7 Exit
+2025-01-15 11:20:40 - New DHCP request:
+2025-01-15 11:20:40 - ('192.168.56.1', 53033)
+2025-01-15 11:20:40 - New Client number 8 from ('172.16.20.119', 51871)
+2025-01-15 11:22:28 - New DHCP request:
+2025-01-15 11:22:28 - ('192.168.56.1', 64041)
+2025-01-15 11:22:28 - New Client number 9 from ('172.16.20.119', 51876)
+2025-01-15 11:24:51 - New DHCP request:
+2025-01-15 11:24:51 - ('172.16.20.119', 53132)
+2025-01-15 11:24:51 - New Client number 10 from ('172.16.20.119', 51900)
+2025-01-15 11:34:11 - Client 5 disconnected
+2025-01-15 11:34:11 - Client 5 Exit
+2025-01-15 11:34:12 - Client 8 disconnected
+2025-01-15 11:34:12 - Client 8 Exit
+2025-01-15 11:34:12 - Client 9 disconnected
+2025-01-15 11:34:12 - Client 9 Exit
+2025-01-15 11:34:14 - Client 10 disconnected
+2025-01-15 11:34:14 - Client 10 Exit
+2025-01-15 12:24:33 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 12:24:34 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 12:24:34 - Main thread: before accepting ...
+2025-01-15 12:28:16 - New DHCP request:
+2025-01-15 12:28:16 - ('172.16.20.119', 60913)
+2025-01-15 12:28:16 - New Client number 1 from ('172.16.20.119', 52400)
+2025-01-15 12:57:27 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 12:57:28 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 12:57:28 - Main thread: before accepting ...
+2025-01-15 12:57:37 - New DHCP request:
+2025-01-15 12:57:37 - ('172.16.20.119', 55878)
+2025-01-15 12:57:37 - New Client number 1 from ('172.16.20.119', 52780)
+2025-01-15 13:04:19 - New DHCP request:
+2025-01-15 13:04:19 - ('172.16.15.194', 59496)
+2025-01-15 13:04:21 - New DHCP request:
+2025-01-15 13:04:21 - ('172.16.15.194', 59497)
+2025-01-15 13:06:08 - Client 1 disconnected
+2025-01-15 13:06:08 - Client 1 Exit
+2025-01-15 13:06:15 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 13:06:17 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 13:06:17 - Main thread: before accepting ...
+2025-01-15 13:08:29 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 13:08:31 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 13:08:32 - Main thread: before accepting ...
+2025-01-15 13:08:37 - New DHCP request:
+2025-01-15 13:08:37 - ('172.16.15.194', 50648)
+2025-01-15 13:08:40 - New DHCP request:
+2025-01-15 13:08:40 - ('172.16.15.194', 50649)
+2025-01-15 13:09:17 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 13:09:18 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 13:09:19 - Main thread: before accepting ...
+2025-01-15 13:09:26 - New DHCP request:
+2025-01-15 13:09:26 - ('172.16.15.194', 50651)
+2025-01-15 13:09:26 - 172.16.20.119
+2025-01-15 13:10:14 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 13:10:15 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 13:10:16 - Main thread: before accepting ...
+2025-01-15 13:10:22 - New DHCP request:
+2025-01-15 13:10:22 - ('172.16.15.194', 50652)
+2025-01-15 13:10:22 - SERR|172.16.20.119|3102
+2025-01-15 13:10:25 - New DHCP request:
+2025-01-15 13:10:25 - ('172.16.15.194', 50653)
+2025-01-15 13:10:25 - SERR|172.16.20.119|3102
+2025-01-15 13:10:42 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 13:10:43 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 13:10:43 - Main thread: before accepting ...
+2025-01-15 13:10:49 - New DHCP request:
+2025-01-15 13:10:49 - ('172.16.20.119', 56851)
+2025-01-15 13:10:49 - SERR|172.16.20.119|3102
+2025-01-15 13:10:50 - New Client number 1 from ('172.16.20.119', 52937)
+2025-01-15 13:10:54 - Client 1 disconnected
+2025-01-15 13:10:54 - Client 1 Exit
+2025-01-15 13:11:37 - New DHCP request:
+2025-01-15 13:11:37 - ('172.16.20.119', 53535)
+2025-01-15 13:11:37 - SERR|172.16.20.119|3102
+2025-01-15 13:12:04 - New Client number 2 from ('172.16.20.119', 52966)
+2025-01-15 13:12:48 - New DHCP request:
+2025-01-15 13:12:48 - ('172.16.15.194', 56370)
+2025-01-15 13:12:48 - SERR|172.16.20.119|3102
+2025-01-15 13:12:49 - New Client number 3 from ('172.16.15.194', 57864)
+2025-01-15 13:12:58 - Client 3 disconnected
+2025-01-15 13:12:58 - Client 3 Exit
+2025-01-15 13:13:18 - New DHCP request:
+2025-01-15 13:13:18 - ('172.16.15.194', 56373)
+2025-01-15 13:13:18 - SERR|172.16.20.119|3102
+2025-01-15 13:13:18 - New Client number 4 from ('172.16.15.194', 57867)
+2025-01-15 13:13:21 - Client 4 disconnected
+2025-01-15 13:13:21 - Client 4 Exit
+2025-01-15 13:13:25 - New DHCP request:
+2025-01-15 13:13:25 - ('172.16.15.194', 56374)
+2025-01-15 13:13:25 - SERR|172.16.20.119|3102
+2025-01-15 13:13:27 - New Client number 5 from ('172.16.15.194', 57868)
+2025-01-15 13:13:29 - Client 5 disconnected
+2025-01-15 13:13:29 - Client 5 Exit
+2025-01-15 13:15:01 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 13:15:02 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 13:15:02 - Main thread: before accepting ...
+2025-01-15 13:15:06 - New DHCP request:
+2025-01-15 13:15:06 - ('172.16.20.119', 49665)
+2025-01-15 13:15:06 - SERR|172.16.20.119|3102
+2025-01-15 13:15:06 - New Client number 1 from ('172.16.20.119', 52987)
+2025-01-15 13:15:08 - Client 1 disconnected
+2025-01-15 13:15:08 - Client 1 Exit
+2025-01-15 13:15:14 - New DHCP request:
+2025-01-15 13:15:14 - ('172.16.15.194', 54091)
+2025-01-15 13:15:14 - SERR|172.16.20.119|3102
+2025-01-15 13:15:14 - New Client number 2 from ('172.16.15.194', 57874)
+2025-01-15 13:15:51 - Client 2 disconnected
+2025-01-15 13:15:51 - Client 2 Exit
+2025-01-15 13:24:34 - New DHCP request:
+2025-01-15 13:24:34 - ('172.16.20.119', 65075)
+2025-01-15 13:24:34 - SERR|172.16.20.119|3102
+2025-01-15 13:24:34 - New Client number 3 from ('172.16.20.119', 53153)
+2025-01-15 13:27:01 - Server listening on ('0.0.0.0', 3102)
+2025-01-15 13:27:03 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-15 13:27:03 - Main thread: before accepting ...
+2025-01-15 13:27:52 - New Client number 1 from ('172.16.20.119', 53175)
+2025-01-15 14:33:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\server.py", line 946, in recv_data
+    b_len += sock.recv(len_field - len(b_len))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-15 14:33:41 - Client 1 disconnected
+2025-01-15 14:33:41 - Client 1 Exit

@@ -50,7 +50,7 @@ def send_data_wrap(bdata, encryption):
         data_len = struct.pack('!l', len(bdata))
         to_send = data_len + bdata
         logtcp('sent', to_send)
- 
+
     sock.send(to_send)
 
 
