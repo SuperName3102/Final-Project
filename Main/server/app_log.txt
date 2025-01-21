@@ -726,3 +726,63 @@ ConnectionAbortedError: [WinError 10053] An established connection was aborted b
 2025-01-21 21:03:14 - New Client number 1 from ('192.168.1.122', 51632)
 2025-01-21 21:03:26 - Client 1 disconnected
 2025-01-21 21:03:26 - Client 1 Exit
+2025-01-21 21:05:11 - Server listening on ('0.0.0.0', 3102)
+2025-01-21 21:05:11 - Public server ip: 46.121.4.35, local server ip: 192.168.1.122
+2025-01-21 21:05:11 - Main thread: before accepting ...
+2025-01-21 21:05:27 - New Client number 1 from ('192.168.1.122', 51677)
+2025-01-21 21:05:33 - New Client number 2 from ('192.168.1.247', 51011)
+2025-01-21 23:41:15 - Server listening on ('0.0.0.0', 3102)
+2025-01-21 23:41:16 - Public server ip: 46.121.4.35, local server ip: 192.168.1.122
+2025-01-21 23:41:16 - Main thread: before accepting ...
+2025-01-21 23:43:47 - New Client number 1 from ('192.168.1.122', 53325)
+2025-01-21 23:43:48 - New Client number 2 from ('192.168.1.122', 53329)
+2025-01-21 23:44:41 - Client 2 disconnected
+2025-01-21 23:44:41 - Client 2 Exit
+2025-01-21 23:44:43 - New Client number 3 from ('192.168.1.122', 53349)
+2025-01-21 23:44:59 - Client 3 disconnected
+2025-01-21 23:44:59 - Client 3 Exit
+2025-01-21 23:45:01 - New Client number 4 from ('192.168.1.122', 53364)
+2025-01-21 23:45:38 - Client 4 disconnected
+2025-01-21 23:45:38 - Client 4 Exit
+2025-01-21 23:45:40 - New Client number 5 from ('192.168.1.122', 53384)
+2025-01-21 23:46:29 - Client 5 disconnected
+2025-01-21 23:46:29 - Client 5 Exit
+2025-01-21 23:46:31 - New Client number 6 from ('192.168.1.122', 53402)
+2025-01-21 23:48:05 - Client 6 disconnected
+2025-01-21 23:48:05 - Client 6 Exit
+2025-01-21 23:48:07 - New Client number 7 from ('192.168.1.122', 53428)
+2025-01-21 23:48:58 - Client 7 disconnected
+2025-01-21 23:48:58 - Client 7 Exit
+2025-01-21 23:49:00 - New Client number 8 from ('192.168.1.122', 53449)
+2025-01-21 23:51:08 - Client 8 disconnected
+2025-01-21 23:51:08 - Client 8 Exit
+2025-01-21 23:51:11 - New Client number 9 from ('192.168.1.122', 53481)
+2025-01-21 23:51:47 - Client 9 disconnected
+2025-01-21 23:51:47 - Client 9 Exit
+2025-01-21 23:51:49 - New Client number 10 from ('192.168.1.122', 53499)
+2025-01-21 23:52:47 - Client 10 disconnected
+2025-01-21 23:52:47 - Client 10 Exit
+2025-01-21 23:52:50 - New Client number 11 from ('192.168.1.122', 53514)
+2025-01-21 23:53:48 - Client 11 disconnected
+2025-01-21 23:53:48 - Client 11 Exit
+2025-01-21 23:53:50 - New Client number 12 from ('192.168.1.122', 53537)
+2025-01-21 23:54:53 - Client 12 disconnected
+2025-01-21 23:54:53 - Client 12 Exit
+2025-01-21 23:54:55 - New Client number 13 from ('192.168.1.122', 53555)
+2025-01-21 23:58:40 - Client 13 disconnected
+2025-01-21 23:58:40 - Client 13 Exit
+2025-01-21 23:58:42 - New Client number 14 from ('192.168.1.122', 53613)
+2025-01-22 00:00:02 - Client 14 disconnected
+2025-01-22 00:00:02 - Client 14 Exit
+2025-01-22 00:00:04 - New Client number 15 from ('192.168.1.122', 53633)
+2025-01-22 00:01:06 - Client 15 disconnected
+2025-01-22 00:01:06 - Client 15 Exit
+2025-01-22 00:01:08 - New Client number 16 from ('192.168.1.122', 53658)
+2025-01-22 00:01:38 - Client 16 disconnected
+2025-01-22 00:01:38 - Client 16 Exit
+2025-01-22 00:01:40 - New Client number 17 from ('192.168.1.122', 53673)
+2025-01-22 00:01:44 - Client 17 disconnected
+2025-01-22 00:01:44 - Client 17 Exit
+2025-01-22 00:01:46 - New Client number 18 from ('192.168.1.122', 53687)
+2025-01-22 00:02:36 - Client 18 disconnected
+2025-01-22 00:02:36 - Client 18 Exit

@@ -2,7 +2,63 @@
 from datetime import datetime
 import xml.etree.ElementTree as ET
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QFontMetrics
+from PyQt6.QtGui import QFontMetrics, QGuiApplication
+import hashlib, os, json, sys
+
+class JsonHandle():
+    def __init__(self):
+        self.uploading_files_json = f"{os.getcwd()}/cache/uploading_files.json"
+        self.downloading_files_json = f"{os.getcwd()}/cache/downloading_files.json"
+    
+    
+    def get_files_uploading_data(self):
+        if os.path.exists(self.uploading_files_json):
+            with open(self.uploading_files_json, 'r') as f:
+                return json.load(f)
+
+    def get_files_downloading_data(self):
+        if os.path.exists(self.downloading_files_json):
+            with open(self.downloading_files_json, 'r') as f:
+                return json.load(f)
+    
+    def update_json(self, upload, file_id, file_path, remove=False, file = None, progress = 0):
+        """Update the JSON file with the file upload details."""
+        if upload: json_path = self.uploading_files_json
+        else: json_path = self.downloading_files_json
+        if not os.path.exists(os.getcwd() + "\\cache"):
+            os.makedirs(os.getcwd() + "\\cache")
+        if not os.path.exists(json_path):
+            with open(json_path, 'w') as f:
+                json.dump({}, f)  # Initialize as an empty dictionary
+
+        with open(json_path, 'r') as f:
+            files = json.load(f)
+
+        if remove:
+            # Remove the file from JSON if it exists
+            if file_id in files:
+                del files[file_id]
+        else:
+            if file == None: files[file_id] = {"file_path": file_path}
+            else: 
+                files[file_id] = {
+                "file_path": file_path,
+                "size": file.size,
+                "is_view": file.is_view,
+                "file_name": file.file_name,
+                "progress": progress
+            }
+
+        with open(json_path, 'w') as f:
+            json.dump(files, f, indent=4)
+
+def force_exit():
+    sys.exit()
+
+
+def control_pressed():
+    modifiers = QGuiApplication.queryKeyboardModifiers()
+    return modifiers & Qt.KeyboardModifier.ControlModifier
 
 def build_req_string(code, values = []):
     """
@@ -94,3 +150,11 @@ def format_file_type(type):
         if type in file_types[extention] or type == extention:
             return extention
     return type
+
+def compute_file_md5(file_path):
+    hash_func = hashlib.new('md5')
+    with open(file_path, 'rb') as file:
+        while chunk := file.read(8192):
+            hash_func.update(chunk)
+    
+    return hash_func.hexdigest()

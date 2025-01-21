@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>960</height>
+    <width>1000</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -229,7 +229,7 @@
      <number>24</number>
     </property>
    </widget>
-   <widget class="QPushButton" name="search">
+   <widget class="QPushButton" name="search_button">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -280,7 +280,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QComboBox" name="sort">
+   <widget class="QComboBox" name="sort_widget">
     <property name="geometry">
      <rect>
       <x>850</x>
@@ -444,7 +444,7 @@
      </font>
     </property>
     <property name="text">
-     <string> </string>
+     <string />
     </property>
     <property name="autoRepeat">
      <bool>false</bool>
@@ -461,9 +461,9 @@
    <zorder>scrollFiles</zorder>
    <zorder>storage_label</zorder>
    <zorder>storage_remaining</zorder>
-   <zorder>search</zorder>
+   <zorder>search_button</zorder>
    <zorder>shared_button</zorder>
-   <zorder>sort</zorder>
+   <zorder>sort_widget</zorder>
    <zorder>label</zorder>
    <zorder>file_upload_progress</zorder>
    <zorder>recently_deleted_button</zorder>
