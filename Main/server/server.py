@@ -1034,7 +1034,7 @@ def dhcp_listen():
     while True:
         data, addr = dhcp_socket.recvfrom(1024)
         if data.decode() == "SEAR":
-            response_message = f"SERR|{socket.gethostbyname(socket.gethostname())}|{port}"
+            response_message = f"SERR|{local_ip}|{port}"
             dhcp_socket.sendto(response_message.encode(), addr)
 
 def main(addr):
@@ -1044,7 +1044,7 @@ def main(addr):
     Creates threads to handle each user
     Handles every user seperately
     """
-    global all_to_die
+    global all_to_die, local_ip
 
     threads = []
     srv_sock = socket.socket()
@@ -1057,7 +1057,13 @@ def main(addr):
         public_ip = get('https://api.ipify.org').content.decode('utf8')
     except Exception:
         public_ip = "No IP found"
-    local_ip = socket.gethostbyname(socket.gethostname())
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+            s.connect(("8.8.8.8", 80))  # Connect to a public DNS server (Google's in this case)
+            local_ip = s.getsockname()[0]
+    except:
+        local_ip = "127.0.0.1"
+    
     print(f"Public server ip: {public_ip}, local server ip: {local_ip}")
 
     srv_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)

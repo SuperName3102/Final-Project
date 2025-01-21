@@ -1945,15 +1945,26 @@ def get_broadcast_address(ip, netmask):
     broadcast_binary = ip_binary | ~netmask_binary & 0xFFFFFFFF
     return socket.inet_ntoa(struct.pack('>I', broadcast_binary))
 
+
 def get_subnet_mask():
+    # Get the IP address of the default route (external-facing IP)
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+        s.connect(("8.8.8.8", 80))  # Connect to a public DNS server (Google's in this case)
+        current_ip = s.getsockname()[0]
+    
+    # Fetch all network interfaces and stats
     addrs = psutil.net_if_addrs()
     stats = psutil.net_if_stats()
-# Get the active interface with an assigned IPv4 address
+    
+    # Iterate over interfaces to find the one matching the current IP
     for interface, addrs_list in addrs.items():
-        if stats[interface].isup:
+        if stats[interface].isup:  # Check if the interface is up
             for addr in addrs_list:
-                if addr.family == socket.AF_INET and addr.address == socket.gethostbyname(socket.gethostname()):  # Ignore localhost
-                    return addr.netmask
+                if addr.family == socket.AF_INET and addr.address == current_ip:
+                    return addr.netmask, addr.address
+
+    return None  # Return None if no active interface is found
+
 
 def search_server():
     global ip, port
@@ -1961,10 +1972,10 @@ def search_server():
         search_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         search_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         search_socket.settimeout(3)
-        netmask = get_subnet_mask()  # Adjust based on your network configuration
+        netmask, ip = get_subnet_mask()  # Adjust based on your network configuration
         print(f"Netmask: {netmask}")
-        print(f"IP: {socket.gethostbyname(socket.gethostname())}")
-        broadcast_address = get_broadcast_address(socket.gethostbyname(socket.gethostname()), netmask)
+        print(f"IP: {ip}")
+        broadcast_address = get_broadcast_address(ip, netmask)
         search_socket.sendto(b"SEAR", (broadcast_address, 31026))
         response = None
         i = 0

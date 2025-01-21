@@ -701,3 +701,28 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'c:\\
 ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
 2025-01-15 14:33:41 - Client 1 disconnected
 2025-01-15 14:33:41 - Client 1 Exit
+2025-01-21 20:49:12 - Server listening on ('0.0.0.0', 3102)
+2025-01-21 20:49:13 - Public server ip: 46.121.4.35, local server ip: 192.168.56.1
+2025-01-21 20:49:13 - Main thread: before accepting ...
+2025-01-21 20:49:49 - New Client number 1 from ('192.168.56.1', 51279)
+2025-01-21 20:57:50 - New Client number 2 from ('192.168.56.1', 51518)
+2025-01-21 20:58:15 - Client 2 disconnected
+2025-01-21 20:58:15 - Client 2 Exit
+2025-01-21 20:58:21 - New Client number 3 from ('192.168.56.1', 51526)
+2025-01-21 21:00:44 - Server listening on ('0.0.0.0', 3102)
+2025-01-21 21:00:45 - Public server ip: 46.121.4.35, local server ip: 192.168.56.1
+2025-01-21 21:00:45 - Main thread: before accepting ...
+2025-01-21 21:00:55 - New Client number 1 from ('192.168.56.1', 51586)
+2025-01-21 21:01:05 - Client 1 disconnected
+2025-01-21 21:01:05 - Client 1 Exit
+2025-01-21 21:01:10 - New Client number 2 from ('192.168.56.1', 51594)
+2025-01-21 21:02:26 - Server listening on ('0.0.0.0', 3102)
+2025-01-21 21:02:26 - Public server ip: 46.121.4.35, local server ip: 192.168.1.122
+2025-01-21 21:02:26 - Main thread: before accepting ...
+2025-01-21 21:02:32 - New Client number 1 from ('192.168.56.1', 51623)
+2025-01-21 21:03:10 - Server listening on ('0.0.0.0', 3102)
+2025-01-21 21:03:11 - Public server ip: 46.121.4.35, local server ip: 192.168.1.122
+2025-01-21 21:03:11 - Main thread: before accepting ...
+2025-01-21 21:03:14 - New Client number 1 from ('192.168.1.122', 51632)
+2025-01-21 21:03:26 - Client 1 disconnected
+2025-01-21 21:03:26 - Client 1 Exit

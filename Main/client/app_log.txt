@@ -137,3 +137,108 @@ AttributeError: module 'psutil' has no attribute 'AF_INET'
 2025-01-15 13:27:52 - Current used storage is 74.808
 2025-01-15 13:27:52 - Got files
 2025-01-15 13:27:52 - Got directories
+2025-01-21 20:49:49 - Netmask: 255.255.255.0
+2025-01-21 20:49:49 - IP: 192.168.56.1
+2025-01-21 20:49:49 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 20:49:49 - Login was succesfull for user: a
+2025-01-21 20:49:49 - File data recieved 0
+2025-01-21 20:49:49 - Profile picture was recieved
+2025-01-21 20:49:49 - Got files
+2025-01-21 20:49:49 - Current used storage is 74.808
+2025-01-21 20:49:50 - Got directories
+2025-01-21 20:57:13 - Netmask: {'interface': 'Ethernet', 'ip_address': '192.168.1.122', 'subnet_mask': '255.255.255.0'}
+2025-01-21 20:57:13 - IP: 192.168.56.1
+2025-01-21 20:57:13 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 2006, in search_server
+    broadcast_address = get_broadcast_address(socket.gethostbyname(socket.gethostname()), netmask)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 1944, in get_broadcast_address
+    netmask_binary = struct.unpack('>I', socket.inet_aton(netmask))[0]
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: inet_aton() argument 1 must be str, not dict
+2025-01-21 20:57:15 - Netmask: {'interface': 'Ethernet', 'ip_address': '192.168.1.122', 'subnet_mask': '255.255.255.0'}
+2025-01-21 20:57:15 - IP: 192.168.56.1
+2025-01-21 20:57:15 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 1915, in connect_server
+    sock.connect((ip, int(port)))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 2006, in search_server
+    broadcast_address = get_broadcast_address(socket.gethostbyname(socket.gethostname()), netmask)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 1944, in get_broadcast_address
+    netmask_binary = struct.unpack('>I', socket.inet_aton(netmask))[0]
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: inet_aton() argument 1 must be str, not dict
+2025-01-21 20:57:50 - Netmask: 255.255.255.0
+2025-01-21 20:57:50 - IP: 192.168.56.1
+2025-01-21 20:57:50 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 20:57:50 - Login was succesfull for user: a
+2025-01-21 20:57:50 - File data recieved 0
+2025-01-21 20:57:50 - Profile picture was recieved
+2025-01-21 20:57:50 - Current used storage is 74.808
+2025-01-21 20:57:50 - Got files
+2025-01-21 20:57:50 - Got directories
+2025-01-21 20:58:21 - Netmask: 255.255.255.0
+2025-01-21 20:58:21 - IP: 192.168.56.1
+2025-01-21 20:58:21 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 20:58:21 - Login was succesfull for user: a
+2025-01-21 20:58:21 - File data recieved 0
+2025-01-21 20:58:21 - Profile picture was recieved
+2025-01-21 20:58:21 - Current used storage is 74.808
+2025-01-21 20:58:21 - Got directories
+2025-01-21 20:58:21 - Got files
+2025-01-21 20:58:31 - Netmask: 255.255.255.0
+2025-01-21 20:58:31 - IP: 192.168.56.1
+2025-01-21 20:58:34 - No server found
+2025-01-21 20:58:36 - Netmask: 255.255.255.0
+2025-01-21 20:58:36 - IP: 192.168.56.1
+2025-01-21 20:58:39 - No server found
+2025-01-21 21:00:06 - Netmask: 255.255.255.0
+2025-01-21 21:00:06 - IP: 192.168.1.122
+2025-01-21 21:00:06 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-21 21:00:07 - Login was succesfull for user: a
+2025-01-21 21:00:07 - File data recieved 0
+2025-01-21 21:00:07 - Profile picture was recieved
+2025-01-21 21:00:07 - Current used storage is 74.808
+2025-01-21 21:00:07 - Got directories
+2025-01-21 21:00:07 - Got files
+2025-01-21 21:00:55 - Netmask: 255.255.255.0
+2025-01-21 21:00:55 - IP: 192.168.1.122
+2025-01-21 21:00:55 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 21:00:55 - Login was succesfull for user: a
+2025-01-21 21:00:55 - File data recieved 0
+2025-01-21 21:00:55 - Profile picture was recieved
+2025-01-21 21:00:55 - Current used storage is 74.808
+2025-01-21 21:00:55 - Got files
+2025-01-21 21:00:55 - Got directories
+2025-01-21 21:01:10 - Netmask: 255.255.255.0
+2025-01-21 21:01:10 - IP: 192.168.1.122
+2025-01-21 21:01:10 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 21:01:10 - Login was succesfull for user: a
+2025-01-21 21:01:10 - File data recieved 0
+2025-01-21 21:01:10 - Profile picture was recieved
+2025-01-21 21:01:10 - Current used storage is 74.808
+2025-01-21 21:01:10 - Got files
+2025-01-21 21:01:10 - Got directories
+2025-01-21 21:02:32 - Netmask: 255.255.255.0
+2025-01-21 21:02:32 - IP: 192.168.1.122
+2025-01-21 21:02:32 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 21:02:32 - Login was succesfull for user: a
+2025-01-21 21:02:32 - File data recieved 0
+2025-01-21 21:02:32 - Profile picture was recieved
+2025-01-21 21:02:32 - Got files
+2025-01-21 21:02:32 - Current used storage is 74.808
+2025-01-21 21:02:32 - Got directories
+2025-01-21 21:03:14 - Netmask: 255.255.255.0
+2025-01-21 21:03:14 - IP: 192.168.1.122
+2025-01-21 21:03:14 - recieved ip and port from server: ('192.168.1.122', '3102')
+2025-01-21 21:03:14 - Login was succesfull for user: a
+2025-01-21 21:03:14 - File data recieved 0
+2025-01-21 21:03:15 - Profile picture was recieved
+2025-01-21 21:03:15 - Current used storage is 74.808
+2025-01-21 21:03:15 - Got files
+2025-01-21 21:03:15 - Got directories
