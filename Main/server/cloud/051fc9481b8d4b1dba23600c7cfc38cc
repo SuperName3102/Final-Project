@@ -1,0 +1,820 @@
+2025-01-15 11:20:40 - recieved ip and port from server: ('172.16.20.119', '3102')
+2025-01-15 11:20:41 - Login was succesfull for user: a
+2025-01-15 11:20:41 - File data recieved 0
+2025-01-15 11:20:41 - Profile picture was recieved
+2025-01-15 11:20:41 - Got files
+2025-01-15 11:20:41 - Current used storage is 74.808
+2025-01-15 11:20:41 - Got directories
+2025-01-15 11:22:28 - recieved ip and port from server: ('172.16.20.119', '3102')
+2025-01-15 11:22:28 - Login was succesfull for user: a
+2025-01-15 11:22:29 - File data recieved 0
+2025-01-15 11:22:29 - Profile picture was recieved
+2025-01-15 11:22:29 - Got files
+2025-01-15 11:22:29 - Current used storage is 74.808
+2025-01-15 11:22:29 - Got directories
+2025-01-15 11:24:51 - recieved ip and port from server: ('172.16.20.119', '3102')
+2025-01-15 11:24:52 - Login was succesfull for user: a
+2025-01-15 11:24:52 - File data recieved 0
+2025-01-15 11:24:52 - Profile picture was recieved
+2025-01-15 11:24:52 - Got files
+2025-01-15 11:24:52 - Current used storage is 74.808
+2025-01-15 11:24:52 - Got directories
+2025-01-15 12:22:24 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-15 12:22:26 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-15 12:22:48 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-15 12:22:50 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-15 12:28:16 - recieved ip and port from server: ('172.16.20.119', '3102')
+2025-01-15 12:28:16 - Login was succesfull for user: a
+2025-01-15 12:28:16 - File data recieved 0
+2025-01-15 12:28:16 - Profile picture was recieved
+2025-01-15 12:28:16 - Current used storage is 74.808
+2025-01-15 12:28:16 - Got files
+2025-01-15 12:28:16 - Got directories
+2025-01-15 12:28:29 - No server found
+2025-01-15 12:28:34 - No server found
+2025-01-15 12:29:14 - No server found
+2025-01-15 12:29:19 - No server found
+2025-01-15 12:30:02 - No server found
+2025-01-15 12:30:08 - No server found
+2025-01-15 12:34:01 - No server found
+2025-01-15 12:34:06 - No server found
+2025-01-15 12:35:07 - No server found
+2025-01-15 12:35:12 - No server found
+2025-01-15 12:36:44 - No server found
+2025-01-15 12:36:49 - No server found
+2025-01-15 12:38:55 - No server found
+2025-01-15 12:39:00 - No server found
+2025-01-15 12:39:37 - No server found
+2025-01-15 12:39:42 - No server found
+2025-01-15 12:52:44 - No server found
+2025-01-15 12:52:49 - No server found
+2025-01-15 12:57:37 - recieved ip and port from server: ('172.16.20.119', '3102')
+2025-01-15 12:57:37 - Login was succesfull for user: a
+2025-01-15 12:57:38 - File data recieved 0
+2025-01-15 12:57:38 - Profile picture was recieved
+2025-01-15 12:57:38 - Current used storage is 74.808
+2025-01-15 12:57:38 - Got files
+2025-01-15 12:57:38 - Got directories
+2025-01-15 13:10:50 - recieved ip and port from server: ('172.16.20.119', '3102')
+2025-01-15 13:10:50 - Login was succesfull for user: a
+2025-01-15 13:10:50 - File data recieved 0
+2025-01-15 13:10:50 - Profile picture was recieved
+2025-01-15 13:10:50 - Current used storage is 74.808
+2025-01-15 13:10:50 - Got files
+2025-01-15 13:10:50 - Got directories
+2025-01-15 13:10:52 - Logout succesfull
+2025-01-15 13:12:04 - recieved ip and port from server: ('172.16.20.119', '3102')
+2025-01-15 13:12:05 - Login was succesfull for user: a
+2025-01-15 13:12:05 - File data recieved 0
+2025-01-15 13:12:05 - Profile picture was recieved
+2025-01-15 13:12:05 - Got files
+2025-01-15 13:12:05 - Current used storage is 74.808
+2025-01-15 13:12:05 - Got directories
+2025-01-15 13:15:06 - recieved ip and port from server: ('172.16.20.119', '3102')
+2025-01-15 13:15:06 - Login was succesfull for user: a
+2025-01-15 13:15:06 - File data recieved 0
+2025-01-15 13:15:06 - Profile picture was recieved
+2025-01-15 13:15:06 - Got files
+2025-01-15 13:15:06 - Current used storage is 74.808
+2025-01-15 13:15:06 - Got directories
+2025-01-15 13:20:24 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1962, in search_server
+    netmask = get_subnet_mask()  # Adjust based on your network configuration
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1953, in get_subnet_mask
+    if addr.family == psutil.AF_INET and addr.address != '127.0.0.1':  # Ignore localhost
+                      ^^^^^^^^^^^^^^
+AttributeError: module 'psutil' has no attribute 'AF_INET'
+2025-01-15 13:20:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1915, in connect_server
+    sock.connect((ip, int(port)))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1962, in search_server
+    netmask = get_subnet_mask()  # Adjust based on your network configuration
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1953, in get_subnet_mask
+    if addr.family == psutil.AF_INET and addr.address != '127.0.0.1':  # Ignore localhost
+                      ^^^^^^^^^^^^^^
+AttributeError: module 'psutil' has no attribute 'AF_INET'
+2025-01-15 13:20:39 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1962, in search_server
+    netmask = get_subnet_mask()  # Adjust based on your network configuration
+              ^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1953, in get_subnet_mask
+    if addr.family == psutil.AF_INET and addr.address != '127.0.0.1':  # Ignore localhost
+                      ^^^^^^^^^^^^^^
+AttributeError: module 'psutil' has no attribute 'AF_INET'
+2025-01-15 13:20:41 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1915, in connect_server
+    sock.connect((ip, int(port)))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1962, in search_server
+    netmask = get_subnet_mask()  # Adjust based on your network configuration
+              ^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\client.pyw", line 1953, in get_subnet_mask
+    if addr.family == psutil.AF_INET and addr.address != '127.0.0.1':  # Ignore localhost
+                      ^^^^^^^^^^^^^^
+AttributeError: module 'psutil' has no attribute 'AF_INET'
+2025-01-15 13:24:34 - recieved ip and port from server: ('172.16.20.119', '3102')
+2025-01-15 13:24:34 - Login was succesfull for user: a
+2025-01-15 13:24:34 - File data recieved 0
+2025-01-15 13:24:34 - Profile picture was recieved
+2025-01-15 13:24:34 - Got files
+2025-01-15 13:24:34 - Current used storage is 74.808
+2025-01-15 13:24:35 - Got directories
+2025-01-15 13:27:52 - recieved ip and port from server: ('172.16.20.119', '3102')
+2025-01-15 13:27:52 - Login was succesfull for user: a
+2025-01-15 13:27:52 - File data recieved 0
+2025-01-15 13:27:52 - Profile picture was recieved
+2025-01-15 13:27:52 - Current used storage is 74.808
+2025-01-15 13:27:52 - Got files
+2025-01-15 13:27:52 - Got directories
+2025-01-21 20:49:49 - Netmask: 255.255.255.0
+2025-01-21 20:49:49 - IP: 192.168.56.1
+2025-01-21 20:49:49 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 20:49:49 - Login was succesfull for user: a
+2025-01-21 20:49:49 - File data recieved 0
+2025-01-21 20:49:49 - Profile picture was recieved
+2025-01-21 20:49:49 - Got files
+2025-01-21 20:49:49 - Current used storage is 74.808
+2025-01-21 20:49:50 - Got directories
+2025-01-21 20:57:13 - Netmask: {'interface': 'Ethernet', 'ip_address': '192.168.1.122', 'subnet_mask': '255.255.255.0'}
+2025-01-21 20:57:13 - IP: 192.168.56.1
+2025-01-21 20:57:13 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 2006, in search_server
+    broadcast_address = get_broadcast_address(socket.gethostbyname(socket.gethostname()), netmask)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 1944, in get_broadcast_address
+    netmask_binary = struct.unpack('>I', socket.inet_aton(netmask))[0]
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: inet_aton() argument 1 must be str, not dict
+2025-01-21 20:57:15 - Netmask: {'interface': 'Ethernet', 'ip_address': '192.168.1.122', 'subnet_mask': '255.255.255.0'}
+2025-01-21 20:57:15 - IP: 192.168.56.1
+2025-01-21 20:57:15 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 1915, in connect_server
+    sock.connect((ip, int(port)))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 2006, in search_server
+    broadcast_address = get_broadcast_address(socket.gethostbyname(socket.gethostname()), netmask)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 1944, in get_broadcast_address
+    netmask_binary = struct.unpack('>I', socket.inet_aton(netmask))[0]
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: inet_aton() argument 1 must be str, not dict
+2025-01-21 20:57:50 - Netmask: 255.255.255.0
+2025-01-21 20:57:50 - IP: 192.168.56.1
+2025-01-21 20:57:50 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 20:57:50 - Login was succesfull for user: a
+2025-01-21 20:57:50 - File data recieved 0
+2025-01-21 20:57:50 - Profile picture was recieved
+2025-01-21 20:57:50 - Current used storage is 74.808
+2025-01-21 20:57:50 - Got files
+2025-01-21 20:57:50 - Got directories
+2025-01-21 20:58:21 - Netmask: 255.255.255.0
+2025-01-21 20:58:21 - IP: 192.168.56.1
+2025-01-21 20:58:21 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 20:58:21 - Login was succesfull for user: a
+2025-01-21 20:58:21 - File data recieved 0
+2025-01-21 20:58:21 - Profile picture was recieved
+2025-01-21 20:58:21 - Current used storage is 74.808
+2025-01-21 20:58:21 - Got directories
+2025-01-21 20:58:21 - Got files
+2025-01-21 20:58:31 - Netmask: 255.255.255.0
+2025-01-21 20:58:31 - IP: 192.168.56.1
+2025-01-21 20:58:34 - No server found
+2025-01-21 20:58:36 - Netmask: 255.255.255.0
+2025-01-21 20:58:36 - IP: 192.168.56.1
+2025-01-21 20:58:39 - No server found
+2025-01-21 21:00:06 - Netmask: 255.255.255.0
+2025-01-21 21:00:06 - IP: 192.168.1.122
+2025-01-21 21:00:06 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-21 21:00:07 - Login was succesfull for user: a
+2025-01-21 21:00:07 - File data recieved 0
+2025-01-21 21:00:07 - Profile picture was recieved
+2025-01-21 21:00:07 - Current used storage is 74.808
+2025-01-21 21:00:07 - Got directories
+2025-01-21 21:00:07 - Got files
+2025-01-21 21:00:55 - Netmask: 255.255.255.0
+2025-01-21 21:00:55 - IP: 192.168.1.122
+2025-01-21 21:00:55 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 21:00:55 - Login was succesfull for user: a
+2025-01-21 21:00:55 - File data recieved 0
+2025-01-21 21:00:55 - Profile picture was recieved
+2025-01-21 21:00:55 - Current used storage is 74.808
+2025-01-21 21:00:55 - Got files
+2025-01-21 21:00:55 - Got directories
+2025-01-21 21:01:10 - Netmask: 255.255.255.0
+2025-01-21 21:01:10 - IP: 192.168.1.122
+2025-01-21 21:01:10 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 21:01:10 - Login was succesfull for user: a
+2025-01-21 21:01:10 - File data recieved 0
+2025-01-21 21:01:10 - Profile picture was recieved
+2025-01-21 21:01:10 - Current used storage is 74.808
+2025-01-21 21:01:10 - Got files
+2025-01-21 21:01:10 - Got directories
+2025-01-21 21:02:32 - Netmask: 255.255.255.0
+2025-01-21 21:02:32 - IP: 192.168.1.122
+2025-01-21 21:02:32 - recieved ip and port from server: ('192.168.56.1', '3102')
+2025-01-21 21:02:32 - Login was succesfull for user: a
+2025-01-21 21:02:32 - File data recieved 0
+2025-01-21 21:02:32 - Profile picture was recieved
+2025-01-21 21:02:32 - Got files
+2025-01-21 21:02:32 - Current used storage is 74.808
+2025-01-21 21:02:32 - Got directories
+2025-01-21 21:03:14 - Netmask: 255.255.255.0
+2025-01-21 21:03:14 - IP: 192.168.1.122
+2025-01-21 21:03:14 - recieved ip and port from server: ('192.168.1.122', '3102')
+2025-01-21 21:03:14 - Login was succesfull for user: a
+2025-01-21 21:03:14 - File data recieved 0
+2025-01-21 21:03:15 - Profile picture was recieved
+2025-01-21 21:03:15 - Current used storage is 74.808
+2025-01-21 21:03:15 - Got files
+2025-01-21 21:03:15 - Got directories
+2025-01-21 21:04:53 - Netmask: 255.255.255.0
+2025-01-21 21:04:53 - IP: 192.168.1.122
+2025-01-21 21:04:53 - recieved ip and port from server: ('192.168.1.247', '3102')
+2025-01-21 21:04:53 - Login was succesfull for user: a
+2025-01-21 21:04:53 - File data recieved 0
+2025-01-21 21:04:53 - Profile picture was recieved
+2025-01-21 21:04:53 - Got files
+2025-01-21 21:04:53 - Current used storage is 74.808
+2025-01-21 21:04:53 - Got directories
+2025-01-21 21:05:26 - Netmask: 255.255.255.0
+2025-01-21 21:05:26 - IP: 192.168.1.122
+2025-01-21 21:05:27 - recieved ip and port from server: ('192.168.1.122', '3102')
+2025-01-21 21:05:27 - Login was succesfull for user: a
+2025-01-21 21:05:27 - File data recieved 0
+2025-01-21 21:05:27 - Profile picture was recieved
+2025-01-21 21:05:27 - Got files
+2025-01-21 21:05:27 - Current used storage is 74.808
+2025-01-21 21:05:27 - Got directories
+2025-01-21 21:13:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 1964, in main
+    network = networking.Networking()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Networking.__init__() missing 1 required positional argument: 'log'
+2025-01-21 21:13:52 - Netmask: 255.255.255.0
+2025-01-21 21:13:52 - IP: 192.168.1.122
+2025-01-21 21:13:53 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\key_exchange.py", line 10, in rsa_exchange
+    send_data_wrap(b"RSAR", False)
+    ^^^^^^^^^^^^^^
+NameError: name 'send_data_wrap' is not defined
+2025-01-21 21:21:05 - Netmask: 255.255.255.0
+2025-01-21 21:21:05 - IP: 192.168.1.122
+2025-01-21 21:21:05 - Netmask: 255.255.255.0
+2025-01-21 21:21:05 - IP: 192.168.1.122
+2025-01-21 21:21:38 - Netmask: 255.255.255.0
+2025-01-21 21:21:38 - IP: 192.168.1.122
+2025-01-21 21:22:15 - Netmask: 255.255.255.0
+2025-01-21 21:22:15 - IP: 192.168.1.122
+2025-01-21 21:23:00 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 1918, in connect_server
+    shared_secret = exchange.rsa_exchange(sock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Key_Exchange.rsa_exchange() takes 1 positional argument but 2 were given
+2025-01-21 21:23:00 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 1918, in connect_server
+    shared_secret = exchange.rsa_exchange(sock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Key_Exchange.rsa_exchange() takes 1 positional argument but 2 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 1918, in connect_server
+    shared_secret = exchange.rsa_exchange(sock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Key_Exchange.rsa_exchange() takes 1 positional argument but 2 were given
+2025-01-21 21:23:33 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\key_exchange.py", line 14, in rsa_exchange
+    s_public_key = self.recv_rsa_key(self.network.sock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Key_Exchange.recv_rsa_key() takes 1 positional argument but 2 were given
+2025-01-21 21:23:52 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\key_exchange.py", line 14, in rsa_exchange
+    s_public_key = self.recv_rsa_key(self.network.sock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Key_Exchange.recv_rsa_key() takes 1 positional argument but 2 were given
+2025-01-21 21:24:03 - Login was succesfull for user: a
+2025-01-21 21:24:03 - File data recieved 0
+2025-01-21 21:24:03 - Profile picture was recieved
+2025-01-21 21:24:03 - Current used storage is 74.808
+2025-01-21 21:24:03 - Got files
+2025-01-21 21:24:03 - Got directories
+2025-01-21 21:24:15 - Succesfully moved to
+2025-01-21 21:24:15 - Got files
+2025-01-21 21:24:15 - Got directories
+2025-01-21 21:24:15 - Current used storage is 74.808
+2025-01-21 21:24:16 - Succesfully moved to
+2025-01-21 21:24:16 - Current used storage is 74.808
+2025-01-21 21:24:16 - Got files
+2025-01-21 21:24:16 - Got directories
+2025-01-21 21:24:17 - Current used storage is 74.808
+2025-01-21 21:24:17 - Got files
+2025-01-21 21:24:17 - Got directories
+2025-01-21 21:24:18 - Current used storage is 74.808
+2025-01-21 21:24:18 - Got files
+2025-01-21 21:24:18 - Got directories
+2025-01-21 21:24:21 - Current used storage is 74.808
+2025-01-21 21:24:21 - Got files
+2025-01-21 21:24:21 - Got directories
+2025-01-21 21:24:25 - Succesfully moved to
+2025-01-21 21:24:25 - Got files
+2025-01-21 21:24:25 - Got directories
+2025-01-21 21:24:25 - Current used storage is 74.808
+2025-01-21 21:24:28 - File CactiMaster.rar was deleted!
+2025-01-21 21:24:28 - Succesfully deleted 1 files
+2025-01-21 21:24:28 - Got directories
+2025-01-21 21:24:28 - Got files
+2025-01-21 21:24:28 - Current used storage is 22.031
+2025-01-21 21:24:30 - Succesfully moved to
+2025-01-21 21:24:30 - Current used storage is 22.031
+2025-01-21 21:24:30 - Got files
+2025-01-21 21:24:30 - Got directories
+2025-01-21 21:24:32 - Current used storage is 22.031
+2025-01-21 21:24:32 - Got files
+2025-01-21 21:24:32 - Got directories
+2025-01-21 21:24:33 - Current used storage is 22.031
+2025-01-21 21:24:33 - Got files
+2025-01-21 21:24:33 - Got directories
+2025-01-21 21:24:38 - Current used storage is 22.031
+2025-01-21 21:24:38 - Got files
+2025-01-21 21:24:38 - Got directories
+2025-01-21 21:24:38 - Current used storage is 22.031
+2025-01-21 21:24:38 - Got files
+2025-01-21 21:24:38 - Got directories
+2025-01-21 21:24:38 - Current used storage is 22.031
+2025-01-21 21:24:38 - Got files
+2025-01-21 21:24:38 - Got directories
+2025-01-21 21:24:39 - Current used storage is 22.031
+2025-01-21 21:24:39 - Got files
+2025-01-21 21:24:39 - Got directories
+2025-01-21 21:24:39 - Current used storage is 22.031
+2025-01-21 21:24:39 - Got files
+2025-01-21 21:24:40 - Got directories
+2025-01-21 21:24:40 - Current used storage is 22.031
+2025-01-21 21:24:40 - Got files
+2025-01-21 21:24:40 - Got directories
+2025-01-21 21:24:40 - Current used storage is 22.031
+2025-01-21 21:24:40 - Got files
+2025-01-21 21:24:40 - Got directories
+2025-01-21 21:24:40 - Current used storage is 22.031
+2025-01-21 21:24:40 - Got files
+2025-01-21 21:24:41 - Got directories
+2025-01-21 21:24:41 - Current used storage is 22.031
+2025-01-21 21:24:41 - Got files
+2025-01-21 21:24:41 - Got directories
+2025-01-21 23:41:55 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 602, in connect_server
+    sock.connect((ip, port))
+                  ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+2025-01-21 23:42:27 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 602, in connect_server
+    sock.connect((ip, port))
+                  ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+2025-01-21 23:43:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 602, in connect_server
+    sock.connect((ip, port))
+                  ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+2025-01-21 23:43:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 602, in connect_server
+    sock.connect((ip, port))
+                  ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 602, in connect_server
+    sock.connect((ip, port))
+                  ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+2025-01-21 23:43:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 602, in connect_server
+    sock.connect((ip, port))
+                  ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 602, in connect_server
+    sock.connect((ip, port))
+                  ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 614, in not_connected_page
+    if connect: self.protocol.connect_server(self.protocol.ip, self.protocol.port, True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 624, in connect_server
+    self.window.set_error_message(f'Server was not found {ip} {port}')
+                                                          ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+2025-01-21 23:43:27 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 602, in connect_server
+    sock.connect((ip, port))
+                  ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+2025-01-21 23:43:27 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 602, in connect_server
+    sock.connect((ip, port))
+                  ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 602, in connect_server
+    sock.connect((ip, port))
+                  ^^
+NameError: name 'ip' is not defined. Did you mean: 'self.ip'?
+2025-01-21 23:43:47 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 611, in connect_server
+    receive_thread.start()
+    ^^^^^^^^^^^^^^
+NameError: name 'receive_thread' is not defined
+2025-01-21 23:43:48 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 611, in connect_server
+    receive_thread.start()
+    ^^^^^^^^^^^^^^
+NameError: name 'receive_thread' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 611, in connect_server
+    receive_thread.start()
+    ^^^^^^^^^^^^^^
+NameError: name 'receive_thread' is not defined
+2025-01-21 23:45:01 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\client.pyw", line 61, in handle_reply
+    app.network.logtcp('recv', reply)
+    ^^^
+NameError: name 'app' is not defined
+2025-01-21 23:45:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 339, in protocol_parse_reply
+    self.get_user_icon()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 104, in get_user_icon
+    self.window.files_downloading["user"] = self.window.file_sending.File(self.window, user_icon, "user", 0, file_name="User Icon")
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FileSending' object has no attribute 'File'
+2025-01-21 23:45:40 - Login was succesfull for user: a
+2025-01-21 23:45:40 - File data recieved 0
+2025-01-21 23:45:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 585, in protocol_parse_reply
+    if code != "RILD" and code != "RILE": self.window.force_update_self.window()
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'force_update_self'. Did you mean: 'force_update_window'?
+2025-01-21 23:45:40 - Profile picture was recieved
+2025-01-21 23:46:31 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 339, in protocol_parse_reply
+    self.get_user_icon()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 104, in get_user_icon
+    self.window.files_downloading["user"] = self.window.file_sending.File(self.window, user_icon, "user", 0, file_name="User Icon")
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FileSending' object has no attribute 'File'
+2025-01-21 23:46:31 - Login was succesfull for user: a
+2025-01-21 23:46:31 - File data recieved 0
+2025-01-21 23:46:31 - Profile picture was recieved
+2025-01-21 23:48:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 343, in protocol_parse_reply
+    self.window.user_page()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 308, in user_page
+    self.update_user_page()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 323, in update_user_page
+    self.protocol.get_cwd_files(self.search_filter)
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 59, in get_cwd_files
+    self.protocol.get_files(1, filter)
+    ^^^^^^^^^^^^^
+AttributeError: 'Protocol' object has no attribute 'protocol'
+2025-01-21 23:48:07 - Login was succesfull for user: a
+2025-01-21 23:48:07 - File data recieved 0
+2025-01-21 23:48:07 - Profile picture was recieved
+2025-01-21 23:48:07 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 505, in protocol_parse_reply
+    self.window.set_used_storage()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 771, in set_used_storage
+    self.storage_remaining.setValue(int(self.used_storage))
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'storage_remaining'
+2025-01-21 23:48:07 - Invalid reply from server
+2025-01-21 23:48:07 - b'GEUR|74808221'
+2025-01-21 23:49:00 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 356, in run_user_page
+    self.search.clicked.connect(self.search)
+TypeError: argument 1 has unexpected type 'QPushButton'
+2025-01-21 23:49:00 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 345, in protocol_parse_reply
+    if remember:
+       ^^^^^^^^
+NameError: name 'remember' is not defined
+2025-01-21 23:49:00 - Login was succesfull for user: a
+2025-01-21 23:49:00 - File data recieved 0
+2025-01-21 23:49:00 - Profile picture was recieved
+2025-01-21 23:49:00 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 558, in protocol_parse_reply
+    if files != None and directories != None:
+                         ^^^^^^^^^^^
+NameError: name 'directories' is not defined
+2025-01-21 23:49:00 - Invalid reply from server
+2025-01-21 23:49:00 - b'PATH|55|\xd7\xa9\xd7\x90\xd7\x9c\xd7\x95\xd7\x9f \xd7\xa2\xd7\x99\xd7\x93\xd7\x9f \xd7\x97\xd7\x96\xd7\x90\xd7\x99 330905159.docx~2025-01-05 23:00:33.327545~81756~9b9b918dce3840f6a6f78a588ddd4d0c|\xd7\x9e\xd7\x99\xd7\x95\xd7\x9f \xd7\x90\xd7\x99\xd7\xa9\xd7\x99\xd7\x95\xd7\xaa.txt~2025-01-05 21:37:34.227244~12215~a4813d15a35d49fb9c24035f20208b80|\xd7\x9e\xd7\x99\xd7\x95\xd7\x9f \xd7\x90\xd7\x99\xd7\xa9\xd7\x99\xd7\x95\xd7\xaa.txt~2025-01-05 23:00:34.481928~12215~3b7c56f4f8e445d8bbcd1342cde035ba|Zoom_aMx6bGM4b7.png~2025-01-05 23:00:45.560242~354146~3056bcfbdf294d9aafd58f8b6ddec99f|Zoom_aM0cBMMuYW.png~2025-01-05 23:00:45.687764~482436~ddfd77c0232b4a07b26c2fcff4ede7a2|VSCode.css~2025-01-05 21:37:34.352710~4424~6efb108d14554e4a8fc4e4b72c8826da|VSCode.css~2025-01-05 23:00:34.536958~4424~be2457bd003a4c39a48e53a42b5a5378|vencord-settings-backup.json~2025-01-05 21:37:34.273657~23664~84d56a58ffaa44929211e98a0aef1f04|vencord-settings-backup.json~2025-01-05 23:00:34.529958~23664~54aa23c8f45c48c7892ccaadb35122fa|ThemeTool.exe~2025-01-05 21:37:34.021652~221696~6ecfa86717a74e0c84514e8263a21650|ThemeTool.exe~2025-01-05 23:00:34.285359~221696~4f043aa5301745849d15ba63399f3d18|Teams_JHQYh64EmD.png~2025-01-05 23:00:45.197499~54123~b6d9250f51b24201b0601af81797c908|Teams_BkqJFDNiGE.png~2025-01-05 23:00:44.851344~58876~8bb50e179f164a0a9d8ac2e6fac976f4|RocketLeague_nvmo0joaYd.jpg~2025-01-05 23:00:45.447727~417754~d4c14103cf0b4a81915794d327208c4d|RocketLeague_npe4XSGKVK.png~2025-01-05 23:00:45.341549~229358~e0f1ee76b16043ee8c79698ae9811135|RocketLeague_EteTcy8mkT.jpg~2025-01-05 23:00:44.783834~319798~45f76e75f2c5475d9fb70e93248e1c3b|RocketLeague_b33BhjulkZ.png~2025-01-05 23:00:45.197499~319727~fec1697be03d4edc8e5b80c26c854e08|macchiato.qbtheme~2025-01-05 23:00:34.595969~5498~b94df2de9e8740699539e04892058906|kVaJtxZ5CF.png~2025-01-05 23:00:44.779834~21612~f11d7c5c493849b9bfb5f452ffb7fcd2|Infinity5.ahk~2025-01-05 21:37:34.576751~514~c2a4df7bdcb84e3597805f035d04e01a'
+2025-01-21 23:49:00 - Current used storage is 74.808
+2025-01-21 23:49:00 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 429, in draw_cwd
+    for file in files:
+                ^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-01-21 23:49:00 - Got directories
+2025-01-21 23:51:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 345, in protocol_parse_reply
+    if remember:
+       ^^^^^^^^
+NameError: name 'remember' is not defined
+2025-01-21 23:51:11 - Login was succesfull for user: a
+2025-01-21 23:51:11 - File data recieved 0
+2025-01-21 23:51:11 - Profile picture was recieved
+2025-01-21 23:51:11 - Current used storage is 74.808
+2025-01-21 23:51:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 558, in protocol_parse_reply
+    if files != None and directories != None:
+                         ^^^^^^^^^^^
+NameError: name 'directories' is not defined
+2025-01-21 23:51:11 - Invalid reply from server
+2025-01-21 23:51:11 - b'PATH|55|\xd7\xa9\xd7\x90\xd7\x9c\xd7\x95\xd7\x9f \xd7\xa2\xd7\x99\xd7\x93\xd7\x9f \xd7\x97\xd7\x96\xd7\x90\xd7\x99 330905159.docx~2025-01-05 23:00:33.327545~81756~9b9b918dce3840f6a6f78a588ddd4d0c|\xd7\x9e\xd7\x99\xd7\x95\xd7\x9f \xd7\x90\xd7\x99\xd7\xa9\xd7\x99\xd7\x95\xd7\xaa.txt~2025-01-05 21:37:34.227244~12215~a4813d15a35d49fb9c24035f20208b80|\xd7\x9e\xd7\x99\xd7\x95\xd7\x9f \xd7\x90\xd7\x99\xd7\xa9\xd7\x99\xd7\x95\xd7\xaa.txt~2025-01-05 23:00:34.481928~12215~3b7c56f4f8e445d8bbcd1342cde035ba|Zoom_aMx6bGM4b7.png~2025-01-05 23:00:45.560242~354146~3056bcfbdf294d9aafd58f8b6ddec99f|Zoom_aM0cBMMuYW.png~2025-01-05 23:00:45.687764~482436~ddfd77c0232b4a07b26c2fcff4ede7a2|VSCode.css~2025-01-05 21:37:34.352710~4424~6efb108d14554e4a8fc4e4b72c8826da|VSCode.css~2025-01-05 23:00:34.536958~4424~be2457bd003a4c39a48e53a42b5a5378|vencord-settings-backup.json~2025-01-05 21:37:34.273657~23664~84d56a58ffaa44929211e98a0aef1f04|vencord-settings-backup.json~2025-01-05 23:00:34.529958~23664~54aa23c8f45c48c7892ccaadb35122fa|ThemeTool.exe~2025-01-05 21:37:34.021652~221696~6ecfa86717a74e0c84514e8263a21650|ThemeTool.exe~2025-01-05 23:00:34.285359~221696~4f043aa5301745849d15ba63399f3d18|Teams_JHQYh64EmD.png~2025-01-05 23:00:45.197499~54123~b6d9250f51b24201b0601af81797c908|Teams_BkqJFDNiGE.png~2025-01-05 23:00:44.851344~58876~8bb50e179f164a0a9d8ac2e6fac976f4|RocketLeague_nvmo0joaYd.jpg~2025-01-05 23:00:45.447727~417754~d4c14103cf0b4a81915794d327208c4d|RocketLeague_npe4XSGKVK.png~2025-01-05 23:00:45.341549~229358~e0f1ee76b16043ee8c79698ae9811135|RocketLeague_EteTcy8mkT.jpg~2025-01-05 23:00:44.783834~319798~45f76e75f2c5475d9fb70e93248e1c3b|RocketLeague_b33BhjulkZ.png~2025-01-05 23:00:45.197499~319727~fec1697be03d4edc8e5b80c26c854e08|macchiato.qbtheme~2025-01-05 23:00:34.595969~5498~b94df2de9e8740699539e04892058906|kVaJtxZ5CF.png~2025-01-05 23:00:44.779834~21612~f11d7c5c493849b9bfb5f452ffb7fcd2|Infinity5.ahk~2025-01-05 21:37:34.576751~514~c2a4df7bdcb84e3597805f035d04e01a'
+2025-01-21 23:51:11 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 429, in draw_cwd
+    for file in files:
+                ^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-01-21 23:51:11 - Got directories
+2025-01-21 23:51:50 - Login was succesfull for user: a
+2025-01-21 23:51:50 - File data recieved 0
+2025-01-21 23:51:50 - Profile picture was recieved
+2025-01-21 23:51:50 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 557, in protocol_parse_reply
+    if files != None and directories != None:
+                         ^^^^^^^^^^^
+NameError: name 'directories' is not defined
+2025-01-21 23:51:50 - Invalid reply from server
+2025-01-21 23:51:50 - b'PATH|55|\xd7\xa9\xd7\x90\xd7\x9c\xd7\x95\xd7\x9f \xd7\xa2\xd7\x99\xd7\x93\xd7\x9f \xd7\x97\xd7\x96\xd7\x90\xd7\x99 330905159.docx~2025-01-05 23:00:33.327545~81756~9b9b918dce3840f6a6f78a588ddd4d0c|\xd7\x9e\xd7\x99\xd7\x95\xd7\x9f \xd7\x90\xd7\x99\xd7\xa9\xd7\x99\xd7\x95\xd7\xaa.txt~2025-01-05 21:37:34.227244~12215~a4813d15a35d49fb9c24035f20208b80|\xd7\x9e\xd7\x99\xd7\x95\xd7\x9f \xd7\x90\xd7\x99\xd7\xa9\xd7\x99\xd7\x95\xd7\xaa.txt~2025-01-05 23:00:34.481928~12215~3b7c56f4f8e445d8bbcd1342cde035ba|Zoom_aMx6bGM4b7.png~2025-01-05 23:00:45.560242~354146~3056bcfbdf294d9aafd58f8b6ddec99f|Zoom_aM0cBMMuYW.png~2025-01-05 23:00:45.687764~482436~ddfd77c0232b4a07b26c2fcff4ede7a2|VSCode.css~2025-01-05 21:37:34.352710~4424~6efb108d14554e4a8fc4e4b72c8826da|VSCode.css~2025-01-05 23:00:34.536958~4424~be2457bd003a4c39a48e53a42b5a5378|vencord-settings-backup.json~2025-01-05 21:37:34.273657~23664~84d56a58ffaa44929211e98a0aef1f04|vencord-settings-backup.json~2025-01-05 23:00:34.529958~23664~54aa23c8f45c48c7892ccaadb35122fa|ThemeTool.exe~2025-01-05 21:37:34.021652~221696~6ecfa86717a74e0c84514e8263a21650|ThemeTool.exe~2025-01-05 23:00:34.285359~221696~4f043aa5301745849d15ba63399f3d18|Teams_JHQYh64EmD.png~2025-01-05 23:00:45.197499~54123~b6d9250f51b24201b0601af81797c908|Teams_BkqJFDNiGE.png~2025-01-05 23:00:44.851344~58876~8bb50e179f164a0a9d8ac2e6fac976f4|RocketLeague_nvmo0joaYd.jpg~2025-01-05 23:00:45.447727~417754~d4c14103cf0b4a81915794d327208c4d|RocketLeague_npe4XSGKVK.png~2025-01-05 23:00:45.341549~229358~e0f1ee76b16043ee8c79698ae9811135|RocketLeague_EteTcy8mkT.jpg~2025-01-05 23:00:44.783834~319798~45f76e75f2c5475d9fb70e93248e1c3b|RocketLeague_b33BhjulkZ.png~2025-01-05 23:00:45.197499~319727~fec1697be03d4edc8e5b80c26c854e08|macchiato.qbtheme~2025-01-05 23:00:34.595969~5498~b94df2de9e8740699539e04892058906|kVaJtxZ5CF.png~2025-01-05 23:00:44.779834~21612~f11d7c5c493849b9bfb5f452ffb7fcd2|Infinity5.ahk~2025-01-05 21:37:34.576751~514~c2a4df7bdcb84e3597805f035d04e01a'
+2025-01-21 23:51:50 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 429, in draw_cwd
+    for file in files:
+                ^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-01-21 23:51:50 - Got directories
+2025-01-21 23:51:50 - Current used storage is 74.808
+2025-01-21 23:52:50 - Login was succesfull for user: a
+2025-01-21 23:52:50 - File data recieved 0
+2025-01-21 23:52:50 - Profile picture was recieved
+2025-01-21 23:52:50 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 429, in draw_cwd
+    for file in files:
+                ^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-01-21 23:52:50 - Got files
+2025-01-21 23:52:50 - Current used storage is 74.808
+2025-01-21 23:52:50 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 564, in protocol_parse_reply
+    if files != None and self.window.directories != None:
+       ^^^^^
+NameError: name 'files' is not defined. Did you mean: 'File'?
+2025-01-21 23:52:50 - Invalid reply from server
+2025-01-21 23:52:50 - b'PATD|60'
+2025-01-21 23:53:50 - Login was succesfull for user: a
+2025-01-21 23:53:50 - File data recieved 0
+2025-01-21 23:53:50 - Profile picture was recieved
+2025-01-21 23:53:50 - Current used storage is 74.808
+2025-01-21 23:53:50 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 558, in protocol_parse_reply
+    self.window.update_current_files()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 801, in update_current_files
+    scroll.verticalScrollBar().setMaximum(self.scroll_progress)
+    ^^^^^^
+NameError: name 'scroll' is not defined. Did you mean: 'self.scroll'?
+2025-01-21 23:53:50 - Invalid reply from server
+2025-01-21 23:53:50 - b'PATH|55|\xd7\xa9\xd7\x90\xd7\x9c\xd7\x95\xd7\x9f \xd7\xa2\xd7\x99\xd7\x93\xd7\x9f \xd7\x97\xd7\x96\xd7\x90\xd7\x99 330905159.docx~2025-01-05 23:00:33.327545~81756~9b9b918dce3840f6a6f78a588ddd4d0c|\xd7\x9e\xd7\x99\xd7\x95\xd7\x9f \xd7\x90\xd7\x99\xd7\xa9\xd7\x99\xd7\x95\xd7\xaa.txt~2025-01-05 21:37:34.227244~12215~a4813d15a35d49fb9c24035f20208b80|\xd7\x9e\xd7\x99\xd7\x95\xd7\x9f \xd7\x90\xd7\x99\xd7\xa9\xd7\x99\xd7\x95\xd7\xaa.txt~2025-01-05 23:00:34.481928~12215~3b7c56f4f8e445d8bbcd1342cde035ba|Zoom_aMx6bGM4b7.png~2025-01-05 23:00:45.560242~354146~3056bcfbdf294d9aafd58f8b6ddec99f|Zoom_aM0cBMMuYW.png~2025-01-05 23:00:45.687764~482436~ddfd77c0232b4a07b26c2fcff4ede7a2|VSCode.css~2025-01-05 21:37:34.352710~4424~6efb108d14554e4a8fc4e4b72c8826da|VSCode.css~2025-01-05 23:00:34.536958~4424~be2457bd003a4c39a48e53a42b5a5378|vencord-settings-backup.json~2025-01-05 21:37:34.273657~23664~84d56a58ffaa44929211e98a0aef1f04|vencord-settings-backup.json~2025-01-05 23:00:34.529958~23664~54aa23c8f45c48c7892ccaadb35122fa|ThemeTool.exe~2025-01-05 21:37:34.021652~221696~6ecfa86717a74e0c84514e8263a21650|ThemeTool.exe~2025-01-05 23:00:34.285359~221696~4f043aa5301745849d15ba63399f3d18|Teams_JHQYh64EmD.png~2025-01-05 23:00:45.197499~54123~b6d9250f51b24201b0601af81797c908|Teams_BkqJFDNiGE.png~2025-01-05 23:00:44.851344~58876~8bb50e179f164a0a9d8ac2e6fac976f4|RocketLeague_nvmo0joaYd.jpg~2025-01-05 23:00:45.447727~417754~d4c14103cf0b4a81915794d327208c4d|RocketLeague_npe4XSGKVK.png~2025-01-05 23:00:45.341549~229358~e0f1ee76b16043ee8c79698ae9811135|RocketLeague_EteTcy8mkT.jpg~2025-01-05 23:00:44.783834~319798~45f76e75f2c5475d9fb70e93248e1c3b|RocketLeague_b33BhjulkZ.png~2025-01-05 23:00:45.197499~319727~fec1697be03d4edc8e5b80c26c854e08|macchiato.qbtheme~2025-01-05 23:00:34.595969~5498~b94df2de9e8740699539e04892058906|kVaJtxZ5CF.png~2025-01-05 23:00:44.779834~21612~f11d7c5c493849b9bfb5f452ffb7fcd2|Infinity5.ahk~2025-01-05 21:37:34.576751~514~c2a4df7bdcb84e3597805f035d04e01a'
+2025-01-21 23:53:50 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 565, in protocol_parse_reply
+    self.window.update_current_files()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 801, in update_current_files
+    scroll.verticalScrollBar().setMaximum(self.scroll_progress)
+    ^^^^^^
+NameError: name 'scroll' is not defined. Did you mean: 'self.scroll'?
+2025-01-21 23:53:50 - Invalid reply from server
+2025-01-21 23:53:50 - b'PATD|60'
+2025-01-21 23:54:55 - Login was succesfull for user: a
+2025-01-21 23:54:55 - File data recieved 0
+2025-01-21 23:54:55 - Profile picture was recieved
+2025-01-21 23:54:55 - Current used storage is 74.808
+2025-01-21 23:54:55 - Got files
+2025-01-21 23:54:55 - Got directories
+2025-01-21 23:58:42 - Login was succesfull for user: a
+2025-01-21 23:58:42 - File data recieved 0
+2025-01-21 23:58:42 - Profile picture was recieved
+2025-01-21 23:58:42 - Current used storage is 74.808
+2025-01-21 23:58:42 - Got files
+2025-01-21 23:58:42 - Got directories
+2025-01-21 23:59:17 - Current used storage is 74.808
+2025-01-21 23:59:23 - Got files
+2025-01-21 23:59:23 - Current used storage is 74.808
+2025-01-21 23:59:23 - Got directories
+2025-01-21 23:59:29 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 715, in file_dialog
+    self.file_sending.send_files()
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\file_sending.py", line 27, in send_files
+    thread.finished.connect(self.finish_sending)
+                            ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FileSending' object has no attribute 'finish_sending'
+2025-01-22 00:00:04 - Login was succesfull for user: a
+2025-01-22 00:00:04 - File data recieved 0
+2025-01-22 00:00:04 - Profile picture was recieved
+2025-01-22 00:00:04 - Current used storage is 74.808
+2025-01-22 00:00:04 - Got files
+2025-01-22 00:00:04 - Got directories
+2025-01-22 00:01:08 - Login was succesfull for user: a
+2025-01-22 00:01:08 - File data recieved 0
+2025-01-22 00:01:08 - Profile picture was recieved
+2025-01-22 00:01:08 - Current used storage is 74.808
+2025-01-22 00:01:08 - Got directories
+2025-01-22 00:01:08 - Got files
+2025-01-22 00:01:40 - Login was succesfull for user: a
+2025-01-22 00:01:40 - File data recieved 0
+2025-01-22 00:01:40 - Profile picture was recieved
+2025-01-22 00:01:40 - Current used storage is 74.808
+2025-01-22 00:01:40 - Got files
+2025-01-22 00:01:40 - Got directories
+2025-01-22 00:01:46 - Login was succesfull for user: a
+2025-01-22 00:01:46 - File data recieved 0
+2025-01-22 00:01:46 - Profile picture was recieved
+2025-01-22 00:01:46 - Current used storage is 74.808
+2025-01-22 00:01:46 - Got files
+2025-01-22 00:01:46 - Got directories
+2025-01-22 00:01:47 - Got files
+2025-01-22 00:01:47 - Got directories
+2025-01-22 00:01:47 - Current used storage is 74.808
+2025-01-22 00:01:48 - Got files
+2025-01-22 00:01:48 - Current used storage is 74.808
+2025-01-22 00:01:48 - Got directories
+2025-01-22 00:01:50 - Current used storage is 74.808
+2025-01-22 00:01:50 - Got files
+2025-01-22 00:01:50 - Got directories
+2025-01-22 00:01:50 - Got directories
+2025-01-22 00:01:50 - Current used storage is 74.808
+2025-01-22 00:01:50 - Got files
+2025-01-22 00:01:51 - Got directories
+2025-01-22 00:01:51 - Got files
+2025-01-22 00:01:51 - Current used storage is 74.808
+2025-01-22 00:01:51 - Got files
+2025-01-22 00:01:51 - Current used storage is 74.808
+2025-01-22 00:01:51 - Got directories
+2025-01-22 00:01:51 - Current used storage is 74.808
+2025-01-22 00:01:51 - Got files
+2025-01-22 00:01:51 - Got directories
+2025-01-22 00:01:51 - Got files
+2025-01-22 00:01:51 - Current used storage is 74.808
+2025-01-22 00:01:51 - Got directories
+2025-01-22 00:01:51 - Got files
+2025-01-22 00:01:51 - Current used storage is 74.808
+2025-01-22 00:01:51 - Got directories
+2025-01-22 00:01:58 - Got files
+2025-01-22 00:01:58 - Current used storage is 74.808
+2025-01-22 00:01:58 - Got directories
+2025-01-22 00:02:05 - Got files
+2025-01-22 00:02:05 - Current used storage is 74.808
+2025-01-22 00:02:05 - Got directories
+2025-01-22 00:02:07 - Current used storage is 74.808
+2025-01-22 00:02:07 - Got files
+2025-01-22 00:02:07 - Got directories
+2025-01-22 10:25:57 - Login was succesfull for user: a
+2025-01-22 10:25:57 - File data recieved 0
+2025-01-22 10:25:57 - Profile picture was recieved
+2025-01-22 10:25:57 - Current used storage is 74.808
+2025-01-22 10:25:57 - Got files
+2025-01-22 10:25:57 - Got directories
+2025-01-22 10:27:15 - Login was succesfull for user: a
+2025-01-22 10:27:15 - File data recieved 0
+2025-01-22 10:27:15 - Profile picture was recieved
+2025-01-22 10:27:15 - Got files
+2025-01-22 10:27:15 - Current used storage is 74.808
+2025-01-22 10:27:15 - Got directories
+2025-01-22 10:28:33 - Login was succesfull for user: a
+2025-01-22 10:28:33 - File data recieved 0
+2025-01-22 10:28:33 - Profile picture was recieved
+2025-01-22 10:28:33 - Got files
+2025-01-22 10:28:33 - Current used storage is 74.808
+2025-01-22 10:28:33 - Got directories
+2025-01-22 10:28:35 - Succesfully moved to
+2025-01-22 10:28:35 - Current used storage is 74.808
+2025-01-22 10:28:35 - Got files
+2025-01-22 10:28:35 - Got directories
+2025-01-22 10:31:18 - Login was succesfull for user: a
+2025-01-22 10:31:18 - File data recieved 0
+2025-01-22 10:31:18 - Profile picture was recieved
+2025-01-22 10:31:18 - Got files
+2025-01-22 10:31:18 - Current used storage is 74.808
+2025-01-22 10:31:19 - Got directories
+2025-01-22 10:31:27 - File Zoom_aM0cBMMuYW.png was viewed
+2025-01-22 10:31:27 - File viewing released
+2025-01-22 10:31:30 - File data recieved 0
+2025-01-22 10:32:06 - Login was succesfull for user: a
+2025-01-22 10:32:06 - File data recieved 0
+2025-01-22 10:32:06 - Profile picture was recieved
+2025-01-22 10:32:06 - Got files
+2025-01-22 10:32:06 - Current used storage is 74.808
+2025-01-22 10:32:06 - Got directories
+2025-01-22 10:32:16 - File data recieved 0
+2025-01-22 10:32:16 - File \u05de\u05d9\u05d5\u05df \u05d0\u05d9\u05e9\u05d9\u05d5\u05ea.txt was downloaded
+2025-01-22 10:34:09 - Login was succesfull for user: a
+2025-01-22 10:34:09 - File data recieved 0
+2025-01-22 10:34:09 - Profile picture was recieved
+2025-01-22 10:34:09 - Got files
+2025-01-22 10:34:09 - Current used storage is 74.808
+2025-01-22 10:34:09 - Got directories
+2025-01-22 10:34:52 - Login was succesfull for user: a
+2025-01-22 10:34:52 - File data recieved 0
+2025-01-22 10:34:52 - Profile picture was recieved
+2025-01-22 10:34:52 - Got files
+2025-01-22 10:34:52 - Current used storage is 74.808
+2025-01-22 10:34:52 - Got directories
+2025-01-22 10:34:58 - Current used storage is 74.808
+2025-01-22 10:35:00 - Subscription level updated to basic
+2025-01-22 10:35:00 - Current used storage is 74.808
+2025-01-22 10:35:01 - Subscription level updated to free
+2025-01-22 10:35:01 - Current used storage is 74.808
+2025-01-22 10:36:26 - Login was succesfull for user: a
+2025-01-22 10:36:26 - File data recieved 0
+2025-01-22 10:36:26 - Profile picture was recieved
+2025-01-22 10:36:26 - Got files
+2025-01-22 10:36:26 - Current used storage is 74.808
+2025-01-22 10:36:26 - Got directories
+2025-01-22 10:38:58 - Login was succesfull for user: a
+2025-01-22 10:38:58 - File data recieved 0
+2025-01-22 10:38:58 - Profile picture was recieved
+2025-01-22 10:38:59 - Current used storage is 74.808
+2025-01-22 10:38:59 - Got files
+2025-01-22 10:38:59 - Got directories
+2025-01-22 10:39:21 - Login was succesfull for user: a
+2025-01-22 10:39:21 - File data recieved 0
+2025-01-22 10:39:21 - Profile picture was recieved
+2025-01-22 10:39:21 - Got files
+2025-01-22 10:39:21 - Current used storage is 74.808
+2025-01-22 10:39:22 - Got directories
+2025-01-22 10:39:29 - Succesfully moved to
+2025-01-22 10:39:29 - Got files
+2025-01-22 10:39:29 - Got directories
+2025-01-22 10:39:29 - Current used storage is 74.808
+2025-01-22 10:39:31 - Got files
+2025-01-22 10:39:31 - Got directories
+2025-01-22 10:39:31 - Current used storage is 74.808
+2025-01-22 10:39:32 - Got files
+2025-01-22 10:39:32 - Got directories
+2025-01-22 10:39:32 - Current used storage is 74.808
+2025-01-22 10:39:32 - Got files
+2025-01-22 10:39:32 - Got directories
+2025-01-22 10:39:32 - Current used storage is 74.808
+2025-01-22 10:39:36 - Got files
+2025-01-22 10:39:36 - Got directories
+2025-01-22 10:39:36 - Current used storage is 74.808
+2025-01-22 10:45:00 - Got files
+2025-01-22 10:45:00 - Got directories
+2025-01-22 10:45:00 - Current used storage is 74.808
+2025-01-22 10:45:00 - Got files
+2025-01-22 10:45:00 - Got directories
+2025-01-22 10:45:00 - Current used storage is 74.808
+2025-01-22 10:45:02 - Succesfully moved to
+2025-01-22 10:45:02 - Got files
+2025-01-22 10:45:02 - Current used storage is 74.808
+2025-01-22 10:45:03 - Got directories
+2025-01-22 10:45:06 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\file_sending.py", line 70, in run
+    for file_path in self.file_queue:
+                     ^^^^^^^^^^^^^^^
+AttributeError: 'FileSenderThread' object has no attribute 'file_queue'
+2025-01-22 10:45:34 - Login was succesfull for user: a
+2025-01-22 10:45:34 - File data recieved 0
+2025-01-22 10:45:34 - Profile picture was recieved
+2025-01-22 10:45:34 - Got files
+2025-01-22 10:45:34 - Current used storage is 74.808
+2025-01-22 10:45:34 - Got directories
+2025-01-22 10:45:37 - start upload:
+2025-01-22 10:45:37 - c7f546e11c644c8a986bdc6eeff7e1fc

@@ -7,12 +7,11 @@ from modules.helper import *
 from modules.logger import Logger
 from modules.file_viewer import *
 from modules.config import *
-from modules import networking, key_exchange, protocol, receive, gui
-
+from modules import networking, receive, gui
 
 import socket, sys, traceback, time, functools
 
-from PyQt6 import QtWidgets, uic
+from PyQt6 import QtWidgets
 
 # Announce global vars
 ip = "127.0.0.1"
@@ -20,7 +19,6 @@ port = 31026
 
 last_msg = ""
 last_error_msg = ""
-last_load = time.time()
 
 def timing_decorator(func):
     @functools.wraps(func)  # Preserves the original function's metadata
@@ -49,7 +47,8 @@ class Application():
         self.window.not_connected_page(False)
         self.receive_thread = receive.ReceiveThread(self.network)
         self.receive_thread.reply_received.connect(self.handle_reply)
-        self.window.protocol.connect_server(ip, port, self.receive_thread)
+        self.window.receive_thread = self.receive_thread
+        self.window.protocol.connect_server(ip, port, True)
 
 
     def handle_reply(self, reply):
@@ -78,7 +77,7 @@ class Application():
             return
 
     
-    def global_exception_handler(exc_type, exc_value, exc_traceback):
+    def global_exception_handler(self, exc_type, exc_value, exc_traceback):
         """Handle uncaught exceptions."""
         error_message = "".join(traceback.format_exception(exc_type, exc_value, exc_traceback))
         print(f"Unhandled exception:\n{error_message}")

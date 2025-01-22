@@ -1,9 +1,12 @@
+# 2024 © Idan Hazay
+# Import libraries
+
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtWidgets import QWidget,QLabel, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
 from PyQt6.QtGui import QIcon, QDragEnterEvent, QDropEvent, QMoveEvent, QResizeEvent, QContextMenuEvent
 from PyQt6.QtCore import QSize
 
-import os
+import os, time
 
 from modules.config import *
 from modules.file_viewer import *
@@ -15,9 +18,9 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, app, network):
         super().__init__()
         self.app = app
-          
+        self.window_geometry = window_geometry
         self.save_sizes()
-        self.setGeometry(window_geometry)
+        self.setGeometry(self.window_geometry)
         self.original_width = self.width()
         self.original_height = self.height()
         self.scroll_progress = 0
@@ -28,12 +31,14 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setAttribute(Qt.WidgetAttribute.WA_OpaquePaintEvent)
         self.setAttribute(Qt.WidgetAttribute.WA_PaintOnScreen, True)
         self.current_files_amount = items_to_load
+        self.last_load = time.time()
+        self.scroll_size = scroll_size
         
         self.user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""}
         
         self.json = helper.JsonHandle()
         self.network = network
-        self.protocol = protocol.Protocol(self.network, self, )
+        self.protocol = protocol.Protocol(self.network, self)
         self.file_sending = file_sending.FileSending(self)
         
         self.search_filter = None
@@ -53,11 +58,13 @@ class MainWindow(QtWidgets.QMainWindow):
         
         self.original_sizes = {}
         self.scroll = None
+        
+        self.start()
 
     def start(self):
         try: 
             with open(f"{os.getcwd()}/gui/css/style.css", 'r') as f: self.app.setStyleSheet(f.read())
-        except: pass
+        except: print(traceback.format_exc())
         if (os.path.isfile(f"{os.getcwd()}/assets/icon.ico")):
             self.setWindowIcon(QIcon(f"{os.getcwd()}/assets/icon.ico"))
     
@@ -147,8 +154,8 @@ class MainWindow(QtWidgets.QMainWindow):
                             font.setPointSize(max(int(9 * (width_ratio + height_ratio)/2), 8))
                             label.setFont(font)
                     button.setMinimumHeight(int(30*height_ratio))
-                scroll_size = [int(850*width_ratio), int(340*height_ratio)]
-                self.scroll.setFixedSize(scroll_size[0], scroll_size[1])
+                self.scroll_size = [int(850*width_ratio), int(340*height_ratio)]
+                self.scroll.setFixedSize(self.scroll_size[0], self.scroll_size[1])
         except: pass
 
         #QApplication.restoreOverrideCursor()
@@ -156,9 +163,9 @@ class MainWindow(QtWidgets.QMainWindow):
         
     def main_page(self):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/main.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             
             self.save_sizes()
@@ -178,9 +185,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def signup_page(self):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/signup.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
             
@@ -207,9 +214,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def login_page(self):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/login.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
             
@@ -222,7 +229,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.signup_button.clicked.connect(self.signup_page)
             self.signup_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;border:none;")
 
-            self.login_button.clicked.connect(lambda: self.protocol.login(self.user.text(), self.password.text(), self.remember.isChecked()))
+            self.login_button.clicked.connect(lambda: self.protocol.login(self.credi.text(), self.password.text(), self.remember.isChecked()))
             self.login_button.setShortcut("Return")
             self.login_button.setIcon(QIcon(assets_path+"\\login.svg"))
 
@@ -236,9 +243,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def forgot_password(self):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/forgot_password.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
             
@@ -256,9 +263,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def verification_page(self, email):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/verification.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
             
@@ -279,9 +286,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def send_verification_page(self):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/send_verification.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
             
@@ -317,12 +324,12 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def run_user_page(self):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/account_managment.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             ui_path = f"{os.getcwd()}/gui/ui/user.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             
             if self.share or self.deleted: self.setAcceptDrops(False)
@@ -348,6 +355,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.search_button.setStyleSheet("background-color:transparent;border:none;")
             
             self.refresh.setIcon(QIcon(assets_path+"\\refresh.svg"))
+            self.refresh.setText(f" ")
             self.refresh.clicked.connect(self.user_page)
             self.refresh.setStyleSheet("background-color:transparent;border:none;")
             
@@ -483,9 +491,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def manage_account(self):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/account_managment.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
             self.forgot_password_button.clicked.connect(lambda: self.protocol.reset_password(self.user["email"]))
@@ -513,9 +521,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def subscriptions_page(self):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/subscription.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
             self.protocol.get_used_storage()
@@ -555,9 +563,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def recovery(self, email):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/recovery.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
                 
@@ -584,9 +592,9 @@ class MainWindow(QtWidgets.QMainWindow):
         
     def not_connected_page(self, connect = True):
         try:
-            temp = window_geometry
+            temp = self.window_geometry
             ui_path = f"{os.getcwd()}/gui/ui/not_connected.ui"
-            helper.update_ui_size(ui_path, window_geometry.width(), window_geometry.height())
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
             uic.loadUi(ui_path, self)
             self.save_sizes()
             self.ip.setText(self.protocol.ip)
@@ -610,20 +618,20 @@ class MainWindow(QtWidgets.QMainWindow):
         item_id = btn.id
         item_name = btn.name
         
-        if btn in currently_selected and len(currently_selected) == 1:
+        if btn in self.currently_selected and len(self.currently_selected) == 1:
             if btn.is_folder: 
                 self.protocol.move_dir(item_id)
                 self.reset_selected()
             else: self.protocol.view_file(item_id, item_name, btn.file_size)
-        elif helper.control_pressed() and btn not in currently_selected:
-            currently_selected.append(btn)
-        elif helper.control_pressed() and btn in currently_selected:
-            currently_selected.remove(btn)
+        elif helper.control_pressed() and btn not in self.currently_selected:
+            self.currently_selected.append(btn)
+        elif helper.control_pressed() and btn in self.currently_selected:
+            self.currently_selected.remove(btn)
         else:
             self.reset_selected()
-            currently_selected = [btn]
+            self.currently_selected = [btn]
         
-        if btn in currently_selected:
+        if btn in self.currently_selected:
             for label in btn.lables:
                 label.setObjectName("selected")
         else:
@@ -640,7 +648,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     
     def finish_sending(self):
-        file_queue = []
+        self.file_queue = []
         try:
             self.stop_button.setEnabled(False)
             self.stop_button.hide()
@@ -670,14 +678,14 @@ class MainWindow(QtWidgets.QMainWindow):
         except: pass
         
     def reset_selected(self):
-        for btn in currently_selected:
+        for btn in self.currently_selected:
             for label in btn.lables:
                 try:
                     if btn.is_folder: label.setObjectName("folder-label")
                     else: label.setObjectName("file-label")
                 except RuntimeError:
-                    if label in currently_selected: currently_selected.remove(label)
-        currently_selected = []
+                    if label in self.currently_selected: self.currently_selected.remove(label)
+        self.currently_selected = []
             
     def confirm_account_deletion(self, email):
             # Create a QApplication instance if needed
@@ -784,7 +792,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.save_sizes()
         self.draw_cwd()
-        self.sort_widget.currentIndexChanged.connect(lambda: self.change_sort(self.sort.currentText()[1:]))    
+        self.sort_widget.currentIndexChanged.connect(lambda: self.change_sort(self.sort_widget.currentText()[1:]))    
         self.scroll.verticalScrollBar().setMaximum(self.scroll_progress)
         self.scroll.verticalScrollBar().setValue(self.scroll_progress)
         self.scroll.verticalScrollBar().valueChanged.connect(self.scroll_changed)
@@ -922,20 +930,20 @@ class FileButton(QPushButton):
     def contextMenuEvent(self, event: QContextMenuEvent):
         menu = QMenu(self)
 
-        if  self.window.check_all_id() and  self.window.check_all_perms(4) and not  self.window.deleted and self.currently_selected != []:
+        if  self.window.check_all_id() and  self.window.check_all_perms(4) and not  self.window.deleted and self.window.currently_selected != []:
             action = menu.addAction(" Download")
-            action.triggered.connect( self.window.protocol.download)
+            action.triggered.connect(self.window.protocol.download)
             action.setIcon(QIcon(assets_path + "\\download.svg"))
 
-        if  self.window.check_all_id() and self.currently_selected != []:
+        if  self.window.check_all_id() and self.window.currently_selected != []:
             if  self.window.check_all_perms(2):
                 if  self.window.deleted and  self.window.user["cwd"] != "": pass
                 else:
                     action = menu.addAction(" Delete")
-                    action.triggered.connect( self.window.delete)
+                    action.triggered.connect(self.window.protocol.delete)
                     action.setIcon(QIcon(assets_path + "\\delete.svg"))
 
-            if  self.window.check_all_perms(3) and not  self.window.deleted and len(self.currently_selected) == 1:
+            if  self.window.check_all_perms(3) and not  self.window.deleted and len(self.window.currently_selected) == 1:
                 action = menu.addAction(" Rename")
                 action.triggered.connect(self.rename)
                 action.setIcon(QIcon(assets_path + "\\change_user.svg"))
@@ -955,7 +963,7 @@ class FileButton(QPushButton):
             action.triggered.connect(self.window.protocol.new_folder)
             action.setIcon(QIcon(assets_path + "\\new_account.svg"))
         
-        if self.window.deleted and self.window.user["cwd"] == "" and self.currently_selected != []:
+        if self.window.deleted and self.window.user["cwd"] == "" and self.window.currently_selected != []:
             action = menu.addAction(" Recover")
             action.triggered.connect(self.window.protocol.recover)
             action.setIcon(QIcon(assets_path + "\\new_account.svg"))
@@ -968,9 +976,9 @@ class FileButton(QPushButton):
             
     def rename(self):
         name = self.text().split(" | ")[0][1:]
-        new_name = self.window.new_name_dialog("Rename", "Enter new file name:", name)
+        new_name = dialogs.new_name_dialog("Rename", "Enter new file name:", name)
         if new_name is not None:
-            self.protocol.send_data(b"RENA|" + self.id.encode() + b"|" + name.encode() + b"|" + new_name.encode())
+            self.window.protocol.send_data(b"RENA|" + self.id.encode() + b"|" + name.encode() + b"|" + new_name.encode())
 
 
 

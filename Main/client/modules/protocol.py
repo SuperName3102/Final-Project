@@ -1,6 +1,9 @@
+# 2024 © Idan Hazay
+# Import libraries
+
 from modules.config import * 
 from modules.file_sending import File
-from modules import helper, key_exchange
+from modules import helper, key_exchange, dialogs
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QFileDialog, QApplication
 import time, socket
@@ -14,11 +17,11 @@ class Protocol():
     
     
     def change_share(self):
-        share = not share
+        self.window.share = not self.window.share
         self.move_dir("")
 
     def change_deleted(self):
-        deleted = not deleted
+        self.window.deleted = not self.window.deleted
         self.move_dir("")
     
     def view_file(self, file_id, file_name, size):
@@ -85,7 +88,7 @@ class Protocol():
 
     def change_username(self):
         name = self.window.user["username"]
-        new_name = self.window.new_name_dialog("Change Username", "Enter new  username:", name)
+        new_name = dialogs.new_name_dialog("Change Username", "Enter new  username:", name)
         if new_name is not None and new_name != name:
             self.send_data(b"CHUN|" + new_name.encode())
 
@@ -204,7 +207,7 @@ class Protocol():
             file_path, _ = QFileDialog.getOpenFileName(self.window, "Open File", "", "Image Files (*.png *.jpg *.jpeg *.bmp *.gif *.ico);")
             if file_path:
                 self.window.file_sending.file_queue.extend([file_path])
-                self.send_files("ICOS")
+                self.window.file_sending.send_files("ICOS")
         except:
             print(traceback.format_exc())
     
@@ -236,40 +239,40 @@ class Protocol():
 
 
     def delete(self):
-        if self.window.show_confirmation_dialog(f"Are you sure you want to delete {len(self.window.currently_selected)} files?"):
+        if dialogs.show_confirmation_dialog(f"Are you sure you want to delete {len(self.window.currently_selected)} files?"):
             for btn in self.window.currently_selected:
                 self.send_data(b"DELF|" + btn.id.encode())
             self.window.protocol.update_userpage(f"Succesfully deleted {len(self.window.currently_selected)} files")
             self.window.currently_selected = []
 
     def share_action(self):
-        user_email = self.window.new_name_dialog("Share", f"Enter email/username of the user you want to share {len(self.window.currently_selected)} files with:")
+        user_email = dialogs.new_name_dialog("Share", f"Enter email/username of the user you want to share {len(self.window.currently_selected)} files with:")
         if user_email is not None:
             for btn in self.window.currently_selected:
                 self.send_data(b"SHRS|" + btn.id.encode() + b"|" + user_email.encode())
             self.window.protocol.update_userpage(f"Succesfully shared {len(self.window.currently_selected)} files")
         
     def remove(self):
-        for btn in currently_selected:
+        for btn in self.window.currently_selected:
             self.send_data(B"SHRE|" + btn.id.encode())
-        self.window.protocol.update_userpage(f"Succesfully removed {len(currently_selected)} files from share")
-        currently_selected = []
+        self.window.protocol.update_userpage(f"Succesfully removed {len(self.window.currently_selected)} files from share")
+        self.window.currently_selected = []
         
     def recover(self):
-        for btn in currently_selected:
+        for btn in self.window.currently_selected:
             self.send_data(b"RECO|" + btn.id.encode())  
-        self.window.protocol.update_userpage(f"Succesfully recovered {len(currently_selected)} files")
-        currently_selected = []
+        self.window.protocol.update_userpage(f"Succesfully recovered {len(self.window.currently_selected)} files")
+        self.window.currently_selected = []
 
 
     def new_folder(self):
-        new_folder = helper.new_name_dialog("New Folder", "Enter new folder name:")
+        new_folder = dialogs.new_name_dialog("New Folder", "Enter new folder name:")
         if new_folder is not None:
             self.send_data(b"NEWF|" + new_folder.encode())
 
 
     def search(self):
-        search_filter = self.window.new_name_dialog("Search", "Enter search filter:", search_filter)
+        self.window.search_filter = dialogs.new_name_dialog("Search", "Enter search filter:", self.window.search_filter)
         self.window.user_page()
     
     def protocol_parse_reply(self, reply):
@@ -321,7 +324,7 @@ class Protocol():
                 email = fields[1]
                 username = fields[2]
                 to_show = f'Login was succesfull for user: {username}'
-                search_filter = None
+                self.window.search_filter = None
                 self.window.user["email"] = email
                 self.window.user["username"] = username
                 self.window.user["subscription_level"] = fields[3]
@@ -363,8 +366,8 @@ class Protocol():
                 self.window.user["cwd"] = ""
                 self.window.user["parent_cwd"] = ""
                 self.window.user["cwd_name"] = ""
-                share = False
-                deleted = False
+                self.window.share = False
+                self.window.deleted = False
                 to_show = f'Logout succesfull'
                 self.window.main_page()
                 self.window.set_message(to_show)
@@ -390,9 +393,9 @@ class Protocol():
 
             elif code == 'FILR':
                 to_show = f'File {fields[1]} was uploaded'
-                if time.time() - last_load > 0.5:
+                if time.time() - self.window.last_load > 0.5:
                     self.window.user_page()
-                    last_load = time.time()
+                    self.window.last_load = time.time()
                 self.window.set_message(to_show)
             
             elif code == 'FISS':
@@ -450,7 +453,7 @@ class Protocol():
             elif code == 'GICR':
                 to_show = "Profile picture was recieved"
                 try:
-                    if share or deleted: self.window.upload_button.setIcon((QIcon(user_icon)))
+                    if self.window.share or self.window.deleted: self.window.upload_button.setIcon((QIcon(user_icon)))
                     self.window.user_button.setIcon((QIcon(user_icon)))
                 except: pass
             
@@ -486,9 +489,9 @@ class Protocol():
                 self.window.set_message(to_show)
 
             elif code == 'GEUR':
-                used_storage = round(int(fields[1])/1_000_000, 3)
+                self.window.used_storage = round(int(fields[1])/1_000_000, 3)
                 self.window.set_used_storage()
-                to_show = f"Current used storage is {used_storage}"
+                to_show = f"Current used storage is {self.window.used_storage}"
 
             elif code == 'CHUR':
                 new_username = fields[1]
@@ -574,7 +577,7 @@ class Protocol():
         return to_show
     
     # Main function and start of code
-    def connect_server(self, new_ip, new_port, receive_thread, loop = False):
+    def connect_server(self, new_ip, new_port, loop = False):
         self.window.set_message(f"Trying to connect to {new_ip} {new_port}...")
         QApplication.processEvents()
         try:
@@ -592,8 +595,8 @@ class Protocol():
                 return
             self.network.set_secret(shared_secret)
             self.window.main_page()
-            receive_thread.start()
-            receive_thread.resume()
+            self.window.receive_thread.start()
+            self.window.receive_thread.resume()
             self.send_cookie()
             self.get_file_progress()
             self.request_resume_download()
@@ -604,7 +607,7 @@ class Protocol():
         except:
             print(traceback.format_exc())
             if not loop:
-                receive_thread.pause()
+                self.window.receive_thread.pause()
                 self.window.not_connected_page()
             self.window.set_error_message(f'Server was not found {self.ip} {self.port}')
             return None

@@ -786,3 +786,122 @@ ConnectionAbortedError: [WinError 10053] An established connection was aborted b
 2025-01-22 00:01:46 - New Client number 18 from ('192.168.1.122', 53687)
 2025-01-22 00:02:36 - Client 18 disconnected
 2025-01-22 00:02:36 - Client 18 Exit
+2025-01-22 10:25:51 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 10:25:53 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-22 10:25:55 - Main thread: before accepting ...
+2025-01-22 10:25:56 - New Client number 1 from ('172.16.20.119', 51916)
+2025-01-22 10:26:34 - Client 1 disconnected
+2025-01-22 10:26:34 - Client 1 Exit
+2025-01-22 10:27:15 - New Client number 2 from ('172.16.20.119', 52008)
+2025-01-22 10:28:29 - Client 2 disconnected
+2025-01-22 10:28:29 - Client 2 Exit
+2025-01-22 10:28:33 - New Client number 3 from ('172.16.20.119', 52039)
+2025-01-22 10:31:13 - Client 3 disconnected
+2025-01-22 10:31:13 - Client 3 Exit
+2025-01-22 10:31:18 - New Client number 4 from ('172.16.20.119', 52075)
+2025-01-22 10:32:01 - Client 4 disconnected
+2025-01-22 10:32:01 - Client 4 Exit
+2025-01-22 10:32:06 - New Client number 5 from ('172.16.20.119', 52092)
+2025-01-22 10:34:05 - Client 5 disconnected
+2025-01-22 10:34:05 - Client 5 Exit
+2025-01-22 10:34:09 - New Client number 6 from ('172.16.20.119', 52118)
+2025-01-22 10:34:37 - Client 6 disconnected
+2025-01-22 10:34:37 - Client 6 Exit
+2025-01-22 10:34:51 - New Client number 7 from ('172.16.20.119', 52132)
+2025-01-22 10:36:01 - Client 7 disconnected
+2025-01-22 10:36:01 - Client 7 Exit
+2025-01-22 10:36:25 - New Client number 8 from ('172.16.20.119', 52159)
+2025-01-22 10:38:53 - Client 8 disconnected
+2025-01-22 10:38:53 - Client 8 Exit
+2025-01-22 10:38:58 - New Client number 9 from ('172.16.20.119', 52191)
+2025-01-22 10:39:14 - Client 9 disconnected
+2025-01-22 10:39:14 - Client 9 Exit
+2025-01-22 10:39:21 - New Client number 10 from ('172.16.20.119', 52204)
+2025-01-22 10:45:29 - Client 10 disconnected
+2025-01-22 10:45:29 - Client 10 Exit
+2025-01-22 10:45:34 - New Client number 11 from ('172.16.20.119', 52280)
+2025-01-22 10:46:38 - Client 11 disconnected
+2025-01-22 10:46:38 - Client 11 Exit
+2025-01-22 10:46:43 - New Client number 12 from ('172.16.20.119', 52298)
+2025-01-22 10:47:06 - Client 12 disconnected
+2025-01-22 10:47:06 - Client 12 Exit
+2025-01-22 10:47:11 - New Client number 13 from ('172.16.20.119', 52313)
+2025-01-22 10:48:24 - Client 13 disconnected
+2025-01-22 10:48:24 - Client 13 Exit
+2025-01-22 10:48:28 - New Client number 14 from ('172.16.20.119', 52336)
+2025-01-22 10:48:51 - Client 14 disconnected
+2025-01-22 10:48:51 - Client 14 Exit
+2025-01-22 10:48:55 - New Client number 15 from ('172.16.20.119', 52350)
+2025-01-22 10:49:34 - Client 15 disconnected
+2025-01-22 10:49:34 - Client 15 Exit
+2025-01-22 10:49:39 - New Client number 16 from ('172.16.20.119', 52364)
+2025-01-22 10:50:36 - Client 16 disconnected
+2025-01-22 10:50:36 - Client 16 Exit
+2025-01-22 10:50:40 - New Client number 17 from ('172.16.20.119', 52387)
+2025-01-22 10:54:30 - Client 17 disconnected
+2025-01-22 10:54:30 - Client 17 Exit
+2025-01-22 10:54:34 - New Client number 18 from ('172.16.20.119', 52436)
+2025-01-22 10:56:10 - Client 18 disconnected
+2025-01-22 10:56:10 - Client 18 Exit
+2025-01-22 10:56:14 - New Client number 19 from ('172.16.20.119', 52538)
+2025-01-22 10:56:24 - Client 19 disconnected
+2025-01-22 10:56:24 - Client 19 Exit
+2025-01-22 10:56:28 - New Client number 20 from ('172.16.20.119', 52551)
+2025-01-22 10:56:42 - Client 20 disconnected
+2025-01-22 10:56:42 - Client 20 Exit
+2025-01-22 10:56:47 - New Client number 21 from ('172.16.20.119', 52565)
+2025-01-22 10:57:08 - Client 21 disconnected
+2025-01-22 10:57:08 - Client 21 disconnected
+2025-01-22 10:57:08 - Client 21 Exit
+2025-01-22 10:57:17 - New Client number 22 from ('172.16.20.119', 52589)
+2025-01-22 10:57:32 - Client 22 disconnected
+2025-01-22 10:57:32 - Client 22 Exit
+2025-01-22 10:57:36 - New Client number 23 from ('172.16.20.119', 52611)
+2025-01-22 10:59:02 - Client 23 disconnected
+2025-01-22 10:59:02 - Client 23 Exit
+2025-01-22 10:59:07 - New Client number 24 from ('172.16.20.119', 52651)
+2025-01-22 11:02:39 - Client 24 disconnected
+2025-01-22 11:02:39 - Client 24 Exit
+2025-01-22 11:02:43 - New Client number 25 from ('172.16.20.119', 52738)
+2025-01-22 11:03:39 - Client 25 disconnected
+2025-01-22 11:03:39 - Client 25 Exit
+2025-01-22 11:03:47 - New Client number 26 from ('172.16.20.119', 52759)
+2025-01-22 11:06:31 - Client 26 disconnected
+2025-01-22 11:06:31 - Client 26 Exit
+2025-01-22 11:14:56 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 11:14:57 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-22 11:14:58 - Main thread: before accepting ...
+2025-01-22 11:15:12 - New Client number 1 from ('172.16.20.119', 52881)
+2025-01-22 11:23:51 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 11:23:53 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-22 11:23:53 - Main thread: before accepting ...
+2025-01-22 11:26:51 - New Client number 1 from ('172.16.20.119', 53070)
+2025-01-22 11:26:55 - Client 1 disconnected
+2025-01-22 11:26:55 - Client 1 Exit
+2025-01-22 11:27:12 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 11:27:13 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-22 11:27:14 - Main thread: before accepting ...
+2025-01-22 11:27:15 - New Client number 1 from ('172.16.20.119', 53098)
+2025-01-22 11:28:45 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 11:28:46 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-22 11:28:47 - Main thread: before accepting ...
+2025-01-22 11:28:52 - New Client number 1 from ('172.16.20.119', 53125)
+2025-01-22 11:28:59 - Client 1 disconnected
+2025-01-22 11:28:59 - Client 1 Exit
+2025-01-22 11:30:04 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 11:30:06 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-22 11:30:06 - Main thread: before accepting ...
+2025-01-22 11:30:07 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 596, in clean_db
+    db.delete_file(file["id"])
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\database_handling.py", line 252, in delete_file
+    cursor.execute(sql, [id, get_file(id)["owner_id"], str(timedelta(days=30) + datetime.now())])
+                             ~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-01-22 11:31:51 - New Client number 1 from ('172.16.14.44', 50278)
+2025-01-22 11:33:04 - New Client number 2 from ('172.16.20.119', 53172)
+2025-01-22 11:33:58 - Client 2 disconnected
+2025-01-22 11:33:58 - Client 2 Exit
+2025-01-22 11:34:03 - New Client number 3 from ('172.16.20.119', 53195)
+2025-01-22 11:34:41 - Client 3 disconnected
+2025-01-22 11:34:41 - Client 3 Exit

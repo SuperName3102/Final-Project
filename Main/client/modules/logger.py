@@ -1,8 +1,7 @@
 # 2024 © Idan Hazay
+# Import libraries
 
-import os
-import sys
-import logging
+import os, sys, logging
 
 # Configure logging
 logging.basicConfig(

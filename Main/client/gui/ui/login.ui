@@ -214,7 +214,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="user">
+   <widget class="QLineEdit" name="credi">
     <property name="geometry">
      <rect>
       <x>350</x>

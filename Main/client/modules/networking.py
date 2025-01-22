@@ -1,4 +1,5 @@
 # 2024 © Idan Hazay
+# Import libraries
 
 import modules.encrypting as encrypting
 from modules.config import *
@@ -137,6 +138,7 @@ class Network():
                 return ip, port
         except TimeoutError:
             print("No server found")
+            return saved_ip, saved_port
         except:
             print(traceback.format_exc())
-        
+            return saved_ip, saved_port

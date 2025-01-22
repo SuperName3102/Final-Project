@@ -1,4 +1,5 @@
 # 2024 © Idan Hazay
+# Import libraries
 
 import traceback, os
 from PyQt6.QtCore import QRect

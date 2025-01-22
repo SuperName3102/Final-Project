@@ -1,3 +1,6 @@
+# 2024 © Idan Hazay
+# Import libraries
+
 import threading
 from PyQt6.QtCore import pyqtSignal, QThread
 

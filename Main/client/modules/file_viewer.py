@@ -1,4 +1,5 @@
 # 2024 © Idan Hazay
+# Import libraries
 
 from PyQt6.QtWidgets import QApplication, QDialog, QVBoxLayout, QLabel, QTextEdit, QPushButton, QHBoxLayout
 from PyQt6.QtGui import QPixmap

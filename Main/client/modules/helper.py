@@ -1,4 +1,6 @@
 # 2024 © Idan Hazay
+# Import libraries
+
 from datetime import datetime
 import xml.etree.ElementTree as ET
 from PyQt6.QtCore import Qt

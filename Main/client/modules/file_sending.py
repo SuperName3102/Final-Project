@@ -1,3 +1,6 @@
+# 2024 © Idan Hazay
+# Import libraries
+
 from PyQt6.QtCore import QThread, pyqtSignal
 import time, uuid, traceback, os
 from modules.config import *
@@ -64,6 +67,7 @@ class FileSenderThread(QThread):
             self.running = True
             self.location_infile = location_infile
             self.window = window
+            self.file_queue = file_queue
 
         def run(self):
             try:
@@ -78,7 +82,7 @@ class FileSenderThread(QThread):
                     else:
                         file_name = file_path.split("/")[-1]  # Extract the file name
                     file_id = uuid.uuid4().hex
-                    uploading_file_id = file_id
+                    self.window.uploading_file_id = file_id
                     if self.resume_file_id == None:
                         print("start upload:", file_id)
                         start_string = f"{self.cmd}|{file_name}|{self.window.user["cwd"]}|{os.path.getsize(file_path)}|{file_id}"
