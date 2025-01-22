@@ -1,6 +1,6 @@
 # 2024 © Idan Hazay
 
-class Limits():
+class Limits:
     def __init__(self, level):
         level = int(level)
         if (level == 0):

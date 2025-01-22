@@ -70,7 +70,7 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def keyPressEvent(self, event):
         if event.key() == Qt.Key.Key_Delete and len(self.currently_selected) > 0:
-            self.delete()
+            self.protocol.delete()
         elif event.key() == Qt.Key.Key_R and event.modifiers() & Qt.KeyboardModifier.ControlModifier:
             if self.user["username"] != "guest":
                 self.user_page()
@@ -229,7 +229,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.signup_button.clicked.connect(self.signup_page)
             self.signup_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;border:none;")
 
-            self.login_button.clicked.connect(lambda: self.protocol.login(self.credi.text(), self.password.text(), self.remember.isChecked()))
+            self.login_button.clicked.connect(lambda: self.protocol.login(self.credi.text(), self.password.text(), self.remember_check.isChecked()))
             self.login_button.setShortcut("Return")
             self.login_button.setIcon(QIcon(assets_path+"\\login.svg"))
 
@@ -649,14 +649,14 @@ class MainWindow(QtWidgets.QMainWindow):
 
     
     def finish_sending(self):
-        self.file_queue = []
+        self.file_sending.file_queue = []
         try:
             self.stop_button.setEnabled(False)
             self.stop_button.hide()
         except: pass
         try: self.file_upload_progress.hide()
         except: pass
-        self.user_page()
+        #self.user_page()
 
     def update_progress(self, value):
         try: self.file_upload_progress.show()

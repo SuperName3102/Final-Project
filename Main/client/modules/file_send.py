@@ -6,7 +6,7 @@ import time, uuid, traceback, os
 from modules.config import *
 from modules.limits import Limits
 
-class FileSending():
+class FileSending:
     def __init__(self, window):
         self.window = window
         self.active_threads = []

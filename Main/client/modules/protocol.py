@@ -3,12 +3,12 @@
 
 from modules.config import * 
 from modules.file_send import File
-from modules import helper, key_exchange, dialogs
+from modules import helper, dialogs
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QFileDialog, QApplication
 import time, socket
 
-class Protocol():
+class Protocol:
     def __init__(self, network, window, ip = "127.0.0.1", port = 31026):
         self.network = network
         self.window = window
@@ -580,6 +580,8 @@ class Protocol():
     def connect_server(self, new_ip, new_port, loop = False):
         self.window.set_message(f"Trying to connect to {new_ip} {new_port}...")
         QApplication.processEvents()
+        self.network.reset_network()
+        self.window.receive_thread.pause()
         try:
             self.ip = new_ip
             self.port = int(new_port)
@@ -588,8 +590,7 @@ class Protocol():
             self.port = int(self.port)
             sock.connect((self.ip, self.port))
             self.network.set_sock(sock)
-            exchange = key_exchange.KeyExchange(self.network)
-            shared_secret = exchange.rsa_exchange() 
+            shared_secret = self.network.encryption.rsa_exchange() 
             if not shared_secret:
                 sock.close()
                 return

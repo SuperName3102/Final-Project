@@ -306,7 +306,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QCheckBox" name="remember">
+   <widget class="QCheckBox" name="remember_check">
     <property name="geometry">
      <rect>
       <x>40</x>

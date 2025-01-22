@@ -1,20 +1,26 @@
 # 2024 © Idan Hazay
 # Import libraries
 
-import modules.encrypting as encrypting
+from modules import encrypting
 from modules.config import *
 import struct, socket, psutil, time
 
 
-class Network():
+class Network:
     def __init__(self, log = False):
         self.log = log
+        self.encryption = encrypting.Encryption(self)
         
     def set_sock(self, socket):
         self.sock = socket
 
     def set_secret(self, secret):
         self.shared_secret = secret
+    
+    def reset_network(self):
+        self.encryption = encrypting.Encryption(self)
+        self.sock = None
+        self.shared_secret = None
 
     def logtcp(self, dir, byte_data):
         """
@@ -40,7 +46,7 @@ class Network():
         Checks if encryption is used
         """
         if (encryption):
-            encrypted_data = encrypting.encrypt(bdata, self.shared_secret)
+            encrypted_data = self.encryption.encrypt(bdata, self.shared_secret)
             data_len = struct.pack('!l', len(encrypted_data))
             to_send = data_len + encrypted_data
             to_send_decrypted = str(len(bdata)).encode() + bdata
@@ -77,7 +83,7 @@ class Network():
 
             if (encryption):  # If encryption is enabled decrypt and log encrypted
                 self.logtcp('recv', b_len + msg)   # Log encrypted data
-                msg = encrypting.decrypt(msg, self.shared_secret)
+                msg = self.encryption.decrypt(msg, self.shared_secret)
                 self.logtcp('recv', str(msg_len).encode() + msg)
 
             return msg

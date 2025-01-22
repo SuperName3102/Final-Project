@@ -7,7 +7,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFontMetrics, QGuiApplication
 import hashlib, os, json, sys
 
-class JsonHandle():
+class JsonHandle:
     def __init__(self):
         self.uploading_files_json = f"{os.getcwd()}/cache/uploading_files.json"
         self.downloading_files_json = f"{os.getcwd()}/cache/downloading_files.json"
