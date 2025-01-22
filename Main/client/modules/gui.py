@@ -12,7 +12,7 @@ from modules.config import *
 from modules.file_viewer import *
 from modules.limits import Limits
 
-from modules import helper, protocol, file_sending, dialogs
+from modules import helper, protocol, file_send, dialogs
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, app, network):
@@ -39,7 +39,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.json = helper.JsonHandle()
         self.network = network
         self.protocol = protocol.Protocol(self.network, self)
-        self.file_sending = file_sending.FileSending(self)
+        self.file_sending = file_send.FileSending(self)
         
         self.search_filter = None
         self.share = False
@@ -396,6 +396,7 @@ class MainWindow(QtWidgets.QMainWindow):
             except: pass
             
             self.stop_button.clicked.connect(self.stop_upload)
+            self.stop_button.setIcon(QIcon(assets_path+"\\stop.svg"))
             self.setGeometry(temp)
             self.force_update_window()
             
@@ -768,7 +769,7 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def stop_upload(self):
         self.stop_button.setEnabled(False)
-        if self.active_threads != []:
+        if self.file_sending.active_threads != []:
             self.file_sending.active_threads[0].running = False
         self.protocol.send_data(b"STOP|" + self.uploading_file_id.encode())
 

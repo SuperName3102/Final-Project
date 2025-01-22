@@ -2074,3 +2074,753 @@ ConnectionRefusedError: [WinError 10061] No connection could be made because the
 2025-01-22 11:34:36 - Got files
 2025-01-22 11:34:36 - Current used storage is 59.997
 2025-01-22 11:34:36 - Got directories
+2025-01-22 11:39:02 - Server return an error: 024 Cookie is invalid
+2025-01-22 11:39:46 - Login was succesfull for user: a
+2025-01-22 11:39:46 - File data recieved 0
+2025-01-22 11:39:46 - Profile picture was recieved
+2025-01-22 11:39:46 - Current used storage is 59.997
+2025-01-22 11:39:46 - Cookie recieved
+2025-01-22 11:39:46 - Got files
+2025-01-22 11:39:47 - Got directories
+2025-01-22 11:39:52 - Current used storage is 59.997
+2025-01-22 11:39:53 - Current used storage is 59.997
+2025-01-22 11:39:53 - Got directories
+2025-01-22 11:39:53 - Got files
+2025-01-22 11:39:58 - start upload:
+2025-01-22 11:39:58 - df6b3fd39a30485a852e299e7e679d70
+2025-01-22 11:39:58 - Server return an error: 020 File exceeded max size of 50 MB
+2025-01-22 11:39:59 - Unhandled exception:
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\gui.py", line 771, in stop_upload
+    if self.active_threads != []:
+       ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'active_threads'. Did you mean: 'receive_thread'?
+2025-01-22 11:39:59 - Got files
+2025-01-22 11:39:59 - Current used storage is 59.997
+2025-01-22 11:39:59 - Got directories
+2025-01-22 11:40:03 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:40:03 - Server return an error: 014 File not found
+2025-01-22 11:40:03 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:40:03 - Server return an error: 014 File not found
+2025-01-22 11:40:03 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:40:03 - Server return an error: 014 File not found
+2025-01-22 11:40:03 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:40:03 - Server return an error: 014 File not found
+2025-01-22 11:40:03 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:40:03 - Server return an error: 014 File not found
+2025-01-22 11:40:03 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:40:03 - Server return an error: 014 File not found
+2025-01-22 11:40:03 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:40:03 - Server return an error: 014 File not found
+2025-01-22 11:40:03 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:40:03 - Server return an error: 014 File not found
+2025-01-22 11:40:43 - Current used storage is 59.997
+2025-01-22 11:40:43 - Got files
+2025-01-22 11:40:43 - Got directories
+2025-01-22 11:40:47 - File data recieved 0
+2025-01-22 11:40:48 - File data recieved 524288
+2025-01-22 11:40:48 - File data recieved 1048576
+2025-01-22 11:40:48 - File data recieved 1572864
+2025-01-22 11:40:48 - File data recieved 2097152
+2025-01-22 11:40:49 - File data recieved 2621440
+2025-01-22 11:40:49 - File data recieved 3145728
+2025-01-22 11:40:49 - File data recieved 3670016
+2025-01-22 11:40:49 - File data recieved 4194304
+2025-01-22 11:40:49 - File data recieved 4718592
+2025-01-22 11:40:50 - File data recieved 5242880
+2025-01-22 11:40:50 - File data recieved 5767168
+2025-01-22 11:40:50 - File data recieved 6291456
+2025-01-22 11:40:50 - File data recieved 6815744
+2025-01-22 11:40:50 - File data recieved 7340032
+2025-01-22 11:40:51 - File data recieved 7864320
+2025-01-22 11:40:51 - File data recieved 8388608
+2025-01-22 11:40:52 - File data recieved 8912896
+2025-01-22 11:40:52 - File data recieved 9437184
+2025-01-22 11:40:53 - File data recieved 9961472
+2025-01-22 11:40:53 - File data recieved 10485760
+2025-01-22 11:40:53 - File data recieved 11010048
+2025-01-22 11:40:53 - File data recieved 11534336
+2025-01-22 11:40:54 - File data recieved 12058624
+2025-01-22 11:40:54 - File data recieved 12582912
+2025-01-22 11:40:54 - File data recieved 13107200
+2025-01-22 11:40:54 - File data recieved 13631488
+2025-01-22 11:40:55 - File data recieved 14155776
+2025-01-22 11:40:55 - File data recieved 14680064
+2025-01-22 11:40:55 - File data recieved 15204352
+2025-01-22 11:40:55 - File data recieved 15728640
+2025-01-22 11:40:56 - File data recieved 16252928
+2025-01-22 11:40:56 - File data recieved 16777216
+2025-01-22 11:40:56 - File data recieved 17301504
+2025-01-22 11:40:56 - File data recieved 17825792
+2025-01-22 11:40:57 - File data recieved 18350080
+2025-01-22 11:40:57 - File data recieved 18874368
+2025-01-22 11:40:57 - File data recieved 19398656
+2025-01-22 11:40:57 - File data recieved 19922944
+2025-01-22 11:40:58 - File data recieved 20447232
+2025-01-22 11:40:58 - File data recieved 20971520
+2025-01-22 11:40:58 - File data recieved 21495808
+2025-01-22 11:40:58 - File data recieved 22020096
+2025-01-22 11:40:59 - File data recieved 22544384
+2025-01-22 11:40:59 - File data recieved 23068672
+2025-01-22 11:40:59 - File data recieved 23592960
+2025-01-22 11:41:00 - File data recieved 24117248
+2025-01-22 11:41:00 - File data recieved 24641536
+2025-01-22 11:41:00 - File data recieved 25165824
+2025-01-22 11:41:00 - File data recieved 25690112
+2025-01-22 11:41:01 - File data recieved 26214400
+2025-01-22 11:41:01 - File data recieved 26738688
+2025-01-22 11:41:01 - File data recieved 27262976
+2025-01-22 11:41:01 - File data recieved 27787264
+2025-01-22 11:41:02 - File data recieved 28311552
+2025-01-22 11:41:02 - File data recieved 28835840
+2025-01-22 11:41:03 - File data recieved 29360128
+2025-01-22 11:41:03 - File data recieved 29884416
+2025-01-22 11:41:04 - File data recieved 30408704
+2025-01-22 11:41:04 - File data recieved 30932992
+2025-01-22 11:41:05 - File data recieved 31457280
+2025-01-22 11:41:05 - File data recieved 31981568
+2025-01-22 11:41:05 - File data recieved 32505856
+2025-01-22 11:41:06 - File data recieved 33030144
+2025-01-22 11:41:06 - File data recieved 33554432
+2025-01-22 11:41:07 - File data recieved 34078720
+2025-01-22 11:41:07 - File data recieved 34603008
+2025-01-22 11:41:08 - File data recieved 35127296
+2025-01-22 11:41:08 - File data recieved 35651584
+2025-01-22 11:41:09 - File data recieved 36175872
+2025-01-22 11:41:09 - File data recieved 36700160
+2025-01-22 11:41:10 - File data recieved 37224448
+2025-01-22 11:41:10 - File data recieved 37748736
+2025-01-22 11:41:11 - File data recieved 38273024
+2025-01-22 11:41:11 - File data recieved 38797312
+2025-01-22 11:41:11 - File data recieved 39321600
+2025-01-22 11:41:12 - File data recieved 39845888
+2025-01-22 11:41:12 - File data recieved 40370176
+2025-01-22 11:41:13 - File data recieved 40894464
+2025-01-22 11:41:13 - File data recieved 41418752
+2025-01-22 11:41:14 - File data recieved 41943040
+2025-01-22 11:41:14 - File data recieved 42467328
+2025-01-22 11:41:15 - File data recieved 42991616
+2025-01-22 11:41:15 - File data recieved 43515904
+2025-01-22 11:41:15 - File data recieved 44040192
+2025-01-22 11:41:16 - File data recieved 44564480
+2025-01-22 11:41:16 - File IdanCloud.exe was downloaded
+2025-01-22 11:41:26 - File data recieved 0
+2025-01-22 11:41:26 - File data recieved 524288
+2025-01-22 11:41:26 - File data recieved 1048576
+2025-01-22 11:41:27 - File data recieved 1572864
+2025-01-22 11:41:27 - File data recieved 2097152
+2025-01-22 11:41:27 - File data recieved 2621440
+2025-01-22 11:41:28 - File data recieved 3145728
+2025-01-22 11:41:28 - File data recieved 3670016
+2025-01-22 11:41:28 - File data recieved 4194304
+2025-01-22 11:41:29 - File data recieved 4718592
+2025-01-22 11:41:29 - File data recieved 5242880
+2025-01-22 11:41:29 - File data recieved 5767168
+2025-01-22 11:41:29 - File data recieved 6291456
+2025-01-22 11:41:30 - File data recieved 6815744
+2025-01-22 11:41:30 - File data recieved 7340032
+2025-01-22 11:41:30 - File data recieved 7864320
+2025-01-22 11:41:30 - File data recieved 8388608
+2025-01-22 11:41:31 - File data recieved 8912896
+2025-01-22 11:41:31 - File data recieved 9437184
+2025-01-22 11:41:31 - File data recieved 9961472
+2025-01-22 11:41:31 - File data recieved 10485760
+2025-01-22 11:41:32 - File data recieved 11010048
+2025-01-22 11:41:32 - File data recieved 11534336
+2025-01-22 11:41:33 - File data recieved 12058624
+2025-01-22 11:41:33 - File data recieved 12582912
+2025-01-22 11:41:34 - File data recieved 13107200
+2025-01-22 11:41:34 - File data recieved 13631488
+2025-01-22 11:41:35 - File data recieved 14155776
+2025-01-22 11:41:35 - File data recieved 14680064
+2025-01-22 11:41:36 - File data recieved 15204352
+2025-01-22 11:41:36 - File data recieved 15728640
+2025-01-22 11:41:37 - File data recieved 16252928
+2025-01-22 11:41:37 - File data recieved 16777216
+2025-01-22 11:41:37 - File data recieved 17301504
+2025-01-22 11:41:38 - File data recieved 17825792
+2025-01-22 11:41:38 - File data recieved 18350080
+2025-01-22 11:41:38 - File data recieved 18874368
+2025-01-22 11:41:39 - File data recieved 19398656
+2025-01-22 11:41:39 - File data recieved 19922944
+2025-01-22 11:41:39 - File data recieved 20447232
+2025-01-22 11:41:39 - File data recieved 20971520
+2025-01-22 11:41:40 - File data recieved 21495808
+2025-01-22 11:41:40 - File data recieved 22020096
+2025-01-22 11:41:40 - File data recieved 22544384
+2025-01-22 11:41:40 - File data recieved 23068672
+2025-01-22 11:41:41 - File data recieved 23592960
+2025-01-22 11:41:41 - File data recieved 24117248
+2025-01-22 11:41:42 - File data recieved 24641536
+2025-01-22 11:41:42 - File data recieved 25165824
+2025-01-22 11:41:42 - File data recieved 25690112
+2025-01-22 11:41:43 - File data recieved 26214400
+2025-01-22 11:41:43 - File data recieved 26738688
+2025-01-22 11:41:44 - File data recieved 27262976
+2025-01-22 11:41:44 - File data recieved 27787264
+2025-01-22 11:41:45 - File data recieved 28311552
+2025-01-22 11:41:45 - File data recieved 28835840
+2025-01-22 11:41:46 - File data recieved 29360128
+2025-01-22 11:41:46 - File data recieved 29884416
+2025-01-22 11:41:47 - File data recieved 30408704
+2025-01-22 11:41:47 - File data recieved 30932992
+2025-01-22 11:41:48 - File data recieved 31457280
+2025-01-22 11:41:48 - File data recieved 31981568
+2025-01-22 11:41:48 - File data recieved 32505856
+2025-01-22 11:41:49 - File data recieved 33030144
+2025-01-22 11:41:49 - File data recieved 33554432
+2025-01-22 11:41:50 - File data recieved 34078720
+2025-01-22 11:41:50 - File data recieved 34603008
+2025-01-22 11:41:51 - File data recieved 35127296
+2025-01-22 11:41:51 - File data recieved 35651584
+2025-01-22 11:41:52 - File data recieved 36175872
+2025-01-22 11:41:52 - File data recieved 36700160
+2025-01-22 11:41:52 - File data recieved 37224448
+2025-01-22 11:41:53 - File data recieved 37748736
+2025-01-22 11:41:53 - File data recieved 38273024
+2025-01-22 11:41:54 - File data recieved 38797312
+2025-01-22 11:41:54 - File data recieved 39321600
+2025-01-22 11:41:55 - File data recieved 39845888
+2025-01-22 11:41:55 - File data recieved 40370176
+2025-01-22 11:41:55 - File data recieved 40894464
+2025-01-22 11:41:56 - File data recieved 41418752
+2025-01-22 11:41:56 - File data recieved 41943040
+2025-01-22 11:41:57 - File data recieved 42467328
+2025-01-22 11:41:57 - File data recieved 42991616
+2025-01-22 11:41:58 - File data recieved 43515904
+2025-01-22 11:41:58 - File data recieved 44040192
+2025-01-22 11:41:59 - File data recieved 44564480
+2025-01-22 11:41:59 - File IdanCloud.exe was downloaded
+2025-01-22 11:42:13 - start upload:
+2025-01-22 11:42:13 - e4abb60f4e66416ab4790f8965663655
+2025-01-22 11:42:13 - Server return an error: 020 File exceeded max size of 50 MB
+2025-01-22 11:42:14 - start upload:
+2025-01-22 11:42:14 - 8d5ddb432c8f482ca193f8cb3ec2b7c4
+2025-01-22 11:42:14 - File IdanCloud.exe started uploading
+2025-01-22 11:42:14 - Unhandled exception:
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\gui.py", line 771, in stop_upload
+    if self.file_sending.active_threads != []:
+       ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'active_threads'. Did you mean: 'receive_thread'?
+2025-01-22 11:42:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:42:18 - Server return an error: 014 File not found
+2025-01-22 11:42:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:42:18 - Server return an error: 014 File not found
+2025-01-22 11:42:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:42:18 - Server return an error: 014 File not found
+2025-01-22 11:42:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:42:18 - Server return an error: 014 File not found
+2025-01-22 11:42:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:42:18 - Server return an error: 014 File not found
+2025-01-22 11:42:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:42:18 - Server return an error: 014 File not found
+2025-01-22 11:42:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:42:18 - Server return an error: 014 File not found
+2025-01-22 11:42:18 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:42:18 - Server return an error: 014 File not found
+2025-01-22 11:42:24 - Got files
+2025-01-22 11:42:24 - Current used storage is 59.997
+2025-01-22 11:42:25 - Got directories
+2025-01-22 11:42:38 - File IdanCloud.exe was uploaded
+2025-01-22 11:42:38 - Current used storage is 105.006
+2025-01-22 11:42:38 - Got files
+2025-01-22 11:42:38 - Got directories
+2025-01-22 11:44:16 - start upload:
+2025-01-22 11:44:16 - f079a18276fc41f0a3f87dea6129ca3b
+2025-01-22 11:44:16 - Server return an error: 020 File exceeded max size of 50 MB
+2025-01-22 11:44:17 - start upload:
+2025-01-22 11:44:17 - aaa4cbcd49dd4833a1f70cdfa80ab78e
+2025-01-22 11:44:17 - File IdanCloud.exe started uploading
+2025-01-22 11:44:18 - Unhandled exception:
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\gui.py", line 771, in stop_upload
+    if self.file_sending.active_threads != []:
+       ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'active_threads'. Did you mean: 'receive_thread'?
+2025-01-22 11:44:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:44:21 - Server return an error: 014 File not found
+2025-01-22 11:44:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:44:21 - Server return an error: 014 File not found
+2025-01-22 11:44:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:44:21 - Server return an error: 014 File not found
+2025-01-22 11:44:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:44:21 - Server return an error: 014 File not found
+2025-01-22 11:44:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:44:21 - Server return an error: 014 File not found
+2025-01-22 11:44:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:44:21 - Server return an error: 014 File not found
+2025-01-22 11:44:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:44:21 - Server return an error: 014 File not found
+2025-01-22 11:44:21 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:44:21 - Server return an error: 014 File not found
+2025-01-22 11:44:27 - start upload:
+2025-01-22 11:44:27 - 760c4b96d9884366a97f19f36b19a2a3
+2025-01-22 11:44:27 - File IdanCloud.exe started uploading
+2025-01-22 11:44:30 - File IdanCloud.exe was uploaded
+2025-01-22 11:44:30 - Current used storage is 150.016
+2025-01-22 11:44:30 - Got files
+2025-01-22 11:44:30 - Got directories
+2025-01-22 11:44:37 - Got files
+2025-01-22 11:44:37 - Current used storage is 150.016
+2025-01-22 11:44:37 - Got directories
+2025-01-22 11:44:45 - File IdanCloud.exe was uploaded
+2025-01-22 11:44:45 - Got files
+2025-01-22 11:44:45 - Current used storage is 195.025
+2025-01-22 11:44:45 - Got directories
+2025-01-22 11:44:58 - start upload:
+2025-01-22 11:44:58 - 0ac80310a8ac41a0934609dc2c0e527d
+2025-01-22 11:44:58 - Server return an error: 020 File exceeded max size of 50 MB
+2025-01-22 11:44:59 - start upload:
+2025-01-22 11:44:59 - 2cd9efff8fbd4237bfc998e5d5f47393
+2025-01-22 11:44:59 - File IdanCloud.exe started uploading
+2025-01-22 11:45:46 - Unhandled exception:
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\gui.py", line 771, in stop_upload
+    if self.file_sending.active_threads != []:
+       ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'active_threads'. Did you mean: 'receive_thread'?
+2025-01-22 11:45:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:45:46 - Server return an error: 014 File not found
+2025-01-22 11:45:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:45:46 - Server return an error: 014 File not found
+2025-01-22 11:45:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:45:46 - Server return an error: 014 File not found
+2025-01-22 11:45:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:45:46 - Server return an error: 014 File not found
+2025-01-22 11:45:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:45:46 - Server return an error: 014 File not found
+2025-01-22 11:45:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:45:46 - Server return an error: 014 File not found
+2025-01-22 11:45:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:45:46 - Server return an error: 014 File not found
+2025-01-22 11:45:46 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:45:46 - Server return an error: 014 File not found
+2025-01-22 11:45:55 - start upload:
+2025-01-22 11:45:55 - ab16740451354063a065edc05f9b01ab
+2025-01-22 11:45:55 - File IdanCloud.exe started uploading
+2025-01-22 11:46:05 - start upload:
+2025-01-22 11:46:05 - db712dbb78694de8b095f94e924c05c7
+2025-01-22 11:46:05 - File IdanCloud.exe started uploading
+2025-01-22 11:46:07 - File IdanCloud.exe was uploaded
+2025-01-22 11:46:07 - Got files
+2025-01-22 11:46:08 - Current used storage is 240.034
+2025-01-22 11:46:08 - Got directories
+2025-01-22 11:46:11 - File IdanCloud.exe was uploaded
+2025-01-22 11:46:11 - Got files
+2025-01-22 11:46:11 - Got directories
+2025-01-22 11:46:11 - Current used storage is 285.043
+2025-01-22 11:46:16 - Got files
+2025-01-22 11:46:16 - Current used storage is 285.043
+2025-01-22 11:46:16 - Got directories
+2025-01-22 11:46:19 - File IdanCloud.exe was uploaded
+2025-01-22 11:46:19 - Current used storage is 330.053
+2025-01-22 11:46:19 - Got files
+2025-01-22 11:46:20 - Got directories
+2025-01-22 11:46:55 - Login was succesfull for user: a
+2025-01-22 11:46:55 - File data recieved 0
+2025-01-22 11:46:55 - Profile picture was recieved
+2025-01-22 11:46:56 - Got files
+2025-01-22 11:46:56 - Current used storage is 330.053
+2025-01-22 11:46:56 - Got directories
+2025-01-22 11:47:03 - start upload:
+2025-01-22 11:47:03 - 336ff790d4914a0c92d54fcc53735f5d
+2025-01-22 11:47:03 - Server return an error: 020 File exceeded max size of 50 MB
+2025-01-22 11:47:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:47:10 - Server return an error: 014 File not found
+2025-01-22 11:47:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:47:10 - Server return an error: 014 File not found
+2025-01-22 11:47:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:47:10 - Server return an error: 014 File not found
+2025-01-22 11:47:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:47:10 - Server return an error: 014 File not found
+2025-01-22 11:47:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:47:10 - Server return an error: 014 File not found
+2025-01-22 11:47:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:47:10 - Server return an error: 014 File not found
+2025-01-22 11:47:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:47:10 - Server return an error: 014 File not found
+2025-01-22 11:47:10 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\client\modules\protocol.py", line 302, in protocol_parse_reply
+    file_id = fields[3]
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-01-22 11:47:10 - Server return an error: 014 File not found
+2025-01-22 11:47:10 - Upload of None stopped
+2025-01-22 11:47:10 - Current used storage is 330.053
+2025-01-22 11:47:10 - Got files
+2025-01-22 11:47:10 - Got directories
+2025-01-22 11:47:34 - start upload:
+2025-01-22 11:47:34 - 34ac1aece65348cea2649a87ea81a38f
+2025-01-22 11:47:34 - Server return an error: 020 File exceeded max size of 50 MB
+2025-01-22 11:47:35 - start upload:
+2025-01-22 11:47:35 - 51fbe3e61e5b4376b9033cf9f3726598
+2025-01-22 11:47:35 - Server return an error: 020 File exceeded max size of 50 MB
+2025-01-22 11:47:36 - Current used storage is 330.053
+2025-01-22 11:47:36 - Got files
+2025-01-22 11:47:36 - Got directories
+2025-01-22 11:49:51 - Login was succesfull for user: a
+2025-01-22 11:49:51 - File data recieved 0
+2025-01-22 11:49:51 - Profile picture was recieved
+2025-01-22 11:49:51 - Current used storage is 330.053
+2025-01-22 11:49:51 - Got files
+2025-01-22 11:49:51 - Got directories
+2025-01-22 11:50:03 - start upload:
+2025-01-22 11:50:03 - a60f3f41837c4f198d97d06361bf7519
+2025-01-22 11:50:03 - File catppuccin_22h2_by_niivu_df8rth3.zip started uploading
+2025-01-22 11:50:04 - Upload of catppuccin_22h2_by_niivu_df8rth3.zip stopped
+2025-01-22 11:50:05 - Current used storage is 330.053
+2025-01-22 11:50:05 - Got files
+2025-01-22 11:50:05 - Got directories
+2025-01-22 11:50:08 - Current used storage is 330.053
+2025-01-22 11:50:08 - Got files
+2025-01-22 11:50:08 - Got directories
+2025-01-22 11:50:10 - Current used storage is 330.053
+2025-01-22 11:50:10 - Got files
+2025-01-22 11:50:10 - Got directories
+2025-01-22 11:50:15 - File data recieved 0
+2025-01-22 11:50:16 - File data recieved 524288
+2025-01-22 11:50:16 - File data recieved 1048576
+2025-01-22 11:50:16 - File data recieved 1572864
+2025-01-22 11:50:17 - File data recieved 2097152
+2025-01-22 11:50:17 - File data recieved 2621440
+2025-01-22 11:50:17 - File data recieved 3145728
+2025-01-22 11:50:18 - File data recieved 3670016
+2025-01-22 11:50:18 - File data recieved 4194304
+2025-01-22 11:50:18 - File data recieved 4718592
+2025-01-22 11:50:18 - File data recieved 5242880
+2025-01-22 11:50:19 - File data recieved 5767168
+2025-01-22 11:50:19 - File data recieved 6291456
+2025-01-22 11:50:19 - File data recieved 6815744
+2025-01-22 11:50:20 - File data recieved 7340032
+2025-01-22 11:50:20 - File data recieved 7864320
+2025-01-22 11:50:20 - File data recieved 8388608
+2025-01-22 11:50:20 - File data recieved 8912896
+2025-01-22 11:50:21 - File data recieved 9437184
+2025-01-22 11:50:21 - File data recieved 9961472
+2025-01-22 11:50:21 - File data recieved 10485760
+2025-01-22 11:50:21 - File data recieved 11010048
+2025-01-22 11:50:22 - File data recieved 11534336
+2025-01-22 11:50:22 - File data recieved 12058624
+2025-01-22 11:50:22 - File data recieved 12582912
+2025-01-22 11:50:22 - File data recieved 13107200
+2025-01-22 11:50:23 - File data recieved 13631488
+2025-01-22 11:50:23 - File data recieved 14155776
+2025-01-22 11:50:23 - File data recieved 14680064
+2025-01-22 11:50:23 - File data recieved 15204352
+2025-01-22 11:50:24 - File data recieved 15728640
+2025-01-22 11:50:24 - File data recieved 16252928
+2025-01-22 11:50:24 - File data recieved 16777216
+2025-01-22 11:50:24 - File data recieved 17301504
+2025-01-22 11:50:25 - File data recieved 17825792
+2025-01-22 11:50:25 - File data recieved 18350080
+2025-01-22 11:50:25 - File data recieved 18874368
+2025-01-22 11:50:26 - File data recieved 19398656
+2025-01-22 11:50:26 - File data recieved 19922944
+2025-01-22 11:50:26 - File data recieved 20447232
+2025-01-22 11:50:26 - File data recieved 20971520
+2025-01-22 11:50:27 - File data recieved 21495808
+2025-01-22 11:50:27 - File data recieved 22020096
+2025-01-22 11:50:27 - File data recieved 22544384
+2025-01-22 11:50:27 - File data recieved 23068672
+2025-01-22 11:50:28 - File data recieved 23592960
+2025-01-22 11:50:28 - File data recieved 24117248
+2025-01-22 11:50:28 - File data recieved 24641536
+2025-01-22 11:50:28 - File data recieved 25165824
+2025-01-22 11:50:29 - File data recieved 25690112
+2025-01-22 11:50:29 - File data recieved 26214400
+2025-01-22 11:50:29 - File data recieved 26738688
+2025-01-22 11:50:29 - File data recieved 27262976
+2025-01-22 11:50:30 - File data recieved 27787264
+2025-01-22 11:50:30 - File data recieved 28311552
+2025-01-22 11:50:30 - File data recieved 28835840
+2025-01-22 11:50:31 - File data recieved 29360128
+2025-01-22 11:50:31 - File data recieved 29884416
+2025-01-22 11:50:31 - File data recieved 30408704
+2025-01-22 11:50:31 - File data recieved 30932992
+2025-01-22 11:50:32 - File data recieved 31457280
+2025-01-22 11:50:32 - File data recieved 31981568
+2025-01-22 11:50:32 - File data recieved 32505856
+2025-01-22 11:50:32 - File data recieved 33030144
+2025-01-22 11:50:33 - File data recieved 33554432
+2025-01-22 11:50:33 - File data recieved 34078720
+2025-01-22 11:50:33 - File data recieved 34603008
+2025-01-22 11:50:33 - File data recieved 35127296
+2025-01-22 11:50:34 - File data recieved 35651584
+2025-01-22 11:50:34 - File data recieved 36175872
+2025-01-22 11:50:34 - File data recieved 36700160
+2025-01-22 11:50:34 - File data recieved 37224448
+2025-01-22 11:50:35 - File data recieved 37748736
+2025-01-22 11:50:35 - File data recieved 38273024
+2025-01-22 11:50:35 - File data recieved 38797312
+2025-01-22 11:50:35 - File data recieved 39321600
+2025-01-22 11:50:36 - File data recieved 39845888
+2025-01-22 11:50:36 - File data recieved 40370176
+2025-01-22 11:50:36 - File data recieved 40894464
+2025-01-22 11:50:36 - File data recieved 41418752
+2025-01-22 11:50:37 - File data recieved 41943040
+2025-01-22 11:50:37 - File data recieved 42467328
+2025-01-22 11:50:37 - File data recieved 42991616
+2025-01-22 11:50:38 - File data recieved 43515904
+2025-01-22 11:50:38 - File data recieved 44040192
+2025-01-22 11:50:38 - File data recieved 44564480
+2025-01-22 11:50:38 - File IdanCloud.exe was downloaded
+2025-01-22 11:50:45 - Succesfully deleted 8 files
+2025-01-22 11:50:45 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:45 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:45 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:45 - File English Recording.mp3 was deleted!
+2025-01-22 11:50:45 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:45 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:45 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:45 - Current used storage is 330.053
+2025-01-22 11:50:45 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:45 - Got files
+2025-01-22 11:50:46 - Got directories
+2025-01-22 11:50:46 - Succesfully moved to
+2025-01-22 11:50:46 - Got directories
+2025-01-22 11:50:46 - Got files
+2025-01-22 11:50:46 - Current used storage is 330.053
+2025-01-22 11:50:49 - Succesfully deleted 11 files
+2025-01-22 11:50:49 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:49 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:49 - File app_log.txt was deleted!
+2025-01-22 11:50:49 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:49 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:49 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:49 - File English Recording.mp3 was deleted!
+2025-01-22 11:50:49 - Got directories
+2025-01-22 11:50:49 - File important things.txt was deleted!
+2025-01-22 11:50:49 - File app_log.txt was deleted!
+2025-01-22 11:50:49 - Got files
+2025-01-22 11:50:49 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:49 - File IdanCloud.exe was deleted!
+2025-01-22 11:50:49 - Current used storage is 285.043
+2025-01-22 11:50:51 - Succesfully moved to
+2025-01-22 11:50:51 - Got files
+2025-01-22 11:50:51 - Current used storage is 14.158
+2025-01-22 11:50:51 - Got directories
+2025-01-22 11:50:53 - Succesfully moved to
+2025-01-22 11:50:53 - Got files
+2025-01-22 11:50:53 - Got directories
+2025-01-22 11:50:53 - Current used storage is 14.158
+2025-01-22 11:50:54 - Succesfully moved to
+2025-01-22 11:50:54 - Got files
+2025-01-22 11:50:54 - Got directories
+2025-01-22 11:50:54 - Current used storage is 14.158
+2025-01-22 11:51:57 - Login was succesfull for user: a
+2025-01-22 11:51:57 - File data recieved 0
+2025-01-22 11:51:57 - Profile picture was recieved
+2025-01-22 11:51:57 - Current used storage is 14.158
+2025-01-22 11:51:57 - Got files
+2025-01-22 11:51:57 - Got directories
+2025-01-22 11:52:00 - start upload:
+2025-01-22 11:52:00 - 280ab94082b349aaa0b4c92be3451819
+2025-01-22 11:52:00 - File app_log.txt started uploading
+2025-01-22 11:52:00 - Current used storage is 14.158
+2025-01-22 11:52:00 - Got files
+2025-01-22 11:52:00 - Got directories
+2025-01-22 11:52:01 - File app_log.txt was uploaded
+2025-01-22 11:52:01 - Got files
+2025-01-22 11:52:01 - Got directories
+2025-01-22 11:52:01 - Current used storage is 14.318
+2025-01-22 11:52:06 - File data recieved 0
+2025-01-22 11:52:06 - File \u05e9\u05d0\u05dc\u05d5\u05df \u05e2\u05d9\u05d3\u05df \u05d7\u05d6\u05d0\u05d9 330905159.docx was downloaded
+2025-01-22 11:52:09 - Got files
+2025-01-22 11:52:09 - Current used storage is 14.318
+2025-01-22 11:52:09 - Got directories
+2025-01-22 11:52:29 - Current used storage is 14.318
+2025-01-22 11:52:29 - Got directories
+2025-01-22 11:52:29 - Got files
+2025-01-22 11:52:29 - Got files
+2025-01-22 11:52:29 - Current used storage is 14.318
+2025-01-22 11:52:29 - Got directories
+2025-01-22 11:52:43 - File data recieved 0
+2025-01-22 11:52:43 - File data recieved 524288
+2025-01-22 11:52:43 - File data recieved 1048576
+2025-01-22 11:52:43 - File data recieved 1572864
+2025-01-22 11:52:43 - File data recieved 2097152
+2025-01-22 11:52:43 - File data recieved 2621440
+2025-01-22 11:52:43 - File data recieved 3145728
+2025-01-22 11:52:43 - File data recieved 3670016
+2025-01-22 11:52:43 - File data recieved 4194304
+2025-01-22 11:52:43 - File data recieved 4718592
+2025-01-22 11:52:43 - File data recieved 5242880
+2025-01-22 11:52:43 - File data recieved 5767168
+2025-01-22 11:52:43 - File data recieved 6291456
+2025-01-22 11:52:43 - File data recieved 6815744
+2025-01-22 11:52:43 - File data recieved 7340032
+2025-01-22 11:52:43 - File data recieved 7864320
+2025-01-22 11:52:43 - File data recieved 8388608
+2025-01-22 11:52:43 - File data recieved 8912896
+2025-01-22 11:52:43 - File data recieved 9437184
+2025-01-22 11:52:43 - File data recieved 9961472
+2025-01-22 11:52:44 - File data recieved 10485760
+2025-01-22 11:52:44 - File data recieved 11010048
+2025-01-22 11:52:44 - File data recieved 11534336
+2025-01-22 11:52:44 - File data recieved 12058624
+2025-01-22 11:52:44 - File data recieved 12582912
+2025-01-22 11:52:44 - File data recieved 13107200
+2025-01-22 11:52:44 - File aaa.zip was downloaded
+2025-01-22 11:52:52 - Current used storage is 14.318
+2025-01-22 11:52:52 - Got files
+2025-01-22 11:52:52 - Got directories
+2025-01-22 11:52:53 - Got files
+2025-01-22 11:52:53 - Got directories
+2025-01-22 11:52:53 - Current used storage is 14.318

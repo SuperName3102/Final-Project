@@ -2,7 +2,7 @@
 # Import libraries
 
 from modules.config import * 
-from modules.file_sending import File
+from modules.file_send import File
 from modules import helper, key_exchange, dialogs
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QFileDialog, QApplication

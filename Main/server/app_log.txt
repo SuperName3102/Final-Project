@@ -905,3 +905,19 @@ TypeError: 'NoneType' object is not subscriptable
 2025-01-22 11:34:03 - New Client number 3 from ('172.16.20.119', 53195)
 2025-01-22 11:34:41 - Client 3 disconnected
 2025-01-22 11:34:41 - Client 3 Exit
+2025-01-22 11:37:15 - Client 1 disconnected
+2025-01-22 11:37:15 - Client 1 Exit
+2025-01-22 11:37:57 - New Client number 4 from ('172.16.14.44', 50299)
+2025-01-22 11:39:02 - New Client number 5 from ('172.16.20.119', 53255)
+2025-01-22 11:46:51 - Client 5 disconnected
+2025-01-22 11:46:51 - Client 5 Exit
+2025-01-22 11:46:55 - New Client number 6 from ('172.16.20.119', 53329)
+2025-01-22 11:49:35 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 11:49:36 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-01-22 11:49:36 - Main thread: before accepting ...
+2025-01-22 11:49:51 - New Client number 1 from ('172.16.20.119', 53363)
+2025-01-22 11:51:52 - Client 1 disconnected
+2025-01-22 11:51:52 - Client 1 Exit
+2025-01-22 11:51:57 - New Client number 2 from ('172.16.20.119', 53424)
+2025-01-22 11:52:54 - Client 2 disconnected
+2025-01-22 11:52:54 - Client 2 Exit

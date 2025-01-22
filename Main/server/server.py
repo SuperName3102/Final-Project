@@ -481,7 +481,7 @@ def protocol_build_reply(request, tid, sock):
                 file = files_uploading[id]
                 break
             time.sleep(1)
-        if file == None: return Errors.FILE_NOT_FOUND.value
+        if file == None: return Errors.FILE_NOT_FOUND.value + "|" + id
         
         if (is_guest(tid)):
             reply = Errors.NOT_LOGGED.value
@@ -586,7 +586,7 @@ def protocol_build_reply(request, tid, sock):
                     reply = Errors.NO_PERMS.value
                     return reply
                 elif (cr.get_file_sname(id) == None and cr.get_dir_name(id) == None):
-                    reply = Errors.FILE_NOT_FOUND.value
+                    reply = Errors.FILE_NOT_FOUND.value + "|" + file_id
                     return reply
             zip_buffer = cr.zip_files(ids)
             send_zip(zip_buffer, file_id, sock, tid)
@@ -603,11 +603,11 @@ def protocol_build_reply(request, tid, sock):
                 reply = f"DOWR|{cr.get_dir_name(file_id)}|{file_id}|was downloaded"
                 return reply
             elif(cr.get_file_sname(file_id) == None):
-                reply = Errors.FILE_NOT_FOUND.value
+                reply = Errors.FILE_NOT_FOUND.value + "|" + file_id
                 return reply
             file_path = cloud_path + "\\" + cr.get_file_sname(file_id)
             if (cr.get_file_sname(file_id) == None or not os.path.isfile(file_path)):
-                reply = Errors.FILE_NOT_FOUND.value
+                reply = Errors.FILE_NOT_FOUND.value + "|" + file_id
             else:
                 try:
                     send_file_data(file_path, file_id, sock, tid)
@@ -673,7 +673,7 @@ def protocol_build_reply(request, tid, sock):
             cr.delete_directory(file_id)
             reply = f"DFFR|{name}|was deleted!"
         else:
-            reply = Errors.FILE_NOT_FOUND.value
+            reply = Errors.FILE_NOT_FOUND.value + "|" + file_id
         
 
     elif code == "SUBL":
@@ -712,7 +712,7 @@ def protocol_build_reply(request, tid, sock):
         if(not cr.can_download(clients[tid].id, file_id)):
             reply = Errors.NO_PERMS.value + "|" + cr.get_file_fname(file_id)
         elif (not os.path.isfile(file_path)):
-            reply = Errors.FILE_NOT_FOUND.value
+            reply = Errors.FILE_NOT_FOUND.value + "|" + file_id
         elif (os.path.getsize(file_path) > 10_000_000):
             reply = f"{Errors.PREVIEW_SIZE.value}|{cr.get_file_fname(file_id)}"
         elif file_id in files_in_use:
@@ -755,7 +755,7 @@ def protocol_build_reply(request, tid, sock):
         file_id = fields[1]
         user_cred = fields[2]
         if cr.get_file_fname(file_id) is None and cr.get_dir_name(file_id) is None:
-            reply = Errors.FILE_NOT_FOUND.value
+            reply = Errors.FILE_NOT_FOUND.value + "|" + file_id
         elif(not cr.can_share(clients[tid].id, file_id)):
             reply = Errors.NO_PERMS.value
         elif user_cred == clients[tid].email or user_cred == clients[tid].user:
@@ -775,7 +775,7 @@ def protocol_build_reply(request, tid, sock):
         file_id = fields[1]
         user_cred = fields[2]
         if cr.get_file_fname(file_id) is None and cr.get_dir_name(file_id) is None:
-            reply = Errors.FILE_NOT_FOUND.value
+            reply = Errors.FILE_NOT_FOUND.value + "|" + file_id
         elif(not cr.can_share(clients[tid].id, file_id)):
             reply = Errors.NO_PERMS.value
         elif user_cred == clients[tid].email or user_cred == clients[tid].user:
@@ -792,7 +792,7 @@ def protocol_build_reply(request, tid, sock):
         file_name = cr.get_file_fname(id)
         dir_name = cr.get_dir_name(id)
         if file_name is None and dir_name is None:
-            reply = Errors.FILE_NOT_FOUND.value
+            reply = Errors.FILE_NOT_FOUND.value + "|" + id
         cr.remove_share(clients[tid].id, id)
         if file_name != None: name = file_name
         else: name = dir_name
@@ -808,7 +808,7 @@ def protocol_build_reply(request, tid, sock):
         elif cr.get_dir_name(id) is not None:
             name = cr.get_dir_name(id)
         if name is None:
-            reply = Errors.FILE_NOT_FOUND.value
+            reply = Errors.FILE_NOT_FOUND.value + "|" + id
         else:
             cr.recover(id)
             reply = f"RECR|{name}|was recovered!"
@@ -842,7 +842,7 @@ def protocol_build_reply(request, tid, sock):
             send_zip(zip_buffer, id, sock, tid)
             zip_buffer.close()
         else:
-            reply = Errors.FILE_NOT_FOUND.value
+            reply = Errors.FILE_NOT_FOUND.value + "|" + id
             return reply
         
         reply = f"RUSR|{id}|{progress}"
