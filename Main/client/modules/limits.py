@@ -1,6 +1,9 @@
 # 2024 © Idan Hazay
 
 class Limits:
+    """
+    Users networking and files limitations, based on subscription
+    """
     def __init__(self, level):
         level = int(level)
         if (level == 0):

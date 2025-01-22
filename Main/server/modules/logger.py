@@ -1,9 +1,6 @@
 # 2024 © Idan Hazay
 
-import os
-import sys
-import logging
-from datetime import datetime
+import os, sys, logging
 
 # Configure logging
 logging.basicConfig(
@@ -15,6 +12,9 @@ logging.basicConfig(
 
 
 class Logger:
+    """
+    Class to log all prints into file
+    """
     def __init__(self):
         self.terminal = sys.stdout  # Store the original stdout so we can still print to console
         sys.stdout = self  # Redirect sys.stdout to the Logger instance

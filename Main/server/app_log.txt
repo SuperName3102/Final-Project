@@ -4,3 +4,41 @@
 2025-01-22 16:58:18 - New Client number 1 from ('192.168.1.247', 58675)
 2025-01-22 16:58:53 - Client 1 disconnected
 2025-01-22 16:58:53 - Client 1 Exit
+2025-01-22 21:40:37 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 21:40:37 - Public server ip: 46.121.4.35, local server ip: 192.168.1.122
+2025-01-22 21:40:37 - Main thread: before accepting ...
+2025-01-22 21:40:42 - New Client number 1 from ('192.168.1.122', 52963)
+2025-01-22 21:41:05 - Client 1 disconnected
+2025-01-22 21:41:05 - Client 1 Exit
+2025-01-22 21:48:54 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 21:48:54 - Public server ip: 46.121.4.35, local server ip: 192.168.1.122
+2025-01-22 21:48:54 - Main thread: before accepting ...
+2025-01-22 21:48:56 - New Client number 1 from ('192.168.1.122', 53069)
+2025-01-22 21:49:33 - Client 1 disconnected
+2025-01-22 21:49:33 - Client 1 Exit
+2025-01-22 22:03:00 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 22:03:00 - Public server ip: 46.121.4.35, local server ip: 192.168.1.122
+2025-01-22 22:03:01 - Main thread: before accepting ...
+2025-01-22 22:03:03 - New Client number 1 from ('192.168.1.122', 53169)
+2025-01-22 22:03:05 - Client 1 disconnected
+2025-01-22 22:03:05 - Client 1 Exit
+2025-01-22 22:08:14 - Server listening on ('0.0.0.0', 3102)
+2025-01-22 22:08:15 - Public server ip: 46.121.4.35, local server ip: 192.168.1.122
+2025-01-22 22:08:15 - Main thread: before accepting ...
+2025-01-22 22:08:17 - New Client number 1 from ('192.168.1.122', 53241)
+2025-01-22 22:09:53 - Client 1 disconnected
+2025-01-22 22:09:53 - Client 1 Exit
+2025-01-22 22:09:55 - New Client number 2 from ('192.168.1.122', 53270)
+2025-01-22 22:11:08 - Client 2 disconnected
+2025-01-22 22:11:08 - Client 2 Exit
+2025-01-22 22:11:17 - New Client number 3 from ('192.168.1.122', 53284)
+2025-01-22 22:12:44 - Client 3 disconnected
+2025-01-22 22:12:44 - Client 3 Exit
+2025-01-22 22:12:48 - New Client number 4 from ('192.168.1.122', 53296)
+2025-01-22 22:13:06 - Key values already exist in table
+2025-01-22 22:13:54 - Client 4 disconnected
+2025-01-22 22:13:54 - Client 4 Exit
+2025-01-22 22:14:10 - New Client number 5 from ('192.168.1.122', 53360)
+2025-01-22 22:14:26 - Key values already exist in table
+2025-01-22 22:14:43 - Client 5 disconnected
+2025-01-22 22:14:43 - Client 5 Exit

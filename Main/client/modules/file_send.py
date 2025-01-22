@@ -95,7 +95,7 @@ class FileSenderThread(QThread):
                         return
 
                     size = os.path.getsize(file_path)
-                    left = size % chunk_size
+                    left = size % CHUNK_SIZE
                     sent = self.location_infile
                     self.progress.emit(sent)
                     self.progress_reset.emit(size)
@@ -103,12 +103,12 @@ class FileSenderThread(QThread):
                     try:
                         with open(file_path, 'rb') as f:
                             f.seek(self.location_infile)
-                            for i in range((size - self.location_infile) // chunk_size):
+                            for i in range((size - self.location_infile) // CHUNK_SIZE):
                                 if self.running == False:
                                     break
 
                                 location_infile = f.tell()
-                                data = f.read(chunk_size)
+                                data = f.read(CHUNK_SIZE)
                                 
                                 current_time = time.time()
                                 elapsed_time = current_time - start
@@ -120,7 +120,7 @@ class FileSenderThread(QThread):
                                 self.window.protocol.send_data(f"FILD|{file_id}|{location_infile}|".encode() + data)
                                 bytes_sent += len(data)
 
-                                sent += chunk_size
+                                sent += CHUNK_SIZE
                                 self.progress_reset.emit(size)
                                 self.message.emit(f"{file_name} is being uploaded")
                                 self.progress.emit(sent)  # Update progress bar

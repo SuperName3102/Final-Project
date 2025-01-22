@@ -68,8 +68,8 @@ class Network:
         """
         try:
             b_len = b''
-            while (len(b_len) < len_field):   # Loop to get length in bytes
-                b_len += self.sock.recv(len_field - len(b_len))
+            while (len(b_len) < LEN_FIELD):   # Loop to get length in bytes
+                b_len += self.sock.recv(LEN_FIELD - len(b_len))
 
             msg_len = struct.unpack("!l", b_len)[0]
             if msg_len == b'': print('Seems client disconnected')
@@ -144,7 +144,7 @@ class Network:
                 return ip, port
         except TimeoutError:
             print("No server found")
-            return saved_ip, saved_port
+            return SAVED_IP, SAVED_PORT
         except:
             print(traceback.format_exc())
-            return saved_ip, saved_port
+            return SAVED_IP, SAVED_PORT

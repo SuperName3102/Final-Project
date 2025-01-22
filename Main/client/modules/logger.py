@@ -13,6 +13,9 @@ logging.basicConfig(
 
 
 class Logger:
+    """
+    Class to log all prints into file
+    """
     def __init__(self):
         self.terminal = sys.stdout  # Store the original stdout so we can still print to console
         sys.stdout = self  # Redirect sys.stdout to the Logger instance

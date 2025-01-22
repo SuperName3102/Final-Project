@@ -77,8 +77,8 @@ class Encryption:
         Gets the useable key and saves it as global var for future use
         """
         key_len_b = b""
-        while (len(key_len_b) < len_field):   # Recieve the length of the key
-            key_len_b += self.network.sock.recv(len_field - len(key_len_b))
+        while (len(key_len_b) < LEN_FIELD):   # Recieve the length of the key
+            key_len_b += self.network.sock.recv(LEN_FIELD - len(key_len_b))
         key_len = int(struct.unpack("!l", key_len_b)[0])
 
         key_binary = b""

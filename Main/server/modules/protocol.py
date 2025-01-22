@@ -45,9 +45,9 @@ class Protocol:
             cred = fields[1]
             password = fields[2]
             if (self.v.is_empty(fields[1:])):
-                return f"ERRR|101|Cannot have an empty field"
+                return Errors.EMPTY_FIELD.value
             elif (self.v.check_illegal_chars(fields[1:])):
-                return f"ERRR|102|Invalid chars used"
+                return Errors.INVALID_CHARS.value
 
             if (self.cr.login_validation(cred, password)):
                 if (not self.cr.verified(cred)):
@@ -74,17 +74,17 @@ class Protocol:
             confirm_password = fields[4]
 
             if (self.v.is_empty(fields[1:])):
-                return f"ERRR|101|Cannot have an empty field"
+                return Errors.EMPTY_FIELD.value
             elif (self.v.check_illegal_chars(fields[1:])):
-                return f"ERRR|102|Invalid chars used"
+                return Errors.INVALID_CHARS.value
             elif (not self.v.is_valid_email(email)):
-                return f"ERRR|103|Invalid email address"
+                return Errors.INVALID_EMAIL.value
             elif (not self.v.is_valid_username(username) or username == "guest"):
-                return f"ERRR|104|Invalid username\nUsername has to be at least 4 long and contain only chars and numbers"
+                return Errors.INVALID_USERNAME.value
             elif (not self.v.is_valid_password(password)):
-                return f"ERRR|105|Password does not meet requirements\nhas to be at least 8 long and contain at least 1 upper case and number"
+                return Errors.PASSWORD_REQ.value
             elif (password != confirm_password):
-                return f"ERRR|106|Passwords do not match"
+                return Errors.PASSWORDS_MATCH.value
 
             if (self.cr.user_exists(username)):
                 reply = Errors.USER_REGISTERED.value
@@ -99,11 +99,11 @@ class Protocol:
         elif (code == "FOPS"):   # Client requests password reset code
             email = fields[1]
             if (self.v.is_empty(fields[1:])):
-                return f"ERRR|101|Cannot have an empty field"
+                return Errors.EMPTY_FIELD.value
             elif (self.v.check_illegal_chars(fields[1:])):
-                return f"ERRR|102|Invalid chars used"
+                return Errors.INVALID_CHARS.value
             elif (not self.v.is_valid_email(email)):
-                return f"ERRR|103|Invalid email address"
+                return Errors.INVALID_EMAIL.value
 
             if (self.cr.email_registered(email)):
                 if (not self.cr.verified(email)):
@@ -121,13 +121,13 @@ class Protocol:
             confirm_new_password = fields[4]
 
             if (self.v.is_empty(fields[1:])):
-                return f"ERRR|101|Cannot have an empty field"
+                return Errors.EMPTY_FIELD.value
             elif (self.v.check_illegal_chars(fields[1:])):
-                return f"ERRR|102|Invalid chars used"
+                return Errors.INVALID_CHARS.value
             elif (not self.v.is_valid_password(new_password)):
-                return f"ERRR|105|Password does not meet requirements\nhas to be at least 8 long and contain at least 1 upper case and number"
+                return Errors.PASSWORD_REQ.value
             elif (new_password != confirm_new_password):
-                return f"ERRR|106|Passwords do not match"
+                return Errors.PASSWORDS_MATCH.value
 
             res = self.cr.check_code(email, code)
             if (res == "ok"):
@@ -152,11 +152,11 @@ class Protocol:
             email = fields[1]
 
             if (self.v.is_empty(fields[1:])):
-                return f"ERRR|101|Cannot have an empty field"
+                return Errors.EMPTY_FIELD.value
             elif (self.v.check_illegal_chars(fields[1:])):
-                return f"ERRR|102|Invalid chars used"
+                return Errors.INVALID_CHARS.value
             elif (not self.v.is_valid_email(email)):
-                return f"ERRR|103|Invalid email address"
+                return Errors.INVALID_EMAIL.value
 
             if (self.cr.email_registered(email)):
                 if (self.cr.verified(email)):
@@ -172,11 +172,11 @@ class Protocol:
             code = fields[2]
 
             if (self.v.is_empty(fields[1:])):
-                return f"ERRR|101|Cannot have an empty field"
+                return Errors.EMPTY_FIELD.value
             elif (self.v.check_illegal_chars(fields[1:])):
-                return f"ERRR|102|Invalid chars used"
+                return Errors.INVALID_CHARS.value
             elif (not self.v.is_valid_email(email)):
-                return f"ERRR|103|Invalid email address"
+                return Errors.INVALID_EMAIL.value
 
             if (self.cr.email_registered(email)):
                 res = self.cr.check_code(email, code)
@@ -221,8 +221,8 @@ class Protocol:
                 else:
                     if code == "UPFL":
                         name = self.cr.get_file_sname(file_name)
-                        if os.path.exists(cloud_path + "\\" + name):
-                            os.remove(cloud_path + "\\" + name)
+                        if os.path.exists(CLOUD_PATH + "\\" + name):
+                            os.remove(CLOUD_PATH + "\\" + name)
                         self.files_uploading[id] = File(name, parent, size, id, file_name)
                         self.cr.update_file_size(file_name, size)
                         reply = f"UPFR|{file_name}|was updated succefully"
@@ -278,7 +278,7 @@ class Protocol:
             if (len(fields) == 6): search_filter = fields[5]
             else: search_filter = None
             if (self.v.check_illegal_chars(fields[1:])):
-                return f"ERRR|102|Invalid chars used"
+                return Errors.INVALID_CHARS.value
             prev_amount = 0
             if (code == "GETP"):
                 items = self.cr.get_files(self.clients[tid].id, directory, search_filter)
@@ -370,7 +370,7 @@ class Protocol:
                 elif(self.cr.get_file_sname(file_id) == None):
                     reply = Errors.FILE_NOT_FOUND.value + "|" + file_id
                     return reply
-                file_path = cloud_path + "\\" + self.cr.get_file_sname(file_id)
+                file_path = CLOUD_PATH + "\\" + self.cr.get_file_sname(file_id)
                 if (self.cr.get_file_sname(file_id) == None or not os.path.isfile(file_path)):
                     reply = Errors.FILE_NOT_FOUND.value + "|" + file_id
                 else:
@@ -395,7 +395,7 @@ class Protocol:
             new_name = fields[3]
 
             if (self.v.is_empty(fields[1:])):
-                return f"ERRR|101|Cannot have an empty field"
+                return Errors.EMPTY_FIELD.value
             elif(not self.cr.can_rename(self.clients[tid].id, file_id)):
                 reply = Errors.NO_PERMS.value
             else:
@@ -406,10 +406,10 @@ class Protocol:
                 reply = f"RENR|{name}|{new_name}|File renamed succefully"
 
         elif (code == "GICO"):
-            if (os.path.isfile(os.path.join(user_icons_path, self.clients[tid].id) + ".ico")):
-                self.send_file_data(os.path.join(user_icons_path, self.clients[tid].id) + ".ico", "user", sock, tid)
+            if (os.path.isfile(os.path.join(USER_ICONS_PATH, self.clients[tid].id) + ".ico")):
+                self.send_file_data(os.path.join(USER_ICONS_PATH, self.clients[tid].id) + ".ico", "user", sock, tid)
             else:
-                self.send_file_data(os.path.join(user_icons_path, "guest.ico"), "user", sock, tid)
+                self.send_file_data(os.path.join(USER_ICONS_PATH, "guest.ico"), "user", sock, tid)
             reply = f"GICR|Sent use profile picture"
 
         elif (code == "ICOS"):
@@ -459,11 +459,11 @@ class Protocol:
         elif code == "CHUN":
             new_username = fields[1]
             if (self.v.is_empty(fields[1:])):
-                return f"ERRR|101|Cannot have an empty field"
+                return Errors.EMPTY_FIELD.value
             elif (self.v.check_illegal_chars(fields[1:])):
-                return f"ERRR|102|Invalid chars used"
+                return Errors.INVALID_CHARS.value
             elif (not self.v.is_valid_username(new_username) or new_username == "guest"):
-                return f"ERRR|104|Invalid username\nUsername has to be at least 4 long and contain only chars and numbers"
+                return Errors.INVALID_USERNAME.value
             elif (self.cr.user_exists(new_username)):
                 reply = Errors.USER_REGISTERED.value
             else:
@@ -473,7 +473,7 @@ class Protocol:
         
         elif code == "VIEW":
             file_id = fields[1]
-            file_path = cloud_path + "\\" + self.cr.get_file_sname(file_id)
+            file_path = CLOUD_PATH + "\\" + self.cr.get_file_sname(file_id)
             if(not self.cr.can_download(self.clients[tid].id, file_id)):
                 reply = Errors.NO_PERMS.value + "|" + self.cr.get_file_fname(file_id)
             elif (not os.path.isfile(file_path)):
@@ -595,7 +595,7 @@ class Protocol:
             id = fields[1]
             progress = int(fields[2])
             if self.cr.get_file_sname(id) != None: 
-                file_path = cloud_path + "\\" + self.cr.get_file_sname(id)
+                file_path = CLOUD_PATH + "\\" + self.cr.get_file_sname(id)
                 self.send_file_data(file_path, id, sock, tid, progress)
             elif self.cr.get_dir_name(id) != None: 
                 zip_buffer = self.cr.zip_directory(id)
@@ -626,7 +626,7 @@ class Protocol:
         if not os.path.isfile(file_path):
             raise Exception
         size = os.path.getsize(file_path)
-        left = size % chunk_size
+        left = size % CHUNK_SIZE
         sent = progress
         
         start = time.time()
@@ -635,9 +635,9 @@ class Protocol:
             with lock:
                 with open(file_path, 'rb') as f:
                     f.seek(progress)
-                    for i in range((size - progress) // chunk_size):
+                    for i in range((size - progress) // CHUNK_SIZE):
                         location_infile = f.tell()
-                        data = f.read(chunk_size)
+                        data = f.read(CHUNK_SIZE)
                         current_time = time.time()
                         elapsed_time = current_time - start
                         
@@ -647,7 +647,7 @@ class Protocol:
                         
                         self.network.send_data(sock, tid, f"RILD|{id}|{location_infile}|".encode() + data)
                         bytes_sent += len(data)
-                        sent += chunk_size
+                        sent += CHUNK_SIZE
                         
                         if bytes_sent >= (Limits(self.clients[tid].subscription_level).max_download_speed) * 1_000_000:
                             time_to_wait = 1.0 - elapsed_time
@@ -668,15 +668,15 @@ class Protocol:
 
     def send_zip(self, zip_buffer, id, sock, tid, progress = 0):
         size = len(zip_buffer.getbuffer())
-        left = size % chunk_size
+        left = size % CHUNK_SIZE
         sent = progress
         start = time.time()
         bytes_sent = 0
         try:
             zip_buffer.seek(progress)
-            for i in range((size - progress) // chunk_size):
+            for i in range((size - progress) // CHUNK_SIZE):
                 location_infile = zip_buffer.tell()
-                data = zip_buffer.read(chunk_size)
+                data = zip_buffer.read(CHUNK_SIZE)
                 
                 current_time = time.time()
                 elapsed_time = current_time - start
@@ -687,7 +687,7 @@ class Protocol:
                 
                 self.networksend_data(sock, tid, f"RILD|{id}|{location_infile}|".encode() + data)
                 bytes_sent += len(data)
-                sent += chunk_size 
+                sent += CHUNK_SIZE 
                 if bytes_sent >= (Limits(self.clients[tid].subscription_level).max_download_speed) * 1_000_000:
                     time_to_wait = 1.0 - elapsed_time
                     if time_to_wait > 0:
@@ -720,8 +720,8 @@ class File:
         self.id = id
         self.file_name = file_name
         self.curr_location_infile = curr_location_infile
-        if icon: self.save_path = user_icons_path + "\\" + self.name + ".ico"
-        else: self.save_path = cloud_path + "\\" + self.name
+        if icon: self.save_path = USER_ICONS_PATH + "\\" + self.name + ".ico"
+        else: self.save_path = CLOUD_PATH + "\\" + self.name
         
         self.start_download()
     

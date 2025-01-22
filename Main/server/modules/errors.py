@@ -2,8 +2,10 @@
 
 from enum import Enum
 
-
 class Errors(Enum):
+    """
+    Enumeration for error messages used throughout the application.
+    """
     GENERAL = f"ERRR|001|General error"
     UNKNOWN = f"ERRR|002|Code not supported"
     LOGIN_DETAILS = f"ERRR|003|Please check your password and email/username and try again."
@@ -37,3 +39,10 @@ class Errors(Enum):
     IN_USE = f"ERRR|030|File is currently in use"
     ALREADY_UPLOADING = f"ERRR|031|File have already started uploading"
     FILE_SIZE = f"ERRR|032|Invalid file size or seek location"
+    
+    EMPTY_FIELD = f"ERRR|101|Cannot have an empty field"
+    INVALID_CHARS = f"ERRR|102|Invalid chars used"
+    INVALID_EMAIL = f"ERRR|103|Invalid email address"
+    INVALID_USERNAME = f"ERRR|104|Invalid username\nUsername has to be at least 4 long and contain only chars and numbers"
+    PASSWORD_REQ = f"ERRR|105|Password does not meet requirements\nhas to be at least 8 long and contain at least 1 upper case and number"
+    PASSWORDS_MATCH = f"ERRR|106|Passwords do not match"

@@ -1,6 +1,9 @@
 # 2024 © Idan Hazay
 
-class Limits():
+class Limits:
+    """
+    Users networking and files limitations, based on subscription
+    """
     def __init__(self, level):
         level = int(level)
         if (level == 0):
@@ -28,6 +31,9 @@ class Limits():
 
 
 class LimitExceeded(Exception):
+    """
+    Exception of a limit reached/exceeded
+    """
     def __init__(self, message):
         self.message = message
         super().__init__(self.message)

@@ -61,13 +61,13 @@ class Encryption:
         For use to transfer shared secret
         Saving keys to file for future use
         """
-        public_key, private_key = rsa.newkeys(1024)   # Gen new keys
+        self.public_key, self.private_key = rsa.newkeys(1024)   # Gen new keys
         if (not os.path.isfile(f"{os.getcwd()}/keys/public.pem")):
             with open(f"{os.getcwd()}/keys/public.pem", "wb") as f:
-                f.write(public_key.save_pkcs1("PEM"))
+                f.write(self.public_key.save_pkcs1("PEM"))
         if (not os.path.isfile(f"{os.getcwd()}/keys/private.pem")):
             with open(f"{os.getcwd()}/keys/private.pem", "wb") as f:
-                f.write(private_key.save_pkcs1("PEM"))
+                f.write(self.private_key.save_pkcs1("PEM"))
 
 
     def load_keys(self):
@@ -75,18 +75,17 @@ class Encryption:
         Loading RSA keys from file
         Global vars for use
         """
-        global public_key, private_key
         with open(f"{os.getcwd()}/keys/public.pem", "rb") as f:
-            public_key = rsa.PublicKey.load_pkcs1(f.read())
+            self.public_key = rsa.PublicKey.load_pkcs1(f.read())
         with open(f"{os.getcwd()}/keys/private.pem", "rb") as f:
-            private_key = rsa.PrivateKey.load_pkcs1(f.read())
+            self.private_key = rsa.PrivateKey.load_pkcs1(f.read())
 
 
     def send_rsa_key(self, sock, tid):
         """
         Send public RSA key to client
         """
-        key_to_send = public_key.save_pkcs1()
+        key_to_send = self.public_key.save_pkcs1()
         key_len = struct.pack("!l", len(key_to_send))
 
         to_send = key_len + key_to_send
@@ -100,14 +99,14 @@ class Encryption:
         Decrypting with RSA key
         """
         key_len_b = b""
-        while (len(key_len_b) < len_field):   # Recieve len of key loop
-            key_len_b += sock.recv(len_field - len(key_len_b))
+        while (len(key_len_b) < LEN_FIELD):   # Recieve len of key loop
+            key_len_b += sock.recv(LEN_FIELD - len(key_len_b))
         key_len = int(struct.unpack("!l", key_len_b)[0])
 
         key_binary = b""
         while (len(key_binary) < key_len):   # Recieve rest of key according to length
             key_binary += sock.recv(key_len - len(key_binary))
-        shared_secret = rsa.decrypt(key_binary, private_key)
+        shared_secret = rsa.decrypt(key_binary, self.private_key)
         return shared_secret
 
 

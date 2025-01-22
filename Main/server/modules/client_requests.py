@@ -780,11 +780,3 @@ class ClientRequests:
         if str == "": return datetime.min
         format = "%Y-%m-%d %H:%M:%S.%f"
         return datetime.strptime(str, format)
-
-
-
-# add manual user
-#main()
-#salt = bcrypt.gensalt()
-#password = hash_password("a", salt)
-#db.add_user(vars(User("a", "a", "a", password, salt, verified=True)))

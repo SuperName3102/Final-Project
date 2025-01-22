@@ -49,7 +49,7 @@ class Protocol:
     
     def send_cookie(self):
         try:
-            with open(cookie_path, "r") as f:
+            with open(COOKIE_PATH, "r") as f:
                 cookie = f.read()
                 self.send_data(b"COKE|" + cookie.encode())
         except:
@@ -100,9 +100,9 @@ class Protocol:
         self.send_data(f"MOVD|{new_dir}".encode())
 
 
-    def get_user_icon(self):
+    def get_USER_ICON(self):
         self.send_data(b"GICO")
-        self.window.files_downloading["user"] = File(self.window, user_icon, "user", 0, file_name="User Icon")
+        self.window.files_downloading["user"] = File(self.window, USER_ICON, "user", 0, file_name="User Icon")
 
 
     def get_used_storage(self):
@@ -328,7 +328,7 @@ class Protocol:
                 self.window.user["email"] = email
                 self.window.user["username"] = username
                 self.window.user["subscription_level"] = fields[3]
-                self.get_user_icon()
+                self.get_USER_ICON()
                 if self.window.user["username"].lower() == "emily":
                     with open(f"{os.getcwd()}/gui/css/emily.css", 'r') as f: self.app.setStyleSheet(f.read())
                 self.window.user_page()
@@ -408,7 +408,7 @@ class Protocol:
                 self.window.user["cwd_name"] = fields[3]
                 to_show = f'Succesfully moved to {fields[3]}'
                 self.window.scroll_progress = 0
-                self.window.current_files_amount = items_to_load
+                self.window.current_files_amount = ITEMS_TO_LOAD
                 self.window.user_page()
                 
             elif code == "RILD" or code == "RILE":
@@ -453,8 +453,8 @@ class Protocol:
             elif code == 'GICR':
                 to_show = "Profile picture was recieved"
                 try:
-                    if self.window.share or self.window.deleted: self.window.upload_button.setIcon((QIcon(user_icon)))
-                    self.window.user_button.setIcon((QIcon(user_icon)))
+                    if self.window.share or self.window.deleted: self.window.upload_button.setIcon((QIcon(USER_ICON)))
+                    self.window.user_button.setIcon((QIcon(USER_ICON)))
                 except: pass
             
             elif code == 'ICOR':
@@ -463,7 +463,7 @@ class Protocol:
             
             elif code == 'ICUP':
                 to_show = "Profile icon uploaded succefully!"
-                self.get_user_icon()
+                self.get_USER_ICON()
             elif code == 'DLFR':
                 file_name = fields[1]
                 to_show = f"File {file_name} was deleted!"
@@ -625,5 +625,5 @@ class Protocol:
 def save_cookie(cookie):
     if not os.path.exists(os.getcwd() + "\\cookies"):
         os.makedirs(os.getcwd() + "\\cookies")
-    with open(cookie_path, "w") as f:
+    with open(COOKIE_PATH, "w") as f:
         f.write(cookie)

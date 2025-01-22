@@ -2,23 +2,22 @@
 # Import libraries
 
 from PyQt6 import QtWidgets, uic
-from PyQt6.QtWidgets import QWidget,QLabel, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
+from PyQt6.QtWidgets import QWidget, QDialog, QApplication, QLabel, QVBoxLayout, QPushButton, QCheckBox, QGroupBox, QFileDialog, QLineEdit, QGridLayout, QScrollArea, QHBoxLayout, QSpacerItem, QSizePolicy, QMenu
 from PyQt6.QtGui import QIcon, QDragEnterEvent, QDropEvent, QMoveEvent, QResizeEvent, QContextMenuEvent
-from PyQt6.QtCore import QSize
+from PyQt6.QtCore import QSize, Qt
 
 import os, time
 
 from modules.config import *
-from modules.file_viewer import *
 from modules.limits import Limits
 
-from modules import helper, protocol, file_send, dialogs
+from modules import helper, protocol, file_send, dialogs, file_viewer
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, app, network):
         super().__init__()
         self.app = app
-        self.window_geometry = window_geometry
+        self.window_geometry = WINDOW_GEOMERTY
         self.save_sizes()
         self.setGeometry(self.window_geometry)
         self.original_width = self.width()
@@ -30,9 +29,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.move(s_width//8, s_height//6)
         self.setAttribute(Qt.WidgetAttribute.WA_OpaquePaintEvent)
         self.setAttribute(Qt.WidgetAttribute.WA_PaintOnScreen, True)
-        self.current_files_amount = items_to_load
+        self.current_files_amount = ITEMS_TO_LOAD
         self.last_load = time.time()
-        self.scroll_size = scroll_size
+        self.scroll_size = SCROLL_SIZE
         
         self.user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""}
         
@@ -171,13 +170,13 @@ class MainWindow(QtWidgets.QMainWindow):
             self.save_sizes()
             
             self.signup_button.clicked.connect(self.signup_page)
-            self.signup_button.setIcon(QIcon(assets_path+"\\new_account.svg"))
+            self.signup_button.setIcon(QIcon(ASSETS_PATH+"\\new_account.svg"))
 
             self.login_button.clicked.connect(self.login_page)
-            self.login_button.setIcon(QIcon(assets_path+"\\login.svg"))
+            self.login_button.setIcon(QIcon(ASSETS_PATH+"\\login.svg"))
 
             self.exit_button.clicked.connect(self.protocol.exit_program)
-            self.exit_button.setIcon(QIcon(assets_path+"\\exit.svg"))
+            self.exit_button.setIcon(QIcon(ASSETS_PATH+"\\exit.svg"))
             self.setGeometry(temp)
             self.force_update_window()
         except:
@@ -199,13 +198,13 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.signup_button.clicked.connect(lambda: self.protocol.signup(self.email.text(), self.username.text(), self.password.text(), self.confirm_password.text()))
             self.signup_button.setShortcut("Return")
-            self.signup_button.setIcon(QIcon(assets_path+"\\new_account.svg"))
+            self.signup_button.setIcon(QIcon(ASSETS_PATH+"\\new_account.svg"))
 
             self.login_button.clicked.connect(self.login_page)
             self.login_button.setStyleSheet("background-color:transparent;color:royalblue;text-decoration: underline;border:none;")
 
             self.back_button.clicked.connect(self.main_page)
-            self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            self.back_button.setIcon(QIcon(ASSETS_PATH+"\\back.svg"))
             
             self.setGeometry(temp)
             self.force_update_window()
@@ -231,10 +230,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.login_button.clicked.connect(lambda: self.protocol.login(self.credi.text(), self.password.text(), self.remember_check.isChecked()))
             self.login_button.setShortcut("Return")
-            self.login_button.setIcon(QIcon(assets_path+"\\login.svg"))
+            self.login_button.setIcon(QIcon(ASSETS_PATH+"\\login.svg"))
 
             self.back_button.clicked.connect(self.main_page)
-            self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            self.back_button.setIcon(QIcon(ASSETS_PATH+"\\back.svg"))
             
             self.setGeometry(temp)
             self.force_update_window()
@@ -251,10 +250,10 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.send_code_button.clicked.connect(lambda: self.protocol.reset_password(self.email.text()))
             self.send_code_button.setShortcut("Return")
-            self.send_code_button.setIcon(QIcon(assets_path+"\\send.svg"))
+            self.send_code_button.setIcon(QIcon(ASSETS_PATH+"\\send.svg"))
 
             self.back_button.clicked.connect(self.login_page)
-            self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            self.back_button.setIcon(QIcon(ASSETS_PATH+"\\back.svg"))
             
             self.setGeometry(temp)
             self.force_update_window()
@@ -271,13 +270,13 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.verify_button.clicked.connect(lambda: self.protocol.verify(email, self.code.text()))
             self.verify_button.setShortcut("Return")
-            self.verify_button.setIcon(QIcon(assets_path+"\\verify.svg"))
+            self.verify_button.setIcon(QIcon(ASSETS_PATH+"\\verify.svg"))
 
             self.send_again_button.clicked.connect(lambda: self.protocol.send_verification(email))
-            self.send_again_button.setIcon(QIcon(assets_path+"\\again.svg"))
+            self.send_again_button.setIcon(QIcon(ASSETS_PATH+"\\again.svg"))
 
             self.back_button.clicked.connect(self.main_page)
-            self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            self.back_button.setIcon(QIcon(ASSETS_PATH+"\\back.svg"))
             
             self.setGeometry(temp)
             self.force_update_window()
@@ -294,10 +293,10 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.send_code_button.clicked.connect(lambda: self.protocol.send_verification(self.email.text()))
             self.send_code_button.setShortcut("Return")
-            self.send_code_button.setIcon(QIcon(assets_path+"\\send.svg"))
+            self.send_code_button.setIcon(QIcon(ASSETS_PATH+"\\send.svg"))
 
             self.back_button.clicked.connect(self.main_page)
-            self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            self.back_button.setIcon(QIcon(ASSETS_PATH+"\\back.svg"))
             
             self.setGeometry(temp)
             self.force_update_window()
@@ -349,29 +348,29 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.sort_widget.currentIndexChanged.connect(lambda: self.change_sort(self.sort.currentText()[1:]))
             
-            self.search_button.setIcon(QIcon(assets_path+"\\search.svg"))
+            self.search_button.setIcon(QIcon(ASSETS_PATH+"\\search.svg"))
             self.search_button.setText(f" Search Filter: {self.search_filter}")
             self.search_button.clicked.connect(self.protocol.search)
             self.search_button.setStyleSheet("background-color:transparent;border:none;")
             
-            self.refresh.setIcon(QIcon(assets_path+"\\refresh.svg"))
+            self.refresh.setIcon(QIcon(ASSETS_PATH+"\\refresh.svg"))
             self.refresh.setText(f" ")
             self.refresh.clicked.connect(self.user_page)
             self.refresh.setStyleSheet("background-color:transparent;border:none;")
             
             self.shared_button.clicked.connect(self.protocol.change_share)
-            self.shared_button.setIcon(QIcon(assets_path+"\\share.svg"))
+            self.shared_button.setIcon(QIcon(ASSETS_PATH+"\\share.svg"))
             
             self.recently_deleted_button.clicked.connect(self.protocol.change_deleted)
-            self.recently_deleted_button.setIcon(QIcon(assets_path+"\\delete.svg"))
+            self.recently_deleted_button.setIcon(QIcon(ASSETS_PATH+"\\delete.svg"))
         
             self.user_button.clicked.connect(lambda: self.manage_account())
             self.logout_button.clicked.connect(self.protocol.logout)
-            self.logout_button.setIcon(QIcon(assets_path+"\\logout.svg"))
-            self.upload_button.setIcon(QIcon(assets_path+"\\upload.svg"))
+            self.logout_button.setIcon(QIcon(ASSETS_PATH+"\\logout.svg"))
+            self.upload_button.setIcon(QIcon(ASSETS_PATH+"\\upload.svg"))
             
             if self.deleted:
-                try: self.upload_button.setIcon((QIcon(user_icon)))
+                try: self.upload_button.setIcon((QIcon(USER_ICON)))
                 except: pass
                 self.upload_button.setText(" Your files")
                 self.upload_button.clicked.connect(self.protocol.change_deleted)
@@ -379,7 +378,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.shared_button.hide()
             
             elif self.share:
-                try: self.upload_button.setIcon((QIcon(user_icon)))
+                try: self.upload_button.setIcon((QIcon(USER_ICON)))
                 except: pass
                 self.upload_button.setText(" Your files")
                 self.upload_button.clicked.connect(self.protocol.change_share)
@@ -392,11 +391,11 @@ class MainWindow(QtWidgets.QMainWindow):
             self.user_button.setIconSize(QSize(self.user_button.size().width(), self.user_button.size().height()))
             self.user_button.setStyleSheet("padding:0px;border-radius:5px;border:none;background-color:transparent")
             
-            try: self.user_button.setIcon((QIcon(user_icon)))
+            try: self.user_button.setIcon((QIcon(USER_ICON)))
             except: pass
             
             self.stop_button.clicked.connect(self.stop_upload)
-            self.stop_button.setIcon(QIcon(assets_path+"\\stop.svg"))
+            self.stop_button.setIcon(QIcon(ASSETS_PATH+"\\stop.svg"))
             self.setGeometry(temp)
             self.force_update_window()
             
@@ -486,7 +485,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.scroll_progress = value
         total_scroll_height = self.scroll.verticalScrollBar().maximum()
         if self.scroll_progress/total_scroll_height > 0.95 and len(self.directories) + len(self.files) < int(self.items_amount):
-            self.current_files_amount += items_to_load
+            self.current_files_amount += ITEMS_TO_LOAD
             self.user_page()
 
 
@@ -498,22 +497,22 @@ class MainWindow(QtWidgets.QMainWindow):
             uic.loadUi(ui_path, self)
             self.save_sizes()
             self.forgot_password_button.clicked.connect(lambda: self.protocol.reset_password(self.user["email"]))
-            self.forgot_password_button.setIcon(QIcon(assets_path + "\\key.svg"))
+            self.forgot_password_button.setIcon(QIcon(ASSETS_PATH + "\\key.svg"))
 
             self.delete_account_button.clicked.connect(lambda: self.protocol.delete_user(self.user["email"]))
-            self.delete_account_button.setIcon(QIcon(assets_path + "\\delete.svg"))
+            self.delete_account_button.setIcon(QIcon(ASSETS_PATH + "\\delete.svg"))
 
             self.upload_icon_button.clicked.connect(lambda: self.protocol.upload_icon())
-            self.upload_icon_button.setIcon(QIcon(assets_path + "\\profile.svg"))
+            self.upload_icon_button.setIcon(QIcon(ASSETS_PATH + "\\profile.svg"))
 
             self.subscriptions_button.clicked.connect(self.subscriptions_page)
-            self.subscriptions_button.setIcon(QIcon(assets_path + "\\upgrade.svg"))
+            self.subscriptions_button.setIcon(QIcon(ASSETS_PATH + "\\upgrade.svg"))
 
             self.change_username_button.clicked.connect(self.protocol.change_username)
-            self.change_username_button.setIcon(QIcon(assets_path + "\\change_user.svg"))
+            self.change_username_button.setIcon(QIcon(ASSETS_PATH + "\\change_user.svg"))
 
             self.back_button.clicked.connect(self.user_page)
-            self.back_button.setIcon(QIcon(assets_path + "\\back.svg"))
+            self.back_button.setIcon(QIcon(ASSETS_PATH + "\\back.svg"))
             
             self.setGeometry(temp)
             self.force_update_window()
@@ -529,7 +528,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.save_sizes()
             self.protocol.get_used_storage()
             self.back_button.clicked.connect(self.manage_account)
-            self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            self.back_button.setIcon(QIcon(ASSETS_PATH+"\\back.svg"))
 
             self.free_button.clicked.connect(lambda: self.protocol.subscribe(0))
             self.basic_button.clicked.connect(lambda: self.protocol.subscribe(1))
@@ -578,13 +577,13 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.reset_button.clicked.connect(lambda: self.protocol.password_recovery(email, self.code.text(), self.password.text(), self.confirm_password.text()))
             self.reset_button.setShortcut("Return")
-            self.reset_button.setIcon(QIcon(assets_path+"\\reset.svg"))
+            self.reset_button.setIcon(QIcon(ASSETS_PATH+"\\reset.svg"))
 
             self.send_again_button.clicked.connect(lambda: self.protocol.reset_password(email))
-            self.send_again_button.setIcon(QIcon(assets_path+"\\again.svg"))
+            self.send_again_button.setIcon(QIcon(ASSETS_PATH+"\\again.svg"))
 
             self.back_button.clicked.connect(self.manage_account)
-            self.back_button.setIcon(QIcon(assets_path+"\\back.svg"))
+            self.back_button.setIcon(QIcon(ASSETS_PATH+"\\back.svg"))
             
             self.setGeometry(temp)
             self.force_update_window()
@@ -603,10 +602,10 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.connect_button.clicked.connect(lambda: self.protocol.connect_server(self.ip.text(), self.port.text()))
             self.connect_button.setShortcut("Return")
-            self.connect_button.setIcon(QIcon(assets_path+"\\connect.svg"))
+            self.connect_button.setIcon(QIcon(ASSETS_PATH+"\\connect.svg"))
             
             self.exit_button.clicked.connect(helper.force_exit)
-            self.exit_button.setIcon(QIcon(assets_path+"\\exit.svg"))
+            self.exit_button.setIcon(QIcon(ASSETS_PATH+"\\exit.svg"))
             
             self.setGeometry(temp)
             self.force_update_window()
@@ -699,7 +698,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def activate_file_view(self, file_id):
         save_path = self.files_downloading[file_id].save_location
         file_hash = helper.compute_file_md5(save_path)
-        file_viewer_dialog("File Viewer", save_path)
+        file_viewer.FileViewer(save_path, "File Viewer")
 
         if file_hash != helper.compute_file_md5(save_path):
             save = dialogs.show_confirmation_dialog("Do you want to save changes?")
@@ -901,10 +900,10 @@ class FileButton(QPushButton):
             label = QLabel(label_text)
             if i == 0:
                 if self.is_folder:
-                    label.setText(f'&nbsp;<img src="{assets_path + "\\folder.svg"}" width="20" height="20"><label>&nbsp;{helper.truncate_label(label, label_text)}</label>')
+                    label.setText(f'&nbsp;<img src="{ASSETS_PATH + "\\folder.svg"}" width="20" height="20"><label>&nbsp;{helper.truncate_label(label, label_text)}</label>')
                 elif self.id is not None:
-                    icon_path = assets_path + "\\file_types\\" + helper.format_file_type(label_text.split("~")[0].split(".")[-1][:-1]) + ".svg"
-                    if not os.path.isfile(icon_path): icon_path = assets_path + "\\file.svg"
+                    icon_path = ASSETS_PATH + "\\file_types\\" + helper.format_file_type(label_text.split("~")[0].split(".")[-1][:-1]) + ".svg"
+                    if not os.path.isfile(icon_path): icon_path = ASSETS_PATH + "\\file.svg"
                     label.setText(f'&nbsp;<img src="{icon_path}" width="16" height="20">&nbsp;{helper.truncate_label(label, label_text)}')
             if self.id is None: 
                 label.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -916,7 +915,7 @@ class FileButton(QPushButton):
                     elif i == 3: b_sort = "Owner"
                     label.mousePressEvent  =  lambda event, sort_key=b_sort: self.window.change_sort(sort_key)
                     if b_sort ==  self.window.sort:
-                        label.setText(f'<img src="{assets_path}\\{'asc.svg' if  self.window.sort_direction else 'dsc.svg'}" width="20" height="20"><label>&nbsp;&nbsp;{label_text}</label>')
+                        label.setText(f'<img src="{ASSETS_PATH}\\{'asc.svg' if  self.window.sort_direction else 'dsc.svg'}" width="20" height="20"><label>&nbsp;&nbsp;{label_text}</label>')
             if self.is_folder: label.setObjectName("folder-label")
             elif self.id != None: label.setObjectName("file-label")
             elif label_text == "Back": label.setObjectName("back-label")
@@ -934,7 +933,7 @@ class FileButton(QPushButton):
         if  self.window.check_all_id() and  self.window.check_all_perms(4) and not  self.window.deleted and self.window.currently_selected != []:
             action = menu.addAction(" Download")
             action.triggered.connect(self.window.protocol.download)
-            action.setIcon(QIcon(assets_path + "\\download.svg"))
+            action.setIcon(QIcon(ASSETS_PATH + "\\download.svg"))
 
         if  self.window.check_all_id() and self.window.currently_selected != []:
             if  self.window.check_all_perms(2):
@@ -942,36 +941,36 @@ class FileButton(QPushButton):
                 else:
                     action = menu.addAction(" Delete")
                     action.triggered.connect(self.window.protocol.delete)
-                    action.setIcon(QIcon(assets_path + "\\delete.svg"))
+                    action.setIcon(QIcon(ASSETS_PATH + "\\delete.svg"))
 
             if  self.window.check_all_perms(3) and not  self.window.deleted and len(self.window.currently_selected) == 1:
                 action = menu.addAction(" Rename")
                 action.triggered.connect(self.rename)
-                action.setIcon(QIcon(assets_path + "\\change_user.svg"))
+                action.setIcon(QIcon(ASSETS_PATH + "\\change_user.svg"))
             
             if  self.window.check_all_perms(5) and not  self.window.deleted:
                 action = menu.addAction(" Share")
                 action.triggered.connect( self.window.protocol.share_action)
-                action.setIcon(QIcon(assets_path + "\\share.svg"))
+                action.setIcon(QIcon(ASSETS_PATH + "\\share.svg"))
             
             if self.window.share and self.window.user["cwd"] == "" and not self.window.deleted:
                 action = menu.addAction(" Remove")
                 action.triggered.connect(self.window.protocol.remove)
-                action.setIcon(QIcon(assets_path + "\\remove.svg"))
+                action.setIcon(QIcon(ASSETS_PATH + "\\remove.svg"))
 
         if not self.window.share and not self.window.deleted:
             action = menu.addAction(" New Folder")
             action.triggered.connect(self.window.protocol.new_folder)
-            action.setIcon(QIcon(assets_path + "\\new_account.svg"))
+            action.setIcon(QIcon(ASSETS_PATH + "\\new_account.svg"))
         
         if self.window.deleted and self.window.user["cwd"] == "" and self.window.currently_selected != []:
             action = menu.addAction(" Recover")
             action.triggered.connect(self.window.protocol.recover)
-            action.setIcon(QIcon(assets_path + "\\new_account.svg"))
+            action.setIcon(QIcon(ASSETS_PATH + "\\new_account.svg"))
 
         action = menu.addAction(" Search")
         action.triggered.connect(self.window.protocol.search)
-        action.setIcon(QIcon(assets_path + "\\search.svg"))
+        action.setIcon(QIcon(ASSETS_PATH + "\\search.svg"))
 
         menu.exec(event.globalPos())
             

@@ -1,8 +1,12 @@
+# 2024 © Idan Hazay
+
+# Global libraries
 import os
 
-sep = "|"
-len_field = 4
-chunk_size = 524288
+# Global variables
+SEP = "|"
+LEN_FIELD = 4
+CHUNK_SIZE = 524288
 
-cloud_path = f"{os.getcwd()}\\cloud"
-user_icons_path = f"{os.getcwd()}\\user icons"
+CLOUD_PATH = f"{os.getcwd()}\\cloud"
+USER_ICONS_PATH = f"{os.getcwd()}\\user icons"

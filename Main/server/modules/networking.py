@@ -64,8 +64,8 @@ class Network:
         """
         try:
             b_len = b''
-            while (len(b_len) < len_field):   # Loop to get length in bytes
-                b_len += sock.recv(len_field - len(b_len))
+            while (len(b_len) < LEN_FIELD):   # Loop to get length in bytes
+                b_len += sock.recv(LEN_FIELD - len(b_len))
             self.bytes_recieved[tid] += len(b_len)
             msg_len = struct.unpack("!l", b_len)[0]
             if msg_len == b'':
