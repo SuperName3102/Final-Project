@@ -42,3 +42,9 @@
 2025-01-22 22:14:26 - Key values already exist in table
 2025-01-22 22:14:43 - Client 5 disconnected
 2025-01-22 22:14:43 - Client 5 Exit
+2025-01-24 15:04:42 - Server listening on ('0.0.0.0', 3102)
+2025-01-24 15:04:43 - Public server ip: 46.121.4.35, local server ip: 192.168.1.247
+2025-01-24 15:04:43 - Main thread: before accepting ...
+2025-01-24 15:04:52 - New Client number 1 from ('192.168.1.247', 61970)
+2025-01-24 15:04:56 - Client 1 disconnected
+2025-01-24 15:04:56 - Client 1 Exit
