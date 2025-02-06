@@ -9,11 +9,11 @@ from PyQt6.QtWidgets import QFileDialog, QApplication
 import time, socket
 
 class Protocol:
-    def __init__(self, network, window, ip = "127.0.0.1", port = 31026):
+    def __init__(self, network, window):
         self.network = network
         self.window = window
-        self.ip = ip
-        self.port = port
+        self.ip = SAVED_IP
+        self.port = SAVED_PORT
     
     
     def change_share(self):
@@ -53,8 +53,7 @@ class Protocol:
                 cookie = f.read()
                 self.send_data(b"COKE|" + cookie.encode())
         except:
-            print(traceback.format_exc())
-            pass
+            print("Cookie file not found")
     
     def get_cwd_files(self, filter=None):
         self.get_files(1, filter)
@@ -433,7 +432,7 @@ class Protocol:
                     except: pass
                     try: self.window.file_upload_progress.hide()
                     except: pass
-                to_show = "File data recieved " + str(location_infile)
+                to_show = "File data recieved " + str(location_infile + len(data)) 
                 
 
             elif code == 'DOWR':
@@ -577,18 +576,25 @@ class Protocol:
         return to_show
     
     # Main function and start of code
-    def connect_server(self, new_ip, new_port, loop = False):
+    def connect_server(self, new_ip = SAVED_IP, new_port = SAVED_PORT, loop = False):
         self.window.set_message(f"Trying to connect to {new_ip} {new_port}...")
         QApplication.processEvents()
         self.network.reset_network()
         self.window.receive_thread.pause()
         try:
             self.ip = new_ip
-            self.port = int(new_port)
+            try: self.port = int(new_port)
+            except: return
             sock = socket.socket()
-            self.ip, self.port = self.network.search_server()
-            self.port = int(self.port)
-            sock.connect((self.ip, self.port))
+            sock.settimeout(SOCK_TIMEOUT)
+            try: sock.connect((self.ip, self.port))
+            except TimeoutError:
+                self.ip, self.port = self.network.search_server()
+                sock = socket.socket()
+                sock.settimeout(SOCK_TIMEOUT)
+                sock.connect((self.ip, self.port))
+            
+            helper.update_saved_ip_port(self.ip, self.port)
             self.network.set_sock(sock)
             shared_secret = self.network.encryption.rsa_exchange() 
             if not shared_secret:
@@ -601,17 +607,19 @@ class Protocol:
             self.send_cookie()
             self.get_file_progress()
             self.request_resume_download()
-                
+            
+            self.window.set_message(f'Connect succeeded {self.ip} {self.port}')
             if self.window.user["username"] != "guest":
-                self.window.set_message(f'Connect succeeded {self.ip} {self.port}')
+                self.window.set_message(f'Auto login with account {self.window.user["username"]}')
             return sock
-        except:
-            print(traceback.format_exc())
+        except TimeoutError:
             if not loop:
                 self.window.receive_thread.pause()
                 self.window.not_connected_page()
             self.window.set_error_message(f'Server was not found {self.ip} {self.port}')
             return None
+        except: 
+            print(traceback.format_exc())
     
     def send_data(self, bdata, encryption = True):
         try: self.network.send_data_wrap(bdata, encryption)

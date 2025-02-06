@@ -61,3 +61,82 @@
 PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\a089c3b908aa444282f58b18d1ecc314.lock'
 2025-02-06 08:15:58 - Client 2 disconnected
 2025-02-06 08:15:58 - Client 2 Exit
+2025-02-06 20:16:14 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 20:16:14 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:16:15 - Main thread: before accepting ...
+2025-02-06 20:16:56 - New Client number 1 from ('192.168.1.122', 49931)
+2025-02-06 20:23:54 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 20:23:54 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:23:54 - Main thread: before accepting ...
+2025-02-06 20:23:55 - New Client number 1 from ('192.168.1.122', 50079)
+2025-02-06 20:25:21 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 20:25:21 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:25:21 - Main thread: before accepting ...
+2025-02-06 20:25:21 - New Client number 1 from ('192.168.1.122', 50099)
+2025-02-06 20:25:55 - Client 1 disconnected
+2025-02-06 20:25:55 - Client 1 Exit
+2025-02-06 20:27:20 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 20:27:20 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:27:21 - Main thread: before accepting ...
+2025-02-06 20:27:23 - New Client number 1 from ('192.168.1.122', 50123)
+2025-02-06 20:28:13 - New Client number 2 from ('192.168.1.122', 50127)
+2025-02-06 20:28:20 - Client 2 disconnected
+2025-02-06 20:28:20 - Client 2 Exit
+2025-02-06 20:28:23 - New Client number 3 from ('192.168.1.122', 50130)
+2025-02-06 20:28:35 - Client 1 disconnected
+2025-02-06 20:28:35 - Client 1 Exit
+2025-02-06 20:28:36 - Client 3 disconnected
+2025-02-06 20:28:36 - Client 3 Exit
+2025-02-06 20:31:55 - New Client number 4 from ('192.168.1.122', 50170)
+2025-02-06 20:33:23 - Client 4 disconnected
+2025-02-06 20:33:23 - Client 4 Exit
+2025-02-06 20:34:52 - Server listening on ('0.0.0.0', 33333)
+2025-02-06 20:34:52 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:34:53 - Main thread: before accepting ...
+2025-02-06 20:34:54 - New Client number 1 from ('192.168.1.122', 50203)
+2025-02-06 20:38:28 - Server listening on ('0.0.0.0', 5555)
+2025-02-06 20:38:28 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:38:28 - Main thread: before accepting ...
+2025-02-06 20:38:32 - New Client number 1 from ('192.168.1.122', 50242)
+2025-02-06 20:41:46 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 20:41:46 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:41:47 - Main thread: before accepting ...
+2025-02-06 20:43:26 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 20:43:26 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:43:27 - Main thread: before accepting ...
+2025-02-06 20:43:37 - New Client number 1 from ('192.168.1.122', 50387)
+2025-02-06 20:44:25 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 20:44:25 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:44:25 - Main thread: before accepting ...
+2025-02-06 20:44:27 - New Client number 1 from ('192.168.1.122', 50418)
+2025-02-06 20:56:27 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 20:56:27 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:56:27 - Main thread: before accepting ...
+2025-02-06 20:56:28 - New Client number 1 from ('192.168.1.122', 50647)
+2025-02-06 20:56:40 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 20:56:40 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:56:41 - Main thread: before accepting ...
+2025-02-06 20:56:41 - New Client number 1 from ('192.168.1.122', 50653)
+2025-02-06 20:57:01 - Server listening on ('0.0.0.0', 3333)
+2025-02-06 20:57:01 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:57:01 - Main thread: before accepting ...
+2025-02-06 20:57:05 - New Client number 1 from ('192.168.1.122', 50658)
+2025-02-06 20:57:25 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 20:57:26 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 20:57:26 - Main thread: before accepting ...
+2025-02-06 20:57:32 - New Client number 1 from ('192.168.1.122', 50671)
+2025-02-06 20:59:11 - Client 1 disconnected
+2025-02-06 20:59:11 - Client 1 Exit
+2025-02-06 20:59:13 - New Client number 2 from ('192.168.1.122', 50691)
+2025-02-06 21:00:05 - Server listening on ('0.0.0.0', 4444)
+2025-02-06 21:00:05 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 21:00:05 - Main thread: before accepting ...
+2025-02-06 21:00:11 - New Client number 1 from ('192.168.1.122', 50714)
+2025-02-06 21:00:40 - Server listening on ('0.0.0.0', 5555)
+2025-02-06 21:00:40 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 21:00:40 - Main thread: before accepting ...
+2025-02-06 21:00:58 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 21:00:58 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-06 21:00:59 - Main thread: before accepting ...
+2025-02-06 21:01:57 - Client 1 disconnected
+2025-02-06 21:01:57 - Client 1 Exit

@@ -13,10 +13,6 @@ import socket, sys, traceback, time, functools
 
 from PyQt6 import QtWidgets
 
-# Announce global vars
-ip = "127.0.0.1"
-port = 31026
-
 last_msg = ""
 last_error_msg = ""
 
@@ -48,7 +44,7 @@ class Application():
         self.receive_thread = receive.ReceiveThread(self.network)
         self.receive_thread.reply_received.connect(self.handle_reply)
         self.window.receive_thread = self.receive_thread
-        self.window.protocol.connect_server(ip, port, True)
+        self.window.protocol.connect_server(loop=True)
 
 
     def handle_reply(self, reply):

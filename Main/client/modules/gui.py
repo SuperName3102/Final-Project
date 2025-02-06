@@ -600,7 +600,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ip.setText(self.protocol.ip)
             self.port.setText(str(self.protocol.port))
             
-            self.connect_button.clicked.connect(lambda: self.protocol.connect_server(self.ip.text(), self.port.text()))
+            self.connect_button.clicked.connect(lambda: self.protocol.connect_server(self.ip.text(), self.port.text(), loop=True))
             self.connect_button.setShortcut("Return")
             self.connect_button.setIcon(QIcon(ASSETS_PATH+"\\connect.svg"))
             
@@ -609,7 +609,7 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.setGeometry(temp)
             self.force_update_window()
-            if connect: self.protocol.connect_server(self.protocol.ip, self.protocol.port, True)
+            if connect: self.protocol.connect_server(loop=True)
 
         except:
             print(traceback.format_exc())

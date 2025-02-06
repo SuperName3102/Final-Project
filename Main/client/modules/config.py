@@ -7,12 +7,13 @@ from PyQt6.QtCore import QRect
 # Global variables
 LEN_FIELD = 4
 CHUNK_SIZE = 524288
+SOCK_TIMEOUT = 0.3
 USER_ICON = f"{os.getcwd()}/assets/user.ico"
 ASSETS_PATH = f"{os.getcwd()}/assets"
 COOKIE_PATH = f"{os.getcwd()}/cookies/user.cookie"
 
-SAVED_IP = "127.0.0.1"
-SAVED_PORT = 31026
+SAVED_IP = "192.168.1.122"
+SAVED_PORT = 4444
 
 ITEMS_TO_LOAD = 20
 SCROLL_SIZE = [850, 340]

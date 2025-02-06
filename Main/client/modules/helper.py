@@ -5,7 +5,7 @@ from datetime import datetime
 import xml.etree.ElementTree as ET
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFontMetrics, QGuiApplication
-import hashlib, os, json, sys
+import hashlib, os, json, sys, re
 
 class JsonHandle:
     def __init__(self):
@@ -139,6 +139,18 @@ def truncate_label(label, text):
         truncated_text = font_metrics.elidedText(text, Qt.TextElideMode.ElideRight, max_width)
         return truncated_text
     return text
+
+def update_saved_ip_port(new_ip, new_port):
+    """Updates the SAVED_IP and SAVED_PORT values in the given file."""
+    file_path = f"{os.getcwd()}/modules/config.py"
+    with open(file_path, "r", encoding="utf-8") as file:
+        content = file.read()
+    
+    content = re.sub(r'SAVED_IP\s*=\s*["\'].*?["\']', f'SAVED_IP = "{new_ip}"', content) # Replace SAVED_IP
+    content = re.sub(r'SAVED_PORT\s*=\s*\d+', f'SAVED_PORT = {new_port}', content) # Replace SAVED_PORT
+    
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(content)
 
 file_types = {
     "zip": ["rar"],

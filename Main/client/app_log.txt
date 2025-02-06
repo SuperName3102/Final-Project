@@ -229,3 +229,680 @@ TypeError: FileViewer.open_in_native_app() takes 1 positional argument but 2 wer
 2025-02-06 08:27:56 - Got files
 2025-02-06 08:27:56 - Got directories
 2025-02-06 08:27:56 - Current used storage is 0.958
+2025-02-06 20:16:15 - No server found
+2025-02-06 20:16:17 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-06 20:16:21 - No server found
+2025-02-06 20:16:23 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-06 20:16:26 - No server found
+2025-02-06 20:16:28 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-06 20:16:45 - No server found
+2025-02-06 20:16:47 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-06 20:16:57 - Login was succesfull for user: idan
+2025-02-06 20:16:57 - Got directories
+2025-02-06 20:16:57 - File data recieved 0
+2025-02-06 20:16:57 - Profile picture was recieved
+2025-02-06 20:16:57 - Current used storage is 0.958
+2025-02-06 20:16:57 - Got files
+2025-02-06 20:22:10 - No server found
+2025-02-06 20:22:12 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 617, in send_data
+    try: self.network.send_data_wrap(bdata, encryption)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\networking.py", line 60, in send_data_wrap
+    self.sock.send(to_send)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-06 20:22:25 - No server found
+2025-02-06 20:22:26 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:22:32 - No server found
+2025-02-06 20:22:33 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:22:36 - No server found
+2025-02-06 20:22:37 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:22:49 - No server found
+2025-02-06 20:22:50 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:23:48 - No server found
+2025-02-06 20:23:49 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:23:55 - Login was succesfull for user: idan
+2025-02-06 20:23:55 - File data recieved 0
+2025-02-06 20:23:55 - Profile picture was recieved
+2025-02-06 20:23:55 - Got files
+2025-02-06 20:23:55 - Current used storage is 0.958
+2025-02-06 20:23:55 - Got directories
+2025-02-06 20:24:23 - No server found
+2025-02-06 20:24:24 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:25:16 - No server found
+2025-02-06 20:25:16 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:25:22 - Login was succesfull for user: idan
+2025-02-06 20:25:22 - File data recieved 0
+2025-02-06 20:25:22 - Profile picture was recieved
+2025-02-06 20:25:22 - Got files
+2025-02-06 20:25:22 - Got directories
+2025-02-06 20:25:22 - Current used storage is 0.958
+2025-02-06 20:26:05 - No server found
+2025-02-06 20:26:05 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:26:08 - No server found
+2025-02-06 20:26:09 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:26:09 - No server found
+2025-02-06 20:26:10 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:27:23 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 52, in send_cookie
+    with open(COOKIE_PATH, "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\client/cookies/user.cookie'
+2025-02-06 20:28:13 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 52, in send_cookie
+    with open(COOKIE_PATH, "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\client/cookies/user.cookie'
+2025-02-06 20:28:20 - Login was succesfull for user: a
+2025-02-06 20:28:20 - File data recieved 0
+2025-02-06 20:28:20 - Profile picture was recieved
+2025-02-06 20:28:20 - Current used storage is 14.113
+2025-02-06 20:28:20 - Cookie recieved
+2025-02-06 20:28:20 - Got files
+2025-02-06 20:28:20 - Got directories
+2025-02-06 20:28:23 - Login was succesfull for user: a
+2025-02-06 20:28:23 - File data recieved 0
+2025-02-06 20:28:23 - Profile picture was recieved
+2025-02-06 20:28:23 - Current used storage is 14.113
+2025-02-06 20:28:23 - Got files
+2025-02-06 20:28:23 - Got directories
+2025-02-06 20:31:56 - Login was succesfull for user: a
+2025-02-06 20:31:56 - File data recieved 0
+2025-02-06 20:31:56 - Profile picture was recieved
+2025-02-06 20:31:56 - Current used storage is 14.113
+2025-02-06 20:31:56 - Got files
+2025-02-06 20:31:56 - Got directories
+2025-02-06 20:33:31 - No server found
+2025-02-06 20:33:32 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:34:33 - No server found
+2025-02-06 20:34:34 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:34:36 - No server found
+2025-02-06 20:34:37 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:34:37 - No server found
+2025-02-06 20:34:38 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:34:54 - Login was succesfull for user: a
+2025-02-06 20:34:54 - File data recieved 0
+2025-02-06 20:34:54 - Profile picture was recieved
+2025-02-06 20:34:54 - Current used storage is 14.113
+2025-02-06 20:34:54 - Got files
+2025-02-06 20:34:54 - Got directories
+2025-02-06 20:35:00 - No server found
+2025-02-06 20:35:01 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 620, in send_data
+    try: self.network.send_data_wrap(bdata, encryption)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\networking.py", line 60, in send_data_wrap
+    self.sock.send(to_send)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:35:05 - No server found
+2025-02-06 20:35:06 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:35:06 - No server found
+2025-02-06 20:35:07 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:36:48 - No server found
+2025-02-06 20:36:49 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:36:49 - No server found
+2025-02-06 20:36:50 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:38:32 - Login was succesfull for user: a
+2025-02-06 20:38:32 - File data recieved 0
+2025-02-06 20:38:32 - Profile picture was recieved
+2025-02-06 20:38:32 - Got files
+2025-02-06 20:38:32 - Current used storage is 14.113
+2025-02-06 20:38:32 - Got directories
+2025-02-06 20:38:39 - No server found
+2025-02-06 20:38:40 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 619, in send_data
+    try: self.network.send_data_wrap(bdata, encryption)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\networking.py", line 60, in send_data_wrap
+    self.sock.send(to_send)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:38:41 - No server found
+2025-02-06 20:38:42 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:38:42 - No server found
+2025-02-06 20:38:43 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:41:37 - No server found
+2025-02-06 20:41:37 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:41:41 - No server found
+2025-02-06 20:41:41 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:41:42 - No server found
+2025-02-06 20:41:42 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:41:49 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:41:49 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:42:34 - No server found
+2025-02-06 20:42:40 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+2025-02-06 20:43:18 - No server found
+2025-02-06 20:43:44 - Login was succesfull for user: a
+2025-02-06 20:43:45 - File data recieved 0
+2025-02-06 20:43:45 - Profile picture was recieved
+2025-02-06 20:43:45 - Got files
+2025-02-06 20:43:45 - Current used storage is 14.113
+2025-02-06 20:43:45 - Got directories
+2025-02-06 20:43:54 - No server found
+2025-02-06 20:43:54 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 622, in send_data
+    try: self.network.send_data_wrap(bdata, encryption)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\networking.py", line 60, in send_data_wrap
+    self.sock.send(to_send)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:43:56 - No server found
+2025-02-06 20:43:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:44:20 - No server found
+2025-02-06 20:44:27 - Login was succesfull for user: a
+2025-02-06 20:44:27 - File data recieved 0
+2025-02-06 20:44:27 - Profile picture was recieved
+2025-02-06 20:44:27 - Current used storage is 14.113
+2025-02-06 20:44:27 - Got files
+2025-02-06 20:44:27 - Got directories
+2025-02-06 20:44:34 - No server found
+2025-02-06 20:44:47 - No server found
+2025-02-06 20:44:56 - No server found
+2025-02-06 20:44:56 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:45:17 - No server found
+2025-02-06 20:45:27 - No server found
+2025-02-06 20:45:55 - No server found
+2025-02-06 20:45:59 - No server found
+2025-02-06 20:45:59 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:46:04 - No server found
+2025-02-06 20:46:04 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:47:50 - No server found
+2025-02-06 20:47:50 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:48:46 - No server found
+2025-02-06 20:49:01 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:49:30 - No server found
+2025-02-06 20:49:44 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:51:24 - No server found
+2025-02-06 20:51:30 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 590, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 594, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:52:59 - No server found
+2025-02-06 20:53:45 - No server found
+2025-02-06 20:54:24 - No server found
+2025-02-06 20:54:32 - No server found
+2025-02-06 20:55:14 - No server found
+2025-02-06 20:55:38 - No server found
+2025-02-06 20:55:38 - Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 590, in connect_server
+    try: sock.connect((self.ip, self.port))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
+    sock.connect((self.ip, self.port))
+OSError: [WinError 10022] An invalid argument was supplied
+2025-02-06 20:56:08 - No server found
+2025-02-06 20:56:12 - No server found
+2025-02-06 20:56:22 - No server found
+2025-02-06 20:56:24 - No server found
+2025-02-06 20:56:28 - Login was succesfull for user: a
+2025-02-06 20:56:28 - File data recieved 0
+2025-02-06 20:56:28 - Profile picture was recieved
+2025-02-06 20:56:28 - Current used storage is 14.113
+2025-02-06 20:56:28 - Got files
+2025-02-06 20:56:28 - Got directories
+2025-02-06 20:56:34 - No server found
+2025-02-06 20:56:41 - Login was succesfull for user: a
+2025-02-06 20:56:41 - File data recieved 0
+2025-02-06 20:56:41 - Got files
+2025-02-06 20:56:41 - Got directories
+2025-02-06 20:56:42 - Profile picture was recieved
+2025-02-06 20:56:42 - Current used storage is 14.113
+2025-02-06 20:56:47 - Got files
+2025-02-06 20:56:47 - Got directories
+2025-02-06 20:56:47 - Current used storage is 14.113
+2025-02-06 20:56:48 - Succesfully moved to
+2025-02-06 20:56:48 - Current used storage is 14.113
+2025-02-06 20:56:48 - Got directories
+2025-02-06 20:56:48 - Got files
+2025-02-06 20:57:05 - Login was succesfull for user: a
+2025-02-06 20:57:05 - Got files
+2025-02-06 20:57:05 - File data recieved 0
+2025-02-06 20:57:05 - Got directories
+2025-02-06 20:57:05 - Profile picture was recieved
+2025-02-06 20:57:05 - Current used storage is 14.113
+2025-02-06 20:57:06 - Succesfully moved to
+2025-02-06 20:57:06 - Got files
+2025-02-06 20:57:06 - Current used storage is 14.113
+2025-02-06 20:57:06 - Got directories
+2025-02-06 20:57:10 - No server found
+2025-02-06 20:57:13 - No server found
+2025-02-06 20:57:32 - Login was succesfull for user: a
+2025-02-06 20:57:32 - File data recieved 0
+2025-02-06 20:57:32 - Got files
+2025-02-06 20:57:33 - Profile picture was recieved
+2025-02-06 20:57:33 - Got directories
+2025-02-06 20:57:33 - Current used storage is 14.113
+2025-02-06 20:57:58 - Succesfully moved to
+2025-02-06 20:57:58 - Current used storage is 14.113
+2025-02-06 20:57:58 - Got files
+2025-02-06 20:57:58 - Got directories
+2025-02-06 20:58:03 - Got files
+2025-02-06 20:58:03 - Got directories
+2025-02-06 20:58:03 - Current used storage is 14.113
+2025-02-06 20:58:04 - Got files
+2025-02-06 20:58:04 - Current used storage is 14.113
+2025-02-06 20:58:04 - Got directories
+2025-02-06 20:58:05 - Current used storage is 14.113
+2025-02-06 20:58:05 - Got directories
+2025-02-06 20:58:05 - Got files
+2025-02-06 20:58:13 - Succesfully moved to
+2025-02-06 20:58:13 - Got files
+2025-02-06 20:58:13 - Got directories
+2025-02-06 20:58:13 - Current used storage is 14.113
+2025-02-06 20:58:15 - Succesfully deleted 1 files
+2025-02-06 20:58:15 - File vencord-settings-backup.json was deleted!
+2025-02-06 20:58:15 - Got files
+2025-02-06 20:58:15 - Got directories
+2025-02-06 20:58:15 - Current used storage is 14.089
+2025-02-06 20:58:16 - Succesfully moved to
+2025-02-06 20:58:16 - Current used storage is 14.089
+2025-02-06 20:58:16 - Got files
+2025-02-06 20:58:16 - Got directories
+2025-02-06 20:58:18 - File ThemeTool.exe was viewed
+2025-02-06 20:58:18 - File viewing released
+2025-02-06 20:58:18 - File data recieved 0
+2025-02-06 20:58:19 - File Teams_JHQYh64EmD.png was viewed
+2025-02-06 20:58:19 - File viewing released
+2025-02-06 20:58:20 - File data recieved 0
+2025-02-06 20:58:23 - File RocketLeague_npe4XSGKVK.png was viewed
+2025-02-06 20:58:23 - File viewing released
+2025-02-06 20:58:25 - File data recieved 0
+2025-02-06 20:59:13 - Login was succesfull for user: a
+2025-02-06 20:59:13 - File data recieved 230382
+2025-02-06 20:59:13 - Profile picture was recieved
+2025-02-06 20:59:13 - Current used storage is 14.089
+2025-02-06 20:59:13 - Got files
+2025-02-06 20:59:13 - Got directories
+2025-02-06 20:59:16 - File RocketLeague_nvmo0joaYd.jpg was viewed
+2025-02-06 20:59:16 - File viewing released
+2025-02-06 20:59:18 - File data recieved 417754
+2025-02-06 20:59:22 - File RocketLeague_npe4XSGKVK.png was viewed
+2025-02-06 20:59:22 - File viewing released
+2025-02-06 20:59:24 - File data recieved 229358
+2025-02-06 20:59:27 - Current used storage is 14.089
+2025-02-06 20:59:28 - Got files
+2025-02-06 20:59:28 - Got directories
+2025-02-06 20:59:29 - Current used storage is 14.089
+2025-02-06 20:59:29 - Got files
+2025-02-06 20:59:29 - Got directories
+2025-02-06 20:59:30 - Current used storage is 14.089
+2025-02-06 20:59:30 - Got files
+2025-02-06 20:59:30 - Got directories
+2025-02-06 21:00:11 - Login was succesfull for user: a
+2025-02-06 21:00:11 - File data recieved 230382
+2025-02-06 21:00:11 - Profile picture was recieved
+2025-02-06 21:00:11 - Current used storage is 14.089
+2025-02-06 21:00:11 - Got directories
+2025-02-06 21:00:11 - Got files

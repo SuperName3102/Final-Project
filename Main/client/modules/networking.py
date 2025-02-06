@@ -128,20 +128,15 @@ class Network:
         try:
             search_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
             search_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-            search_socket.settimeout(3)
+            search_socket.settimeout(SOCK_TIMEOUT)
             netmask, ip = self.get_subnet_mask()  # Adjust based on your network configuration
             broadcast_address = self.get_broadcast_address(ip, netmask)
             search_socket.sendto(b"SEAR", (broadcast_address, 31026))
-            response = None
-            i = 0
-            while response == None and i < 3:
-                response, addr = search_socket.recvfrom(1024)
-                time.sleep(0.2)
-                i+=1
+            response, addr = search_socket.recvfrom(1024)
             response = response.decode().split("|")
             if response[0] == "SERR":
                 ip, port = (response[1], response[2])
-                return ip, port
+                return ip, int(port)
         except TimeoutError:
             print("No server found")
             return SAVED_IP, SAVED_PORT
