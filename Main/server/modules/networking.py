@@ -91,7 +91,8 @@ class Network:
         except Exception as err:
             print(traceback.format_exc())
     
-    def dhcp_listen(self, local_ip, port):
+    @staticmethod
+    def dhcp_listen(local_ip, port):
         dhcp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         dhcp_socket.bind(("", 31026))
         while True:

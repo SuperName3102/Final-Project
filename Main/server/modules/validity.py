@@ -10,26 +10,30 @@ class Validation:
     def __init__(self):
         self.illegal_chars = {'\'', '"', '>', '<', '~', '`', '|', '\\','/', '}', '{', '[', ']', '+', '=', ';', '(', ')'}  # Set of illegal characters
 
-    def is_valid_email(self, email):
+    @staticmethod
+    def is_valid_email(email):
         """
         Validate an email address using a regular expression.
         """
         email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
         return re.match(email_regex, email) is not None
 
-    def is_valid_username(self, username):
+    @staticmethod
+    def is_valid_username(username):
         """
         Validate a username ensuring it is at least 4 characters long and alphanumeric.
         """
         return len(username) >= 4 and username.isalnum()
 
-    def is_valid_password(self, password):
+    @staticmethod
+    def is_valid_password(password):
         """
         Validate a password ensuring it is at least 8 characters long, contains uppercase letters, and numbers.
         """
         return len(password) >= 8 and any(char.isupper() for char in password) and any(char.isdigit() for char in password)
 
-    def is_empty(self, list):
+    @staticmethod
+    def is_empty(list):
         """
         Check if any string in a list is empty.
         """

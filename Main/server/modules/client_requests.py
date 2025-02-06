@@ -771,8 +771,8 @@ class ClientRequests:
             name = uuid.uuid4().hex
         return name
     
-
-    def str_to_date(self, str):
+    @staticmethod
+    def str_to_date(str):
         """
         Transfer string of date to date
         Helper function

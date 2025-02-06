@@ -93,8 +93,8 @@ class Network:
         except: print(traceback.format_exc())
         
         
-
-    def get_broadcast_address(self, ip, netmask):
+    @staticmethod
+    def get_broadcast_address(ip, netmask):
         """
         Calculate the broadcast address for the LAN.
         """
@@ -103,8 +103,8 @@ class Network:
         broadcast_binary = ip_binary | ~netmask_binary & 0xFFFFFFFF
         return socket.inet_ntoa(struct.pack('>I', broadcast_binary))
 
-
-    def get_subnet_mask(self):
+    @staticmethod
+    def get_subnet_mask():
         # Get the IP address of the default route (external-facing IP)
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
             s.connect(("8.8.8.8", 80))  # Connect to a public DNS server (Google's in this case)

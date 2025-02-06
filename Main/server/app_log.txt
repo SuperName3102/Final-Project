@@ -48,3 +48,16 @@
 2025-01-24 15:04:52 - New Client number 1 from ('192.168.1.247', 61970)
 2025-01-24 15:04:56 - Client 1 disconnected
 2025-01-24 15:04:56 - Client 1 Exit
+2025-02-06 08:03:36 - Server listening on ('0.0.0.0', 3102)
+2025-02-06 08:03:37 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-02-06 08:03:37 - Main thread: before accepting ...
+2025-02-06 08:04:19 - New Client number 1 from ('172.16.13.122', 54806)
+2025-02-06 08:05:48 - Client 1 disconnected
+2025-02-06 08:05:48 - Client 1 Exit
+2025-02-06 08:06:34 - New Client number 2 from ('172.16.13.229', 52579)
+2025-02-06 08:10:21 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final-Project\Main\server\modules\client_requests.py", line 539, in clean_db
+    os.remove(self.server_path + "\\cloud\\" + name)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\server\\cloud\\a089c3b908aa444282f58b18d1ecc314.lock'
+2025-02-06 08:15:58 - Client 2 disconnected
+2025-02-06 08:15:58 - Client 2 Exit

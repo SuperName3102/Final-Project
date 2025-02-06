@@ -505,7 +505,7 @@ class Protocol:
                 self.window.set_message(to_show)
             elif code == 'COOK':
                 cookie = fields[1]
-                save_cookie(cookie)
+                self.save_cookie(cookie)
                 to_show = f"Cookie recieved"
             elif code == "SHRR":
                 file_id = fields[1]
@@ -621,9 +621,10 @@ class Protocol:
             self.window.set_error_message("Lost connection to server")
         except:
             print(traceback.format_exc())
-            
-def save_cookie(cookie):
-    if not os.path.exists(os.getcwd() + "\\cookies"):
-        os.makedirs(os.getcwd() + "\\cookies")
-    with open(COOKIE_PATH, "w") as f:
-        f.write(cookie)
+    
+    @staticmethod
+    def save_cookie(cookie):
+        if not os.path.exists(os.getcwd() + "\\cookies"):
+            os.makedirs(os.getcwd() + "\\cookies")
+        with open(COOKIE_PATH, "w") as f:
+            f.write(cookie)

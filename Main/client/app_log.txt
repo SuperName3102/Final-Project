@@ -203,3 +203,29 @@ TypeError: FileViewer.open_in_native_app() takes 1 positional argument but 2 wer
 2025-01-24 15:04:53 - Current used storage is 14.08
 2025-01-24 15:04:53 - Got files
 2025-01-24 15:04:53 - Got directories
+2025-02-06 08:24:35 - Login was succesfull for user: a
+2025-02-06 08:24:35 - File data recieved 0
+2025-02-06 08:24:35 - Profile picture was recieved
+2025-02-06 08:24:35 - Current used storage is 14.113
+2025-02-06 08:24:35 - Got files
+2025-02-06 08:24:35 - Got directories
+2025-02-06 08:27:44 - Login was succesfull for user: a
+2025-02-06 08:27:44 - File data recieved 0
+2025-02-06 08:27:44 - Profile picture was recieved
+2025-02-06 08:27:44 - Current used storage is 14.113
+2025-02-06 08:27:44 - Got files
+2025-02-06 08:27:44 - Got directories
+2025-02-06 08:27:45 - Logout succesfull
+2025-02-06 08:27:51 - Login was succesfull for user: idan
+2025-02-06 08:27:51 - Got files
+2025-02-06 08:27:51 - File data recieved 0
+2025-02-06 08:27:51 - Profile picture was recieved
+2025-02-06 08:27:51 - Cookie recieved
+2025-02-06 08:27:51 - Current used storage is 0.958
+2025-02-06 08:27:51 - Got directories
+2025-02-06 08:27:56 - Login was succesfull for user: idan
+2025-02-06 08:27:56 - File data recieved 0
+2025-02-06 08:27:56 - Profile picture was recieved
+2025-02-06 08:27:56 - Got files
+2025-02-06 08:27:56 - Got directories
+2025-02-06 08:27:56 - Current used storage is 0.958

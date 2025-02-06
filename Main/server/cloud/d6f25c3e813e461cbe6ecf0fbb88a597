@@ -1,0 +1,655 @@
+2025-01-22 11:28:39 - No server found
+2025-01-22 11:28:41 - Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-22 11:28:50 - No server found
+2025-01-22 11:28:52 - Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-22 11:28:52 - Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "modules\protocol.py", line 52, in send_cookie
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final-Project\\Main\\client\\release\\IdanCloud/cookies/user.cookie'
+2025-01-22 11:56:29 - Traceback (most recent call last):
+  File "modules\protocol.py", line 52, in send_cookie
+FileNotFoundError: [Errno 2] No such file or directory: 'M:\\ab\\IdanCloud/cookies/user.cookie'
+2025-01-22 11:56:39 - Login was succesfull for user: a
+2025-01-22 11:56:39 - File data recieved 0
+2025-01-22 11:56:39 - Profile picture was recieved
+2025-01-22 11:56:39 - Current used storage is 14.318
+2025-01-22 11:56:39 - Got files
+2025-01-22 11:56:40 - Got directories
+2025-01-22 11:56:41 - Current used storage is 14.318
+2025-01-22 11:56:41 - Got files
+2025-01-22 11:56:41 - Got directories
+2025-01-22 11:56:43 - Current used storage is 14.318
+2025-01-22 11:56:43 - Got files
+2025-01-22 11:56:43 - Got directories
+2025-01-22 11:56:48 - Current used storage is 14.318
+2025-01-22 11:56:49 - Subscription level updated to premium
+2025-01-22 11:56:49 - Current used storage is 14.318
+2025-01-22 11:56:50 - Subscription level updated to basic
+2025-01-22 11:56:50 - Current used storage is 14.318
+2025-01-22 11:56:51 - Subscription level updated to free
+2025-01-22 11:56:51 - Current used storage is 14.318
+2025-01-22 11:56:52 - Subscription level updated to basic
+2025-01-22 11:56:52 - Current used storage is 14.318
+2025-01-22 11:56:53 - Subscription level updated to free
+2025-01-22 11:56:53 - Current used storage is 14.318
+2025-01-22 11:56:56 - Current used storage is 14.318
+2025-01-22 11:56:56 - Got files
+2025-01-22 11:56:57 - Got directories
+2025-01-22 11:57:03 - Folder aa was created
+2025-01-22 11:57:03 - Current used storage is 14.318
+2025-01-22 11:57:03 - Got files
+2025-01-22 11:57:03 - Got directories
+2025-01-22 11:57:09 - Folder aa was deleted!
+2025-01-22 11:57:10 - Succesfully deleted 1 files
+2025-01-22 11:57:10 - Current used storage is 14.318
+2025-01-22 11:57:10 - Got files
+2025-01-22 11:57:10 - Got directories
+2025-01-22 11:57:13 - Succesfully moved to
+2025-01-22 11:57:13 - Got files
+2025-01-22 11:57:13 - Current used storage is 14.318
+2025-01-22 11:57:13 - Got directories
+2025-01-22 11:59:39 - No server found
+2025-01-22 11:59:41 - Traceback (most recent call last):
+  File "modules\protocol.py", line 616, in send_data
+  File "modules\networking.py", line 54, in send_data_wrap
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-22 11:59:46 - No server found
+2025-01-22 11:59:48 - Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-22 11:59:51 - No server found
+2025-01-22 11:59:53 - Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-22 13:11:30 - Traceback (most recent call last):
+  File "modules\key_exchange.py", line 15, in rsa_exchange
+  File "modules\key_exchange.py", line 30, in recv_rsa_key
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-22 13:12:06 - No server found
+2025-01-22 13:12:08 - Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-22 13:12:11 - Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "modules\key_exchange.py", line 15, in rsa_exchange
+  File "modules\key_exchange.py", line 30, in recv_rsa_key
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-22 14:04:07 - Traceback (most recent call last):
+  File "modules\key_exchange.py", line 15, in rsa_exchange
+  File "modules\key_exchange.py", line 30, in recv_rsa_key
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-22 14:04:46 - Traceback (most recent call last):
+  File "modules\key_exchange.py", line 15, in rsa_exchange
+  File "modules\key_exchange.py", line 30, in recv_rsa_key
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-22 14:04:52 - Traceback (most recent call last):
+  File "modules\key_exchange.py", line 15, in rsa_exchange
+  File "modules\key_exchange.py", line 30, in recv_rsa_key
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-22 14:06:56 - Traceback (most recent call last):
+  File "modules\protocol.py", line 52, in send_cookie
+FileNotFoundError: [Errno 2] No such file or directory: 'M:\\ab\\IdanCloud/cookies/user.cookie'
+2025-01-22 14:07:23 - Traceback (most recent call last):
+  File "modules\protocol.py", line 616, in send_data
+  File "modules\networking.py", line 54, in send_data_wrap
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-22 14:07:29 - Traceback (most recent call last):
+  File "modules\protocol.py", line 52, in send_cookie
+FileNotFoundError: [Errno 2] No such file or directory: 'M:\\ab\\IdanCloud/cookies/user.cookie'
+2025-01-22 14:07:35 - Server return an error: 001 General error
+2025-01-22 14:08:19 - Unhandled exception:
+Traceback (most recent call last):
+  File "modules\gui.py", line 232, in <lambda>
+AttributeError: 'bool' object has no attribute 'isChecked'
+2025-01-22 14:08:30 - Traceback (most recent call last):
+  File "modules\protocol.py", line 52, in send_cookie
+FileNotFoundError: [Errno 2] No such file or directory: 'M:\\ab\\IdanCloud/cookies/user.cookie'
+2025-01-22 14:08:35 - Login was succesfull for user: a
+2025-01-22 14:08:35 - Server return an error: 001 General error
+2025-01-22 14:08:35 - Cookie recieved
+2025-01-22 14:08:35 - Current used storage is 14.318
+2025-01-22 14:08:35 - Got files
+2025-01-22 14:08:35 - Got directories
+2025-01-22 14:11:36 - Server return an error: 001 General error
+2025-01-22 14:12:13 - Traceback (most recent call last):
+  File "modules\protocol.py", line 616, in send_data
+  File "modules\networking.py", line 54, in send_data_wrap
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "modules\key_exchange.py", line 15, in rsa_exchange
+  File "modules\key_exchange.py", line 35, in recv_rsa_key
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-22 14:12:20 - Login was succesfull for user: a
+2025-01-22 14:12:20 - Server return an error: 001 General error
+2025-01-22 14:12:20 - Got files
+2025-01-22 14:12:21 - Got directories
+2025-01-22 14:12:21 - Current used storage is 14.318
+2025-01-22 14:14:33 - Login was succesfull for user: a
+2025-01-22 14:18:26 - Login was succesfull for user: a
+2025-01-22 14:18:31 - File data recieved 0
+2025-01-22 14:18:31 - Profile picture was recieved
+2025-01-22 14:18:31 - Current used storage is 14.318
+2025-01-22 14:18:31 - Got directories
+2025-01-22 14:18:32 - Got files
+2025-01-22 14:19:43 - Succesfully moved to
+2025-01-22 14:19:43 - Current used storage is 14.318
+2025-01-22 14:19:43 - Got files
+2025-01-22 14:19:43 - Got directories
+2025-01-22 14:19:48 - Succesfully moved to
+2025-01-22 14:19:48 - Got files
+2025-01-22 14:19:48 - Current used storage is 14.318
+2025-01-22 14:19:48 - Got directories
+2025-01-22 14:19:51 - Current used storage is 14.318
+2025-01-22 14:19:51 - Got files
+2025-01-22 14:19:51 - Got directories
+2025-01-22 14:19:53 - Current used storage is 14.318
+2025-01-22 14:19:53 - Got files
+2025-01-22 14:19:53 - Got directories
+2025-01-22 14:19:56 - Current used storage is 14.318
+2025-01-22 14:19:56 - Got files
+2025-01-22 14:19:56 - Got directories
+2025-01-22 14:20:00 - Traceback (most recent call last):
+  File "modules\protocol.py", line 493, in protocol_parse_reply
+  File "modules\gui.py", line 767, in set_used_storage
+RuntimeError: wrapped C/C++ object of type QProgressBar has been deleted
+2025-01-22 14:20:00 - Invalid reply from server
+2025-01-22 14:20:00 - b'GEUR|14317935'
+2025-01-22 14:20:00 - Current used storage is 14.318
+2025-01-22 14:20:01 - Got files
+2025-01-22 14:20:01 - Got directories
+2025-01-22 14:20:25 - Succesfully deleted 1 files
+2025-01-22 14:20:25 - File AD Save, Slot 1 #3 (2023-1-31).txt was deleted!
+2025-01-22 14:20:25 - Current used storage is 14.318
+2025-01-22 14:20:25 - Got directories
+2025-01-22 14:20:25 - Got files
+2025-01-22 14:25:23 - Login was succesfull for user: a
+2025-01-22 14:25:23 - File data recieved 0
+2025-01-22 14:25:23 - Profile picture was recieved
+2025-01-22 14:25:23 - Current used storage is 14.318
+2025-01-22 14:25:23 - Got files
+2025-01-22 14:25:23 - Got directories
+2025-01-22 14:25:29 - File \u05e9\u05d0\u05dc\u05d5\u05df \u05e2\u05d9\u05d3\u05df \u05d7\u05d6\u05d0\u05d9 330905159.docx was deleted!
+2025-01-22 14:25:29 - Succesfully deleted 1 files
+2025-01-22 14:25:29 - Current used storage is 14.318
+2025-01-22 14:25:29 - Got files
+2025-01-22 14:25:29 - Got directories
+2025-01-22 14:26:34 - File/Folder \u05de\u05d9\u05d5\u05df \u05d0\u05d9\u05e9\u05d9\u05d5\u05ea.txt was renamed to ff
+2025-01-22 14:26:34 - Current used storage is 14.318
+2025-01-22 14:26:34 - Got files
+2025-01-22 14:26:34 - Got directories
+2025-01-22 14:26:41 - Succesfully shared 1 files
+2025-01-22 14:26:41 - Current used storage is 14.318
+2025-01-22 14:26:41 - Got files
+2025-01-22 14:26:41 - Got directories
+2025-01-22 14:26:43 - Sharing options recieved
+2025-01-22 14:26:43 - Sharing option with idan have been updated
+2025-01-22 14:26:48 - File Zoom_aMx6bGM4b7.png was deleted!
+2025-01-22 14:26:49 - Succesfully deleted 2 files
+2025-01-22 14:26:49 - File VSCode.css was deleted!
+2025-01-22 14:26:49 - Current used storage is 14.318
+2025-01-22 14:26:49 - Got files
+2025-01-22 14:26:49 - Got directories
+2025-01-22 14:26:53 - Server return an error: 001 General error
+2025-01-22 14:28:53 - Login was succesfull for user: a
+2025-01-22 14:28:53 - File data recieved 0
+2025-01-22 14:28:53 - Profile picture was recieved
+2025-01-22 14:28:53 - Got files
+2025-01-22 14:28:53 - Got directories
+2025-01-22 14:28:53 - Current used storage is 14.318
+2025-01-22 14:28:56 - Folder dededed was created
+2025-01-22 14:28:56 - Current used storage is 14.318
+2025-01-22 14:28:56 - Got files
+2025-01-22 14:28:56 - Got directories
+2025-01-22 14:28:57 - Current used storage is 14.318
+2025-01-22 14:28:58 - Got directories
+2025-01-22 14:28:58 - Got files
+2025-01-22 14:29:00 - Current used storage is 14.318
+2025-01-22 14:29:00 - Got files
+2025-01-22 14:29:00 - Got directories
+2025-01-22 14:29:03 - Succesfully moved to dededed\
+2025-01-22 14:29:03 - Current used storage is 14.318
+2025-01-22 14:29:03 - Got files
+2025-01-22 14:29:03 - Got directories
+2025-01-22 14:29:04 - Succesfully moved to
+2025-01-22 14:29:04 - Current used storage is 14.318
+2025-01-22 14:29:04 - Got files
+2025-01-22 14:29:04 - Got directories
+2025-01-22 14:29:11 - Current used storage is 14.318
+2025-01-22 14:29:11 - Got files
+2025-01-22 14:29:11 - Got directories
+2025-01-22 14:29:13 - Current used storage is 14.318
+2025-01-22 14:29:13 - Got files
+2025-01-22 14:29:13 - Got directories
+2025-01-22 14:29:13 - Current used storage is 14.318
+2025-01-22 14:29:13 - Got files
+2025-01-22 14:29:14 - Got directories
+2025-01-22 14:29:17 - Succesfully moved to
+2025-01-22 14:29:17 - Got files
+2025-01-22 14:29:17 - Got directories
+2025-01-22 14:29:17 - Current used storage is 14.318
+2025-01-22 14:29:20 - Succefully recovered AD Save, Slot 1 #3 (2023-1-31).txt
+2025-01-22 14:29:20 - Succesfully recovered 1 files
+2025-01-22 14:29:20 - Current used storage is 14.318
+2025-01-22 14:29:20 - Got files
+2025-01-22 14:29:20 - Got directories
+2025-01-22 14:29:22 - Succesfully deleted 1 files
+2025-01-22 14:29:22 - File \u05e9\u05d0\u05dc\u05d5\u05df \u05e2\u05d9\u05d3\u05df \u05d7\u05d6\u05d0\u05d9 330905159.docx was deleted!
+2025-01-22 14:29:22 - Got files
+2025-01-22 14:29:22 - Got directories
+2025-01-22 14:29:22 - Current used storage is 14.236
+2025-01-22 14:29:26 - Current used storage is 14.236
+2025-01-22 14:29:26 - Got files
+2025-01-22 14:29:26 - Got directories
+2025-01-22 14:29:27 - Succesfully moved to
+2025-01-22 14:29:27 - Current used storage is 14.236
+2025-01-22 14:29:27 - Got files
+2025-01-22 14:29:27 - Got directories
+2025-01-22 14:29:29 - Current used storage is 14.236
+2025-01-22 14:29:29 - Got files
+2025-01-22 14:29:29 - Got directories
+2025-01-22 14:29:31 - Succesfully moved to
+2025-01-22 14:29:32 - Current used storage is 14.236
+2025-01-22 14:29:32 - Got files
+2025-01-22 14:29:32 - Got directories
+2025-01-22 14:29:34 - Succefully remove all - 1 from share
+2025-01-22 14:29:34 - Succesfully removed 1 files from share
+2025-01-22 14:29:34 - Got files
+2025-01-22 14:29:34 - Got directories
+2025-01-22 14:29:34 - Current used storage is 14.236
+2025-01-22 14:29:37 - Folder delete was deleted!
+2025-01-22 14:29:37 - Succesfully deleted 1 files
+2025-01-22 14:29:37 - Current used storage is 14.236
+2025-01-22 14:29:37 - Got files
+2025-01-22 14:29:37 - Got directories
+2025-01-22 14:29:38 - Succesfully moved to
+2025-01-22 14:29:38 - Current used storage is 14.236
+2025-01-22 14:29:38 - Got files
+2025-01-22 14:29:38 - Got directories
+2025-01-22 14:29:40 - Current used storage is 14.236
+2025-01-22 14:29:47 - Subscription level updated to basic
+2025-01-22 14:29:47 - Current used storage is 14.236
+2025-01-22 14:29:51 - Subscription level updated to free
+2025-01-22 14:29:52 - Current used storage is 14.236
+2025-01-22 14:30:00 - Current used storage is 14.236
+2025-01-22 14:30:00 - Got files
+2025-01-22 14:30:00 - Got directories
+2025-01-22 14:30:03 - start upload:
+2025-01-22 14:30:03 - 47e240440f7d4b56a022d75b1551146a
+2025-01-22 14:30:03 - File IdanCloud.exe started uploading
+2025-01-22 14:30:08 - Upload of IdanCloud.exe stopped
+2025-01-22 14:30:08 - Current used storage is 14.236
+2025-01-22 14:30:08 - Got files
+2025-01-22 14:30:08 - Got directories
+2025-01-22 14:30:11 - start upload:
+2025-01-22 14:30:21 - cf5d8bf256c6401983d701ac7392b78f
+2025-01-22 14:30:22 - Upload of None stopped
+2025-01-22 14:30:22 - File IdanCloud.exe started uploading
+2025-01-22 14:30:22 - start upload:
+2025-01-22 14:30:22 - 1b6220c8618d4cca9d33d3629ce0938b
+2025-01-22 14:30:22 - File IdanCloud.exe started uploading
+2025-01-22 14:30:24 - Got files
+2025-01-22 14:30:24 - Current used storage is 14.236
+2025-01-22 14:30:24 - Got directories
+2025-01-22 14:30:34 - Current used storage is 14.236
+2025-01-22 14:30:34 - Got directories
+2025-01-22 14:30:34 - Got files
+2025-01-22 14:30:36 - Current used storage is 14.236
+2025-01-22 14:30:36 - Got files
+2025-01-22 14:30:36 - Got directories
+2025-01-22 14:30:37 - Current used storage is 14.236
+2025-01-22 14:30:37 - Got files
+2025-01-22 14:30:37 - Got directories
+2025-01-22 14:30:40 - Current used storage is 14.236
+2025-01-22 14:30:40 - Got files
+2025-01-22 14:30:40 - Got directories
+2025-01-22 14:30:42 - Current used storage is 14.236
+2025-01-22 14:30:42 - Got files
+2025-01-22 14:30:42 - Got directories
+2025-01-22 14:30:42 - Current used storage is 14.236
+2025-01-22 14:30:42 - Got files
+2025-01-22 14:30:42 - Got directories
+2025-01-22 14:30:46 - start upload:
+2025-01-22 14:30:46 - 91371dd4fab7422cbf7b19ddd985687e
+2025-01-22 14:30:46 - File IdanCloud.exe started uploading
+2025-01-22 14:30:54 - File IdanCloud.exe was uploaded
+2025-01-22 14:30:54 - Current used storage is 59.245
+2025-01-22 14:30:55 - Got files
+2025-01-22 14:30:55 - Got directories
+2025-01-22 14:30:57 - start upload:
+2025-01-22 14:30:57 - 9d9bb3142f9147d19c728ba3e8c1f110
+2025-01-22 14:30:57 - File IdanCloud.exe started uploading
+2025-01-22 14:31:02 - start upload:
+2025-01-22 14:31:02 - 952d101e96b849e69784d26a2914f4a1
+2025-01-22 14:31:02 - Upload of IdanCloud.exe stopped
+2025-01-22 14:31:02 - File IdanCloud.exe started uploading
+2025-01-22 14:31:02 - Got files
+2025-01-22 14:31:02 - Current used storage is 59.245
+2025-01-22 14:31:02 - Got directories
+2025-01-22 14:31:07 - Current used storage is 59.245
+2025-01-22 14:31:07 - Got files
+2025-01-22 14:31:07 - Got directories
+2025-01-22 14:31:10 - File IdanCloud.exe was uploaded
+2025-01-22 14:31:10 - Current used storage is 104.255
+2025-01-22 14:31:10 - Got files
+2025-01-22 14:31:10 - Got directories
+2025-01-22 14:31:17 - Current used storage is 104.255
+2025-01-22 14:31:17 - Got files
+2025-01-22 14:31:17 - Got directories
+2025-01-22 14:31:26 - File data recieved 0
+2025-01-22 14:31:27 - File data recieved 524288
+2025-01-22 14:31:27 - File data recieved 1048576
+2025-01-22 14:31:27 - File data recieved 1572864
+2025-01-22 14:31:27 - File data recieved 2097152
+2025-01-22 14:31:27 - File data recieved 2621440
+2025-01-22 14:31:27 - File data recieved 3145728
+2025-01-22 14:31:27 - File data recieved 3670016
+2025-01-22 14:31:27 - File data recieved 4194304
+2025-01-22 14:31:29 - File data recieved 4718592
+2025-01-22 14:31:29 - File data recieved 5242880
+2025-01-22 14:31:29 - File data recieved 5767168
+2025-01-22 14:31:29 - File data recieved 6291456
+2025-01-22 14:31:29 - File data recieved 6815744
+2025-01-22 14:31:29 - File data recieved 7340032
+2025-01-22 14:31:29 - File data recieved 7864320
+2025-01-22 14:31:29 - File data recieved 8388608
+2025-01-22 14:31:29 - File data recieved 8912896
+2025-01-22 14:31:29 - File data recieved 9437184
+2025-01-22 14:31:29 - File data recieved 9961472
+2025-01-22 14:31:29 - File data recieved 10485760
+2025-01-22 14:31:29 - File data recieved 11010048
+2025-01-22 14:31:30 - File data recieved 11534336
+2025-01-22 14:31:30 - File data recieved 12058624
+2025-01-22 14:31:30 - File data recieved 12582912
+2025-01-22 14:31:30 - File data recieved 13107200
+2025-01-22 14:31:30 - File data recieved 13631488
+2025-01-22 14:31:30 - File data recieved 14155776
+2025-01-22 14:31:30 - File data recieved 14680064
+2025-01-22 14:31:30 - File data recieved 15204352
+2025-01-22 14:31:30 - File data recieved 15728640
+2025-01-22 14:31:30 - File data recieved 16252928
+2025-01-22 14:31:30 - File data recieved 16777216
+2025-01-22 14:31:30 - File data recieved 17301504
+2025-01-22 14:31:30 - File data recieved 17825792
+2025-01-22 14:31:30 - File data recieved 18350080
+2025-01-22 14:31:30 - File data recieved 18874368
+2025-01-22 14:31:30 - File data recieved 19398656
+2025-01-22 14:31:30 - File data recieved 19922944
+2025-01-22 14:31:30 - File data recieved 20447232
+2025-01-22 14:31:30 - File data recieved 20971520
+2025-01-22 14:31:30 - File data recieved 21495808
+2025-01-22 14:31:30 - File data recieved 22020096
+2025-01-22 14:31:30 - File data recieved 22544384
+2025-01-22 14:31:30 - File data recieved 23068672
+2025-01-22 14:31:30 - File data recieved 23592960
+2025-01-22 14:31:30 - File data recieved 24117248
+2025-01-22 14:31:30 - File data recieved 24641536
+2025-01-22 14:31:30 - File data recieved 25165824
+2025-01-22 14:31:30 - File data recieved 25690112
+2025-01-22 14:31:30 - File data recieved 26214400
+2025-01-22 14:31:30 - File data recieved 26738688
+2025-01-22 14:31:30 - File data recieved 27262976
+2025-01-22 14:31:30 - File data recieved 27787264
+2025-01-22 14:31:30 - File data recieved 28311552
+2025-01-22 14:31:30 - File data recieved 28835840
+2025-01-22 14:31:30 - File data recieved 29360128
+2025-01-22 14:31:30 - File data recieved 29884416
+2025-01-22 14:31:30 - File data recieved 30408704
+2025-01-22 14:31:30 - File data recieved 30932992
+2025-01-22 14:31:30 - File data recieved 31457280
+2025-01-22 14:31:30 - File data recieved 31981568
+2025-01-22 14:31:30 - File data recieved 32505856
+2025-01-22 14:31:30 - File data recieved 33030144
+2025-01-22 14:31:30 - File data recieved 33554432
+2025-01-22 14:31:30 - File data recieved 34078720
+2025-01-22 14:31:30 - File data recieved 34603008
+2025-01-22 14:31:30 - File data recieved 35127296
+2025-01-22 14:31:30 - File data recieved 35651584
+2025-01-22 14:31:30 - File data recieved 36175872
+2025-01-22 14:31:30 - File data recieved 36700160
+2025-01-22 14:31:30 - File data recieved 37224448
+2025-01-22 14:31:30 - File data recieved 37748736
+2025-01-22 14:31:30 - File data recieved 38273024
+2025-01-22 14:31:30 - File data recieved 38797312
+2025-01-22 14:31:30 - File data recieved 39321600
+2025-01-22 14:31:31 - File data recieved 39845888
+2025-01-22 14:31:31 - File data recieved 40370176
+2025-01-22 14:31:31 - File data recieved 40894464
+2025-01-22 14:31:31 - File data recieved 41418752
+2025-01-22 14:31:31 - File data recieved 41943040
+2025-01-22 14:31:31 - File data recieved 42467328
+2025-01-22 14:31:31 - File data recieved 42991616
+2025-01-22 14:31:31 - File data recieved 43515904
+2025-01-22 14:31:31 - File data recieved 44040192
+2025-01-22 14:31:31 - File data recieved 44564480
+2025-01-22 14:31:31 - File IdanCloud.exe was downloaded
+2025-01-22 14:31:53 - Current used storage is 104.255
+2025-01-22 14:31:53 - Got files
+2025-01-22 14:31:53 - Got directories
+2025-01-22 14:31:56 - Current used storage is 104.255
+2025-01-22 14:31:56 - Got files
+2025-01-22 14:31:56 - Got directories
+2025-01-22 14:31:58 - Logout succesfull
+2025-01-22 14:32:01 - Server return an error: 101 Cannot have an empty field
+2025-01-22 14:32:23 - Signup was successful for user: Test, password:Idan1234
+2025-01-22 14:32:41 - Verification for user testtest@gmail.com was succesfull
+2025-01-22 14:32:53 - Login was succesfull for user: Test
+2025-01-22 14:32:53 - File data recieved 0
+2025-01-22 14:32:53 - Profile picture was recieved
+2025-01-22 14:32:53 - Got files
+2025-01-22 14:32:53 - Got directories
+2025-01-22 14:32:53 - Current used storage is 0.0
+2025-01-22 14:32:53 - Cookie recieved
+2025-01-22 14:33:00 - Password reset code was sent to testtest@gmail.com
+2025-01-22 14:33:23 - Password was reset for user: testtest@gmail.com, new password: Idan12345
+2025-01-22 14:33:23 - Logout succesfull
+2025-01-22 14:33:35 - Login was succesfull for user: Test
+2025-01-22 14:33:35 - File data recieved 0
+2025-01-22 14:33:35 - Profile picture was recieved
+2025-01-22 14:33:35 - Got files
+2025-01-22 14:33:35 - Got directories
+2025-01-22 14:33:35 - Current used storage is 0.0
+2025-01-22 14:33:35 - Cookie recieved
+2025-01-22 14:33:53 - start upload:
+2025-01-22 14:33:53 - 2b2b1e8a0f0f4b0aa048e48e24ba6810
+2025-01-22 14:33:54 - Profile icon started uploading succefully!
+2025-01-22 14:34:02 - Current used storage is 0.0
+2025-01-22 14:34:02 - Got files
+2025-01-22 14:34:02 - Got directories
+2025-01-22 14:34:04 - start upload:
+2025-01-22 14:34:04 - 7edf4747a37e4e7180b1b40ff372f209
+2025-01-22 14:34:05 - Profile icon started uploading succefully!
+2025-01-22 14:34:05 - File 3813e258ef0543728bac758fafc18421 was uploaded
+2025-01-22 14:34:05 - Got files
+2025-01-22 14:34:05 - Got directories
+2025-01-22 14:34:05 - Current used storage is 0.0
+2025-01-22 14:34:25 - No server found
+2025-01-22 14:34:27 - Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-22 14:34:37 - No server found
+2025-01-22 14:34:39 - Traceback (most recent call last):
+  File "modules\protocol.py", line 589, in connect_server
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-22 14:34:39 - Login was succesfull for user: Test
+2025-01-22 14:34:39 - Server return an error: 014 File not found
+2025-01-22 14:34:39 - File data recieved 0
+2025-01-22 14:34:39 - File data recieved 524288
+2025-01-22 14:34:39 - Got files
+2025-01-22 14:34:39 - Got directories
+2025-01-22 14:34:39 - Current used storage is 0.0
+2025-01-22 14:34:39 - File data recieved 1048576
+2025-01-22 14:34:40 - File data recieved 1572864
+2025-01-22 14:34:40 - File data recieved 2097152
+2025-01-22 14:34:40 - File data recieved 2621440
+2025-01-22 14:34:40 - File data recieved 3145728
+2025-01-22 14:34:40 - File data recieved 3670016
+2025-01-22 14:34:40 - File data recieved 4194304
+2025-01-22 14:34:40 - File data recieved 4718592
+2025-01-22 14:34:40 - File data recieved 5242880
+2025-01-22 14:34:40 - File data recieved 5767168
+2025-01-22 14:34:40 - File data recieved 6291456
+2025-01-22 14:34:40 - File data recieved 6815744
+2025-01-22 14:34:40 - File data recieved 7340032
+2025-01-22 14:34:40 - File data recieved 7864320
+2025-01-22 14:35:07 - Login was succesfull for user: Test
+2025-01-22 14:35:07 - Server return an error: 014 File not found
+2025-01-22 14:35:07 - File data recieved 0
+2025-01-22 14:35:07 - File data recieved 524288
+2025-01-22 14:35:07 - Got files
+2025-01-22 14:35:07 - Got directories
+2025-01-22 14:35:07 - Current used storage is 0.0
+2025-01-22 14:35:07 - File data recieved 1048576
+2025-01-22 14:35:07 - File data recieved 1572864
+2025-01-22 14:35:07 - File data recieved 2097152
+2025-01-22 14:35:07 - File data recieved 2621440
+2025-01-22 14:35:07 - File data recieved 3145728
+2025-01-22 14:35:08 - File data recieved 3670016
+2025-01-22 14:35:08 - File data recieved 4194304
+2025-01-22 14:35:08 - File data recieved 4718592
+2025-01-22 14:35:08 - File data recieved 5242880
+2025-01-22 14:35:08 - File data recieved 5767168
+2025-01-22 14:35:08 - File data recieved 6291456
+2025-01-22 14:35:08 - File data recieved 6815744
+2025-01-22 14:35:12 - File data recieved 7340032
+2025-01-22 14:35:13 - File data recieved 7864320
+2025-01-22 14:35:26 - File data recieved 8388608
+2025-01-22 14:35:26 - File data recieved 8912896
+2025-01-22 14:35:27 - File data recieved 9437184
+2025-01-22 14:35:27 - File data recieved 9961472
+2025-01-22 14:35:34 - File data recieved 10485760
+2025-01-22 14:35:36 - File data recieved 11010048
+2025-01-22 14:35:37 - File data recieved 11534336
+2025-01-22 14:35:37 - File data recieved 12058624
+2025-01-22 14:35:44 - File data recieved 12582912
+2025-01-22 14:35:44 - File data recieved 13107200
+2025-01-22 14:35:46 - File data recieved 13631488
+2025-01-22 14:35:46 - File data recieved 14155776
+2025-01-22 14:35:47 - File data recieved 14680064
+2025-01-22 14:35:51 - File data recieved 15204352
+2025-01-22 14:35:52 - File data recieved 15728640
+2025-01-22 14:35:52 - File data recieved 16252928
+2025-01-22 14:35:55 - File data recieved 16777216
+2025-01-22 14:36:01 - File data recieved 17301504
+2025-01-22 14:36:06 - File data recieved 17825792
+2025-01-22 14:36:08 - File data recieved 18350080
+2025-01-22 14:36:09 - File data recieved 18874368
+2025-01-22 14:36:10 - File data recieved 19398656
+2025-01-22 14:36:11 - File data recieved 19922944
+2025-01-22 14:36:12 - File data recieved 20447232
+2025-01-22 14:36:12 - File data recieved 20971520
+2025-01-22 14:36:13 - File data recieved 21495808
+2025-01-22 14:36:14 - File data recieved 22020096
+2025-01-22 14:36:15 - File data recieved 22544384
+2025-01-22 14:36:15 - File data recieved 23068672
+2025-01-22 14:36:16 - File data recieved 23592960
+2025-01-22 14:36:16 - File data recieved 24117248
+2025-01-22 14:36:17 - File data recieved 24641536
+2025-01-22 14:36:27 - File data recieved 25165824
+2025-01-22 14:36:27 - File data recieved 25690112
+2025-01-22 14:36:27 - File data recieved 26214400
+2025-01-22 14:36:27 - File data recieved 26738688
+2025-01-22 14:36:27 - File data recieved 27262976
+2025-01-22 14:36:27 - File data recieved 27787264
+2025-01-22 14:36:27 - File data recieved 28311552
+2025-01-22 14:36:27 - File data recieved 28835840
+2025-01-22 14:36:27 - File data recieved 29360128
+2025-01-22 14:36:27 - File data recieved 29884416
+2025-01-22 14:36:27 - File data recieved 30408704
+2025-01-22 14:36:27 - File data recieved 30932992
+2025-01-22 14:36:27 - File data recieved 31457280
+2025-01-22 14:36:27 - File data recieved 31981568
+2025-01-22 14:36:27 - File data recieved 32505856
+2025-01-22 14:36:27 - File data recieved 33030144
+2025-01-22 14:36:28 - File data recieved 33554432
+2025-01-22 14:36:28 - File data recieved 34078720
+2025-01-22 14:36:28 - File data recieved 34603008
+2025-01-22 14:36:28 - File data recieved 35127296
+2025-01-22 14:36:28 - File data recieved 35651584
+2025-01-22 14:36:28 - File data recieved 36175872
+2025-01-22 14:36:28 - File data recieved 36700160
+2025-01-22 14:36:28 - File data recieved 37224448
+2025-01-22 14:36:28 - File data recieved 37748736
+2025-01-22 14:36:28 - File data recieved 38273024
+2025-01-22 14:36:28 - File data recieved 38797312
+2025-01-22 14:36:28 - File data recieved 39321600
+2025-01-22 14:36:28 - File data recieved 39845888
+2025-01-22 14:36:28 - File data recieved 40370176
+2025-01-22 14:36:28 - File data recieved 40894464
+2025-01-22 14:36:28 - File data recieved 41418752
+2025-01-22 14:36:28 - File data recieved 41943040
+2025-01-22 14:36:28 - File data recieved 42467328
+2025-01-22 14:36:28 - File data recieved 42991616
+2025-01-22 14:36:28 - File data recieved 43515904
+2025-01-22 14:36:28 - File data recieved 44040192
+2025-01-22 14:36:28 - File data recieved 44564480
+2025-01-22 14:36:28 - Profile picture was recieved
+2025-02-06 08:03:46 - Server return an error: 024 Cookie is invalid
+2025-02-06 08:04:13 - Server return an error: 006 Email is not registered
+2025-02-06 08:04:30 - Login was succesfull for user: a
+2025-02-06 08:04:30 - File data recieved 0
+2025-02-06 08:04:30 - Profile picture was recieved
+2025-02-06 08:04:30 - Got files
+2025-02-06 08:04:30 - Current used storage is 14.08
+2025-02-06 08:04:30 - Got directories
+2025-02-06 08:04:40 - Current used storage is 14.08
+2025-02-06 08:04:40 - Got files
+2025-02-06 08:04:40 - Got directories
+2025-02-06 08:04:40 - Logout succesfull
+2025-02-06 08:04:40 - Logout succesfull
+2025-02-06 08:04:40 - Logout succesfull
+2025-02-06 08:04:40 - Logout succesfull
+2025-02-06 08:04:46 - Login was succesfull for user: a
+2025-02-06 08:04:46 - File data recieved 0
+2025-02-06 08:04:46 - Profile picture was recieved
+2025-02-06 08:04:46 - Current used storage is 14.08
+2025-02-06 08:04:46 - Got files
+2025-02-06 08:04:46 - Got directories
+2025-02-06 08:04:48 - Current used storage is 14.08
+2025-02-06 08:04:48 - Got directories
+2025-02-06 08:04:48 - Got files
+2025-02-06 08:04:53 - File RocketLeague_b33BhjulkZ.png was viewed
+2025-02-06 08:04:53 - File viewing released
+2025-02-06 08:04:57 - File data recieved 0
+2025-02-06 08:05:59 - Server return an error: 024 Cookie is invalid
+2025-02-06 08:09:32 - Login was succesfull for user: a
+2025-02-06 08:09:32 - File data recieved 0
+2025-02-06 08:09:32 - Profile picture was recieved
+2025-02-06 08:09:32 - Current used storage is 14.08
+2025-02-06 08:09:32 - Got files
+2025-02-06 08:09:32 - Got directories
+2025-02-06 08:09:37 - start upload:
+2025-02-06 08:09:37 - f65a8ab137b242f2ad0db18d29c1933a
+2025-02-06 08:09:37 - File IdanCloud.exe started uploading
+2025-02-06 08:09:48 - Current used storage is 14.08
+2025-02-06 08:09:48 - Got files
+2025-02-06 08:09:48 - start upload:
+2025-02-06 08:09:48 - affd663557b14e0aa014cadb5005d15d
