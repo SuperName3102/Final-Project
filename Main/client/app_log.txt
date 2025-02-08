@@ -1,908 +1,451 @@
-2025-01-22 21:40:42 - Server return an error: 024 Cookie is invalid
-2025-01-22 21:40:46 - Server return an error: 003 Please check your password and email/username and try again.
-2025-01-22 21:40:48 - Login was succesfull for user: a
-2025-01-22 21:40:48 - File data recieved 0
-2025-01-22 21:40:48 - Profile picture was recieved
-2025-01-22 21:40:48 - Got files
-2025-01-22 21:40:48 - Got directories
-2025-01-22 21:40:48 - Current used storage is 14.08
-2025-01-22 21:40:48 - Cookie recieved
-2025-01-22 21:40:49 - Got directories
-2025-01-22 21:40:49 - Current used storage is 14.08
-2025-01-22 21:40:50 - Got files
-2025-01-22 21:40:52 - Succesfully deleted 1 files
-2025-01-22 21:40:52 - File vencord-settings-backup.json was deleted!
-2025-01-22 21:40:52 - Current used storage is 14.08
-2025-01-22 21:40:52 - Got files
-2025-01-22 21:40:52 - Got directories
-2025-01-22 21:40:54 - start upload:
-2025-01-22 21:40:54 - 2e00de923d8c418199c4dee2bc5e800f
-2025-01-22 21:40:55 - File app_log.txt started uploading
-2025-01-22 21:40:56 - File app_log.txt was uploaded
-2025-01-22 21:40:56 - Current used storage is 14.081
-2025-01-22 21:40:56 - Got files
-2025-01-22 21:40:56 - Got directories
-2025-01-22 21:40:58 - Current used storage is 14.081
-2025-01-22 21:40:58 - Got files
-2025-01-22 21:40:58 - Got directories
-2025-01-22 21:40:58 - Got files
-2025-01-22 21:40:58 - Current used storage is 14.081
-2025-01-22 21:40:58 - Got directories
-2025-01-22 21:41:00 - Current used storage is 14.081
-2025-01-22 21:41:00 - Got files
-2025-01-22 21:41:00 - Got directories
-2025-01-22 21:41:03 - Logout succesfull
-2025-01-22 21:48:57 - Login was succesfull for user: a
-2025-01-22 21:48:57 - File data recieved 0
-2025-01-22 21:48:57 - Profile picture was recieved
-2025-01-22 21:48:57 - Current used storage is 14.081
-2025-01-22 21:48:57 - Got files
-2025-01-22 21:48:57 - Got directories
-2025-01-22 21:48:58 - Logout succesfull
-2025-01-22 21:49:00 - Server return an error: 101 Cannot have an empty field
-2025-01-22 21:49:04 - Server return an error: 103 Invalid email address
-2025-01-22 21:49:09 - Server return an error: 104 Invalid username
+2025-02-08 01:38:19 - Login was successful for user: a
+2025-02-08 01:38:19 - File data received 230382
+2025-02-08 01:38:19 - Profile picture was received
+2025-02-08 01:38:19 - Got files
+2025-02-08 01:38:19 - Current used storage is 14.147 MB
+2025-02-08 01:38:19 - Got directories
+2025-02-08 01:38:20 - Current used storage is 14.147 MB
+2025-02-08 01:38:21 - Subscription level updated to premium
+2025-02-08 01:38:21 - Current used storage is 14.147 MB
+2025-02-08 01:38:21 - Subscription level updated to basic
+2025-02-08 01:38:22 - Current used storage is 14.147 MB
+2025-02-08 01:38:23 - Subscription level updated to professional
+2025-02-08 01:38:23 - Current used storage is 14.147 MB
+2025-02-08 01:38:24 - Got files
+2025-02-08 01:38:24 - Current used storage is 14.147 MB
+2025-02-08 01:38:24 - Got directories
+2025-02-08 01:38:28 - start upload:
+2025-02-08 01:38:28 - 7974b816c55a468a89f4eb95fce281ac
+2025-02-08 01:38:28 - File CactiMaster.rar started uploading
+2025-02-08 01:38:32 - File CactiMaster.rar was uploaded
+2025-02-08 01:38:32 - Current used storage is 66.925 MB
+2025-02-08 01:38:32 - Got files
+2025-02-08 01:38:32 - Got directories
+2025-02-08 01:38:34 - Current used storage is 66.925 MB
+2025-02-08 01:38:34 - Got directories
+2025-02-08 01:38:34 - Got files
+2025-02-08 01:38:36 - Successfully deleted 1 files
+2025-02-08 01:38:36 - File CactiMaster.rar was deleted!
+2025-02-08 01:38:36 - Current used storage is 66.925 MB
+2025-02-08 01:38:36 - Got files
+2025-02-08 01:38:36 - Got directories
+2025-02-08 01:38:37 - Successfully moved to
+2025-02-08 01:38:37 - Got files
+2025-02-08 01:38:37 - Got directories
+2025-02-08 01:38:37 - Current used storage is 66.925 MB
+2025-02-08 01:38:38 - Successfully deleted 1 files
+2025-02-08 01:38:38 - File CactiMaster.rar was deleted!
+2025-02-08 01:38:38 - Got files
+2025-02-08 01:38:38 - Got directories
+2025-02-08 01:38:38 - Current used storage is 14.147 MB
+2025-02-08 01:38:39 - Logout successful
+2025-02-08 01:47:37 - Login was successful for user: a
+2025-02-08 01:47:37 - File data received 230382
+2025-02-08 01:47:37 - Profile picture was received
+2025-02-08 01:47:37 - Current used storage is 14.147 MB
+2025-02-08 01:47:37 - Got files
+2025-02-08 01:47:37 - Got directories
+2025-02-08 01:47:44 - Got files
+2025-02-08 01:47:44 - Current used storage is 14.147 MB
+2025-02-08 01:47:44 - Got directories
+2025-02-08 01:48:04 - Current used storage is 14.147 MB
+2025-02-08 01:48:24 - Current used storage is 14.147 MB
+2025-02-08 01:48:25 - Subscription level updated to premium
+2025-02-08 01:48:25 - Current used storage is 14.147 MB
+2025-02-08 01:48:26 - Subscription level updated to professional
+2025-02-08 01:48:26 - Current used storage is 14.147 MB
+2025-02-08 01:48:27 - Current used storage is 14.147 MB
+2025-02-08 01:48:27 - Got files
+2025-02-08 01:48:27 - Got directories
+2025-02-08 01:48:29 - Current used storage is 14.147 MB
+2025-02-08 01:48:29 - Got files
+2025-02-08 01:48:29 - Got directories
+2025-02-08 01:48:30 - Current used storage is 14.147 MB
+2025-02-08 01:48:30 - Got files
+2025-02-08 01:48:30 - Got directories
+2025-02-08 01:48:30 - Current used storage is 14.147 MB
+2025-02-08 01:48:30 - Got files
+2025-02-08 01:48:30 - Got directories
+2025-02-08 01:48:31 - Got files
+2025-02-08 01:48:31 - Current used storage is 14.147 MB
+2025-02-08 01:48:31 - Got directories
+2025-02-08 01:48:32 - Current used storage is 14.147 MB
+2025-02-08 01:48:32 - Got directories
+2025-02-08 01:48:32 - Got files
+2025-02-08 01:48:34 - Successfully moved to dededed\
+2025-02-08 01:48:34 - Got files
+2025-02-08 01:48:34 - Got directories
+2025-02-08 01:48:34 - Current used storage is 14.147 MB
+2025-02-08 01:48:35 - Successfully moved to
+2025-02-08 01:48:35 - Current used storage is 14.147 MB
+2025-02-08 01:48:35 - Got files
+2025-02-08 01:48:35 - Got directories
+2025-02-08 01:49:41 - Login was successful for user: a
+2025-02-08 01:49:41 - File data received 230382
+2025-02-08 01:49:41 - Profile picture was received
+2025-02-08 01:49:41 - Current used storage is 14.147 MB
+2025-02-08 01:49:41 - Got directories
+2025-02-08 01:49:41 - Got files
+2025-02-08 01:51:39 - Logout successful
+2025-02-08 01:52:49 - Login was successful for user: a
+2025-02-08 01:52:49 - File data received 230382
+2025-02-08 01:52:49 - Profile picture was received
+2025-02-08 01:52:49 - Current used storage is 14.147 MB
+2025-02-08 01:52:49 - Got directories
+2025-02-08 01:52:49 - Got files
+2025-02-08 01:53:27 - Login was successful for user: a
+2025-02-08 01:53:27 - File data received 230382
+2025-02-08 01:53:27 - Profile picture was received
+2025-02-08 01:53:27 - Current used storage is 14.147 MB
+2025-02-08 01:53:27 - Got files
+2025-02-08 01:53:27 - Got directories
+2025-02-08 01:53:29 - Current used storage is 14.147 MB
+2025-02-08 01:53:29 - Got files
+2025-02-08 01:53:29 - Got directories
+2025-02-08 01:54:28 - Login was successful for user: a
+2025-02-08 01:54:28 - File data received 230382
+2025-02-08 01:54:28 - Profile picture was received
+2025-02-08 01:54:28 - Got files
+2025-02-08 01:54:28 - Current used storage is 14.147 MB
+2025-02-08 01:54:28 - Got directories
+2025-02-08 01:54:45 - Current used storage is 14.147 MB
+2025-02-08 01:54:45 - Got files
+2025-02-08 01:54:45 - Got directories
+2025-02-08 01:54:45 - Logout successful
+2025-02-08 01:54:47 - Server returned an error: 101 Cannot have an empty field
+2025-02-08 01:54:47 - Server returned an error: 101 Cannot have an empty field
+2025-02-08 01:54:47 - Server returned an error: 101 Cannot have an empty field
+2025-02-08 01:54:50 - Server returned an error: 103 Invalid email address
+2025-02-08 01:54:54 - Server returned an error: 104 Invalid username
 Username has to be at least 4 long and contain only chars and numbers
-2025-01-22 21:49:11 - Server return an error: 105 Password does not meet requirements
+2025-02-08 01:54:57 - Server returned an error: 105 Password does not meet requirements
 has to be at least 8 long and contain at least 1 upper case and number
-2025-01-22 21:49:20 - Server return an error: 106 Passwords do not match
-2025-01-22 21:49:28 - Server return an error: 102 Invalid chars used
-2025-01-22 21:49:32 - Server return an error: 004 Username already registered
-2025-01-22 22:03:04 - Login was succesfull for user: a
-2025-01-22 22:03:04 - File data recieved 0
-2025-01-22 22:03:04 - Profile picture was recieved
-2025-01-22 22:03:04 - Got files
-2025-01-22 22:03:04 - Current used storage is 14.081
-2025-01-22 22:03:04 - Got directories
-2025-01-22 22:08:18 - Login was succesfull for user: a
-2025-01-22 22:08:18 - File data recieved 0
-2025-01-22 22:08:18 - Profile picture was recieved
-2025-01-22 22:08:18 - Got files
-2025-01-22 22:08:18 - Current used storage is 14.081
-2025-01-22 22:08:18 - Got directories
-2025-01-22 22:08:19 - File VSCode.css was viewed
-2025-01-22 22:08:19 - File viewing released
-2025-01-22 22:08:20 - File data recieved 0
-2025-01-22 22:08:23 - File RocketLeague_nvmo0joaYd.jpg was viewed
-2025-01-22 22:08:23 - File viewing released
-2025-01-22 22:08:24 - File data recieved 0
-2025-01-22 22:08:25 - File RocketLeague_npe4XSGKVK.png was viewed
-2025-01-22 22:08:25 - File viewing released
-2025-01-22 22:08:26 - File data recieved 0
-2025-01-22 22:09:20 - File RocketLeague_npe4XSGKVK.png was viewed
-2025-01-22 22:09:20 - File viewing released
-2025-01-22 22:09:23 - Unhandled exception:
+2025-02-08 01:55:05 - Signup was successful for user: aaaa, password: Idan1234
+2025-02-08 01:55:25 - Server returned an error: 002 Code not supported
+2025-02-08 01:55:29 - Server returned an error: 002 Code not supported
+2025-02-08 01:55:30 - Server returned an error: 002 Code not supported
+2025-02-08 01:55:30 - Server returned an error: 002 Code not supported
+2025-02-08 01:55:30 - Server returned an error: 002 Code not supported
+2025-02-08 01:55:30 - Server returned an error: 002 Code not supported
+2025-02-08 02:00:02 - Login was successful for user: a
+2025-02-08 02:00:02 - File data received 230382
+2025-02-08 02:00:02 - Profile picture was received
+2025-02-08 02:00:02 - Got files
+2025-02-08 02:00:02 - Current used storage is 14.147 MB
+2025-02-08 02:00:02 - Got directories
+2025-02-08 02:00:04 - Got files
+2025-02-08 02:00:04 - Current used storage is 14.147 MB
+2025-02-08 02:00:04 - Got directories
+2025-02-08 02:00:05 - Current used storage is 14.147 MB
+2025-02-08 02:00:05 - Got files
+2025-02-08 02:00:05 - Got directories
+2025-02-08 02:00:06 - Logout successful
+2025-02-08 02:00:12 - Server returned an error: 003 Please check your password and email/username and try again.
+2025-02-08 02:00:14 - Server returned an error: 009 User not verified
+2025-02-08 02:00:20 - Verification sent to email a@g.c
+2025-02-08 02:00:31 - Server returned an error: 002 Code not supported
+2025-02-08 02:00:43 - Login was successful for user: a
+2025-02-08 02:00:43 - File data received 230382
+2025-02-08 02:00:43 - Profile picture was received
+2025-02-08 02:00:43 - Got directories
+2025-02-08 02:00:43 - Got files
+2025-02-08 02:00:43 - Current used storage is 14.147 MB
+2025-02-08 02:00:46 - Logout successful
+2025-02-08 02:00:51 - Server returned an error: 009 User not verified
+2025-02-08 02:00:58 - Verification sent to email a@g.c
+2025-02-08 02:01:05 - Verification for user a@g.c was successful
+2025-02-08 02:01:10 - Login was successful for user: aaaa
+2025-02-08 02:01:10 - Got files
+2025-02-08 02:01:10 - File data received 1370
+2025-02-08 02:01:10 - Got directories
+2025-02-08 02:01:10 - Profile picture was received
+2025-02-08 02:01:10 - Current used storage is 0.0 MB
+2025-02-08 02:01:10 - Unhandled exception:
 Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\file_viewer.py", line 88, in <lambda>
-    open_native_button.clicked.connect(lambda: self.open_in_native_app(self.file_path))
-                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: FileViewer.open_in_native_app() takes 1 positional argument but 2 were given
-2025-01-22 22:09:33 - Unhandled exception:
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\file_viewer.py", line 88, in <lambda>
-    open_native_button.clicked.connect(lambda: self.open_in_native_app(self.file_path))
-                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: FileViewer.open_in_native_app() takes 1 positional argument but 2 were given
-2025-01-22 22:09:52 - File data recieved 0
-2025-01-22 22:09:55 - Login was succesfull for user: a
-2025-01-22 22:09:55 - File data recieved 0
-2025-01-22 22:09:55 - Profile picture was recieved
-2025-01-22 22:09:55 - Current used storage is 14.081
-2025-01-22 22:09:55 - Got files
-2025-01-22 22:09:55 - Got directories
-2025-01-22 22:10:00 - File VSCode.css was viewed
-2025-01-22 22:10:00 - File viewing released
-2025-01-22 22:10:04 - File data recieved 0
-2025-01-22 22:10:06 - File RocketLeague_nvmo0joaYd.jpg was viewed
-2025-01-22 22:10:06 - File viewing released
-2025-01-22 22:11:07 - File data recieved 0
-2025-01-22 22:11:17 - Login was succesfull for user: a
-2025-01-22 22:11:17 - File data recieved 0
-2025-01-22 22:11:17 - Profile picture was recieved
-2025-01-22 22:11:17 - Current used storage is 14.081
-2025-01-22 22:11:17 - Got files
-2025-01-22 22:11:17 - Got directories
-2025-01-22 22:11:18 - File VSCode.css was viewed
-2025-01-22 22:11:18 - File viewing released
-2025-01-22 22:11:19 - File data recieved 0
-2025-01-22 22:11:20 - File RocketLeague_npe4XSGKVK.png was viewed
-2025-01-22 22:11:20 - File viewing released
-2025-01-22 22:11:21 - File data recieved 0
-2025-01-22 22:11:24 - File ThemeTool.exe was viewed
-2025-01-22 22:11:24 - File viewing released
-2025-01-22 22:11:31 - File data recieved 0
-2025-01-22 22:11:33 - Current used storage is 14.081
-2025-01-22 22:11:33 - Got files
-2025-01-22 22:11:33 - Got directories
-2025-01-22 22:11:35 - Current used storage is 14.081
-2025-01-22 22:11:35 - Got directories
-2025-01-22 22:11:35 - Got files
-2025-01-22 22:11:38 - File AD Save, Slot 1 #3 (2023-1-31).txt was viewed
-2025-01-22 22:11:38 - File viewing released
-2025-01-22 22:11:39 - File data recieved 0
-2025-01-22 22:11:41 - File 06_21_157t1.xlsx was viewed
-2025-01-22 22:11:41 - File viewing released
-2025-01-22 22:12:08 - File data recieved 0
-2025-01-22 22:12:10 - File 06_21_157t1.xlsx was viewed
-2025-01-22 22:12:10 - File viewing released
-2025-01-22 22:12:43 - File data recieved 0
-2025-01-22 22:12:48 - Login was succesfull for user: a
-2025-01-22 22:12:48 - File data recieved 0
-2025-01-22 22:12:48 - Profile picture was recieved
-2025-01-22 22:12:48 - Current used storage is 14.081
-2025-01-22 22:12:48 - Got files
-2025-01-22 22:12:48 - Got directories
-2025-01-22 22:12:52 - Current used storage is 14.081
-2025-01-22 22:12:52 - Got files
-2025-01-22 22:12:52 - Got directories
-2025-01-22 22:12:54 - File 06_21_157t1.xlsx was viewed
-2025-01-22 22:12:54 - File viewing released
-2025-01-22 22:13:05 - File data recieved 0
-2025-01-22 22:13:05 - start upload:
-2025-01-22 22:13:05 - 7a2d6ac6887346f487c171dbcc9a8be9
-2025-01-22 22:13:05 - Succefully saved changes to file 10877ac0fc6d41c88f86b0574f92445a
-2025-01-22 22:13:05 - Got files
-2025-01-22 22:13:05 - Current used storage is 14.08
-2025-01-22 22:13:05 - Got directories
-2025-01-22 22:13:06 - File 10877ac0fc6d41c88f86b0574f92445a was uploaded
-2025-01-22 22:13:06 - Got files
-2025-01-22 22:13:06 - Got directories
-2025-01-22 22:13:06 - Current used storage is 14.08
-2025-01-22 22:13:08 - File 06_21_157t1.xlsx was viewed
-2025-01-22 22:13:08 - File viewing released
-2025-01-22 22:13:12 - File data recieved 0
-2025-01-22 22:13:13 - Got files
-2025-01-22 22:13:13 - Current used storage is 14.08
-2025-01-22 22:13:13 - Got directories
-2025-01-22 22:13:13 - Current used storage is 14.08
-2025-01-22 22:13:13 - Got files
-2025-01-22 22:13:13 - Got directories
-2025-01-22 22:13:14 - Current used storage is 14.08
-2025-01-22 22:13:14 - Got files
-2025-01-22 22:13:14 - Got directories
-2025-01-22 22:13:38 - Current used storage is 14.08
-2025-01-22 22:13:38 - Got files
-2025-01-22 22:13:38 - Got directories
-2025-01-22 22:14:10 - Login was succesfull for user: a
-2025-01-22 22:14:10 - File data recieved 0
-2025-01-22 22:14:10 - Profile picture was recieved
-2025-01-22 22:14:10 - Current used storage is 14.08
-2025-01-22 22:14:10 - Got files
-2025-01-22 22:14:10 - Got directories
-2025-01-22 22:14:12 - Current used storage is 14.08
-2025-01-22 22:14:12 - Got directories
-2025-01-22 22:14:12 - Got files
-2025-01-22 22:14:14 - File 06_21_157t1.xlsx was viewed
-2025-01-22 22:14:14 - File viewing released
-2025-01-22 22:14:25 - start upload:
-2025-01-22 22:14:25 - File data recieved 0
-2025-01-22 22:14:25 - 69d482d5a79a489380358b43be529a0b
-2025-01-22 22:14:25 - Succefully saved changes to file 10877ac0fc6d41c88f86b0574f92445a
-2025-01-22 22:14:25 - Current used storage is 14.08
-2025-01-22 22:14:25 - Got files
-2025-01-22 22:14:25 - Got directories
-2025-01-22 22:14:26 - File 10877ac0fc6d41c88f86b0574f92445a was uploaded
-2025-01-22 22:14:26 - Current used storage is 14.08
-2025-01-22 22:14:26 - Got files
-2025-01-22 22:14:26 - Got directories
-2025-01-22 22:14:33 - Got files
-2025-01-22 22:14:33 - Current used storage is 14.08
-2025-01-22 22:14:33 - Got directories
-2025-01-22 22:14:34 - Current used storage is 14.08
-2025-01-22 22:14:34 - Got files
-2025-01-22 22:14:34 - Got directories
-2025-01-22 22:14:35 - File 06_21_157t1.xlsx was viewed
-2025-01-22 22:14:35 - File viewing released
-2025-01-22 22:14:39 - File data recieved 0
-2025-01-22 22:14:41 - Current used storage is 14.08
-2025-01-22 22:14:41 - Got files
-2025-01-22 22:14:41 - Got directories
-2025-01-24 15:04:53 - Login was succesfull for user: a
-2025-01-24 15:04:53 - File data recieved 0
-2025-01-24 15:04:53 - Profile picture was recieved
-2025-01-24 15:04:53 - Current used storage is 14.08
-2025-01-24 15:04:53 - Got files
-2025-01-24 15:04:53 - Got directories
-2025-02-06 08:24:35 - Login was succesfull for user: a
-2025-02-06 08:24:35 - File data recieved 0
-2025-02-06 08:24:35 - Profile picture was recieved
-2025-02-06 08:24:35 - Current used storage is 14.113
-2025-02-06 08:24:35 - Got files
-2025-02-06 08:24:35 - Got directories
-2025-02-06 08:27:44 - Login was succesfull for user: a
-2025-02-06 08:27:44 - File data recieved 0
-2025-02-06 08:27:44 - Profile picture was recieved
-2025-02-06 08:27:44 - Current used storage is 14.113
-2025-02-06 08:27:44 - Got files
-2025-02-06 08:27:44 - Got directories
-2025-02-06 08:27:45 - Logout succesfull
-2025-02-06 08:27:51 - Login was succesfull for user: idan
-2025-02-06 08:27:51 - Got files
-2025-02-06 08:27:51 - File data recieved 0
-2025-02-06 08:27:51 - Profile picture was recieved
-2025-02-06 08:27:51 - Cookie recieved
-2025-02-06 08:27:51 - Current used storage is 0.958
-2025-02-06 08:27:51 - Got directories
-2025-02-06 08:27:56 - Login was succesfull for user: idan
-2025-02-06 08:27:56 - File data recieved 0
-2025-02-06 08:27:56 - Profile picture was recieved
-2025-02-06 08:27:56 - Got files
-2025-02-06 08:27:56 - Got directories
-2025-02-06 08:27:56 - Current used storage is 0.958
-2025-02-06 20:16:15 - No server found
-2025-02-06 20:16:17 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-2025-02-06 20:16:21 - No server found
-2025-02-06 20:16:23 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-2025-02-06 20:16:26 - No server found
-2025-02-06 20:16:28 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-2025-02-06 20:16:45 - No server found
-2025-02-06 20:16:47 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-2025-02-06 20:16:57 - Login was succesfull for user: idan
-2025-02-06 20:16:57 - Got directories
-2025-02-06 20:16:57 - File data recieved 0
-2025-02-06 20:16:57 - Profile picture was recieved
-2025-02-06 20:16:57 - Current used storage is 0.958
-2025-02-06 20:16:57 - Got files
-2025-02-06 20:22:10 - No server found
-2025-02-06 20:22:12 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 617, in send_data
-    try: self.network.send_data_wrap(bdata, encryption)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\networking.py", line 60, in send_data_wrap
-    self.sock.send(to_send)
-ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-2025-02-06 20:22:25 - No server found
-2025-02-06 20:22:26 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:22:32 - No server found
-2025-02-06 20:22:33 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:22:36 - No server found
-2025-02-06 20:22:37 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:22:49 - No server found
-2025-02-06 20:22:50 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:23:48 - No server found
-2025-02-06 20:23:49 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:23:55 - Login was succesfull for user: idan
-2025-02-06 20:23:55 - File data recieved 0
-2025-02-06 20:23:55 - Profile picture was recieved
-2025-02-06 20:23:55 - Got files
-2025-02-06 20:23:55 - Current used storage is 0.958
-2025-02-06 20:23:55 - Got directories
-2025-02-06 20:24:23 - No server found
-2025-02-06 20:24:24 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:25:16 - No server found
-2025-02-06 20:25:16 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:25:22 - Login was succesfull for user: idan
-2025-02-06 20:25:22 - File data recieved 0
-2025-02-06 20:25:22 - Profile picture was recieved
-2025-02-06 20:25:22 - Got files
-2025-02-06 20:25:22 - Got directories
-2025-02-06 20:25:22 - Current used storage is 0.958
-2025-02-06 20:26:05 - No server found
-2025-02-06 20:26:05 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:26:08 - No server found
-2025-02-06 20:26:09 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:26:09 - No server found
-2025-02-06 20:26:10 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 592, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:27:23 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 52, in send_cookie
-    with open(COOKIE_PATH, "r") as f:
-         ^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\client/cookies/user.cookie'
-2025-02-06 20:28:13 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 52, in send_cookie
-    with open(COOKIE_PATH, "r") as f:
-         ^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project\\Main\\client/cookies/user.cookie'
-2025-02-06 20:28:20 - Login was succesfull for user: a
-2025-02-06 20:28:20 - File data recieved 0
-2025-02-06 20:28:20 - Profile picture was recieved
-2025-02-06 20:28:20 - Current used storage is 14.113
-2025-02-06 20:28:20 - Cookie recieved
-2025-02-06 20:28:20 - Got files
-2025-02-06 20:28:20 - Got directories
-2025-02-06 20:28:23 - Login was succesfull for user: a
-2025-02-06 20:28:23 - File data recieved 0
-2025-02-06 20:28:23 - Profile picture was recieved
-2025-02-06 20:28:23 - Current used storage is 14.113
-2025-02-06 20:28:23 - Got files
-2025-02-06 20:28:23 - Got directories
-2025-02-06 20:31:56 - Login was succesfull for user: a
-2025-02-06 20:31:56 - File data recieved 0
-2025-02-06 20:31:56 - Profile picture was recieved
-2025-02-06 20:31:56 - Current used storage is 14.113
-2025-02-06 20:31:56 - Got files
-2025-02-06 20:31:56 - Got directories
-2025-02-06 20:33:31 - No server found
-2025-02-06 20:33:32 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:34:33 - No server found
-2025-02-06 20:34:34 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:34:36 - No server found
-2025-02-06 20:34:37 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:34:37 - No server found
-2025-02-06 20:34:38 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:34:54 - Login was succesfull for user: a
-2025-02-06 20:34:54 - File data recieved 0
-2025-02-06 20:34:54 - Profile picture was recieved
-2025-02-06 20:34:54 - Current used storage is 14.113
-2025-02-06 20:34:54 - Got files
-2025-02-06 20:34:54 - Got directories
-2025-02-06 20:35:00 - No server found
-2025-02-06 20:35:01 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 620, in send_data
-    try: self.network.send_data_wrap(bdata, encryption)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\networking.py", line 60, in send_data_wrap
-    self.sock.send(to_send)
-ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:35:05 - No server found
-2025-02-06 20:35:06 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:35:06 - No server found
-2025-02-06 20:35:07 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:36:48 - No server found
-2025-02-06 20:36:49 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:36:49 - No server found
-2025-02-06 20:36:50 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:38:32 - Login was succesfull for user: a
-2025-02-06 20:38:32 - File data recieved 0
-2025-02-06 20:38:32 - Profile picture was recieved
-2025-02-06 20:38:32 - Got files
-2025-02-06 20:38:32 - Current used storage is 14.113
-2025-02-06 20:38:32 - Got directories
-2025-02-06 20:38:39 - No server found
-2025-02-06 20:38:40 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 619, in send_data
-    try: self.network.send_data_wrap(bdata, encryption)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\networking.py", line 60, in send_data_wrap
-    self.sock.send(to_send)
-ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:38:41 - No server found
-2025-02-06 20:38:42 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:38:42 - No server found
-2025-02-06 20:38:43 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 591, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:41:37 - No server found
-2025-02-06 20:41:37 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:41:41 - No server found
-2025-02-06 20:41:41 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:41:42 - No server found
-2025-02-06 20:41:42 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:41:49 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:41:49 - Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:42:34 - No server found
-2025-02-06 20:42:40 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-2025-02-06 20:43:18 - No server found
-2025-02-06 20:43:44 - Login was succesfull for user: a
-2025-02-06 20:43:45 - File data recieved 0
-2025-02-06 20:43:45 - Profile picture was recieved
-2025-02-06 20:43:45 - Got files
-2025-02-06 20:43:45 - Current used storage is 14.113
-2025-02-06 20:43:45 - Got directories
-2025-02-06 20:43:54 - No server found
-2025-02-06 20:43:54 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 622, in send_data
-    try: self.network.send_data_wrap(bdata, encryption)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\networking.py", line 60, in send_data_wrap
-    self.sock.send(to_send)
-ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:43:56 - No server found
-2025-02-06 20:43:56 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:44:20 - No server found
-2025-02-06 20:44:27 - Login was succesfull for user: a
-2025-02-06 20:44:27 - File data recieved 0
-2025-02-06 20:44:27 - Profile picture was recieved
-2025-02-06 20:44:27 - Current used storage is 14.113
-2025-02-06 20:44:27 - Got files
-2025-02-06 20:44:27 - Got directories
-2025-02-06 20:44:34 - No server found
-2025-02-06 20:44:47 - No server found
-2025-02-06 20:44:56 - No server found
-2025-02-06 20:44:56 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:45:17 - No server found
-2025-02-06 20:45:27 - No server found
-2025-02-06 20:45:55 - No server found
-2025-02-06 20:45:59 - No server found
-2025-02-06 20:45:59 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:46:04 - No server found
-2025-02-06 20:46:04 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:47:50 - No server found
-2025-02-06 20:47:50 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:48:46 - No server found
-2025-02-06 20:49:01 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:49:30 - No server found
-2025-02-06 20:49:44 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 589, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:51:24 - No server found
-2025-02-06 20:51:30 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 590, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 594, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:52:59 - No server found
-2025-02-06 20:53:45 - No server found
-2025-02-06 20:54:24 - No server found
-2025-02-06 20:54:32 - No server found
-2025-02-06 20:55:14 - No server found
-2025-02-06 20:55:38 - No server found
-2025-02-06 20:55:38 - Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 590, in connect_server
-    try: sock.connect((self.ip, self.port))
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 593, in connect_server
-    sock.connect((self.ip, self.port))
-OSError: [WinError 10022] An invalid argument was supplied
-2025-02-06 20:56:08 - No server found
-2025-02-06 20:56:12 - No server found
-2025-02-06 20:56:22 - No server found
-2025-02-06 20:56:24 - No server found
-2025-02-06 20:56:28 - Login was succesfull for user: a
-2025-02-06 20:56:28 - File data recieved 0
-2025-02-06 20:56:28 - Profile picture was recieved
-2025-02-06 20:56:28 - Current used storage is 14.113
-2025-02-06 20:56:28 - Got files
-2025-02-06 20:56:28 - Got directories
-2025-02-06 20:56:34 - No server found
-2025-02-06 20:56:41 - Login was succesfull for user: a
-2025-02-06 20:56:41 - File data recieved 0
-2025-02-06 20:56:41 - Got files
-2025-02-06 20:56:41 - Got directories
-2025-02-06 20:56:42 - Profile picture was recieved
-2025-02-06 20:56:42 - Current used storage is 14.113
-2025-02-06 20:56:47 - Got files
-2025-02-06 20:56:47 - Got directories
-2025-02-06 20:56:47 - Current used storage is 14.113
-2025-02-06 20:56:48 - Succesfully moved to
-2025-02-06 20:56:48 - Current used storage is 14.113
-2025-02-06 20:56:48 - Got directories
-2025-02-06 20:56:48 - Got files
-2025-02-06 20:57:05 - Login was succesfull for user: a
-2025-02-06 20:57:05 - Got files
-2025-02-06 20:57:05 - File data recieved 0
-2025-02-06 20:57:05 - Got directories
-2025-02-06 20:57:05 - Profile picture was recieved
-2025-02-06 20:57:05 - Current used storage is 14.113
-2025-02-06 20:57:06 - Succesfully moved to
-2025-02-06 20:57:06 - Got files
-2025-02-06 20:57:06 - Current used storage is 14.113
-2025-02-06 20:57:06 - Got directories
-2025-02-06 20:57:10 - No server found
-2025-02-06 20:57:13 - No server found
-2025-02-06 20:57:32 - Login was succesfull for user: a
-2025-02-06 20:57:32 - File data recieved 0
-2025-02-06 20:57:32 - Got files
-2025-02-06 20:57:33 - Profile picture was recieved
-2025-02-06 20:57:33 - Got directories
-2025-02-06 20:57:33 - Current used storage is 14.113
-2025-02-06 20:57:58 - Succesfully moved to
-2025-02-06 20:57:58 - Current used storage is 14.113
-2025-02-06 20:57:58 - Got files
-2025-02-06 20:57:58 - Got directories
-2025-02-06 20:58:03 - Got files
-2025-02-06 20:58:03 - Got directories
-2025-02-06 20:58:03 - Current used storage is 14.113
-2025-02-06 20:58:04 - Got files
-2025-02-06 20:58:04 - Current used storage is 14.113
-2025-02-06 20:58:04 - Got directories
-2025-02-06 20:58:05 - Current used storage is 14.113
-2025-02-06 20:58:05 - Got directories
-2025-02-06 20:58:05 - Got files
-2025-02-06 20:58:13 - Succesfully moved to
-2025-02-06 20:58:13 - Got files
-2025-02-06 20:58:13 - Got directories
-2025-02-06 20:58:13 - Current used storage is 14.113
-2025-02-06 20:58:15 - Succesfully deleted 1 files
-2025-02-06 20:58:15 - File vencord-settings-backup.json was deleted!
-2025-02-06 20:58:15 - Got files
-2025-02-06 20:58:15 - Got directories
-2025-02-06 20:58:15 - Current used storage is 14.089
-2025-02-06 20:58:16 - Succesfully moved to
-2025-02-06 20:58:16 - Current used storage is 14.089
-2025-02-06 20:58:16 - Got files
-2025-02-06 20:58:16 - Got directories
-2025-02-06 20:58:18 - File ThemeTool.exe was viewed
-2025-02-06 20:58:18 - File viewing released
-2025-02-06 20:58:18 - File data recieved 0
-2025-02-06 20:58:19 - File Teams_JHQYh64EmD.png was viewed
-2025-02-06 20:58:19 - File viewing released
-2025-02-06 20:58:20 - File data recieved 0
-2025-02-06 20:58:23 - File RocketLeague_npe4XSGKVK.png was viewed
-2025-02-06 20:58:23 - File viewing released
-2025-02-06 20:58:25 - File data recieved 0
-2025-02-06 20:59:13 - Login was succesfull for user: a
-2025-02-06 20:59:13 - File data recieved 230382
-2025-02-06 20:59:13 - Profile picture was recieved
-2025-02-06 20:59:13 - Current used storage is 14.089
-2025-02-06 20:59:13 - Got files
-2025-02-06 20:59:13 - Got directories
-2025-02-06 20:59:16 - File RocketLeague_nvmo0joaYd.jpg was viewed
-2025-02-06 20:59:16 - File viewing released
-2025-02-06 20:59:18 - File data recieved 417754
-2025-02-06 20:59:22 - File RocketLeague_npe4XSGKVK.png was viewed
-2025-02-06 20:59:22 - File viewing released
-2025-02-06 20:59:24 - File data recieved 229358
-2025-02-06 20:59:27 - Current used storage is 14.089
-2025-02-06 20:59:28 - Got files
-2025-02-06 20:59:28 - Got directories
-2025-02-06 20:59:29 - Current used storage is 14.089
-2025-02-06 20:59:29 - Got files
-2025-02-06 20:59:29 - Got directories
-2025-02-06 20:59:30 - Current used storage is 14.089
-2025-02-06 20:59:30 - Got files
-2025-02-06 20:59:30 - Got directories
-2025-02-06 21:00:11 - Login was succesfull for user: a
-2025-02-06 21:00:11 - File data recieved 230382
-2025-02-06 21:00:11 - Profile picture was recieved
-2025-02-06 21:00:11 - Current used storage is 14.089
-2025-02-06 21:00:11 - Got directories
-2025-02-06 21:00:11 - Got files
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 525, in scroll_changed
+    if self.scroll_progress / total_scroll_height > 0.95 and len(self.directories) + len(self.files) < int(self.items_amount):
+       ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+ZeroDivisionError: division by zero
+2025-02-08 02:02:15 - Successfully moved to
+2025-02-08 02:02:15 - Got files
+2025-02-08 02:02:15 - Got directories
+2025-02-08 02:02:15 - Current used storage is 0.0 MB
+2025-02-08 02:02:16 - Successfully moved to
+2025-02-08 02:02:16 - Got files
+2025-02-08 02:02:16 - Got directories
+2025-02-08 02:02:16 - Current used storage is 0.0 MB
+2025-02-08 02:02:16 - Successfully moved to
+2025-02-08 02:02:16 - Got files
+2025-02-08 02:02:16 - Got directories
+2025-02-08 02:02:16 - Current used storage is 0.0 MB
+2025-02-08 02:02:17 - Successfully moved to
+2025-02-08 02:02:17 - Got files
+2025-02-08 02:02:17 - Got directories
+2025-02-08 02:02:17 - Current used storage is 0.0 MB
+2025-02-08 02:02:20 - Current used storage is 0.0 MB
+2025-02-08 02:02:20 - Subscription level updated to premium
+2025-02-08 02:02:20 - Current used storage is 0.0 MB
+2025-02-08 02:02:24 - Password reset code was sent to a@g.c
+2025-02-08 02:02:40 - Server returned an error: 101 Cannot have an empty field
+2025-02-08 02:02:43 - Server returned an error: 007 Code not matching try again
+2025-02-08 02:02:58 - Password was reset for user: a@g.c, new password: Idan12345
+2025-02-08 02:02:58 - Logout successful
+2025-02-08 02:03:05 - Server returned an error: 003 Please check your password and email/username and try again.
+2025-02-08 02:03:06 - Login was successful for user: aaaa
+2025-02-08 02:03:06 - Got files
+2025-02-08 02:03:07 - File data received 1370
+2025-02-08 02:03:07 - Profile picture was received
+2025-02-08 02:03:07 - Got directories
+2025-02-08 02:03:07 - Current used storage is 0.0 MB
+2025-02-08 02:03:12 - start upload:
+2025-02-08 02:03:12 - 6bfe64ba628141d19057bdfaea5d43e7
+2025-02-08 02:03:12 - Profile icon upload started successfully!
+2025-02-08 02:03:12 - File 781523a851fa4148b14c73a450b56b5b was uploaded
+2025-02-08 02:03:12 - Got files
+2025-02-08 02:03:12 - Got directories
+2025-02-08 02:03:12 - Current used storage is 0.0 MB
+2025-02-08 02:03:16 - Successfully moved to
+2025-02-08 02:03:16 - Got files
+2025-02-08 02:03:16 - Got directories
+2025-02-08 02:03:16 - Current used storage is 0.0 MB
+2025-02-08 02:03:17 - Successfully moved to
+2025-02-08 02:03:17 - Got files
+2025-02-08 02:03:17 - Got directories
+2025-02-08 02:03:17 - Current used storage is 0.0 MB
+2025-02-08 02:03:21 - Got files
+2025-02-08 02:03:21 - Got directories
+2025-02-08 02:03:21 - Current used storage is 0.0 MB
+2025-02-08 02:03:23 - Successfully moved to
+2025-02-08 02:03:23 - Got files
+2025-02-08 02:03:23 - Got directories
+2025-02-08 02:03:23 - Current used storage is 0.0 MB
+2025-02-08 02:03:31 - Got files
+2025-02-08 02:03:31 - Got directories
+2025-02-08 02:03:31 - Current used storage is 0.0 MB
+2025-02-08 02:03:31 - Logout successful
+2025-02-08 02:03:36 - Login was successful for user: aaaa
+2025-02-08 02:03:36 - Got files
+2025-02-08 02:03:36 - Got directories
+2025-02-08 02:03:36 - File data received 106255
+2025-02-08 02:03:36 - Profile picture was received
+2025-02-08 02:03:36 - Current used storage is 0.0 MB
+2025-02-08 02:03:48 - Successfully deleted 1 files
+2025-02-08 02:03:48 - File 781523a851fa4148b14c73a450b56b5b was deleted!
+2025-02-08 02:03:48 - Got files
+2025-02-08 02:03:48 - Got directories
+2025-02-08 02:03:48 - Current used storage is 0.0 MB
+2025-02-08 02:08:28 - Login was successful for user: a
+2025-02-08 02:08:28 - File data received 230382
+2025-02-08 02:08:28 - Profile picture was received
+2025-02-08 02:08:28 - Current used storage is 14.147 MB
+2025-02-08 02:08:28 - Got directories
+2025-02-08 02:08:28 - Got files
+2025-02-08 02:08:28 - Logout successful
+2025-02-08 02:08:33 - Login was successful for user: aaaa
+2025-02-08 02:08:33 - Got files
+2025-02-08 02:08:33 - File data received 106255
+2025-02-08 02:08:33 - Got directories
+2025-02-08 02:08:33 - Profile picture was received
+2025-02-08 02:08:33 - Current used storage is 0.0 MB
+2025-02-08 02:08:34 - Successfully moved to
+2025-02-08 02:08:34 - Got files
+2025-02-08 02:08:34 - Got directories
+2025-02-08 02:08:34 - Current used storage is 0.0 MB
+2025-02-08 02:08:35 - Successfully moved to
+2025-02-08 02:08:35 - Got files
+2025-02-08 02:08:35 - Got directories
+2025-02-08 02:08:35 - Current used storage is 0.0 MB
+2025-02-08 02:08:38 - Got files
+2025-02-08 02:08:38 - Got directories
+2025-02-08 02:08:38 - Current used storage is 0.0 MB
+2025-02-08 02:08:53 - Logout successful
+2025-02-08 02:09:11 - Signup was successful for user: gggg, password: GGGG1234
+2025-02-08 02:09:20 - Verification for user g@g.g was successful
+2025-02-08 02:09:25 - Login was successful for user: gggg
+2025-02-08 02:09:25 - File data received 1370
+2025-02-08 02:09:25 - Got files
+2025-02-08 02:09:25 - Profile picture was received
+2025-02-08 02:09:25 - Current used storage is 0.0 MB
+2025-02-08 02:09:25 - Got directories
+2025-02-08 02:09:30 - start upload:
+2025-02-08 02:09:30 - 91cc3822249c41c79b153c70d19e11fd
+2025-02-08 02:09:30 - Profile icon upload started successfully!
+2025-02-08 02:09:30 - File 1d33bc9097114916bd3c346417b16463 was uploaded
+2025-02-08 02:09:30 - Got files
+2025-02-08 02:09:30 - Got directories
+2025-02-08 02:09:30 - Current used storage is 0.0 MB
+2025-02-08 02:09:33 - Successfully moved to
+2025-02-08 02:09:33 - Got files
+2025-02-08 02:09:33 - Got directories
+2025-02-08 02:09:33 - Current used storage is 0.0 MB
+2025-02-08 02:09:34 - Successfully moved to
+2025-02-08 02:09:34 - Got files
+2025-02-08 02:09:34 - Got directories
+2025-02-08 02:09:34 - Current used storage is 0.0 MB
+2025-02-08 02:09:35 - Got files
+2025-02-08 02:09:35 - Got directories
+2025-02-08 02:09:35 - Current used storage is 0.0 MB
+2025-02-08 02:09:37 - Got files
+2025-02-08 02:09:37 - Got directories
+2025-02-08 02:09:37 - Current used storage is 0.0 MB
+2025-02-08 02:09:37 - Logout successful
+2025-02-08 02:09:42 - Login was successful for user: gggg
+2025-02-08 02:09:42 - Got files
+2025-02-08 02:09:42 - Got directories
+2025-02-08 02:09:42 - File data received 524288
+2025-02-08 02:09:42 - Current used storage is 0.0 MB
+2025-02-08 02:09:42 - File data received 1048576
+2025-02-08 02:09:42 - File data received 1572864
+2025-02-08 02:09:42 - File data received 2097152
+2025-02-08 02:09:42 - File data received 2621440
+2025-02-08 02:09:42 - File data received 2923803
+2025-02-08 02:09:42 - Profile picture was received
+2025-02-08 02:09:44 - Got files
+2025-02-08 02:09:44 - Got directories
+2025-02-08 02:09:44 - Current used storage is 0.0 MB
+2025-02-08 02:09:45 - Successfully moved to
+2025-02-08 02:09:45 - Got files
+2025-02-08 02:09:45 - Got directories
+2025-02-08 02:09:45 - Current used storage is 0.0 MB
+2025-02-08 02:09:46 - Successfully moved to
+2025-02-08 02:09:46 - Got files
+2025-02-08 02:09:46 - Got directories
+2025-02-08 02:09:46 - Current used storage is 0.0 MB
+2025-02-08 02:09:47 - Successfully moved to
+2025-02-08 02:09:47 - Got files
+2025-02-08 02:09:47 - Got directories
+2025-02-08 02:09:47 - Current used storage is 0.0 MB
+2025-02-08 02:09:47 - Successfully moved to
+2025-02-08 02:09:47 - Got files
+2025-02-08 02:09:47 - Got directories
+2025-02-08 02:09:47 - Current used storage is 0.0 MB
+2025-02-08 02:09:48 - Logout successful
+2025-02-08 02:09:49 - Server acknowledged the exit message
+2025-02-08 02:09:49 - Successfully exited
+2025-02-08 02:09:51 - Login was successful for user: a
+2025-02-08 02:09:51 - File data received 230382
+2025-02-08 02:09:51 - Profile picture was received
+2025-02-08 02:09:51 - Current used storage is 14.147 MB
+2025-02-08 02:09:51 - Got files
+2025-02-08 02:09:52 - Got directories
+2025-02-08 02:09:53 - Logout successful
+2025-02-08 02:09:58 - Login was successful for user: gggg
+2025-02-08 02:09:58 - Got files
+2025-02-08 02:09:58 - File data received 524288
+2025-02-08 02:09:58 - Got directories
+2025-02-08 02:09:58 - File data received 1048576
+2025-02-08 02:09:58 - File data received 1572864
+2025-02-08 02:09:58 - File data received 2097152
+2025-02-08 02:09:58 - File data received 2621440
+2025-02-08 02:09:58 - Current used storage is 0.0 MB
+2025-02-08 02:09:58 - File data received 2923803
+2025-02-08 02:09:58 - Profile picture was received
+2025-02-08 02:09:58 - Cookie received
+2025-02-08 02:10:09 - Login was successful for user: gggg
+2025-02-08 02:10:09 - Got files
+2025-02-08 02:10:09 - File data received 524288
+2025-02-08 02:10:09 - File data received 1048576
+2025-02-08 02:10:09 - File data received 1572864
+2025-02-08 02:10:09 - File data received 2097152
+2025-02-08 02:10:09 - Got directories
+2025-02-08 02:10:09 - File data received 2621440
+2025-02-08 02:10:09 - File data received 2923803
+2025-02-08 02:10:09 - Profile picture was received
+2025-02-08 02:10:09 - Current used storage is 0.0 MB
+2025-02-08 02:10:09 - Cookie received
+2025-02-08 02:10:11 - Got files
+2025-02-08 02:10:11 - Got directories
+2025-02-08 02:10:11 - Current used storage is 0.0 MB
+2025-02-08 02:10:44 - Successfully moved to
+2025-02-08 02:10:44 - Got files
+2025-02-08 02:10:44 - Got directories
+2025-02-08 02:10:44 - Current used storage is 0.0 MB
+2025-02-08 02:10:46 - Successfully moved to
+2025-02-08 02:10:46 - Got files
+2025-02-08 02:10:46 - Got directories
+2025-02-08 02:10:46 - Current used storage is 0.0 MB
+2025-02-08 02:11:16 - Login was successful for user: gggg
+2025-02-08 02:11:16 - Got files
+2025-02-08 02:11:16 - Got directories
+2025-02-08 02:11:16 - File data received 524288
+2025-02-08 02:11:16 - File data received 1048576
+2025-02-08 02:11:16 - File data received 1572864
+2025-02-08 02:11:16 - File data received 2097152
+2025-02-08 02:11:16 - File data received 2621440
+2025-02-08 02:11:16 - File data received 2923803
+2025-02-08 02:11:16 - Profile picture was received
+2025-02-08 02:11:16 - Current used storage is 0.0 MB
+2025-02-08 02:11:16 - Cookie received
+2025-02-08 02:11:17 - Successfully moved to
+2025-02-08 02:11:17 - Got files
+2025-02-08 02:11:17 - Got directories
+2025-02-08 02:11:17 - Current used storage is 0.0 MB
+2025-02-08 02:11:17 - Successfully moved to
+2025-02-08 02:11:17 - Got files
+2025-02-08 02:11:17 - Got directories
+2025-02-08 02:11:17 - Current used storage is 0.0 MB
+2025-02-08 02:11:18 - Successfully moved to
+2025-02-08 02:11:18 - Got files
+2025-02-08 02:11:18 - Got directories
+2025-02-08 02:11:18 - Current used storage is 0.0 MB
+2025-02-08 02:11:19 - Successfully moved to
+2025-02-08 02:11:19 - Got files
+2025-02-08 02:11:19 - Got directories
+2025-02-08 02:11:19 - Current used storage is 0.0 MB
+2025-02-08 02:11:21 - Got files
+2025-02-08 02:11:21 - Got directories
+2025-02-08 02:11:21 - Current used storage is 0.0 MB
+2025-02-08 02:11:22 - Logout successful
+2025-02-08 02:11:38 - Signup was successful for user: bbbb, password: BBBB1111
+2025-02-08 02:11:50 - Verification for user b@b.c was successful
+2025-02-08 02:11:57 - Login was successful for user: bbbb
+2025-02-08 02:11:57 - Got files
+2025-02-08 02:11:57 - File data received 1370
+2025-02-08 02:11:57 - Profile picture was received
+2025-02-08 02:11:57 - Got directories
+2025-02-08 02:11:57 - Current used storage is 0.0 MB
+2025-02-08 02:11:57 - Cookie received
+2025-02-08 02:12:06 - start upload:
+2025-02-08 02:12:06 - 7c9b63ae738c4cdca3cf13cf95b036f8
+2025-02-08 02:12:06 - Profile icon upload started successfully!
+2025-02-08 02:12:06 - File 8e61e1af3cba4ea58b930e1cd6a01391 was uploaded
+2025-02-08 02:12:06 - Got files
+2025-02-08 02:12:06 - Got directories
+2025-02-08 02:12:06 - Current used storage is 0.0 MB
+2025-02-08 02:12:09 - Successfully moved to
+2025-02-08 02:12:09 - Got files
+2025-02-08 02:12:09 - Got directories
+2025-02-08 02:12:09 - Current used storage is 0.0 MB
+2025-02-08 02:12:10 - Successfully moved to
+2025-02-08 02:12:10 - Got files
+2025-02-08 02:12:10 - Got directories
+2025-02-08 02:12:10 - Current used storage is 0.0 MB
+2025-02-08 02:12:11 - Logout successful
+2025-02-08 02:12:12 - Server acknowledged the exit message
+2025-02-08 02:12:12 - Successfully exited
+2025-02-08 02:12:16 - Login was successful for user: bbbb
+2025-02-08 02:12:16 - Got files
+2025-02-08 02:12:16 - Got directories
+2025-02-08 02:12:16 - File data received 57946
+2025-02-08 02:12:16 - Profile picture was received
+2025-02-08 02:12:16 - Current used storage is 0.0 MB
+2025-02-08 02:12:18 - Successfully moved to
+2025-02-08 02:12:18 - Got files
+2025-02-08 02:12:18 - Got directories
+2025-02-08 02:12:18 - Current used storage is 0.0 MB
+2025-02-08 02:12:19 - Successfully moved to
+2025-02-08 02:12:19 - Got files
+2025-02-08 02:12:19 - Got directories
+2025-02-08 02:12:19 - Current used storage is 0.0 MB
+2025-02-08 02:12:19 - Successfully moved to
+2025-02-08 02:12:19 - Got files
+2025-02-08 02:12:19 - Got directories
+2025-02-08 02:12:19 - Current used storage is 0.0 MB
+2025-02-08 02:12:20 - Successfully moved to
+2025-02-08 02:12:20 - Got files
+2025-02-08 02:12:20 - Got directories
+2025-02-08 02:12:20 - Current used storage is 0.0 MB
+2025-02-08 02:12:21 - Got files
+2025-02-08 02:12:21 - Current used storage is 0.0 MB
+2025-02-08 02:12:21 - Got directories
+2025-02-08 02:12:22 - Logout successful

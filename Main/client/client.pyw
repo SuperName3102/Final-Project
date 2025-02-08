@@ -1,105 +1,80 @@
 # 2024 © Idan Hazay
-# Import libraries
+# Import required libraries
 
-from modules.dialogs import *
-from modules.helper import *
+from modules.logger import Logger  # Custom logging module
+from modules import networking, receive, gui, dialogs  # Importing necessary modules
 
-from modules.logger import Logger
-from modules.file_viewer import *
-from modules.config import *
-from modules import networking, receive, gui
+import socket, sys, traceback  # Standard libraries
 
-import socket, sys, traceback, time, functools
-
-from PyQt6 import QtWidgets
-
-last_msg = ""
-last_error_msg = ""
-
-def timing_decorator(func):
-    @functools.wraps(func)  # Preserves the original function's metadata
-    def wrapper(*args, **kwargs):
-        start_time = time.perf_counter()  # Start the timer
-        result = func(*args, **kwargs)   # Call the original function
-        end_time = time.perf_counter()  # End the timer
-        print(f"Function '{func.__name__}' took {end_time - start_time:.4f} seconds")
-        return result
-    return wrapper
+from PyQt6 import QtWidgets  # PyQt6 for GUI handling
 
 
+class Application:
+    """
+    Handles the initialization of the PyQt application, networking, 
+    and GUI setup for client-side operations.
+    """
 
-class Application():
     def __init__(self):
-        sys.excepthook = self.global_exception_handler
-        self.qtapp = QtWidgets.QApplication(sys.argv)
-        
-        self.network = networking.Network()
-        self.window = gui.MainWindow(self.qtapp, self.network)
-        self.start_app()
-        sys.exit(self.qtapp.exec())
-        
-    def start_app(self):
-        self.window.show()
-        self.window.not_connected_page(False)
-        self.receive_thread = receive.ReceiveThread(self.network)
-        self.receive_thread.reply_received.connect(self.handle_reply)
-        self.window.receive_thread = self.receive_thread
-        self.window.protocol.connect_server(loop=True)
+        sys.excepthook = dialogs.global_exception_handler  # Set a global exception handler for unhandled exceptions
+        self.qtapp = QtWidgets.QApplication(sys.argv)  # Initialize PyQt application
 
+        self.network = networking.Network()  # Initialize networking module
+        self.window = gui.MainWindow(self.qtapp, self.network)  # Initialize main GUI window
+        self.start_app()  # Start the application loop
+
+        sys.exit(self.qtapp.exec())  # Start the PyQt event loop and exit when it finishes
+
+    def start_app(self):
+        """
+        Starts the application by displaying the main window, 
+        initiating the connection page, and setting up the receive thread.
+        """
+        self.window.show()
+        self.window.not_connected_page(False)  # Show the "not connected" page initially
+
+        self.receive_thread = receive.ReceiveThread(self.network)  # Initialize background thread for receiving data
+        self.receive_thread.reply_received.connect(self.handle_reply)  # Connect received replies to handler
+
+        self.window.receive_thread = self.receive_thread  # Attach the receive thread to the main window
+        self.window.protocol.connect_server(loop=True)  # Attempt to connect to the server
 
     def handle_reply(self, reply):
         """
-        Getting server reply and parsing it
-        If some error occured or no response disconnect
+        Handles replies received from the server.
+        Parses the response and handles errors or disconnects if necessary.
         """
         try:
-            self.network.logtcp('recv', reply)
+            self.network.logtcp('recv', reply)  # Log received data
 
-            to_show = self.window.protocol.protocol_parse_reply(reply)
+            to_show = self.window.protocol.protocol_parse_reply(reply)  # Parse the server's reply
             print(to_show)
+
             if to_show == "Invalid reply from server":
                 print(reply)
             
-            # If exit request succeded, dissconnect
+            # If exit request is acknowledged, disconnect
             if to_show == "Server acknowledged the exit message":
-                print('Succefully exit')
+                print('Successfully exited')
                 self.network.sock.close()
                 sys.exit()
-        except socket.error as err:   # General error handling
+
+        except socket.error as err:
             print(traceback.format_exc())
             return
         except Exception as err:
             print(traceback.format_exc())
             return
 
-    
-    def global_exception_handler(self, exc_type, exc_value, exc_traceback):
-        """Handle uncaught exceptions."""
-        error_message = "".join(traceback.format_exception(exc_type, exc_value, exc_traceback))
-        print(f"Unhandled exception:\n{error_message}")
-
-        QMessageBox.critical(
-            None,
-            "Application Error",
-            f"An unexpected error occurred:\n\n{exc_value}",
-            QMessageBox.StandardButton.Ok,
-        )
-
-
-
-
-
 def main():
     """
-    Main function
-    Create tkinter root and start secure connection to server
-    Connect to server via addr param
+    Main function to initialize and start the client application.
+    Sets up secure connection and GUI for user interaction.
     """
-    global app
-    app = Application()
+    app = Application()  # Initialize the client application
 
-
-if __name__ == "__main__":   # Run main
-    sys.stdout = Logger()
+if __name__ == "__main__":  # Run the main function if the script is executed directly
+    sys.stdout = Logger()  # Redirect standard output to the custom logger
     main()
+
 

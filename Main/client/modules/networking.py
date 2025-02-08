@@ -7,49 +7,45 @@ import struct, socket, psutil, time
 
 
 class Network:
-    def __init__(self, log = False):
+    """Handles network communication, including encryption, data transfer, and server discovery."""
+    def __init__(self, log=False):
         self.log = log
         self.encryption = encrypting.Encryption(self)
-        
+
     def set_sock(self, socket):
+        """Assigns a socket for communication."""
         self.sock = socket
 
     def set_secret(self, secret):
+        """Stores the shared encryption key."""
         self.shared_secret = secret
-    
+
     def reset_network(self):
+        """Resets encryption and clears socket and encryption key."""
         self.encryption = encrypting.Encryption(self)
         self.sock = None
         self.shared_secret = None
 
     def logtcp(self, dir, byte_data):
-        """
-        Loggs the recieved data to console
-        """
+        """Logs network data transmission and reception."""
         if self.log:
             try:
-                if (str(byte_data[0]) == "0"):print("")
+                if str(byte_data[0]) == "0":
+                    print("")
             except AttributeError:
                 return
-            if dir == 'sent':   # Sen/recieved labels
+            if dir == 'sent':
                 print(f'C LOG:Sent     >>>{byte_data}')
             else:
-                print(f'C LOG:Recieved <<<{byte_data}')
-
+                print(f'C LOG:Recieved <<< {byte_data}')
 
     def send_data_wrap(self, bdata, encryption):
-        """
-        Send data to server
-        Adds data encryption
-        Adds length
-        Loggs the encrypted and decrtpted data for readablity
-        Checks if encryption is used
-        """
-        if (encryption):
+        """Sends data to the server with optional encryption."""
+        if encryption:
             encrypted_data = self.encryption.encrypt(bdata, self.shared_secret)
             data_len = struct.pack('!l', len(encrypted_data))
             to_send = data_len + encrypted_data
-            to_send_decrypted = str(len(bdata)).encode() + bdata
+            to_send_decrypted = str(len(bdata)).encode() + bdata  # Log decrypted data
             self.logtcp('sent', to_send)
             self.logtcp('sent', to_send_decrypted)
         else:
@@ -59,45 +55,42 @@ class Network:
 
         self.sock.send(to_send)
 
-
-    def recv_data(self, encryption = True):
-        """
-        Data recieve function
-        Gets length of response and then the response
-        Makes sure its gotten everything
-        """
+    def recv_data(self, encryption=True):
+        """Receives data from the server, decrypting if necessary."""
         try:
             b_len = b''
-            while (len(b_len) < LEN_FIELD):   # Loop to get length in bytes
+            while len(b_len) < LEN_FIELD:  # Ensure full length field is received
                 b_len += self.sock.recv(LEN_FIELD - len(b_len))
 
             msg_len = struct.unpack("!l", b_len)[0]
-            if msg_len == b'': print('Seems client disconnected')
+            if msg_len == b'':
+                print('Seems client disconnected')
             msg = b''
-            while (len(msg) < msg_len):   # Loop to recieve the rest of the response
+            while len(msg) < msg_len:  # Ensure full message is received
                 chunk = self.sock.recv(msg_len - len(msg))
                 if not chunk:
                     print('Server disconnected abnormally.')
                     break
                 msg += chunk
 
-            if (encryption):  # If encryption is enabled decrypt and log encrypted
-                self.logtcp('recv', b_len + msg)   # Log encrypted data
+            if encryption:
+                self.logtcp('recv', b_len + msg)  # Log encrypted data
                 msg = self.encryption.decrypt(msg, self.shared_secret)
                 self.logtcp('recv', str(msg_len).encode() + msg)
 
             return msg
-        except ConnectionResetError: return None
-        except OSError: pass
-        except AttributeError: pass
-        except: print(traceback.format_exc())
-        
-        
+        except ConnectionResetError:
+            return None
+        except OSError:
+            pass
+        except AttributeError:
+            pass
+        except:
+            print(traceback.format_exc())
+
     @staticmethod
     def get_broadcast_address(ip, netmask):
-        """
-        Calculate the broadcast address for the LAN.
-        """
+        """Calculates the broadcast address for the given IP and netmask."""
         ip_binary = struct.unpack('>I', socket.inet_aton(ip))[0]
         netmask_binary = struct.unpack('>I', socket.inet_aton(netmask))[0]
         broadcast_binary = ip_binary | ~netmask_binary & 0xFFFFFFFF
@@ -105,38 +98,39 @@ class Network:
 
     @staticmethod
     def get_subnet_mask():
-        # Get the IP address of the default route (external-facing IP)
+        """Finds the subnet mask and local IP address of the active network interface."""
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-            s.connect(("8.8.8.8", 80))  # Connect to a public DNS server (Google's in this case)
+            s.connect(("8.8.8.8", 80))  # Connect to Google's DNS to determine active interface
             current_ip = s.getsockname()[0]
-        
-        # Fetch all network interfaces and stats
+
         addrs = psutil.net_if_addrs()
         stats = psutil.net_if_stats()
-        
-        # Iterate over interfaces to find the one matching the current IP
+
         for interface, addrs_list in addrs.items():
-            if stats[interface].isup:  # Check if the interface is up
+            if stats[interface].isup:  # Ensure the interface is active
                 for addr in addrs_list:
                     if addr.family == socket.AF_INET and addr.address == current_ip:
                         return addr.netmask, addr.address
 
-        return None  # Return None if no active interface is found
-
+        return None  # No active interface found
 
     def search_server(self):
+        """Broadcasts a search request to locate an available server on the network."""
         try:
             search_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
             search_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
             search_socket.settimeout(SOCK_TIMEOUT)
-            netmask, ip = self.get_subnet_mask()  # Adjust based on your network configuration
+
+            netmask, ip = self.get_subnet_mask()  # Get subnet information
             broadcast_address = self.get_broadcast_address(ip, netmask)
-            search_socket.sendto(b"SEAR", (broadcast_address, 31026))
+            search_socket.sendto(b"SEAR", (broadcast_address, 31026))  # Broadcast search request
+
             response, addr = search_socket.recvfrom(1024)
             response = response.decode().split("|")
             if response[0] == "SERR":
-                ip, port = (response[1], response[2])
+                ip, port = response[1], response[2]
                 return ip, int(port)
+
         except TimeoutError:
             print("No server found")
             return SAVED_IP, SAVED_PORT

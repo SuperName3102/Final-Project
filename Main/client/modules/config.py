@@ -13,7 +13,7 @@ ASSETS_PATH = f"{os.getcwd()}/assets"
 COOKIE_PATH = f"{os.getcwd()}/cookies/user.cookie"
 
 SAVED_IP = "192.168.1.122"
-SAVED_PORT = 4444
+SAVED_PORT = 3102
 
 ITEMS_TO_LOAD = 20
 SCROLL_SIZE = [850, 340]
