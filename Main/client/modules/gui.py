@@ -26,7 +26,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.save_sizes()
         self.setGeometry(self.window_geometry)
         
-
         # Set initial size and position
         self.original_width, self.original_height = self.width(), self.height()
         s_width, s_height = app.primaryScreen().geometry().width(), app.primaryScreen().geometry().height()
@@ -43,7 +42,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.last_load = time.time()
         self.scroll_size = SCROLL_SIZE
 
-        self.user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""}
+        self.user = {"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": "", "admin_level": 0}
         self.json = helper.JsonHandle()
 
         self.search_filter = None
@@ -120,6 +119,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 new_y = int(original_geometry.y() * height_ratio) if height_ratio != 1 else original_geometry.y()
                 new_height = int(original_geometry.height() * height_ratio) if height_ratio != 1 else original_geometry.height()
 
+                self.window_geometry = self.geometry()
                 widget.setGeometry(new_x, new_y, new_width, new_height)
                 widget.updateGeometry()
 
@@ -550,10 +550,40 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.change_username_button.clicked.connect(self.protocol.change_username)
             self.change_username_button.setIcon(QIcon(ASSETS_PATH + "\\change_user.svg"))
-
+            
+            if self.user["admin_level"] > 0:
+                self.admin_button.setIcon(QIcon(ASSETS_PATH + "\\admin.svg"))
+                self.admin_button.clicked.connect(self.admin_page)
+                self.admin_button.setStyleSheet("background-color:transparent;border:none;")
+            else:
+                self.admin_button.hide()
+                
             self.back_button.clicked.connect(self.user_page)
             self.back_button.setIcon(QIcon(ASSETS_PATH + "\\back.svg"))
 
+            self.setGeometry(temp)
+            self.force_update_window()
+        except:
+            print(traceback.format_exc())
+    
+    def admin_page(self):
+        """Loads the admin page."""
+        try:
+            if self.user["admin_level"] <= 0: 
+                self.user_page()
+                return
+            
+            temp = self.window_geometry
+            ui_path = f"{os.getcwd()}/gui/ui/admin.ui"
+            helper.update_ui_size(ui_path, self.window_geometry.width(), self.window_geometry.height())
+            uic.loadUi(ui_path, self)
+            self.save_sizes()
+            
+            self.protocol.admin_data()
+
+            self.back_button.clicked.connect(self.manage_account)
+            self.back_button.setIcon(QIcon(ASSETS_PATH + "\\back.svg"))
+            
             self.setGeometry(temp)
             self.force_update_window()
         except:

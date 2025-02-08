@@ -5,7 +5,7 @@ from modules.config import *
 from modules.file_send import File
 from modules import helper, dialogs
 from PyQt6.QtGui import QIcon
-from PyQt6.QtWidgets import QFileDialog, QApplication
+from PyQt6.QtWidgets import QFileDialog, QApplication, QTableWidgetItem, QHeaderView
 import time, socket
 
 class Protocol:
@@ -262,6 +262,10 @@ class Protocol:
         """Prompts the user to enter a search filter and updates the file list."""
         self.window.search_filter = dialogs.new_name_dialog("Search", "Enter search filter:", self.window.search_filter)
         self.window.user_page()
+    
+    def admin_data(self):
+        """Request administrator data from server"""
+        self.send_data(b"ADMN")
 
     def protocol_parse_reply(self, reply):
         """Parses server responses and executes corresponding actions."""
@@ -315,6 +319,7 @@ class Protocol:
                 self.window.user["email"] = email
                 self.window.user["username"] = username
                 self.window.user["subscription_level"] = fields[3]
+                self.window.user["admin_level"] = int(fields[4])
                 self.get_user_icon()
 
                 if self.window.user["username"].lower() == "emily":
@@ -563,6 +568,27 @@ class Protocol:
                 self.window.user_page()
                 self.window.set_message(msg)
                 to_show = msg
+            
+            elif code == "ADMR":  # Got admin data
+                users_info = fields[1:]
+                try:
+                    table = self.window.users_table
+                    table.setRowCount(len(users_info))  # Set number of rows
+                    table.setColumnCount(8)
+                    table.setHorizontalHeaderLabels(["Id", "Email", "UserName", "Is Verified", "Sub Lvl", "Admin Lvl", "Files Amount", "Used Storage"])
+                    table.horizontalHeader().setStretchLastSection(True)
+                    table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+                    for i, user in enumerate(users_info):
+                        user = user.split("~")
+                        if user[3] == "1": user[3] = "True" 
+                        else: user[3] = "False"
+                        user[7] = helper.format_file_size(int(user[7]))
+                        for j, item in enumerate(user):
+                            table.setItem(i, j, QTableWidgetItem(item))
+                        
+                except:
+                    print(traceback.format_exc())
+                to_show = "Got admin data"
 
             else:  # Unknown server response
                 self.window.set_message(f"Unknown command {code}")

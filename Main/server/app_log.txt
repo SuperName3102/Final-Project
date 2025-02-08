@@ -244,3 +244,144 @@ PermissionError: [WinError 32] The process cannot access the file because it is 
 2025-02-08 12:22:18 - Client 28 Exit
 2025-02-08 12:22:29 - Client 27 disconnected
 2025-02-08 12:22:29 - Client 27 Exit
+2025-02-08 19:31:05 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 19:31:06 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 19:31:06 - Main thread: before accepting ...
+2025-02-08 19:31:17 - New Client number 1 from ('192.168.1.122', 55465)
+2025-02-08 19:31:44 - Client 1 disconnected
+2025-02-08 19:31:44 - Client 1 Exit
+2025-02-08 19:41:23 - New Client number 2 from ('192.168.1.122', 55621)
+2025-02-08 19:44:49 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 19:44:49 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 19:44:49 - Main thread: before accepting ...
+2025-02-08 19:44:52 - New Client number 1 from ('192.168.1.122', 55670)
+2025-02-08 19:47:55 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 19:47:55 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 19:47:55 - Main thread: before accepting ...
+2025-02-08 19:47:58 - New Client number 1 from ('192.168.1.122', 55814)
+2025-02-08 19:47:58 - 1
+2025-02-08 19:48:47 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 19:48:48 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 19:48:48 - Main thread: before accepting ...
+2025-02-08 19:48:50 - New Client number 1 from ('192.168.1.122', 55826)
+2025-02-08 19:48:50 - 1
+2025-02-08 19:50:49 - Client 1 disconnected
+2025-02-08 19:50:49 - Client 1 Exit
+2025-02-08 19:50:55 - New Client number 2 from ('192.168.1.122', 55946)
+2025-02-08 19:50:55 - 1
+2025-02-08 19:53:03 - Client 2 disconnected
+2025-02-08 19:53:03 - Client 2 Exit
+2025-02-08 19:53:06 - New Client number 3 from ('192.168.1.122', 55969)
+2025-02-08 19:53:06 - 1
+2025-02-08 19:53:29 - Client 3 disconnected
+2025-02-08 19:53:29 - Client 3 Exit
+2025-02-08 19:53:32 - New Client number 4 from ('192.168.1.122', 55972)
+2025-02-08 19:53:32 - 1
+2025-02-08 19:53:45 - Client 4 disconnected
+2025-02-08 19:53:45 - Client 4 Exit
+2025-02-08 19:53:47 - New Client number 5 from ('192.168.1.122', 55978)
+2025-02-08 19:53:47 - 1
+2025-02-08 19:59:46 - Client 5 disconnected
+2025-02-08 19:59:46 - Client 5 Exit
+2025-02-08 20:00:07 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 20:00:07 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 20:00:08 - Main thread: before accepting ...
+2025-02-08 20:00:09 - New Client number 1 from ('192.168.1.122', 56066)
+2025-02-08 20:00:24 - New Client number 2 from ('192.168.1.122', 56069)
+2025-02-08 20:00:30 - Client 2 disconnected
+2025-02-08 20:00:30 - Client 2 Exit
+2025-02-08 20:01:11 - New Client number 3 from ('192.168.1.122', 56079)
+2025-02-08 20:01:49 - Client 3 disconnected
+2025-02-08 20:01:49 - Client 3 Exit
+2025-02-08 20:02:06 - Client 1 disconnected
+2025-02-08 20:02:06 - Client 1 Exit
+2025-02-08 20:02:09 - New Client number 4 from ('192.168.1.122', 56095)
+2025-02-08 20:04:13 - Client 4 disconnected
+2025-02-08 20:04:13 - Client 4 Exit
+2025-02-08 20:04:16 - New Client number 5 from ('192.168.1.122', 56119)
+2025-02-08 20:05:11 - Client 5 disconnected
+2025-02-08 20:05:11 - Client 5 Exit
+2025-02-08 20:05:13 - New Client number 6 from ('192.168.1.122', 56132)
+2025-02-08 20:05:24 - Client 6 disconnected
+2025-02-08 20:05:24 - Client 6 Exit
+2025-02-08 20:05:26 - New Client number 7 from ('192.168.1.122', 56138)
+2025-02-08 20:05:48 - Client 7 disconnected
+2025-02-08 20:05:48 - Client 7 Exit
+2025-02-08 20:05:50 - New Client number 8 from ('192.168.1.122', 56145)
+2025-02-08 20:11:32 - Client 8 disconnected
+2025-02-08 20:11:32 - Client 8 Exit
+2025-02-08 20:11:33 - New Client number 9 from ('192.168.1.122', 56234)
+2025-02-08 20:13:01 - Client 9 disconnected
+2025-02-08 20:13:01 - Client 9 Exit
+2025-02-08 20:13:03 - New Client number 10 from ('192.168.1.122', 56257)
+2025-02-08 20:13:22 - Client 10 disconnected
+2025-02-08 20:13:22 - Client 10 Exit
+2025-02-08 20:13:23 - New Client number 11 from ('192.168.1.122', 56261)
+2025-02-08 20:20:19 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 20:20:19 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 20:20:19 - Main thread: before accepting ...
+2025-02-08 20:20:20 - New Client number 1 from ('192.168.1.122', 56340)
+2025-02-08 20:20:21 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 143, in handle_request
+    to_send = self.protocol.protocol_build_reply(request, tid, sock)  # Build a response for the client
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\protocol.py", line 637, in protocol_build_reply
+    reply += self.cr.get_admin_table()
+TypeError: can only concatenate str (not "list") to str
+2025-02-08 20:20:42 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 20:20:42 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 20:20:43 - Main thread: before accepting ...
+2025-02-08 20:20:43 - New Client number 1 from ('192.168.1.122', 56350)
+2025-02-08 20:20:45 - [('a', 'a', 'a', b'$2b$12$z5pW5EgUwyoKlUlzWnpEd.sjIrhpwASWmlpEzWMxuLPKZ3qpMlGj2', b'$2b$12$z5pW5EgUwyoKlUlzWnpEd.', -1, '2024-09-27 17:35:29.833755', 1, 2, 1, '58862e35d1438980a05b005bca5cf75b2489f8eebca3d168be8e053c7b484a1c14409ed8795a626eb475b2df59b3b98e7c36b99f4f7f8682e4bca3a049faa151db67a80851ce0b57f4ec033537503fdcc9024ee3553b547e0a1bb0c737dbfa67bce85111d6e67daa7257690e883dadb24e9d97b90cbd8113e324ebeee2aec505cfa209a5ba0c1ef0eae7c1a4cb7d75ff6677420a347018b86671148cfa655e7ae1667a642dbbe10e0193740c4cf41fe809c4ad6e68f4edb8b3aaf30bfcc41e3340cbafcb14706ee27d692d4781c80aa7dc79e2e7f7503c53b175d039c006d0370d2c465041670234ec93a5854100614f5c17f5cad6910e13ee17f1fa3c3d4deb', '2025-03-08 11:48:31.820282'), ('285498b0131743c8a2a1617070b8d571', 'idanh3102@gmail.com', 'idan', b'$2b$12$ZRqJ9q1loV026ei/WipCs.wp2hwWew28aIAk3l9HCMbOZFCTAy5UG', b'$2b$12$ZRqJ9q1loV026ei/WipCs.', 123701, '2025-01-22 12:09:33.364574', 1, 0, 0, 'deabbb52648f9b9a9f3b2542c0e15dabcac1404477598340cd09089f9abb7bc1b0851bf0872c6a33e2667aa01511f38a4f851c141d30cce4c4278bbec9f282bcb95ee958557cf9bc903dcde3534e6264eaa614962c8d4d2d2fae9a917464b06a38cd7f462636b0741ccb79e3da9ffd9eee7d863b45aee8e96848ca82daf6b191a3ec452b0cc595c2693f6e010b735809331f5f0f61574d91d3aa3dd0da729955015d5622f2511c0c6ff7f08467f4d3e399b375f83ec243ebccafc5241765ac192f6aa043fe4d57af402ac8d97a84658d97e6a3097cfa01a496248e866c4f3e7cd77f5c0bacfd6babbd30ee73c2e888e1b2ef57d40a0afb4869be0bed7522461b', '2025-03-06 08:27:51.883918'), ('af8a718f4cdb4e9cb116a692b9f63817', 'hazanyidan@gmail.com', 'Emily', b'$2b$12$1ybye2lGNy92S6aJxiiKyelSUXvQDV4FvtCFhGkBjpnP8LrNOGB4W', b'$2b$12$1ybye2lGNy92S6aJxiiKye', 388530, '2024-12-18 17:20:40.005700', 1, 3, 0, '482cc847a3215170a24955fde09955788225c20885c5a196b0d572943ebcc577f8078f3723fbe9b95da536915d1ac7ee132639e943b7072a60d7232d16256c34b75717b1513849316f32fc182adb7ce2a03c35f137f090538d02c5f182c2928711bf22b361ab3610f8fad94ef1448ab98ecbb3d7da802cfaab0d26a9fc446286933c7fc7503c15e38cc8eda76f2028c15d48a1d971f3fa2992d5714285f1f538c3de639f59563c4daf63b74b4ff16146d45ac3f53f519c6f4c61bef0cc317457cd48b6a9d53fdd9aa984c6ddb6793dbde440c99d42aa8c180c1665193cfa773be1adf4fd4eb2001a80045587cd395652b2f5e78c2652a2c5515d4daf23fd307c', '2025-01-22 12:38:12.479424'), ('1d5b4df8c569407e8284adb64594c343', 'test@gmail.com', 'supername', b'$2b$12$fUiYU.D2UxURAlO9sZFmFO60y6qOj8QXu81NMhdWwWU7DAUTlPRj2', b'$2b$12$fUiYU.D2UxURAlO9sZFmFO', 943994, '2024-10-02 18:14:20.034152', 1, 0, 0, None, '-1'), ('00462ece4fa14c409a117472f35f4f55', 'nyh512@gmail.com', 'Yarden', b'$2b$12$v70xY./W4401gS9dhk3t2.uqbEoNXO/EPadRvynTAS1oZIWTi5lb2', b'$2b$12$v70xY./W4401gS9dhk3t2.', 851982, '2024-10-04 14:37:46.618786', 1, 0, 0, '654eb0fdfba02b424c77ffc9a9f33ca780bfffefcdfddfb0ea23d8a244e04291ad3c93b562ca49cedf6ea48ca4d34293bb6ac538ca655d5a17de9ba375ed728a4c32ab307c3b94cc4315d410533b32b0b43870f12fcd8c720cad134b77fc22cb740e7ab226c3e6ea4bdc158de6f1a9a77c6f2972bd8ac521f7e770383974a04389fa6ba8dd25173e3f45eaee69bb4b370d17db35edb4566584a18233a87495cfcd4dbeedaf7c2e90ee0fbbb16c302c48264883a5b459de499e031e2a08f2be32c5692b3c5e43c79d35371e6d7db07b13bb72aad3ab67f4868ebc835218019d54123e173620fc95b4844e1b6df13aeb4ce9f2e65682c33be98c0a545283bac7a3', '2024-11-14 14:16:57.818273'), ('aecb0f23a1a84d27b03d08079e8783cf', 'fewfew@efd.cewwec', 'jduiewhuidw', b'$2b$12$HJM2p8H2TQD.EPucggGvAOSsGZvJkEsuWD.PDFjR54LAPhgzPHiiG', b'$2b$12$HJM2p8H2TQD.EPucggGvAO', 442993, '2024-10-11 12:39:10.661856', 0, 0, 0, None, '-1'), ('e67d418f0b9b41afbc629077223e6924', 'hazayalon@gmail.com', 'alon', b'$2b$12$/B4vQVSunoQSjx5T1HzLy.wwESwvzireNMC52Hn60KGNNoIzc8ZGG', b'$2b$12$/B4vQVSunoQSjx5T1HzLy.', 442478, '2024-10-14 21:53:44.750717', 1, 0, 0, None, '-1'), ('f65e89bf185843e6abf5e2b29c8dc39f', 'david.frenklakh@gmail.com', 'davidfrenklakh', b'$2b$12$p9LozAWArUG3ZEvzOlBm6OIOloQymKcsqNgsO.iXRuK.CM2a2y.hW', b'$2b$12$p9LozAWArUG3ZEvzOlBm6O', 268894, '2025-02-08 12:20:38.760841', 1, 3, 0, 'f6c66e34878a1076fb670194d4d83644dcd0c91be82aefa2de36eb6ca1daf1f4f6dc61fab1c727efb75b04d4228c59f790fa691198a283be7db4978c3328770e60579cb7ddd0479582f326aefd03a798f76e9c4baa318fba4df3576f61b2266843909d9d33c4670bcd350424441d1daa40183c0f346de7b63bf3314360ce295a4a608faa6f939993db50f0efc46d7b79ae03526277f542f6e6b53a210d6266e1fbacc0671c156d5228c5061af8a69280d389204ab0814c1a7119e3de7a1a2756791889b4883c05e26b6c95cd6d4f4a6680121730185c50ab62da1ca2af0309ed204666ab8729debbe9e229cb8014fc78090fa5a3c3065ecc86a1067b877cba2e', '2025-03-08 12:12:05.880243'), ('4e35910a985043fea8138bf1546d3a14', 'DROPTABLE@gmail.com', 'DROPTABLE', b'$2b$12$PcPAaBNl2ejA4S4dL.9CruuoodWWi7m/A/4lKml1aY4mR/S60VaGy', b'$2b$12$PcPAaBNl2ejA4S4dL.9Cru', 867202, '2025-01-09 09:34:03.183575', 0, 0, 0, None, '-1'), ('70d5e20c4e5f4c14b3fce1c8a2dfae4e', 'tt@gmail.com', 'Gay12345', b'$2b$12$2i0YgFwrJlokl/iDl.0z6eF.ZHXVWRVsaHBNVxdtaIiz2s4oxKScS', b'$2b$12$2i0YgFwrJlokl/iDl.0z6e', 111902, '2025-02-07 19:44:46.785792', 0, 0, 0, None, '-1'), ('781523a851fa4148b14c73a450b56b5b', 'a@g.c', 'aaaa', b'$2b$12$fs4Q0uzjzob9ZhtAYHBkRe7W2LLTAIa7Mi9s4bh3GTQOjCdt3eGaW', b'$2b$12$fs4Q0uzjzob9ZhtAYHBkRe', 252125, '2025-02-08 02:12:21.922756', 1, 2, 0, None, '-1'), ('1d33bc9097114916bd3c346417b16463', 'g@g.g', 'gggg', b'$2b$12$DU0lS/tIk3PkQRcIzxIgL.MebrC/uIWqiX5ra4P/Nv1Up5pgbx.sa', b'$2b$12$DU0lS/tIk3PkQRcIzxIgL.', 573622, '2025-02-08 02:39:09.023325', 1, 0, 0, '589b38016944114a5de266e2339dc8bc42c81cd0668a244ac138e938def2c5fcf33b795f911e83cd55303730745ac041f3960d344497527b27613f3b2e0cfe8993909fe3759b3c43e68ce9a4c724ee126b814b62d71ab49ca88eb5fb6e4c5a0aa0752e617c1b50861ddd6b5620e2bcc460bae9eaff0bc0fbcbe8410eda7e2ce799823edd1c7a19992a0f0896ec8d6d2dac025c7771dab089eacfff395fd3de75b95e2a3f62810de0f2c396b4bca5514949e3d66da9edd1df5441009b1f080047a324e1ab5aaeffc685007fb6113b6bf905f04e37924c695ad2a416055b19f3ffa4b67291b9a069c74c0d74804a93e4a8f266fc47129721ed57ac38e363e995d6', '2025-03-08 02:11:16.099783'), ('8e61e1af3cba4ea58b930e1cd6a01391', 'b@b.c', 'bbbb', b'$2b$12$xfhIpvZN.2uJ9KUl7BkgvuC3s5yHR9Wt8D21ww.mb96V0GoEJiNX.', b'$2b$12$xfhIpvZN.2uJ9KUl7Bkgvu', 677863, '2025-02-08 02:41:36.546445', 1, 0, 0, '96eb082526691f9ca114ed67d82a6c98bbd19196377e1d67aa56b95609bdb47d9a049aa7a40d07c99c614f7253616d45d5c000a03e19b32dfe0d988a33fcf1320a0ff327d2c344aea7503ee60086431e5c6be13fdc985b6db3cd64191c9bc3ec8ff3b9ec2a8d2a4fbded13b203e9ae1b04030a60b64068da570b2c027567dcf06e61cc7931cdf654a5092023a6271295c172ff92ab567c87bff8be6c577b4ca3a8109652e3e2ebd507592cf96fbbcd04ee63dd44769c7ff90468c6a8c54b7e2d3d7f40b3cc0851817a67f5af1e0e60972bddc545fb57594fa959330a262dc3ddd87f22dcbad9ef7453b8072c603f73f7fc14acff2a47368dec55817e32f8e051', '2025-03-08 02:11:57.079127')]
+2025-02-08 20:20:45 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 143, in handle_request
+    to_send = self.protocol.protocol_build_reply(request, tid, sock)  # Build a response for the client
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\protocol.py", line 638, in protocol_build_reply
+    reply += self.cr.get_admin_table()
+TypeError: can only concatenate str (not "list") to str
+2025-02-08 20:32:32 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 20:32:32 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 20:32:33 - Main thread: before accepting ...
+2025-02-08 20:32:34 - New Client number 1 from ('192.168.1.122', 56481)
+2025-02-08 20:32:55 - New Client number 2 from ('192.168.1.122', 56486)
+2025-02-08 20:33:28 - Client 1 disconnected
+2025-02-08 20:33:28 - Client 1 Exit
+2025-02-08 20:33:29 - Client 2 disconnected
+2025-02-08 20:33:29 - Client 2 Exit
+2025-02-08 20:33:31 - New Client number 3 from ('192.168.1.122', 56487)
+2025-02-08 20:33:51 - Client 3 disconnected
+2025-02-08 20:33:51 - Client 3 Exit
+2025-02-08 20:33:53 - New Client number 4 from ('192.168.1.122', 56490)
+2025-02-08 20:38:29 - New Client number 5 from ('192.168.1.122', 56543)
+2025-02-08 20:38:56 - New Client number 6 from ('192.168.1.122', 56552)
+2025-02-08 20:39:11 - New Client number 7 from ('192.168.1.122', 56554)
+2025-02-08 20:40:24 - Client 4 disconnected
+2025-02-08 20:40:24 - Client 4 Exit
+2025-02-08 20:40:24 - Client 6 disconnected
+2025-02-08 20:40:24 - Client 6 Exit
+2025-02-08 20:40:24 - Client 5 disconnected
+2025-02-08 20:40:24 - Client 5 Exit
+2025-02-08 20:40:24 - Client 7 disconnected
+2025-02-08 20:40:24 - Client 7 Exit
+2025-02-08 20:40:27 - New Client number 8 from ('192.168.1.122', 56568)
+2025-02-08 20:40:47 - New Client number 9 from ('192.168.1.122', 56570)
+2025-02-08 20:42:53 - New Client number 10 from ('109.67.158.24', 54504)
+2025-02-08 20:43:31 - Client 9 disconnected
+2025-02-08 20:43:31 - Client 9 Exit
+2025-02-08 20:43:38 - Client 8 disconnected
+2025-02-08 20:43:38 - Client 8 Exit
+2025-02-08 20:44:16 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 20:44:16 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 20:44:17 - Main thread: before accepting ...
+2025-02-08 20:45:23 - New Client number 1 from ('109.67.158.24', 54528)
+2025-02-08 20:46:13 - Client 1 disconnected
+2025-02-08 20:48:03 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 20:48:04 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 20:48:04 - Main thread: before accepting ...
+2025-02-08 20:48:14 - New Client number 1 from ('192.168.1.122', 56736)
+2025-02-08 20:49:02 - Client 1 disconnected
+2025-02-08 20:49:02 - Client 1 Exit
+2025-02-08 20:49:04 - New Client number 2 from ('192.168.1.122', 56745)
+2025-02-08 20:50:38 - Client 2 disconnected
+2025-02-08 20:50:38 - Client 2 Exit

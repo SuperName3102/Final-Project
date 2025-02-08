@@ -579,3 +579,14 @@ class DataBase:
         cursor.execute(f"DELETE FROM {self.deleted_table} WHERE id = ?", (id,))
         conn.commit()
         conn.close()
+    
+    def get_all_users(self):
+        """
+        Fetch all users in databse
+        """
+        conn = sqlite3.connect(self.database)
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT * FROM {self.users_table}")
+        ans = cursor.fetchall()
+        conn.close()
+        return ans

@@ -59,7 +59,7 @@ class Protocol:
                     self.clients[tid].email = user_dict["email"]
                     self.clients[tid].subscription_level = user_dict["subscription_level"]
                     self.clients[tid].admin_level = user_dict["admin_level"]
-                    reply = f"LOGS|{user_dict['email']}|{user_dict['username']}|{int(user_dict['subscription_level'])}"
+                    reply = f"LOGS|{user_dict['email']}|{user_dict['username']}|{int(user_dict['subscription_level'])}|{self.clients[tid].admin_level}"
             else:
                 reply = Errors.LOGIN_DETAILS.value  # Send error if credentials are incorrect
 
@@ -521,7 +521,7 @@ class Protocol:
                 self.clients[tid].email = user_dict["email"]
                 self.clients[tid].subscription_level = user_dict["subscription_level"]
                 self.clients[tid].admin_level = user_dict["admin_level"]
-                reply = f"LOGS|{email}|{username}|{int(self.clients[tid].subscription_level)}"
+                reply = f"LOGS|{email}|{username}|{int(self.clients[tid].subscription_level)}|{self.clients[tid].admin_level}"
         
         elif (code == "SHRS"): # Client requests to share a file or folder with another user
             file_id = fields[1]  # File or folder ID
@@ -631,6 +631,16 @@ class Protocol:
             msg = fields[1]  # Message content
             reply = f"UPDR|{msg}"  # Send update message back
 
+        elif code == "ADMN": # Client requests admin data
+            if self.clients[tid].admin_level > 0:
+                reply = f"ADMR"
+                for user in self.cr.get_admin_table():
+                    id, email, username, verified, subscription_level, admin_level = user[0], user[1], user[2], user[7], user[8], user[9]
+                    files_amount, total_storage_used = self.cr.get_user_total_files(id), self.cr.get_user_storage(id) 
+                    reply +=f"|{id}~{email}~{username}~{verified}~{subscription_level}~{admin_level}~{files_amount}~{total_storage_used}"
+                    
+            else:
+                reply = Errors.NO_PERMS.value 
         else:
             # Unknown request received
             reply = Errors.UNKNOWN.value  # Return generic error message

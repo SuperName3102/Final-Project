@@ -673,7 +673,21 @@ class ClientRequests:
             except:
                 print(traceback.format_exc())
                 continue
+    
+    def get_admin_table(self):
+        """
+        Returns admin table with info on users
+        """
+        table = ""
+        table = self.db.get_all_users()
+        return table
 
+    def get_user_total_files(self, user_id):
+        """
+        Returns total number of files user has
+        """
+        return len(self.db.get_user_files(user_id))
+    
     def get_share_options(self, file_id, user_cred):
         """
         Retrieves sharing permissions for a specific user on a file.

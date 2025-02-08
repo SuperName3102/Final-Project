@@ -1,804 +1,258 @@
-2025-02-08 01:38:19 - Login was successful for user: a
-2025-02-08 01:38:19 - File data received 230382
-2025-02-08 01:38:19 - Profile picture was received
-2025-02-08 01:38:19 - Got files
-2025-02-08 01:38:19 - Current used storage is 14.147 MB
-2025-02-08 01:38:19 - Got directories
-2025-02-08 01:38:20 - Current used storage is 14.147 MB
-2025-02-08 01:38:21 - Subscription level updated to premium
-2025-02-08 01:38:21 - Current used storage is 14.147 MB
-2025-02-08 01:38:21 - Subscription level updated to basic
-2025-02-08 01:38:22 - Current used storage is 14.147 MB
-2025-02-08 01:38:23 - Subscription level updated to professional
-2025-02-08 01:38:23 - Current used storage is 14.147 MB
-2025-02-08 01:38:24 - Got files
-2025-02-08 01:38:24 - Current used storage is 14.147 MB
-2025-02-08 01:38:24 - Got directories
-2025-02-08 01:38:28 - start upload:
-2025-02-08 01:38:28 - 7974b816c55a468a89f4eb95fce281ac
-2025-02-08 01:38:28 - File CactiMaster.rar started uploading
-2025-02-08 01:38:32 - File CactiMaster.rar was uploaded
-2025-02-08 01:38:32 - Current used storage is 66.925 MB
-2025-02-08 01:38:32 - Got files
-2025-02-08 01:38:32 - Got directories
-2025-02-08 01:38:34 - Current used storage is 66.925 MB
-2025-02-08 01:38:34 - Got directories
-2025-02-08 01:38:34 - Got files
-2025-02-08 01:38:36 - Successfully deleted 1 files
-2025-02-08 01:38:36 - File CactiMaster.rar was deleted!
-2025-02-08 01:38:36 - Current used storage is 66.925 MB
-2025-02-08 01:38:36 - Got files
-2025-02-08 01:38:36 - Got directories
-2025-02-08 01:38:37 - Successfully moved to
-2025-02-08 01:38:37 - Got files
-2025-02-08 01:38:37 - Got directories
-2025-02-08 01:38:37 - Current used storage is 66.925 MB
-2025-02-08 01:38:38 - Successfully deleted 1 files
-2025-02-08 01:38:38 - File CactiMaster.rar was deleted!
-2025-02-08 01:38:38 - Got files
-2025-02-08 01:38:38 - Got directories
-2025-02-08 01:38:38 - Current used storage is 14.147 MB
-2025-02-08 01:38:39 - Logout successful
-2025-02-08 01:47:37 - Login was successful for user: a
-2025-02-08 01:47:37 - File data received 230382
-2025-02-08 01:47:37 - Profile picture was received
-2025-02-08 01:47:37 - Current used storage is 14.147 MB
-2025-02-08 01:47:37 - Got files
-2025-02-08 01:47:37 - Got directories
-2025-02-08 01:47:44 - Got files
-2025-02-08 01:47:44 - Current used storage is 14.147 MB
-2025-02-08 01:47:44 - Got directories
-2025-02-08 01:48:04 - Current used storage is 14.147 MB
-2025-02-08 01:48:24 - Current used storage is 14.147 MB
-2025-02-08 01:48:25 - Subscription level updated to premium
-2025-02-08 01:48:25 - Current used storage is 14.147 MB
-2025-02-08 01:48:26 - Subscription level updated to professional
-2025-02-08 01:48:26 - Current used storage is 14.147 MB
-2025-02-08 01:48:27 - Current used storage is 14.147 MB
-2025-02-08 01:48:27 - Got files
-2025-02-08 01:48:27 - Got directories
-2025-02-08 01:48:29 - Current used storage is 14.147 MB
-2025-02-08 01:48:29 - Got files
-2025-02-08 01:48:29 - Got directories
-2025-02-08 01:48:30 - Current used storage is 14.147 MB
-2025-02-08 01:48:30 - Got files
-2025-02-08 01:48:30 - Got directories
-2025-02-08 01:48:30 - Current used storage is 14.147 MB
-2025-02-08 01:48:30 - Got files
-2025-02-08 01:48:30 - Got directories
-2025-02-08 01:48:31 - Got files
-2025-02-08 01:48:31 - Current used storage is 14.147 MB
-2025-02-08 01:48:31 - Got directories
-2025-02-08 01:48:32 - Current used storage is 14.147 MB
-2025-02-08 01:48:32 - Got directories
-2025-02-08 01:48:32 - Got files
-2025-02-08 01:48:34 - Successfully moved to dededed\
-2025-02-08 01:48:34 - Got files
-2025-02-08 01:48:34 - Got directories
-2025-02-08 01:48:34 - Current used storage is 14.147 MB
-2025-02-08 01:48:35 - Successfully moved to
-2025-02-08 01:48:35 - Current used storage is 14.147 MB
-2025-02-08 01:48:35 - Got files
-2025-02-08 01:48:35 - Got directories
-2025-02-08 01:49:41 - Login was successful for user: a
-2025-02-08 01:49:41 - File data received 230382
-2025-02-08 01:49:41 - Profile picture was received
-2025-02-08 01:49:41 - Current used storage is 14.147 MB
-2025-02-08 01:49:41 - Got directories
-2025-02-08 01:49:41 - Got files
-2025-02-08 01:51:39 - Logout successful
-2025-02-08 01:52:49 - Login was successful for user: a
-2025-02-08 01:52:49 - File data received 230382
-2025-02-08 01:52:49 - Profile picture was received
-2025-02-08 01:52:49 - Current used storage is 14.147 MB
-2025-02-08 01:52:49 - Got directories
-2025-02-08 01:52:49 - Got files
-2025-02-08 01:53:27 - Login was successful for user: a
-2025-02-08 01:53:27 - File data received 230382
-2025-02-08 01:53:27 - Profile picture was received
-2025-02-08 01:53:27 - Current used storage is 14.147 MB
-2025-02-08 01:53:27 - Got files
-2025-02-08 01:53:27 - Got directories
-2025-02-08 01:53:29 - Current used storage is 14.147 MB
-2025-02-08 01:53:29 - Got files
-2025-02-08 01:53:29 - Got directories
-2025-02-08 01:54:28 - Login was successful for user: a
-2025-02-08 01:54:28 - File data received 230382
-2025-02-08 01:54:28 - Profile picture was received
-2025-02-08 01:54:28 - Got files
-2025-02-08 01:54:28 - Current used storage is 14.147 MB
-2025-02-08 01:54:28 - Got directories
-2025-02-08 01:54:45 - Current used storage is 14.147 MB
-2025-02-08 01:54:45 - Got files
-2025-02-08 01:54:45 - Got directories
-2025-02-08 01:54:45 - Logout successful
-2025-02-08 01:54:47 - Server returned an error: 101 Cannot have an empty field
-2025-02-08 01:54:47 - Server returned an error: 101 Cannot have an empty field
-2025-02-08 01:54:47 - Server returned an error: 101 Cannot have an empty field
-2025-02-08 01:54:50 - Server returned an error: 103 Invalid email address
-2025-02-08 01:54:54 - Server returned an error: 104 Invalid username
-Username has to be at least 4 long and contain only chars and numbers
-2025-02-08 01:54:57 - Server returned an error: 105 Password does not meet requirements
-has to be at least 8 long and contain at least 1 upper case and number
-2025-02-08 01:55:05 - Signup was successful for user: aaaa, password: Idan1234
-2025-02-08 01:55:25 - Server returned an error: 002 Code not supported
-2025-02-08 01:55:29 - Server returned an error: 002 Code not supported
-2025-02-08 01:55:30 - Server returned an error: 002 Code not supported
-2025-02-08 01:55:30 - Server returned an error: 002 Code not supported
-2025-02-08 01:55:30 - Server returned an error: 002 Code not supported
-2025-02-08 01:55:30 - Server returned an error: 002 Code not supported
-2025-02-08 02:00:02 - Login was successful for user: a
-2025-02-08 02:00:02 - File data received 230382
-2025-02-08 02:00:02 - Profile picture was received
-2025-02-08 02:00:02 - Got files
-2025-02-08 02:00:02 - Current used storage is 14.147 MB
-2025-02-08 02:00:02 - Got directories
-2025-02-08 02:00:04 - Got files
-2025-02-08 02:00:04 - Current used storage is 14.147 MB
-2025-02-08 02:00:04 - Got directories
-2025-02-08 02:00:05 - Current used storage is 14.147 MB
-2025-02-08 02:00:05 - Got files
-2025-02-08 02:00:05 - Got directories
-2025-02-08 02:00:06 - Logout successful
-2025-02-08 02:00:12 - Server returned an error: 003 Please check your password and email/username and try again.
-2025-02-08 02:00:14 - Server returned an error: 009 User not verified
-2025-02-08 02:00:20 - Verification sent to email a@g.c
-2025-02-08 02:00:31 - Server returned an error: 002 Code not supported
-2025-02-08 02:00:43 - Login was successful for user: a
-2025-02-08 02:00:43 - File data received 230382
-2025-02-08 02:00:43 - Profile picture was received
-2025-02-08 02:00:43 - Got directories
-2025-02-08 02:00:43 - Got files
-2025-02-08 02:00:43 - Current used storage is 14.147 MB
-2025-02-08 02:00:46 - Logout successful
-2025-02-08 02:00:51 - Server returned an error: 009 User not verified
-2025-02-08 02:00:58 - Verification sent to email a@g.c
-2025-02-08 02:01:05 - Verification for user a@g.c was successful
-2025-02-08 02:01:10 - Login was successful for user: aaaa
-2025-02-08 02:01:10 - Got files
-2025-02-08 02:01:10 - File data received 1370
-2025-02-08 02:01:10 - Got directories
-2025-02-08 02:01:10 - Profile picture was received
-2025-02-08 02:01:10 - Current used storage is 0.0 MB
-2025-02-08 02:01:10 - Unhandled exception:
-Traceback (most recent call last):
-  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\gui.py", line 525, in scroll_changed
-    if self.scroll_progress / total_scroll_height > 0.95 and len(self.directories) + len(self.files) < int(self.items_amount):
-       ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
-ZeroDivisionError: division by zero
-2025-02-08 02:02:15 - Successfully moved to
-2025-02-08 02:02:15 - Got files
-2025-02-08 02:02:15 - Got directories
-2025-02-08 02:02:15 - Current used storage is 0.0 MB
-2025-02-08 02:02:16 - Successfully moved to
-2025-02-08 02:02:16 - Got files
-2025-02-08 02:02:16 - Got directories
-2025-02-08 02:02:16 - Current used storage is 0.0 MB
-2025-02-08 02:02:16 - Successfully moved to
-2025-02-08 02:02:16 - Got files
-2025-02-08 02:02:16 - Got directories
-2025-02-08 02:02:16 - Current used storage is 0.0 MB
-2025-02-08 02:02:17 - Successfully moved to
-2025-02-08 02:02:17 - Got files
-2025-02-08 02:02:17 - Got directories
-2025-02-08 02:02:17 - Current used storage is 0.0 MB
-2025-02-08 02:02:20 - Current used storage is 0.0 MB
-2025-02-08 02:02:20 - Subscription level updated to premium
-2025-02-08 02:02:20 - Current used storage is 0.0 MB
-2025-02-08 02:02:24 - Password reset code was sent to a@g.c
-2025-02-08 02:02:40 - Server returned an error: 101 Cannot have an empty field
-2025-02-08 02:02:43 - Server returned an error: 007 Code not matching try again
-2025-02-08 02:02:58 - Password was reset for user: a@g.c, new password: Idan12345
-2025-02-08 02:02:58 - Logout successful
-2025-02-08 02:03:05 - Server returned an error: 003 Please check your password and email/username and try again.
-2025-02-08 02:03:06 - Login was successful for user: aaaa
-2025-02-08 02:03:06 - Got files
-2025-02-08 02:03:07 - File data received 1370
-2025-02-08 02:03:07 - Profile picture was received
-2025-02-08 02:03:07 - Got directories
-2025-02-08 02:03:07 - Current used storage is 0.0 MB
-2025-02-08 02:03:12 - start upload:
-2025-02-08 02:03:12 - 6bfe64ba628141d19057bdfaea5d43e7
-2025-02-08 02:03:12 - Profile icon upload started successfully!
-2025-02-08 02:03:12 - File 781523a851fa4148b14c73a450b56b5b was uploaded
-2025-02-08 02:03:12 - Got files
-2025-02-08 02:03:12 - Got directories
-2025-02-08 02:03:12 - Current used storage is 0.0 MB
-2025-02-08 02:03:16 - Successfully moved to
-2025-02-08 02:03:16 - Got files
-2025-02-08 02:03:16 - Got directories
-2025-02-08 02:03:16 - Current used storage is 0.0 MB
-2025-02-08 02:03:17 - Successfully moved to
-2025-02-08 02:03:17 - Got files
-2025-02-08 02:03:17 - Got directories
-2025-02-08 02:03:17 - Current used storage is 0.0 MB
-2025-02-08 02:03:21 - Got files
-2025-02-08 02:03:21 - Got directories
-2025-02-08 02:03:21 - Current used storage is 0.0 MB
-2025-02-08 02:03:23 - Successfully moved to
-2025-02-08 02:03:23 - Got files
-2025-02-08 02:03:23 - Got directories
-2025-02-08 02:03:23 - Current used storage is 0.0 MB
-2025-02-08 02:03:31 - Got files
-2025-02-08 02:03:31 - Got directories
-2025-02-08 02:03:31 - Current used storage is 0.0 MB
-2025-02-08 02:03:31 - Logout successful
-2025-02-08 02:03:36 - Login was successful for user: aaaa
-2025-02-08 02:03:36 - Got files
-2025-02-08 02:03:36 - Got directories
-2025-02-08 02:03:36 - File data received 106255
-2025-02-08 02:03:36 - Profile picture was received
-2025-02-08 02:03:36 - Current used storage is 0.0 MB
-2025-02-08 02:03:48 - Successfully deleted 1 files
-2025-02-08 02:03:48 - File 781523a851fa4148b14c73a450b56b5b was deleted!
-2025-02-08 02:03:48 - Got files
-2025-02-08 02:03:48 - Got directories
-2025-02-08 02:03:48 - Current used storage is 0.0 MB
-2025-02-08 02:08:28 - Login was successful for user: a
-2025-02-08 02:08:28 - File data received 230382
-2025-02-08 02:08:28 - Profile picture was received
-2025-02-08 02:08:28 - Current used storage is 14.147 MB
-2025-02-08 02:08:28 - Got directories
-2025-02-08 02:08:28 - Got files
-2025-02-08 02:08:28 - Logout successful
-2025-02-08 02:08:33 - Login was successful for user: aaaa
-2025-02-08 02:08:33 - Got files
-2025-02-08 02:08:33 - File data received 106255
-2025-02-08 02:08:33 - Got directories
-2025-02-08 02:08:33 - Profile picture was received
-2025-02-08 02:08:33 - Current used storage is 0.0 MB
-2025-02-08 02:08:34 - Successfully moved to
-2025-02-08 02:08:34 - Got files
-2025-02-08 02:08:34 - Got directories
-2025-02-08 02:08:34 - Current used storage is 0.0 MB
-2025-02-08 02:08:35 - Successfully moved to
-2025-02-08 02:08:35 - Got files
-2025-02-08 02:08:35 - Got directories
-2025-02-08 02:08:35 - Current used storage is 0.0 MB
-2025-02-08 02:08:38 - Got files
-2025-02-08 02:08:38 - Got directories
-2025-02-08 02:08:38 - Current used storage is 0.0 MB
-2025-02-08 02:08:53 - Logout successful
-2025-02-08 02:09:11 - Signup was successful for user: gggg, password: GGGG1234
-2025-02-08 02:09:20 - Verification for user g@g.g was successful
-2025-02-08 02:09:25 - Login was successful for user: gggg
-2025-02-08 02:09:25 - File data received 1370
-2025-02-08 02:09:25 - Got files
-2025-02-08 02:09:25 - Profile picture was received
-2025-02-08 02:09:25 - Current used storage is 0.0 MB
-2025-02-08 02:09:25 - Got directories
-2025-02-08 02:09:30 - start upload:
-2025-02-08 02:09:30 - 91cc3822249c41c79b153c70d19e11fd
-2025-02-08 02:09:30 - Profile icon upload started successfully!
-2025-02-08 02:09:30 - File 1d33bc9097114916bd3c346417b16463 was uploaded
-2025-02-08 02:09:30 - Got files
-2025-02-08 02:09:30 - Got directories
-2025-02-08 02:09:30 - Current used storage is 0.0 MB
-2025-02-08 02:09:33 - Successfully moved to
-2025-02-08 02:09:33 - Got files
-2025-02-08 02:09:33 - Got directories
-2025-02-08 02:09:33 - Current used storage is 0.0 MB
-2025-02-08 02:09:34 - Successfully moved to
-2025-02-08 02:09:34 - Got files
-2025-02-08 02:09:34 - Got directories
-2025-02-08 02:09:34 - Current used storage is 0.0 MB
-2025-02-08 02:09:35 - Got files
-2025-02-08 02:09:35 - Got directories
-2025-02-08 02:09:35 - Current used storage is 0.0 MB
-2025-02-08 02:09:37 - Got files
-2025-02-08 02:09:37 - Got directories
-2025-02-08 02:09:37 - Current used storage is 0.0 MB
-2025-02-08 02:09:37 - Logout successful
-2025-02-08 02:09:42 - Login was successful for user: gggg
-2025-02-08 02:09:42 - Got files
-2025-02-08 02:09:42 - Got directories
-2025-02-08 02:09:42 - File data received 524288
-2025-02-08 02:09:42 - Current used storage is 0.0 MB
-2025-02-08 02:09:42 - File data received 1048576
-2025-02-08 02:09:42 - File data received 1572864
-2025-02-08 02:09:42 - File data received 2097152
-2025-02-08 02:09:42 - File data received 2621440
-2025-02-08 02:09:42 - File data received 2923803
-2025-02-08 02:09:42 - Profile picture was received
-2025-02-08 02:09:44 - Got files
-2025-02-08 02:09:44 - Got directories
-2025-02-08 02:09:44 - Current used storage is 0.0 MB
-2025-02-08 02:09:45 - Successfully moved to
-2025-02-08 02:09:45 - Got files
-2025-02-08 02:09:45 - Got directories
-2025-02-08 02:09:45 - Current used storage is 0.0 MB
-2025-02-08 02:09:46 - Successfully moved to
-2025-02-08 02:09:46 - Got files
-2025-02-08 02:09:46 - Got directories
-2025-02-08 02:09:46 - Current used storage is 0.0 MB
-2025-02-08 02:09:47 - Successfully moved to
-2025-02-08 02:09:47 - Got files
-2025-02-08 02:09:47 - Got directories
-2025-02-08 02:09:47 - Current used storage is 0.0 MB
-2025-02-08 02:09:47 - Successfully moved to
-2025-02-08 02:09:47 - Got files
-2025-02-08 02:09:47 - Got directories
-2025-02-08 02:09:47 - Current used storage is 0.0 MB
-2025-02-08 02:09:48 - Logout successful
-2025-02-08 02:09:49 - Server acknowledged the exit message
-2025-02-08 02:09:49 - Successfully exited
-2025-02-08 02:09:51 - Login was successful for user: a
-2025-02-08 02:09:51 - File data received 230382
-2025-02-08 02:09:51 - Profile picture was received
-2025-02-08 02:09:51 - Current used storage is 14.147 MB
-2025-02-08 02:09:51 - Got files
-2025-02-08 02:09:52 - Got directories
-2025-02-08 02:09:53 - Logout successful
-2025-02-08 02:09:58 - Login was successful for user: gggg
-2025-02-08 02:09:58 - Got files
-2025-02-08 02:09:58 - File data received 524288
-2025-02-08 02:09:58 - Got directories
-2025-02-08 02:09:58 - File data received 1048576
-2025-02-08 02:09:58 - File data received 1572864
-2025-02-08 02:09:58 - File data received 2097152
-2025-02-08 02:09:58 - File data received 2621440
-2025-02-08 02:09:58 - Current used storage is 0.0 MB
-2025-02-08 02:09:58 - File data received 2923803
-2025-02-08 02:09:58 - Profile picture was received
-2025-02-08 02:09:58 - Cookie received
-2025-02-08 02:10:09 - Login was successful for user: gggg
-2025-02-08 02:10:09 - Got files
-2025-02-08 02:10:09 - File data received 524288
-2025-02-08 02:10:09 - File data received 1048576
-2025-02-08 02:10:09 - File data received 1572864
-2025-02-08 02:10:09 - File data received 2097152
-2025-02-08 02:10:09 - Got directories
-2025-02-08 02:10:09 - File data received 2621440
-2025-02-08 02:10:09 - File data received 2923803
-2025-02-08 02:10:09 - Profile picture was received
-2025-02-08 02:10:09 - Current used storage is 0.0 MB
-2025-02-08 02:10:09 - Cookie received
-2025-02-08 02:10:11 - Got files
-2025-02-08 02:10:11 - Got directories
-2025-02-08 02:10:11 - Current used storage is 0.0 MB
-2025-02-08 02:10:44 - Successfully moved to
-2025-02-08 02:10:44 - Got files
-2025-02-08 02:10:44 - Got directories
-2025-02-08 02:10:44 - Current used storage is 0.0 MB
-2025-02-08 02:10:46 - Successfully moved to
-2025-02-08 02:10:46 - Got files
-2025-02-08 02:10:46 - Got directories
-2025-02-08 02:10:46 - Current used storage is 0.0 MB
-2025-02-08 02:11:16 - Login was successful for user: gggg
-2025-02-08 02:11:16 - Got files
-2025-02-08 02:11:16 - Got directories
-2025-02-08 02:11:16 - File data received 524288
-2025-02-08 02:11:16 - File data received 1048576
-2025-02-08 02:11:16 - File data received 1572864
-2025-02-08 02:11:16 - File data received 2097152
-2025-02-08 02:11:16 - File data received 2621440
-2025-02-08 02:11:16 - File data received 2923803
-2025-02-08 02:11:16 - Profile picture was received
-2025-02-08 02:11:16 - Current used storage is 0.0 MB
-2025-02-08 02:11:16 - Cookie received
-2025-02-08 02:11:17 - Successfully moved to
-2025-02-08 02:11:17 - Got files
-2025-02-08 02:11:17 - Got directories
-2025-02-08 02:11:17 - Current used storage is 0.0 MB
-2025-02-08 02:11:17 - Successfully moved to
-2025-02-08 02:11:17 - Got files
-2025-02-08 02:11:17 - Got directories
-2025-02-08 02:11:17 - Current used storage is 0.0 MB
-2025-02-08 02:11:18 - Successfully moved to
-2025-02-08 02:11:18 - Got files
-2025-02-08 02:11:18 - Got directories
-2025-02-08 02:11:18 - Current used storage is 0.0 MB
-2025-02-08 02:11:19 - Successfully moved to
-2025-02-08 02:11:19 - Got files
-2025-02-08 02:11:19 - Got directories
-2025-02-08 02:11:19 - Current used storage is 0.0 MB
-2025-02-08 02:11:21 - Got files
-2025-02-08 02:11:21 - Got directories
-2025-02-08 02:11:21 - Current used storage is 0.0 MB
-2025-02-08 02:11:22 - Logout successful
-2025-02-08 02:11:38 - Signup was successful for user: bbbb, password: BBBB1111
-2025-02-08 02:11:50 - Verification for user b@b.c was successful
-2025-02-08 02:11:57 - Login was successful for user: bbbb
-2025-02-08 02:11:57 - Got files
-2025-02-08 02:11:57 - File data received 1370
-2025-02-08 02:11:57 - Profile picture was received
-2025-02-08 02:11:57 - Got directories
-2025-02-08 02:11:57 - Current used storage is 0.0 MB
-2025-02-08 02:11:57 - Cookie received
-2025-02-08 02:12:06 - start upload:
-2025-02-08 02:12:06 - 7c9b63ae738c4cdca3cf13cf95b036f8
-2025-02-08 02:12:06 - Profile icon upload started successfully!
-2025-02-08 02:12:06 - File 8e61e1af3cba4ea58b930e1cd6a01391 was uploaded
-2025-02-08 02:12:06 - Got files
-2025-02-08 02:12:06 - Got directories
-2025-02-08 02:12:06 - Current used storage is 0.0 MB
-2025-02-08 02:12:09 - Successfully moved to
-2025-02-08 02:12:09 - Got files
-2025-02-08 02:12:09 - Got directories
-2025-02-08 02:12:09 - Current used storage is 0.0 MB
-2025-02-08 02:12:10 - Successfully moved to
-2025-02-08 02:12:10 - Got files
-2025-02-08 02:12:10 - Got directories
-2025-02-08 02:12:10 - Current used storage is 0.0 MB
-2025-02-08 02:12:11 - Logout successful
-2025-02-08 02:12:12 - Server acknowledged the exit message
-2025-02-08 02:12:12 - Successfully exited
-2025-02-08 02:12:16 - Login was successful for user: bbbb
-2025-02-08 02:12:16 - Got files
-2025-02-08 02:12:16 - Got directories
-2025-02-08 02:12:16 - File data received 57946
-2025-02-08 02:12:16 - Profile picture was received
-2025-02-08 02:12:16 - Current used storage is 0.0 MB
-2025-02-08 02:12:18 - Successfully moved to
-2025-02-08 02:12:18 - Got files
-2025-02-08 02:12:18 - Got directories
-2025-02-08 02:12:18 - Current used storage is 0.0 MB
-2025-02-08 02:12:19 - Successfully moved to
-2025-02-08 02:12:19 - Got files
-2025-02-08 02:12:19 - Got directories
-2025-02-08 02:12:19 - Current used storage is 0.0 MB
-2025-02-08 02:12:19 - Successfully moved to
-2025-02-08 02:12:19 - Got files
-2025-02-08 02:12:19 - Got directories
-2025-02-08 02:12:19 - Current used storage is 0.0 MB
-2025-02-08 02:12:20 - Successfully moved to
-2025-02-08 02:12:20 - Got files
-2025-02-08 02:12:20 - Got directories
-2025-02-08 02:12:20 - Current used storage is 0.0 MB
-2025-02-08 02:12:21 - Got files
-2025-02-08 02:12:21 - Current used storage is 0.0 MB
-2025-02-08 02:12:21 - Got directories
-2025-02-08 02:12:22 - Logout successful
-2025-02-08 11:48:27 - Login was successful for user: bbbb
-2025-02-08 11:48:27 - Got files
-2025-02-08 11:48:27 - File data received 57946
-2025-02-08 11:48:27 - Profile picture was received
-2025-02-08 11:48:27 - Got directories
-2025-02-08 11:48:27 - Current used storage is 0.0 MB
-2025-02-08 11:48:29 - Logout successful
-2025-02-08 11:48:31 - Login was successful for user: a
-2025-02-08 11:48:31 - File data received 230382
-2025-02-08 11:48:31 - Profile picture was received
-2025-02-08 11:48:31 - Cookie received
-2025-02-08 11:48:31 - Got files
-2025-02-08 11:48:31 - Got directories
-2025-02-08 11:48:31 - Current used storage is 14.147 MB
-2025-02-08 11:48:36 - Successfully moved to
-2025-02-08 11:48:36 - Got directories
-2025-02-08 11:48:36 - Current used storage is 14.147 MB
-2025-02-08 11:48:36 - Got files
-2025-02-08 11:48:37 - Successfully moved to
-2025-02-08 11:48:37 - Got files
-2025-02-08 11:48:37 - Current used storage is 14.147 MB
-2025-02-08 11:48:37 - Got directories
-2025-02-08 11:48:38 - Successfully moved to
-2025-02-08 11:48:38 - Got files
-2025-02-08 11:48:38 - Got directories
-2025-02-08 11:48:38 - Current used storage is 14.147 MB
-2025-02-08 11:48:38 - Successfully moved to
-2025-02-08 11:48:38 - Current used storage is 14.147 MB
-2025-02-08 11:48:38 - Got directories
-2025-02-08 11:48:39 - Got files
-2025-02-08 11:48:41 - Current used storage is 14.147 MB
-2025-02-08 11:48:42 - Subscription level updated to premium
-2025-02-08 11:48:42 - Current used storage is 14.147 MB
-2025-02-08 11:48:49 - Current used storage is 14.147 MB
-2025-02-08 11:48:49 - Got files
-2025-02-08 11:48:49 - Got directories
-2025-02-08 11:48:53 - Got files
-2025-02-08 11:48:53 - Current used storage is 14.147 MB
-2025-02-08 11:48:53 - Got directories
-2025-02-08 11:48:54 - Current used storage is 14.147 MB
-2025-02-08 11:48:54 - Got files
-2025-02-08 11:48:54 - Got directories
-2025-02-08 11:48:56 - Successfully moved to images 2\
-2025-02-08 11:48:56 - Got directories
-2025-02-08 11:48:57 - Got files
-2025-02-08 11:48:57 - Current used storage is 14.147 MB
-2025-02-08 11:48:57 - Current used storage is 14.147 MB
-2025-02-08 11:48:57 - Got files
-2025-02-08 11:48:57 - Got directories
-2025-02-08 11:48:59 - Successfully moved to
-2025-02-08 11:48:59 - Current used storage is 14.147 MB
-2025-02-08 11:48:59 - Got files
-2025-02-08 11:48:59 - Got directories
-2025-02-08 11:48:59 - Current used storage is 14.147 MB
-2025-02-08 11:48:59 - Got files
-2025-02-08 11:49:00 - Got directories
-2025-02-08 11:49:07 - Current used storage is 14.147 MB
-2025-02-08 11:49:07 - Got files
-2025-02-08 11:49:07 - Got directories
-2025-02-08 11:49:09 - Got files
-2025-02-08 11:49:09 - Current used storage is 14.147 MB
-2025-02-08 11:49:09 - Got directories
-2025-02-08 11:49:14 - Got files
-2025-02-08 11:49:14 - Got directories
-2025-02-08 11:49:14 - Current used storage is 14.147 MB
-2025-02-08 11:49:18 - Got files
-2025-02-08 11:49:18 - Got directories
-2025-02-08 11:49:18 - Current used storage is 14.147 MB
-2025-02-08 11:49:23 - Current used storage is 14.147 MB
-2025-02-08 11:49:23 - Got files
-2025-02-08 11:49:24 - Got directories
-2025-02-08 11:49:31 - File/Folder Discord_QMudkcc1qW.png was renamed to hi.txt.png
-2025-02-08 11:49:31 - Current used storage is 14.147 MB
-2025-02-08 11:49:31 - Got directories
-2025-02-08 11:49:31 - Got files
-2025-02-08 11:49:33 - File data received 524288
-2025-02-08 11:49:33 - File hi.txt.png was viewed
-2025-02-08 11:49:33 - File viewing released
-2025-02-08 11:49:34 - File data received 581155
-2025-02-08 11:49:37 - Got files
-2025-02-08 11:49:37 - Got directories
-2025-02-08 11:49:37 - Current used storage is 14.147 MB
-2025-02-08 12:12:19 - Login was successful for user: a
-2025-02-08 12:12:19 - File data received 230382
-2025-02-08 12:12:19 - Profile picture was received
-2025-02-08 12:12:19 - Got files
-2025-02-08 12:12:19 - Current used storage is 14.147 MB
-2025-02-08 12:12:19 - Got directories
-2025-02-08 12:12:20 - File Teams_JHQYh64EmD.png was viewed
-2025-02-08 12:12:20 - File viewing released
-2025-02-08 12:12:22 - File data received 54123
-2025-02-08 12:12:30 - Successfully shared 1 files
-2025-02-08 12:12:30 - Server returned an error: 027 User with this username/email was not found
-2025-02-08 12:12:30 - Got files
-2025-02-08 12:12:30 - Current used storage is 14.147 MB
-2025-02-08 12:12:30 - Got directories
-2025-02-08 12:12:33 - File Teams_BkqJFDNiGE.png was viewed
-2025-02-08 12:12:33 - File viewing released
-2025-02-08 12:12:34 - File data received 58876
-2025-02-08 12:12:44 - Successfully shared 1 files
-2025-02-08 12:12:44 - Got files
-2025-02-08 12:12:44 - Current used storage is 14.147 MB
-2025-02-08 12:12:45 - Got directories
-2025-02-08 12:12:49 - Sharing options received
-2025-02-08 12:12:49 - Sharing option with davidfrenklakh have been updated
-2025-02-08 12:13:02 - File RocketLeague_npe4XSGKVK.png was viewed
-2025-02-08 12:13:02 - File viewing released
-2025-02-08 12:13:03 - File data received 229358
-2025-02-08 12:13:05 - File RocketLeague_b33BhjulkZ.png was viewed
-2025-02-08 12:13:05 - File viewing released
-2025-02-08 12:13:05 - File data received 319727
-2025-02-08 12:13:07 - File Teams_BkqJFDNiGE.png was viewed
-2025-02-08 12:13:07 - File viewing released
-2025-02-08 12:13:08 - File data received 58876
-2025-02-08 12:13:09 - File Teams_JHQYh64EmD.png was viewed
-2025-02-08 12:13:09 - File viewing released
-2025-02-08 12:13:10 - File data received 54123
-2025-02-08 12:13:12 - File GTA5_aY8dP0vl6S.png was viewed
-2025-02-08 12:13:12 - File viewing released
-2025-02-08 12:13:13 - File data received 17954
-2025-02-08 12:13:13 - Current used storage is 14.147 MB
-2025-02-08 12:13:13 - Got files
-2025-02-08 12:13:13 - Got directories
-2025-02-08 12:13:22 - File FlightSimulator_f1F2qIj6BJ.jpg was viewed
-2025-02-08 12:13:22 - File viewing released
-2025-02-08 12:13:23 - File data received 303251
-2025-02-08 12:13:33 - Successfully shared 1 files
-2025-02-08 12:13:33 - Current used storage is 14.147 MB
-2025-02-08 12:13:33 - Got files
-2025-02-08 12:13:33 - Got directories
-2025-02-08 12:13:35 - Sharing options received
-2025-02-08 12:13:35 - Sharing option with davidfrenklakh have been updated
-2025-02-08 12:14:00 - Successfully shared 1 files
-2025-02-08 12:14:00 - Current used storage is 14.147 MB
-2025-02-08 12:14:00 - Got files
-2025-02-08 12:14:00 - Got directories
-2025-02-08 12:14:05 - Sharing options received
-2025-02-08 12:14:05 - Sharing option with davidfrenklakh have been updated
-2025-02-08 12:15:14 - Successfully moved to
-2025-02-08 12:15:14 - Got files
-2025-02-08 12:15:14 - Got directories
-2025-02-08 12:15:14 - Current used storage is 14.147 MB
-2025-02-08 12:15:15 - File viewing released
-2025-02-08 12:15:15 - File peer2pear.webp was viewed
-2025-02-08 12:15:17 - File data received 75532
-2025-02-08 12:15:18 - File peer2pear.webp was viewed
-2025-02-08 12:15:18 - File viewing released
-2025-02-08 12:15:25 - File data received 75532
-2025-02-08 12:15:34 - File peer2pear.webp was viewed
-2025-02-08 12:15:34 - File viewing released
-2025-02-08 12:15:35 - File data received 75532
-2025-02-08 12:15:36 - Successfully moved to
-2025-02-08 12:15:37 - Got files
-2025-02-08 12:15:37 - Current used storage is 14.147 MB
-2025-02-08 12:15:37 - Got directories
-2025-02-08 12:15:38 - Current used storage is 14.147 MB
-2025-02-08 12:15:38 - Got files
-2025-02-08 12:15:38 - Got directories
-2025-02-08 12:15:39 - Current used storage is 14.147 MB
-2025-02-08 12:15:39 - Got files
-2025-02-08 12:15:40 - Got directories
-2025-02-08 12:15:48 - Successfully moved to
-2025-02-08 12:15:48 - Got files
-2025-02-08 12:15:48 - Got directories
-2025-02-08 12:15:48 - Current used storage is 14.147 MB
-2025-02-08 12:15:55 - File Screenshot 2025-02-07 194006.png was viewed
-2025-02-08 12:15:55 - File viewing released
-2025-02-08 12:15:56 - File data received 23834
-2025-02-08 12:16:01 - Successfully moved to
-2025-02-08 12:16:01 - Got files
-2025-02-08 12:16:01 - Current used storage is 14.147 MB
-2025-02-08 12:16:01 - Got directories
-2025-02-08 12:16:02 - Successfully moved to
-2025-02-08 12:16:02 - Got files
-2025-02-08 12:16:02 - Got directories
-2025-02-08 12:16:02 - Current used storage is 14.147 MB
-2025-02-08 12:16:13 - Got directories
-2025-02-08 12:16:13 - Got files
-2025-02-08 12:16:13 - Current used storage is 14.147 MB
-2025-02-08 12:16:14 - Got directories
-2025-02-08 12:16:14 - Got files
-2025-02-08 12:16:14 - Current used storage is 14.147 MB
-2025-02-08 12:16:14 - Successfully moved to
-2025-02-08 12:16:14 - Current used storage is 14.147 MB
-2025-02-08 12:16:14 - Got files
-2025-02-08 12:16:15 - Got directories
-2025-02-08 12:16:16 - Successfully moved to
-2025-02-08 12:16:16 - Got files
-2025-02-08 12:16:16 - Got directories
-2025-02-08 12:16:16 - Current used storage is 14.147 MB
-2025-02-08 12:16:44 - Successfully moved to
-2025-02-08 12:16:44 - Current used storage is 14.147 MB
-2025-02-08 12:16:44 - Got files
-2025-02-08 12:16:44 - Got directories
-2025-02-08 12:16:45 - Successfully moved to
-2025-02-08 12:16:45 - Got files
-2025-02-08 12:16:45 - Got directories
-2025-02-08 12:16:45 - Current used storage is 14.147 MB
-2025-02-08 12:16:46 - Successfully moved to
-2025-02-08 12:16:46 - Got files
-2025-02-08 12:16:46 - Current used storage is 14.147 MB
-2025-02-08 12:16:46 - Got directories
-2025-02-08 12:16:48 - Successfully deleted 1 files
-2025-02-08 12:16:48 - File ThemeTool.exe was deleted!
-2025-02-08 12:16:48 - Got files
-2025-02-08 12:16:48 - Current used storage is 14.147 MB
-2025-02-08 12:16:49 - Got directories
-2025-02-08 12:16:49 - Successfully moved to
-2025-02-08 12:16:49 - Got files
-2025-02-08 12:16:49 - Got directories
-2025-02-08 12:16:49 - Current used storage is 14.147 MB
-2025-02-08 12:17:46 - File ThemeTool.exe was viewed
-2025-02-08 12:17:46 - File viewing released
-2025-02-08 12:17:47 - File data received 221696
-2025-02-08 12:17:48 - Successfully deleted 1 files
-2025-02-08 12:17:48 - Got files
-2025-02-08 12:17:48 - Got directories
-2025-02-08 12:17:48 - File ThemeTool.exe was deleted!
-2025-02-08 12:17:48 - Current used storage is 14.147 MB
-2025-02-08 12:17:50 - Got files
-2025-02-08 12:17:50 - Got directories
-2025-02-08 12:17:50 - Current used storage is 13.926 MB
-2025-02-08 12:19:29 - Successfully moved to
-2025-02-08 12:19:30 - Current used storage is 13.926 MB
-2025-02-08 12:19:30 - Got files
-2025-02-08 12:19:30 - Got directories
-2025-02-08 12:20:56 - Login was successful for user: a
-2025-02-08 12:20:56 - File data received 230382
-2025-02-08 12:20:56 - Profile picture was received
-2025-02-08 12:20:56 - Got files
-2025-02-08 12:20:56 - Current used storage is 13.926 MB
-2025-02-08 12:20:56 - Got directories
-2025-02-08 12:20:57 - Successfully moved to
-2025-02-08 12:20:57 - Got files
-2025-02-08 12:20:57 - Got directories
-2025-02-08 12:20:57 - Current used storage is 13.926 MB
-2025-02-08 12:20:59 - Successfully moved to
-2025-02-08 12:20:59 - Got files
-2025-02-08 12:20:59 - Current used storage is 13.926 MB
-2025-02-08 12:20:59 - Got directories
-2025-02-08 12:21:01 - Successfully deleted 1 files
-2025-02-08 12:21:01 - File Teams_JHQYh64EmD.png was deleted!
-2025-02-08 12:21:02 - Got files
-2025-02-08 12:21:02 - Current used storage is 13.926 MB
-2025-02-08 12:21:02 - Got directories
-2025-02-08 12:21:02 - Successfully moved to
-2025-02-08 12:21:02 - Got files
-2025-02-08 12:21:02 - Got directories
-2025-02-08 12:21:02 - Current used storage is 13.926 MB
-2025-02-08 12:21:04 - Successfully moved to
-2025-02-08 12:21:04 - Got files
-2025-02-08 12:21:04 - Current used storage is 13.926 MB
-2025-02-08 12:21:04 - Got directories
-2025-02-08 12:21:07 - Got files
-2025-02-08 12:21:07 - Current used storage is 13.926 MB
-2025-02-08 12:21:07 - Got directories
-2025-02-08 12:21:08 - Got files
-2025-02-08 12:21:08 - Current used storage is 13.926 MB
-2025-02-08 12:21:08 - Got directories
-2025-02-08 12:21:10 - Successfully moved to images\
-2025-02-08 12:21:10 - Got files
-2025-02-08 12:21:10 - Got directories
-2025-02-08 12:21:10 - Current used storage is 13.926 MB
-2025-02-08 12:21:13 - Successfully deleted 1 files
-2025-02-08 12:21:13 - File teahub.io-download-wallpaper-gerak-236140.png was deleted!
-2025-02-08 12:21:13 - Got files
-2025-02-08 12:21:13 - Got directories
-2025-02-08 12:21:13 - Current used storage is 13.926 MB
-2025-02-08 12:21:13 - Successfully moved to
-2025-02-08 12:21:13 - Got files
-2025-02-08 12:21:13 - Got directories
-2025-02-08 12:21:13 - Current used storage is 13.926 MB
-2025-02-08 12:21:18 - Successfully deleted 1 files
-2025-02-08 12:21:18 - Got files
-2025-02-08 12:21:18 - Got directories
-2025-02-08 12:21:18 - File teahub.io-download-wallpaper-gerak-236140.png was deleted!
-2025-02-08 12:21:18 - Current used storage is 13.491 MB
-2025-02-08 12:21:20 - Got files
-2025-02-08 12:21:20 - Got directories
-2025-02-08 12:21:20 - Current used storage is 13.491 MB
-2025-02-08 12:21:21 - Successfully moved to
-2025-02-08 12:21:21 - Got files
-2025-02-08 12:21:21 - Current used storage is 13.491 MB
-2025-02-08 12:21:21 - Got directories
-2025-02-08 12:21:22 - Current used storage is 13.491 MB
-2025-02-08 12:21:22 - Got files
-2025-02-08 12:21:22 - Got directories
-2025-02-08 12:21:22 - Got files
-2025-02-08 12:21:22 - Current used storage is 13.491 MB
-2025-02-08 12:21:23 - Got directories
-2025-02-08 12:21:24 - Successfully moved to yarden\
-2025-02-08 12:21:24 - Got files
-2025-02-08 12:21:24 - Got directories
-2025-02-08 12:21:24 - Current used storage is 13.491 MB
-2025-02-08 12:21:26 - Successfully moved to
-2025-02-08 12:21:26 - Current used storage is 13.491 MB
-2025-02-08 12:21:26 - Got files
-2025-02-08 12:21:26 - Got directories
-2025-02-08 12:21:27 - Got files
-2025-02-08 12:21:27 - Current used storage is 13.491 MB
-2025-02-08 12:21:27 - Got directories
-2025-02-08 12:21:27 - Got files
-2025-02-08 12:21:27 - Current used storage is 13.491 MB
-2025-02-08 12:21:28 - Got directories
-2025-02-08 12:21:31 - Successfully deleted 1 files
-2025-02-08 12:21:31 - Folder yarden was deleted!
-2025-02-08 12:21:31 - Current used storage is 13.491 MB
-2025-02-08 12:21:31 - Got files
-2025-02-08 12:21:31 - Got directories
-2025-02-08 12:21:32 - Successfully moved to
-2025-02-08 12:21:32 - Got files
-2025-02-08 12:21:32 - Got directories
-2025-02-08 12:21:32 - Current used storage is 13.491 MB
-2025-02-08 12:21:34 - Successfully moved to yarden\
-2025-02-08 12:21:34 - Got files
-2025-02-08 12:21:34 - Got directories
-2025-02-08 12:21:34 - Current used storage is 13.491 MB
-2025-02-08 12:21:35 - Successfully moved to
-2025-02-08 12:21:35 - Got files
-2025-02-08 12:21:35 - Got directories
-2025-02-08 12:21:35 - Current used storage is 13.491 MB
-2025-02-08 12:21:41 - Successfully moved to yarden\
-2025-02-08 12:21:41 - Got files
-2025-02-08 12:21:41 - Got directories
-2025-02-08 12:21:41 - Current used storage is 13.491 MB
-2025-02-08 12:21:42 - Successfully moved to
-2025-02-08 12:21:42 - Got files
-2025-02-08 12:21:42 - Got directories
-2025-02-08 12:21:42 - Current used storage is 13.491 MB
-2025-02-08 12:21:43 - Successfully moved to yarden\hi\
-2025-02-08 12:21:43 - Got files
-2025-02-08 12:21:43 - Got directories
-2025-02-08 12:21:43 - Current used storage is 13.491 MB
-2025-02-08 12:21:44 - Successfully moved to yarden\
-2025-02-08 12:21:44 - Got files
-2025-02-08 12:21:44 - Got directories
-2025-02-08 12:21:45 - Current used storage is 13.491 MB
-2025-02-08 12:21:46 - Successfully moved to
-2025-02-08 12:21:46 - Got files
-2025-02-08 12:21:46 - Got directories
-2025-02-08 12:21:46 - Current used storage is 13.491 MB
-2025-02-08 12:21:53 - Successfully moved to yarden\hi\
-2025-02-08 12:21:53 - Got files
-2025-02-08 12:21:53 - Got directories
-2025-02-08 12:21:53 - Current used storage is 13.491 MB
-2025-02-08 12:21:53 - Successfully moved to yarden\
-2025-02-08 12:21:53 - Got files
-2025-02-08 12:21:53 - Got directories
-2025-02-08 12:21:53 - Current used storage is 13.491 MB
-2025-02-08 12:21:56 - Successfully moved to
-2025-02-08 12:21:56 - Got files
-2025-02-08 12:21:56 - Got directories
-2025-02-08 12:21:56 - Current used storage is 13.491 MB
+2025-02-08 20:02:09 - Login was successful for user: a
+2025-02-08 20:02:09 - File data received 230382
+2025-02-08 20:02:09 - Profile picture was received
+2025-02-08 20:02:09 - Current used storage is 13.491 MB
+2025-02-08 20:02:09 - Got directories
+2025-02-08 20:02:09 - Got files
+2025-02-08 20:02:13 - Successfully moved to
+2025-02-08 20:02:13 - Got files
+2025-02-08 20:02:13 - Got directories
+2025-02-08 20:02:13 - Current used storage is 13.491 MB
+2025-02-08 20:02:17 - Logout successful
+2025-02-08 20:02:47 - Login was successful for user: a
+2025-02-08 20:02:47 - File data received 230382
+2025-02-08 20:02:47 - Profile picture was received
+2025-02-08 20:02:47 - Got files
+2025-02-08 20:02:47 - Current used storage is 13.491 MB
+2025-02-08 20:02:48 - Got directories
+2025-02-08 20:02:49 - Current used storage is 13.491 MB
+2025-02-08 20:02:49 - Got files
+2025-02-08 20:02:49 - Got directories
+2025-02-08 20:02:52 - Successfully moved to
+2025-02-08 20:02:52 - Got files
+2025-02-08 20:02:52 - Got directories
+2025-02-08 20:02:52 - Current used storage is 13.491 MB
+2025-02-08 20:02:53 - Successfully moved to
+2025-02-08 20:02:53 - Current used storage is 13.491 MB
+2025-02-08 20:02:53 - Got directories
+2025-02-08 20:02:53 - Got files
+2025-02-08 20:02:55 - Successfully moved to
+2025-02-08 20:02:55 - Got files
+2025-02-08 20:02:55 - Got directories
+2025-02-08 20:02:55 - Current used storage is 13.491 MB
+2025-02-08 20:02:56 - Successfully moved to
+2025-02-08 20:02:56 - Got files
+2025-02-08 20:02:56 - Current used storage is 13.491 MB
+2025-02-08 20:02:56 - Got directories
+2025-02-08 20:02:59 - Current used storage is 13.491 MB
+2025-02-08 20:03:06 - Got files
+2025-02-08 20:03:06 - Current used storage is 13.491 MB
+2025-02-08 20:03:06 - Got directories
+2025-02-08 20:03:07 - Current used storage is 13.491 MB
+2025-02-08 20:03:13 - Got files
+2025-02-08 20:03:13 - Current used storage is 13.491 MB
+2025-02-08 20:03:13 - Got directories
+2025-02-08 20:03:24 - Successfully moved to
+2025-02-08 20:03:24 - Got files
+2025-02-08 20:03:24 - Got directories
+2025-02-08 20:03:24 - Current used storage is 13.491 MB
+2025-02-08 20:03:27 - Logout successful
+2025-02-08 20:04:16 - Login was successful for user: a
+2025-02-08 20:04:16 - File data received 230382
+2025-02-08 20:04:16 - Profile picture was received
+2025-02-08 20:04:16 - Current used storage is 13.491 MB
+2025-02-08 20:04:16 - Got files
+2025-02-08 20:04:16 - Got directories
+2025-02-08 20:04:19 - Current used storage is 13.491 MB
+2025-02-08 20:04:19 - Got directories
+2025-02-08 20:04:20 - Got files
+2025-02-08 20:05:13 - Login was successful for user: a
+2025-02-08 20:05:13 - File data received 230382
+2025-02-08 20:05:13 - Profile picture was received
+2025-02-08 20:05:13 - Current used storage is 13.491 MB
+2025-02-08 20:05:13 - Got files
+2025-02-08 20:05:13 - Got directories
+2025-02-08 20:05:26 - Login was successful for user: a
+2025-02-08 20:05:26 - File data received 230382
+2025-02-08 20:05:26 - Profile picture was received
+2025-02-08 20:05:26 - Current used storage is 13.491 MB
+2025-02-08 20:05:26 - Got files
+2025-02-08 20:05:26 - Got directories
+2025-02-08 20:05:30 - Got files
+2025-02-08 20:05:30 - Got directories
+2025-02-08 20:05:30 - Current used storage is 13.491 MB
+2025-02-08 20:05:35 - Got files
+2025-02-08 20:05:35 - Current used storage is 13.491 MB
+2025-02-08 20:05:35 - Got directories
+2025-02-08 20:05:47 - Logout successful
+2025-02-08 20:05:50 - Login was successful for user: a
+2025-02-08 20:05:50 - File data received 230382
+2025-02-08 20:05:50 - Profile picture was received
+2025-02-08 20:05:50 - Got files
+2025-02-08 20:05:50 - Current used storage is 13.491 MB
+2025-02-08 20:05:50 - Got directories
+2025-02-08 20:05:54 - Current used storage is 13.491 MB
+2025-02-08 20:05:54 - Got files
+2025-02-08 20:05:54 - Got directories
+2025-02-08 20:11:33 - Login was successful for user: a
+2025-02-08 20:11:33 - File data received 230382
+2025-02-08 20:11:33 - Profile picture was received
+2025-02-08 20:11:33 - Got files
+2025-02-08 20:11:33 - Got directories
+2025-02-08 20:11:33 - Current used storage is 13.491 MB
+2025-02-08 20:11:37 - Got files
+2025-02-08 20:11:37 - Current used storage is 13.491 MB
+2025-02-08 20:11:37 - Got directories
+2025-02-08 20:13:03 - Login was successful for user: a
+2025-02-08 20:13:03 - File data received 230382
+2025-02-08 20:13:03 - Profile picture was received
+2025-02-08 20:13:03 - Got files
+2025-02-08 20:13:03 - Current used storage is 13.491 MB
+2025-02-08 20:13:03 - Got directories
+2025-02-08 20:13:06 - Current used storage is 13.491 MB
+2025-02-08 20:13:06 - Got files
+2025-02-08 20:13:06 - Got directories
+2025-02-08 20:13:07 - Current used storage is 13.491 MB
+2025-02-08 20:13:09 - Got admin data
+2025-02-08 20:13:17 - Current used storage is 13.491 MB
+2025-02-08 20:13:17 - Got files
+2025-02-08 20:13:17 - Got directories
+2025-02-08 20:13:18 - Successfully moved to
+2025-02-08 20:13:18 - Got files
+2025-02-08 20:13:18 - Got directories
+2025-02-08 20:13:18 - Current used storage is 13.491 MB
+2025-02-08 20:13:18 - Successfully moved to
+2025-02-08 20:13:18 - Got files
+2025-02-08 20:13:18 - Current used storage is 13.491 MB
+2025-02-08 20:13:18 - Got directories
+2025-02-08 20:13:19 - Current used storage is 13.491 MB
+2025-02-08 20:13:19 - Got files
+2025-02-08 20:13:19 - Got directories
+2025-02-08 20:13:19 - Got files
+2025-02-08 20:13:19 - Current used storage is 13.491 MB
+2025-02-08 20:13:19 - Got directories
+2025-02-08 20:13:19 - Current used storage is 13.491 MB
+2025-02-08 20:13:19 - Got directories
+2025-02-08 20:13:20 - Got files
+2025-02-08 20:13:20 - Current used storage is 13.491 MB
+2025-02-08 20:13:20 - Got files
+2025-02-08 20:13:20 - Got directories
+2025-02-08 20:13:20 - Logout successful
+2025-02-08 20:13:24 - Login was successful for user: a
+2025-02-08 20:13:24 - File data received 230382
+2025-02-08 20:13:24 - Profile picture was received
+2025-02-08 20:13:24 - Got files
+2025-02-08 20:13:24 - Current used storage is 13.491 MB
+2025-02-08 20:13:24 - Got directories
+2025-02-08 20:13:26 - Server returned an error: 103 Invalid email address
+2025-02-08 20:13:27 - Got admin data
+2025-02-08 20:20:20 - Login was successful for user: a
+2025-02-08 20:20:20 - File data received 230382
+2025-02-08 20:20:20 - Profile picture was received
+2025-02-08 20:20:20 - Got files
+2025-02-08 20:20:20 - Current used storage is 13.491 MB
+2025-02-08 20:20:20 - Got directories
+2025-02-08 20:20:21 - Server returned an error: 001 General error
+2025-02-08 20:20:44 - Login was successful for user: a
+2025-02-08 20:20:44 - File data received 230382
+2025-02-08 20:20:44 - Profile picture was received
+2025-02-08 20:20:44 - Current used storage is 13.491 MB
+2025-02-08 20:20:44 - Got files
+2025-02-08 20:20:44 - Got directories
+2025-02-08 20:20:45 - Server returned an error: 001 General error
+2025-02-08 20:32:34 - Login was successful for user: a
+2025-02-08 20:32:34 - File data received 230382
+2025-02-08 20:32:34 - Profile picture was received
+2025-02-08 20:32:34 - Current used storage is 13.491 MB
+2025-02-08 20:32:34 - Got files
+2025-02-08 20:32:34 - Got directories
+2025-02-08 20:32:35 - Got admin data
+2025-02-08 20:32:55 - Login was successful for user: a
+2025-02-08 20:32:55 - File data received 230382
+2025-02-08 20:32:55 - Profile picture was received
+2025-02-08 20:32:55 - Got files
+2025-02-08 20:32:55 - Got directories
+2025-02-08 20:32:55 - Current used storage is 13.491 MB
+2025-02-08 20:32:56 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 576, in protocol_parse_reply
+    table.setRowCount(len(users_info))  # Set number of rows
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'QTableView' object has no attribute 'setRowCount'
+2025-02-08 20:32:56 - Got admin data
+2025-02-08 20:33:31 - Login was successful for user: a
+2025-02-08 20:33:32 - File data received 230382
+2025-02-08 20:33:32 - Profile picture was received
+2025-02-08 20:33:32 - Got files
+2025-02-08 20:33:32 - Current used storage is 13.491 MB
+2025-02-08 20:33:32 - Got directories
+2025-02-08 20:33:32 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 578, in protocol_parse_reply
+    self.tableWidget.setHorizontalHeaderLabels(["Id", "Email", "UserName", "Is Verified", "Sub Lvl", "Admin Lvl", "Files Amount", "Used Storage"])
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'Protocol' object has no attribute 'tableWidget'
+2025-02-08 20:33:32 - Got admin data
+2025-02-08 20:33:53 - Login was successful for user: a
+2025-02-08 20:33:53 - File data received 230382
+2025-02-08 20:33:53 - Profile picture was received
+2025-02-08 20:33:54 - Current used storage is 13.491 MB
+2025-02-08 20:33:54 - Got files
+2025-02-08 20:33:54 - Got directories
+2025-02-08 20:33:55 - Got admin data
+2025-02-08 20:38:29 - Login was successful for user: a
+2025-02-08 20:38:29 - File data received 230382
+2025-02-08 20:38:29 - Profile picture was received
+2025-02-08 20:38:29 - Got files
+2025-02-08 20:38:29 - Current used storage is 13.491 MB
+2025-02-08 20:38:30 - Got directories
+2025-02-08 20:38:31 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 580, in protocol_parse_reply
+    for item, j in enumerate(user.split("~")):
+                             ^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'split'
+2025-02-08 20:38:31 - Got admin data
+2025-02-08 20:38:56 - Login was successful for user: a
+2025-02-08 20:38:56 - File data received 230382
+2025-02-08 20:38:56 - Profile picture was received
+2025-02-08 20:38:56 - Current used storage is 13.491 MB
+2025-02-08 20:38:56 - Got files
+2025-02-08 20:38:56 - Got directories
+2025-02-08 20:38:57 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 581, in protocol_parse_reply
+    self.tableWidget.setItem(i, j, QTableWidgetItem(item))
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'Protocol' object has no attribute 'tableWidget'
+2025-02-08 20:38:57 - Got admin data
+2025-02-08 20:39:11 - Login was successful for user: a
+2025-02-08 20:39:11 - File data received 230382
+2025-02-08 20:39:11 - Profile picture was received
+2025-02-08 20:39:11 - Current used storage is 13.491 MB
+2025-02-08 20:39:11 - Got files
+2025-02-08 20:39:11 - Got directories
+2025-02-08 20:39:12 - Got admin data
+2025-02-08 20:40:27 - Login was successful for user: a
+2025-02-08 20:40:27 - File data received 230382
+2025-02-08 20:40:27 - Profile picture was received
+2025-02-08 20:40:27 - Current used storage is 13.491 MB
+2025-02-08 20:40:27 - Got directories
+2025-02-08 20:40:27 - Got files
+2025-02-08 20:40:28 - Got admin data
+2025-02-08 20:40:47 - Login was successful for user: a
+2025-02-08 20:40:47 - File data received 230382
+2025-02-08 20:40:47 - Profile picture was received
+2025-02-08 20:40:47 - Got files
+2025-02-08 20:40:47 - Got directories
+2025-02-08 20:40:47 - Current used storage is 13.491 MB
+2025-02-08 20:40:48 - Got admin data
+2025-02-08 20:47:59 - No server found
+2025-02-08 20:48:14 - Login was successful for user: a
+2025-02-08 20:48:14 - File data received 230382
+2025-02-08 20:48:14 - Profile picture was received
+2025-02-08 20:48:14 - Got files
+2025-02-08 20:48:14 - Current used storage is 13.491 MB
+2025-02-08 20:48:14 - Got directories
+2025-02-08 20:48:15 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 585, in protocol_parse_reply
+    user[7] = helper.format_file_size(user[7])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\helper.py", line 73, in format_file_size
+    if size < 10_000:
+       ^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'int'
+2025-02-08 20:48:15 - Got admin data
+2025-02-08 20:49:04 - Login was successful for user: a
+2025-02-08 20:49:04 - File data received 230382
+2025-02-08 20:49:04 - Profile picture was received
+2025-02-08 20:49:04 - Got files
+2025-02-08 20:49:04 - Current used storage is 13.491 MB
+2025-02-08 20:49:04 - Got directories
+2025-02-08 20:49:21 - Got admin data
