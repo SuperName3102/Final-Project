@@ -1009,7 +1009,7 @@ class FileButton(QPushButton):
         if self.window.check_all_id() and self.window.currently_selected:
             # Add delete option if all selected items have delete permission
             if self.window.check_all_perms(2):
-                if not (self.window.deleted and self.window.user["cwd"] == ""):
+                if (self.window.deleted and self.window.user["cwd"] == "") or not self.window.deleted:
                     action = menu.addAction(" Delete")
                     action.triggered.connect(self.window.protocol.delete)
                     action.setIcon(QIcon(ASSETS_PATH + "\\delete.svg"))

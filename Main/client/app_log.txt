@@ -449,3 +449,356 @@ ZeroDivisionError: division by zero
 2025-02-08 02:12:21 - Current used storage is 0.0 MB
 2025-02-08 02:12:21 - Got directories
 2025-02-08 02:12:22 - Logout successful
+2025-02-08 11:48:27 - Login was successful for user: bbbb
+2025-02-08 11:48:27 - Got files
+2025-02-08 11:48:27 - File data received 57946
+2025-02-08 11:48:27 - Profile picture was received
+2025-02-08 11:48:27 - Got directories
+2025-02-08 11:48:27 - Current used storage is 0.0 MB
+2025-02-08 11:48:29 - Logout successful
+2025-02-08 11:48:31 - Login was successful for user: a
+2025-02-08 11:48:31 - File data received 230382
+2025-02-08 11:48:31 - Profile picture was received
+2025-02-08 11:48:31 - Cookie received
+2025-02-08 11:48:31 - Got files
+2025-02-08 11:48:31 - Got directories
+2025-02-08 11:48:31 - Current used storage is 14.147 MB
+2025-02-08 11:48:36 - Successfully moved to
+2025-02-08 11:48:36 - Got directories
+2025-02-08 11:48:36 - Current used storage is 14.147 MB
+2025-02-08 11:48:36 - Got files
+2025-02-08 11:48:37 - Successfully moved to
+2025-02-08 11:48:37 - Got files
+2025-02-08 11:48:37 - Current used storage is 14.147 MB
+2025-02-08 11:48:37 - Got directories
+2025-02-08 11:48:38 - Successfully moved to
+2025-02-08 11:48:38 - Got files
+2025-02-08 11:48:38 - Got directories
+2025-02-08 11:48:38 - Current used storage is 14.147 MB
+2025-02-08 11:48:38 - Successfully moved to
+2025-02-08 11:48:38 - Current used storage is 14.147 MB
+2025-02-08 11:48:38 - Got directories
+2025-02-08 11:48:39 - Got files
+2025-02-08 11:48:41 - Current used storage is 14.147 MB
+2025-02-08 11:48:42 - Subscription level updated to premium
+2025-02-08 11:48:42 - Current used storage is 14.147 MB
+2025-02-08 11:48:49 - Current used storage is 14.147 MB
+2025-02-08 11:48:49 - Got files
+2025-02-08 11:48:49 - Got directories
+2025-02-08 11:48:53 - Got files
+2025-02-08 11:48:53 - Current used storage is 14.147 MB
+2025-02-08 11:48:53 - Got directories
+2025-02-08 11:48:54 - Current used storage is 14.147 MB
+2025-02-08 11:48:54 - Got files
+2025-02-08 11:48:54 - Got directories
+2025-02-08 11:48:56 - Successfully moved to images 2\
+2025-02-08 11:48:56 - Got directories
+2025-02-08 11:48:57 - Got files
+2025-02-08 11:48:57 - Current used storage is 14.147 MB
+2025-02-08 11:48:57 - Current used storage is 14.147 MB
+2025-02-08 11:48:57 - Got files
+2025-02-08 11:48:57 - Got directories
+2025-02-08 11:48:59 - Successfully moved to
+2025-02-08 11:48:59 - Current used storage is 14.147 MB
+2025-02-08 11:48:59 - Got files
+2025-02-08 11:48:59 - Got directories
+2025-02-08 11:48:59 - Current used storage is 14.147 MB
+2025-02-08 11:48:59 - Got files
+2025-02-08 11:49:00 - Got directories
+2025-02-08 11:49:07 - Current used storage is 14.147 MB
+2025-02-08 11:49:07 - Got files
+2025-02-08 11:49:07 - Got directories
+2025-02-08 11:49:09 - Got files
+2025-02-08 11:49:09 - Current used storage is 14.147 MB
+2025-02-08 11:49:09 - Got directories
+2025-02-08 11:49:14 - Got files
+2025-02-08 11:49:14 - Got directories
+2025-02-08 11:49:14 - Current used storage is 14.147 MB
+2025-02-08 11:49:18 - Got files
+2025-02-08 11:49:18 - Got directories
+2025-02-08 11:49:18 - Current used storage is 14.147 MB
+2025-02-08 11:49:23 - Current used storage is 14.147 MB
+2025-02-08 11:49:23 - Got files
+2025-02-08 11:49:24 - Got directories
+2025-02-08 11:49:31 - File/Folder Discord_QMudkcc1qW.png was renamed to hi.txt.png
+2025-02-08 11:49:31 - Current used storage is 14.147 MB
+2025-02-08 11:49:31 - Got directories
+2025-02-08 11:49:31 - Got files
+2025-02-08 11:49:33 - File data received 524288
+2025-02-08 11:49:33 - File hi.txt.png was viewed
+2025-02-08 11:49:33 - File viewing released
+2025-02-08 11:49:34 - File data received 581155
+2025-02-08 11:49:37 - Got files
+2025-02-08 11:49:37 - Got directories
+2025-02-08 11:49:37 - Current used storage is 14.147 MB
+2025-02-08 12:12:19 - Login was successful for user: a
+2025-02-08 12:12:19 - File data received 230382
+2025-02-08 12:12:19 - Profile picture was received
+2025-02-08 12:12:19 - Got files
+2025-02-08 12:12:19 - Current used storage is 14.147 MB
+2025-02-08 12:12:19 - Got directories
+2025-02-08 12:12:20 - File Teams_JHQYh64EmD.png was viewed
+2025-02-08 12:12:20 - File viewing released
+2025-02-08 12:12:22 - File data received 54123
+2025-02-08 12:12:30 - Successfully shared 1 files
+2025-02-08 12:12:30 - Server returned an error: 027 User with this username/email was not found
+2025-02-08 12:12:30 - Got files
+2025-02-08 12:12:30 - Current used storage is 14.147 MB
+2025-02-08 12:12:30 - Got directories
+2025-02-08 12:12:33 - File Teams_BkqJFDNiGE.png was viewed
+2025-02-08 12:12:33 - File viewing released
+2025-02-08 12:12:34 - File data received 58876
+2025-02-08 12:12:44 - Successfully shared 1 files
+2025-02-08 12:12:44 - Got files
+2025-02-08 12:12:44 - Current used storage is 14.147 MB
+2025-02-08 12:12:45 - Got directories
+2025-02-08 12:12:49 - Sharing options received
+2025-02-08 12:12:49 - Sharing option with davidfrenklakh have been updated
+2025-02-08 12:13:02 - File RocketLeague_npe4XSGKVK.png was viewed
+2025-02-08 12:13:02 - File viewing released
+2025-02-08 12:13:03 - File data received 229358
+2025-02-08 12:13:05 - File RocketLeague_b33BhjulkZ.png was viewed
+2025-02-08 12:13:05 - File viewing released
+2025-02-08 12:13:05 - File data received 319727
+2025-02-08 12:13:07 - File Teams_BkqJFDNiGE.png was viewed
+2025-02-08 12:13:07 - File viewing released
+2025-02-08 12:13:08 - File data received 58876
+2025-02-08 12:13:09 - File Teams_JHQYh64EmD.png was viewed
+2025-02-08 12:13:09 - File viewing released
+2025-02-08 12:13:10 - File data received 54123
+2025-02-08 12:13:12 - File GTA5_aY8dP0vl6S.png was viewed
+2025-02-08 12:13:12 - File viewing released
+2025-02-08 12:13:13 - File data received 17954
+2025-02-08 12:13:13 - Current used storage is 14.147 MB
+2025-02-08 12:13:13 - Got files
+2025-02-08 12:13:13 - Got directories
+2025-02-08 12:13:22 - File FlightSimulator_f1F2qIj6BJ.jpg was viewed
+2025-02-08 12:13:22 - File viewing released
+2025-02-08 12:13:23 - File data received 303251
+2025-02-08 12:13:33 - Successfully shared 1 files
+2025-02-08 12:13:33 - Current used storage is 14.147 MB
+2025-02-08 12:13:33 - Got files
+2025-02-08 12:13:33 - Got directories
+2025-02-08 12:13:35 - Sharing options received
+2025-02-08 12:13:35 - Sharing option with davidfrenklakh have been updated
+2025-02-08 12:14:00 - Successfully shared 1 files
+2025-02-08 12:14:00 - Current used storage is 14.147 MB
+2025-02-08 12:14:00 - Got files
+2025-02-08 12:14:00 - Got directories
+2025-02-08 12:14:05 - Sharing options received
+2025-02-08 12:14:05 - Sharing option with davidfrenklakh have been updated
+2025-02-08 12:15:14 - Successfully moved to
+2025-02-08 12:15:14 - Got files
+2025-02-08 12:15:14 - Got directories
+2025-02-08 12:15:14 - Current used storage is 14.147 MB
+2025-02-08 12:15:15 - File viewing released
+2025-02-08 12:15:15 - File peer2pear.webp was viewed
+2025-02-08 12:15:17 - File data received 75532
+2025-02-08 12:15:18 - File peer2pear.webp was viewed
+2025-02-08 12:15:18 - File viewing released
+2025-02-08 12:15:25 - File data received 75532
+2025-02-08 12:15:34 - File peer2pear.webp was viewed
+2025-02-08 12:15:34 - File viewing released
+2025-02-08 12:15:35 - File data received 75532
+2025-02-08 12:15:36 - Successfully moved to
+2025-02-08 12:15:37 - Got files
+2025-02-08 12:15:37 - Current used storage is 14.147 MB
+2025-02-08 12:15:37 - Got directories
+2025-02-08 12:15:38 - Current used storage is 14.147 MB
+2025-02-08 12:15:38 - Got files
+2025-02-08 12:15:38 - Got directories
+2025-02-08 12:15:39 - Current used storage is 14.147 MB
+2025-02-08 12:15:39 - Got files
+2025-02-08 12:15:40 - Got directories
+2025-02-08 12:15:48 - Successfully moved to
+2025-02-08 12:15:48 - Got files
+2025-02-08 12:15:48 - Got directories
+2025-02-08 12:15:48 - Current used storage is 14.147 MB
+2025-02-08 12:15:55 - File Screenshot 2025-02-07 194006.png was viewed
+2025-02-08 12:15:55 - File viewing released
+2025-02-08 12:15:56 - File data received 23834
+2025-02-08 12:16:01 - Successfully moved to
+2025-02-08 12:16:01 - Got files
+2025-02-08 12:16:01 - Current used storage is 14.147 MB
+2025-02-08 12:16:01 - Got directories
+2025-02-08 12:16:02 - Successfully moved to
+2025-02-08 12:16:02 - Got files
+2025-02-08 12:16:02 - Got directories
+2025-02-08 12:16:02 - Current used storage is 14.147 MB
+2025-02-08 12:16:13 - Got directories
+2025-02-08 12:16:13 - Got files
+2025-02-08 12:16:13 - Current used storage is 14.147 MB
+2025-02-08 12:16:14 - Got directories
+2025-02-08 12:16:14 - Got files
+2025-02-08 12:16:14 - Current used storage is 14.147 MB
+2025-02-08 12:16:14 - Successfully moved to
+2025-02-08 12:16:14 - Current used storage is 14.147 MB
+2025-02-08 12:16:14 - Got files
+2025-02-08 12:16:15 - Got directories
+2025-02-08 12:16:16 - Successfully moved to
+2025-02-08 12:16:16 - Got files
+2025-02-08 12:16:16 - Got directories
+2025-02-08 12:16:16 - Current used storage is 14.147 MB
+2025-02-08 12:16:44 - Successfully moved to
+2025-02-08 12:16:44 - Current used storage is 14.147 MB
+2025-02-08 12:16:44 - Got files
+2025-02-08 12:16:44 - Got directories
+2025-02-08 12:16:45 - Successfully moved to
+2025-02-08 12:16:45 - Got files
+2025-02-08 12:16:45 - Got directories
+2025-02-08 12:16:45 - Current used storage is 14.147 MB
+2025-02-08 12:16:46 - Successfully moved to
+2025-02-08 12:16:46 - Got files
+2025-02-08 12:16:46 - Current used storage is 14.147 MB
+2025-02-08 12:16:46 - Got directories
+2025-02-08 12:16:48 - Successfully deleted 1 files
+2025-02-08 12:16:48 - File ThemeTool.exe was deleted!
+2025-02-08 12:16:48 - Got files
+2025-02-08 12:16:48 - Current used storage is 14.147 MB
+2025-02-08 12:16:49 - Got directories
+2025-02-08 12:16:49 - Successfully moved to
+2025-02-08 12:16:49 - Got files
+2025-02-08 12:16:49 - Got directories
+2025-02-08 12:16:49 - Current used storage is 14.147 MB
+2025-02-08 12:17:46 - File ThemeTool.exe was viewed
+2025-02-08 12:17:46 - File viewing released
+2025-02-08 12:17:47 - File data received 221696
+2025-02-08 12:17:48 - Successfully deleted 1 files
+2025-02-08 12:17:48 - Got files
+2025-02-08 12:17:48 - Got directories
+2025-02-08 12:17:48 - File ThemeTool.exe was deleted!
+2025-02-08 12:17:48 - Current used storage is 14.147 MB
+2025-02-08 12:17:50 - Got files
+2025-02-08 12:17:50 - Got directories
+2025-02-08 12:17:50 - Current used storage is 13.926 MB
+2025-02-08 12:19:29 - Successfully moved to
+2025-02-08 12:19:30 - Current used storage is 13.926 MB
+2025-02-08 12:19:30 - Got files
+2025-02-08 12:19:30 - Got directories
+2025-02-08 12:20:56 - Login was successful for user: a
+2025-02-08 12:20:56 - File data received 230382
+2025-02-08 12:20:56 - Profile picture was received
+2025-02-08 12:20:56 - Got files
+2025-02-08 12:20:56 - Current used storage is 13.926 MB
+2025-02-08 12:20:56 - Got directories
+2025-02-08 12:20:57 - Successfully moved to
+2025-02-08 12:20:57 - Got files
+2025-02-08 12:20:57 - Got directories
+2025-02-08 12:20:57 - Current used storage is 13.926 MB
+2025-02-08 12:20:59 - Successfully moved to
+2025-02-08 12:20:59 - Got files
+2025-02-08 12:20:59 - Current used storage is 13.926 MB
+2025-02-08 12:20:59 - Got directories
+2025-02-08 12:21:01 - Successfully deleted 1 files
+2025-02-08 12:21:01 - File Teams_JHQYh64EmD.png was deleted!
+2025-02-08 12:21:02 - Got files
+2025-02-08 12:21:02 - Current used storage is 13.926 MB
+2025-02-08 12:21:02 - Got directories
+2025-02-08 12:21:02 - Successfully moved to
+2025-02-08 12:21:02 - Got files
+2025-02-08 12:21:02 - Got directories
+2025-02-08 12:21:02 - Current used storage is 13.926 MB
+2025-02-08 12:21:04 - Successfully moved to
+2025-02-08 12:21:04 - Got files
+2025-02-08 12:21:04 - Current used storage is 13.926 MB
+2025-02-08 12:21:04 - Got directories
+2025-02-08 12:21:07 - Got files
+2025-02-08 12:21:07 - Current used storage is 13.926 MB
+2025-02-08 12:21:07 - Got directories
+2025-02-08 12:21:08 - Got files
+2025-02-08 12:21:08 - Current used storage is 13.926 MB
+2025-02-08 12:21:08 - Got directories
+2025-02-08 12:21:10 - Successfully moved to images\
+2025-02-08 12:21:10 - Got files
+2025-02-08 12:21:10 - Got directories
+2025-02-08 12:21:10 - Current used storage is 13.926 MB
+2025-02-08 12:21:13 - Successfully deleted 1 files
+2025-02-08 12:21:13 - File teahub.io-download-wallpaper-gerak-236140.png was deleted!
+2025-02-08 12:21:13 - Got files
+2025-02-08 12:21:13 - Got directories
+2025-02-08 12:21:13 - Current used storage is 13.926 MB
+2025-02-08 12:21:13 - Successfully moved to
+2025-02-08 12:21:13 - Got files
+2025-02-08 12:21:13 - Got directories
+2025-02-08 12:21:13 - Current used storage is 13.926 MB
+2025-02-08 12:21:18 - Successfully deleted 1 files
+2025-02-08 12:21:18 - Got files
+2025-02-08 12:21:18 - Got directories
+2025-02-08 12:21:18 - File teahub.io-download-wallpaper-gerak-236140.png was deleted!
+2025-02-08 12:21:18 - Current used storage is 13.491 MB
+2025-02-08 12:21:20 - Got files
+2025-02-08 12:21:20 - Got directories
+2025-02-08 12:21:20 - Current used storage is 13.491 MB
+2025-02-08 12:21:21 - Successfully moved to
+2025-02-08 12:21:21 - Got files
+2025-02-08 12:21:21 - Current used storage is 13.491 MB
+2025-02-08 12:21:21 - Got directories
+2025-02-08 12:21:22 - Current used storage is 13.491 MB
+2025-02-08 12:21:22 - Got files
+2025-02-08 12:21:22 - Got directories
+2025-02-08 12:21:22 - Got files
+2025-02-08 12:21:22 - Current used storage is 13.491 MB
+2025-02-08 12:21:23 - Got directories
+2025-02-08 12:21:24 - Successfully moved to yarden\
+2025-02-08 12:21:24 - Got files
+2025-02-08 12:21:24 - Got directories
+2025-02-08 12:21:24 - Current used storage is 13.491 MB
+2025-02-08 12:21:26 - Successfully moved to
+2025-02-08 12:21:26 - Current used storage is 13.491 MB
+2025-02-08 12:21:26 - Got files
+2025-02-08 12:21:26 - Got directories
+2025-02-08 12:21:27 - Got files
+2025-02-08 12:21:27 - Current used storage is 13.491 MB
+2025-02-08 12:21:27 - Got directories
+2025-02-08 12:21:27 - Got files
+2025-02-08 12:21:27 - Current used storage is 13.491 MB
+2025-02-08 12:21:28 - Got directories
+2025-02-08 12:21:31 - Successfully deleted 1 files
+2025-02-08 12:21:31 - Folder yarden was deleted!
+2025-02-08 12:21:31 - Current used storage is 13.491 MB
+2025-02-08 12:21:31 - Got files
+2025-02-08 12:21:31 - Got directories
+2025-02-08 12:21:32 - Successfully moved to
+2025-02-08 12:21:32 - Got files
+2025-02-08 12:21:32 - Got directories
+2025-02-08 12:21:32 - Current used storage is 13.491 MB
+2025-02-08 12:21:34 - Successfully moved to yarden\
+2025-02-08 12:21:34 - Got files
+2025-02-08 12:21:34 - Got directories
+2025-02-08 12:21:34 - Current used storage is 13.491 MB
+2025-02-08 12:21:35 - Successfully moved to
+2025-02-08 12:21:35 - Got files
+2025-02-08 12:21:35 - Got directories
+2025-02-08 12:21:35 - Current used storage is 13.491 MB
+2025-02-08 12:21:41 - Successfully moved to yarden\
+2025-02-08 12:21:41 - Got files
+2025-02-08 12:21:41 - Got directories
+2025-02-08 12:21:41 - Current used storage is 13.491 MB
+2025-02-08 12:21:42 - Successfully moved to
+2025-02-08 12:21:42 - Got files
+2025-02-08 12:21:42 - Got directories
+2025-02-08 12:21:42 - Current used storage is 13.491 MB
+2025-02-08 12:21:43 - Successfully moved to yarden\hi\
+2025-02-08 12:21:43 - Got files
+2025-02-08 12:21:43 - Got directories
+2025-02-08 12:21:43 - Current used storage is 13.491 MB
+2025-02-08 12:21:44 - Successfully moved to yarden\
+2025-02-08 12:21:44 - Got files
+2025-02-08 12:21:44 - Got directories
+2025-02-08 12:21:45 - Current used storage is 13.491 MB
+2025-02-08 12:21:46 - Successfully moved to
+2025-02-08 12:21:46 - Got files
+2025-02-08 12:21:46 - Got directories
+2025-02-08 12:21:46 - Current used storage is 13.491 MB
+2025-02-08 12:21:53 - Successfully moved to yarden\hi\
+2025-02-08 12:21:53 - Got files
+2025-02-08 12:21:53 - Got directories
+2025-02-08 12:21:53 - Current used storage is 13.491 MB
+2025-02-08 12:21:53 - Successfully moved to yarden\
+2025-02-08 12:21:53 - Got files
+2025-02-08 12:21:53 - Got directories
+2025-02-08 12:21:53 - Current used storage is 13.491 MB
+2025-02-08 12:21:56 - Successfully moved to
+2025-02-08 12:21:56 - Got files
+2025-02-08 12:21:56 - Got directories
+2025-02-08 12:21:56 - Current used storage is 13.491 MB

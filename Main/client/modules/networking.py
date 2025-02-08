@@ -91,10 +91,10 @@ class Network:
     @staticmethod
     def get_broadcast_address(ip, netmask):
         """Calculates the broadcast address for the given IP and netmask."""
-        ip_binary = struct.unpack('>I', socket.inet_aton(ip))[0]
-        netmask_binary = struct.unpack('>I', socket.inet_aton(netmask))[0]
-        broadcast_binary = ip_binary | ~netmask_binary & 0xFFFFFFFF
-        return socket.inet_ntoa(struct.pack('>I', broadcast_binary))
+        ip_binary = struct.unpack('>I', socket.inet_aton(ip))[0] # making ip binary
+        netmask_binary = struct.unpack('>I', socket.inet_aton(netmask))[0] # making netmask binary
+        broadcast_binary = ip_binary | ~netmask_binary & 0xFFFFFFFF # performing an or between ip and inverted netmask
+        return socket.inet_ntoa(struct.pack('>I', broadcast_binary)) # making the result into an ip again
 
     @staticmethod
     def get_subnet_mask():

@@ -202,3 +202,45 @@ PermissionError: [WinError 32] The process cannot access the file because it is 
 2025-02-08 02:12:16 - New Client number 2 from ('192.168.1.122', 56159)
 2025-02-08 02:12:23 - Client 2 disconnected
 2025-02-08 02:12:23 - Client 2 Exit
+2025-02-08 11:48:19 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 11:48:19 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 11:48:20 - Main thread: before accepting ...
+2025-02-08 11:48:27 - New Client number 1 from ('192.168.1.122', 50586)
+2025-02-08 11:49:39 - Client 1 disconnected
+2025-02-08 11:49:39 - Client 1 Exit
+2025-02-08 12:01:52 - Server listening on ('0.0.0.0', 3102)
+2025-02-08 12:01:52 - Public server ip: 46.121.5.162, local server ip: 192.168.1.122
+2025-02-08 12:01:53 - Main thread: before accepting ...
+2025-02-08 12:04:13 - New Client number 1 from ('109.67.158.24', 50572)
+2025-02-08 12:04:48 - New Client number 2 from ('109.67.158.24', 50580)
+2025-02-08 12:04:49 - New Client number 3 from ('109.67.158.24', 50581)
+2025-02-08 12:04:49 - New Client number 4 from ('109.67.158.24', 50582)
+2025-02-08 12:04:50 - New Client number 5 from ('109.67.158.24', 50583)
+2025-02-08 12:04:50 - New Client number 6 from ('109.67.158.24', 50584)
+2025-02-08 12:04:50 - New Client number 7 from ('109.67.158.24', 50585)
+2025-02-08 12:04:50 - New Client number 8 from ('109.67.158.24', 50586)
+2025-02-08 12:04:50 - New Client number 9 from ('109.67.158.24', 50587)
+2025-02-08 12:04:50 - New Client number 10 from ('109.67.158.24', 50588)
+2025-02-08 12:04:51 - New Client number 11 from ('109.67.158.24', 50589)
+2025-02-08 12:04:51 - New Client number 12 from ('109.67.158.24', 50590)
+2025-02-08 12:04:51 - New Client number 13 from ('109.67.158.24', 50591)
+2025-02-08 12:04:51 - New Client number 14 from ('109.67.158.24', 50592)
+2025-02-08 12:04:51 - New Client number 15 from ('109.67.158.24', 50593)
+2025-02-08 12:04:52 - New Client number 16 from ('109.67.158.24', 50594)
+2025-02-08 12:04:52 - New Client number 17 from ('109.67.158.24', 50595)
+2025-02-08 12:04:52 - New Client number 18 from ('109.67.158.24', 50596)
+2025-02-08 12:04:52 - New Client number 19 from ('109.67.158.24', 50597)
+2025-02-08 12:04:52 - New Client number 20 from ('109.67.158.24', 50599)
+2025-02-08 12:04:52 - New Client number 21 from ('109.67.158.24', 50600)
+2025-02-08 12:04:53 - New Client number 22 from ('109.67.158.24', 50601)
+2025-02-08 12:04:53 - New Client number 23 from ('109.67.158.24', 50602)
+2025-02-08 12:04:53 - New Client number 24 from ('109.67.158.24', 50603)
+2025-02-08 12:04:53 - New Client number 25 from ('109.67.158.24', 50604)
+2025-02-08 12:09:49 - New Client number 26 from ('109.67.158.24', 50653)
+2025-02-08 12:12:19 - New Client number 27 from ('192.168.1.122', 51111)
+2025-02-08 12:18:14 - Client 26 disconnected
+2025-02-08 12:20:56 - New Client number 28 from ('192.168.1.122', 51234)
+2025-02-08 12:22:18 - Client 28 disconnected
+2025-02-08 12:22:18 - Client 28 Exit
+2025-02-08 12:22:29 - Client 27 disconnected
+2025-02-08 12:22:29 - Client 27 Exit

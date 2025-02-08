@@ -599,7 +599,10 @@ class Protocol:
                 sock.settimeout(SOCK_TIMEOUT)
                 sock.connect((self.ip, self.port))
 
-            helper.update_saved_ip_port(self.ip, self.port)
+            try:
+                helper.update_saved_ip_port(self.ip, self.port)
+            except:
+                pass
             self.network.set_sock(sock)
 
             shared_secret = self.network.encryption.rsa_exchange()  # Perform secure key exchange
