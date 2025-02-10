@@ -12,7 +12,7 @@ USER_ICON = f"{os.getcwd()}/assets/user.ico"
 ASSETS_PATH = f"{os.getcwd()}/assets"
 COOKIE_PATH = f"{os.getcwd()}/cookies/user.cookie"
 
-SAVED_IP = "192.168.1.122"
+SAVED_IP = "172.16.20.119"
 SAVED_PORT = 3102
 
 ITEMS_TO_LOAD = 20

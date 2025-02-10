@@ -385,3 +385,19 @@ TypeError: can only concatenate str (not "list") to str
 2025-02-08 20:49:04 - New Client number 2 from ('192.168.1.122', 56745)
 2025-02-08 20:50:38 - Client 2 disconnected
 2025-02-08 20:50:38 - Client 2 Exit
+2025-02-09 21:41:17 - Server listening on ('0.0.0.0', 3102)
+2025-02-09 21:41:18 - Public server ip: 5.28.131.211, local server ip: 192.168.3.33
+2025-02-09 21:41:18 - Main thread: before accepting ...
+2025-02-09 21:41:25 - New Client number 1 from ('192.168.3.33', 57559)
+2025-02-09 21:42:12 - Client 1 disconnected
+2025-02-09 21:42:12 - Client 1 Exit
+2025-02-09 21:46:30 - Server listening on ('0.0.0.0', 3102)
+2025-02-09 21:46:30 - Public server ip: 5.28.131.211, local server ip: 192.168.3.33
+2025-02-09 21:46:31 - Main thread: before accepting ...
+2025-02-09 21:46:34 - New Client number 1 from ('192.168.3.33', 52370)
+2025-02-09 22:21:46 - Client 1 disconnected
+2025-02-09 22:21:46 - Client 1 Exit
+2025-02-10 09:44:58 - Server listening on ('0.0.0.0', 3102)
+2025-02-10 09:45:00 - Public server ip: 77.137.180.134, local server ip: 172.16.20.119
+2025-02-10 09:45:00 - Main thread: before accepting ...
+2025-02-10 09:45:03 - New Client number 1 from ('172.16.20.119', 52822)

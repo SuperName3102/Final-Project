@@ -256,3 +256,36 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 2025-02-08 20:49:04 - Current used storage is 13.491 MB
 2025-02-08 20:49:04 - Got directories
 2025-02-08 20:49:21 - Got admin data
+2025-02-09 21:41:25 - Login was successful for user: a
+2025-02-09 21:41:25 - File data received 230382
+2025-02-09 21:41:25 - Profile picture was received
+2025-02-09 21:41:25 - Current used storage is 13.491 MB
+2025-02-09 21:41:25 - Got files
+2025-02-09 21:41:25 - Got directories
+2025-02-09 21:41:30 - Got admin data
+2025-02-09 21:46:34 - Login was successful for user: a
+2025-02-09 21:46:34 - File data received 230382
+2025-02-09 21:46:34 - Profile picture was received
+2025-02-09 21:46:34 - Got files
+2025-02-09 21:46:34 - Got directories
+2025-02-09 21:46:34 - Current used storage is 13.491 MB
+2025-02-09 21:46:42 - Got admin data
+2025-02-09 21:49:11 - Got files
+2025-02-09 21:49:11 - Got directories
+2025-02-09 21:49:11 - Current used storage is 13.491 MB
+2025-02-09 21:50:05 - Successfully shared 1 files
+2025-02-09 21:50:05 - Current used storage is 13.491 MB
+2025-02-09 21:50:05 - Got directories
+2025-02-09 21:50:05 - Got files
+2025-02-09 22:08:07 - Sharing options received
+2025-02-10 09:45:03 - Login was successful for user: a
+2025-02-10 09:45:03 - File data received 230382
+2025-02-10 09:45:03 - Profile picture was received
+2025-02-10 09:45:03 - Current used storage is 13.491 MB
+2025-02-10 09:45:03 - Got files
+2025-02-10 09:45:03 - Got directories
+2025-02-10 09:45:06 - Got admin data
+2025-02-10 09:45:43 - Got files
+2025-02-10 09:45:43 - Current used storage is 13.491 MB
+2025-02-10 09:45:43 - Got directories
+2025-02-10 09:45:46 - Got admin data
