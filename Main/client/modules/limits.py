@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay limits.py
 
 class Limits:
     """

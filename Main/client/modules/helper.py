@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay helper.py
 # Import libraries
 
 from datetime import datetime

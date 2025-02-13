@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay client.pyw
 # Import required libraries
 
 from modules.logger import Logger  # Custom logging module

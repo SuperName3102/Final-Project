@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay file_send.py
 # Import libraries
 
 from PyQt6.QtCore import QThread, pyqtSignal

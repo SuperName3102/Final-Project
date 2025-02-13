@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay encrypting.py
 # Import libraries
 
 from modules.config import *

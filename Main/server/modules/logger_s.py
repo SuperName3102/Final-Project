@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay logger_s.py
 
 import os, sys, logging
 

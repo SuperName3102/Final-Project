@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay protocol.py
 # Import libraries
 
 from modules.config import * 

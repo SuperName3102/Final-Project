@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay config_s.py
 
 # Global libraries
 import os

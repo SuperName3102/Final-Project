@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay networking.py
 # Import libraries
 
 from modules import encrypting

@@ -1,9 +1,9 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay server.py
 
-from modules import client_requests, networking, protocol
-from modules.config import *
+from modules import client_requests, networking_s, protocol_s
+from modules.config_s import *
 from modules.errors import Errors
-from modules.logger import Logger
+from modules.logger_s import Logger
 
 import socket, traceback, time, threading, sys
 from requests import get
@@ -18,9 +18,9 @@ class Application:
         self.bytes_sent = {}
         self.files_uploading = {}
         self.all_to_die = False
-        self.network = networking.Network(self.clients, self.bytes_recieved, self.bytes_sent)
+        self.network = networking_s.Network(self.clients, self.bytes_recieved, self.bytes_sent)
         self.cr = client_requests.ClientRequests()
-        self.protocol = protocol.Protocol(self.network, self.clients, self.cr, self.files_uploading)
+        self.protocol = protocol_s.Protocol(self.network, self.clients, self.cr, self.files_uploading)
         self.addr = addr
         self.start()
 

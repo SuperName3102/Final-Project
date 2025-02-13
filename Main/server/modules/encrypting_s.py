@@ -1,8 +1,8 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay encrypting_s.py
 
 # Import required libraries
 import hashlib, os, rsa, struct
-from modules.config import *
+from modules.config_s import *
 from Crypto import Random
 from Crypto.Cipher import AES
 from base64 import b64encode, b64decode

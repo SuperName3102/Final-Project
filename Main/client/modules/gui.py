@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay gui.py
 # Import libraries
 
 from PyQt6 import QtWidgets, uic

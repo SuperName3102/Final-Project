@@ -1,10 +1,10 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay protocol_s.py
 # Import required libraries
 
 import traceback, time, os
 from modules import validity  # Import validation module for input checking
-from modules.config import *  # Configuration settings
-from modules.limits import Limits  # Subscription limits and restrictions
+from modules.config_s import *  # Configuration settings
+from modules.limits_s import Limits  # Subscription limits and restrictions
 from modules.errors import Errors  # Error handling
 from filelock import FileLock  # File locking to prevent concurrent access
 

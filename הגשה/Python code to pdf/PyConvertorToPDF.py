@@ -90,8 +90,7 @@ if __name__ == "__main__":
         args = sys.argv
         folder_path = args[1]
     except:
-        folder_path = 'C:/Users/idanh/Desktop/Cyber/My Projects/Final-Project'
-
+        folder_path = "C:\\Users\\idanh\\Desktop\\Cyber\\My Projects\\Final Project"
     convert_py_to_pdf(folder_path)
 
     input_folder = 'pdf_files'

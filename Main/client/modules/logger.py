@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay logger.py
 # Import libraries
 
 import os, sys, logging

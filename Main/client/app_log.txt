@@ -1,0 +1,53 @@
+2025-02-12 17:39:42 - No server found
+2025-02-12 17:39:57 - Login was successful for user: a
+2025-02-12 17:39:57 - File data received 230382
+2025-02-12 17:39:57 - Profile picture was received
+2025-02-12 17:39:57 - Got files
+2025-02-12 17:39:57 - Current used storage is 13.491 MB
+2025-02-12 17:39:57 - Got directories
+2025-02-12 17:40:25 - No server found
+2025-02-12 17:40:47 - Login was successful for user: a
+2025-02-12 17:40:47 - File data received 230382
+2025-02-12 17:40:47 - Profile picture was received
+2025-02-12 17:40:47 - Got files
+2025-02-12 17:40:47 - Current used storage is 13.491 MB
+2025-02-12 17:40:47 - Got directories
+2025-02-12 17:40:52 - No server found
+2025-02-12 17:41:17 - Login was successful for user: a
+2025-02-12 17:41:17 - File data received 230382
+2025-02-12 17:41:17 - Profile picture was received
+2025-02-12 17:41:17 - Current used storage is 13.491 MB
+2025-02-12 17:41:17 - Got files
+2025-02-12 17:41:17 - Got directories
+2025-02-12 17:44:13 - No server found
+2025-02-13 20:57:15 - Login was successful for user: a
+2025-02-13 20:57:15 - File data received 230382
+2025-02-13 20:57:15 - Profile picture was received
+2025-02-13 20:57:15 - Current used storage is 13.491 MB
+2025-02-13 20:57:15 - Got directories
+2025-02-13 20:57:15 - Got files
+2025-02-13 20:57:16 - Current used storage is 13.491 MB
+2025-02-13 20:57:17 - Subscription level updated to free
+2025-02-13 20:57:17 - Current used storage is 13.491 MB
+2025-02-13 20:57:18 - Current used storage is 13.491 MB
+2025-02-13 20:57:18 - Got files
+2025-02-13 20:57:18 - Got directories
+2025-02-13 20:57:18 - Logout successful
+2025-02-13 20:57:20 - Server acknowledged the exit message
+2025-02-13 20:57:20 - Successfully exited
+2025-02-13 21:06:59 - Login was successful for user: a
+2025-02-13 21:06:59 - File data received 230382
+2025-02-13 21:06:59 - Profile picture was received
+2025-02-13 21:06:59 - Got files
+2025-02-13 21:06:59 - Current used storage is 13.491 MB
+2025-02-13 21:06:59 - Got directories
+2025-02-13 21:07:02 - start upload:
+2025-02-13 21:07:02 - 852c73b31b6246b7b2db93070857d738
+2025-02-13 21:07:02 - File client.pyw started uploading
+2025-02-13 21:07:03 - File client.pyw was uploaded
+2025-02-13 21:07:03 - Got files
+2025-02-13 21:07:03 - Got directories
+2025-02-13 21:07:03 - Current used storage is 13.494 MB
+2025-02-13 21:07:07 - Current used storage is 13.494 MB
+2025-02-13 21:07:07 - Got directories
+2025-02-13 21:07:07 - Got files

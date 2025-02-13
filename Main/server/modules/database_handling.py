@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay database_handling.py
 # Import required libraries
 
 import os, sqlite3, traceback  # SQLite3 for database handling, traceback for error logging

@@ -1,9 +1,9 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay networking_s.py
 # Import required libraries
 
 import struct, traceback, socket  # Struct for data packing, traceback for debugging, socket for networking
-from modules import encrypting  # Import encryption module
-from modules.config import *  # Import configuration settings
+from modules import encrypting_s  # Import encryption module
+from modules.config_s import *  # Import configuration settings
 
 class Network:
     """
@@ -14,7 +14,7 @@ class Network:
     def __init__(self, clients, bytes_recieved, bytes_sent, log=False):
         self.log = log  # Enable or disable logging
         self.clients = clients  # Dictionary of connected clients
-        self.encryption = encrypting.Encryption()  # Encryption handler
+        self.encryption = encrypting_s.Encryption()  # Encryption handler
         self.bytes_recieved = bytes_recieved  # Track bytes received per client
         self.bytes_sent = bytes_sent  # Track bytes sent per client
 

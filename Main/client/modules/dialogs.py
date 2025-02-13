@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay dialogs.py
 # Import libraries
 
 import os, traceback

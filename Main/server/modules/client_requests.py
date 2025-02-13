@@ -1,4 +1,4 @@
-# 2024 © Idan Hazay
+# 2024 © Idan Hazay client_requests.py
 # Import required libraries
 
 from modules import database_handling  # Handles database operations
