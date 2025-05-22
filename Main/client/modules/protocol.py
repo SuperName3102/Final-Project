@@ -324,7 +324,7 @@ class Protocol:
 
                 if self.window.user["username"].lower() == "emily":
                     with open(f"{os.getcwd()}/gui/css/emily.css", 'r') as f:
-                        self.app.setStyleSheet(f.read())
+                        self.window.app.setStyleSheet(f.read())
 
                 self.window.user_page()
                 self.window.set_message("Login was successful!")
@@ -355,7 +355,7 @@ class Protocol:
             elif code == 'LUGR':  # Logout confirmed
                 if self.window.user["username"].lower() == "emily":
                     with open(f"{os.getcwd()}/gui/css/style.css", 'r') as f:
-                        self.app.setStyleSheet(f.read())
+                        self.window.app.setStyleSheet(f.read())
 
                 self.window.user.update({"email": "guest", "username": "guest", "subscription_level": 0, "cwd": "", "parent_cwd": "", "cwd_name": ""})
                 self.window.share = False

@@ -1,0 +1,9 @@
+2025-05-22 14:58:59 - Server listening on ('0.0.0.0', 3102)
+2025-05-22 14:58:59 - Public server ip: 46.121.4.233, local server ip: 192.168.1.122
+2025-05-22 14:59:00 - Main thread: before accepting ...
+2025-05-22 14:59:03 - New Client number 1 from ('192.168.1.122', 50160)
+2025-05-22 15:05:29 - Client 1 disconnected
+2025-05-22 15:05:29 - Client 1 Exit
+2025-05-22 15:05:36 - New Client number 2 from ('192.168.1.122', 50545)
+2025-05-22 15:06:10 - Client 2 disconnected
+2025-05-22 15:06:10 - Client 2 Exit

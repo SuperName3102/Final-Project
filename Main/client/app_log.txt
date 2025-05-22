@@ -1,0 +1,51 @@
+2025-05-22 14:59:04 - Server returned an error: 025 Cookie is expired
+2025-05-22 14:59:11 - Server returned an error: 003 Please check your password and email/username and try again.
+2025-05-22 14:59:44 - Signup was successful for user: emily, password: Emily1234
+2025-05-22 15:02:29 - Verification for user emilyfr007@gmail.com was successful
+2025-05-22 15:02:39 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 327, in protocol_parse_reply
+    self.app.setStyleSheet(f.read())
+    ^^^^^^^^
+AttributeError: 'Protocol' object has no attribute 'app'
+2025-05-22 15:02:39 - Login was successful for user: emily
+2025-05-22 15:02:39 - File data received 1370
+2025-05-22 15:02:39 - Profile picture was received
+2025-05-22 15:02:51 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\client\modules\protocol.py", line 327, in protocol_parse_reply
+    self.app.setStyleSheet(f.read())
+    ^^^^^^^^
+AttributeError: 'Protocol' object has no attribute 'app'
+2025-05-22 15:02:51 - Login was successful for user: emily
+2025-05-22 15:02:51 - File data received 1370
+2025-05-22 15:02:51 - Profile picture was received
+2025-05-22 15:05:36 - Server returned an error: 025 Cookie is expired
+2025-05-22 15:05:46 - Login was successful for user: emily
+2025-05-22 15:05:46 - File data received 1370
+2025-05-22 15:05:46 - Profile picture was received
+2025-05-22 15:05:46 - Got files
+2025-05-22 15:05:46 - Got directories
+2025-05-22 15:05:46 - Current used storage is 0.0 MB
+2025-05-22 15:05:51 - Got files
+2025-05-22 15:05:51 - Got directories
+2025-05-22 15:05:51 - Current used storage is 0.0 MB
+2025-05-22 15:05:52 - Successfully moved to
+2025-05-22 15:05:52 - Got files
+2025-05-22 15:05:52 - Got directories
+2025-05-22 15:05:52 - Current used storage is 0.0 MB
+2025-05-22 15:05:54 - Current used storage is 0.0 MB
+2025-05-22 15:06:03 - Got files
+2025-05-22 15:06:03 - Current used storage is 0.0 MB
+2025-05-22 15:06:03 - Got directories
+2025-05-22 15:06:07 - Successfully moved to
+2025-05-22 15:06:07 - Got files
+2025-05-22 15:06:07 - Got directories
+2025-05-22 15:06:07 - Current used storage is 0.0 MB
+2025-05-22 15:06:09 - Got files
+2025-05-22 15:06:09 - Got directories
+2025-05-22 15:06:09 - Current used storage is 0.0 MB
+2025-05-22 15:06:09 - Got files
+2025-05-22 15:06:09 - Got directories
+2025-05-22 15:06:09 - Current used storage is 0.0 MB
+2025-05-22 15:06:09 - Got files
+2025-05-22 15:06:09 - Got directories
+2025-05-22 15:06:09 - Current used storage is 0.0 MB
