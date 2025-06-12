@@ -7,3 +7,53 @@
 2025-05-22 15:05:36 - New Client number 2 from ('192.168.1.122', 50545)
 2025-05-22 15:06:10 - Client 2 disconnected
 2025-05-22 15:06:10 - Client 2 Exit
+2025-06-12 20:21:32 - Server listening on ('0.0.0.0', 3102)
+2025-06-12 20:21:32 - Public server ip: 46.121.4.181, local server ip: 192.168.1.122
+2025-06-12 20:21:32 - Main thread: before accepting ...
+2025-06-12 20:21:35 - New Client number 1 from ('192.168.1.122', 51717)
+2025-06-12 20:22:27 - Client 1 disconnected
+2025-06-12 20:22:27 - Client 1 Exit
+2025-06-12 20:22:29 - New Client number 2 from ('192.168.1.122', 51737)
+2025-06-12 20:33:03 - Client 2 disconnected
+2025-06-12 20:33:03 - Client 2 Exit
+2025-06-12 22:09:22 - New Client number 3 from ('192.168.1.122', 54428)
+2025-06-12 22:09:32 - Client 3 disconnected
+2025-06-12 22:09:32 - Client 3 Exit
+2025-06-12 22:09:43 - New Client number 4 from ('192.168.1.122', 54438)
+2025-06-12 22:10:01 - Client 4 disconnected
+2025-06-12 22:10:01 - Client 4 Exit
+2025-06-12 22:10:02 - New Client number 5 from ('192.168.1.122', 54447)
+2025-06-12 22:11:20 - Client 5 disconnected
+2025-06-12 22:11:20 - Client 5 Exit
+2025-06-12 22:11:22 - New Client number 6 from ('192.168.1.122', 54485)
+2025-06-12 22:11:42 - Client 6 disconnected
+2025-06-12 22:11:42 - Client 6 Exit
+2025-06-12 22:11:42 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\protocol_s.py", line 684, in send_file_data
+    self.network.send_data(sock, tid, f"RILD|{id}|{location_infile}|".encode() + data)
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\networking_s.py", line 42, in send_data
+    if self.clients[tid].encryption:  # Check if encryption is enabled
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'encryption'
+2025-06-12 22:11:42 - Traceback (most recent call last):
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\server.py", line 149, in handle_request
+    self.network.send_data(sock, tid, to_send)  # Send data back to client
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\idanh\Desktop\Cyber\My Projects\Final Project\Main\server\modules\networking_s.py", line 42, in send_data
+    if self.clients[tid].encryption:  # Check if encryption is enabled
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'encryption'
+2025-06-12 22:11:57 - New Client number 7 from ('192.168.1.122', 54506)
+2025-06-12 22:12:36 - Client 7 disconnected
+2025-06-12 22:12:36 - Client 7 Exit
+2025-06-12 22:17:40 - New Client number 8 from ('192.168.1.122', 54697)
+2025-06-12 22:18:04 - Server listening on ('0.0.0.0', 3102)
+2025-06-12 22:18:04 - Public server ip: 46.121.4.181, local server ip: 192.168.1.122
+2025-06-12 22:18:05 - Main thread: before accepting ...
+2025-06-12 22:18:06 - New Client number 1 from ('192.168.1.122', 54712)
+2025-06-12 22:18:54 - Server listening on ('0.0.0.0', 3102)
+2025-06-12 22:18:55 - Public server ip: 46.121.4.181, local server ip: 192.168.1.122
+2025-06-12 22:18:55 - Main thread: before accepting ...
+2025-06-12 22:18:57 - New Client number 1 from ('192.168.1.122', 54738)
+2025-06-12 22:24:37 - Client 1 disconnected
+2025-06-12 22:24:37 - Client 1 Exit

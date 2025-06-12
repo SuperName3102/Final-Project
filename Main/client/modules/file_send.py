@@ -50,7 +50,7 @@ class FileSending:
                 if not os.path.exists(file_path):
                     continue
                 self.file_queue.extend([file_path])  # Re-add file to queue
-                self.window.protocol.send_files(resume_file_id=file_id, location_infile=int(progress))
+                self.send_files(resume_file_id=file_id, location_infile=int(progress))
                 break
 
 

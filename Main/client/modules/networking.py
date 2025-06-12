@@ -81,10 +81,6 @@ class Network:
             return msg
         except ConnectionResetError:
             return None
-        except OSError:
-            pass
-        except AttributeError:
-            pass
         except:
             print(traceback.format_exc())
 
